@@ -37,6 +37,8 @@ Status snapshot: 21 October 2026. Checked items have implementation or execution
 - [x] Test scan timeout, stale/wrong/unavailable evidence, unnecessary synthesis, replay safety and host-truth isolation; pass all 80 tests.
 - [x] Record cumulative shared API usage of 333,639 tokens across 220 settled calls; no additional OpenRouter requests.
 
+- [x] Review failure paths before publication, reject stale aliquot reuse after failed preparation, preserve incomplete-usage reports and pass all 84 tests.
+
 ## Partial or still pending
 
 - [ ] Accept the remaining nine catalog entries with an appropriate native task/adapter.

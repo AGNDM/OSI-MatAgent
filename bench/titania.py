@@ -21,6 +21,26 @@ def action(lab, name, args=None):
         capability_id=name, arguments=args or {}, request_id=str(uuid4()), postcondition='Probe native evidence.'))
 
 
+def summarize_usage(events):
+    """Missing provider usage stays visibly incomplete; durable ledger charges it."""
+    keys = ['prompt_tokens', 'completion_tokens', 'total_tokens']
+    total = dict.fromkeys(keys, 0)
+    complete = True
+    for event in events:
+        metadata = event.get('llm_metadata') or {}
+        if not metadata.get('request_sent'):
+            continue
+        usage = metadata.get('usage')
+        valid = (isinstance(usage, dict) and all(type(usage.get(k)) is int and usage[k] >= 0 for k in keys)
+                 and usage['total_tokens'] == usage['prompt_tokens'] + usage['completion_tokens'])
+        if not valid:
+            complete = False
+            continue
+        for key in keys:
+            total[key] += usage[key]
+    return total, complete
+
+
 def run(branch, output, roles=None, decision=None):
     lab = TitaniaLab(branch)
     run_id = str(uuid4())
@@ -35,11 +55,10 @@ def run(branch, output, roles=None, decision=None):
         {'configurable': {'thread_id': run_id}, 'recursion_limit': limits.graph_steps})
     score = lab.score(final['report'])
     trace.emit('evaluator', 'titania_score', score=score)
-    usage = {k: sum((e.get('llm_metadata') or {}).get('usage', {}).get(k, 0) or 0 for e in trace.events)
-             for k in ['prompt_tokens', 'completion_tokens', 'total_tokens']}
+    usage, usage_complete = summarize_usage(trace.events)
     row = {'branch': branch, 'backend': backend.backend_id,
            'router': decision.backend_id if decision else 'rules-v1',
-           'report': final['report'], 'score': score, 'usage': usage,
+           'report': final['report'], 'score': score, 'usage': usage, 'usage_complete': usage_complete,
            'router_fallbacks': sum(e.get('decision', {}).get('fallback_used', False) for e in trace.events),
            'actions': [e['proposal']['capability_id'] for e in lab.history],
            'trace': str(trace.path), 'final_analysis': lab._measurement['analysis'] if lab._measurement else None}

@@ -30,7 +30,7 @@ Scripted drying regression passed 16/16 attempts across eight test fixtures and 
 
 ## Validation and next acceptance conditions
 
-The current project passes 80 tests. The upstream cache verifies against 570 pinned hashes. Credentials were absent from the device artifact scan, and all 206 returned model identities matched the configured DeepSeek model ID; no immutable provider weight revision was available.
+The current project passes 84 tests. The upstream cache verifies against 570 pinned hashes. Credentials were absent from the device artifact scan, and all 206 returned model identities matched the configured DeepSeek model ID; no immutable provider weight revision was available.
 
 Next acceptance work is meaningful acquisition tasks, shared multi-device sample/time semantics, scientific evidence retrieval, a second expert, a frozen comparison and independent human error review. The current results do not establish model-routing superiority, scientific fidelity or general materials-research capability.
 
@@ -43,3 +43,7 @@ The [titania scenario card](docs/titania-scenario.md) follows the thermal-treatm
 Scripted branches passed 2/2 and both wrong repairs were independently rejected. Real DeepSeek specialists plus local OpenJev passed 2/2 with no routing fallback. Each real run needed one evidence-ID format repair. The 14 cloud calls consumed 22,617 tokens; shared cumulative usage is 333,639 across 220 settled calls, leaving 4,666,361 under the 5M ceiling. No unknown usage or outstanding reservations remained.
 
 This advances M2–M4 for the preferred materials direction. M5 remains partial: fixed curated paper/reference context does not establish retrieval benefit. M7 remains the drying UI; titania currently runs in the CLI. M8 still requires a second expert, frozen comparisons and independent scientific review. See [execution evidence](docs/evidence/titania-validation.md).
+
+## Pre-push review
+
+A focused review fixed stale aliquot phase reuse after failed preparation and missing-usage report handling. All 84 tests pass. The prior real-model run remains historical evidence with its original hashes; no additional API calls were made. See [review findings and validation](docs/evidence/pre-push-review.md).

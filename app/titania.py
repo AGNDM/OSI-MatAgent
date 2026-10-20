@@ -58,6 +58,7 @@ class TitaniaLab:
         self.sample_id = 'titania-batch-001'
         self.aliquot_id = 'aliquot-001'
         self.revision = self.action_count = self.last_mutation_step = 0
+        self.thermal_attempts = 0
         self.time_s = 0.
         self.scan_timeout_s = scan_timeout_s
         self.history, self.native_events, self.thermal_runs = [], [], []
@@ -151,6 +152,11 @@ class TitaniaLab:
                         else [{'phase_id': 'anatase', 'weight_fraction': 1.0}])
 
     def _acquire(self, stop_deg, timeout_s):
+        if not self._phases or self.thermal_runs[-1]['aliquot_id'] != self.aliquot_id:
+            raise ValueError('CURRENT_ALIQUOT_NOT_PREPARED')
+        self._pattern = None
+        self.pattern_aliquot = None
+        self.last_method = {'start_deg': 20, 'stop_deg': stop_deg, 'step_deg': .05, 'dwell_s': .05}
         for cap, args in [('power.set', {'enabled': True}),
                           ('access.set_door_angle', {'angle_rad': .8}),
                           ('slot.set_sample', {'connection_id': self.aliquot_id}),
@@ -234,6 +240,9 @@ class TitaniaLab:
             raise GateRejected('INVALID_CAPABILITY_OR_ARGUMENT')
         if p.capability_id != 'workflow.inspect' and not self._inspection:
             raise GateRejected('INSPECTION_REQUIRED')
+        if p.capability_id == 'xrd.acquire' and (not self._phases or
+                self.thermal_runs[-1]['aliquot_id'] != self.aliquot_id):
+            raise GateRejected('CURRENT_ALIQUOT_NOT_PREPARED')
 
     @staticmethod
     def action_cost(p):
@@ -246,6 +255,7 @@ class TitaniaLab:
         self.action_count += 1
         cap = p.capability_id
         start = len(self.native_events)
+        thermal_count = len(self.thermal_runs)
         result = {}
         if cap == 'workflow.inspect':
             self._inspection = self._snapshot()
@@ -256,6 +266,8 @@ class TitaniaLab:
             self._measurement = None
             try:
                 if cap == 'thermal.prepare_reference':
+                    self.thermal_attempts += 1
+                    self._phases = None
                     self.aliquot_id = 'aliquot-'+str(len(self.thermal_runs)+1).zfill(3)
                     self._pattern = None
                     self._heat(600, origin='workflow_retained_dried_sister_aliquot')
@@ -269,7 +281,7 @@ class TitaniaLab:
             # Refresh public processing state after every completed/failed macro.
             self._inspection = self._snapshot()
         result['native_events'] = deepcopy(self.native_events[start:])
-        if cap == 'thermal.prepare_reference':
+        if cap == 'thermal.prepare_reference' and len(self.thermal_runs) > thermal_count:
             result['thermal_run'] = deepcopy(self.thermal_runs[-1])
         if cap == 'xrd.acquire':
             result['scan_states'] = deepcopy(self.last_scan_states)
@@ -287,7 +299,7 @@ class TitaniaLab:
         fresh = bool(m and m['quality'] == 'valid' and m['sample_id'] == self.sample_id and m['aliquot_id'] == self.pattern_aliquot
                      and m['revision'] == self.revision and m['captured_at_step'] > self.last_mutation_step)
         cited = bool(m and m['id'] in report.get('evidence_ids', []))
-        correct_policy = (len(self.thermal_runs) == self.initial_thermal_count if self.branch == 'scan_coverage'
+        correct_policy = (self.thermal_attempts == 0 if self.branch == 'scan_coverage'
                           else len(self.thermal_runs) > self.initial_thermal_count)
         supported = report.get('status') == 'supported'
         ok = acquired and fresh and cited and correct_policy

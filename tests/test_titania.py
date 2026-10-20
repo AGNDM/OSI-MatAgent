@@ -113,3 +113,33 @@ def test_identity_revision_and_idempotency_guard_native_side_effects():
             lab.validate(proposal(lab, 'workflow.inspect', **overrides))
     with pytest.raises(GateRejected):
         lab.validate(p.model_copy(update={'postcondition': 'Conflicting replay.'}))
+
+
+def test_failed_thermal_replacement_cannot_reuse_old_aliquot_phase_data(monkeypatch):
+    lab = TitaniaLab('scan_coverage')
+    execute(lab, 'workflow.inspect')
+    original_runs = deepcopy(lab.thermal_runs)
+    def fail_heat(*args, **kwargs):
+        raise TimeoutError('FURNACE_PROGRAM_TIMEOUT')
+    monkeypatch.setattr(lab, '_heat', fail_heat)
+    event = execute(lab, 'thermal.prepare_reference')
+    assert event['result']['error']['code'] == 'FURNACE_PROGRAM_TIMEOUT'
+    assert 'thermal_run' not in event['result']
+    assert lab.thermal_runs == original_runs
+    assert lab._phases is None and lab.observe()['measurement'] is None
+    assert lab.observe()['inspection']['analysis'] is None
+    with pytest.raises(GateRejected, match='CURRENT_ALIQUOT_NOT_PREPARED'):
+        lab.validate(proposal(lab, 'xrd.acquire', {'stop_deg': 60}))
+    score = lab.score({'status': 'supported', 'evidence_ids': []})
+    assert not score['task_success'] and not score['branch_policy_met']
+
+
+@pytest.mark.parametrize('usage', [None, {}, {'prompt_tokens': 2, 'completion_tokens': 1, 'total_tokens': 4}])
+def test_missing_or_invalid_provider_usage_retains_report_and_marks_incomplete(usage):
+    from bench.titania import summarize_usage
+    events = [{'llm_metadata': {'request_sent': True, 'usage': usage}},
+              {'llm_metadata': {'request_sent': True, 'usage': {'prompt_tokens': 3, 'completion_tokens': 2, 'total_tokens': 5}}},
+              {'llm_metadata': {'request_sent': False, 'usage': None}}]
+    total, complete = summarize_usage(events)
+    assert total == {'prompt_tokens': 3, 'completion_tokens': 2, 'total_tokens': 5}
+    assert complete is False
