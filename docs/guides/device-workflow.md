@@ -68,4 +68,4 @@ Code revision: `123cf78593469871e41b8dbd63a11dfb7c5ca251`. Dataset revision: `4c
 
 ## Recorded outcomes
 
-194/194 offline tasks passed. Real DeepSeek completed the predeclared 20-device sample across 16 categories; two additional real DeepSeek/OpenJev combinations passed without routing fallback. Failed earlier pilots remain recorded. Total device API use was 311,022 tokens across 206 requests. See [the evidence summary](docs/evaluation-summary.md) and [the remaining-work checklist](CHECKLIST.md).
+194/194 offline tasks passed. Real DeepSeek completed the predeclared 20-device sample across 16 categories; two additional real DeepSeek/OpenJev combinations passed without routing fallback. Failed earlier pilots remain recorded. Total device API use was 311,022 tokens across 206 requests. See [the evidence summary](../reports/evaluation-summary.md) and [the remaining-work checklist](../status/checklist.md).

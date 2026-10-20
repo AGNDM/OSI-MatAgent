@@ -6,7 +6,7 @@ The repository contains three workflow profiles:
 
 - **Drying troubleshooting:** distinguish a process-setting problem from a measurement problem, apply a justified correction, and verify fresh evidence with an independent evaluator.
 - **Device control:** run a small native control/readback task for each of 194 registered devices across 16 categories. These are independently reset single-device integration tasks, not complete scientific experiments.
-- **Paper-grounded titania:** distinguish a delivered thermal-program error from truncated XRD coverage; execute native furnace and diffraction acquisition macros. See the [scenario card](docs/titania-scenario.md) and [run instructions](docs/titania-workflow.md). Material chemistry remains an explicitly authored endpoint fixture.
+- **Paper-grounded titania:** distinguish a delivered thermal-program error from truncated XRD coverage; execute native furnace and diffraction acquisition macros. See the [scenario card](docs/demos/titania/scenario.md) and [run instructions](docs/demos/titania/workflow.md). Material chemistry remains an explicitly authored endpoint fixture.
 
 ## Setup
 
@@ -37,7 +37,7 @@ Open `http://127.0.0.1:8793` for the drying UI. Device tasks currently use the C
 
 ## Run real models
 
-Deploy the local router using [LOCAL_OPENJEV.md](LOCAL_OPENJEV.md), then add `--router openjev` to a device command. OpenJev is the router, not the general expert.
+Deploy the local router using [Local OpenJev deployment](docs/guides/local-openjev.md), then add `--router openjev` to a device command. OpenJev is the router, not the general expert.
 
 Set `SILICONFLOW_API_KEY` in your environment, then explicitly request a real expert run:
 
@@ -57,25 +57,30 @@ This sends billable requests to the configured `deepseek-ai/DeepSeek-V4.1-Flash`
 | Offline LangGraph device regression | 194/194 passed |
 | Real DeepSeek sample across 16 categories | 20/20 final outcomes passed |
 | Real DeepSeek + local OpenJev device runs | 2/2 passed, no routing fallback |
-| Project tests | 73 passed |
-| Device debugging API usage, including failed pilots and repairs | 311,022 tokens |
+| Project tests | 84 passed |
+| Shared device and titania API debugging usage, including failures and repairs | 333,639 tokens |
 
-The first real device pilot passed 0/3; the second passed 2/3. Their failures were retained. After fixing stale observation handoffs and returning fresh native readbacks after commands, the declared 20-device sample passed. These development results are not a statistical benchmark or evidence of routing superiority. See [the checked-in evidence summary](docs/evaluation-summary.md).
+The first real device pilot passed 0/3; the second passed 2/3. Their failures were retained. After fixing stale observation handoffs and returning fresh native readbacks after commands, the declared 20-device sample passed. These development results are not a statistical benchmark or evidence of routing superiority. See [the checked-in evidence summary](docs/reports/evaluation-summary.md).
+
+## Project layout
+
+| Directory | Contents |
+|---|---|
+| `app/` | LangGraph workflow, lab adapters and model backends |
+| `bench/` | Evaluation and demo runners |
+| `cases/`, `corpus/`, `configs/` | Task fixtures, retrieval context and model configuration |
+| `tests/`, `tools/` | Regression tests and setup/reporting utilities |
+| `web/` | Local demo interface |
+| `docs/` | Guides, demos, status, proposals, reference and recorded evidence |
+| `vendor/` | Pinned upstream manifests and attribution |
+| `results/` | Ignored local runs and the active API budget ledger |
 
 ## Documentation
 
-- [Completed and remaining checklist](CHECKLIST.md)
-- [Current progress against milestones](PROGRESS.md)
-- [Device workflow, scope and budget](DEVICE_WORKFLOW.md)
-- [Evaluation and result interpretation](EXPERIMENTS.md)
-- [Five-minute drying demo](DEMO.md)
-- [Error annotation codebook](ERROR_CODEBOOK.md)
-- [Configuration guide](configs/README.md)
-- [Full proposal](materials_lab_agent_proposal.md)
-- [Original milestone plan](materials_lab_agent_proposal_previous_milestones.md)
+Start with the [documentation index](docs/README.md), [current progress](docs/status/progress.md), or [titania demo](docs/demos/titania/scenario.md). Proposal history is filed under `docs/plans/archive/`; the collaborator's [decision-mechanism proposal](docs/plans/decision-mechanisms-proposal.md) is retained separately from the implemented workflow proposal.
 
 ## Boundaries and attribution
 
-The drying workflow uses the native ChemLab BINDER FD56 process runtime; its balance offset, cleaning and observation layer are authored fixtures. The device expansion uses native agent sessions and a task-specific capability subset. Of the 194 device tasks, 116 test power control; the remaining 78 test other controls/readbacks. There is no shared sample transfer, unified multi-device clock, validated hardware/robot behavior or complete synthesis/characterization workflow.
+The drying workflow uses the native ChemLab BINDER FD56 process runtime; its balance offset, cleaning and observation layer are authored fixtures. The device expansion uses native agent sessions and a task-specific capability subset. Of the 194 device tasks, 116 test power control; the remaining 78 test other controls/readbacks. The titania demo adds a shared two-runtime clock and logical aliquot lineage. Its material endpoints and transfer are authored fixtures, and its XRD curves are synthetic. Physical sample transport, validated hardware/robot behavior and a calibrated synthesis model remain outside the implementation.
 
 ChemLab code is pinned to `123cf78593469871e41b8dbd63a11dfb7c5ca251`; data is pinned to `4ca4a42dab2ca0a884e449d202e9ad96625d5648`. Upstream code and data have separate licenses: retain [LICENSE](vendor/chemlab/LICENSE), [LICENSE-ASSETS.md](vendor/chemlab/LICENSE-ASSETS.md) and [NOTICE.md](vendor/chemlab/NOTICE.md). The manifests record 570 verified upstream files. No 3D geometry is required for the current tasks.

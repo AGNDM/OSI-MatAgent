@@ -17,4 +17,4 @@
 
 **Evidence boundary.** Furnace dynamics are native but describe an empty furnace. A host-authored endpoint lookup supplies the XRD response from pinned RRUFF references (anatase R060277, rutile R040049). The curve, profile assumptions and phase mixing are synthetic. Neither paper replication, calibrated kinetics nor quantitative phase fractions are established. Sister-aliquot preparation avoids inventing a sequential-reheating result. The scan range, matching thresholds and 313.15 K transfer guard are authored demonstration choices. Prompts contain an explicit repair policy; this is a workflow demonstration, not a blind reasoning benchmark.
 
-Run instructions and acquisition audit: [titania-workflow.md](titania-workflow.md).
+Run instructions and acquisition audit: [titania-workflow.md](workflow.md).

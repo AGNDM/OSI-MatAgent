@@ -1,6 +1,6 @@
 # Titania workflow: acquisition audit and reproduction
 
-The [scenario card](titania-scenario.md) defines the scientific question and evidence boundary. Implementation is in `app/titania.py`, runner in `bench/titania.py`, and regression cases in `tests/test_titania.py`. No dependency was added.
+The [scenario card](scenario.md) defines the scientific question and evidence boundary. Implementation is in `app/titania.py`, runner in `bench/titania.py`, and regression cases in `tests/test_titania.py`. No dependency was added.
 
 ## What actually executes
 
@@ -27,7 +27,7 @@ python -m pytest -q
 
 The scripted specialist is an integration-test double and makes no cloud requests. `--controls` additionally runs both wrong-repair controls and the native acquisition audit. A new output directory is required for every attempt.
 
-For explicitly authorized small real-model debugging, start the local OpenJev server as described in `LOCAL_OPENJEV.md`, export `SILICONFLOW_API_KEY`, then run:
+For explicitly authorized small real-model debugging, start the local OpenJev server as described in [the deployment guide](../../guides/local-openjev.md), export `SILICONFLOW_API_KEY`, then run:
 
 ```bash
 python -m bench.titania --backend deepseek --router openjev \
@@ -36,7 +36,7 @@ python -m bench.titania --backend deepseek --router openjev \
 
 This uses `deepseek-ai/DeepSeek-V4.1-Flash` at the configured SiliconFlow endpoint and the existing durable **shared 5,000,000-token ledger**. It never calls OpenRouter. Calls, failures and repairs are charged by `BudgetedExpert`; the ledger must not be reset. Two branches run sequentially, each with at most 16 expert calls, eight budgeted workflow actions and a 240-second graph deadline. A full acquisition counts as a command plus a readback. Native commands are separately logged inside each macro.
 
-Artifacts include a source-hash manifest, per-branch reset evidence, exact model inputs/outputs and routing events in JSONL traces, final raw patterns, independent scores, and optional controls/audit. Reports and patterns are generated locally under ignored `results/`; a compact checked-in execution summary is in `docs/evidence/titania-validation.md`.
+Artifacts include a source-hash manifest, per-branch reset evidence, exact model inputs/outputs and routing events in JSONL traces, final raw patterns, independent scores, and optional controls/audit. Reports and patterns are generated locally under ignored `results/`; a compact checked-in execution summary is in [the execution summary](../../evidence/titania-validation.md).
 
 ## Remaining acceptance work
 

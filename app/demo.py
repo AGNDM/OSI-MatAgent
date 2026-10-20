@@ -24,12 +24,12 @@ class DemoController:
         self.output.mkdir(parents=True, exist_ok=True)
         self.decision_url, self.expert = decision_url, expert
         self.lock = Lock()
-        self.modes = {"scripted-rules": "脚本专家 + 规则路由（骨架回归）",
-            "scripted-openjev": "脚本专家 + 真实本地 OpenJev 路由"}
+        self.modes = {"scripted-rules": "Scripted specialists + rules router (regression)",
+            "scripted-openjev": "Scripted specialists + local OpenJev router"}
         if expert and expert.configured:
-            self.modes["configured-openjev"] = "已配置通用专家 + 本地 OpenJev 路由"
+            self.modes["configured-openjev"] = "Configured general specialists + local OpenJev router"
         if exploratory:
-            self.modes["exploratory-openjev"] = "探索性：同一 OpenJev 权重兼任专家与路由"
+            self.modes["exploratory-openjev"] = "Exploratory: OpenJev used for specialists and routing"
         self.latest = {"running": False, "events": [], "record": None, "display_mode": "idle"}
         self.history = {}
         for directory in sorted(self.output.glob("demo-*"), key=lambda p: p.stat().st_mtime)[-20:]:

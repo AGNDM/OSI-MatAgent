@@ -1,6 +1,6 @@
 # Titania acquisition development evidence
 
-Recorded 21 October 2026. [Scenario](../titania-scenario.md), [run instructions and limitations](../titania-workflow.md), [compact machine-readable evidence](titania-validation.json), [paper provenance](titania-source.json).
+Recorded 21 October 2026. [Scenario](../demos/titania/scenario.md), [run instructions and limitations](../demos/titania/workflow.md), [compact machine-readable evidence](titania-validation.json), [paper provenance](titania-source.json).
 
 | Branch | Real expert action sequence after inspection | Independent result | Cloud tokens | Expert requests | Router fallbacks | Citation repairs |
 |---|---|---|---:|---:|---:|---:|

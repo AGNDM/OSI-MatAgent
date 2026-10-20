@@ -1,6 +1,6 @@
 # Progress Against the Milestone Plan
 
-Snapshot: 21 October 2026. The reference plan is [the original milestone document](materials_lab_agent_proposal_previous_milestones.md). Implementation status and research acceptance are tracked separately.
+Snapshot: 21 October 2026. The reference plan is [the original milestone document](../plans/archive/milestones.md). Implementation status and research acceptance are tracked separately.
 
 | Milestone | Status | Evidence and remaining work |
 |---|---|---|
@@ -34,16 +34,16 @@ The current project passes 84 tests. The upstream cache verifies against 570 pin
 
 Next acceptance work is meaningful acquisition tasks, shared multi-device sample/time semantics, scientific evidence retrieval, a second expert, a frozen comparison and independent human error review. The current results do not establish model-routing superiority, scientific fidelity or general materials-research capability.
 
-See [CHECKLIST.md](CHECKLIST.md), [DEVICE_WORKFLOW.md](DEVICE_WORKFLOW.md) and [the committed evaluation summary](docs/evaluation-summary.md). Detailed local traces remain under the ignored `results/` directory.
+See [Delivery checklist](checklist.md), [Device workflow](../guides/device-workflow.md) and [the committed evaluation summary](../reports/evaluation-summary.md). Detailed local traces remain under the ignored `results/` directory.
 
 ## Paper-grounded acquisition slice (21 October 2026)
 
-The [titania scenario card](docs/titania-scenario.md) follows the thermal-treatment and qualitative diffraction substep of Catauro et al. (2018), DOI 10.3390/ma11122364. Both branches run through the existing graph. Furnace programs, cooldown, XRD scan configuration/start/await/read and a shared simulation clock execute against unchanged native runtimes. Logical batch/aliquot lineage and finite chemistry endpoints are adapter-authored, not physical transfer or a calibrated reaction model.
+The [titania scenario card](../demos/titania/scenario.md) follows the thermal-treatment and qualitative diffraction substep of Catauro et al. (2018), DOI 10.3390/ma11122364. Both branches run through the existing graph. Furnace programs, cooldown, XRD scan configuration/start/await/read and a shared simulation clock execute against unchanged native runtimes. Logical batch/aliquot lineage and finite chemistry endpoints are adapter-authored, not physical transfer or a calibrated reaction model.
 
 Scripted branches passed 2/2 and both wrong repairs were independently rejected. Real DeepSeek specialists plus local OpenJev passed 2/2 with no routing fallback. Each real run needed one evidence-ID format repair. The 14 cloud calls consumed 22,617 tokens; shared cumulative usage is 333,639 across 220 settled calls, leaving 4,666,361 under the 5M ceiling. No unknown usage or outstanding reservations remained.
 
-This advances M2–M4 for the preferred materials direction. M5 remains partial: fixed curated paper/reference context does not establish retrieval benefit. M7 remains the drying UI; titania currently runs in the CLI. M8 still requires a second expert, frozen comparisons and independent scientific review. See [execution evidence](docs/evidence/titania-validation.md).
+This advances M2–M4 for the preferred materials direction. M5 remains partial: fixed curated paper/reference context does not establish retrieval benefit. M7 remains the drying UI; titania currently runs in the CLI. M8 still requires a second expert, frozen comparisons and independent scientific review. See [execution evidence](../evidence/titania-validation.md).
 
 ## Pre-push review
 
-A focused review fixed stale aliquot phase reuse after failed preparation and missing-usage report handling. All 84 tests pass. The prior real-model run remains historical evidence with its original hashes; no additional API calls were made. See [review findings and validation](docs/evidence/pre-push-review.md).
+A focused review fixed stale aliquot phase reuse after failed preparation and missing-usage report handling. All 84 tests pass. The prior real-model run remains historical evidence with its original hashes; no additional API calls were made. See [review findings and validation](../evidence/pre-push-review.md).

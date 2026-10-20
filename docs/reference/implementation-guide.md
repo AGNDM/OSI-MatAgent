@@ -1,6 +1,6 @@
 # LangGraph Laboratory Demo: Implementation References and Build Notes
 
-**Companion to `materials_lab_agent_proposal.md` · checked 19 October 2026**
+**Companion to [the workflow proposal](../plans/workflow-proposal.md) · checked 19 October 2026**
 
 This guide prioritizes primary sources and identifies what to implement from each. Documentation access was verified; local execution and package compatibility were not. Pin versions during setup rather than combining snippets from different releases. The application designs below are our proposed glue code, not upstream examples or completed implementation.
 

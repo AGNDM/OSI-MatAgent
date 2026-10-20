@@ -44,7 +44,7 @@ python -m bench.device_tasks --backend deepseek --router openjev \
   --device mt_xpr204e --output results/my-combined-check
 ```
 
-The second command sends cloud requests and uses the shared device-debugging token ledger. See [DEVICE_WORKFLOW.md](DEVICE_WORKFLOW.md). Routing failures use an explicitly logged rules fallback; a run with fallback is not evidence of uninterrupted model routing.
+The second command sends cloud requests and uses the shared device-debugging token ledger. See [Device workflow](device-workflow.md). Routing failures use an explicitly logged rules fallback; a run with fallback is not evidence of uninterrupted model routing.
 
 ## Probability extraction
 
@@ -56,4 +56,4 @@ The adapter uses greedy generation while reading the runtime's T=1 log probabili
 
 Both CPU and Radeon 780M Vulkan execution were tested. Historical fixed probes reported Vulkan 6/6 correct decisions over two rounds, median 1.946 seconds, and CPU 3/3, median 4.564 seconds. These tiny probes do not establish general accuracy or a full-task speed advantage. Historical startup measurements included integrity checks and potentially warm filesystem/driver caches.
 
-For the device expansion, three scripted-specialist/OpenJev runs and two real-DeepSeek/OpenJev runs passed without routing fallback. See [docs/evaluation-summary.md](docs/evaluation-summary.md). Detailed deployment measurements and initial failed probability-adapter attempts remain in the ignored local results directory.
+For the device expansion, three scripted-specialist/OpenJev runs and two real-DeepSeek/OpenJev runs passed without routing fallback. See [Evaluation summary](../reports/evaluation-summary.md). Detailed deployment measurements and initial failed probability-adapter attempts remain in the ignored local results directory.

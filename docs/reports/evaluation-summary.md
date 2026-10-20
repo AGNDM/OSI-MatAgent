@@ -45,10 +45,10 @@ A generator limitation does not imply that upstream has no corresponding capabil
 
 The project passed **73 tests**, and all **570 pinned upstream hashes** matched. The artifact audit found no copy of the actual credential value in 745 scanned files. These are recorded execution checks, not claims about an immutable future environment.
 
-- [Machine-readable phase summary](evidence/device-expansion-summary.json)
-- [Per-device coverage table](evidence/device-coverage.csv)
-- [Raw-trace hash index](evidence/trace-manifest.json), identifying the local traces without committing their request bodies
-- [Reproduction and budget instructions](../DEVICE_WORKFLOW.md)
+- [Machine-readable phase summary](../evidence/device-expansion-summary.json)
+- [Per-device coverage table](../evidence/device-coverage.csv)
+- [Raw-trace hash index](../evidence/trace-manifest.json), identifying the local traces without committing their request bodies
+- [Reproduction and budget instructions](../guides/device-workflow.md)
 
 The earlier three-case drying expert pilot is separate: 2/3 passed, with 42,802 reported tokens and a retained verification failure. Formal two-expert comparison, materials retrieval benefit and independent human causal review remain pending.
 
@@ -56,4 +56,4 @@ The earlier three-case drying expert pilot is separate: 2/3 passed, with 42,802 
 
 Two new thermal-treatment/XRD branches passed scripted and real DeepSeek-plus-OpenJev execution (2/2 each). Both wrong-repair controls failed independent scoring as intended. Real runs required two evidence-ID repairs total and no routing fallback. API usage: 22,617 tokens across 14 requests, bringing the shared ledger to 333,639/5,000,000. All 80 project tests passed.
 
-Native furnace and XRD acquisition execute, with a common clock and logical aliquot identity. Chemistry endpoints and transfers remain authored; curves are reference-derived synthetic acquisitions. Fixed paper context and explicit repair policy make this a development demonstration rather than a blind held-out benchmark. Full provenance, paths and limitations: [titania execution evidence](evidence/titania-validation.md).
+Native furnace and XRD acquisition execute, with a common clock and logical aliquot identity. Chemistry endpoints and transfers remain authored; curves are reference-derived synthetic acquisitions. Fixed paper context and explicit repair policy make this a development demonstration rather than a blind held-out benchmark. Full provenance, paths and limitations: [titania execution evidence](../evidence/titania-validation.md).

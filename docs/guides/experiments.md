@@ -10,9 +10,9 @@ python -m bench.device_tasks --backend deepseek --device mt_xpr204e \
   --output results/my-real-device-debug
 ```
 
-The default is offline, using scripted specialists and rules routing. Explicit DeepSeek device runs share the durable 5M-token ledger described in [DEVICE_WORKFLOW.md](DEVICE_WORKFLOW.md). `--router openjev` selects the separate local router. All outputs require a new directory; previous failures are retained.
+The default is offline, using scripted specialists and rules routing. Explicit DeepSeek device runs share the durable 5M-token ledger described in [Device workflow](device-workflow.md). `--router openjev` selects the separate local router. All outputs require a new directory; previous failures are retained.
 
-The recorded device expansion passed 194/194 offline tasks, 20/20 final real-expert category-sample outcomes and 2/2 real-expert/local-router combinations. Initial pilots passed 0/3 and 2/3. Device debugging used 311,022 tokens including failures and repairs. A committed summary is in [docs/evaluation-summary.md](docs/evaluation-summary.md); raw traces remain local and ignored.
+The recorded device expansion passed 194/194 offline tasks, 20/20 final real-expert category-sample outcomes and 2/2 real-expert/local-router combinations. Initial pilots passed 0/3 and 2/3. Device debugging used 311,022 tokens including failures and repairs. A committed summary is in [Evaluation summary](../reports/evaluation-summary.md); raw traces remain local and ignored.
 
 ## Drying fixtures and metrics
 
@@ -50,4 +50,4 @@ The default two-repeat plan contains 48 attempts: two experts across eight cases
 
 OpenRouter free models are limited to small explicitly requested debugging. Free batch matrix execution is disabled. `bench.run --models` rejects multiple models, multiple cases, repeats and test-set free-model evaluation before network access. Retired plans must not be resumed as free batches.
 
-`python -m bench.annotate <output-directory>` produces machine-suggested errors, heatmaps and recorded reports. These do not replace independent causal annotation. See [ERROR_CODEBOOK.md](ERROR_CODEBOOK.md). The proposal's independent human review and held-out routing evaluation remain pending.
+`python -m bench.annotate <output-directory>` produces machine-suggested errors, heatmaps and recorded reports. These do not replace independent causal annotation. See [Error codebook](../reference/error-codebook.md). The proposal's independent human review and held-out routing evaluation remain pending.

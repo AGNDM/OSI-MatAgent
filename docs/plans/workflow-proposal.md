@@ -276,4 +276,4 @@ Acceptance checklist:
 
 ## 10. Reading and verification status
 
-See [the implementation reference guide](langgraph_demo_reference_guide.md) for an ordered reading path, exact official documentation, API integration notes and benchmark papers. Sources were consulted on 19 October 2026. This revision verified documentation and repository interfaces; it did not install packages, execute models, validate the selected laboratory asset or produce benchmark results. Select and pin the concrete instrument and model configurations in the first milestone.
+See [the implementation reference guide](../reference/implementation-guide.md) for an ordered reading path, exact official documentation, API integration notes and benchmark papers. Sources were consulted on 19 October 2026. This revision verified documentation and repository interfaces; it did not install packages, execute models, validate the selected laboratory asset or produce benchmark results. Select and pin the concrete instrument and model configurations in the first milestone.

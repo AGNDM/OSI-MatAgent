@@ -57,4 +57,4 @@ Status snapshot: 21 October 2026. Checked items have implementation or execution
 
 M0-M4 have a working minimal implementation. M6 routing is implemented with OpenJev in place of the originally proposed Laya. M7 has a basic live trace UI but no integrated GLB view. M5 remains partial, and M8 is not fully accepted as a scientific/model-comparison evaluation. Device expansion improves interface coverage without closing those research gaps.
 
-See [PROGRESS.md](PROGRESS.md) for the milestone table and [docs/evaluation-summary.md](docs/evaluation-summary.md) for the result snapshot and limitations.
+See [Current progress](progress.md) for the milestone table and [Evaluation summary](../reports/evaluation-summary.md) for the result snapshot and limitations.

@@ -72,6 +72,6 @@ for item in r['unavailable']:
 lines += ['', 'Detailed native errors remain in [unaccepted-devices.json](unaccepted-devices.json).',
     '', '## Boundaries', '',
     'Passing these tasks does not validate all instrument capabilities, cross-device sample transfer, asynchronous acquisition, scientific interpretation, hardware or robotics. Some tasks only test power control.',
-    '', 'See [DEVICE_WORKFLOW.md](../../DEVICE_WORKFLOW.md) for reproduction and the shared token budget. Recorded project validation: 73 tests passed; 570 upstream file hashes matched.']
+    '', 'See [Device workflow](../../docs/guides/device-workflow.md) for reproduction and the shared token budget. Recorded project validation: 73 tests passed; 570 upstream file hashes matched.']
 (out/'REPORT.md').write_text('\n'.join(lines)+'\n')
 print(json.dumps(summary,ensure_ascii=False,indent=2))
