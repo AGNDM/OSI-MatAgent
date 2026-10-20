@@ -1,0 +1,440 @@
+{
+  "task_id": "device-specac_atlasmanual",
+  "asset_id": "instrument.specac_atlasmanual",
+  "title": "Hydraulic pellet press: set screw.target_m and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "screw.target_m",
+    "equals": 0.073,
+    "unit": "m",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "screw.set_position"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "hydraulic_area_m2": 0.003,
+          "oil_compliance_m3_Pa": 1e-13,
+          "pump_stroke_m3": 1e-06,
+          "stroke_period_s": 0.8,
+          "internal_leak_m3_Pa_s": 1e-17,
+          "release_rate_s": 2.0,
+          "frame_stiffness_N_m": 1000000000.0,
+          "compaction_rate_s": 0.2,
+          "gauge_tau_s": 0.1,
+          "screw_speed_m_s": 0.01,
+          "screw_pitch_m_rev": 0.003,
+          "guard_speed_m_s": 0.3,
+          "valve_speed_rad_s": 10.0,
+          "accept_uncalibrated_model": true,
+          "coefficient_evidence": "explicit_host_assumptions_NOT_Atlas_calibration"
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "atlas_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "atlas_01",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "die.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "screw.target_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "screw.position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "screw.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "ram.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.open_target": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.angle_rad": {
+          "value": 6.283185307179586,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "relief.limit_n": {
+          "value": 98066.5,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "relief.angle_rad": {
+          "value": 1.6,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.indicated_n": {
+          "value": 0.0,
+          "unit": "N",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.angle_rad": {
+          "value": -2.356194490192345,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.hold_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_front.raised_target": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_front.lift_m": {
+          "value": 0.18,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_rear.raised_target": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_rear.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "screw.set_position",
+        "arguments": {
+          "position_m": 0.073
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "atlas_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "position_m": 0.073
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "atlas_01",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "die.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "screw.target_m": {
+          "value": 0.073,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "screw.position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "screw.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "ram.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.open_target": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.angle_rad": {
+          "value": 6.283185307179586,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "relief.limit_n": {
+          "value": 98066.5,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "relief.angle_rad": {
+          "value": 1.6,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.indicated_n": {
+          "value": 0.0,
+          "unit": "N",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.angle_rad": {
+          "value": -2.356194490192345,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.hold_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_front.raised_target": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_front.lift_m": {
+          "value": 0.18,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_rear.raised_target": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "guard_rear.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

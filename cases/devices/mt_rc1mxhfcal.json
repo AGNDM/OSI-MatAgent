@@ -1,0 +1,676 @@
+{
+  "task_id": "device-mt_rc1mxhfcal",
+  "asset_id": "instrument.mt_rc1mxhfcal",
+  "title": "Heat-flow reaction calorimeter: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "ambient_k": 295.15,
+          "coolant_kind": "water",
+          "coolant_inlet_k": 289.15,
+          "coolant_flow_m3_s": 0.00016666666666666666,
+          "cal_heater_power_w": 10.0,
+          "tr_offset_k": 0.05,
+          "tj_offset_k": -0.04,
+          "tc_offset_k": 0.1,
+          "sensor_noise_k": 0.003,
+          "noise_seed": 7,
+          "drain_flow_m3_s": 3e-05,
+          "dosing_max_rate_kg_s": 0.005,
+          "accept_engineering": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "rc1mx_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "rc1mx_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "status.ok": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety_relay.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.ramp_active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cal_heater.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "experiment.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "experiment.started_by_other_agent": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "drain.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.mode": {
+          "value": "off",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.tj_setpoint_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.tr_setpoint_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "jacket.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "cooling_oil.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "stirrer.setpoint_rpm": {
+          "value": 0.0,
+          "unit": "rpm",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stirrer.indicated_rpm": {
+          "value": null,
+          "unit": "rpm",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "calorimetry.heat_flow_w": {
+          "value": null,
+          "unit": "W",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.ua_w_k": {
+          "value": null,
+          "unit": "W/K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.baseline_w": {
+          "value": null,
+          "unit": "W",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.heat_capacity_j_k": {
+          "value": null,
+          "unit": "J/K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.indicated_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "dosing.rate_kg_s": {
+          "value": 0.0,
+          "unit": "kg/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.charged_mass_kg": {
+          "value": 0.0,
+          "unit": "kg",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.program": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.cause": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "experiment.id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tsafe_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tr_min_k": {
+          "value": 268.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tr_max_k": {
+          "value": 393.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tj_min_k": {
+          "value": 263.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tj_max_k": {
+          "value": 423.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tdiff_max_k": {
+          "value": 50.0,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.rsafe_rpm": {
+          "value": null,
+          "unit": "rpm",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.rmin_rpm": {
+          "value": 0.0,
+          "unit": "rpm",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.rmax_rpm": {
+          "value": 850.0,
+          "unit": "rpm",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tc_max_k": {
+          "value": 313.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "rc1mx_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "rc1mx_01",
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "status.ok": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety_relay.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.ramp_active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cal_heater.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "experiment.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "experiment.started_by_other_agent": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "drain.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.mode": {
+          "value": "tj",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.tj_setpoint_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermostat.tr_setpoint_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.indicated_k": {
+          "value": 295.2,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "jacket.indicated_k": {
+          "value": 295.11,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "cooling_oil.indicated_k": {
+          "value": 295.25,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "stirrer.setpoint_rpm": {
+          "value": 0.0,
+          "unit": "rpm",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stirrer.indicated_rpm": {
+          "value": 0.0,
+          "unit": "rpm",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "calorimetry.heat_flow_w": {
+          "value": null,
+          "unit": "W",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.ua_w_k": {
+          "value": null,
+          "unit": "W/K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.baseline_w": {
+          "value": null,
+          "unit": "W",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.heat_capacity_j_k": {
+          "value": null,
+          "unit": "J/K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.indicated_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": 2.0
+        },
+        "dosing.rate_kg_s": {
+          "value": 0.0,
+          "unit": "kg/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.charged_mass_kg": {
+          "value": 0.0,
+          "unit": "kg",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.program": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.cause": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "experiment.id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tsafe_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tr_min_k": {
+          "value": 268.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tr_max_k": {
+          "value": 393.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tj_min_k": {
+          "value": 263.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tj_max_k": {
+          "value": 423.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tdiff_max_k": {
+          "value": 50.0,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.rsafe_rpm": {
+          "value": null,
+          "unit": "rpm",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.rmin_rpm": {
+          "value": 0.0,
+          "unit": "rpm",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.rmax_rpm": {
+          "value": 850.0,
+          "unit": "rpm",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.tc_max_k": {
+          "value": 313.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

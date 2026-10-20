@@ -1,0 +1,322 @@
+{
+  "task_id": "device-parr_4591",
+  "asset_id": "instrument.parr_4591",
+  "title": "Micro high-pressure stirred reactor: set stirrer.speed_rad_s and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "stirrer.speed_rad_s",
+    "equals": 10.0,
+    "unit": "rad/s",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "stirrer.set_speed"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.indicated_temperature_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heater.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heater.delivered_power_w": {
+          "value": 0.0,
+          "unit": "W",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_pressure_pa": {
+          "value": 101300.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.maximum_gauge_pressure_pa": {
+          "value": 20700000.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vessel.volume_m3": {
+          "value": 2.5e-05,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vessel.seal_material": {
+          "value": "FKM",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vent.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stirrer.speed_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stirrer.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-power",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "stirrer.set_speed",
+        "arguments": {
+          "speed_rad_s": 10.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "speed_rad_s": 10.0
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.indicated_temperature_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heater.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heater.delivered_power_w": {
+          "value": 0.0,
+          "unit": "W",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_pressure_pa": {
+          "value": 101300.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.maximum_gauge_pressure_pa": {
+          "value": 20700000.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vessel.volume_m3": {
+          "value": 2.5e-05,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vessel.seal_material": {
+          "value": "FKM",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vent.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stirrer.speed_rad_s": {
+          "value": 10.0,
+          "unit": "rad/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stirrer.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "stirrer.set_speed",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "device-01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 0,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "Required simulation state unavailable.",
+          "retryable": false,
+          "side_effects": "none",
+          "progress": null
+        }
+      }
+    }
+  ]
+}

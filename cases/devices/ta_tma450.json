@@ -1,0 +1,683 @@
+{
+  "task_id": "device-ta_tma450",
+  "asset_id": "instrument.ta_tma450",
+  "title": "Thermomechanical analyzer: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "accept_engineering": true,
+          "ambient_k": 303.15,
+          "cooler": "none",
+          "furnace_capacity_j_k": 10.0,
+          "fixture_capacity_j_k": 1.0,
+          "sample_conductance_w_k": 2.0,
+          "ambient_conductance_w_k": 0.05,
+          "forced_cooling_conductance_w_k": 0.08,
+          "controller_gain_w_k": 40.0,
+          "heater_max_w": 200.0,
+          "cooler_max_w": 40.0,
+          "safe_access_temperature_k": 313.15,
+          "force_servo_tau_s": 0.02,
+          "displacement_sensor_tau_s": 0.02,
+          "force_sensor_tau_s": 0.01,
+          "force_gain": 1.0,
+          "force_offset_n": 0.0,
+          "displacement_gain": 1.0,
+          "displacement_offset_m": 0.0,
+          "frame_drift_m_k": 0.0,
+          "temperature_gain": 1.0,
+          "temperature_offset_k": 0.0,
+          "displacement_quantum_m": 2.5e-10,
+          "probe_speed_m_s": 0.002,
+          "furnace_speed_m_s": 0.01,
+          "coolant_latent_j_kg": 199000.0,
+          "coolant_efficiency": 0.7
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "tma450_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "tma450_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.opened": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cooling.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.latched": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.opened": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.moving": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.engaged": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.moving": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "displacement.zeroed": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.lift_m": {
+          "value": 0.05,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.target_m": {
+          "value": 0.05,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.kind": {
+          "value": "expansion",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.mode": {
+          "value": "hold",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.motor_target_n": {
+          "value": 0.05,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.motor_program_n": {
+          "value": 0.05,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.deadweight_n": {
+          "value": 0.0,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.selected_port": {
+          "value": 1,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.flow_m3_s": {
+          "value": 1.6666666666666667e-06,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 303.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.final_target_k": {
+          "value": 303.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "force.indicated_n": {
+          "value": null,
+          "unit": "N",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "displacement.indicated_m": {
+          "value": null,
+          "unit": "m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "model.fault": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.segment_index": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.stage": {
+          "value": "ramp",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.temperature_text": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.displacement_text": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "tma450_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "tma450_01",
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.opened": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cooling.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "emergency.latched": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.opened": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.moving": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.engaged": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.moving": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "displacement.zeroed": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.lift_m": {
+          "value": 0.05,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.target_m": {
+          "value": 0.05,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.angle_rad": {
+          "value": 0.28,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.kind": {
+          "value": "expansion",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.mode": {
+          "value": "hold",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.motor_target_n": {
+          "value": 0.05,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.motor_program_n": {
+          "value": 0.05,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "load.deadweight_n": {
+          "value": 0.0,
+          "unit": "N",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.selected_port": {
+          "value": 1,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.flow_m3_s": {
+          "value": 1.6666666666666667e-06,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 303.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.final_target_k": {
+          "value": 303.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "force.indicated_n": {
+          "value": 0.0,
+          "unit": "N",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "displacement.indicated_m": {
+          "value": null,
+          "unit": "m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "furnace.indicated_k": {
+          "value": 303.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.indicated_k": {
+          "value": 303.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "model.fault": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.segment_index": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.stage": {
+          "value": "ramp",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.temperature_text": {
+          "value": "30.0",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.displacement_text": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "thermal.set_temperature",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "tma450_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "POWER_OFF",
+          "message": "POWER_OFF",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    },
+    {
+      "capability_id": "thermal.set_temperature",
+      "powered": true,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "tma450_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 2,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "FURNACE_NOT_CLOSED",
+          "message": "FURNACE_NOT_CLOSED",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    }
+  ]
+}

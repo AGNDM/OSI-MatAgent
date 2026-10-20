@@ -1,0 +1,504 @@
+{
+  "task_id": "device-binder_fd056",
+  "asset_id": "instrument.binder_fd056",
+  "title": "Forced-convection drying oven: set temperature.set_k and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "temperature.set_k",
+    "equals": 378.15,
+    "unit": "K",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "temperature.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "ambient_k": 295.15,
+          "pressure_pa": 101325.0,
+          "mains_v": 230.0,
+          "noise_seed": 1
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "binder_fd056_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "binder_fd056_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "door.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "door.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.set_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.limit_k": {
+          "value": 573.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flap.position": {
+          "value": 0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flap.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "timer.state": {
+          "value": {
+            "set": false,
+            "running": false,
+            "expired": false,
+            "remaining_s": 0.0,
+            "set_s": 0.0,
+            "fan_after": "on"
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "ramp.state": {
+          "value": {
+            "gradient_k_min": 0,
+            "target_k": null,
+            "effective_k": 298.15,
+            "active": false
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "unit": {
+          "value": "C",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "usb.state": {
+          "value": {
+            "inserted": false,
+            "recording": false,
+            "interval_s": 60.0,
+            "rows": 0
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "racks.levels": {
+          "value": [
+            1,
+            3
+          ],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "samples.placed": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "fan.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "alarm.state": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.temperature": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.text": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.heating": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.timer": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.alarm": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.standby": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "on": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "binder_fd056_01",
+          "request_id": "reference-power",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "on": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "temperature.set",
+        "arguments": {
+          "temperature_k": 378.15
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "binder_fd056_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 3,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "temperature_k": 378.15
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "binder_fd056_01",
+      "status": "succeeded",
+      "state_revision": 3,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "door.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "door.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.set_k": {
+          "value": 378.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.limit_k": {
+          "value": 573.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flap.position": {
+          "value": 0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flap.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "timer.state": {
+          "value": {
+            "set": false,
+            "running": false,
+            "expired": false,
+            "remaining_s": 0.0,
+            "set_s": 0.0,
+            "fan_after": "on"
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "ramp.state": {
+          "value": {
+            "gradient_k_min": 0,
+            "target_k": null,
+            "effective_k": 378.15,
+            "active": false
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "unit": {
+          "value": "C",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "usb.state": {
+          "value": {
+            "inserted": false,
+            "recording": false,
+            "interval_s": 60.0,
+            "rows": 0
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "racks.levels": {
+          "value": [
+            1,
+            3
+          ],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "samples.placed": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "fan.running": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "alarm.state": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.temperature": {
+          "value": 22.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.text": {
+          "value": "SP   105",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.heating": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.timer": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.alarm": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.standby": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "temperature.set",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "binder_fd056_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "STANDBY",
+          "message": "控制器在待机（先按住待机键约3 s）",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    }
+  ]
+}

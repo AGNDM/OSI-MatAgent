@@ -1,0 +1,374 @@
+{
+  "task_id": "device-bronkhorst_cemw",
+  "asset_id": "instrument.bronkhorst_cemw",
+  "title": "Controlled evaporator & mixer: set setpoint.temperature_k and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "setpoint.temperature_k",
+    "equals": 413.15,
+    "unit": "K",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "heater.set_temperature"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "ambient_k": 295.15,
+          "process_pressure_pa": 101325.0,
+          "line_temperature_k": 295.15,
+          "noise_seed": 1
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "bronkhorst_cemw_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "bronkhorst_cemw_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setpoint.gas_m3_s": {
+          "value": 0.0,
+          "unit": "m3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setpoint.liquid_kg_s": {
+          "value": 0.0,
+          "unit": "kg/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setpoint.temperature_k": {
+          "value": 273.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measured.gas_m3_s": {
+          "value": null,
+          "unit": "m3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measured.liquid_kg_s": {
+          "value": null,
+          "unit": "kg/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measured.temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heater.output_fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bleed.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bleed.screw_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "supply.liquid": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "supply.gas": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "controllers.full_scale": {
+          "value": {
+            "gas_m3_s": 0.0001666666666666667,
+            "liquid_kg_s": 3.3333333333333335e-05
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "alarms.active": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "on": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "bronkhorst_cemw_01",
+          "request_id": "reference-power",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "on": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "heater.set_temperature",
+        "arguments": {
+          "setpoint_k": 413.15
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "bronkhorst_cemw_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 3,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "setpoint_k": 413.15
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "bronkhorst_cemw_01",
+      "status": "succeeded",
+      "state_revision": 3,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setpoint.gas_m3_s": {
+          "value": 0.0,
+          "unit": "m3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setpoint.liquid_kg_s": {
+          "value": 0.0,
+          "unit": "kg/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setpoint.temperature_k": {
+          "value": 413.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measured.gas_m3_s": {
+          "value": 0.0,
+          "unit": "m3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measured.liquid_kg_s": {
+          "value": 0.0,
+          "unit": "kg/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measured.temperature_k": {
+          "value": 295.37,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heater.output_fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bleed.open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bleed.screw_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "supply.liquid": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "supply.gas": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "controllers.full_scale": {
+          "value": {
+            "gas_m3_s": 0.0001666666666666667,
+            "liquid_kg_s": 3.3333333333333335e-05
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "alarms.active": {
+          "value": [
+            "TEMPERATURE_NOT_REACHED"
+          ],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "heater.set_temperature",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "bronkhorst_cemw_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "POWER_OFF",
+          "message": "E-8000未通电",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    }
+  ]
+}

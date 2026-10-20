@@ -1,0 +1,267 @@
+{
+  "task_id": "device-julabo_corio_cd200f",
+  "asset_id": "instrument.julabo_corio_cd200f",
+  "title": "Heating/refrigerated circulator: set thermal.target_k and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "thermal.target_k",
+    "equals": 313.15,
+    "unit": "K",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "thermal.set_temperature"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 293.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.indicated_temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required host bath model or external circulation boundary is not configured."
+        },
+        "thermal.model_configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.cooling_curve_supported": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bath_lid.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.external_connected": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.flow_rate_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.pressure_rise_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-power",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "thermal.set_temperature",
+        "arguments": {
+          "temperature_K": 313.15
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "setpoint_K": 313.15
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 313.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.indicated_temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required host bath model or external circulation boundary is not configured."
+        },
+        "thermal.model_configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.cooling_curve_supported": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bath_lid.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.external_connected": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.flow_rate_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "circulation.pressure_rise_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "thermal.set_temperature",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "device-01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 0,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "Declared operation preconditions are not met.",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,419 @@
+{
+  "task_id": "device-sartorius_vivaflow200",
+  "asset_id": "instrument.sartorius_vivaflow200",
+  "title": "Tangential-flow ultrafiltration module: set method.mode and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "method.mode",
+    "equals": "concentrate",
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "method.configure"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "external_peristaltic_pump_connected": true,
+          "ports_and_reservoirs_connected": true,
+          "membrane_flushed_wet_confirmed": true,
+          "compatible_aqueous_sample_reviewed": true,
+          "temperature_k": 293.15,
+          "buffer_volume_m3": 0.005,
+          "buffer_osmolarity_mol_m3": 0.0,
+          "permeate_capacity_m3": 0.01,
+          "circuit_holdup_m3": 1e-05,
+          "pes_permeability_m_pa_s": 8e-11,
+          "rc_permeability_m_pa_s": 5e-11,
+          "channel_resistance_pa_s_m3": 10000000000.0,
+          "permeate_backpressure_pa": 0.0,
+          "film_transfer_m_s": 5e-05,
+          "sieving_exponent": 4.0,
+          "fouling_coefficient_m2_kg": 30.0,
+          "adsorption_rate_s_inv": 1e-05,
+          "adsorption_capacity_kg": 1e-05,
+          "max_concentration_kg_m3": 150.0,
+          "coefficient_evidence": "synthetic_host_permeability_sieving_film_fouling_adsorption_not_manufacturer_calibration"
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "vivaflow200_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "vivaflow200_01",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "cassette.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "membrane.material": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "membrane.mwco_kg_mol": {
+          "value": null,
+          "unit": "kg/mol",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.mode": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "standby",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "volume.retentate_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "volume.permeate_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.circulation_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.permeate_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.feed_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.retentate_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.tmp_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "process.diavolumes": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "method.configure",
+        "arguments": {
+          "mode": "concentrate",
+          "circulation_m3_s": 4.9999999999999996e-06,
+          "tmp_pa": 275000.0,
+          "target_retentate_m3": 0.0001,
+          "target_diavolumes": 5.0,
+          "timeout_s": 10000.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "vivaflow200_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "vivaflow200_01",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "cassette.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "membrane.material": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "membrane.mwco_kg_mol": {
+          "value": null,
+          "unit": "kg/mol",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.mode": {
+          "value": "concentrate",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "standby",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "volume.retentate_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "volume.permeate_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.circulation_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.permeate_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.feed_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.retentate_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.tmp_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "process.diavolumes": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "acquisition.stop",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "vivaflow200_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "PRECONDITION_FAILED",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    }
+  ]
+}

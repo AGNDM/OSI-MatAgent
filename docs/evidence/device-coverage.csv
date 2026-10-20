@@ -1,0 +1,195 @@
+chem_id,slug,name,domain,goal_state,goal_value,native_capabilities_discovered,task_tool_menu,offline_success,deepseek_attempts_final_versions,deepseek_success_final_versions
+CHEM-001,mt_xpr204e,Analytical balance,metrology,balance.filter_level,High,7,power.set;balance.set_filter,True,2,2
+CHEM-002,mt_hx204,Halogen moisture analyzer,metrology,lid.position_m,0.1085,7,power.set;lid.set_position,True,1,1
+CHEM-003,antonpaar_dma5002,Oscillating U-tube density meter,metrology,power.enabled,True,8,power.set,True,0,0
+CHEM-004,antonpaar_abbematadvanced,Digital refractometer,metrology,lid.angle_rad,1.5707963267948966,9,power.set;lid.set_angle,True,0,0
+CHEM-005,metrohm_914,pH / DO / conductivity meter,metrology,power.enabled,True,14,power.set,True,0,0
+CHEM-006,mt_mp70,Automatic melting-point system,metrology,power.enabled,True,8,power.set,True,0,0
+CHEM-007,aqualab_4te,Water-activity meter,metrology,lid.angle_rad,1.5707963267948966,11,power.set;lid.set_angle,True,0,0
+CHEM-008,ika_plate_rctdigital,Magnetic hotplate stirrer,metrology,heating.set_k,373.15,23,power.set;heating.set_temperature,True,1,1
+CHEM-009,ika_ks4000,Incubated orbital shaker,metrology,power.enabled,True,11,power.set,True,0,0
+CHEM-010,eppendorf_5910ri,Refrigerated multipurpose centrifuge,metrology,power.enabled,True,6,power.set,True,0,0
+CHEM-011,binder_fd056,Forced-convection drying oven,metrology,temperature.set_k,378.15,19,power.set;temperature.set,True,1,1
+CHEM-013,elma_elmasonics60h,Ultrasonic cleaning bath,metrology,cover.lift_m,0.3,12,power.set;cover.set_lift,True,0,0
+CHEM-014,hach_tl2300epa,Benchtop turbidimeter,metrology,lid.angle_rad,1.7,8,power.set;lid.set_angle,True,0,0
+CHEM-015,antonpaar_monowave400,Microwave synthesis reactor,synthesis,lid.lift_m,0.15,9,power.set;lid.set_lift,True,1,1
+CHEM-016,ika_electrasyn2,Electro-organic synthesis system,synthesis,stir.target_rad_s,62.83185307179586,8,power.set;stir.set_speed,True,0,0
+CHEM-017,hepatochem_photoredoxbox,Photochemical reactor,synthesis,stir.target_rad_s,62.83185307179586,9,power.set;stir.set_speed,True,0,0
+CHEM-018,parr_4591,Micro high-pressure stirred reactor,synthesis,stirrer.speed_rad_s,10.0,5,power.set;stirrer.set_speed,True,0,0
+CHEM-019,syrris_asiadiscovery,Continuous-flow chemistry system,synthesis,temperature.target_k,303.15,10,power.set;temperature.set,True,0,0
+CHEM-020,thalesnano_hcube,Continuous-flow hydrogenation reactor,synthesis,water_lid.lift_m,0.03,12,power.set;water_lid.set_lift,True,0,0
+CHEM-021,radleys_mya4,Parallel reaction station (4 independent zones),synthesis,zone_1.stirring.target_rad_s,52.35987755982988,10,power.set;stirring.set_speed,True,0,0
+CHEM-022,cem_libertyblue,Automated microwave peptide synthesizer,synthesis,cover.lift_m,0.08,8,power.set;cover.set_lift,True,0,0
+CHEM-023,cytiva_ktaoligosynt,Oligonucleotide synthesizer,synthesis,power.enabled,True,7,power.set,True,0,0
+CHEM-024,ika_rv10_digital_v,Rotary evaporator,separation,rotation.target_speed_rad_s,10.0,9,power.set;rotation.set_speed,True,1,1
+CHEM-025,buchi_lyovapor_l250_pro,Freeze dryer,separation,power.enabled,True,14,power.set,True,0,0
+CHEM-026,buchi_minispray,Lab spray dryer,separation,power.enabled,True,11,power.set,True,0,0
+CHEM-027,tousimis_autosamdri815,Critical point dryer,separation,lid.lift_m,0.065,9,power.set;lid.set_lift,True,0,0
+CHEM-028,buchi_speedextractore,Pressurized solvent extractor,separation,power.enabled,True,10,power.set,True,0,0
+CHEM-029,gilson_cpc250,Centrifugal partition chromatograph,separation,power.enabled,True,7,power.set,True,0,0
+CHEM-030,sartorius_vivaflow200,Tangential-flow ultrafiltration module,separation,method.mode,concentrate,6,method.configure,True,0,0
+CHEM-031,biotage_extrahera_classic,Automated solid-phase extraction workstation,separation,manifold.z_m,0.0,11,power.set;manifold.set_position,True,0,0
+CHEM-032,sft_sft110,Supercritical fluid extractor,separation,power.enabled,True,8,power.set,True,0,0
+CHEM-033,syrris_asiafllex,Flow liquid–liquid extraction module,separation,power.enabled,True,9,power.set,True,0,0
+CHEM-034,biotage_selekt,Automated flash chromatography system,separation,power.enabled,True,9,power.set,True,0,0
+CHEM-035,pccell_ed64002,Lab electrodialysis stack,separation,power.enabled,True,10,power.set,True,0,0
+CHEM-036,genevac_mivac2,Centrifugal vacuum concentrator,separation,lid.open,False,9,power.set;lid.set_open,True,0,0
+CHEM-037,pilodist_pilodist104,High-efficiency lab fractional distillation unit,separation,power.enabled,True,10,power.set,True,0,0
+CHEM-038,uic_kdl1basic,Short-path wiped-film molecular still,separation,power.enabled,True,11,power.set,True,0,0
+CHEM-039,scp_digiprepms,Graphite block digestion system,digestion,power.enabled,True,8,power.set,True,0,0
+CHEM-040,retsch_pm100,Planetary ball mill,digestion,lid.target_rad,1.55,9,power.set;lid.set,True,1,1
+CHEM-041,retsch_as200,Vibratory sieve shaker,digestion,power.enabled,True,14,power.set,True,0,0
+CHEM-042,retsch_pt100,Rotary sample divider,digestion,power.enabled,True,14,power.set,True,0,0
+CHEM-043,ika_t25,Rotor–stator disperser,digestion,power.enabled,True,10,power.set,True,0,0
+CHEM-044,sonics_vcx750,Probe ultrasonic processor,digestion,power.enabled,True,13,power.set,True,0,0
+CHEM-045,thinky_are310s,Planetary centrifugal mixer,digestion,lid.open_target,False,9,power.set;lid.set_open,True,0,0
+CHEM-046,metrohm_909uv,UV digester,digestion,power.enabled,True,10,power.set,True,0,0
+CHEM-047,multiwave_7101,Microwave acid digestion system,digestion,thermal.target_k,448.15,7,power.set;thermal.set_temperature,True,0,0
+CHEM-048,velp_udk159,Automatic Kjeldahl distillation & titration unit,digestion,door.open_target,False,11,power.set;door.set_open,True,0,0
+CHEM-049,buchi_hydrolexh,Acid hydrolysis unit,digestion,power.enabled,True,12,power.set,True,0,0
+CHEM-050,malvern_leneo,Automated fusion bead maker,digestion,thermal.target_k,1338.15,11,power.set;thermal.set_temperature,True,0,0
+CHEM-051,specac_atlasmanual,Hydraulic pellet press,digestion,screw.target_m,0.073,11,screw.set_position,True,0,0
+CHEM-052,buchi_encapsulatorb,Vibrating-nozzle encapsulator,materials,power.enabled,True,17,power.set,True,0,0
+CHEM-053,ossila_spincoater,Spin coater,materials,lid.target_rad,1.5,9,power.set;lid.set_angle,True,1,1
+CHEM-054,ossila_dipcoater,Dip coater,materials,power.enabled,True,12,power.set,True,0,0
+CHEM-055,ossila_doctorblade,Automated doctor-blade coater,materials,power.enabled,True,13,power.set,True,0,0
+CHEM-056,ossila_slotdie,Slot-die coater,materials,thermal.target_k,313.15,17,power.set;thermal.set_temperature,True,0,0
+CHEM-057,thermo_process11,Lab twin-screw extruder,materials,power.enabled,True,17,power.set,True,0,0
+CHEM-058,fujifilm_dmp2850,Materials inkjet printer,materials,thermal.platen_target_k,313.15,16,power.set;thermal.set_temperature,True,0,0
+CHEM-059,linari_rtadvanced,Electrospinning system,materials,power.enabled,True,14,power.set;door.set,True,0,0
+CHEM-060,cytiva_nanoassemblrignite,Microfluidic nanoparticle formulation system,materials,power.enabled,True,11,power.set,True,0,0
+CHEM-061,glatt_miniglatt,Fluid-bed granulator / coater,materials,power.enabled,True,17,power.set,True,0,0
+CHEM-062,quorum_q150tes,Sputter & carbon coater,materials,power.enabled,True,12,power.set,True,0,0
+CHEM-063,laboao_cvdltf12p50,Chemical vapour deposition system,materials,power.enabled,True,11,power.set,True,0,0
+CHEM-064,arradiance_gemstarxt,Atomic layer deposition system,materials,door.opened,False,15,power.set;door.set,True,0,0
+CHEM-065,jasco_j1500,Circular dichroism spectrometer,spectroscopy,lid.opened,False,12,power.set;lid.set,True,1,1
+CHEM-066,bruker_minispecmq20,Time-domain NMR relaxometer,spectroscopy,lid.opened,False,10,power.set;lid.set,True,0,0
+CHEM-067,jasco_fp8350,Spectrofluorometer,spectroscopy,lid.opened,False,12,power.set;lid.set,True,0,0
+CHEM-068,magritek_spinsolve80,Benchtop NMR spectrometer,spectroscopy,power.enabled,True,11,power.set,True,0,0
+CHEM-069,bruker_magnettechesr5000,Benchtop EPR spectrometer,spectroscopy,lid.opened,False,12,power.set;lid.set,True,0,0
+CHEM-070,jasco_p4200,Digital polarimeter,spectroscopy,lid.opened,False,13,power.set;lid.set,True,0,0
+CHEM-071,hach_dr6000,UV-Vis spectrophotometer,spectroscopy,scan.start_m,5e-07,6,power.set;spectroscopy.set_wavelength,True,0,0
+CHEM-072,jasco_ftir4700,FT-IR spectrometer,spectroscopy,power.enabled,True,5,power.set,True,0,0
+CHEM-073,jasco_nrs5500,Raman microscope,spectroscopy,door.opened,False,14,power.set;door.set,True,0,0
+CHEM-074,applied_sx20,Stopped-flow kinetics spectrometer,spectroscopy,power.enabled,True,9,power.set,True,0,0
+CHEM-075,edinburgh_fls1000tcspc,Time-resolved fluorescence (TCSPC) spectrometer,spectroscopy,power.enabled,True,11,power.set,True,0,0
+CHEM-076,ultrafast_helios,Femtosecond transient absorption spectrometer,spectroscopy,power.enabled,True,9,power.set,True,0,0
+CHEM-077,jasco_fvs6000,Vibrational circular dichroism spectrometer,spectroscopy,power.enabled,True,15,power.set,True,0,0
+CHEM-078,jasco_cpl300,Circularly polarized luminescence spectrometer,spectroscopy,power.enabled,True,15,power.set,True,0,0
+CHEM-079,elementar_varioel,Organic elemental (CHNS) analyzer,elemental,power.enabled,True,14,power.set,True,1,1
+CHEM-080,shimadzu_tocl,Total organic carbon analyzer,elemental,power.enabled,True,19,power.set,True,0,0
+CHEM-081,jena_contraa800,Atomic absorption spectrometer,elemental,power.enabled,True,19,power.set,True,0,0
+CHEM-082,shimadzu_icpe9800,ICP optical emission spectrometer,elemental,power.enabled,True,21,power.set,True,0,0
+CHEM-083,shimadzu_icpms2030,ICP mass spectrometer,elemental,power.enabled,True,20,power.set,True,0,0
+CHEM-084,shimadzu_edx7200,Energy-dispersive XRF spectrometer,elemental,power.enabled,True,20,power.set,True,0,0
+CHEM-085,jena_multix,Total organic halogen (AOX/TOX) analyzer,elemental,power.enabled,True,21,power.set,True,0,0
+CHEM-086,milestone_dma80,Direct mercury analyzer,elemental,power.enabled,True,21,power.set,True,0,0
+CHEM-087,stanford_rga100,Residual gas analyzer,elemental,power.enabled,True,19,power.set,True,0,0
+CHEM-088,thermo_orbitrapexploris,High-resolution Orbitrap mass spectrometer,elemental,power.enabled,True,18,power.set,True,0,0
+CHEM-089,leco_onh836,Inert-gas fusion O/N/H analyzer,elemental,power.enabled,True,19,power.set,True,0,0
+CHEM-090,elementar_isoprimeprecision,Stable isotope-ratio mass spectrometer,elemental,power.on,True,20,power.set,True,0,0
+CHEM-091,eco_ncld822,Chemiluminescence NO/NOx analyzer,elemental,power.enabled,True,15,power.set,True,0,0
+CHEM-092,camag_tlcscanner,TLC scanner (densitometer),chromatography,door.target_open,True,21,power.set;door.set,True,1,1
+CHEM-093,sciex_pa800,Capillary electrophoresis system,chromatography,sample_storage.target_k,283.15,15,power.set;sample_storage.set_temperature,True,0,0
+CHEM-094,agilent_1260infinity,Supercritical fluid chromatograph (SFC),chromatography,power.enabled,True,15,power.set,True,0,0
+CHEM-095,wyatt_eclipseaf4,Asymmetric-flow field-flow fractionation (AF4) system,chromatography,power.on,True,16,power.set,True,0,0
+CHEM-097,agilent_hplc1260,HPLC system,chromatography,power.enabled,True,7,power.set,True,0,0
+CHEM-098,thermo_dionexintegrion,Ion chromatograph,chromatography,power.enabled,True,10,power.set,True,0,0
+CHEM-099,agilent_1290infinity,GPC/SEC system,chromatography,power.enabled,True,12,power.set,True,0,0
+CHEM-100,gas_flavourspec25gc,GC–ion mobility spectrometer,chromatography,power.enabled,True,13,power.set,True,0,0
+CHEM-101,metrohm_omnis,Automatic potentiometric titrator,electrochem,stirring.angular_speed_rad_s,10,15,power.set;stirring.set_speed,True,1,1
+CHEM-102,metrohm_899,Karl Fischer coulometer,electrochem,power.enabled,True,10,power.set,True,0,0
+CHEM-103,gamry_reference620,Potentiostat / electrochemical workstation,electrochem,power.enabled,True,9,power.set,True,0,0
+CHEM-104,ch_chi920d,Scanning electrochemical microscope,electrochem,power.enabled,True,8,power.set,True,0,0
+CHEM-105,ch_chi440c,Electrochemical quartz crystal microbalance,electrochem,lid.lift_m,0.05,8,power.set;lid.set,True,0,0
+CHEM-106,knauer_k7400s,Freezing-point osmometer,electrochem,head.position,raised,9,power.set;head.position,True,0,0
+CHEM-107,pine_wavevortex10,Rotating ring-disk electrode rotator,electrochem,speed.setpoint_rad_s,104.71975511965977,13,power.set;speed.set,True,0,0
+CHEM-108,agilent_hs8697,Headspace autosampler (48-vial tray),sampling,power.enabled,True,5,power.set,True,0,0
+CHEM-109,teledyne_atomxxyz,Purge-and-trap autosampler,sampling,trap_door.angle_rad,1.0,10,power.set;trap_door.set,True,1,1
+CHEM-110,teledyne_analyteexcite,Laser ablation sampling system,sampling,power.enabled,True,12,power.set,True,0,0
+CHEM-111,frontier_egapy,Multi-shot pyrolyzer (GC inlet),sampling,power.enabled,True,11,power.set,True,0,0
+CHEM-112,markes_unityxr,Thermal desorber,sampling,lid.lift_m,0.18,11,power.set;lid.set,True,0,0
+CHEM-113,antonpaar_surpass3,Solid-surface streaming-potential analyzer,particles,lid.lift_m,0.105,13,power.set;lid.set,True,1,1
+CHEM-114,antonpaar_ultrapyc5000,Gas pycnometer (true density),particles,power.enabled,True,15,power.set,True,0,0
+CHEM-115,antonpaar_autosorb6100,Gas physisorption surface-area & pore analyzer,particles,power.enabled,True,19,power.set,True,0,0
+CHEM-116,antonpaar_poremaster60,Mercury intrusion porosimeter,particles,power.enabled,True,14,power.set,True,0,0
+CHEM-117,antonpaar_litesizerdls,DLS & zeta-potential analyzer,particles,power.enabled,True,15,power.set,True,0,0
+CHEM-118,antonpaar_psa1190,Laser-diffraction particle sizer,particles,cover.angle_rad,1.2,13,power.set;cover.set,True,0,0
+CHEM-119,antonpaar_litesizerdia,Dynamic image analyzer (particle shape),particles,lid.angle_rad,1.55,14,power.set;lid.set,True,0,0
+CHEM-121,biolin_thetaflex,Optical contact-angle meter,particles,focus.position_m,0.0,18,power.set;focus.set,True,0,0
+CHEM-122,micromeritics_autochemiii,Temperature-programmed chemisorption analyzer,particles,path.target_k,323.15,23,power.set;path.set_temperature,True,0,0
+CHEM-123,surface_dvsresolution,Dynamic vapour sorption analyzer,particles,humidity.target,0.4,20,power.set;humidity.set,True,0,0
+CHEM-124,freeman_ft4powder,Powder rheometer,particles,power.enabled,True,18,power.set,True,0,0
+CHEM-125,porometer_poroluxrevo,Capillary flow porometer,particles,pressure.indicated_pa,0.0,15,power.set;pressure.set,True,0,0
+CHEM-126,microtrac_turbiscanlab,Dispersion stability analyzer,particles,thermal.indicated_k,298.15,16,power.set;thermal.set_temperature,True,0,0
+CHEM-127,biolin_mediuml,Langmuir / Langmuir–Blodgett trough,particles,power.enabled,True,15,power.set,True,0,0
+CHEM-128,antonpaar_trb,Pin-on-disk tribometer,thermal,power.enabled,True,19,power.set;lid.set,True,0,0
+CHEM-129,antonpaar_rst300,Coating scratch tester,thermal,power.enabled,True,17,power.set,True,0,0
+CHEM-130,antonpaar_hit300,Nanoindentation tester,thermal,power.enabled,True,17,power.set,True,0,0
+CHEM-131,ta_dsc2500,Differential scanning calorimeter,thermal,power.enabled,True,18,power.set,True,0,0
+CHEM-132,ta_tga5500,Thermogravimetric analyzer,thermal,power.enabled,True,21,power.set,True,0,0
+CHEM-133,ta_dma850,Dynamic mechanical analyzer,thermal,power.enabled,True,20,power.set,True,0,0
+CHEM-134,ta_tma450,Thermomechanical analyzer,thermal,power.enabled,True,24,power.set,True,0,0
+CHEM-135,netzsch_lfa467,Laser/light flash thermal diffusivity analyzer,thermal,power.enabled,True,20,power.set,True,0,0
+CHEM-136,hot_tps2500,Transient plane source thermal-conductivity analyzer,thermal,power.enabled,True,7,power.set,True,0,0
+CHEM-137,antonpaar_mcr503,Rotational & oscillatory rheometer,thermal,thermal.indicated_k,298.15000000000003,11,power.set;thermal.set_temperature,True,1,1
+CHEM-138,ta_tamiv,Isothermal microcalorimeter,thermal,bath.indicated_k,298.15,12,power.set;thermal.set_temperature,True,0,0
+CHEM-139,linseis_lsr3,Thermoelectric (Seebeck) tester,thermal,thermal.target_k,305.0,13,power.set;thermal.set_temperature,True,0,0
+CHEM-140,novocontrol_alphat,Broadband dielectric spectrometer,thermal,power.enabled,True,11,power.set,True,0,0
+CHEM-141,lakeshore_measurereadym91,Hall-effect measurement system,thermal,power.enabled,True,8,power.set,True,0,0
+CHEM-142,signatone_quadpro2,Automated four-point-probe sheet-resistance mapper,thermal,power.enabled,True,12,power.set,True,0,0
+CHEM-143,lakeshore_8604vsm,Vibrating sample magnetometer,thermal,power.enabled,True,16,power.set,True,0,0
+CHEM-144,shimadzu_ags10knxd,Universal testing machine,thermal,power.enabled,True,10,power.set,True,0,0
+CHEM-145,zwick_hit5p,Pendulum impact tester,thermal,power.enabled,True,8,power.set,True,0,0
+CHEM-146,zwick_mflow,Melt flow indexer,thermal,thermal.target_k,523.15,9,power.set;thermal.set_temperature,True,0,0
+CHEM-147,ametek_oxtran,Oxygen transmission-rate analyzer,thermal,humidity.indicated_fraction,0.0,10,power.set;humidity.set,True,0,0
+CHEM-148,netzsch_mmc315,Adiabatic (ARC) reaction calorimeter,thermal,power.enabled,True,6,power.set,True,0,0
+CHEM-149,mt_rc1mxhfcal,Heat-flow reaction calorimeter,thermal,power.enabled,True,19,power.set,True,0,0
+CHEM-150,ika_c6000,Oxygen bomb calorimeter,thermal,power.enabled,True,29,power.set,True,0,0
+CHEM-151,jeol_jsmit200,Scanning electron microscope,imaging,power.enabled,True,34,power.set,True,0,0
+CHEM-152,jeol_jem1400flash,Transmission electron microscope,imaging,power.enabled,True,43,power.set,True,0,0
+CHEM-153,antonpaar_saxspace,Small-angle X-ray scattering system,imaging,asx.door_open,True,39,power.set;asx.set_door,True,0,0
+CHEM-154,kratos_axissupra,X-ray photoelectron spectrometer,imaging,flexilock.lid_open,True,34,power.set;flexilock.set_lid,True,0,0
+CHEM-155,keyence_vkx3000,3D laser-scanning profilometer microscope,imaging,power.enabled,True,27,power.set,True,0,0
+CHEM-156,bruker_x4poseidon,Micro X-ray computed tomography,imaging,power.enabled,True,31,power.set,True,0,0
+CHEM-157,ja_alphase,Spectroscopic ellipsometer,imaging,power.enabled,True,24,power.set,True,0,0
+CHEM-158,park_nx10,Atomic force microscope,imaging,power.enabled,True,37,power.set,True,0,0
+CHEM-159,nanosurf_naiostm,Scanning tunneling microscope,imaging,power.enabled,True,38,power.set,True,0,0
+CHEM-160,rigaku_miniflex600_external_cooling,Powder X-ray diffractometer,imaging,access.door_angle_rad,0.5,12,power.set;access.set_door_angle,True,1,1
+CHEM-161,rigaku_xtalabsynergy,Single-crystal X-ray diffractometer,imaging,door.left_angle_rad,1.5,40,power.set;door.open,True,0,0
+CHEM-162,evident_bx53p,Polarizing microscope,imaging,power.enabled,True,25,power.set,True,0,0
+CHEM-163,biotek_405ts,Microplate washer,bio,power.enabled,True,15,power.set,True,0,0
+CHEM-164,biorad_miniprotean,Gel electrophoresis system,bio,power.enabled,True,25,power.set,True,0,0
+CHEM-165,thermo_ibrightfl1500,Gel & blot imager,bio,power.enabled,True,21,power.set,True,0,0
+CHEM-166,eppendorf_cellxpertc170i,CO₂ cell-culture incubator,bio,sensor.water_low,True,35,power.set;gas.pressure_monitor,True,1,1
+CHEM-167,biorad_cfxopus,Real-time qPCR system,bio,power.enabled,True,23,power.set,True,0,0
+CHEM-168,bd_facsariaiii,Flow cytometer & cell sorter,bio,collection.temperature_setpoint_k,277.15,56,power.set;collection.temperature,True,0,0
+CHEM-169,malvern_microcalpeaq,Isothermal titration calorimeter,bio,power.enabled,True,34,power.set,True,0,0
+CHEM-170,cytiva_biacoret200,Surface plasmon resonance system,bio,power.enabled,True,52,power.set;door.set,True,0,0
+CHEM-171,wtw_oxitopi,Respirometric BOD system,bio,incubator.door_open,True,21,incubator.set_door,True,0,0
+CHEM-172,seal_aa500,Segmented continuous-flow analyzer,bio,power.on,True,28,power.set;pump.lid_set,True,0,0
+CHEM-173,bmg_clariostarplus,Multi-mode microplate reader,bio,power.on,True,23,power.set;lid.set,True,0,0
+CHEM-174,mt_quantos_q2_xpe206dr,Automated powder dosing system,automation,power.enabled,True,10,power.set,True,0,0
+CHEM-175,opentrons_flex_single_5_1000ul,Automated liquid-handling robot,automation,power.enabled,True,7,power.set,True,0,0
+CHEM-176,azenta_automated_roll_heat_sealer_a4s,Automated microplate heat sealer,automation,thermal.setpoint_K,423.15,7,power.set;thermal.set_temperature,True,0,0
+CHEM-177,azenta_intellixcap_s1_46_0001,Automated tube decapper/recapper,automation,power.enabled,True,5,power.set,True,0,0
+CHEM-178,brooks_preciseflex_400,Lab sample-transfer robot arm,automation,power.enabled,True,6,power.set,True,0,0
+CHEM-180,alicat_mc_1slpm_rev6,Gas mass-flow controller,automation,power.enabled,True,10,power.set,True,0,0
+CHEM-183,bronkhorst_cemw,Controlled evaporator & mixer,automation,setpoint.temperature_k,413.15,11,power.set;heater.set_temperature,True,0,0
+CHEM-184,newera_ne1000,Programmable syringe pump,automation,power.on,True,22,power.set,True,2,2
+CHEM-185,nabertherm_l9,Muffle furnace,facility,thermal.target_k,1273.15,5,power.set;thermal.set_temperature,True,1,1
+CHEM-186,carbolite_tf1_12_60_300,Tube furnace (controlled atmosphere),facility,thermal.target_k,1373.15,2,power.set;thermal.set_temperature,True,0,0
+CHEM-187,julabo_corio_cd200f,Heating/refrigerated circulator,facility,thermal.target_k,313.15,3,power.set;thermal.set_temperature,True,0,0
+CHEM-188,vacuubrand_pc3001_vario_select,Chemistry vacuum pumping unit,facility,vacuum.target_pressure_pa,5000.0,6,power.set;vacuum.set_pressure,True,0,0
+CHEM-189,inert_purelab_he_2gb,Inert-atmosphere glovebox,facility,pressure.target_gauge_pa,100.0,9,power.set;pressure.set,True,0,0
+CHEM-190,elga_purelab_flex3,Lab ultrapure water system,facility,water.flow_rate_m3_s,3.3333333333333335e-05,8,power.set;water.set_flow_rate,True,0,0
+CHEM-191,miele_plw6111,Laboratory glassware washer,facility,thermal.target_k,333.15,5,power.set;thermal.set_temperature,True,0,0
+CHEM-192,tuttnauer_3870elvd,Steam autoclave,facility,power.on,True,13,power.set;lid.set,True,0,0
+CHEM-193,esco_ac24s8,Biological safety cabinet,facility,power.on,True,15,power.set,True,0,0
+CHEM-194,inficon_ul1000fab,Helium leak detector,facility,power.on,True,17,power.set,True,0,0
+CHEM-195,vaisala_dmt152,Trace-moisture dew-point transmitter,facility,power.on,True,11,power.set,True,0,0
+CHEM-196,peak_precisionhydrogen,Laboratory hydrogen generator,facility,power.on,True,11,power.set,True,0,0
+CHEM-197,eppendorf_cryocubef570n,Ultra-low temperature freezer,facility,power.on,True,23,power.set,True,0,0
+CHEM-198,binder_kbf115,Constant climate (T/RH) chamber,facility,door.outer_angle_rad,1.6,21,power.set;door.move,True,0,0
+CHEM-199,esco_efa5uduvw,Chemical fume hood,facility,sash.height_m,0.457,18,sash.set,True,1,1
+CHEM-200,inert_puresolvmd,Solvent purification system,facility,cabinet.left_angle_rad,1.5,14,cabinet.door,True,0,0

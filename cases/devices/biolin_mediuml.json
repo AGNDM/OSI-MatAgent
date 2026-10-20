@@ -1,0 +1,548 @@
+{
+  "task_id": "device-biolin_mediuml",
+  "asset_id": "instrument.biolin_mediuml",
+  "title": "Langmuir / Langmuir–Blodgett trough: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "accept_engineering": true,
+          "temperature_k": 294.15,
+          "pressure_sensor_tau_s": 0.2,
+          "force_gain": 1.0,
+          "force_offset_n": 0.0,
+          "force_drift_n_s": 0.0,
+          "plate_width_m": 0.01952,
+          "plate_thickness_m": 0.0001,
+          "plate_mass_kg": 5e-05,
+          "plate_immersion_m": 0.0015,
+          "plate_contact_cosine": 1.0,
+          "controller_gain_m3_n_s": 0.2,
+          "leak_rate_s": 0.0,
+          "solvent_evaporation_rate_s": 2.0,
+          "solvent_density_kg_m3": 1480.0,
+          "solvent_latent_j_kg": 250000.0,
+          "isothermal_bath": true,
+          "safe_access_temperature_k": 313.15
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "mediuml_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "mediuml_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "subphase.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "solution.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "substrate.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.locked": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "balance.tared": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.control_enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "barrier.inward_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dipper.position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.release_m": {
+          "value": 0.003,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "barrier.target_area_m2": {
+          "value": 0.0273,
+          "unit": "m^2",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dipper.target_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.target_n_m": {
+          "value": 0.02,
+          "unit": "N/m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "area.indicated_m2": {
+          "value": 0.0273,
+          "unit": "m^2",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "subphase.level_delta_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.area_text": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.pressure_text": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_n_m": {
+          "value": null,
+          "unit": "N/m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "balance.force_n": {
+          "value": null,
+          "unit": "N",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.completed_strokes": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "mediuml_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "mediuml_01",
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "subphase.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "solution.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "substrate.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.locked": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "balance.tared": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.control_enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "barrier.inward_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dipper.position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "probe.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.release_m": {
+          "value": 0.003,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.angle_rad": {
+          "value": 0.28,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "barrier.target_area_m2": {
+          "value": 0.0273,
+          "unit": "m^2",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dipper.target_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.target_n_m": {
+          "value": 0.02,
+          "unit": "N/m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "area.indicated_m2": {
+          "value": 0.0273,
+          "unit": "m^2",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "subphase.level_delta_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.area_text": {
+          "value": "273.0",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "panel.pressure_text": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_n_m": {
+          "value": null,
+          "unit": "N/m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "balance.force_n": {
+          "value": 0.0004903325,
+          "unit": "N",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": 294.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.completed_strokes": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "pressure.control",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "mediuml_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "NOT_READY",
+          "message": "NOT_READY",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    },
+    {
+      "capability_id": "pressure.control",
+      "powered": true,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "mediuml_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 2,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "NOT_READY",
+          "message": "NOT_READY",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    }
+  ]
+}

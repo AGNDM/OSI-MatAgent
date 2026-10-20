@@ -1,0 +1,497 @@
+{
+  "task_id": "device-thalesnano_hcube",
+  "asset_id": "instrument.thalesnano_hcube",
+  "title": "Continuous-flow hydrogenation reactor: set water_lid.lift_m and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "water_lid.lift_m",
+    "equals": 0.03,
+    "unit": "m",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "water_lid.set_lift"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.05
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "hcube_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.05
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "solvent_id": "ethanol",
+          "fit_id": "1",
+          "cartridge_id": "catcart_001",
+          "cartridge_size": "70mm",
+          "external_pump_connected": true,
+          "materials_and_recipe_reviewed": true,
+          "pure_carrier_confirmed": true,
+          "pre_equilibrated": true,
+          "density_kg_m3": 790.0,
+          "viscosity_pa_s": 0.001,
+          "initial_temperature_k": 313.15,
+          "porosity": 0.4,
+          "particle_diameter_m": 0.0005,
+          "dead_volumes_m3": [
+            1e-08,
+            1e-08
+          ],
+          "feed_volume_m3": 2e-05,
+          "solvent_volume_m3": 2e-05,
+          "substrate_concentration_mol_m3": 100.0,
+          "henry_mol_m3_pa": 2e-05,
+          "kla_s_inv": 5.0,
+          "gas_drag_multiplier": 0.1,
+          "thermal_tau_s": 10.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "hcube_01",
+          "request_id": "fixture-1",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true,
+            "attachment_event": "host_attach:catcart_001"
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "hcube_01",
+          "request_id": "fixture-2",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 3,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.0
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "hcube_01",
+      "state_revision": 3,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water_lid.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "inlet.route": {
+          "value": "solvent",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "outlet.route": {
+          "value": "waste",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kinetics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.duration_s": {
+          "value": 4.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.target_m3_s": {
+          "value": 3.3333333333333334e-08,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "hydrogen.target_reference_m3_s": {
+          "value": 7e-07,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 313.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.target_abs_pa": {
+          "value": 4000000.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.indicated_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "hydrogen.indicated_reference_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_abs_pa": {
+          "value": 101325.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.product_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.waste_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "inlet.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "outlet.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "water_lid.set_lift",
+        "arguments": {
+          "lift_m": 0.03
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "hcube_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 4,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.03
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "hcube_01",
+      "state_revision": 4,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water_lid.lift_m": {
+          "value": 0.03,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "inlet.route": {
+          "value": "solvent",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "outlet.route": {
+          "value": "waste",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kinetics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.duration_s": {
+          "value": 4.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.target_m3_s": {
+          "value": 3.3333333333333334e-08,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "hydrogen.target_reference_m3_s": {
+          "value": 7e-07,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 313.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.target_abs_pa": {
+          "value": 4000000.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.indicated_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "hydrogen.indicated_reference_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_abs_pa": {
+          "value": 101325.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.product_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.waste_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "inlet.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "outlet.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

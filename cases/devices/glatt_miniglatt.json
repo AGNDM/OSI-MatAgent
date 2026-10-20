@@ -1,0 +1,655 @@
+{
+  "task_id": "device-glatt_miniglatt",
+  "asset_id": "instrument.glatt_miniglatt",
+  "title": "Fluid-bed granulator / coater: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "ambient_k": 298.15,
+          "pressure_pa": 101325.0,
+          "power_factor": 0.9,
+          "auxiliary_w": 200.0,
+          "heater_w": 2500.0,
+          "bed_area_m2": 0.00785,
+          "base_heat_capacity_j_k": 200.0,
+          "solid_cp_j_kg_k": 1400.0,
+          "water_cp_j_kg_k": 4180.0,
+          "latent_j_kg": 2400000.0,
+          "loss_w_k": 0.4,
+          "air_heat_efficiency": 0.65,
+          "drying_rate_s_inv": 0.006,
+          "water_capacity_kg_per_normal_m3": 0.02,
+          "entrainment_s_inv": 0.0002,
+          "filter_resistance_pa_per_kg": 100000.0,
+          "filter_trip_pa": 3000.0,
+          "blowback_efficiency": 0.85,
+          "atomizing_normal_m3_s": 0.0008333333333333334,
+          "pump_displacement_m3_rev": 1e-06,
+          "accept_uncalibrated_model": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "miniglatt_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "miniglatt_01",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "air.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heating.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.opened": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.cap_lift_m": {
+          "value": 0.12,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.cup_shift_m": {
+          "value": 0.16,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.clamp_angle_rad": {
+          "value": 1.2,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "mains.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "air.dial_rad": {
+          "value": 0.30000000000000004,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "spray.dial_rad": {
+          "value": 0.0875,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kit.micro": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.operation": {
+          "value": "granulation",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.spray_position": {
+          "value": "top",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.target_normal_m3_s": {
+          "value": 0.0033333333333333335,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.actual_normal_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.utility_normal_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 333.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.inlet_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.bed_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "spray.target_m3_s": {
+          "value": 5.833333333333333e-08,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "spray.actual_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bed.fluidized": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bed.pressure_drop_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "filter.pressure_drop_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bed.mean_diameter_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "filter.pulse_remaining_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.warning": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "miniglatt_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "miniglatt_01",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "air.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heating.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.opened": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.cap_lift_m": {
+          "value": 0.12,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.cup_shift_m": {
+          "value": 0.16,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "tower.clamp_angle_rad": {
+          "value": 1.2,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "mains.angle_rad": {
+          "value": 1.5707963267948966,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "air.dial_rad": {
+          "value": 0.30000000000000004,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "spray.dial_rad": {
+          "value": 0.0875,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kit.micro": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.operation": {
+          "value": "granulation",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.spray_position": {
+          "value": "top",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.target_normal_m3_s": {
+          "value": 0.0033333333333333335,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.actual_normal_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.utility_normal_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.target_k": {
+          "value": 333.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.inlet_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.bed_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "spray.target_m3_s": {
+          "value": 5.833333333333333e-08,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "spray.actual_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bed.fluidized": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bed.pressure_drop_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "filter.pressure_drop_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "bed.mean_diameter_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "filter.pulse_remaining_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "safety.warning": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "filter.clean",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "miniglatt_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "PRECONDITION_FAILED",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    },
+    {
+      "capability_id": "filter.clean",
+      "powered": true,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "miniglatt_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 2,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "PRECONDITION_FAILED",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    },
+    {
+      "capability_id": "thermal.set_temperature",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "miniglatt_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "PRECONDITION_FAILED",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    },
+    {
+      "capability_id": "thermal.set_temperature",
+      "powered": true,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "miniglatt_01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 2,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "PRECONDITION_FAILED",
+          "retryable": false,
+          "side_effects": "none"
+        }
+      }
+    }
+  ]
+}

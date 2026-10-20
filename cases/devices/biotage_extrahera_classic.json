@@ -1,0 +1,512 @@
+{
+  "task_id": "device-biotage_extrahera_classic",
+  "asset_id": "instrument.biotage_extrahera_classic",
+  "title": "Automated solid-phase extraction workstation: set manifold.z_m and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "manifold.z_m",
+    "equals": 0.0,
+    "unit": "m",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "manifold.set_position"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.target_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_pa": {
+          "value": null,
+          "unit": "Pa",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.format": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.cartridge_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.collection_plate": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.solvent_positions": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "utilities.vacuum_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "utilities.compressed_air_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "utilities.nitrogen_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.source_asset_type_id": {
+          "value": "instrument.vacuubrand_pc3001_vario_select",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.source_instance_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.completed_strokes": {
+          "value": 0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "operation.active_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "chemistry.recovery_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "gantry.x_m": {
+          "value": 0.22,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gantry.y_m": {
+          "value": 0.18,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gantry.z_m": {
+          "value": 0.17,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "manifold.z_m": {
+          "value": 0.05,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-power",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "manifold.set_position",
+        "arguments": {
+          "z_m": 0.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "z_m": 0.0
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.target_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_pa": {
+          "value": null,
+          "unit": "Pa",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.format": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.cartridge_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.collection_plate": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "deck.solvent_positions": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "utilities.vacuum_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "utilities.compressed_air_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "utilities.nitrogen_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.source_asset_type_id": {
+          "value": "instrument.vacuubrand_pc3001_vario_select",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.source_instance_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.completed_strokes": {
+          "value": 0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "operation.active_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "chemistry.recovery_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No implemented observation/model or explicit initialization for this quantity"
+        },
+        "gantry.x_m": {
+          "value": 0.22,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gantry.y_m": {
+          "value": 0.18,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gantry.z_m": {
+          "value": 0.17,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "manifold.z_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "pressure.set",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "device-01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 0,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "Configured deck, liquid, utility or motion condition is not satisfied",
+          "retryable": false,
+          "side_effects": "none",
+          "known_progress": null
+        }
+      }
+    },
+    {
+      "capability_id": "pressure.set",
+      "powered": true,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "device-01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "Configured deck, liquid, utility or motion condition is not satisfied",
+          "retryable": false,
+          "side_effects": "none",
+          "known_progress": null
+        }
+      }
+    },
+    {
+      "capability_id": "manifold.set_position",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "device-01",
+        "request_id": "reference-target",
+        "operation_id": null,
+        "status": "rejected",
+        "state_revision": 0,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "Configured deck, liquid, utility or motion condition is not satisfied",
+          "retryable": false,
+          "side_effects": "none",
+          "known_progress": null
+        }
+      }
+    }
+  ]
+}

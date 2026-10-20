@@ -1,0 +1,423 @@
+{
+  "task_id": "device-elementar_isoprimeprecision",
+  "asset_id": "instrument.elementar_isoprimeprecision",
+  "title": "Stable isotope-ratio mass spectrometer: set power.on and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.on",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "ambient_k": 295.15,
+          "pressure_pa": 101325.0,
+          "he_supply_gauge_pa": 20000000.0,
+          "inlets": [
+            "ea",
+            "gc",
+            null,
+            null,
+            "dual_inlet"
+          ],
+          "reference_gases": [
+            {
+              "species": "CO2",
+              "deltas": {
+                "13C": -0.0367,
+                "18O": 0.0251
+              }
+            },
+            {
+              "species": "N2",
+              "deltas": {
+                "15N": -0.0012
+              }
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          "combustion_o2_delta18o": 0.0235,
+          "vented": false,
+          "noise_seed": 1
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "elementar_isoprimeprecision_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "elementar_isoprimeprecision_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "status.led": {
+          "value": "off",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.pressure_pa": {
+          "value": null,
+          "unit": "Pa",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.state": {
+          "value": "off",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "source.state": {
+          "value": {
+            "filament": false,
+            "emission_a": 0.0004,
+            "acceleration_v": 3000.0,
+            "filament_hours": 0.0,
+            "filament_failed": false,
+            "fault_active": false
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "magnet.state": {
+          "value": {
+            "species": null,
+            "field_t": 0.0,
+            "masses": []
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "amplifier.state": {
+          "value": {
+            "mode": "auto",
+            "resistors_ohm": {}
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "beams.v": {
+          "value": {},
+          "unit": "V",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "centrion.state": {
+          "value": {
+            "inlet": 1,
+            "inlet_type": "ea",
+            "carrier_on": false,
+            "carrier_m3_s": 1.67e-06,
+            "dilution": 0.0,
+            "sleep": false,
+            "assigned": {}
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.state": {
+          "value": {},
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "results.count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.state": {
+          "value": {
+            "normalization": {},
+            "h3_factor_ppm_na": 0.0
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "hood.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.led_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.led_amber": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.led_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "on": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "elementar_isoprimeprecision_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "on": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "elementar_isoprimeprecision_01",
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "status.led": {
+          "value": "red",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.pressure_pa": {
+          "value": null,
+          "unit": "Pa",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "vacuum.state": {
+          "value": "pumping",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "source.state": {
+          "value": {
+            "filament": false,
+            "emission_a": 0.0004,
+            "acceleration_v": 3000.0,
+            "filament_hours": 0.0,
+            "filament_failed": false,
+            "fault_active": false
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "magnet.state": {
+          "value": {
+            "species": null,
+            "field_t": 0.0,
+            "masses": []
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "amplifier.state": {
+          "value": {
+            "mode": "auto",
+            "resistors_ohm": {}
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "beams.v": {
+          "value": {},
+          "unit": "V",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "centrion.state": {
+          "value": {
+            "inlet": 1,
+            "inlet_type": "ea",
+            "carrier_on": false,
+            "carrier_m3_s": 1.67e-06,
+            "dilution": 0.0,
+            "sleep": false,
+            "assigned": {}
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "acquisition.state": {
+          "value": {},
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "results.count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "calibration.state": {
+          "value": {
+            "normalization": {},
+            "h3_factor_ppm_na": 0.0
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "hood.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.led_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.led_amber": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "indicator.led_red": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

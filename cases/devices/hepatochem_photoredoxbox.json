@@ -1,0 +1,365 @@
+{
+  "task_id": "device-hepatochem_photoredoxbox",
+  "asset_id": "instrument.hepatochem_photoredoxbox",
+  "title": "Photochemical reactor: set stir.target_rad_s and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "stir.target_rad_s",
+    "equals": 62.83185307179586,
+    "unit": "rad/s",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "stir.set_speed"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "photoredoxbox_01",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stir.target_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "rack.mode": {
+          "value": "8x4ml",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.loaded_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.source_wavelengths_m": {
+          "value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.intensities": {
+          "value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stir.actual_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "fan.fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.duration_s": {
+          "value": 2.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.emitted_energy_j": {
+          "value": 0.0,
+          "unit": "J",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        },
+        "optics.incident_energy_j": {
+          "value": 0.0,
+          "unit": "J",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "stir.set_speed",
+        "arguments": {
+          "speed_rad_s": 62.83185307179586
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "photoredoxbox_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "speed_rad_s": 62.83185307179586
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "photoredoxbox_01",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stir.target_rad_s": {
+          "value": 62.83185307179586,
+          "unit": "rad/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "rack.mode": {
+          "value": "8x4ml",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.loaded_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "thermal.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.source_wavelengths_m": {
+          "value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.intensities": {
+          "value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "stir.actual_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "fan.fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.duration_s": {
+          "value": 2.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "optics.emitted_energy_j": {
+          "value": 0.0,
+          "unit": "J",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        },
+        "optics.incident_energy_j": {
+          "value": 0.0,
+          "unit": "J",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

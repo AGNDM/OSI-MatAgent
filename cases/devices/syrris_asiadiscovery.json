@@ -1,0 +1,500 @@
+{
+  "task_id": "device-syrris_asiadiscovery",
+  "asset_id": "instrument.syrris_asiadiscovery",
+  "title": "Continuous-flow chemistry system: set temperature.target_k and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "temperature.target_k",
+    "equals": 303.15,
+    "unit": "K",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "temperature.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.04
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "asiadiscovery_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.04
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "substance_id": "methanol",
+          "fit_id": "1",
+          "chip_volume_m3": 2.5e-07,
+          "density_kg_m3": 790.0,
+          "initial_temperature_k": 298.15,
+          "pure_liquid_confirmed": true,
+          "pre_equilibrated": true,
+          "low_temperature_available": false,
+          "reservoir_volumes_m3": [
+            2e-05,
+            2e-05
+          ],
+          "loop_volumes_m3": [
+            1e-06,
+            1e-06
+          ],
+          "loop_concentrations_mol_m3": [
+            1.0,
+            2.0
+          ],
+          "dead_volumes_m3": [
+            1e-08,
+            1e-08,
+            1e-08
+          ],
+          "branch_resistance_pa_s_m3": [
+            100000000000.0,
+            100000000000.0
+          ],
+          "common_resistance_pa_s_m3": 100000000000.0,
+          "thermal_tau_s": 10.0,
+          "gas_supply_pa": 2500000.0,
+          "syringes": [
+            "red",
+            "red"
+          ],
+          "container_ids": [
+            "feed_A",
+            "feed_B"
+          ],
+          "chip_id": "glass250"
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "asiadiscovery_01",
+          "request_id": "fixture-1",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true,
+            "attachment_events": [
+              "host_attach:feed_A",
+              "host_attach:feed_B",
+              "host_attach:glass250"
+            ]
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "asiadiscovery_01",
+          "request_id": "fixture-2",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 3,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.0
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "asiadiscovery_01",
+      "state_revision": 3,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.backpressure_pa": {
+          "value": 200000.0,
+          "unit": "Pa",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.volume_m3": {
+          "value": 2.5e-07,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.duration_s": {
+          "value": 4.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.targets_m3_s": {
+          "value": [
+            8.333333333333334e-08,
+            8.333333333333334e-08
+          ],
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.actual_m3_s": {
+          "value": [
+            0.0,
+            0.0
+          ],
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_pa": {
+          "value": [
+            0.0,
+            0.0
+          ],
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.vapor_pa": {
+          "value": 16938.450392599163,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.vapor_margin_pa": {
+          "value": 284386.54960740084,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.total_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.waste_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collector.x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collector.y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "injection.valves": {
+          "value": [
+            false,
+            false
+          ],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "temperature.set",
+        "arguments": {
+          "target_k": 303.15
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "asiadiscovery_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 4,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "target_k": 303.15
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "asiadiscovery_01",
+      "state_revision": 4,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 303.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.backpressure_pa": {
+          "value": 200000.0,
+          "unit": "Pa",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.volume_m3": {
+          "value": 2.5e-07,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.duration_s": {
+          "value": 4.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.targets_m3_s": {
+          "value": [
+            8.333333333333334e-08,
+            8.333333333333334e-08
+          ],
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.actual_m3_s": {
+          "value": [
+            0.0,
+            0.0
+          ],
+          "unit": "m^3/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.indicated_pa": {
+          "value": [
+            0.0,
+            0.0
+          ],
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.vapor_pa": {
+          "value": 16938.450392599163,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pressure.vapor_margin_pa": {
+          "value": 284386.54960740084,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.total_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collection.waste_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collector.x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "collector.y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "injection.valves": {
+          "value": [
+            false,
+            false
+          ],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

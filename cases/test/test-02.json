@@ -1,0 +1,9 @@
+{
+  "seed": 13,
+  "initial_liquid_kg": 0.003,
+  "initial_setpoint_k": 323.15,
+  "target_temperature_k": 383.15,
+  "family": "process",
+  "position": "rear_right",
+  "case_id": "test-02"
+}

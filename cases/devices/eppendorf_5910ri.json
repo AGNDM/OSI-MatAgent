@@ -1,0 +1,392 @@
+{
+  "task_id": "device-eppendorf_5910ri",
+  "asset_id": "instrument.eppendorf_5910ri",
+  "title": "Refrigerated multipurpose centrifuge: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.locked": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "rotor.configuration": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "rotor.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.loaded_slots": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.occupied_slots": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.speed_rad_s": {
+          "value": null,
+          "unit": "rad/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.duration_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.acceleration_level": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.braking_level": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "display.speed_rad_s": {
+          "value": null,
+          "unit": "rad/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "display.temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "alarm.imbalance": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "run.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "run.operation_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "run.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.curve": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lid.locked": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "rotor.configuration": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "rotor.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.loaded_slots": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.occupied_slots": {
+          "value": [],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.speed_rad_s": {
+          "value": null,
+          "unit": "rad/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.duration_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.acceleration_level": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "method.braking_level": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "display.speed_rad_s": {
+          "value": null,
+          "unit": "rad/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "display.temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "alarm.imbalance": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "run.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "run.operation_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        },
+        "run.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.curve": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Not configured, not loaded or not yet acquired"
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

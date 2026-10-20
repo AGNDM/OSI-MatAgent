@@ -1,0 +1,486 @@
+{
+  "task_id": "device-camag_tlcscanner",
+  "asset_id": "instrument.camag_tlcscanner",
+  "title": "TLC scanner (densitometer): set door.target_open and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "door.target_open",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "door.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "lamp_warmup_s": 300.0,
+          "noise_au": 0.0002,
+          "plate_factor": 4.0,
+          "saturation_au": 0.8,
+          "spot_sigma0_m": 0.001,
+          "spot_broadening_m": 2e-05,
+          "band_edge_sigma_m": 0.0005,
+          "f254_background": 1.0,
+          "door_speed_m_s": 0.25,
+          "seed": 92,
+          "accept_synthetic_response": false,
+          "accept_uncalibrated_model": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "tlcscanner_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "tlcscanner_01",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "host.online": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "door.target_open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "door.position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "door.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "stage.x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.target_x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.target_y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.moving": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "stage.at_load": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "stage.inside": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "plate.loaded": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "plate.x_m": {
+          "value": 0.2,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "plate.y_m": {
+          "value": 0.2,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "illumination.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "lamp.source": {
+          "value": "none",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "lamp.on_time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "lamp.ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "nitrogen.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "method.mode": {
+          "value": "none",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "method.bandwidth_m": {
+          "value": null,
+          "unit": "m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0
+        },
+        "monochromator.wavelength_m": {
+          "value": 2.54e-07,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.operation": {
+          "value": "none",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.track_index": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0
+        },
+        "scan.completed_points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.signal": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0
+        },
+        "safety.warning": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "door.set",
+        "arguments": {
+          "opened": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "tlcscanner_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "target_open": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "tlcscanner_01",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "host.online": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "door.target_open": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "door.position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "door.closed": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "stage.x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.target_x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.target_y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "stage.moving": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "stage.at_load": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "stage.inside": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "plate.loaded": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "plate.x_m": {
+          "value": 0.2,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "plate.y_m": {
+          "value": 0.2,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "illumination.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "lamp.source": {
+          "value": "none",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "lamp.on_time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "lamp.ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "nitrogen.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "method.mode": {
+          "value": "none",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0
+        },
+        "method.bandwidth_m": {
+          "value": null,
+          "unit": "m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0
+        },
+        "monochromator.wavelength_m": {
+          "value": 2.54e-07,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.operation": {
+          "value": "none",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.track_index": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0
+        },
+        "scan.completed_points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        },
+        "scan.signal": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0
+        },
+        "safety.warning": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/mbzuai-nlp/ChemLab-Assets",
+  "revision": "123cf78593469871e41b8dbd63a11dfb7c5ca251",
+  "sha256": {
+    "scripts/asset_runtime/__init__.py": "0143ca66bfe451484cebd1fbdabf12de8b7499bf747257f5ae18f5672548d462",
+    "scripts/asset_runtime/_annotations.py": "0c88b91ac1914c6da176a202ae5cbd993fd86b51a4374369d1f7d6d22150ff4e",
+    "scripts/asset_runtime/binder_fd056.py": "0901bccc2f8fd62f6d536f4622054f01d4abc4ac374bfa7a2d68c2ad8e8bacf8",
+    "scripts/asset_runtime/esco_efa5uduvw.py": "08cfda8c90fb0045e7542137adbb83cb378473ed4a2a67356db7ea1cbdffc622",
+    "tests/test_asset_binder_fd056.py": "a9c6a623e74830778d76c72995a3b615bb0916b3caf4a3478abd08425a853000",
+    "tests/test_asset_esco_efa5uduvw.py": "9e0414c98dcde804e4f86226b18581ebc1406d75d79f3596cdd8c2969b62f34e",
+    "examples/quickstart_fume_hood.py": "242f8e57f6d8f80bc72fc5f4ed36338840ac75cd32e532c76c0ae5a353c93075",
+    "LICENSE": "f9db67b0ff46c0230cda5a1a8ab6238cf3efb3bfbae9c5d1de81def2b123f89b",
+    "LICENSE-ASSETS.md": "b9c2481ed61d7d2694d52978d7477db2362a33b6485248bcffdbe1993d5c9fa5",
+    "NOTICE.md": "f06d533d667f9a802d110e5027146ac8c8d0010b413b2b9ea0ec7f27cadda89b",
+    "skills/chemistry-lab-assets/references/protocol.md": "ac9b2d3729139f2f4c5b14f31d608337fb9b75b68876e3cfc925ed669be7c139",
+    "assets/expansion_batch05/t4_measure/binder_fd056/instrument_model.json": "0da893ba70c36c4c91f3279968be1198c0bfafa39774495458f68428410fc403",
+    "assets/expansion_batch05/t4_measure/binder_fd056/load_templates.json": "4173fce5f312e784cc8cc86176bd863f8bd529c3cb2a1838b69bbad31cee1904",
+    "assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/instrument_model.json": "e3524b9ca08671d26c501536cf12cc30ac8592bebd7bb1e9a88952d9de5c704f",
+    "assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/vapour_templates.json": "92b558b1cbbd7d44ea58fd74afbe5d109749b80b05aff03ee95d3533ae01bcfd"
+  },
+  "dataset": "https://huggingface.co/datasets/MBZUAI/ChemLab-Assets",
+  "dataset_revision": "4ca4a42dab2ca0a884e449d202e9ad96625d5648",
+  "scope": "Selected unmodified Python runtimes and four instrument JSON files; no geometry"
+}

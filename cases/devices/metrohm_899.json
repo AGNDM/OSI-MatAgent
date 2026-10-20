@@ -1,0 +1,412 @@
+{
+  "task_id": "device-metrohm_899",
+  "asset_id": "instrument.metrohm_899",
+  "title": "Karl Fischer coulometer: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "coulometry.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "coulometry.status": {
+          "value": "OFF",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reagent.ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null
+        },
+        "measurement.charge_c": {
+          "value": 0.0,
+          "unit": "C",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null
+        },
+        "measurement.water_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "measurement.water_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "measurement.drift_kg_s": {
+          "value": null,
+          "unit": "kg/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "endpoint.hold_elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.current_a": {
+          "value": 0.1,
+          "unit": "A",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.drift_compensation_kg_s": {
+          "value": null,
+          "unit": "kg/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "settings.start_drift_threshold_kg_s": {
+          "value": 3.333333333333333e-10,
+          "unit": "kg/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.extraction_time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.stirring_level": {
+          "value": 8,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.sample_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "settings.endpoint_hold_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "slot.cell.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "slot.generator.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "slot.indicator.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "coulometry.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "coulometry.status": {
+          "value": "IDLE",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sample.present": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reagent.ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null
+        },
+        "measurement.charge_c": {
+          "value": 0.0,
+          "unit": "C",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null
+        },
+        "measurement.water_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "measurement.water_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "measurement.drift_kg_s": {
+          "value": null,
+          "unit": "kg/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "endpoint.hold_elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.current_a": {
+          "value": 0.1,
+          "unit": "A",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.drift_compensation_kg_s": {
+          "value": null,
+          "unit": "kg/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "settings.start_drift_threshold_kg_s": {
+          "value": 3.333333333333333e-10,
+          "unit": "kg/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.extraction_time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.stirring_level": {
+          "value": 8,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "settings.sample_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "settings.endpoint_hold_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No configured or acquired synthetic value"
+        },
+        "slot.cell.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "slot.generator.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "slot.indicator.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

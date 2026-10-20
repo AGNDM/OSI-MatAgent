@@ -1,0 +1,85 @@
+{
+  "catalog_count": 203,
+  "native_session_count": 198,
+  "verified_task_count": 194,
+  "unaccepted_count": 9,
+  "phases": {
+    "device-expansion-offline-v2": {
+      "attempts": 194,
+      "success": 194,
+      "tokens": 0,
+      "false_success": 0,
+      "gate_rejections": 0,
+      "role_errors": 0,
+      "router_calls": 1018,
+      "router_fallbacks": 0
+    },
+    "device-expansion-deepseek-pilot-v1": {
+      "attempts": 3,
+      "success": 0,
+      "tokens": 53232,
+      "false_success": 0,
+      "gate_rejections": 0,
+      "role_errors": 3,
+      "router_calls": 36,
+      "router_fallbacks": 0
+    },
+    "device-expansion-deepseek-pilot-v2": {
+      "attempts": 3,
+      "success": 2,
+      "tokens": 42929,
+      "false_success": 0,
+      "gate_rejections": 2,
+      "role_errors": 3,
+      "router_calls": 26,
+      "router_fallbacks": 0
+    },
+    "device-expansion-deepseek-domains-v1": {
+      "attempts": 20,
+      "success": 20,
+      "tokens": 199969,
+      "false_success": 0,
+      "gate_rejections": 0,
+      "role_errors": 9,
+      "router_calls": 122,
+      "router_fallbacks": 0
+    },
+    "device-expansion-openjev-wiring-v1": {
+      "attempts": 3,
+      "success": 3,
+      "tokens": 0,
+      "false_success": 0,
+      "gate_rejections": 0,
+      "role_errors": 0,
+      "router_calls": 15,
+      "router_fallbacks": 0
+    },
+    "device-expansion-deepseek-openjev-v1": {
+      "attempts": 2,
+      "success": 2,
+      "tokens": 14892,
+      "false_success": 0,
+      "gate_rejections": 0,
+      "role_errors": 1,
+      "router_calls": 10,
+      "router_fallbacks": 0
+    }
+  },
+  "budget": {
+    "limit": 5000000,
+    "reported_tokens": 311022,
+    "charged_tokens": 311022,
+    "remaining_tokens": 4688978,
+    "requests_reserved": 206,
+    "requests_settled": 206,
+    "unmetered_requests": 0,
+    "inflight_or_crashed": 0,
+    "accounting_violation": false
+  },
+  "scope": "Native control/interface integration; not scientific benchmark or multi-device sample flow",
+  "verification": {
+    "project_tests_passed": 73,
+    "vendor_hashes_verified": 570,
+    "vendor_hash_mismatches": 0
+  }
+}

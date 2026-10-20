@@ -1,0 +1,10 @@
+{
+  "seed": 15,
+  "initial_liquid_kg": 0.0,
+  "initial_setpoint_k": 378.15,
+  "target_temperature_k": 378.15,
+  "family": "measurement",
+  "balance_offset_kg": 0.003,
+  "dry_mass_kg": 0.008,
+  "case_id": "test-04"
+}

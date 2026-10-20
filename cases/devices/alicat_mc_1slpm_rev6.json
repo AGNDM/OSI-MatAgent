@@ -1,0 +1,334 @@
+{
+  "task_id": "device-alicat_mc_1slpm_rev6",
+  "asset_id": "instrument.alicat_mc_1slpm_rev6",
+  "title": "Gas mass-flow controller: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.selected_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "gas.reference_temperature_K": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.reference_pressure_Pa": {
+          "value": 101325.0,
+          "unit": "Pa",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.setpoint_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.zeroed": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "ports.upstream_node_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "ports.downstream_node_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "simulation.dynamic_model_configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.standard_flow_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.actual_flow_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.mass_flow_kg_s": {
+          "value": null,
+          "unit": "kg/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.pressure_Pa": {
+          "value": null,
+          "unit": "Pa",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.temperature_K": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.total_standard_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.standard_accuracy_bound_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.accuracy_conditions_met": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "power.enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.selected_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "gas.reference_temperature_K": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.reference_pressure_Pa": {
+          "value": 101325.0,
+          "unit": "Pa",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.setpoint_m3_s": {
+          "value": 0.0,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flow.zeroed": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "ports.upstream_node_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "ports.downstream_node_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "simulation.dynamic_model_configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.standard_flow_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.actual_flow_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.mass_flow_kg_s": {
+          "value": null,
+          "unit": "kg/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.pressure_Pa": {
+          "value": null,
+          "unit": "Pa",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.temperature_K": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.total_standard_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.standard_accuracy_bound_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Required configuration, supported process model or property evidence is unavailable."
+        },
+        "measurement.accuracy_conditions_met": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

@@ -1,0 +1,33 @@
+# Local environments, caches and credentials
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.agents/
+.codex/
+.aws/
+
+# Generated experiments and the persistent API budget ledger stay local.
+# Do not delete the ledger to reset the current debugging allowance.
+/results/*
+!/results/.gitkeep
+
+# Local Chinese notes and historical review documents
+*.zh.md
+/reviews/
+/OSI-hack.md
+/web/web.md
+/cases/devices/devices.md
+
+# Restore the exact upstream code/data with tools/fetch_device_runtime.py.
+# Keep provenance, licenses and attribution in Git; exclude the download cache.
+/vendor/chemlab/*
+!/vendor/chemlab/manifest.json
+!/vendor/chemlab/expansion-code-manifest.json
+!/vendor/chemlab/expansion-data-manifest.json
+!/vendor/chemlab/LICENSE
+!/vendor/chemlab/LICENSE-ASSETS.md
+!/vendor/chemlab/NOTICE.md

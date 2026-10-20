@@ -1,0 +1,436 @@
+{
+  "task_id": "device-gamry_reference620",
+  "asset_id": "instrument.gamry_reference620",
+  "title": "Potentiostat / electrochemical workstation: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "slot.working_electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "slot.reference_electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "slot.counter_electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "slot.cell.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "waveform.program": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "显式离散命令程序；电位与电流互斥；采样间隔须不小于表列最小时间基准。",
+          "synthetic": false
+        },
+        "waveform.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "waveform.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "waveform.sample_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "waveform.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "output.commanded_potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "当前合成电位命令；停止或使用电流模式时为null。",
+          "synthetic": true
+        },
+        "output.commanded_current_a": {
+          "value": null,
+          "unit": "A",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "当前合成电流命令；停止或使用电位模式时为null。",
+          "synthetic": true
+        },
+        "acquisition.series": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "acquisition.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未接入真实电位传感器；无响应模型。",
+          "synthetic": false
+        },
+        "measurement.current_a": {
+          "value": null,
+          "unit": "A",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未接入真实电流传感器；无响应模型。",
+          "synthetic": false
+        },
+        "method.scan_rate_v_s": {
+          "value": null,
+          "unit": "V/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未配置连续扫描速率；本批仅显式离散程序。",
+          "synthetic": false
+        },
+        "method.frequency_hz": {
+          "value": null,
+          "unit": "Hz",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未配置EIS频率；EIS执行不支持。",
+          "synthetic": false
+        },
+        "method.amplitude_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未配置EIS振幅；无虚构默认值。",
+          "synthetic": false
+        },
+        "method.ir_compensation_ohm": {
+          "value": null,
+          "unit": "ohm",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未提供iR补偿参数，保持未知。",
+          "synthetic": false
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "slot.working_electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "slot.reference_electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "slot.counter_electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "slot.cell.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "宿主场景连接槽的逻辑引用；null表示未连接，不证明接触或机器人接线已完成。",
+          "synthetic": false
+        },
+        "waveform.program": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "显式离散命令程序；电位与电流互斥；采样间隔须不小于表列最小时间基准。",
+          "synthetic": false
+        },
+        "waveform.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "waveform.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "waveform.sample_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "waveform.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "output.commanded_potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "当前合成电位命令；停止或使用电流模式时为null。",
+          "synthetic": true
+        },
+        "output.commanded_current_a": {
+          "value": null,
+          "unit": "A",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "当前合成电流命令；停止或使用电位模式时为null。",
+          "synthetic": true
+        },
+        "acquisition.series": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "acquisition.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未接入真实电位传感器；无响应模型。",
+          "synthetic": false
+        },
+        "measurement.current_a": {
+          "value": null,
+          "unit": "A",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未接入真实电流传感器；无响应模型。",
+          "synthetic": false
+        },
+        "method.scan_rate_v_s": {
+          "value": null,
+          "unit": "V/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未配置连续扫描速率；本批仅显式离散程序。",
+          "synthetic": false
+        },
+        "method.frequency_hz": {
+          "value": null,
+          "unit": "Hz",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未配置EIS频率；EIS执行不支持。",
+          "synthetic": false
+        },
+        "method.amplitude_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未配置EIS振幅；无虚构默认值。",
+          "synthetic": false
+        },
+        "method.ir_compensation_ohm": {
+          "value": null,
+          "unit": "ohm",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "未提供iR补偿参数，保持未知。",
+          "synthetic": false
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

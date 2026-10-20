@@ -1,0 +1,599 @@
+{
+  "task_id": "device-metrohm_omnis",
+  "asset_id": "instrument.metrohm_omnis",
+  "title": "Automatic potentiometric titrator: set stirring.angular_speed_rad_s and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "stirring.angular_speed_rad_s",
+    "equals": 10,
+    "unit": "rad/s",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "stirring.set_speed"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slot.electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "slot.titration_cell.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.cylinder_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.quantum_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.rate_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.delivered_volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "dosing.piston_fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "stirring.angular_speed_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "stirring.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titrant.concentration_mol_m3": {
+          "value": null,
+          "unit": "mol/m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.mode": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.dose_increment_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.maximum_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.endpoint_potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "stability.hold_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "stability.tolerance_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "stability.stable": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "measurement.ph": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.curve": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.endpoint_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "titration.content_mol_m3": {
+          "value": null,
+          "unit": "mol/m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "display.text": {
+          "value": "OFF",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "stirring.set_speed",
+        "arguments": {
+          "angular_speed_rad_s": 10
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "angular_speed_rad_s": 10
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slot.electrode.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "slot.titration_cell.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.cylinder_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.quantum_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.rate_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "dosing.delivered_volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "dosing.piston_fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "stirring.angular_speed_rad_s": {
+          "value": 10,
+          "unit": "rad/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "stirring.angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titrant.concentration_mol_m3": {
+          "value": null,
+          "unit": "mol/m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.mode": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.dose_increment_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.maximum_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "method.endpoint_potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "stability.hold_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "stability.tolerance_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No configured value or available synthetic result."
+        },
+        "stability.stable": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "measurement.ph": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.curve": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "titration.endpoint_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "titration.content_mol_m3": {
+          "value": null,
+          "unit": "mol/m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No configured value or available synthetic result."
+        },
+        "display.text": {
+          "value": "OFF",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

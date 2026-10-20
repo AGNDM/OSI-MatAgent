@@ -1,0 +1,9 @@
+{
+  "seed": 17,
+  "initial_liquid_kg": 0.0,
+  "initial_setpoint_k": 383.15,
+  "target_temperature_k": 383.15,
+  "family": "acceptable",
+  "dry_mass_kg": 0.009,
+  "case_id": "test-06"
+}

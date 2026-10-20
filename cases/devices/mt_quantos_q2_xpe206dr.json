@@ -1,0 +1,389 @@
+{
+  "task_id": "device-mt_quantos_q2_xpe206dr",
+  "asset_id": "instrument.mt_quantos_q2_xpe206dr",
+  "title": "Automated powder dosing system: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "status": "succeeded",
+      "operation_id": null,
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.target_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "dosing.tolerance_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "head.selected_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "head.loaded_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "container.position_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "container.loaded_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "container.attachment_constraint_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "scene.door_opening_m": {
+          "value": null,
+          "unit": "m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "balance.tared": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.balance_net_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "measurement.actual_dosed_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "measurement.error_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "measurement.out_of_tolerance": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "dosing.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "simulation.rate_configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "status": "succeeded",
+          "operation_id": null,
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "power.enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "status": "succeeded",
+      "operation_id": null,
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.target_mass_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "dosing.tolerance_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "head.selected_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "head.loaded_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "container.position_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "container.loaded_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "container.attachment_constraint_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "scene.door_opening_m": {
+          "value": null,
+          "unit": "m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "balance.tared": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "measurement.balance_net_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "measurement.actual_dosed_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "measurement.error_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "measurement.out_of_tolerance": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "Explicit configuration, placement, balance tare or current powered observation is unavailable."
+        },
+        "dosing.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "dosing.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "simulation.rate_configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": [
+    {
+      "capability_id": "container.select_position",
+      "powered": false,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "device-01",
+        "request_id": "reference-target",
+        "status": "rejected",
+        "operation_id": null,
+        "state_revision": 0,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "Request does not satisfy declared access, input or operating conditions.",
+          "retryable": false,
+          "side_effects": "none",
+          "progress": null
+        }
+      }
+    },
+    {
+      "capability_id": "container.select_position",
+      "powered": true,
+      "response": {
+        "protocol_version": "1.0.0",
+        "instance_id": "device-01",
+        "request_id": "reference-target",
+        "status": "rejected",
+        "operation_id": null,
+        "state_revision": 1,
+        "clock": {
+          "domain": "simulation",
+          "time_s": 0.0
+        },
+        "result": {},
+        "observations": {},
+        "error": {
+          "code": "PRECONDITION_FAILED",
+          "message": "Request does not satisfy declared access, input or operating conditions.",
+          "retryable": false,
+          "side_effects": "none",
+          "progress": null
+        }
+      }
+    }
+  ]
+}

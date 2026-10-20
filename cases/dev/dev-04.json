@@ -1,0 +1,9 @@
+{
+  "seed": 15,
+  "initial_liquid_kg": 0.0,
+  "initial_setpoint_k": 378.15,
+  "target_temperature_k": 378.15,
+  "family": "insufficient",
+  "balance_available": false,
+  "case_id": "dev-04"
+}

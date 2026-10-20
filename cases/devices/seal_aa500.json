@@ -1,0 +1,700 @@
+{
+  "task_id": "device-seal_aa500",
+  "asset_id": "instrument.seal_aa500",
+  "title": "Segmented continuous-flow analyzer: set power.on and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.on",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "pump.lid_set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "room_k": 295.15,
+          "mains_voltage_v": 230.0,
+          "noise_seed": 1
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "seal_aa500_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "seal_aa500_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "system.state": {
+          "value": "off",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.speed": {
+          "value": "normal",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.platen_engaged": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.platen_position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.rotor_velocity_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.lid_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lamp.power": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch1_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch2_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch3_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch4_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "channels.status": {
+          "value": {
+            "ch1": {
+              "method_id": "MT508_A026_nitrate_nitrite",
+              "chemistry": "nitrate_nitrite",
+              "seal_method": "A026",
+              "valve": "wash",
+              "led_wavelength_m": 5.4e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A026_nitrate_nitrite",
+              "sample_fraction": 0.09019607843137255,
+              "range_kg_m3": [
+                0.0,
+                0.0028
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "N",
+              "result_basis": "N"
+            },
+            "ch2": {
+              "method_id": "MT508_A025_ammonia",
+              "chemistry": "ammonia",
+              "seal_method": "A025",
+              "valve": "wash",
+              "led_wavelength_m": 6.6e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A025_ammonia",
+              "sample_fraction": 0.09345794392523364,
+              "range_kg_m3": [
+                0.0,
+                0.006
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "N",
+              "result_basis": "N"
+            },
+            "ch3": {
+              "method_id": "MT508_A029_phosphate",
+              "chemistry": "phosphate",
+              "seal_method": "A029",
+              "valve": "wash",
+              "led_wavelength_m": 8.8e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A029_phosphate",
+              "sample_fraction": 0.1409691629955947,
+              "range_kg_m3": [
+                0.0,
+                0.008
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "P",
+              "result_basis": "P"
+            },
+            "ch4": {
+              "method_id": "MT508_A030_silicate",
+              "chemistry": "silicate",
+              "seal_method": "A030",
+              "valve": "wash",
+              "led_wavelength_m": 8.2e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A030_silicate",
+              "sample_fraction": 0.04201680672268907,
+              "range_kg_m3": [
+                0.0,
+                0.06
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "SiO2",
+              "result_basis": "Si"
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "baths.temperature_k": {
+          "value": {
+            "ch2": null,
+            "ch3": null
+          },
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "detector.absorbance": {
+          "value": {
+            "ch1": null,
+            "ch2": null,
+            "ch3": null,
+            "ch4": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reagents.levels_m3": {
+          "value": {
+            "ch1": {
+              "imidazole_buffer": 0.0,
+              "colour_reagent": 0.0
+            },
+            "ch2": {
+              "complexing_reagent": 0.0,
+              "alkaline_phenol": 0.0,
+              "hypochlorite_nitroprusside": 0.0
+            },
+            "ch3": {
+              "molybdate_antimony": 0.0,
+              "ascorbic_acid": 0.0
+            },
+            "ch4": {
+              "molybdate": 0.0,
+              "oxalic_acid": 0.0,
+              "ascorbic_acid": 0.0
+            }
+          },
+          "unit": "m3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.contents": {
+          "value": {},
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.probe_x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.probe_y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.probe_z_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "run.status": {
+          "value": {
+            "run_id": null,
+            "state": "none",
+            "cups": 0,
+            "completed": 0,
+            "current_cup": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "samples.available": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "warnings.active": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "on": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "seal_aa500_01",
+          "request_id": "reference-power",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "on": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "pump.lid_set",
+        "arguments": {
+          "open": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "seal_aa500_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 3,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "open": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "seal_aa500_01",
+      "status": "succeeded",
+      "state_revision": 3,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "power.on": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "system.state": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.speed": {
+          "value": "normal",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.platen_engaged": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.platen_position_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.rotor_velocity_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.lid_angle_rad": {
+          "value": 1.2,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lamp.power": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch1_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch2_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch3_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.ch4_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "channels.status": {
+          "value": {
+            "ch1": {
+              "method_id": "MT508_A026_nitrate_nitrite",
+              "chemistry": "nitrate_nitrite",
+              "seal_method": "A026",
+              "valve": "wash",
+              "led_wavelength_m": 5.4e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A026_nitrate_nitrite",
+              "sample_fraction": 0.09019607843137255,
+              "range_kg_m3": [
+                0.0,
+                0.0028
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "N",
+              "result_basis": "N"
+            },
+            "ch2": {
+              "method_id": "MT508_A025_ammonia",
+              "chemistry": "ammonia",
+              "seal_method": "A025",
+              "valve": "wash",
+              "led_wavelength_m": 6.6e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A025_ammonia",
+              "sample_fraction": 0.09345794392523364,
+              "range_kg_m3": [
+                0.0,
+                0.006
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "N",
+              "result_basis": "N"
+            },
+            "ch3": {
+              "method_id": "MT508_A029_phosphate",
+              "chemistry": "phosphate",
+              "seal_method": "A029",
+              "valve": "wash",
+              "led_wavelength_m": 8.8e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A029_phosphate",
+              "sample_fraction": 0.1409691629955947,
+              "range_kg_m3": [
+                0.0,
+                0.008
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "P",
+              "result_basis": "P"
+            },
+            "ch4": {
+              "method_id": "MT508_A030_silicate",
+              "chemistry": "silicate",
+              "seal_method": "A030",
+              "valve": "wash",
+              "led_wavelength_m": 8.2e-07,
+              "led_on": false,
+              "led_warm": false,
+              "flowcell_path_m": 0.01,
+              "tubes_for": "MT508_A030_silicate",
+              "sample_fraction": 0.04201680672268907,
+              "range_kg_m3": [
+                0.0,
+                0.06
+              ],
+              "range_unit": "kg/m3",
+              "range_basis": "SiO2",
+              "result_basis": "Si"
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "baths.temperature_k": {
+          "value": {
+            "ch2": null,
+            "ch3": null
+          },
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "detector.absorbance": {
+          "value": {
+            "ch1": null,
+            "ch2": null,
+            "ch3": null,
+            "ch4": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reagents.levels_m3": {
+          "value": {
+            "ch1": {
+              "imidazole_buffer": 0.0,
+              "colour_reagent": 0.0
+            },
+            "ch2": {
+              "complexing_reagent": 0.0,
+              "alkaline_phenol": 0.0,
+              "hypochlorite_nitroprusside": 0.0
+            },
+            "ch3": {
+              "molybdate_antimony": 0.0,
+              "ascorbic_acid": 0.0
+            },
+            "ch4": {
+              "molybdate": 0.0,
+              "oxalic_acid": 0.0,
+              "ascorbic_acid": 0.0
+            }
+          },
+          "unit": "m3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.contents": {
+          "value": {},
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.probe_x_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.probe_y_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "sampler.probe_z_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "run.status": {
+          "value": {
+            "run_id": null,
+            "state": "none",
+            "cups": 0,
+            "completed": 0,
+            "current_cup": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "samples.available": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "warnings.active": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

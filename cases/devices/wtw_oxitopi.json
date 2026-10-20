@@ -1,0 +1,961 @@
+{
+  "task_id": "device-wtw_oxitopi",
+  "asset_id": "instrument.wtw_oxitopi",
+  "title": "Respirometric BOD system: set incubator.door_open and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "incubator.door_open",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "incubator.set_door"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "incubator_k": 293.15,
+          "room_k": 295.15,
+          "ambient_pressure_pa": 101325.0,
+          "noise_seed": 1
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "oxitop_i_is6_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "oxitop_i_is6_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "incubator.temperature_k": {
+          "value": 293.1,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "incubator.door_open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "platform.powered": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "platform.stir_velocity_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setup.positions": {
+          "value": {
+            "P1": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h1"
+            },
+            "P2": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h2"
+            },
+            "P3": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h3"
+            },
+            "P4": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h4"
+            },
+            "P5": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h5"
+            },
+            "P6": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h6"
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "samples.available": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h1_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h1_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h1_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h1_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h1_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h2_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h2_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h2_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h2_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h2_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h3_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h3_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h3_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h3_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h3_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h4_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h4_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h4_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h4_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h4_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h5_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h5_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h5_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h5_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h5_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h6_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h6_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h6_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h6_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h6_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heads.status": {
+          "value": {
+            "h1": {
+              "id": 11,
+              "color": "blue",
+              "state": "off",
+              "screen": "off",
+              "position": "P1",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h2": {
+              "id": 12,
+              "color": "blue",
+              "state": "off",
+              "screen": "off",
+              "position": "P2",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h3": {
+              "id": 13,
+              "color": "blue",
+              "state": "off",
+              "screen": "off",
+              "position": "P3",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h4": {
+              "id": 14,
+              "color": "grey",
+              "state": "off",
+              "screen": "off",
+              "position": "P4",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h5": {
+              "id": 15,
+              "color": "grey",
+              "state": "off",
+              "screen": "off",
+              "position": "P5",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h6": {
+              "id": 16,
+              "color": "grey",
+              "state": "off",
+              "screen": "off",
+              "position": "P6",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heads.stored_values": {
+          "value": {
+            "h1": [],
+            "h2": [],
+            "h3": [],
+            "h4": [],
+            "h5": [],
+            "h6": []
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "warnings.active": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "incubator.set_door",
+        "arguments": {
+          "open": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "oxitop_i_is6_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "open": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "oxitop_i_is6_01",
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "incubator.temperature_k": {
+          "value": 293.1,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "incubator.door_open": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "platform.powered": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "platform.stir_velocity_rad_s": {
+          "value": 0.0,
+          "unit": "rad/s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "setup.positions": {
+          "value": {
+            "P1": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h1"
+            },
+            "P2": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h2"
+            },
+            "P3": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h3"
+            },
+            "P4": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h4"
+            },
+            "P5": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h5"
+            },
+            "P6": {
+              "filled_ml": null,
+              "sample_id": null,
+              "stir_bar": false,
+              "sleeve": false,
+              "naoh_pellets": 0,
+              "reagents": {},
+              "head": "h6"
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "samples.available": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h1_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h1_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h1_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h1_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h1_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h2_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h2_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h2_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h2_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h2_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h3_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h3_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h3_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h3_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h3_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h4_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h4_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h4_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h4_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h4_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h5_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h5_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h5_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h5_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h5_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "display.h6_value": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "head.h6_lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h6_blue": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h6_red": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "led.h6_green": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heads.status": {
+          "value": {
+            "h1": {
+              "id": 11,
+              "color": "blue",
+              "state": "off",
+              "screen": "off",
+              "position": "P1",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h2": {
+              "id": 12,
+              "color": "blue",
+              "state": "off",
+              "screen": "off",
+              "position": "P2",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h3": {
+              "id": 13,
+              "color": "blue",
+              "state": "off",
+              "screen": "off",
+              "position": "P3",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h4": {
+              "id": 14,
+              "color": "grey",
+              "state": "off",
+              "screen": "off",
+              "position": "P4",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h5": {
+              "id": 15,
+              "color": "grey",
+              "state": "off",
+              "screen": "off",
+              "position": "P5",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            },
+            "h6": {
+              "id": 16,
+              "color": "grey",
+              "state": "off",
+              "screen": "off",
+              "position": "P6",
+              "duration_days": 5,
+              "unit": "mg/l",
+              "sample_volume_m3": 0.000432,
+              "battery_low": false,
+              "elapsed_s": null,
+              "stored_count": 0,
+              "led": "off"
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "heads.stored_values": {
+          "value": {
+            "h1": [],
+            "h2": [],
+            "h3": [],
+            "h4": [],
+            "h5": [],
+            "h6": []
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "warnings.active": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

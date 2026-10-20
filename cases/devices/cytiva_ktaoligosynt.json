@@ -1,0 +1,685 @@
+{
+  "task_id": "device-cytiva_ktaoligosynt",
+  "asset_id": "instrument.cytiva_ktaoligosynt",
+  "title": "Oligonucleotide synthesizer: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.04
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "oligosynt_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.04
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "stocks": [
+            {
+              "port": "A",
+              "tag": "A",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.3
+            },
+            {
+              "port": "C",
+              "tag": "C",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.3
+            },
+            {
+              "port": "G",
+              "tag": "G",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.3
+            },
+            {
+              "port": "T",
+              "tag": "T",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.3
+            },
+            {
+              "port": "Q",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "X",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "Y",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "Z",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "a",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "c",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "g",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "u",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "q",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "x",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "y",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "z",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "A_Thiolation",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "A_CapA",
+              "tag": "cap_a",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "A_Extra1",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "A_Detrit",
+              "tag": "acid",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "A_ACNA7",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "A_Oxidation",
+              "tag": "oxidant",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_DEA",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_Activator",
+              "tag": "activator",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_ACNB3",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_CapB",
+              "tag": "cap_b",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_Extra2",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_Detrit",
+              "tag": "acid",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_ACNB7",
+              "tag": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "port": "B_Oxidation",
+              "tag": "oxidant",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.0
+            }
+          ],
+          "mix_volume_m3": 1e-06,
+          "return_volume_m3": 2e-07,
+          "prime_density_kg_m3": 900.0,
+          "viscosity_pa_s": 0.0006,
+          "line_resistance_pa_s_m3": 10000000000.0,
+          "outlet_resistance_pa_s_m3": 10000000000.0,
+          "dmtr_increment_kg_mol": 0.30237,
+          "cap_increment_kg_mol": 0.04204,
+          "oxygen_increment_kg_mol": 0.016,
+          "high_flow_kit": false,
+          "inert_gas_connected": true,
+          "gas_supply_gauge_pa": 600000.0,
+          "recipe_reviewed": true,
+          "temperature_k": 298.15
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "oligosynt_01",
+          "request_id": "fixture-1",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "oligosynt_01",
+          "request_id": "fixture-2",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 3,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.0
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "oligosynt_01",
+      "state_revision": 3,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kinetics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.size": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "column.position": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "column.valve_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "recirculation.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "recirculation.valve_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "waste.volume_m3": {
+          "value": 0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "system.pressure_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.pressure_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "conductivity.indicated_s_m": {
+          "value": null,
+          "unit": "S/m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.channel_0_au": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.channel_1_au": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.channel_2_au": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "oligosynt_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 4,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "oligosynt_01",
+      "state_revision": 4,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kinetics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "method.size": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "column.position": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "column.valve_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "recirculation.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "recirculation.valve_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "waste.volume_m3": {
+          "value": 0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "system.pressure_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.pressure_gauge_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "conductivity.indicated_s_m": {
+          "value": null,
+          "unit": "S/m",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.channel_0_au": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.channel_1_au": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "uv.channel_2_au": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

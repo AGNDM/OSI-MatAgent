@@ -1,0 +1,664 @@
+{
+  "task_id": "device-cem_libertyblue",
+  "asset_id": "instrument.cem_libertyblue",
+  "title": "Automated microwave peptide synthesizer: set cover.lift_m and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "cover.lift_m",
+    "equals": 0.08,
+    "unit": "m",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "cover.set_lift"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "cover.set_lift",
+        "arguments": {
+          "lift_m": 0.08
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "libertyblue_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.08
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.04
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "libertyblue_01",
+          "request_id": "fixture-1",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.04
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "aa_stocks": [
+            {
+              "identity": "A",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "C",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "D",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "E",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "F",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "G",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "H",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "I",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "K",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "L",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "M",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "N",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "P",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "Q",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "R",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "S",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "T",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "V",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "W",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "Y",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "identity": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "identity": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "identity": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "identity": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "identity": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            },
+            {
+              "identity": "",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            }
+          ],
+          "external_stocks": [
+            {
+              "identity": "activator_1",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "activator_2",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "base",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 100.0,
+              "retained_increment_kg_mol": 0.1
+            },
+            {
+              "identity": "wash",
+              "volume_m3": 0.0001,
+              "density_kg_m3": 900.0,
+              "concentration_mol_m3": 0.0,
+              "retained_increment_kg_mol": 0.0
+            }
+          ],
+          "queue_module": "HT12",
+          "reactor_capacity_m3": 5e-05,
+          "hold_up_m3": 1e-07,
+          "fmoc_increment_kg_mol": 0.22224,
+          "base_molar_mass_kg_mol": 0.07112,
+          "nitrogen_connected": true,
+          "recipe_reviewed": true,
+          "thermal_tau_s": 2.0,
+          "initial_temperature_k": 298.15
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "libertyblue_01",
+          "request_id": "fixture-2",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 3,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "clamp.set_lift",
+        "arguments": {
+          "lift_m": 0.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "libertyblue_01",
+          "request_id": "fixture-3",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 4,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.0
+          },
+          "observations": {},
+          "error": null
+        }
+      },
+      {
+        "capability_id": "cover.set_lift",
+        "arguments": {
+          "lift_m": 0.0
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "libertyblue_01",
+          "request_id": "fixture-4",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 5,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.0
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "status": "succeeded",
+      "instance_id": "libertyblue_01",
+      "state_revision": 5,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kinetics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.capacity": {
+          "value": 12,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.size": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.active_index": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.residue_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "waste.volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "cover.set_lift",
+        "arguments": {
+          "lift_m": 0.08
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "libertyblue_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 6,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "lift_m": 0.08
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "status": "succeeded",
+      "instance_id": "libertyblue_01",
+      "state_revision": 6,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cover.lift_m": {
+          "value": 0.08,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "clamp.lift_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "kinetics.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.configured": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.capacity": {
+          "value": 12,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.size": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "queue.active_index": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.phase": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.fault": {
+          "value": "",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.stage": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cycle.residue_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.target_k": {
+          "value": 298.15,
+          "unit": "K",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "temperature.indicated_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "waste.volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reactor.volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

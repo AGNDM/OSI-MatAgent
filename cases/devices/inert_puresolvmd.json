@@ -1,0 +1,1276 @@
+{
+  "task_id": "device-inert_puresolvmd",
+  "asset_id": "instrument.inert_puresolvmd",
+  "title": "Solvent purification system: set cabinet.left_angle_rad and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "cabinet.left_angle_rad",
+    "equals": 1.5,
+    "unit": "rad",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "cabinet.door"
+  ],
+  "reference_probe": {
+    "environment_setup": [
+      {
+        "capability_id": "plant.configure",
+        "arguments": {
+          "ambient_k": 295.15,
+          "relative_humidity": 0.45,
+          "pressure_pa": 101325.0,
+          "gas": "nitrogen",
+          "supply_gauge_pa": 344737.8646584,
+          "solvents": [
+            "tetrahydrofuran",
+            "dichloromethane",
+            "toluene",
+            "hexane",
+            "diethyl_ether",
+            "acetonitrile",
+            "dmf"
+          ],
+          "noise_seed": 1
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "inert_puresolvmd_01",
+          "request_id": "fixture-0",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "configured": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "before": {
+      "instance_id": "inert_puresolvmd_01",
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "channels.solvents": {
+          "value": [
+            "tetrahydrofuran",
+            "dichloromethane",
+            "toluene",
+            "hexane",
+            "diethyl_ether",
+            "acetonitrile",
+            "dmf"
+          ],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.isolation_open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.isolation_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.vacuum_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.pressure_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.vacuum_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.pressure_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cabinet.left_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cabinet.right_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "regulators.settings": {
+          "value": {
+            "1": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "2": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "3": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "4": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "5": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "6": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "7": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            }
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lines.valves": {
+          "value": {
+            "1": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "2": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "3": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "4": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "5": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "6": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "7": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            }
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reservoirs.recorded": {
+          "value": {
+            "1": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "2": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "3": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "4": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "5": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "6": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "7": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch1_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch1_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch1_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch1_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station1_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station1_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch1": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch2_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch2_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch2_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch2_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station2_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station2_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch2": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch3_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch3_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch3_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch3_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station3_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station3_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch3": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch4_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch4_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch4_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch4_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station4_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station4_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch4": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch5_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch5_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch5_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch5_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station5_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station5_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch5": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch6_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch6_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch6_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch6_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station6_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station6_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch6": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch7_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch7_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch7_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch7_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station7_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station7_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch7": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    },
+    "steps": [
+      {
+        "capability_id": "cabinet.door",
+        "arguments": {
+          "side": "left",
+          "angle_rad": 1.5
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "inert_puresolvmd_01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 2,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "side": "left",
+            "angle_rad": 1.5
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "instance_id": "inert_puresolvmd_01",
+      "status": "succeeded",
+      "state_revision": 2,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "observations": {
+        "clock.time_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "plant.configured": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "channels.solvents": {
+          "value": [
+            "tetrahydrofuran",
+            "dichloromethane",
+            "toluene",
+            "hexane",
+            "diethyl_ether",
+            "acetonitrile",
+            "dmf"
+          ],
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "pump.on": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.isolation_open": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gas.isolation_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.vacuum_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.pressure_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.vacuum_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.pressure_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cabinet.left_angle_rad": {
+          "value": 1.5,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "cabinet.right_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "regulators.settings": {
+          "value": {
+            "1": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "2": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "3": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "4": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "5": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "6": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            },
+            "7": {
+              "keg_gauge_pa": 103421.35939751999,
+              "flask_gauge_pa": 20684.271879504
+            }
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "lines.valves": {
+          "value": {
+            "1": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "2": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "3": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "4": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "5": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "6": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            },
+            "7": {
+              "keg_gas": true,
+              "keg_outlet": true,
+              "column_inlet": true,
+              "column_outlet": true
+            }
+          },
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "reservoirs.recorded": {
+          "value": {
+            "1": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "2": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "3": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "4": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "5": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "6": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            },
+            "7": {
+              "added_m3": 0.0,
+              "dispensed_into_removed_flasks_m3": 0.0
+            }
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch1_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch1_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch1_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch1_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station1_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station1_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch1": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch2_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch2_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch2_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch2_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station2_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station2_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch2": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch3_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch3_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch3_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch3_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station3_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station3_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch3": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch4_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch4_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch4_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch4_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station4_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station4_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch4": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch5_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch5_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch5_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch5_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station5_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station5_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch5": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch6_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch6_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch6_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch6_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station6_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station6_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch6": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch7_position": {
+          "value": "closed",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "valve.ch7_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch7_opening": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "needle.ch7_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station7_pa": {
+          "value": 0.0,
+          "unit": "Pa",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "gauge.station7_angle_rad": {
+          "value": -0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "flask.ch7": {
+          "value": {
+            "attached": false,
+            "volume_m3": null,
+            "liquid_m3": null
+          },
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        }
+      }
+    }
+  },
+  "candidate_rejections": []
+}

@@ -1,0 +1,490 @@
+{
+  "task_id": "device-magritek_spinsolve80",
+  "asset_id": "instrument.magritek_spinsolve80",
+  "title": "Benchtop NMR spectrometer: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slot.sample_tube.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "sample.insertion_fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "method.nucleus": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.pulse_sequence": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.scans": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.relaxation_delay_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.acquisition_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.points": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.decoupling": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.gradient_enabled": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.carrier_frequency_hz": {
+          "value": null,
+          "unit": "Hz",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No available configured or synthetic value."
+        },
+        "acquisition.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.progress": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.completed_scans": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No available configured or synthetic value."
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.fid": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.spectrum": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.integral_hz": {
+          "value": null,
+          "unit": "Hz",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No available configured or synthetic value."
+        },
+        "display.text": {
+          "value": "SYNTHETIC OFF 0 SCANS",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slot.sample_tube.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "sample.insertion_fraction": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "method.nucleus": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.pulse_sequence": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.scans": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.relaxation_delay_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.acquisition_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.points": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.decoupling": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.gradient_enabled": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No available configured or synthetic value."
+        },
+        "method.carrier_frequency_hz": {
+          "value": null,
+          "unit": "Hz",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No available configured or synthetic value."
+        },
+        "acquisition.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.progress": {
+          "value": 0.0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.completed_scans": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "acquisition.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No available configured or synthetic value."
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.fid": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.spectrum": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.integral_hz": {
+          "value": null,
+          "unit": "Hz",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No available configured or synthetic value."
+        },
+        "display.text": {
+          "value": "SYNTHETIC IDLE 0 SCANS",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

@@ -1,0 +1,354 @@
+{
+  "task_id": "device-elga_purelab_flex3",
+  "asset_id": "instrument.elga_purelab_flex3",
+  "title": "Lab ultrapure water system: set water.flow_rate_m3_s and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "water.flow_rate_m3_s",
+    "equals": 3.3333333333333335e-05,
+    "unit": "m^3/s",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "water.set_flow_rate"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "arm.height_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.target_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.flow_rate_m3_s": {
+          "value": null,
+          "unit": "m^3/s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.mode": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.dispensing": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.dispense_status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.indicated_dispensed_volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        },
+        "water.source_connected": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.receiver_connected": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.qualified_feed": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.resistivity_ohm_m": {
+          "value": null,
+          "unit": "ohm*m",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.toc_mass_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "consumables.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "consumables.status": {
+          "value": "unknown",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "consumables.remaining_life_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "consumables.throughput_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "water.set_flow_rate",
+        "arguments": {
+          "flow_m3_s": 3.3333333333333335e-05
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "applied": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "arm.height_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.target_volume_m3": {
+          "value": null,
+          "unit": "m^3",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.flow_rate_m3_s": {
+          "value": 3.3333333333333335e-05,
+          "unit": "m^3/s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.mode": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.dispensing": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.dispense_status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.indicated_dispensed_volume_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        },
+        "water.source_connected": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.receiver_connected": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "water.qualified_feed": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.resistivity_ohm_m": {
+          "value": null,
+          "unit": "ohm*m",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.temperature_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "water.toc_mass_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "consumables.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "consumables.status": {
+          "value": "unknown",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null
+        },
+        "consumables.remaining_life_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No consumable life evidence or host-supplied observation/configuration is available"
+        },
+        "consumables.throughput_m3": {
+          "value": 0.0,
+          "unit": "m^3",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

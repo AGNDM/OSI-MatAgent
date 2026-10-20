@@ -1,0 +1,20 @@
+{
+  "reference": {
+    "name": "reference-general-expert",
+    "base_url": null,
+    "model": null,
+    "revision": null,
+    "api_key_env": null,
+    "max_tokens": 1536,
+    "timeout_seconds": 45
+  },
+  "contrast": {
+    "name": "contrast-general-expert",
+    "base_url": null,
+    "model": null,
+    "revision": null,
+    "api_key_env": null,
+    "max_tokens": 1536,
+    "timeout_seconds": 45
+  }
+}

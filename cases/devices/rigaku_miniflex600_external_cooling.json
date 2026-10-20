@@ -1,0 +1,491 @@
+{
+  "task_id": "device-rigaku_miniflex600_external_cooling",
+  "asset_id": "instrument.rigaku_miniflex600_external_cooling",
+  "title": "Powder X-ray diffractometer: set access.door_angle_rad and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "access.door_angle_rad",
+    "equals": 0.5,
+    "unit": "rad",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "access.set_door_angle"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "access.door_angle_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slot.sample.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "cooling.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "cooling.ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "xray.voltage_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "xray.current_a": {
+          "value": null,
+          "unit": "A",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "xray.power_w": {
+          "value": null,
+          "unit": "W",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "xray.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slit.configuration_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "goniometer.two_theta_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "goniometer.sample_theta_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.start_rad": {
+          "value": null,
+          "unit": "rad",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.stop_rad": {
+          "value": null,
+          "unit": "rad",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.step_rad": {
+          "value": null,
+          "unit": "rad",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.integration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.completed_points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.total_points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "measurement.pattern": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.last_intensity_cps": {
+          "value": null,
+          "unit": "1/s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "access.set_door_angle",
+        "arguments": {
+          "angle_rad": 0.5
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "angle_rad": 0.5
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "access.door_angle_rad": {
+          "value": 0.5,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slot.sample.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "cooling.connection_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "cooling.ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "xray.voltage_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "xray.current_a": {
+          "value": null,
+          "unit": "A",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "xray.power_w": {
+          "value": null,
+          "unit": "W",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "xray.active": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "slit.configuration_id": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "goniometer.two_theta_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "goniometer.sample_theta_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.start_rad": {
+          "value": null,
+          "unit": "rad",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.stop_rad": {
+          "value": null,
+          "unit": "rad",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.step_rad": {
+          "value": null,
+          "unit": "rad",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.integration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "scan.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.status": {
+          "value": "idle",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.completed_points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "scan.total_points": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": false,
+          "reason": null
+        },
+        "measurement.pattern": {
+          "value": [],
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        },
+        "measurement.last_intensity_cps": {
+          "value": null,
+          "unit": "1/s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": "No explicitly configured value or completed synthetic measurement."
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "synthetic": true,
+          "reason": null
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

@@ -1,0 +1,18 @@
+{
+  "experiment": "proposal A/B v1",
+  "reference_model": "nvidia/nemotron-3.5-super-vl:free",
+  "contrast_model": "liquid/lfm-2.5-2.6b:free",
+  "specialist_policy": "Same model in diagnostic, procedure, verification and deliberation within each configuration",
+  "decision": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+  "baseline": "rules-v1",
+  "split": "test",
+  "cases": 8,
+  "target_repeats": 2,
+  "target_episodes": 48,
+  "single_repeat_fallback_episodes": 24,
+  "retrieval": "fixed lexical protocol retrieval; 2 passages; no Materials Encoder",
+  "limits": {"lab_actions":6,"llm_calls":12,"episode_seconds":180,"graph_steps":60,"format_repairs":1},
+  "thresholds": {"min_top_probability":0.6,"min_margin":0.15},
+  "threshold_status": "Provisional defaults frozen unchanged; routing probe does not establish calibration",
+  "provider_failures": "Retained in denominator; stop after 3 consecutive provider-failed episodes, resumable with unchanged fingerprint"
+}

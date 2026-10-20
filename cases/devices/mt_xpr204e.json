@@ -1,0 +1,401 @@
+{
+  "task_id": "device-mt_xpr204e",
+  "asset_id": "instrument.mt_xpr204e",
+  "title": "Analytical balance: set balance.filter_level and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "balance.filter_level",
+    "equals": "High",
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set",
+    "balance.set_filter"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "balance.filter_level": {
+          "value": "Medium",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "balance.display_unit": {
+          "value": "g",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "balance.status": {
+          "value": "OFF",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.stable": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.gross_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No reading is available in the current acquisition, power, pan or range state.",
+          "synthetic": true
+        },
+        "balance.net_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No reading is available in the current acquisition, power, pan or range state.",
+          "synthetic": true
+        },
+        "balance.tare_kg": {
+          "value": 0.0,
+          "unit": "kg",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.task_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.stability_elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "pan.installed": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "environment.tilt_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "environment.vibration": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "door.left.opening_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "door.right.opening_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "door.top.opening_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "balance.set_filter",
+        "arguments": {
+          "level": "High"
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "level": "High"
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "balance.filter_level": {
+          "value": "High",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "balance.display_unit": {
+          "value": "g",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "balance.status": {
+          "value": "OFF",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.stable": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.gross_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No reading is available in the current acquisition, power, pan or range state.",
+          "synthetic": true
+        },
+        "balance.net_kg": {
+          "value": null,
+          "unit": "kg",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No reading is available in the current acquisition, power, pan or range state.",
+          "synthetic": true
+        },
+        "balance.tare_kg": {
+          "value": 0.0,
+          "unit": "kg",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.task_ready": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "balance.stability_elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "pan.installed": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "environment.tilt_rad": {
+          "value": 0.0,
+          "unit": "rad",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "environment.vibration": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "door.left.opening_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "door.right.opening_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "door.top.opening_m": {
+          "value": 0.0,
+          "unit": "m",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}

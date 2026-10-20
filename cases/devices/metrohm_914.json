@@ -1,0 +1,598 @@
+{
+  "task_id": "device-metrohm_914",
+  "asset_id": "instrument.metrohm_914",
+  "title": "pH / DO / conductivity meter: set power.enabled and verify public readback",
+  "scope": "Native control/interface smoke; not acquisition, chemistry or hardware validation",
+  "goal": {
+    "state_id": "power.enabled",
+    "equals": true,
+    "unit": "1",
+    "absolute_tolerance": 1e-09
+  },
+  "tool_menu": [
+    "power.set"
+  ],
+  "reference_probe": {
+    "environment_setup": [],
+    "before": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 0,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.selected": {
+          "value": "ph",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "temperature.mode": {
+          "value": "automatic",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "temperature.manual_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": false
+        },
+        "temperature.compensation_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "endpoint.hold_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": false
+        },
+        "endpoint.tolerance_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": false
+        },
+        "endpoint.stable": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "endpoint.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "acquisition.interval_s": {
+          "value": 1.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "acquisition.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "acquisition.record_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.status": {
+          "value": "OFF",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.ph": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.conductance_s": {
+          "value": null,
+          "unit": "S",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.do_kg_m3": {
+          "value": null,
+          "unit": "kg/m3",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "display.text": {
+          "value": "PH --- 1 | OFF | SYNTHETIC",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.ph.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.ph.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.ph.calibration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "probe.conductance.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.conductance.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.conductance.calibration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "probe.do.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.do.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.do.calibration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        }
+      },
+      "error": null
+    },
+    "steps": [
+      {
+        "capability_id": "power.set",
+        "arguments": {
+          "enabled": true
+        },
+        "response": {
+          "protocol_version": "1.0.0",
+          "instance_id": "device-01",
+          "request_id": "reference-target",
+          "operation_id": null,
+          "status": "succeeded",
+          "state_revision": 1,
+          "clock": {
+            "domain": "simulation",
+            "time_s": 0.0
+          },
+          "result": {
+            "enabled": true
+          },
+          "observations": {},
+          "error": null
+        }
+      }
+    ],
+    "after": {
+      "protocol_version": "1.0.0",
+      "instance_id": "device-01",
+      "request_id": null,
+      "operation_id": null,
+      "status": "succeeded",
+      "state_revision": 1,
+      "clock": {
+        "domain": "simulation",
+        "time_s": 0.0
+      },
+      "result": {},
+      "observations": {
+        "power.enabled": {
+          "value": true,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.selected": {
+          "value": "ph",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "temperature.mode": {
+          "value": "automatic",
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "temperature.manual_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": false
+        },
+        "temperature.compensation_k": {
+          "value": null,
+          "unit": "K",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "endpoint.hold_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": false
+        },
+        "endpoint.tolerance_fraction": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": false
+        },
+        "endpoint.stable": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "endpoint.elapsed_s": {
+          "value": 0.0,
+          "unit": "s",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "acquisition.interval_s": {
+          "value": 1.0,
+          "unit": "s",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "acquisition.running": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "acquisition.record_count": {
+          "value": 0,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.status": {
+          "value": "PROBE_MISSING",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.ph": {
+          "value": null,
+          "unit": "1",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.potential_v": {
+          "value": null,
+          "unit": "V",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.conductance_s": {
+          "value": null,
+          "unit": "S",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.do_kg_m3": {
+          "value": null,
+          "unit": "kg/m3",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "measurement.synthetic": {
+          "value": true,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "measurement.sample_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": null,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "display.text": {
+          "value": "PH --- 1 | PROBE_MISSING | SYNTHETIC",
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.ph.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.ph.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.ph.calibration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "probe.conductance.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.conductance.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.conductance.calibration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        },
+        "probe.do.installed": {
+          "value": false,
+          "unit": "1",
+          "quality": "valid",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": false
+        },
+        "probe.do.calibrated": {
+          "value": false,
+          "unit": "1",
+          "quality": "estimated",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": null,
+          "synthetic": true
+        },
+        "probe.do.calibration_time_s": {
+          "value": null,
+          "unit": "s",
+          "quality": "unavailable",
+          "sample_time_s": 0.0,
+          "sample_window_s": null,
+          "reason": "No explicit sample/configuration or this output is not selected.",
+          "synthetic": true
+        }
+      },
+      "error": null
+    }
+  },
+  "candidate_rejections": []
+}
