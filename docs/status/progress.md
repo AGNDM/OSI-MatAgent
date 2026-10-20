@@ -59,3 +59,9 @@ Final online integration reruns passed both titania branches with real DeepSeek 
 ## Astra release review
 
 Astra approved the bounded online feature after a required browser cloud-provider restriction and an operation-summary provenance fix. The full post-fix suite passed 111 tests in 87.88 seconds. These release fixes used offline tests only; the original real-model execution evidence and its historical 108-test snapshot remain unchanged. See [review and acceptance](../evidence/operation-feature-review.md).
+
+## Literature-operation dataset feasibility
+
+The dataset exploration goal is complete and independently reviewed by Astra. A reproducible audit counted 76,975 records across pinned solid-state, sol-gel and solution releases. The licensed solution payload was checksum-matched to Figshare. Its 4,893 explicit-air heating entries passing the strict numeric screen are potential source material, not executable benchmark tasks. A selected 500 C / four-hour parameter fixture completed in the native empty furnace; gas flow, source duration semantics, ramp and geometry limitations are explicitly documented.
+
+The recommendation is a small source-verified operation-conformance pilot, with source parameters separated from authored simulator state and labels determined through independent candidate rollouts. Full chemical synthesis outcomes and hidden-state measurement tasks need additional validated models. The offline benchmark remains unimplemented; no model superiority or calibrated probability claim is added. Research and review used no external model API calls. See the [English report](../reports/dataset-benchmark-feasibility.md) and [Astra acceptance](../evidence/dataset-feasibility-review.md).
