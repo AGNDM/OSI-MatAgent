@@ -2,10 +2,11 @@
 
 A local LangGraph prototype for evidence-driven virtual laboratory control. Diagnostic, procedure and verification specialists propose structured actions; a deterministic gate checks them before native ChemLab execution. Routing uses a rules baseline or a separately deployed local OpenJev model. The general expert backend supports the explicitly configured SiliconFlow DeepSeek endpoint.
 
-The repository contains two workflow profiles:
+The repository contains three workflow profiles:
 
 - **Drying troubleshooting:** distinguish a process-setting problem from a measurement problem, apply a justified correction, and verify fresh evidence with an independent evaluator.
 - **Device control:** run a small native control/readback task for each of 194 registered devices across 16 categories. These are independently reset single-device integration tasks, not complete scientific experiments.
+- **Paper-grounded titania:** distinguish a delivered thermal-program error from truncated XRD coverage; execute native furnace and diffraction acquisition macros. See the [scenario card](docs/titania-scenario.md) and [run instructions](docs/titania-workflow.md). Material chemistry remains an explicitly authored endpoint fixture.
 
 ## Setup
 

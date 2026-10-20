@@ -51,3 +51,9 @@ The project passed **73 tests**, and all **570 pinned upstream hashes** matched.
 - [Reproduction and budget instructions](../DEVICE_WORKFLOW.md)
 
 The earlier three-case drying expert pilot is separate: 2/3 passed, with 42,802 reported tokens and a retained verification failure. Formal two-expert comparison, materials retrieval benefit and independent human causal review remain pending.
+
+## Paper-grounded titania development slice (21 October 2026)
+
+Two new thermal-treatment/XRD branches passed scripted and real DeepSeek-plus-OpenJev execution (2/2 each). Both wrong-repair controls failed independent scoring as intended. Real runs required two evidence-ID repairs total and no routing fallback. API usage: 22,617 tokens across 14 requests, bringing the shared ledger to 333,639/5,000,000. All 80 project tests passed.
+
+Native furnace and XRD acquisition execute, with a common clock and logical aliquot identity. Chemistry endpoints and transfers remain authored; curves are reference-derived synthetic acquisitions. Fixed paper context and explicit repair policy make this a development demonstration rather than a blind held-out benchmark. Full provenance, paths and limitations: [titania execution evidence](evidence/titania-validation.md).

@@ -1,0 +1,14 @@
+{
+  "title": "Influence of the Heat Treatment on the Particles Size and on the Crystalline Phase of TiO2 Synthesized by the Sol-Gel Method",
+  "authors": ["Michelina Catauro", "Elisabetta Tranquillo", "Giovanni Dal Poggetto", "Mauro Pasquali", "Alessandro Dell'Era", "Stefano Vecchio Ciprioti"],
+  "year": 2018,
+  "journal": "Materials 11(12), 2364",
+  "doi": "10.3390/ma11122364",
+  "primary_source": "https://res.mdpi.com/d_attachment/materials/materials-11-02364/article_deploy/materials-11-02364.pdf",
+  "reviewed_on": "2026-10-21",
+  "locators": ["Section 2.2 and Table 1: separate dried sister aliquots and heat-treatment protocols", "Section 2.3.2: Cu Ka radiation and original Philips instrument", "Section 3.2.1, Figure 3 and Table 2: qualitative phase endpoints"],
+  "scope": "Thermal-treatment and qualitative XRD substep; not full synthesis replication",
+  "adaptations": ["Virtual Nabertherm and MiniFlex replace paper hardware", "Finite endpoint fixture replaces reaction kinetics", "RRUFF-derived synthetic patterns replace the paper's measured curves", "Retained dried sister aliquot used for thermal correction; sequential reprocessing not assumed", "No quantitative phase-fraction claim"],
+  "reference_library_sha256": "8a8f0a0418a541e570dbd55c999a6cfd191284cdd4eb8af7d572cc88ae9864e5",
+  "reference_sources": {"anatase": "https://www.rruff.net/odr/rruff_sample/R060277", "rutile": "https://www.rruff.net/odr/rruff_sample/R040049"}
+}

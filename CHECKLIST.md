@@ -1,6 +1,6 @@
 # Delivery Checklist
 
-Status snapshot: 20 October 2026. Checked items have implementation or execution evidence. A passing scripted test does not establish model competence, and a device-control task does not establish scientific acquisition fidelity.
+Status snapshot: 21 October 2026. Checked items have implementation or execution evidence. A passing scripted test does not establish model competence, and a device-control task does not establish scientific acquisition fidelity.
 
 ## Completed
 
@@ -29,13 +29,20 @@ Status snapshot: 20 October 2026. Checked items have implementation or execution
 - [x] Account for failed calls and format repairs; record 311,022 tokens across 206 device-debugging requests.
 - [x] Verify 570 upstream file hashes and pass 73 project tests.
 - [x] Provide English project documentation and a checked-in evaluation summary; ignore local Chinese notes and generated traces.
+- [x] Ground a TiO2 thermal-treatment/XRD substep in an original published paper and write a one-page scenario card.
+- [x] Audit native furnace program completion and XRD running/partial/completed acquisition behavior.
+- [x] Implement two titania branches with shared simulation time and logical batch/aliquot identity.
+- [x] Pass both scripted branches and reject both wrong-repair controls independently.
+- [x] Pass both titania branches with real DeepSeek specialists and local OpenJev, including two evidence-ID repairs and zero router fallbacks.
+- [x] Test scan timeout, stale/wrong/unavailable evidence, unnecessary synthesis, replay safety and host-truth isolation; pass all 80 tests.
+- [x] Record cumulative shared API usage of 333,639 tokens across 220 settled calls; no additional OpenRouter requests.
 
 ## Partial or still pending
 
 - [ ] Accept the remaining nine catalog entries with an appropriate native task/adapter.
-- [ ] Extend basic control tasks to meaningful acquisitions and material-specific experiments. Currently 116 tasks test power control only.
-- [ ] Share sample identity/material state across instruments and implement transfer semantics.
-- [ ] Coordinate a common multi-device simulation clock and bounded asynchronous acquisition/polling.
+- [ ] Generalize meaningful acquisitions beyond the new furnace/XRD titania slice. The 194-device control suite still includes 116 power-only tasks.
+- [ ] Generalize sample identity/material state and physical transfer semantics. Titania currently has adapter-owned logical aliquot lineage and an authored endpoint bridge.
+- [ ] Generalize multi-device scheduling and asynchronous jobs. Titania has a common two-runtime clock and bounded polling within synchronous macros.
 - [ ] Add device selection and tasks to the browser UI; the current UI is the drying demo.
 - [ ] Replace fixed role-query protocol context with task-conditioned materials retrieval and integrate the Materials Encoder.
 - [ ] Demonstrate that retrieved domain evidence changes a check or corrective decision.
