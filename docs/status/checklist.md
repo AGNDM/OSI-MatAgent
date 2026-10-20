@@ -39,6 +39,16 @@ Status snapshot: 21 October 2026. Checked items have implementation or execution
 
 - [x] Review failure paths before publication, reject stale aliquot reuse after failed preparation, preserve incomplete-usage reports and pass all 84 tests.
 
+- [x] Add opt-in online operation selection between diagnostic candidates and procedure; retain independent expert routing and gate authority.
+- [x] Add local OpenJev and budgeted DeepSeek action adapters, candidate/probability traces and browser demo modes.
+- [x] Separate current aliquot processing evidence from historical scans; reject redundant valid-state reinspection in the titania profile.
+- [x] Pass all 108 tests including selection/argument isolation, stale state, malformed candidates, budgets, UI/replay and legacy workflow coverage.
+
+- [x] Pass both final real DeepSeek-candidate/local-OpenJev operation trajectories; retain earlier failures and the interrupted attempt with conservative accounting.
+- [x] Record 450,497 conservatively charged tokens across 271 settled shared requests, including one full-charge unknown-usage request.
+
+- [x] Pass Astra re-review after rejecting cloud browser expert configurations and separating chooser identities in summaries; pass all 111 release tests.
+
 ## Partial or still pending
 
 - [ ] Accept the remaining nine catalog entries with an appropriate native task/adapter.
@@ -58,3 +68,5 @@ Status snapshot: 21 October 2026. Checked items have implementation or execution
 M0-M4 have a working minimal implementation. M6 routing is implemented with OpenJev in place of the originally proposed Laya. M7 has a basic live trace UI but no integrated GLB view. M5 remains partial, and M8 is not fully accepted as a scientific/model-comparison evaluation. Device expansion improves interface coverage without closing those research gaps.
 
 See [Current progress](progress.md) for the milestone table and [Evaluation summary](../reports/evaluation-summary.md) for the result snapshot and limitations.
+
+The offline decision-mechanism benchmark is explicitly deferred. Its generator, released task sets and comparative/calibration experiments are not part of the online operation-selection implementation.

@@ -8,6 +8,8 @@ The repository contains three workflow profiles:
 - **Device control:** run a small native control/readback task for each of 194 registered devices across 16 categories. These are independently reset single-device integration tasks, not complete scientific experiments.
 - **Paper-grounded titania:** distinguish a delivered thermal-program error from truncated XRD coverage; execute native furnace and diffraction acquisition macros. See the [scenario card](docs/demos/titania/scenario.md) and [run instructions](docs/demos/titania/workflow.md). Material chemistry remains an explicitly authored endpoint fixture.
 
+The online workflow also supports an opt-in [next-operation chooser](docs/guides/operation-decision.md): diagnostic candidates → operation decision → procedure → gate → execution. It is distinct from the specialist router and reuses the existing local OpenJev service. The offline decision benchmark remains deferred.
+
 ## Setup
 
 ```bash
@@ -57,8 +59,8 @@ This sends billable requests to the configured `deepseek-ai/DeepSeek-V4.1-Flash`
 | Offline LangGraph device regression | 194/194 passed |
 | Real DeepSeek sample across 16 categories | 20/20 final outcomes passed |
 | Real DeepSeek + local OpenJev device runs | 2/2 passed, no routing fallback |
-| Project tests | 84 passed |
-| Shared device and titania API debugging usage, including failures and repairs | 333,639 tokens |
+| Project tests | 111 passed |
+| Conservatively charged shared API debugging usage, including failed/interrupted calls | 450,497 tokens |
 
 The first real device pilot passed 0/3; the second passed 2/3. Their failures were retained. After fixing stale observation handoffs and returning fresh native readbacks after commands, the declared 20-device sample passed. These development results are not a statistical benchmark or evidence of routing superiority. See [the checked-in evidence summary](docs/reports/evaluation-summary.md).
 

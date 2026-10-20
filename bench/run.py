@@ -49,7 +49,7 @@ def manifest(limits: Limits, split: str, repeats: int, backends=None, selected_c
 
 
 def run_episode(fixture: CaseFixture, output_dir: Path | None = None, limits: Limits | None = None,
-                roles=None, decision_backend=None, repeat: int = 0, observer=None) -> dict:
+                roles=None, decision_backend=None, repeat: int = 0, observer=None, operation_backend=None) -> dict:
     limits = limits or Limits()
     roles = roles or ScriptedRoles()
     decision_backend = decision_backend or RulesBackend()
@@ -60,7 +60,7 @@ def run_episode(fixture: CaseFixture, output_dir: Path | None = None, limits: Li
     completed, report, world, outcome = False, None, None, None
     try:
         lab = LabAdapter(fixture)
-        graph = build_graph(lab, trace, limits, roles, decision_backend)
+        graph = build_graph(lab, trace, limits, roles, decision_backend, operation_backend=operation_backend)
         state = initial_state(lab, episode_id, limits)
         config = {"configurable": {"thread_id": episode_id}, "recursion_limit": limits.graph_steps}
         try:
@@ -84,6 +84,7 @@ def run_episode(fixture: CaseFixture, output_dir: Path | None = None, limits: Li
     record = {"run_id": episode_id, "case_id": fixture.case_id, "family": fixture.family,
         "repeat": repeat, "seed": fixture.seed, "role_backend": roles.backend_id,
         "decision_backend": decision_backend.backend_id, "is_llm": roles.is_llm,
+        "operation_backend": operation_backend.backend_id if operation_backend else None,
         "attempted": True, "completed": completed, "elapsed_ms": (time.monotonic() - start) * 1000,
         "fallback_count": sum(bool(e.get("decision", {}).get("fallback_used")) for e in trace.events),
         "report": report, "score": outcome or {"task_success": False, "false_success": False},
@@ -128,7 +129,8 @@ def _summarize_one_backend(records: list[dict]) -> list[dict]:
             pairs.setdefault(r["case_id"], []).append(r)
         repeated = [rs for rs in pairs.values() if len(rs) >= 2]
         false_n = sum(r["score"].get("false_success", False) for r in selected)
-        rows.append({"role_backend": selected[0]["role_backend"], "decision_backend": selected[0]["decision_backend"], "family": family, "attempted": n, "completed": sum(r["completed"] for r in selected),
+        rows.append({"role_backend": selected[0]["role_backend"], "decision_backend": selected[0]["decision_backend"],
+            "operation_backend": selected[0].get("operation_backend"), "family": family, "attempted": n, "completed": sum(r["completed"] for r in selected),
             "task_success_count": sum(r["score"]["task_success"] for r in selected),
             "task_success_rate": sum(r["score"]["task_success"] for r in selected) / n,
             "expected_cause_covered_count": sum(r["score"].get("expected_cause_covered", r["score"].get("diagnosis_correct", False)) for r in selected),
@@ -154,8 +156,11 @@ def _summarize_one_backend(records: list[dict]) -> list[dict]:
 
 
 def summarize_runs(records: list[dict]) -> list[dict]:
-    return [row for roles, decision in sorted({(r["role_backend"], r["decision_backend"]) for r in records})
-            for row in _summarize_one_backend([r for r in records if (r["role_backend"], r["decision_backend"]) == (roles, decision)])]
+    groups = {}
+    for record in records:
+        key = (record["role_backend"], record["decision_backend"], record.get("operation_backend") or "")
+        groups.setdefault(key, []).append(record)
+    return [row for key in sorted(groups) for row in _summarize_one_backend(groups[key])]
 
 
 def main():

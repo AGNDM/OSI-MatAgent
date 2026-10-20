@@ -72,4 +72,8 @@ class ScriptedDeviceRoles:
                 'evidence_ids':[m['id']],'missing_evidence':[]}
         else:
             value={'backend_id':self.backend_id,'choice':'prepare_action' if payload['summary']['has_intent'] else 'verify' if payload['summary']['has_measurement'] else 'diagnose'}
+        from app.models import OperationOptions
+        if role == 'diagnostic' and schema is OperationOptions:
+            from app.operation_decision import scripted_options
+            return schema.model_validate(scripted_options(value, payload)).model_dump()
         return schema.model_validate(value).model_dump()

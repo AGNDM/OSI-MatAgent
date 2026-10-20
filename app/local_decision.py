@@ -102,6 +102,12 @@ class LocalOpenJevBackend:
 
     async def _infer(self, summary, allowed, timeout):
         text, options = option_prompt(summary, allowed)
+        probabilities = await self._infer_options(text, options, timeout)
+        return RouteDecision(backend_id=self.backend_id,
+            choice=max(probabilities, key=probabilities.get), probabilities=probabilities)
+
+    async def _infer_options(self, text, options, timeout):
+        """Shared one-token inference; caller owns the question and answer semantics."""
         async with httpx.AsyncClient(timeout=timeout, trust_env=False) as client:
             templated = await client.post(self.base_url + "/apply-template", json={
                 "messages": [{"role": "user", "content": text}],
@@ -117,9 +123,7 @@ class LocalOpenJevBackend:
             response.raise_for_status()
             raw = response.json()
             self.last_call["response"] = raw
-            probabilities = read_probabilities(raw, options, details=self.last_call)
-            return RouteDecision(backend_id=self.backend_id,
-                choice=max(probabilities, key=probabilities.get), probabilities=probabilities)
+            return read_probabilities(raw, options, details=self.last_call)
 
     async def _bounded(self, summary, allowed, timeout):
         return await asyncio.wait_for(self._infer(summary, allowed, timeout), timeout)

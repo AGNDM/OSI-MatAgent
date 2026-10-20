@@ -1,0 +1,54 @@
+Use case: infographic-diagram.
+Create a polished, precise software architecture flowchart explaining a proposed update to a LangGraph virtual laboratory workflow. This is a diagram, not a realistic lab illustration. Large landscape composition, crisp legible English typography, white background, dark navy text, restrained blue for existing components and orange for the new operation decision node, gray dashed outline for offline evaluation. Clear arrowheads, spacious aligned boxes, no decoration that compromises readability. English only inside the image.
+
+Title exactly: "Updated Lab-Agent Workflow"
+Subtitle exactly: "Proposed architecture — operational decisions added to the existing workflow"
+Top right small status badge: "DESIGN • NOT YET IMPLEMENTED"
+
+Main diagram occupies about 75% of image height. A thin blue orchestration banner above it:
+"LangGraph + Expert Router (existing)"
+smaller: "Routes work between specialists • separate from choosing a lab action"
+A small nearby note: "Reuse the same local OpenJev service through separate adapters"
+Do not depict two newly deployed models. The router is orchestration control, not part of the physical action chain, and must never bypass the gate.
+
+MAIN FLOW, lay out with very clear arrows, perhaps a two-row serpentine arrangement:
+1. blue box "Observe" with small "Public state + target + recent evidence"
+arrow to
+2. blue box "Diagnostic Expert" with small "Explain alternatives + propose candidate actions"
+arrow to
+3. orange prominent box "Operational Decision" with orange badge "NEW" and small text "Choose next action + option probabilities" and "OpenJev / DeepSeek — swappable"
+arrow to
+4. blue box "Procedure Expert" with small "Convert the chosen action into a typed tool proposal"
+arrow to
+5. blue box "Deterministic Gate" with small "Schema • preconditions • identity • revision • budget"
+arrow labeled "accepted" to
+6. blue box "Native Lab Executor" with small "Invoke tool → await completion → acquire fresh evidence"
+arrow to
+7. blue box "Verification Expert" with small "Assess new evidence against the target"
+arrow to a terminal capsule "Supported / Unresolved".
+A clear feedback arrow from Verification back to Observe labeled "More evidence or correction needed".
+A slim rejection arrow from Gate returning to Diagnostic Expert labeled "Rejected proposal".
+Show that all mutations pass through gate. No direct path from router or decision box to execution.
+
+Next to Diagnostic→Decision handoff put one compact note titled "Candidate source" with two concise lines:
+"Demo: diagnostic expert proposes options"
+"Benchmark: fixed options, shared across methods"
+This note is important: evaluation must not depend on different models receiving different candidate menus.
+
+Example mini-caption below Operational Decision:
+"Example: reheat / widen XRD scan / inspect history first"
+Keep it subordinate, not a third additional flow.
+
+BOTTOM: separate gray dashed rounded panel titled "Offline Decision Benchmark (separate track)".
+Inside, simple left-to-right 4-step chain:
+"Freeze state + goal + options"
+→ "Run methods on identical inputs"
+→ "Compare raw choices + probabilities"
+→ "Score against independent replay labels"
+Small annotation under final box:
+"Fresh reset for each candidate option • labels never enter agent input"
+Footer small metrics: "Accuracy • calibration • measurement decisions • latency / cost"
+Do not imply that the benchmark is part of the live action authorization path. Do not show hidden evaluator state entering any expert or decision node.
+
+Legend at bottom edge: "Blue = existing components   Orange = proposed addition   Dashed = offline evaluation".
+Ensure all text fits boxes without overlap; use hierarchy with short lines, generous margins, neatly routed edges, and very clear distinction between Expert Router and Operational Decision. No claims that probabilities are already calibrated.

@@ -1,6 +1,6 @@
 from typing import Any, Literal, TypedDict
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 Route = Literal["diagnose", "prepare_action", "verify", "deliberate"]
 
@@ -25,6 +25,36 @@ class Hypothesis(Record):
 class HypothesisSet(Record):
     hypotheses: list[Hypothesis]
     intent: Intent | None
+
+
+class ActionCandidate(Record):
+    candidate_id: str = Field(min_length=1, max_length=64)
+    intent: Intent
+    rationale: str = Field(min_length=1)
+    evidence_ids: list[str]
+
+
+class OperationOptions(Record):
+    """Diagnostic alternatives, not an already selected action."""
+    hypotheses: list[Hypothesis]
+    candidates: list[ActionCandidate] = Field(min_length=1, max_length=4)
+
+    @model_validator(mode="after")
+    def distinct_candidates(self):
+        import json
+        ids = [c.candidate_id for c in self.candidates]
+        actions = [json.dumps([c.intent.capability_id, c.intent.arguments], sort_keys=True, allow_nan=False)
+                   for c in self.candidates]
+        if len(set(ids)) != len(ids) or len(set(actions)) != len(actions):
+            raise ValueError("Candidate IDs and capability/argument pairs must be distinct")
+        return self
+
+
+class OperationDecision(Record):
+    backend_id: str
+    choice: str = Field(min_length=1)
+    probabilities: dict[str, float]
+    latency_ms: float = Field(default=0, ge=0)
 
 
 class ActionProposal(Record):
@@ -69,6 +99,10 @@ class LabState(TypedDict, total=False):
     evidence_refs: list[str]
     intent: dict | None
     proposal: dict | None
+    candidates: list[dict]
+    operation_decision: dict | None
+    operation_revision: int | None
+    operation_call_count: int
     pending_operation: dict | None
     verification: dict | None
     route: str

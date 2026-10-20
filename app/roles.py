@@ -96,4 +96,8 @@ class ScriptedRoles:
             record = RouteDecision(backend_id=self.backend_id, choice=route)
         else:
             raise ValueError(role)
+        from app.models import OperationOptions
+        if role == 'diagnostic' and schema is OperationOptions:
+            from app.operation_decision import scripted_options
+            return schema.model_validate(scripted_options(record, payload)).model_dump()
         return schema.model_validate(record.model_dump()).model_dump()

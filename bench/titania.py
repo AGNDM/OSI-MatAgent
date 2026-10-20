@@ -41,7 +41,7 @@ def summarize_usage(events):
     return total, complete
 
 
-def run(branch, output, roles=None, decision=None):
+def run(branch, output, roles=None, decision=None, operation=None):
     lab = TitaniaLab(branch)
     run_id = str(uuid4())
     trace = Trace(run_id, output/'traces'/(run_id+'.jsonl'))
@@ -50,7 +50,7 @@ def run(branch, output, roles=None, decision=None):
          'initial_pattern': lab._pattern, 'template_references': {p: public_reference(p) for p in ['anatase', 'rutile']}})
     backend = roles or ScriptedTitaniaRoles()
     limits = Limits(lab_actions=8, llm_calls=16, episode_seconds=240, graph_steps=120)
-    graph = build_graph(lab, trace, limits, roles=backend, decision_backend=decision, profile=TitaniaProfile())
+    graph = build_graph(lab, trace, limits, roles=backend, decision_backend=decision, profile=TitaniaProfile(), operation_backend=operation)
     final = graph.invoke(initial_state(lab, run_id, limits),
         {'configurable': {'thread_id': run_id}, 'recursion_limit': limits.graph_steps})
     score = lab.score(final['report'])
@@ -58,6 +58,7 @@ def run(branch, output, roles=None, decision=None):
     usage, usage_complete = summarize_usage(trace.events)
     row = {'branch': branch, 'backend': backend.backend_id,
            'router': decision.backend_id if decision else 'rules-v1',
+           'operation_backend': operation.backend_id if operation else None,
            'report': final['report'], 'score': score, 'usage': usage, 'usage_complete': usage_complete,
            'router_fallbacks': sum(e.get('decision', {}).get('fallback_used', False) for e in trace.events),
            'actions': [e['proposal']['capability_id'] for e in lab.history],
@@ -116,27 +117,41 @@ def main():
     parser.add_argument('--router', choices=['rules', 'openjev'], default='rules')
     parser.add_argument('--branch', choices=BRANCHES, action='append')
     parser.add_argument('--controls', action='store_true')
+    parser.add_argument('--operation-decision', choices=['off', 'scripted', 'openjev', 'deepseek'], default='off',
+                        help='Separate next-operation chooser; expert router remains independent')
     args = parser.parse_args()
     if args.output.exists():
         parser.error('Use a new output directory; attempts are retained.')
     roles = ledger = None
-    if args.backend == 'deepseek':
+    if args.backend == 'deepseek' or args.operation_decision == 'deepseek':
         from app.expert_config import load_plan
         from app.token_budget import BudgetedExpert, TokenLedger
         ledger = TokenLedger()
-        roles = BudgetedExpert(load_plan(Path('configs/siliconflow-deepseek-v4.1-flash.json')).reference, ledger)
+        config = load_plan(Path('configs/siliconflow-deepseek-v4.1-flash.json')).reference
+        if args.backend == 'deepseek':
+            roles = BudgetedExpert(config, ledger)
     decision = None
     if args.router == 'openjev':
         from app.local_decision import LocalOpenJevBackend
         decision = LocalOpenJevBackend()
+    operation = None
+    if args.operation_decision != 'off':
+        from app.operation_decision import LocalOperationBackend, ExpertOperationBackend, ScriptedOperationBackend
+        if args.operation_decision == 'openjev':
+            operation = LocalOperationBackend()
+        elif args.operation_decision == 'scripted':
+            operation = ScriptedOperationBackend()
+        else:
+            operation = ExpertOperationBackend(BudgetedExpert(config, ledger))
     args.output.mkdir(parents=True)
     manifest = {'paper': PAPER, 'branches': args.branch or list(BRANCHES), 'backend': args.backend,
-                'router': args.router, 'budget_before': ledger.snapshot() if ledger else None,
+                'router': args.router, 'operation_decision': args.operation_decision, 'budget_before': ledger.snapshot() if ledger else None,
                 'source_hashes': {str(p): sha256(p.read_bytes()).hexdigest()
                     for p in [Path('app/titania.py'), Path('bench/titania.py'), Path('app/graph.py'),
+                              Path('app/operation_decision.py'), Path('app/local_decision.py'), Path('app/models.py'),
                               Path('vendor/chemlab/expansion-code-manifest.json'), Path('vendor/chemlab/expansion-data-manifest.json')]}}
     dump(args.output/'manifest.json', manifest)
-    rows = [run(branch, args.output, roles, decision) for branch in manifest['branches']]
+    rows = [run(branch, args.output, roles, decision, operation) for branch in manifest['branches']]
     controls = negative_controls(args.output) if args.controls else []
     if args.controls:
         audit(args.output)

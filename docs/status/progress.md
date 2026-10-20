@@ -30,7 +30,7 @@ Scripted drying regression passed 16/16 attempts across eight test fixtures and 
 
 ## Validation and next acceptance conditions
 
-The current project passes 84 tests. The upstream cache verifies against 570 pinned hashes. Credentials were absent from the device artifact scan, and all 206 returned model identities matched the configured DeepSeek model ID; no immutable provider weight revision was available.
+The current project passes 111 tests. The upstream cache verifies against 570 pinned hashes. Credentials were absent from the device artifact scan, and all 206 returned model identities matched the configured DeepSeek model ID; no immutable provider weight revision was available.
 
 Next acceptance work is meaningful acquisition tasks, shared multi-device sample/time semantics, scientific evidence retrieval, a second expert, a frozen comparison and independent human error review. The current results do not establish model-routing superiority, scientific fidelity or general materials-research capability.
 
@@ -47,3 +47,15 @@ This advances M2–M4 for the preferred materials direction. M5 remains partial:
 ## Pre-push review
 
 A focused review fixed stale aliquot phase reuse after failed preparation and missing-usage report handling. All 84 tests pass. The prior real-model run remains historical evidence with its original hashes; no additional API calls were made. See [review findings and validation](../evidence/pre-push-review.md).
+
+## Online next-operation selection
+
+At the user's request, the workflow adds an opt-in operation-selection node while the offline decision benchmark is deferred. Diagnosis proposes typed candidates; a separately configured action chooser selects one; procedure and the deterministic gate must preserve that exact selection. The expert router remains independent. OpenJev uses the existing local service, and a budgeted DeepSeek action adapter is also available.
+
+The local drying UI includes scripted regression and local-model operation modes with a separate candidate/probability panel. Public candidate/state projection, stale-state checks, probability validation, model/action/time budgets and failed handoffs have regression coverage. Current aliquot thermal evidence is explicitly separated from historical scans. The complete suite passes 108 tests; pinned native files are unchanged. See [operation guide](../guides/operation-decision.md) and [recorded integration evidence](../evidence/operation-decision-validation.md).
+
+Final online integration reruns passed both titania branches with real DeepSeek candidate generation and local OpenJev routing/action selection, with no format repairs or router fallback in the final pair. Earlier failed pilots and an interrupted request remain recorded. The successful pair reported 23,958 tokens; all new development attempts added 116,858 conservatively charged tokens. The shared ledger now reports 430,167 tokens and charges 450,497/5,000,000 across 271 settled requests; one unknown-usage request retains its full reservation. There are no outstanding requests or accounting violations. Task success does not establish perfect diagnosis: the thermal run includes an incorrect hypothesis about the earlier scan range, preserved in the evidence report.
+
+## Astra release review
+
+Astra approved the bounded online feature after a required browser cloud-provider restriction and an operation-summary provenance fix. The full post-fix suite passed 111 tests in 87.88 seconds. These release fixes used offline tests only; the original real-model execution evidence and its historical 108-test snapshot remain unchanged. See [review and acceptance](../evidence/operation-feature-review.md).

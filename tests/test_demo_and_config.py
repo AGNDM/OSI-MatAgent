@@ -119,3 +119,20 @@ def test_cause_coverage_is_not_named_final_diagnosis_accuracy():
     assert result["expected_cause_covered"]
     assert "diagnosis_correct" not in result
     assert not result["task_success"]
+
+
+def test_browser_rejects_cloud_expert_before_output_or_transport(tmp_path, monkeypatch):
+    endpoint = ExpertEndpoint(name='cloud-test', provider='siliconflow',
+        base_url='https://api.siliconflow.cn/v1', model='deepseek-ai/DeepSeek-V4.1-Flash',
+        api_key_env='TEST_ONLY_KEY')
+    monkeypatch.setattr('app.demo.CompatibleExpert', lambda *args: pytest.fail('Browser must not create cloud transport'))
+    output = tmp_path/'cloud-disabled'
+    with pytest.raises(ValueError, match='local experts only'):
+        DemoController(output, expert=endpoint)
+    assert not output.exists()
+
+
+def test_browser_still_accepts_configured_loopback_expert_without_connecting(tmp_path):
+    endpoint = ExpertEndpoint(name='local-test', base_url='http://127.0.0.1:9001', model='local-general')
+    controller = DemoController(tmp_path, expert=endpoint)
+    assert 'configured-openjev' in controller.modes

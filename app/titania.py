@@ -210,12 +210,14 @@ class TitaniaLab:
 
     def _snapshot(self):
         thermal = [{k: v for k, v in r.items() if k != 'polls'} for r in self.thermal_runs]
+        current = next((r for r in reversed(thermal) if r['aliquot_id'] == self.aliquot_id), None)
+        current_pattern = bool(self._pattern and self.pattern_aliquot == self.aliquot_id)
         return {'id': f'obs-{self.action_count}', 'sample_id': self.sample_id,
-                'aliquot_id': self.aliquot_id, 'revision': self.revision,
+                'aliquot_id': self.aliquot_id, 'current_thermal_run': current, 'revision': self.revision,
                 'captured_at_step': self.action_count, 'quality': 'valid',
-                'thermal_history': thermal, 'scan_method': self.last_method,
-                'pattern_aliquot_id': self.pattern_aliquot,
-                'analysis': analyze(self._pattern) if self._pattern else None,
+                'thermal_history': thermal, 'scan_method': self.last_method if current_pattern else None,
+                'pattern_aliquot_id': self.pattern_aliquot if current_pattern else None,
+                'analysis': analyze(self._pattern) if current_pattern else None,
                 'data_classification': CLASSIFICATION}
 
     def observe(self):
@@ -311,6 +313,31 @@ class TitaniaLab:
 
 
 class TitaniaProfile(DeviceProfile):
+    candidate_prompt = (
+        'Propose next-operation candidates for the CURRENT titania episode. Read operation_context and '
+        'observations.inspection first. If inspection_present is false at the initial state, propose only '
+        'workflow.inspect. Otherwise the sample HAS ALREADY BEEN INSPECTED: use the delivered thermal history '
+        'and scan method now supplied; do not repeat inspection of unchanged valid evidence. '
+        'current_thermal_run identifies the CURRENT aliquot and its completed delivered program. Historical '
+        'thermal_history entries for other aliquots must not override that current receipt. Compare it with '
+        'target.protocol; a short XRD range cannot establish absent rutile. '
+        'Propose schema-valid next operations justified by current evidence and target preservation policy. '
+        'Explain alternative benefits and constraints briefly, citing actual observation IDs. '
+        'After reference preparation, propose fresh XRD acquisition rather than more heat or inspection. '
+        'Do not declare an absent inspection when operation_context.inspection_present is true. '
+        'Keep each rationale and intent string to one brief sentence; do not cite retrieval document IDs.'
+    )
+
+    @staticmethod
+    def validate_role_contract(role, record, payload):
+        DeviceProfile.validate_role_contract(role, record, payload)
+        if role == 'diagnostic' and record.intent and record.intent.capability_id == 'workflow.inspect':
+            obs = payload['observations']
+            inspection = obs.get('inspection')
+            if (inspection and inspection['quality'] == 'valid' and inspection['revision'] == obs['revision']
+                    and not payload.get('last_error')):
+                raise ValueError('Current inspection is already valid and current; propose a next operation using it, not redundant inspection.')
+
     projection = staticmethod(projection)
     prompts = {
         'diagnostic': 'Diagnose missing rutile evidence using public thermal_history and scan_method. First workflow.inspect. '
@@ -363,4 +390,8 @@ class ScriptedTitaniaRoles:
         else:
             value = {'backend_id': self.backend_id, 'choice': 'prepare_action' if payload['summary']['has_intent'] else
                      'verify' if payload['summary']['has_measurement'] else 'diagnose'}
+        from app.models import OperationOptions
+        if role == 'diagnostic' and schema is OperationOptions:
+            from app.operation_decision import scripted_options
+            return schema.model_validate(scripted_options(value, payload)).model_dump()
         return schema.model_validate(value).model_dump()

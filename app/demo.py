@@ -20,12 +20,16 @@ from app.models import Limits
 
 class DemoController:
     def __init__(self, output, decision_url="http://127.0.0.1:8792", expert=None, exploratory=False):
+        if expert is not None and expert.provider != "local":
+            raise ValueError("The browser demo permits local experts only; use the budgeted CLI for cloud experts")
         self.output = Path(output)
         self.output.mkdir(parents=True, exist_ok=True)
         self.decision_url, self.expert = decision_url, expert
         self.lock = Lock()
         self.modes = {"scripted-rules": "Scripted specialists + rules router (regression)",
-            "scripted-openjev": "Scripted specialists + local OpenJev router"}
+            "scripted-openjev": "Scripted specialists + local OpenJev router",
+            "scripted-operation-rules": "Scripted candidates + operation test policy (regression)",
+            "scripted-operation-openjev": "Scripted candidates + local OpenJev router and operation chooser"}
         if expert and expert.configured:
             self.modes["configured-openjev"] = "Configured general specialists + local OpenJev router"
         if exploratory:
@@ -74,16 +78,21 @@ class DemoController:
             elif mode == "exploratory-openjev":
                 from app.local_roles import LocalLlamaRoles
                 roles = LocalLlamaRoles(self.decision_url)
-            decision = RulesBackend() if mode == "scripted-rules" else LocalOpenJevBackend(self.decision_url)
+            decision = RulesBackend() if mode in {"scripted-rules", "scripted-operation-rules"} else LocalOpenJevBackend(self.decision_url)
+            operation = None
+            if mode.startswith("scripted-operation-"):
+                from app.operation_decision import LocalOperationBackend, ScriptedOperationBackend
+                operation = ScriptedOperationBackend() if mode.endswith("rules") else LocalOperationBackend(self.decision_url)
             metadata = {"case_id": case_id, "mode": mode}
             (directory / "demo.json").write_text(json.dumps(metadata) + "\n")
             provenance = manifest(Limits(), "dev", 1, [roles], [case_id], decision)
             provenance["demo_mode"] = self.modes[mode]
+            provenance["operation_backend"] = operation.backend_id if operation else None
             (directory / "manifest.json").write_text(json.dumps(provenance, indent=2) + "\n")
             def observer(event):
                 with self.lock:
                     self.latest["events"].append(self.public_event(event))
-            result = run_episode(case_by_id(case_id), directory, roles=roles, decision_backend=decision, observer=observer)
+            result = run_episode(case_by_id(case_id), directory, roles=roles, decision_backend=decision, observer=observer, operation_backend=operation)
             with self.lock:
                 self.latest.update(record=result, running=False)
                 self.history[key] = {"directory": directory, "record": result, **metadata}

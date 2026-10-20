@@ -57,3 +57,9 @@ The earlier three-case drying expert pilot is separate: 2/3 passed, with 42,802 
 Two new thermal-treatment/XRD branches passed scripted and real DeepSeek-plus-OpenJev execution (2/2 each). Both wrong-repair controls failed independent scoring as intended. Real runs required two evidence-ID repairs total and no routing fallback. API usage: 22,617 tokens across 14 requests, bringing the shared ledger to 333,639/5,000,000. All 80 project tests passed.
 
 Native furnace and XRD acquisition execute, with a common clock and logical aliquot identity. Chemistry endpoints and transfers remain authored; curves are reference-derived synthetic acquisitions. Fixed paper context and explicit repair policy make this a development demonstration rather than a blind held-out benchmark. Full provenance, paths and limitations: [titania execution evidence](../evidence/titania-validation.md).
+
+## Online operation-selection integration (21 October 2026)
+
+The new opt-in node selects one of the diagnostic expert's typed candidate actions before procedure and gate execution. Existing specialist routing remains separate; the offline benchmark is deferred. Final real DeepSeek-candidate plus local OpenJev router/chooser runs passed 2/2 with no format repairs or routing fallback. Earlier pilots passed 0/2 and 0/2, followed by an interrupted attempt; all are retained. The complete project suite passes 108 tests.
+
+Shared API accounting is 430,167 reported and 450,497 conservatively charged tokens under the 5M ceiling, with one unknown-usage request charged at full reservation. These are workflow development outcomes, not model rankings, calibrated confidence or perfect diagnostic accuracy. See [all attempt evidence and limitations](../evidence/operation-decision-validation.md).

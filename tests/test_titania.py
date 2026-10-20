@@ -143,3 +143,16 @@ def test_missing_or_invalid_provider_usage_retains_report_and_marks_incomplete(u
     total, complete = summarize_usage(events)
     assert total == {'prompt_tokens': 3, 'completion_tokens': 2, 'total_tokens': 5}
     assert complete is False
+
+
+def test_current_aliquot_receipt_and_scan_are_not_mixed_after_replacement():
+    lab = TitaniaLab('thermal_history')
+    execute(lab, 'workflow.inspect')
+    old = lab.observe()['inspection']
+    execute(lab, 'thermal.prepare_reference')
+    current = lab.observe()['inspection']
+    assert old['current_thermal_run']['temperature_c'] == 400
+    assert current['aliquot_id'] != old['aliquot_id']
+    assert current['current_thermal_run']['aliquot_id'] == current['aliquot_id']
+    assert current['current_thermal_run']['temperature_c'] == 600
+    assert current['scan_method'] is None and current['pattern_aliquot_id'] is None and current['analysis'] is None
