@@ -14,7 +14,10 @@ for title,d in phases:
  records[d]=rows
  events=[]
  for row in rows:
-  if row.get('trace_path'):events += [json.loads(x) for x in Path(row['trace_path']).read_text().splitlines()]
+  if row.get('trace_path'):
+   # Retained records can contain absolute paths from an earlier checkout.
+   trace = root/'results'/d/'traces'/(row['run_id']+'.jsonl')
+   events += [json.loads(x) for x in trace.read_text().splitlines()]
  stats[d]={'attempts':len(rows),'success':sum(x.get('score',{}).get('task_success',False) for x in rows),
   'tokens':sum(x.get('usage',{}).get('total_tokens',0) for x in rows),
   'false_success':sum(x.get('score',{}).get('false_success',False) for x in rows),
