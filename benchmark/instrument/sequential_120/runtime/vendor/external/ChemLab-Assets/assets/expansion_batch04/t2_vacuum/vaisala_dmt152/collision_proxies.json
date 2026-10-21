@@ -1,0 +1,322 @@
+{
+  "asset_type_id": "vaisala_dmt152",
+  "units": "m",
+  "frame": "component_local",
+  "note_zh": "按构件分解的接触代理；无整机实心包围盒；未验证接触求解或真实机器人。",
+  "components": {
+    "transmitter_body": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "root",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.01475,
+            0.0655
+          ],
+          "origin_m": [
+            -0.025000000000000005,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ]
+    },
+    "label_decal": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "transmitter_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.059,
+            0.01604922044550792,
+            0.003087285660543511
+          ],
+          "origin_m": [
+            -0.02525,
+            -0.0011079933731287998,
+            0.02850600261254169
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "hex_nut": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "transmitter_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0105,
+            0.033,
+            0.03
+          ],
+          "origin_m": [
+            0.012999999999999994,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "sealing_ring": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "hex_nut",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0015000000000000013,
+            0.027,
+            0.026999999999999996
+          ],
+          "origin_m": [
+            0.018999999999999996,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "process_thread": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "hex_nut",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0104775,
+            0.012000000000000004
+          ],
+          "origin_m": [
+            0.024249999999999997,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ]
+    },
+    "sensor_filter": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "process_thread",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.006,
+            0.0325
+          ],
+          "origin_m": [
+            0.0465,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ]
+    },
+    "filter_cap": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "sensor_filter",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.004499999999999997,
+            0.0124,
+            0.012400000000000001
+          ],
+          "origin_m": [
+            0.0605,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "transport_cap": {
+      "origin_m": [
+        0.042749999999999996,
+        0.0,
+        0.015
+      ],
+      "parent": "sensor_filter",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0085,
+            0.042
+          ],
+          "origin_m": [
+            0.0010000000000000009,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ]
+    },
+    "m8_connector": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "transmitter_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0055,
+            0.0049999999999999975
+          ],
+          "origin_m": [
+            -0.06025,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ]
+    },
+    "drycap_sensor": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "sensor_filter",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.006000000000000005,
+            0.004,
+            0.001
+          ],
+          "origin_m": [
+            0.05075,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "electronics": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "transmitter_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.05,
+            0.018,
+            0.001599999999999999
+          ],
+          "origin_m": [
+            -0.02275,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  }
+}

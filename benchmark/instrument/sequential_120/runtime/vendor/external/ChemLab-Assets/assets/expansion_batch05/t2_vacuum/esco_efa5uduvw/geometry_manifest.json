@@ -1,0 +1,4055 @@
+{
+  "asset_type_id": "instrument.esco_efa5uduvw",
+  "catalog_id": "CHEM-199",
+  "name_zh": "Esco Frontier Acela EFA-5UDUVW-9 通风柜（1.5 m美国版，选配Sentinel XL风速监视器）",
+  "created_at": "2026-10-04T01:57:36Z",
+  "builder": "outputs/expansion_batch05/t2_vacuum/esco_efa5uduvw/build_geometry.py",
+  "builder_backend": "trimesh detailed Esco Frontier Acela EFA-5UDUVW-9 (white powder-coated shell with 5 deg pitched posts, grey FRP liner, slotted rear baffle, side vanes, black epoxy worktop with rim and airfoil sill, LED lamp window, ESCO front panel, 305 mm FRP exhaust collar, Sentinel enclosure on top, airflow sensor; aluminium sash with 6 mm laminated glass on a prismatic joint along the pitched track; key lock, cold-water and gas valve handles on revolute joints, gooseneck and gas turret, duplex outlets; Sentinel XL panel with LCD, three LEDs and six membrane keys, light and fan rockers; textures in GLB and OBJ/MTL, primitive collisions); Blender pass adds model.blend and previews",
+  "coordinate_system": {
+    "unit": "m",
+    "angle_unit": "rad",
+    "up_axis": "+Z",
+    "back_axis": "+Y",
+    "root_origin_zh": "柜体占地1525×900 mm中心在地面（底柜顶面）的投影（z=0为柜体底面；+X向右，+Y朝后；操作面（5°后倾）朝−Y操作者）",
+    "handedness": "right",
+    "glb_coordinate_conversion_zh": "GLB 按本项目 +Z 向上约定导出，无 Y-up 转换；节点层级与 URDF link 一一对应。"
+  },
+  "overall_dimensions_m": [
+    1.6019999980926514,
+    0.9097107244598251,
+    1.5210000276565552
+  ],
+  "total_mass_kg": 270.0,
+  "mass_evidence": "engineering_assumption",
+  "component_mass_evidence": "engineering_split",
+  "sources": [
+    {
+      "source_id": "user_workbook",
+      "type": "publication",
+      "reference": "大学化学仪器资产调研_200种.xlsx",
+      "locator": "仪器总表第204行；参数与来源第204行；设置与输入输出第204行 CHEM-199",
+      "notes_zh": "用户清单；型号（Esco Frontier Acela EFA-5UDUVW-9，1.5 m美国版）与规格为硬要求；输出：面风速、窗位、排风/报警状态；缺口：外部风机与管路特性、泄漏与容纳性能",
+      "sha256": null
+    },
+    {
+      "source_id": "manufacturer_brochure",
+      "type": "web",
+      "reference": "Esco Frontier Acela High Performance Fume Hood, US brochure / catalogue 9010376 vI (06/2025)",
+      "locator": "source_cache/brochure_us_vI.pdf（p.2特性；p.3结构；p.4 ASHRAE证书与安全特性；p.6工程图与零件表；p.7型号指南与General Specifications的EFA-5UDUVW-9列；p.7–8选件）",
+      "url": "https://www.escolifesciences.com/pdf/1751422636_9010376_EFA_FrontierACELA_Brochure_US_LTR_vI_062625.pdf",
+      "accessed": "2026-10-04",
+      "notes_zh": "调研表主来源与补充来源（两个链接是同一个文件）：外形、内尺寸、6个排风工作点、排风口305 mm、照明915 lux、移门、限位、自降、钥匙锁、工程图",
+      "sha256": "f6fbfee1453153d3c777724f77ae690344f2bbfdf4c64f2de9aa23d80862b1e4"
+    },
+    {
+      "source_id": "sentinel_xl_sheet",
+      "type": "web",
+      "reference": "Esco Sentinel XL Fume Hood Monitor SXL-EFA sell sheet 9010040 vC",
+      "locator": "source_cache/sentinel_xl_brochure.pdf（规格表、面板图、传感器与控制盒尺寸）",
+      "url": "https://www.escolifesciences.com/downloads/sentinel-xl-airflow-monitor-brochure",
+      "accessed": "2026-10-04",
+      "notes_zh": "风速监视选件：低/高报警默认0.3/0.7 m/s、85 dBA、SAFE/UNSAFE/MUTE灯、夜间节能输入、量程0.2–0.9 m/s、温度补偿18–30 °C、面板112×80 mm、PIN、自检、公/英制",
+      "sha256": "2aac502914fbfdbe0d72053bd95b66efd15bb0c8218e5485fbd5cbdfa2dd1777"
+    },
+    {
+      "source_id": "manufacturer_photo",
+      "type": "web",
+      "reference": "Brochure photographs (pp.1-3) and the Sentinel XL panel photograph",
+      "locator": "source_cache/bro-0*.png、pho-0*.png、sxl-1.png、drw-06.png",
+      "url": "https://www.escolifesciences.com/pdf/1751422636_9010376_EFA_FrontierACELA_Brochure_US_LTR_vI_062625.pdf",
+      "accessed": "2026-10-04",
+      "notes_zh": "外观：白色粉末涂层柜体、ESCO标识前面板、5°倾斜移门与把手、左立柱钥匙锁/龙头阀/插座、右立柱风速报警位/开关/插座、背部开缝导流板、侧导流板、黑色环氧台面与前沿导流翼、顶部排风口",
+      "sha256": "ae0c4edde0e3ca3e7b3404ed73e1f448046e105b12f0ea15d28c014c1cebbeeb"
+    },
+    {
+      "source_id": "manufacturer_product_page",
+      "type": "web",
+      "reference": "Esco Frontier Acela product page",
+      "locator": "source_cache/product_page.html",
+      "url": "https://www.escolifesciences.com/products/ducted-fume-hood/frontier-acela",
+      "accessed": "2026-10-04",
+      "notes_zh": "产品说明",
+      "sha256": "80dd5b3c48b3ef16891402b36e6db69577366dc7edabf88156dae5dc6c148230"
+    },
+    {
+      "source_id": "pubchem",
+      "type": "publication",
+      "reference": "PubChem PUG-View NIOSH Recommendations (NIOSH Pocket Guide REL), Flammable Limits; PUG REST properties",
+      "locator": "source_cache/pubchem/<cid>_niosh.json、297_flammable.json、*_props.json",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/",
+      "accessed": "2026-10-04",
+      "notes_zh": "液体与气体的NIOSH推荐暴露限值、甲烷爆炸极限、SF6与甲烷摩尔质量",
+      "sha256": null
+    },
+    {
+      "source_id": "liquid_library",
+      "type": "publication",
+      "reference": "CHEM-008 liquid template library (51 liquids)",
+      "locator": "assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json",
+      "notes_zh": "敞口液体蒸发：蒸气压、摩尔质量、熔点、沸点（每条保留原始来源）",
+      "sha256": null
+    }
+  ],
+  "components": [
+    {
+      "id": "body",
+      "name_zh": "柜体",
+      "function_zh": "电镀锌钢板粉末涂层柜体：两侧板、前立柱、顶板、背板、底框",
+      "physical_meaning_zh": "结构件：柜体（根）；装配原点 (0, 0, 0) m 相对 root，碰撞代理为0.02×0.84×1.406 m 长方体 等 7 个基元；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：白色粉末涂层钢板柜体（Esco白）。",
+      "parent": "root",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "外形宽深高与5°倾角为规格表与工程图；立柱深度与板厚为工程值。",
+      "objects": [
+        "esco_efa5uduvw__body"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.020000000000000018,
+            0.8400000000000001,
+            1.406
+          ],
+          "origin_m": [
+            -0.7525,
+            0.03,
+            0.703
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.020000000000000018,
+            0.8400000000000001,
+            1.406
+          ],
+          "origin_m": [
+            0.7525,
+            0.03,
+            0.703
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.11199999999999999,
+            0.2,
+            1.406
+          ],
+          "origin_m": [
+            -0.7064999999999999,
+            -0.35,
+            0.703
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.11199999999999999,
+            0.2,
+            1.406
+          ],
+          "origin_m": [
+            0.7064999999999999,
+            -0.35,
+            0.703
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            1.525,
+            0.7769909390825509,
+            0.020000000000000018
+          ],
+          "origin_m": [
+            0.0,
+            0.06150453045872459,
+            1.396
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            1.525,
+            0.020000000000000018,
+            1.406
+          ],
+          "origin_m": [
+            0.0,
+            0.44,
+            0.703
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            1.301,
+            0.9,
+            0.015
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0075
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 127.751,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.703
+      ],
+      "simulation_inertia_kg_m2": [
+        29.668423819666668,
+        45.80364126758332,
+        33.38160244791666
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.79
+        ],
+        "metallic": 0.0,
+        "roughness": 0.42,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "白色粉末涂层钢板柜体（Esco白）"
+    },
+    {
+      "id": "liner",
+      "name_zh": "内衬",
+      "function_zh": "Resinate Plus玻璃钢内衬：侧壁、顶棚与后壁（工作腔）",
+      "physical_meaning_zh": "结构件：内衬；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.008×0.8×1.23 m 长方体 等 3 个基元；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：浅灰玻璃钢内衬。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "内腔1301×675×1230 mm为规格表；板厚为工程值。",
+      "objects": [
+        "esco_efa5uduvw__liner"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.008000000000000007,
+            0.8,
+            1.23
+          ],
+          "origin_m": [
+            -0.6545,
+            0.05000000000000002,
+            0.655
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.008000000000000007,
+            0.8,
+            1.23
+          ],
+          "origin_m": [
+            0.6545,
+            0.05000000000000002,
+            0.655
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            1.301,
+            0.7,
+            0.008000000000000007
+          ],
+          "origin_m": [
+            0.0,
+            0.1,
+            1.274
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 35.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.03424977500000001,
+        0.659
+      ],
+      "simulation_inertia_kg_m2": [
+        6.297424473521422,
+        9.529137916666667,
+        6.886139056854757
+      ],
+      "material": {
+        "base_color": [
+          0.66,
+          0.68,
+          0.67
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "浅灰玻璃钢内衬"
+    },
+    {
+      "id": "worktop",
+      "name_zh": "环氧台面",
+      "function_zh": "环氧树脂台面（工作区，接口work_zone）",
+      "physical_meaning_zh": "承载件：环氧台面（work_zone）；装配原点 (0, 0, 0) m 相对 body，碰撞代理为1.301×0.672×0.025 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：黑色环氧树脂台面（带凸缘）。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "材料为规格表；厚度25 mm与高度为工程值。",
+      "objects": [
+        "esco_efa5uduvw__worktop"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.301,
+            0.671500453458963,
+            0.025
+          ],
+          "origin_m": [
+            0.0,
+            -0.0357502267294815,
+            0.0275
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 40.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.035750225,
+        0.0275
+      ],
+      "simulation_inertia_kg_m2": [
+        1.5051261811673413,
+        5.6440866666666665,
+        7.1450461811673405
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/worktop.png"
+      },
+      "appearance_zh": "黑色环氧树脂台面（带凸缘）"
+    },
+    {
+      "id": "worktop_rim",
+      "name_zh": "台面凸缘",
+      "function_zh": "台面四周的防溢凸缘",
+      "physical_meaning_zh": "结构件：台面凸缘；装配原点 (0, 0, 0) m 相对 worktop，碰撞代理为1.299×0.67×0.007 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：黑色环氧凸缘。",
+      "parent": "worktop",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按工程图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "esco_efa5uduvw__worktop_rim"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.299,
+            0.669500453458963,
+            0.007000000000000006
+          ],
+          "origin_m": [
+            0.0,
+            -0.0357502267294815,
+            0.042499999999999996
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.035750225,
+        0.042499999999999996
+      ],
+      "simulation_inertia_kg_m2": [
+        0.037356654379183535,
+        0.1406208333333333,
+        0.1779693210458502
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色环氧凸缘"
+    },
+    {
+      "id": "airfoil",
+      "name_zh": "底部导流翼",
+      "function_zh": "台面前沿的气动导流翼（Aerodynamic Foil Entry：引导开口下沿气流）",
+      "physical_meaning_zh": "导流件：底部导流翼；装配原点 (0, 0, 0) m 相对 body，碰撞代理为半径 0.012 m、高 1.281 m 圆柱；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：白色钢制导流翼。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按工程图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "esco_efa5uduvw__airfoil"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.012,
+            1.281
+          ],
+          "origin_m": [
+            0.0,
+            -0.44650045345896305,
+            0.044
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 3.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.44650045,
+        0.044
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0002880000000000003,
+        0.41038424999999995,
+        0.41038424999999995
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.79
+        ],
+        "metallic": 0.0,
+        "roughness": 0.42,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "白色钢制导流翼"
+    },
+    {
+      "id": "baffle",
+      "name_zh": "导流板",
+      "function_zh": "背部开缝导流板（Hot Zone Baffles：上中下缝把蒸气吸入后风腔）",
+      "physical_meaning_zh": "导流件：导流板；装配原点 (0, 0, 0) m 相对 liner，碰撞代理为1.301×0.006×1.11 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：浅灰玻璃钢导流板（三排条缝）。",
+      "parent": "liner",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "导流板位置按内腔深675 mm；条缝排数按照片与工程图估计。",
+      "objects": [
+        "esco_efa5uduvw__baffle"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.301,
+            0.006000000000000005,
+            1.1099999999999999
+          ],
+          "origin_m": [
+            0.0,
+            0.28300000000000003,
+            0.625
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 8.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.28225,
+        0.625
+      ],
+      "simulation_inertia_kg_m2": [
+        0.8214201666666665,
+        1.9428726666666662,
+        1.1214928333333332
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/baffle.png"
+      },
+      "appearance_zh": "浅灰玻璃钢导流板（三排条缝）"
+    },
+    {
+      "id": "side_vanes",
+      "name_zh": "侧导流板",
+      "function_zh": "Acela侧导流板（Shaping Vanes：开口两侧的气流导向）",
+      "physical_meaning_zh": "导流件：侧导流板；装配原点 (0, 0, 0) m 相对 liner，碰撞代理为0.05×0.07×1.01 m 长方体 等 2 个基元；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：白色导流叶片。",
+      "parent": "liner",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按工程图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "esco_efa5uduvw__side_vanes"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.050000000000000044,
+            0.07,
+            1.01
+          ],
+          "origin_m": [
+            -0.6255,
+            -0.28500000000000003,
+            0.5950000000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.050000000000000044,
+            0.07,
+            1.01
+          ],
+          "origin_m": [
+            0.6255,
+            -0.28500000000000003,
+            0.5950000000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 2.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.32452994,
+        0.5950000000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        0.17036077803125074,
+        0.44972694034861066,
+        0.2800543850465281
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.79
+        ],
+        "metallic": 0.0,
+        "roughness": 0.42,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "白色导流叶片"
+    },
+    {
+      "id": "led_lamp",
+      "name_zh": "LED灯窗",
+      "function_zh": "柜顶LED照明的灯窗（灯亮时台面915 lux；lamp.lit）",
+      "physical_meaning_zh": "指示件：LED灯窗（lamp.lit）；装配原点 (0, 0, 0) m 相对 liner，碰撞代理为1.101×0.2×0.003 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：乳白玻璃灯窗。",
+      "parent": "liner",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "照度915 lux为规格表；灯窗尺寸与位置为估计。",
+      "objects": [
+        "esco_efa5uduvw__led_lamp"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.101,
+            0.19999999999999998,
+            0.0030000000000001137
+          ],
+          "origin_m": [
+            0.0,
+            -0.1388893973220765,
+            1.2675
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 3.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.1388894,
+        1.2675
+      ],
+      "simulation_inertia_kg_m2": [
+        0.010002250000000002,
+        0.30305249999999995,
+        0.31305025
+      ],
+      "material": {
+        "base_color": [
+          0.55,
+          0.57,
+          0.58
+        ],
+        "metallic": 0.0,
+        "roughness": 0.1,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "乳白玻璃灯窗"
+    },
+    {
+      "id": "side_access",
+      "name_zh": "侧检修板",
+      "function_zh": "内侧壁的检修板（后面是公用接口，接口service_supply）",
+      "physical_meaning_zh": "连接件：侧检修板（service_supply）；装配原点 (0, 0, 0) m 相对 liner，碰撞代理为0.004×0.26×0.4 m 长方体 等 2 个基元；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：浅灰椭圆检修板。",
+      "parent": "liner",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "工程图第17号零件；形状与位置按侧视图估计。",
+      "objects": [
+        "esco_efa5uduvw__side_access"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0040000000000000036,
+            0.26,
+            0.4
+          ],
+          "origin_m": [
+            -0.6485,
+            0.049999999999999996,
+            0.36000000000000004
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.0040000000000000036,
+            0.26,
+            0.4
+          ],
+          "origin_m": [
+            0.6485,
+            0.049999999999999996,
+            0.36000000000000004
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.049999999999999996,
+        0.36000000000000004
+      ],
+      "simulation_inertia_kg_m2": [
+        0.018966666666666666,
+        0.15416666666666667,
+        0.1464666666666667
+      ],
+      "material": {
+        "base_color": [
+          0.46,
+          0.47,
+          0.48
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "浅灰椭圆检修板"
+    },
+    {
+      "id": "front_panel",
+      "name_zh": "前面板",
+      "function_zh": "移门上方的可拆前面板（后面是灯与电气）",
+      "physical_meaning_zh": "结构件：前面板；装配原点 (0, 0, 0) m 相对 body，碰撞代理为1.301×0.481×0.02 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：白色前面板（ESCO字样）。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "工程图第5号零件；下沿高度按关闭移门顶部被遮住推得。",
+      "objects": [
+        "esco_efa5uduvw__front_panel"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.301,
+            0.48099999999999987,
+            0.02
+          ],
+          "origin_m": [
+            0.0,
+            -0.33807001567961814,
+            1.1646284425725233
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 6.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.33826402499999997,
+        1.1624109
+      ],
+      "simulation_inertia_kg_m2": [
+        0.11966979287217477,
+        0.9640817628963326,
+        0.848189029975842
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/front_panel.png"
+      },
+      "appearance_zh": "白色前面板（ESCO字样）"
+    },
+    {
+      "id": "sash_stopper",
+      "name_zh": "移门限位块",
+      "function_zh": "457 mm移门限位块（超过需越过限位）",
+      "physical_meaning_zh": "机构件：移门限位（457 mm）；装配原点 (0, 0, 0) m 相对 body，碰撞代理为1.301×0.014×0.025 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：黑色限位块。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "限位457 mm为厂家；限位块形状为估计。",
+      "objects": [
+        "esco_efa5uduvw__sash_stopper"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.301,
+            0.014046074203044767,
+            0.024954541667173702
+          ],
+          "origin_m": [
+            0.0,
+            -0.39417414346658564,
+            0.5463027540580188
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.1,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.39417414500000003,
+        0.54630275
+      ],
+      "simulation_inertia_kg_m2": [
+        6.833509575470859e-06,
+        0.014110197742221761,
+        0.014106652434020372
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色限位块"
+    },
+    {
+      "id": "exhaust_collar",
+      "name_zh": "排风口",
+      "function_zh": "顶部排风口Ø305 mm（接外部排风；接口exhaust_collar）",
+      "physical_meaning_zh": "连接件：排风口（exhaust_collar）；装配原点 (0, 0, 0) m 相对 body，碰撞代理为半径 0.163 m、高 0.115 m 圆柱；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：玻璃钢排风口。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "直径305 mm、距左763 mm、距后224.5 mm、高1521 mm为规格表与工程图。",
+      "objects": [
+        "esco_efa5uduvw__exhaust_collar"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.1625,
+            0.11499999999999999
+          ],
+          "origin_m": [
+            0.000500000000000056,
+            0.2255,
+            1.4634999999999998
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 4.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0005000000000000004,
+        0.2255,
+        1.4634999999999998
+      ],
+      "simulation_inertia_kg_m2": [
+        0.03961666666666667,
+        0.03961666666666667,
+        0.07041666666666667
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.62,
+          0.58
+        ],
+        "metallic": 0.0,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "玻璃钢排风口"
+    },
+    {
+      "id": "enclosure",
+      "name_zh": "Sentinel控制盒",
+      "function_zh": "Sentinel XL电气控制盒（柜顶；电源线与夜间节能输入，接口power_inlet、night_setback_input）",
+      "physical_meaning_zh": "电气件：Sentinel控制盒；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.253×0.223×0.061 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：浅灰钢制控制盒。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "253×223×61 mm为Sentinel资料；位置为估计。",
+      "objects": [
+        "esco_efa5uduvw__enclosure"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.253,
+            0.22299999999999998,
+            0.06099999999999994
+          ],
+          "origin_m": [
+            0.3,
+            0.25,
+            1.4364999999999999
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 2.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.3,
+        0.25,
+        1.4365
+      ],
+      "simulation_inertia_kg_m2": [
+        0.008908333333333334,
+        0.011288333333333334,
+        0.01895633333333333
+      ],
+      "material": {
+        "base_color": [
+          0.46,
+          0.47,
+          0.48
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "浅灰钢制控制盒"
+    },
+    {
+      "id": "airflow_sensor",
+      "name_zh": "风速传感器",
+      "function_zh": "Sentinel XL风速传感器（侧壁旁通，温度补偿，0.2–0.9 m/s）",
+      "physical_meaning_zh": "传感件：风速传感器（monitor.reading_m_s）；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.075×0.11×0.096 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：浅灰传感器盒。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "外形尺寸为Sentinel资料；安装位置为估计。",
+      "objects": [
+        "esco_efa5uduvw__airflow_sensor"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.07499999999999996,
+            0.10999999999999999,
+            0.09600000000000009
+          ],
+          "origin_m": [
+            0.8019999999999999,
+            -0.25,
+            1.05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.5,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.802,
+        -0.25,
+        1.05
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0008881666666666673,
+        0.0006183750000000011,
+        0.000738541666666667
+      ],
+      "material": {
+        "base_color": [
+          0.46,
+          0.47,
+          0.48
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "浅灰传感器盒"
+    },
+    {
+      "id": "sash",
+      "name_zh": "移门",
+      "function_zh": "移门：沿5°倾斜导轨移动，关节位移=开度/cos5°（双向：运行层的开度（含自降）驱动移门；场景里拉动移门停稳后调用sash.set）",
+      "physical_meaning_zh": "运动件：移门（双向棱柱关节，sash.height_m；sash_handle）；关节：沿 +Z 平移 0–0.6726 m，状态 sash.height_m；装配原点 (0, -0.4165, 0.04) m 相对 body，碰撞代理为1.351×0.902×0.03 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：铝框移门与下沿把手（6 mm夹层钢化玻璃）。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        -0.416500453458963,
+        0.04
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        0.08715574274765817,
+        0.9961946980917455
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0.0,
+          0.08715574274765817,
+          0.9961946980917455
+        ],
+        "limits": [
+          0.0,
+          0.6725592911540428
+        ],
+        "state_id": "sash.height_m",
+        "evidence": "manufacturer_datasheet"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "移门最大开度670 mm、5°倾斜、全开时高出柜顶203 mm为规格表与工程图；框宽与把手为估计。",
+      "objects": [
+        "esco_efa5uduvw__sash"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.351,
+            0.9024340339514692,
+            0.03
+          ],
+          "origin_m": [
+            0.0,
+            0.03932615425490282,
+            0.44949999999999996
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 16.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.023698180000000003,
+        0.44932569
+      ],
+      "simulation_inertia_kg_m2": [
+        1.107335587620288,
+        3.517060963515906,
+        2.457477290771048
+      ],
+      "material": {
+        "base_color": [
+          0.78,
+          0.79,
+          0.8
+        ],
+        "metallic": 0.6,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "铝框移门与下沿把手（6 mm夹层钢化玻璃）"
+    },
+    {
+      "id": "sash_glass",
+      "name_zh": "移门玻璃",
+      "function_zh": "6 mm夹层钢化玻璃（视线高度1803 mm）",
+      "physical_meaning_zh": "透明件：移门玻璃；装配原点 (0, 0.4165, -0.04) m 相对 sash，碰撞代理为1.295×0.822×0.006 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：透明夹层钢化玻璃。",
+      "parent": "sash",
+      "origin_m": [
+        0.0,
+        0.416500453458963,
+        -0.04
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "6 mm夹层钢化玻璃为规格表。",
+      "objects": [
+        "esco_efa5uduvw__sash_glass"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            1.295,
+            0.8224340339514692,
+            0.006
+          ],
+          "origin_m": [
+            0.0,
+            -0.3771742992040602,
+            0.48949999999999994
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 17.8,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.37621558499999996,
+        0.500458145
+      ],
+      "simulation_inertia_kg_m2": [
+        1.0108107025057866,
+        3.489412173876926,
+        2.496572695295527
+      ],
+      "material": {
+        "base_color": [
+          0.86,
+          0.92,
+          0.93
+        ],
+        "metallic": 0.0,
+        "roughness": 0.03,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.25,
+        "texture": null
+      },
+      "appearance_zh": "透明夹层钢化玻璃"
+    },
+    {
+      "id": "keylock",
+      "name_zh": "移门钥匙锁",
+      "function_zh": "钥匙锁：限制457 mm以上开度或锁在全关（keylock.set）",
+      "physical_meaning_zh": "操作件：钥匙锁（keylock.set）；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.022×0.00986×0.0224 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：镀铬圆柱锁芯。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "工程图第1号零件；位置按前视图估计。",
+      "objects": [
+        "esco_efa5uduvw__keylock"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.02200000000000002,
+            0.009862146817742334,
+            0.02243921781450442
+          ],
+          "origin_m": [
+            -0.7064999999999999,
+            -0.37873210960635234,
+            0.8602614672282429
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.2,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        -0.7065,
+        -0.37873210999999996,
+        0.86026147
+      ],
+      "simulation_inertia_kg_m2": [
+        1.0013006659799994e-05,
+        1.6458643236806668e-05,
+        9.687696756326687e-06
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.83
+        ],
+        "metallic": 1.0,
+        "roughness": 0.12,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "镀铬圆柱锁芯"
+    },
+    {
+      "id": "knob_water",
+      "name_zh": "冷水阀柄",
+      "function_zh": "冷水龙头阀柄：转角=开度×90°（双向：转动停稳后调用fixture.set）",
+      "physical_meaning_zh": "输入器件：knob_water（双向旋钮，fixture.set）；关节：绕 −Y 旋转 0–1.571 rad，状态 fixture.water_open；装配原点 (-0.7065, -0.415005, 0.4) m 相对 body，碰撞代理为0.06×0.06×0.03 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：四爪镀铬阀柄（蓝色色标）。",
+      "parent": "body",
+      "origin_m": [
+        -0.7064999999999999,
+        -0.4150045345896304,
+        0.4
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        -0.9961946980917455,
+        0.08715574274765817
+      ],
+      "joint": {
+        "type": "revolute",
+        "axis": [
+          0.0,
+          -0.9961946980917455,
+          0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          1.5707963267948966
+        ],
+        "state_id": "fixture.water_open",
+        "evidence": "photo_estimate"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "工程图第18、19号零件（阀柄在左立柱）；外形与色标为估计。",
+      "objects": [
+        "esco_efa5uduvw__knob_water"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.06,
+            0.06,
+            0.03
+          ],
+          "origin_m": [
+            0.0,
+            -0.014942920471376187,
+            0.0013073361412148654
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.2,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.014034935815192473,
+        0.001227897777143314
+      ],
+      "simulation_inertia_kg_m2": [
+        8.146515798064165e-05,
+        0.00013326425959000164,
+        8.050089839064e-05
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.83
+        ],
+        "metallic": 1.0,
+        "roughness": 0.12,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "四爪镀铬阀柄（蓝色色标）"
+    },
+    {
+      "id": "water_color_tag",
+      "name_zh": "冷水色标",
+      "function_zh": "阀柄中心的介质色标",
+      "physical_meaning_zh": "标识件：介质色标；装配原点 (0, 0, 0) m 相对 knob_water，碰撞代理为0.0124×0.00258×0.0125 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：色标片。",
+      "parent": "knob_water",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按工程图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "esco_efa5uduvw__water_color_tag"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.012399999999999967,
+            0.0025750232572085974,
+            0.012483547870459133
+          ],
+          "origin_m": [
+            0.0,
+            -0.02664820817395419,
+            0.0023314161184998516
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.02664821,
+        0.002331415
+      ],
+      "simulation_inertia_kg_m2": [
+        2.707829143381667e-08,
+        5.1599836767083327e-08,
+        2.6731788000066667e-08
+      ],
+      "material": {
+        "base_color": [
+          0.1,
+          0.3,
+          0.75
+        ],
+        "metallic": 0.0,
+        "roughness": 0.4,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "色标片"
+    },
+    {
+      "id": "knob_gas",
+      "name_zh": "燃气阀柄",
+      "function_zh": "燃气龙头阀柄：转角=开度×90°（双向：转动停稳后调用fixture.set）",
+      "physical_meaning_zh": "输入器件：knob_gas（双向旋钮，fixture.set）；关节：绕 −Y 旋转 0–1.571 rad，状态 fixture.gas_open；装配原点 (-0.7065, -0.424628, 0.29) m 相对 body，碰撞代理为0.06×0.06×0.03 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：四爪镀铬阀柄（黄色色标）。",
+      "parent": "body",
+      "origin_m": [
+        -0.7064999999999999,
+        -0.42462828757748206,
+        0.29
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        -0.9961946980917455,
+        0.08715574274765817
+      ],
+      "joint": {
+        "type": "revolute",
+        "axis": [
+          0.0,
+          -0.9961946980917455,
+          0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          1.5707963267948966
+        ],
+        "state_id": "fixture.gas_open",
+        "evidence": "photo_estimate"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "工程图第18、19号零件（阀柄在左立柱）；外形与色标为估计。",
+      "objects": [
+        "esco_efa5uduvw__knob_gas"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.06,
+            0.06,
+            0.03
+          ],
+          "origin_m": [
+            0.0,
+            -0.014942920471376187,
+            0.0013073361412148654
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.2,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.014034935815192473,
+        0.001227897777143314
+      ],
+      "simulation_inertia_kg_m2": [
+        8.146515798064165e-05,
+        0.00013326425959000164,
+        8.050089839064e-05
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.83
+        ],
+        "metallic": 1.0,
+        "roughness": 0.12,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "四爪镀铬阀柄（黄色色标）"
+    },
+    {
+      "id": "gas_color_tag",
+      "name_zh": "燃气色标",
+      "function_zh": "阀柄中心的介质色标",
+      "physical_meaning_zh": "标识件：介质色标；装配原点 (0, 0, 0) m 相对 knob_gas，碰撞代理为0.0124×0.00258×0.0125 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：色标片。",
+      "parent": "knob_gas",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按工程图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "esco_efa5uduvw__gas_color_tag"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.012399999999999967,
+            0.0025750232572085974,
+            0.012483547870459133
+          ],
+          "origin_m": [
+            0.0,
+            -0.02664820817395419,
+            0.0023314161184998516
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.02664821,
+        0.002331415
+      ],
+      "simulation_inertia_kg_m2": [
+        2.707829143381667e-08,
+        5.1599836767083327e-08,
+        2.6731788000066667e-08
+      ],
+      "material": {
+        "base_color": [
+          0.85,
+          0.65,
+          0.1
+        ],
+        "metallic": 0.0,
+        "roughness": 0.4,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "色标片"
+    },
+    {
+      "id": "gooseneck",
+      "name_zh": "鹅颈冷水龙头",
+      "function_zh": "柜内冷水鹅颈龙头（接口water_outlet）",
+      "physical_meaning_zh": "连接件：冷水龙头出口（water_outlet）；装配原点 (0, 0, 0) m 相对 liner，碰撞代理为0.18×0.03×0.24 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：镀铬鹅颈龙头。",
+      "parent": "liner",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "工程图前视图的鹅颈；尺寸为估计。",
+      "objects": [
+        "esco_efa5uduvw__gooseneck"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.18,
+            0.03,
+            0.24
+          ],
+          "origin_m": [
+            -0.5605,
+            -0.2506301014133342,
+            0.41
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.0,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        -0.56332553,
+        -0.25063009999999997,
+        0.40754359500000004
+      ],
+      "simulation_inertia_kg_m2": [
+        0.005173006621841344,
+        0.007874183569981645,
+        0.002871843614806967
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.83
+        ],
+        "metallic": 1.0,
+        "roughness": 0.12,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "镀铬鹅颈龙头"
+    },
+    {
+      "id": "gas_turret",
+      "name_zh": "燃气嘴",
+      "function_zh": "柜内燃气嘴（软管接头，接口gas_cock）",
+      "physical_meaning_zh": "连接件：燃气嘴（gas_cock）；装配原点 (0, 0, 0) m 相对 liner，碰撞代理为0.075×0.04×0.04 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：镀铬燃气嘴。",
+      "parent": "liner",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "工程图第19号零件的柜内出口；外形为估计。",
+      "objects": [
+        "esco_efa5uduvw__gas_turret"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.075,
+            0.04,
+            0.04
+          ],
+          "origin_m": [
+            -0.6134999999999999,
+            -0.228127834118519,
+            0.25
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.5,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        -0.6154999999999999,
+        -0.22812782999999998,
+        0.25
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00010800000000000002,
+        0.00025816666666666636,
+        0.00025816666666666636
+      ],
+      "material": {
+        "base_color": [
+          0.8,
+          0.81,
+          0.83
+        ],
+        "metallic": 1.0,
+        "roughness": 0.12,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "镀铬燃气嘴"
+    },
+    {
+      "id": "outlet_left",
+      "name_zh": "左插座",
+      "function_zh": "双联插座（110–120 VAC；接口outlet_left）",
+      "physical_meaning_zh": "连接件：outlet_left；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.07×0.115×0.004 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：米白双联插座面板。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "工程图第12号零件；位置按前视图。",
+      "objects": [
+        "esco_efa5uduvw__outlet_left"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.07,
+            0.115,
+            0.004
+          ],
+          "origin_m": [
+            -0.7064999999999999,
+            -0.43974397650255415,
+            0.14017431148549533
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.15,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        -0.7065,
+        -0.439743975,
+        0.14017431
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00016750947370720629,
+        0.00022630678146800512,
+        6.370269223920135e-05
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/outlet.png"
+      },
+      "appearance_zh": "米白双联插座面板"
+    },
+    {
+      "id": "outlet_right",
+      "name_zh": "右插座",
+      "function_zh": "双联插座（110–120 VAC；接口outlet_right）",
+      "physical_meaning_zh": "连接件：outlet_right；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.07×0.115×0.004 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：米白双联插座面板。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "工程图第12号零件；位置按前视图。",
+      "objects": [
+        "esco_efa5uduvw__outlet_right"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.07,
+            0.115,
+            0.004
+          ],
+          "origin_m": [
+            0.7064999999999999,
+            -0.43974397650255415,
+            0.14017431148549533
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.15,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.7065,
+        -0.439743975,
+        0.14017431
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00016750947370720629,
+        0.00022630678146800512,
+        6.370269223920135e-05
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/outlet.png"
+      },
+      "appearance_zh": "米白双联插座面板"
+    },
+    {
+      "id": "control_plate",
+      "name_zh": "开关面板",
+      "function_zh": "照明与风机开关面板",
+      "physical_meaning_zh": "安装件：开关面板；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.09×0.07×0.003 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：白色开关面板（LIGHT / FAN）。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "工程图第8号零件；面板尺寸为估计。",
+      "objects": [
+        "esco_efa5uduvw__control_plate"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.09,
+            0.07,
+            0.003
+          ],
+          "origin_m": [
+            0.7064999999999999,
+            -0.3911271142142501,
+            0.6901307336141215
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.1,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.7064999999999999,
+        -0.39112711499999997,
+        0.690130735
+      ],
+      "simulation_inertia_kg_m2": [
+        4.151609543806825e-05,
+        0.0001083276052009007,
+        6.818849023716746e-05
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/switch_plate.png"
+      },
+      "appearance_zh": "白色开关面板（LIGHT / FAN）"
+    },
+    {
+      "id": "light_switch",
+      "name_zh": "照明开关",
+      "function_zh": "照明翘板开关",
+      "physical_meaning_zh": "输入器件：light_switch（弹簧键），按下调用light.toggle；关节：沿 +Y 平移 0–0.0015 m，瞬时按键（不镜像状态）；装配原点 (0.6805, -0.393146, 0.684261) m 相对 control_plate，碰撞代理为0.022×0.034×0.009 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：黑色翘板开关。",
+      "parent": "control_plate",
+      "origin_m": [
+        0.6804999999999999,
+        -0.3931463382425432,
+        0.6842614672282429
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.0015
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "工程图第8号零件（翘板开关为默认控制）；外形为估计。",
+      "objects": [
+        "esco_efa5uduvw__light_switch"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.034,
+            0.009
+          ],
+          "origin_m": [
+            0.0,
+            -0.00448287614141285,
+            0.0003922008423644652
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.004314985,
+        0.00026146500000000066
+      ],
+      "simulation_inertia_kg_m2": [
+        1.0977668257461665e-06,
+        1.3890969013354164e-06,
+        5.153365910774166e-07
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色翘板开关"
+    },
+    {
+      "id": "fan_switch",
+      "name_zh": "风机开关",
+      "function_zh": "风机翘板开关（接通外部专用风机回路）",
+      "physical_meaning_zh": "输入器件：fan_switch（弹簧键），按下调用fan.toggle；关节：沿 +Y 平移 0–0.0015 m，瞬时按键（不镜像状态）；装配原点 (0.7325, -0.393146, 0.684261) m 相对 control_plate，碰撞代理为0.022×0.034×0.009 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：黑色翘板开关。",
+      "parent": "control_plate",
+      "origin_m": [
+        0.7324999999999999,
+        -0.3931463382425432,
+        0.6842614672282429
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.0015
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "工程图第8号零件（翘板开关为默认控制）；外形为估计。",
+      "objects": [
+        "esco_efa5uduvw__fan_switch"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.034,
+            0.009
+          ],
+          "origin_m": [
+            0.0,
+            -0.00448287614141285,
+            0.0003922008423644652
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.004314985,
+        0.00026146500000000066
+      ],
+      "simulation_inertia_kg_m2": [
+        1.0977668257461665e-06,
+        1.3890969013354164e-06,
+        5.153365910774166e-07
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色翘板开关"
+    },
+    {
+      "id": "monitor_panel",
+      "name_zh": "Sentinel XL面板",
+      "function_zh": "Sentinel XL风速监视器操作面板（右立柱，工程图第7号位置）",
+      "physical_meaning_zh": "安装件：Sentinel XL面板；装配原点 (0, 0, 0) m 相对 body，碰撞代理为0.112×0.08×0.012 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：浅灰面板（ESCO、Sentinel XL字样）。",
+      "parent": "body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "面板112×80 mm为Sentinel资料；安装在风速报警预留位（工程图第7号）。",
+      "objects": [
+        "esco_efa5uduvw__monitor_panel"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.112,
+            0.08,
+            0.012
+          ],
+          "origin_m": [
+            0.7064999999999999,
+            -0.3807369175562559,
+            0.860522934456486
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.3,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.7064999999999999,
+        -0.38073692000000003,
+        0.8605229350000001
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00017193513765856243,
+        0.00047657954370256233,
+        0.00032255559395599987
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_panel.png"
+      },
+      "appearance_zh": "浅灰面板（ESCO、Sentinel XL字样）"
+    },
+    {
+      "id": "monitor_lcd",
+      "name_zh": "Sentinel LCD",
+      "function_zh": "背光LCD：第1行面风速，第2行状态（display.velocity、display.lcd_cells）",
+      "physical_meaning_zh": "显示件：Sentinel LCD（display.velocity、display.lcd_cells）；装配原点 (0, 0, 0) m 相对 monitor_panel，碰撞代理为0.088×0.00183×0.0209 m 长方体；尺寸按工程图与照片估计，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：绿色背光LCD。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "LCD位置按面板照片估计。",
+      "objects": [
+        "esco_efa5uduvw__monitor_lcd"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.08800000000000008,
+            0.0018302705977008005,
+            0.02092008865992656
+          ],
+          "origin_m": [
+            0.7064999999999999,
+            -0.38565686986958203,
+            0.8765720156357961
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.7064999999999999,
+        -0.38565687000000004,
+        0.876572015
+      ],
+      "simulation_inertia_kg_m2": [
+        3.6750007540541875e-07,
+        6.818041804673414e-06,
+        6.456124937398662e-06
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_lcd.png"
+      },
+      "appearance_zh": "绿色背光LCD"
+    },
+    {
+      "id": "led_safe",
+      "name_zh": "SAFE绿灯",
+      "function_zh": "指示灯（indicator.safe）",
+      "physical_meaning_zh": "指示件：led_safe（indicator.safe）；装配原点 (0.6705, -0.384002, 0.892046) m 相对 monitor_panel，碰撞代理为0.005×0.00211×0.00503 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：圆形LED。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.6704999999999999,
+        -0.3840019371755027,
+        0.8920458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "SAFE绿、UNSAFE红、MUTE黄为Sentinel资料；位置按照片。",
+      "objects": [
+        "esco_efa5uduvw__led_safe"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.004999999999999893,
+            0.002110659283243499,
+            0.0050332669361072835
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008374402847525775,
+            2.614672282430508e-05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0008374400000000001,
+        2.6144999999999988e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.4823910440416667e-09,
+        4.194483907741667e-09,
+        2.4545738029666664e-09
+      ],
+      "material": {
+        "base_color": [
+          0.04,
+          0.16,
+          0.05
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "圆形LED"
+    },
+    {
+      "id": "led_unsafe",
+      "name_zh": "UNSAFE红灯",
+      "function_zh": "指示灯（indicator.unsafe）",
+      "physical_meaning_zh": "指示件：led_unsafe（indicator.unsafe）；装配原点 (0.7065, -0.384002, 0.892046) m 相对 monitor_panel，碰撞代理为0.005×0.00211×0.00503 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：圆形LED。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.7064999999999999,
+        -0.3840019371755027,
+        0.8920458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "SAFE绿、UNSAFE红、MUTE黄为Sentinel资料；位置按照片。",
+      "objects": [
+        "esco_efa5uduvw__led_unsafe"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.004999999999999893,
+            0.002110659283243499,
+            0.0050332669361072835
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008374402847525775,
+            2.614672282430508e-05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0008374400000000001,
+        2.6144999999999988e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.4823910440416667e-09,
+        4.194483907741667e-09,
+        2.4545738029666664e-09
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.04,
+          0.04
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "圆形LED"
+    },
+    {
+      "id": "led_mute",
+      "name_zh": "MUTE黄灯",
+      "function_zh": "指示灯（indicator.mute）",
+      "physical_meaning_zh": "指示件：led_mute（indicator.mute）；装配原点 (0.7425, -0.384002, 0.892046) m 相对 monitor_panel，碰撞代理为0.005×0.00211×0.00503 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：圆形LED。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.7424999999999998,
+        -0.3840019371755027,
+        0.8920458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "SAFE绿、UNSAFE红、MUTE黄为Sentinel资料；位置按照片。",
+      "objects": [
+        "esco_efa5uduvw__led_mute"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.004999999999999893,
+            0.002110659283243499,
+            0.0050332669361072835
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008374402847525775,
+            2.614672282430508e-05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0008374400000000001,
+        2.6144999999999988e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.4823910440416667e-09,
+        4.194483907741667e-09,
+        2.4545738029666664e-09
+      ],
+      "material": {
+        "base_color": [
+          0.22,
+          0.18,
+          0.04
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "圆形LED"
+    },
+    {
+      "id": "key_menu",
+      "name_zh": "MENU键",
+      "function_zh": "MENU键（依次进入低报警、高报警、单位设置）",
+      "physical_meaning_zh": "输入器件：key_menu（弹簧键），按下调用monitor.press；关节：沿 +Y 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.6725, -0.387414, 0.853046) m 相对 monitor_panel，碰撞代理为0.022×0.011×0.0018 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：薄膜按键。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.6724999999999999,
+        -0.3874139950530137,
+        0.8530458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "MENU、上、TEST、SET、下、MUTE键为面板照片；按键行程为工程值。",
+      "objects": [
+        "esco_efa5uduvw__key_menu"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.011,
+            0.0018
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008965752282825701,
+            7.844016847291524e-05
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.000896575,
+        7.843999999999993e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1852743016216665e-08,
+        1.0125727826673333e-07,
+        8.192879808281666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_key_menu.png"
+      },
+      "appearance_zh": "薄膜按键"
+    },
+    {
+      "id": "key_up",
+      "name_zh": "上键",
+      "function_zh": "上键（设置值加0.01 m/s或切换单位）",
+      "physical_meaning_zh": "输入器件：key_up（弹簧键），按下调用monitor.press；关节：沿 +Y 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.7065, -0.387414, 0.853046) m 相对 monitor_panel，碰撞代理为0.022×0.011×0.0018 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：薄膜按键。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.7064999999999999,
+        -0.3874139950530137,
+        0.8530458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "MENU、上、TEST、SET、下、MUTE键为面板照片；按键行程为工程值。",
+      "objects": [
+        "esco_efa5uduvw__key_up"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.011,
+            0.0018
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008965752282825701,
+            7.844016847291524e-05
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.000896575,
+        7.843999999999993e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1852743016216665e-08,
+        1.0125727826673333e-07,
+        8.192879808281666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_key_up.png"
+      },
+      "appearance_zh": "薄膜按键"
+    },
+    {
+      "id": "key_test",
+      "name_zh": "TEST键",
+      "function_zh": "TEST键（自检：指示灯全亮、蜂鸣器响3 s）",
+      "physical_meaning_zh": "输入器件：key_test（弹簧键），按下调用monitor.press；关节：沿 +Y 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.7405, -0.387414, 0.853046) m 相对 monitor_panel，碰撞代理为0.022×0.011×0.0018 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：薄膜按键。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.7404999999999998,
+        -0.3874139950530137,
+        0.8530458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "MENU、上、TEST、SET、下、MUTE键为面板照片；按键行程为工程值。",
+      "objects": [
+        "esco_efa5uduvw__key_test"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.011,
+            0.0018
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008965752282825701,
+            7.844016847291524e-05
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.000896575,
+        7.843999999999993e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1852743016216665e-08,
+        1.0125727826673333e-07,
+        8.192879808281666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_key_test.png"
+      },
+      "appearance_zh": "薄膜按键"
+    },
+    {
+      "id": "key_set",
+      "name_zh": "SET键",
+      "function_zh": "SET键（存入当前设置项）",
+      "physical_meaning_zh": "输入器件：key_set（弹簧键），按下调用monitor.press；关节：沿 +Y 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.6725, -0.388989, 0.835046) m 相对 monitor_panel，碰撞代理为0.022×0.011×0.0018 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：薄膜按键。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.6724999999999999,
+        -0.38898879099648037,
+        0.8350458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "MENU、上、TEST、SET、下、MUTE键为面板照片；按键行程为工程值。",
+      "objects": [
+        "esco_efa5uduvw__key_set"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.011,
+            0.0018
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008965752282825701,
+            7.844016847291524e-05
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.000896575,
+        7.843999999999993e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1852743016216665e-08,
+        1.0125727826673333e-07,
+        8.192879808281666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_key_set.png"
+      },
+      "appearance_zh": "薄膜按键"
+    },
+    {
+      "id": "key_down",
+      "name_zh": "下键",
+      "function_zh": "下键（设置值减0.01 m/s或切换单位）",
+      "physical_meaning_zh": "输入器件：key_down（弹簧键），按下调用monitor.press；关节：沿 +Y 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.7065, -0.388989, 0.835046) m 相对 monitor_panel，碰撞代理为0.022×0.011×0.0018 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：薄膜按键。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.7064999999999999,
+        -0.38898879099648037,
+        0.8350458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "MENU、上、TEST、SET、下、MUTE键为面板照片；按键行程为工程值。",
+      "objects": [
+        "esco_efa5uduvw__key_down"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.011,
+            0.0018
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008965752282825701,
+            7.844016847291524e-05
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.000896575,
+        7.843999999999993e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1852743016216665e-08,
+        1.0125727826673333e-07,
+        8.192879808281666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_key_down.png"
+      },
+      "appearance_zh": "薄膜按键"
+    },
+    {
+      "id": "key_mute",
+      "name_zh": "MUTE键",
+      "function_zh": "MUTE键（报警静音）",
+      "physical_meaning_zh": "输入器件：key_mute（弹簧键），按下调用monitor.press；关节：沿 +Y 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.7405, -0.388989, 0.835046) m 相对 monitor_panel，碰撞代理为0.022×0.011×0.0018 m 长方体；尺寸或规格为厂家规格表与工程图，单件质量/惯量/摩擦未知（URDF质量为仿真总质量270 kg的工程拆分）。外观：薄膜按键。",
+      "parent": "monitor_panel",
+      "origin_m": [
+        0.7404999999999998,
+        -0.38898879099648037,
+        0.8350458689129718
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.9961946980917455,
+          -0.08715574274765817
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "MENU、上、TEST、SET、下、MUTE键为面板照片；按键行程为工程值。",
+      "objects": [
+        "esco_efa5uduvw__key_mute"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.011,
+            0.0018
+          ],
+          "origin_m": [
+            0.0,
+            -0.0008965752282825701,
+            7.844016847291524e-05
+          ],
+          "rpy_rad": [
+            1.4835298641951802,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "仿真总质量270 kg（运输重量310 kg减包装，工程估计）中各构件取工程估计质量、柜体取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.000896575,
+        7.843999999999993e-05
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1852743016216665e-08,
+        1.0125727826673333e-07,
+        8.192879808281666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/sxl_key_mute.png"
+      },
+      "appearance_zh": "薄膜按键"
+    }
+  ],
+  "root_object": "esco_efa5uduvw__root",
+  "joint_definitions": {
+    "sash": {
+      "type": "prismatic",
+      "axis": [
+        0.0,
+        0.08715574274765817,
+        0.9961946980917455
+      ],
+      "limits_m": [
+        0.0,
+        0.6725592911540428
+      ],
+      "accessor": "joint[sash_joint]",
+      "state_id": "sash.height_m",
+      "range_evidence": "manufacturer_datasheet"
+    },
+    "knob_water": {
+      "type": "revolute",
+      "axis": [
+        0.0,
+        -0.9961946980917455,
+        0.08715574274765817
+      ],
+      "limits_rad": [
+        0.0,
+        1.5707963267948966
+      ],
+      "accessor": "joint[knob_water_joint]",
+      "state_id": "fixture.water_open",
+      "range_evidence": "photo_estimate"
+    },
+    "knob_gas": {
+      "type": "revolute",
+      "axis": [
+        0.0,
+        -0.9961946980917455,
+        0.08715574274765817
+      ],
+      "limits_rad": [
+        0.0,
+        1.5707963267948966
+      ],
+      "accessor": "joint[knob_gas_joint]",
+      "state_id": "fixture.gas_open",
+      "range_evidence": "photo_estimate"
+    },
+    "light_switch": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.0015
+      ],
+      "accessor": "joint[light_switch_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "fan_switch": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.0015
+      ],
+      "accessor": "joint[fan_switch_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_menu": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_menu_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_up": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_up_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_test": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_test_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_set": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_set_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_down": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_down_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_mute": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.9961946980917455,
+        -0.08715574274765817
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_mute_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    }
+  },
+  "artifacts": {
+    "model_glb": "model.glb",
+    "model_urdf": "model.urdf",
+    "meshes_dir": "meshes",
+    "model_blend": "model.blend"
+  },
+  "limitations_zh": [
+    "外形1525 W×900 D×1406 H mm（含排风口1521 mm、移门全开1603 mm）、内腔1301×675×1230 mm、正面5°倾角、移门0–670 mm（限位457 mm）、排风口Ø305 mm（距左763 mm、距后224.5 mm）、Sentinel面板112×80 mm与柜顶控制盒253×223×61 mm为厂家规格与工程图。",
+    "外观（白色粉末涂层柜体与ESCO前面板、浅灰玻璃钢内衬、背部开缝导流板、侧导流板、黑色环氧台面与前沿导流翼、铝框移门与把手、左立柱钥匙锁/冷水与燃气阀柄/插座、右立柱Sentinel XL面板/照明与风机开关/插座、柜内鹅颈龙头与燃气嘴、柜顶灯窗、玻璃钢排风口、柜顶控制盒、侧壁风速传感器）按工程图与照片估计；字样为通用字体重绘，不复制Esco标志。",
+    "工程构件：立柱深度、立柱上配件的位置（前视图）、台面高度（底框+25 mm环氧板）、导流板与后风腔深度、导流翼与侧导流板形状、灯窗；链条链轮、配重、风道内部与电气没有建模。",
+    "参考姿态：移门全关、两阀关闭、按键弹起、灯与指示灯熄灭；台面上的器皿与液体没有几何（运行层状态）；底柜不属于本资产。",
+    "质量：资料只有运输重量310 kg；仿真总质量270 kg（减包装，工程估计）按构件拆分，柜体取余量（documented_total_split意义下的工程拆分），单件质量不是称量值。"
+  ],
+  "manufacturer_dimensions_m": {
+    "W_D_H": [
+      1.525,
+      0.9,
+      1.406
+    ],
+    "with_collar_H": 1.521,
+    "sash_fully_open_H": 1.609,
+    "interior_W_D_H": [
+      1.301,
+      0.675,
+      1.23
+    ]
+  },
+  "manufacturer_dimensions_scope_zh": "柜体1525 W×900 D×1406 H mm（规格表与工程图）；含排风口1521 mm；侧面电气控制盒与风速传感器在柜体外，故包络略大",
+  "mass_scope_zh": "资料只给运输重量310 kg；仿真总质量270 kg为工程估计（减包装），各构件取工程估计质量，柜体取余量",
+  "simulation_mass_budget": {
+    "total_mass_kg": 270.0,
+    "shipping_weight_kg": 310.0,
+    "evidence": "engineering estimate of the net mass from the documented shipping weight"
+  },
+  "reference_pose_zh": "参考姿态：移门全关、两阀关闭、按键弹起、灯与指示灯熄灭；台面上的器皿与液体没有几何（运行层状态）；底柜不属于本资产。",
+  "selected_configuration": {
+    "model": "Esco Frontier Acela EFA-5UDUVW-9 (item 2090256): 1.5 m, 900 mm deep, Resinate Plus liner, vertical sash, Esco white, 110-120 VAC",
+    "options": [
+      "Sentinel XL airflow monitor SXL-EFA (5070084), factory installed (workbook: face-velocity monitoring)"
+    ],
+    "not_included": [
+      "base cabinet / stand",
+      "exhaust blower, damper, VFD (building side; modelled as the external exhaust system)",
+      "VAV controller and automatic sash",
+      "exhaust filters (carbon, HEPA, BIBO)",
+      "distillation grid",
+      "combination sash"
+    ],
+    "note_zh": "台面上的敞口液体（51种模板）、示踪气体与人员走动由宿主声明；冷水与燃气龙头按工程图第18、19号零件"
+  },
+  "readouts": [
+    {
+      "name": "velocity",
+      "part": "monitor_lcd",
+      "face": "-Y",
+      "digits": 4,
+      "decimals": 2,
+      "unit": "m/s|fpm",
+      "on": [
+        0.03,
+        0.05,
+        0.02
+      ],
+      "off": [
+        0.45,
+        0.62,
+        0.22
+      ],
+      "region": [
+        0.3,
+        0.95,
+        0.52,
+        0.95
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.velocity"
+        ],
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "status",
+      "part": "monitor_lcd",
+      "face": "-Y",
+      "digits": 8,
+      "decimals": 0,
+      "unit": "1",
+      "on": [
+        0.03,
+        0.05,
+        0.02
+      ],
+      "off": [
+        0.45,
+        0.62,
+        0.22
+      ],
+      "region": [
+        0.04,
+        0.96,
+        0.06,
+        0.45
+      ],
+      "hide": [],
+      "source": {
+        "bridge_text": "display.lcd_cells"
+      }
+    }
+  ],
+  "lamps": [
+    {
+      "name": "safe",
+      "part": "led_safe",
+      "face": "-Y",
+      "color": [
+        0.1,
+        1.0,
+        0.2
+      ],
+      "off": [
+        0.04,
+        0.16,
+        0.05
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.safe"
+        }
+      }
+    },
+    {
+      "name": "unsafe",
+      "part": "led_unsafe",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.06
+      ],
+      "off": [
+        0.2,
+        0.04,
+        0.04
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.unsafe"
+        }
+      }
+    },
+    {
+      "name": "mute",
+      "part": "led_mute",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.8,
+        0.05
+      ],
+      "off": [
+        0.22,
+        0.18,
+        0.04
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.mute"
+        }
+      }
+    },
+    {
+      "name": "lamp",
+      "part": "led_lamp",
+      "face": "-Z",
+      "color": [
+        1.0,
+        0.98,
+        0.92
+      ],
+      "off": [
+        0.55,
+        0.57,
+        0.58
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "lamp.lit"
+        }
+      }
+    }
+  ],
+  "readout_note_zh": "Sentinel XL的LCD在场景中按运行层显示：第1行为面风速（display.velocity，m/s两位小数或fpm整数），第2行为状态（display.lcd_cells：SAFE、Lo FLo、HI FLo、tESt、设置项）；SAFE绿、UNSAFE红、MUTE黄指示灯按indicator.*点亮；柜顶LED灯窗按lamp.lit发光；移门为双向棱柱关节（运行层开度含自降），冷水与燃气阀柄为双向旋钮；6个面板键与照明、风机翘板开关为弹簧键。",
+  "panel_keys": [
+    "key_menu",
+    "key_up",
+    "key_test",
+    "key_set",
+    "key_down",
+    "key_mute",
+    "light_switch",
+    "fan_switch"
+  ],
+  "knobs": [
+    "sash",
+    "knob_water",
+    "knob_gas"
+  ],
+  "mirrored_joints": [],
+  "textures": {
+    "front_panel": "textures/front_panel.png",
+    "baffle": "textures/baffle.png",
+    "sxl_panel": "textures/sxl_panel.png",
+    "sxl_lcd": "textures/sxl_lcd.png",
+    "outlet": "textures/outlet.png",
+    "switch_plate": "textures/switch_plate.png",
+    "worktop": "textures/worktop.png",
+    "sxl_key_menu": "textures/sxl_key_menu.png",
+    "sxl_key_up": "textures/sxl_key_up.png",
+    "sxl_key_test": "textures/sxl_key_test.png",
+    "sxl_key_set": "textures/sxl_key_set.png",
+    "sxl_key_down": "textures/sxl_key_down.png",
+    "sxl_key_mute": "textures/sxl_key_mute.png"
+  },
+  "geometry_evidence_by_component": {
+    "body": "manufacturer_datasheet",
+    "liner": "manufacturer_datasheet",
+    "worktop": "manufacturer_datasheet",
+    "worktop_rim": "photo_estimate",
+    "airfoil": "photo_estimate",
+    "baffle": "photo_estimate",
+    "side_vanes": "photo_estimate",
+    "led_lamp": "photo_estimate",
+    "side_access": "photo_estimate",
+    "front_panel": "manufacturer_datasheet",
+    "sash_stopper": "manufacturer_datasheet",
+    "exhaust_collar": "manufacturer_datasheet",
+    "enclosure": "manufacturer_datasheet",
+    "airflow_sensor": "manufacturer_datasheet",
+    "sash": "manufacturer_datasheet",
+    "sash_glass": "manufacturer_datasheet",
+    "keylock": "manufacturer_datasheet",
+    "knob_water": "photo_estimate",
+    "water_color_tag": "photo_estimate",
+    "knob_gas": "photo_estimate",
+    "gas_color_tag": "photo_estimate",
+    "gooseneck": "photo_estimate",
+    "gas_turret": "photo_estimate",
+    "outlet_left": "manufacturer_datasheet",
+    "outlet_right": "manufacturer_datasheet",
+    "control_plate": "manufacturer_datasheet",
+    "light_switch": "manufacturer_datasheet",
+    "fan_switch": "manufacturer_datasheet",
+    "monitor_panel": "manufacturer_datasheet",
+    "monitor_lcd": "photo_estimate",
+    "led_safe": "manufacturer_datasheet",
+    "led_unsafe": "manufacturer_datasheet",
+    "led_mute": "manufacturer_datasheet",
+    "key_menu": "manufacturer_datasheet",
+    "key_up": "manufacturer_datasheet",
+    "key_test": "manufacturer_datasheet",
+    "key_set": "manufacturer_datasheet",
+    "key_down": "manufacturer_datasheet",
+    "key_mute": "manufacturer_datasheet"
+  },
+  "world_origins_m": {
+    "body": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "liner": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "worktop": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "worktop_rim": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "airfoil": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "baffle": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "side_vanes": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "led_lamp": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "side_access": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "front_panel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sash_stopper": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "exhaust_collar": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "enclosure": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "airflow_sensor": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sash": [
+      0.0,
+      -0.416500453458963,
+      0.04
+    ],
+    "sash_glass": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "keylock": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "knob_water": [
+      -0.7064999999999999,
+      -0.4150045345896304,
+      0.4
+    ],
+    "water_color_tag": [
+      -0.7064999999999999,
+      -0.4150045345896304,
+      0.4
+    ],
+    "knob_gas": [
+      -0.7064999999999999,
+      -0.42462828757748206,
+      0.29
+    ],
+    "gas_color_tag": [
+      -0.7064999999999999,
+      -0.42462828757748206,
+      0.29
+    ],
+    "gooseneck": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gas_turret": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "outlet_left": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "outlet_right": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "control_plate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "light_switch": [
+      0.6804999999999999,
+      -0.3931463382425432,
+      0.6842614672282429
+    ],
+    "fan_switch": [
+      0.7324999999999999,
+      -0.3931463382425432,
+      0.6842614672282429
+    ],
+    "monitor_panel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "monitor_lcd": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "led_safe": [
+      0.6704999999999999,
+      -0.3840019371755027,
+      0.8920458689129718
+    ],
+    "led_unsafe": [
+      0.7064999999999999,
+      -0.3840019371755027,
+      0.8920458689129718
+    ],
+    "led_mute": [
+      0.7424999999999998,
+      -0.3840019371755027,
+      0.8920458689129718
+    ],
+    "key_menu": [
+      0.6724999999999999,
+      -0.3874139950530137,
+      0.8530458689129718
+    ],
+    "key_up": [
+      0.7064999999999999,
+      -0.3874139950530137,
+      0.8530458689129718
+    ],
+    "key_test": [
+      0.7404999999999998,
+      -0.3874139950530137,
+      0.8530458689129718
+    ],
+    "key_set": [
+      0.6724999999999999,
+      -0.38898879099648037,
+      0.8350458689129718
+    ],
+    "key_down": [
+      0.7064999999999999,
+      -0.38898879099648037,
+      0.8350458689129718
+    ],
+    "key_mute": [
+      0.7404999999999998,
+      -0.38898879099648037,
+      0.8350458689129718
+    ]
+  }
+}

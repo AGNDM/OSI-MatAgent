@@ -1,0 +1,645 @@
+{
+ "schema_version": "1.0.0",
+ "catalog_id": "CHEM-195",
+ "asset_type_id": "instrument.vaisala_dmt152",
+ "built_at": "2026-10-02T22:00:31.423064+00:00",
+ "built_by": "outputs/expansion_batch04/t2_vacuum/vaisala_dmt152/build_dp_libraries.py",
+ "documented": {
+  "calibrated_range_k": {
+   "value": [
+    193.15,
+    253.15
+   ],
+   "unit": "K",
+   "note_zh": "标定的露点测量范围−80…−20 °C Td",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Measurement range −80 … −20 °C (−112 … −4 °F) Td"
+  },
+  "output_range_k": {
+   "value": [
+    173.15,
+    293.15
+   ],
+   "unit": "K",
+   "note_zh": "非标定（可输出）范围−100…+20 °C Td",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Non-calibrated range −100 … +20 °C (−148 … +68 °F) Td"
+  },
+  "accuracy_dry_k": {
+   "value": 2.0,
+   "unit": "K",
+   "note_zh": "−80…−40 °C Td准确度±2 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "−80 … −40 °C (−112 … −40 °F) ±2 °C (3.6 °F) Td"
+  },
+  "accuracy_wet_k": {
+   "value": 3.0,
+   "unit": "K",
+   "note_zh": "−40…−20 °C Td准确度±3 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "−40 … −20 °C (−40 … −4 °F) ±3 °C (5.4 °F) Td"
+  },
+  "t63_drying_s": {
+   "value": 30.0,
+   "unit": "s",
+   "note_zh": "由湿到干（−20→−80 °C Td）T63 0.5 min（20 °C、1 bar）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "−20 … −80 °C Td 0.5 min [7.5 min]"
+  },
+  "t90_drying_s": {
+   "value": 450.0,
+   "unit": "s",
+   "note_zh": "由湿到干T90 7.5 min",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "−20 … −80 °C Td 0.5 min [7.5 min]"
+  },
+  "t63_wetting_s": {
+   "value": 2.0,
+   "unit": "s",
+   "note_zh": "由干到湿（−80→−20 °C Td）T63 2 s",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "−80 … −20 °C Td 2 s [5 s]"
+  },
+  "t90_wetting_s": {
+   "value": 5.0,
+   "unit": "s",
+   "note_zh": "由干到湿T90 5 s",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "−80 … −20 °C Td 2 s [5 s]"
+  },
+  "response_conditions": {
+   "value": {
+    "gas_temperature_k": 293.15,
+    "pressure_pa": 100000.0
+   },
+   "unit": "1",
+   "note_zh": "响应时间条件：气体20 °C、1 bar",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "at a gas temperature of +20 °C (+68 °F) and pressure of 1 bar"
+  },
+  "long_term_stability_k_per_year": {
+   "value": 2.0,
+   "unit": "K/a",
+   "note_zh": "典型长期稳定性优于2 °C/年",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Typical long-term stability Better than 2 °C (3.6 °F) / year"
+  },
+  "calibration_interval_s": {
+   "value": 63115200.0,
+   "unit": "s",
+   "evidence": "documented",
+   "source_id": "user_workbook",
+   "quote": "建议校准间隔2年",
+   "note_zh": "建议校准间隔2年（调研表“参数与来源”第200行核验值；样本只写“Reduced maintenance costs due to long calibration interval”，见冲突记录）"
+  },
+  "ppm_range": {
+   "value": [
+    0.0,
+    500.0
+   ],
+   "unit": "1e-6",
+   "note_zh": "ppm（体积）典型测量范围0–500 ppm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Measurement range (typical) 0–500 ppm"
+  },
+  "ppm_accuracy": {
+   "value": {
+    "abs_ppm": 0.2,
+    "rel": 0.2
+   },
+   "unit": "1",
+   "note_zh": "ppm准确度±(0.2 ppm＋读数20 %)（20 °C、1013 mbar）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Accuracy at +20 °C (+68 °F), 1013 mbar ±(0.2 ppm + 20 % of reading)"
+  },
+  "frost_point_below_0": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "露点低于0 °C时输出霜点",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "When the dew point is below 0 °C, the transmitter outputs frost point for Td."
+  },
+  "operating_temperature_k": {
+   "value": [
+    233.15,
+    343.15
+   ],
+   "unit": "K",
+   "note_zh": "工作温度−40…+70 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Temperature −40 … +70 °C (−40 … +158 °F)"
+  },
+  "operating_pressure_pa": {
+   "value": [
+    0.0,
+    5000000.0
+   ],
+   "unit": "Pa",
+   "note_zh": "工作压力0–50 bar",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Pressure 0–50 bar (725 psia)"
+  },
+  "gases_suitable": {
+   "value": [
+    "air",
+    "nitrogen",
+    "argon",
+    "helium",
+    "oxygen"
+   ],
+   "unit": "1",
+   "note_zh": "适用气体：空气、氮、氩、氦、氧",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "For air, nitrogen, argon, helium, and oxygen"
+  },
+  "gases_unsuitable": {
+   "value": [
+    "hydrogen",
+    "carbon_dioxide"
+   ],
+   "unit": "1",
+   "note_zh": "不适用于氢气或纯二氧化碳",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Not suitable for measurements in hydrogen or pure carbon dioxide"
+  },
+  "flow_effect": {
+   "value": "none",
+   "unit": "1",
+   "note_zh": "样气流量不影响准确度",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Sample flow rate No effect on measurement accuracy"
+  },
+  "wetted_material": {
+   "value": "AISI316L",
+   "unit": "1",
+   "note_zh": "接液材料AISI316L",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Housing material (wetted parts) AISI316L"
+  },
+  "filter": {
+   "value": {
+    "body": "AISI303",
+    "mesh": "AISI316L",
+    "grade_m": 1.8e-05
+   },
+   "unit": "1",
+   "note_zh": "不锈钢网过滤器：滤体AISI303、网AISI316L、18 µm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Filter body AISI303, mesh AISI316L, grade 18 μm"
+  },
+  "mass_kg": {
+   "value": 0.19,
+   "unit": "kg",
+   "note_zh": "ISO G1/2\"型质量190 g",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Weight (ISO G1/2\") 190 g (6.70 oz)"
+  },
+  "length_m": {
+   "value": 0.1205,
+   "unit": "m",
+   "note_zh": "总长120.5 mm（本体端面到过滤器端；尺寸图）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "120.5 [4.74]"
+  },
+  "body_diameter_m": {
+   "value": 0.0295,
+   "unit": "m",
+   "note_zh": "本体直径29.5 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Ø 29.5 [1.16]"
+  },
+  "body_length_m": {
+   "value": 0.076,
+   "unit": "m",
+   "note_zh": "本体（含六角）长76 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "76 [2.99]"
+  },
+  "filter_length_m": {
+   "value": 0.0325,
+   "unit": "m",
+   "note_zh": "过滤器伸出长32.5 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "32.5 [1.28]"
+  },
+  "filter_diameter_m": {
+   "value": 0.012,
+   "unit": "m",
+   "note_zh": "过滤器直径12 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Ø 12 [0.47]"
+  },
+  "hex_across_flats_m": {
+   "value": 0.03,
+   "unit": "m",
+   "note_zh": "六角对边30 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "AW30 [1.18]"
+  },
+  "thread": {
+   "value": "G 1/2\" ISO 228-1",
+   "unit": "1",
+   "note_zh": "螺纹G1/2\" ISO 228-1",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "G 1/2\" ISO 228-1"
+  },
+  "ip_rating": {
+   "value": "IP66",
+   "unit": "1",
+   "note_zh": "防护IP66",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "IP rating IP66"
+  },
+  "analog_outputs": {
+   "value": [
+    "4-20mA",
+    "0-20mA",
+    "0-5V",
+    "0-10V"
+   ],
+   "unit": "1",
+   "note_zh": "两路可缩放模拟输出",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Two analog outputs (scalable) 4–20 mA, 0–20 mA (3-wire), 0–5 V, 0–10 V"
+  },
+  "analog_accuracy": {
+   "value": {
+    "v": 0.01,
+    "ma": 0.01
+   },
+   "unit": "1",
+   "note_zh": "模拟输出准确度±0.01 V / ±0.01 mA",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Accuracy of analog outputs ±0.01 V / ±0.01 mA"
+  },
+  "supply_v": {
+   "value": {
+    "rs485": [
+     11.0,
+     28.0
+    ],
+    "voltage_out": [
+     15.0,
+     28.0
+    ],
+    "current_out": [
+     21.0,
+     28.0
+    ]
+   },
+   "unit": "V",
+   "note_zh": "供电：RS-485 11–28 V、电压输出15–28 V、电流输出21–28 V DC",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Current output 21–28 V DC"
+  },
+  "supply_current_selfdiag_a": {
+   "value": 0.22,
+   "unit": "A",
+   "note_zh": "自诊断（加热）期间最大220 mA脉冲电流",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "During self-diagnostics Max. 220 mA pulsed"
+  },
+  "autocal_interval_s": {
+   "value": 2700.0,
+   "unit": "s",
+   "note_zh": "自动校准每45 min一次（近干端时更频繁；上电与环境快速变化时也做）",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "at 45-minute intervals"
+  },
+  "autocal_duration_s": {
+   "value": 60.0,
+   "unit": "s",
+   "note_zh": "自动校准加热<1 min，测量与输出保持有效",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "During auto-calibration the sensor is warmed for a short period (< 1 min)"
+  },
+  "purge_interval_s": {
+   "value": 604800.0,
+   "unit": "s",
+   "note_zh": "传感器吹扫每周一次及上电时",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "Sensor purge is performed once a week or when the power is switched on."
+  },
+  "startup_approx_reading_s": {
+   "value": 60.0,
+   "unit": "s",
+   "note_zh": "上电自检与吹扫期间一分钟后输出近似读数（输出仍为冻结状态）",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "The transmitter will output an approximated reading after one minute"
+  },
+  "startup_normal_s": {
+   "value": [
+    600.0,
+    900.0
+   ],
+   "unit": "s",
+   "note_zh": "上电后通常10–15 min进入正常测量（运行层取10 min）",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "Normal operation is typically achieved in 10 … 15 minutes."
+  },
+  "purge_freezes_output": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "吹扫期间输出冻结为最后测量值",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "The measurement output of the transmitter is frozen to the last measured value for the duration of the sensor purge."
+  },
+  "pressure_effect": {
+   "value": "tens of K",
+   "unit": "1",
+   "note_zh": "传感器与过程压力不同时露点可差几十度",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "If the sensor is at a different pressure than the process itself, there may be an error of several tens of degrees in the dew point measurement."
+  },
+  "sensor_not_pressure_dependent": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "传感器本身与压力无关；ppm计算需设定压力（PRES/XPRES）",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "The DRYCAP 180U sensor in DMT152 is not pressure-dependent."
+  },
+  "pres_min_pa": {
+   "value": 10000.0,
+   "unit": "Pa",
+   "note_zh": "PRES/XPRES最小0.1 bara",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "The minimum valid pressure value for both the PRES and XPRES commands is 0.1 bara."
+  },
+  "pres_default_pa": {
+   "value": 101325.0,
+   "unit": "Pa",
+   "note_zh": "压力设定示例1.01325 bar（出厂默认按1 atm，工程判断）",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "pres 1.01325"
+  },
+  "mol_default_kg_mol": {
+   "value": 0.02896,
+   "unit": "kg/mol",
+   "note_zh": "ppmw计算的默认摩尔质量取空气28.96 g/mol（MOL）",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "Air 28.96 g/mol"
+  },
+  "flow_typical_m3_s": {
+   "value": [
+    1.6666666666666667e-05,
+    3.3333333333333335e-05
+   ],
+   "unit": "m3/s",
+   "note_zh": "典型取样流量1–2 L/min，流量越大响应越快",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "Typically, a flow of 1 ... 2 l/min"
+  },
+  "plastics_undesirable": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "吸湿材料（塑料）不宜用于取样",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "Hygroscopic materials such as plastics are undesirable and should be avoided."
+  },
+  "autocal_fails_error": {
+   "value": "Autocal error",
+   "unit": "1",
+   "note_zh": "多次无法完成自动校准时报Autocal error",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "Transmitter unable to complete auto-calibration after several attempts."
+  },
+  "ambient_temperature_error": {
+   "value": "Ambient temperature error",
+   "unit": "1",
+   "note_zh": "环境温度超出工作范围时报错",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "Ambient temperature out of operating range"
+  },
+  "transport_cap": {
+   "value": "yellow transport protection cap",
+   "unit": "1",
+   "note_zh": "出厂时过滤器套着黄色运输保护帽（保持传感器干燥），安装前取下",
+   "evidence": "documented",
+   "source_id": "manufacturer_user_guide",
+   "quote": "the filter is protected by a yellow transport protection cap that keeps the sensor dry"
+  }
+ },
+ "engineering": {
+  "drying_fast_fraction": {
+   "value": 0.6568356434793564,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "由湿到干两段响应中快段所占比例（由T63 0.5 min与T90 7.5 min标定，calibrate_dp.py写入）",
+   "calibrated_by": "calibrate_dp.py"
+  },
+  "drying_fast_tau_s": {
+   "value": 12.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "由湿到干快段时间常数（标定）",
+   "calibrated_by": "calibrate_dp.py"
+  },
+  "drying_slow_tau_s": {
+   "value": 364.95186546178746,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "由湿到干慢段时间常数（标定）",
+   "calibrated_by": "calibrate_dp.py"
+  },
+  "wetting_tau_s": {
+   "value": 2.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "由干到湿时间常数（单指数：T63 2 s、T90 4.6 s≈5 s）",
+   "calibrated_by": "calibrate_dp.py"
+  },
+  "response_activation_k": {
+   "value": 3500.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "响应时间随气体温度的阿伦尼乌斯因子E/R（聚合物中水扩散；低温更慢；工程值）"
+  },
+  "purge_duration_s": {
+   "value": 300.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "传感器吹扫持续时间（手册“several minutes”；取5 min，工程值）"
+  },
+  "autocal_max_rate_k_s": {
+   "value": 0.008333333333333333,
+   "unit": "K/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "自动校准要求的环境稳定性：露点变化率低于0.5 K/min（工程值）"
+  },
+  "autocal_fail_count": {
+   "value": 5,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "连续失败多少次报Autocal error（手册“several attempts”；工程值）"
+  },
+  "autocal_dry_interval_s": {
+   "value": 1200.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "露点低于−70 °C时自动校准间隔缩短为20 min（手册“shorter intervals near the dry end”；工程值）"
+  },
+  "drift_dry_fraction_after_autocal": {
+   "value": 0.3,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "自动校准后剩余的干端漂移比例（工程值）"
+  },
+  "drift_extra_no_purge_k_per_s": {
+   "value": 3.8580246913580245e-07,
+   "unit": "K/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "关闭传感器吹扫（XPUR OFF）时湿端额外漂移约1 K/月（工程值）"
+  },
+  "noise_k": {
+   "value": 0.05,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "露点读数噪声（−40 °C以上；工程值）"
+  },
+  "noise_dry_k": {
+   "value": 0.25,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "露点读数噪声（−80 °C附近；工程值）"
+  },
+  "offset_sigma_fraction": {
+   "value": 0.4,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "每台仪器标定偏差的标准差=准确度指标×0.4（含噪声与漂移后绝大多数在指标内；工程值）"
+  },
+  "h2_bias_k_per_h": {
+   "value": 0.5,
+   "unit": "K/h",
+   "evidence": "assumption",
+   "engineering_note_zh": "在氢气中（不适用）读数逐渐偏湿的速率（只在传感器暴露于氢气时累计；工程值，表示“不适用”的后果）"
+  },
+  "h2_bias_max_k": {
+   "value": 20.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "氢气造成的读数偏差上限（送厂校准清零；工程值）"
+  },
+  "co2_bias_k": {
+   "value": 4.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "在纯CO₂中（不适用）读数偏差（工程值）"
+  },
+  "tube_sherwood": {
+   "value": 3.66,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "层流管内壁传质的舍伍德数（充分发展层流，常壁浓度）"
+  },
+  "water_diffusivity_air_m2_s": {
+   "value": 2.5e-05,
+   "unit": "m2/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "水汽在空气/氮中的扩散系数（25 °C、1 bar；随T^1.75/P换算）"
+  },
+  "metal_site_energies_j_mol": {
+   "value": [
+    50000.0,
+    56000.0,
+    62000.0,
+    68000.0,
+    74000.0,
+    80000.0
+   ],
+   "unit": "J/mol",
+   "evidence": "assumption",
+   "engineering_note_zh": "金属表面水吸附位的吸附能分布（6类等容量位；多类Langmuir叠加近似Temkin等温线：覆盖度随ln p变化，干燥呈长拖尾；工程值）"
+  },
+  "metal_effective_layers": {
+   "value": 20.0,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "金属管壁有效吸附层数（氧化层水合、羟基与多层物理吸附；吸附容量=单层×粗糙度×层数；使取样管干燥呈数小时的长拖尾，工程值）"
+  },
+  "langmuir_k0_per_pa": {
+   "value": 2e-09,
+   "unit": "1/Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "Langmuir常数前因子K_j = K0·exp(E_j/RT)（工程值）"
+  },
+  "wvtr_reference_vapour_pa": {
+   "value": 5967.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "WVTR参考条件下膜两侧水汽分压差（38 °C、90 %RH，ISO 15106惯例；工程值）"
+  },
+  "line_cells": {
+   "value": 12,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "取样管离散段数（沿流向的准稳态气相与逐段表面吸附）"
+  },
+  "condensation_margin_k": {
+   "value": 0.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "露点高于气体温度时视为凝结（传感器耐凝结，读数限制在气体温度；工程值）"
+  },
+  "label_mass_kg": {
+   "value": 0.0,
+   "unit": "kg",
+   "evidence": "assumption",
+   "engineering_note_zh": "标签与密封圈质量计入本体（工程值）"
+  },
+  "cap_storage_dew_point_k": {
+   "value": 233.15,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "运输保护帽下储存时传感器的等效露点（手册：保护帽使传感器保持干燥；−40 °C为工程值）"
+  }
+ }
+}

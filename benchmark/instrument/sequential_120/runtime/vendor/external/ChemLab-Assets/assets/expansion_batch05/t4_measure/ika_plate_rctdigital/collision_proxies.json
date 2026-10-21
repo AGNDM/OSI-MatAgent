@@ -1,0 +1,951 @@
+{
+  "asset_type_id": "ika_plate_rctdigital",
+  "units": "m",
+  "frame": "component_local",
+  "note_zh": "按构件分解的接触代理；无整机实心包围盒；未验证接触求解或真实机器人。",
+  "components": {
+    "housing": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "root",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.16,
+            0.27,
+            0.026
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "frame": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.16,
+            0.27,
+            0.013999999999999999
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.037
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "glass_top": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "frame",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.156,
+            0.266,
+            0.0030000000000000027
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0455
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "glass_print": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "glass_top",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.155,
+            0.265,
+            0.001
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.047
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "lcd": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "glass_top",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1,
+            0.047999999999999994,
+            0.0005000000000000004
+          ],
+          "origin_m": [
+            0.016,
+            -0.064,
+            0.04695
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "heating_lamp": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "lcd",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.004499999999999997,
+            0.013439999999999994,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            -0.030250000000000003,
+            -0.07744000000000001,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "motor_lamp": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "lcd",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.005000000000000018,
+            0.012479999999999991,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            0.04,
+            -0.07696,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "sensor_lamp": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "lcd",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0049999999999999975,
+            0.00528,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            0.014000000000000002,
+            -0.0436,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "lock_lamp": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "lcd",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0049999999999999906,
+            0.00528,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            0.022,
+            -0.0436,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "standby_led": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "glass_top",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.003600000000000006,
+            0.003600000000000006,
+            0.001
+          ],
+          "origin_m": [
+            -0.04,
+            -0.034,
+            0.0472
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "hot_lamp": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "glass_top",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.011000000000000003,
+            0.009499999999999998,
+            0.001
+          ],
+          "origin_m": [
+            0.062,
+            -0.02975,
+            0.047175
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "plate_collar": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0735,
+            0.023000000000000007
+          ],
+          "origin_m": [
+            0.0,
+            0.056,
+            0.0585
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "heating_plate": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "plate_collar",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0675,
+            0.015
+          ],
+          "origin_m": [
+            0.0,
+            0.056,
+            0.07750000000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "temp_ring": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "glass_top",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.03699999999999999,
+            0.037000000000000005,
+            0.0013999999999999985
+          ],
+          "origin_m": [
+            -0.054,
+            -0.11,
+            0.0475
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "temp_push_key": {
+      "origin_m": [
+        -0.054,
+        -0.11,
+        0.0485
+      ],
+      "parent": "glass_top",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.004,
+            0.003
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "knob_temperature": {
+      "origin_m": [
+        0.0,
+        0.0,
+        -0.0001999999999999988
+      ],
+      "parent": "temp_push_key",
+      "joint": "revolute",
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0155,
+            0.017
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0085
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "speed_ring": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "glass_top",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.037000000000000005,
+            0.037000000000000005,
+            0.0013999999999999985
+          ],
+          "origin_m": [
+            0.046,
+            -0.11,
+            0.0475
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "speed_push_key": {
+      "origin_m": [
+        0.046,
+        -0.11,
+        0.0485
+      ],
+      "parent": "glass_top",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.004,
+            0.003
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "knob_speed": {
+      "origin_m": [
+        0.0,
+        0.0,
+        -0.0001999999999999988
+      ],
+      "parent": "speed_push_key",
+      "joint": "revolute",
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0155,
+            0.017
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0085
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "menu_key": {
+      "origin_m": [
+        -0.03,
+        -0.112,
+        0.0474
+      ],
+      "parent": "glass_top",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.009,
+            0.009,
+            0.0006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "timer_key": {
+      "origin_m": [
+        -0.008,
+        -0.112,
+        0.0474
+      ],
+      "parent": "glass_top",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.009,
+            0.009,
+            0.0006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "lock_key": {
+      "origin_m": [
+        0.014,
+        -0.112,
+        0.0474
+      ],
+      "parent": "glass_top",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.009,
+            0.009,
+            0.0006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "power_surround": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.0015999999999999903,
+            0.015
+          ],
+          "origin_m": [
+            0.012,
+            -0.1325,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "power_switch": {
+      "origin_m": [
+        0.012,
+        -0.13410000000000002,
+        0.017
+      ],
+      "parent": "housing",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.016,
+            0.0015,
+            0.011
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "safety_screw": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0063999999999999994,
+            0.0012999999999999678,
+            0.006400000000000001
+          ],
+          "origin_m": [
+            -0.014,
+            -0.13315000000000002,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "rear_panel": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.073,
+            0.0015999999999999903,
+            0.020000000000000004
+          ],
+          "origin_m": [
+            0.0165,
+            0.1342,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "rear_label": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.124,
+            0.001,
+            0.020000000000000004
+          ],
+          "origin_m": [
+            0.0,
+            0.1338,
+            0.016
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "usb_port": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.011999999999999997,
+            0.0015999999999999903,
+            0.009000000000000001
+          ],
+          "origin_m": [
+            0.015,
+            0.1342,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "sensor_jack": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.015,
+            0.0015999999999999903,
+            0.015
+          ],
+          "origin_m": [
+            -0.042,
+            0.1342,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "stand_cap": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "glass_top",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.017000000000000008,
+            0.017000000000000015,
+            0.006000000000000005
+          ],
+          "origin_m": [
+            0.062,
+            0.118,
+            0.05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "feet": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "housing",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            -0.058,
+            -0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            -0.058,
+            0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            0.058,
+            -0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            0.058,
+            0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  }
+}

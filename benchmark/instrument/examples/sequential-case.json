@@ -1,0 +1,126 @@
+{
+  "action_presets": "action-presets.json",
+  "initial_context": {
+    "allowed_action_kinds": [
+      "select_instrument",
+      "describe",
+      "invoke",
+      "read",
+      "wait",
+      "finish",
+      "escalate"
+    ],
+    "budget": {
+      "decisions_used": 0,
+      "max_actions": 32,
+      "max_decisions": 32,
+      "max_queries": 4,
+      "max_sim_time_s": 1200.0
+    },
+    "contract": {},
+    "elapsed_sim_time_s": 0.0,
+    "goal": "Select the programmable furnace. Complete this empty-chamber temperature program, in the stated segment order: 303.15 K at 0.05 K/s with a 2-second hold. Observe and verify completion of all segments.",
+    "machine_catalog": [
+      {
+        "capabilities": [
+          "light.set",
+          "sash.set",
+          "anemometer.measure"
+        ],
+        "instrument_id": "esco_efa5uduvw",
+        "name": "Esco fume hood",
+        "purpose": "Ventilated laboratory enclosure with sash and illumination controls."
+      },
+      {
+        "capabilities": [
+          "power.set",
+          "temperature.set",
+          "timer.set",
+          "usb.set_stick",
+          "usb.record"
+        ],
+        "instrument_id": "binder_fd056",
+        "name": "Binder FD 56 drying oven",
+        "purpose": "Temperature-controlled drying oven with timer and USB recording."
+      },
+      {
+        "capabilities": [
+          "power.set",
+          "door.close",
+          "thermal.configure_program",
+          "thermal.start_program"
+        ],
+        "instrument_id": "nabertherm_l9",
+        "name": "Nabertherm L 9 programmable furnace",
+        "purpose": "Controlled temperature programs with ramp, hold and door interlock."
+      },
+      {
+        "capabilities": [
+          "power.set",
+          "lock.toggle",
+          "stirring.set_speed",
+          "stirring.set"
+        ],
+        "instrument_id": "ika_plate_rctdigital",
+        "name": "IKA RCT digital hotplate stirrer",
+        "purpose": "Magnetic stirring and heating with keypad lock and safety controls."
+      },
+      {
+        "capabilities": [
+          "syringe.load",
+          "syringe.set_diameter",
+          "rate.set",
+          "pump.run",
+          "pump.stop"
+        ],
+        "instrument_id": "newera_ne1000",
+        "name": "New Era NE-1000 syringe pump",
+        "purpose": "Programmed syringe infusion with geometry, rate and stall monitoring."
+      },
+      {
+        "capabilities": [
+          "power.set",
+          "installation.remove",
+          "calibration.service"
+        ],
+        "instrument_id": "vaisala_dmt152",
+        "name": "Vaisala DMT152 dewpoint transmitter",
+        "purpose": "Dewpoint measurement, output diagnostics and calibration service."
+      },
+      {
+        "capabilities": [
+          "power.set",
+          "settings.configure",
+          "cycle.start",
+          "alarm.mute"
+        ],
+        "instrument_id": "peak_precisionhydrogen",
+        "name": "Peak Precision Hydrogen generator",
+        "purpose": "Hydrogen delivery after startup diagnostics and pressure configuration."
+      },
+      {
+        "capabilities": [
+          "power.set",
+          "door.outer",
+          "door.latch",
+          "door.inner"
+        ],
+        "instrument_id": "eppendorf_cellxpertc170i",
+        "name": "Eppendorf CellXpert C170i incubator",
+        "purpose": "Controlled incubation chamber with outer door, latch and inner door."
+      }
+    ],
+    "manual": [
+      "Power is off and the door is open.",
+      "The chamber is empty; sample transformations and chemical quality are not modeled.",
+      "Power is required for configuration; starting also requires the door closed.",
+      "The hold clock starts after reaching the segment target. An accepted start does not establish completion.",
+      "A completed program reports segment_index equal to its number of segments."
+    ],
+    "mode": "teacher_forced",
+    "observation": {},
+    "observation_policy": "Cached public readings retain their sample times. Commands return their native responses; explicit reads consume a decision. Select an instrument before operating it.",
+    "selected_instrument": null
+  },
+  "task_id": "1dbb4a2f46cb63f435db3952"
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sequential public menu choice",
+  "description": "The plugin choose(view, history, options) callback returns a zero-based index into exactly the offered public options. A command with parameters triggers a second argument-menu choice before one native action is scored. The upper index bound depends on this particular menu and is checked by the evaluator. A model can choose a displayed label that its backend maps to this index; it need not generate JSON.",
+  "type": "integer",
+  "minimum": 0
+}

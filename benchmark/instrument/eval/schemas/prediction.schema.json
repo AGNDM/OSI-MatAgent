@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Instrument MCQA prediction",
+  "description": "One answer per task and method. The scorer validates offered option IDs. Missing/invalid answers count as incorrect. Probabilities are optional for accuracy scoring.",
+  "type": "object",
+  "required": ["task_id", "selected_option_id"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "selected_option_id": {"type": ["string", "null"], "minLength": 1},
+    "method": {"type": "string", "minLength": 1},
+    "status": {"enum": ["ok", "error", "undefined"]},
+    "probabilities": {
+      "type": ["object", "null"],
+      "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+    },
+    "causes_cited": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
