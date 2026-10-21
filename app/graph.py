@@ -52,6 +52,13 @@ def validate_evidence(role, record, payload):
              [e for h in record.hypotheses for e in h.supporting_ids + h.contradicting_ids])
     if isinstance(record, OperationOptions):
         cited += [e for c in record.candidates for e in c.evidence_ids]
+    records=record.hypotheses if role=='diagnostic' else []
+    materials=[e for h in records for e in h.material_evidence_ids]
+    if isinstance(record,OperationOptions):
+        materials += [e for c in record.candidates for e in c.material_evidence_ids]
+    known_materials={d['id'] for d in payload.get('retrieval_evidence',[])}
+    if set(materials)-known_materials:
+        raise EvidenceReferenceError('Material citations must identify supplied retrieval passages')
     if set(cited) - known:
         raise EvidenceReferenceError("Cite only IDs present in the supplied observations/hypotheses; unknown IDs: "
                                      + ", ".join(sorted(set(cited) - known)))
@@ -116,7 +123,9 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                         (getattr(decision_backend, "is_decision_model", False) or getattr(decision_backend, "is_llm", False)))
         if count_router and state["llm_call_count"] >= limits.llm_calls:
             return {"route": "stop", "terminal_reason": "llm_budget"}
-        allowed = ["diagnose", "deliberate"]
+        allowed = ["diagnose"]
+        if getattr(lab,"routing_policy","argmax-v1") == "legacy-threshold-v1":
+            allowed.append("deliberate")
         if state.get("intent"):
             allowed.append("prepare_action")
         if state["observations"].get("measurement") and verification_allowed(state):
@@ -131,15 +140,16 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
         trace.emit("router", "routing_start", backend_id=decision_backend.backend_id)
         if hasattr(decision_backend, "deadline"):
             decision_backend.deadline = state["deadline"]
-        decision, error = select_route(decision_backend, summary, allowed)
+        decision, error = select_route(decision_backend, summary, allowed, policy=getattr(lab,"routing_policy","argmax-v1"))
         trace.emit("router", "routing", summary=summary, allowed_routes=allowed,
+                   routing_policy=getattr(lab,"routing_policy","argmax-v1"),
                    decision=decision.model_dump(), backend_metadata=getattr(decision_backend, "last_call", None),
                    error=error, error_code="E6" if error else None)
         update = {"route": decision.choice, "router_wait_authorization": None}
         if count_router:
             update.update(llm_call_count=state["llm_call_count"]+1, router_call_count=state.get("router_call_count", 0)+1)
-        if error and not getattr(decision_backend, 'allow_rules_fallback', True):
-            return dict(update, route='stop', terminal_reason='decision_model_error')
+        if error and (getattr(lab,'routing_policy','argmax-v1') == 'argmax-v1' or not getattr(decision_backend, 'allow_rules_fallback', True)):
+            return dict(update, route='stop', terminal_reason='token_budget_exceeded' if (error or '').startswith('TokenBudgetExceeded:') else 'decision_model_error')
         if decision.choice in {'wait_short', 'wait_long'}:
             if error or decision.fallback_used or not hasattr(lab, 'router_wait_offers'):
                 return dict(update, route='stop', terminal_reason='invalid_router_wait')
@@ -168,7 +178,13 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
         payload = payload if payload is not None else project(role, state, str(uuid4()))
         if role != "deliberation":
             from app.retrieval import retrieve
-            payload = dict(payload, retrieval_evidence=profile.retrieve(role) if profile else retrieve(role))
+            if hasattr(profile,'retrieve_context'):
+                retrieval=profile.retrieve_context(role,payload)
+                payload=dict(payload,retrieval_evidence=retrieval['hits'],
+                    retrieval_context={k:v for k,v in retrieval.items() if k!='hits'})
+                trace.emit('retrieval','knowledge_lookup',role=role,**retrieval)
+            else:
+                payload = dict(payload, retrieval_evidence=profile.retrieve(role) if profile else retrieve(role))
         if role == "diagnostic" and operation_backend is not None:
             inspection = payload["observations"].get("inspection")
             payload = dict(payload, operation_context={
@@ -181,6 +197,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                 "current_scan_method": inspection.get("scan_method") if inspection else None,
                 "instruction": "Use the CURRENT inspection above; do not restart the episode or assume it is absent."})
         counts = {"role_call_count": state["role_call_count"], "llm_call_count": state["llm_call_count"]}
+        if role=='diagnostic':counts['retrieval_evidence']=deepcopy(payload.get('retrieval_evidence',[]))
         attempts = 1 + (limits.format_repairs if roles.is_llm else 0)
         for attempt in range(attempts):
             reason = stop_reason(dict(state, **counts), for_model=True)
@@ -274,7 +291,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                 llm_metadata=(getattr(operation_backend, "last_call", None)
                     if (getattr(operation_backend, "last_call", None) or {}).get("request_sent") else None))
             return dict(counts, intent=None, proposal=None, operation_decision=None,
-                        terminal_reason="deadline" if time.monotonic() >= state["deadline"] else "operation_decision_error")
+                        terminal_reason="deadline" if time.monotonic() >= state["deadline"] else getattr(exc,"code","operation_decision_error"))
         trace.emit("operation_decision", "operation_selected", input=context, candidates=candidates,
             decision=decision.model_dump(), selected=selected,
             backend_metadata=getattr(operation_backend, "last_call", None),

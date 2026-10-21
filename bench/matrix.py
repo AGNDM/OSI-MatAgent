@@ -65,7 +65,7 @@ def main():
     plan = schedule(models, load_cases("test"), args.repeats)
     config = {"experts": expert_plan.model_dump(), "repeats": args.repeats, "fingerprint": frozen, "plan": plan,
         "label": "48-episode benchmark" if args.repeats == 2 else "24-episode single-repeat pilot",
-        "routing_thresholds": {"top_probability": .6, "margin": .15}}
+        "routing_policy": "argmax-v1"}
     records = []
     if args.resume:
         previous = json.loads((args.output / "freeze.json").read_text())

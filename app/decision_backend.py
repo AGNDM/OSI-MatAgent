@@ -38,7 +38,9 @@ class RulesBackend:
         return RouteDecision(backend_id=self.backend_id, choice=route)
 
 
-def select_route(backend: DecisionBackend, summary: dict, allowed: list[str]) -> tuple[RouteDecision, str | None]:
+def select_route(backend: DecisionBackend, summary: dict, allowed: list[str], *, policy="argmax-v1") -> tuple[RouteDecision, str | None]:
+    if policy not in {"argmax-v1", "legacy-threshold-v1"}:
+        raise ValueError("Unknown routing policy")
     start = time.monotonic()
     error = None
     try:
@@ -51,14 +53,16 @@ def select_route(backend: DecisionBackend, summary: dict, allowed: list[str]) ->
                     or abs(sum(p.values()) - 1) > 1e-5):
                 raise ValueError("invalid route probabilities")
             ordered = sorted(p, key=p.get, reverse=True)
-            if decision.choice != ordered[0]:
+            if p[decision.choice] != max(p.values()):
                 raise ValueError("choice disagrees with probability maximum")
-            values = sorted(p.values(), reverse=True)
-            if "deliberate" in allowed and (values[0] < 0.6 or (len(values) > 1 and values[0] - values[1] < 0.15)):
-                decision = decision.model_copy(update={"choice": "deliberate"})
+            if policy == "legacy-threshold-v1":
+                values = sorted(p.values(), reverse=True)
+                if "deliberate" in allowed and (values[0] < .6 or (len(values)>1 and values[0]-values[1]<.15)):
+                    decision = decision.model_copy(update={"choice":"deliberate"})
     except Exception as exc:
         # The logged fallback has no synthetic probabilities and a truthful backend ID.
         error = f"{type(exc).__name__}: {exc}"
-        decision = RulesBackend().decide(summary, allowed).model_copy(update={"fallback_used": True})
+        decision = (RulesBackend().decide(summary, allowed).model_copy(update={"fallback_used": True})
+                    if policy == "legacy-threshold-v1" else RouteDecision(backend_id=backend.backend_id,choice="stop"))
     decision.latency_ms = (time.monotonic() - start) * 1000
     return decision, error

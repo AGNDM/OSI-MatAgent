@@ -1,4 +1,6 @@
-"""Paper-grounded titania substep, with an explicitly authored chemistry bridge.
+"""LEGACY task-specific demonstration, not the native-only agent workflow.
+
+Paper-grounded titania substep, with an explicitly authored chemistry bridge.
 
 Native furnace dynamics and template-derived XRD acquisition are unchanged.
 No claim of calibrated reaction kinetics, physical transport, or paper replication.

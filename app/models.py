@@ -2,7 +2,7 @@ from typing import Any, Literal, TypedDict
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-Route = Literal["diagnose", "prepare_action", "verify", "deliberate", "wait_short", "wait_long"]
+Route = Literal["diagnose", "prepare_action", "verify", "deliberate", "wait_short", "wait_long", "stop"]
 
 
 class Record(BaseModel):
@@ -20,6 +20,7 @@ class Hypothesis(Record):
     cause: str
     supporting_ids: list[str]
     contradicting_ids: list[str]
+    material_evidence_ids: list[str] = Field(default_factory=list)
 
 
 class HypothesisSet(Record):
@@ -32,6 +33,7 @@ class ActionCandidate(Record):
     intent: Intent
     rationale: str = Field(min_length=1)
     evidence_ids: list[str]
+    material_evidence_ids: list[str] = Field(default_factory=list)
 
 
 class OperationOptions(Record):
@@ -97,6 +99,7 @@ class LabState(TypedDict, total=False):
     target: dict
     hypotheses: list[dict]
     evidence_refs: list[str]
+    retrieval_evidence: list[dict]
     intent: dict | None
     proposal: dict | None
     candidates: list[dict]

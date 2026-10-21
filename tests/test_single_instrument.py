@@ -58,6 +58,8 @@ def fake_lab(device='binder_fd056'):
           'plant.configure':{'input_schema':{'type':'object'}},
           'secret':{'visibility':'debug','input_schema':{'type':'object'}},
           'unsupported':{'availability':'unsupported','input_schema':{'type':'object'}}}}
+    if device=='mt_quantos_q2_xpe206dr':
+        description['capabilities']['act']['execution']['mode']='asynchronous'
     lab=InstrumentLab(task(device),native=(native,native,'test-instance',description))
     return lab,native
 
@@ -70,7 +72,7 @@ def proposal(lab, name, args=None, **changes):
 def execute(lab,name,args=None,**changes):return lab.execute(proposal(lab,name,args,**changes))
 
 
-@pytest.mark.parametrize('field',['reference_probe','steps','tool_menu'])
+@pytest.mark.parametrize('field',['reference_probe','steps','tool_menu','recipe','macro'])
 def test_tasks_reject_reference_solutions(field):
     with pytest.raises(ValidationError):task(**{field:[]})
 
@@ -223,9 +225,11 @@ def test_stale_native_readback_after_clock_step_is_not_relabelled_fresh():
         return r
     native.read=stale
     execute(lab,'workflow.await',{'duration_s':10})
-    assert lab.termination_reason=='execution_uncertain' and lab._measurement is None
-    with pytest.raises(ValueError, match='STALE_NATIVE_OBSERVATION'):
-        lab.score({'status':'supported'})
+    assert lab.termination_reason is None
+    assert lab._measurement['native']['observations']['goal']['sample_time_s']==0
+    score=lab.score({'status':'supported'})
+    assert not score['goal_met'] and score['false_success'] and not score['fresh_evidence']
+    assert score['predicates'][0]['error']=='stale_or_unavailable_sample_time'
 
 
 def test_zero_and_exhausted_budget_include_real_router_attempts():
@@ -285,7 +289,10 @@ def test_evidence_requires_current_finite_native_sample_timestamp(timestamp):
         return r
     native.read=changed
     execute(lab,'workflow.await',{'duration_s':10})
-    assert lab.termination_reason=='execution_uncertain' and lab._measurement is None
+    assert lab.termination_reason is None and lab._measurement is not None
+    score=lab.score({'status':'supported'})
+    assert not score['goal_met'] and not score['fresh_evidence']
+    assert score['predicates'][0]['error']=='stale_or_unavailable_sample_time'
 
 
 def test_final_read_failure_keeps_pending_identity_in_saved_result(tmp_path,monkeypatch):

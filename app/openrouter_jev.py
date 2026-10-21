@@ -30,6 +30,7 @@ class OpenRouterJevBackend(LocalOpenJevBackend):
 
     def __init__(self,ledger,timeout_seconds=45):
         self.ledger=ledger
+        ledger.enable_openrouter_record_only()
         self.timeout_seconds=timeout_seconds
         self.deadline=float('inf')
         self.last_call=None
@@ -56,7 +57,7 @@ class OpenRouterJevBackend(LocalOpenJevBackend):
             'instructions':'Choose the best next option using the instructions, current public state and option descriptions supplied in state.',
             'criteria':criteria}}}
         self.last_call.update(request=body,request_sent=False)
-        key=self.ledger.reserve_decision(body)
+        key=self.ledger.reserve_decision(body,provider="openrouter")
         self.last_call.update(request_sent=True,budget_reservation_id=key)
         usage=None
         try:

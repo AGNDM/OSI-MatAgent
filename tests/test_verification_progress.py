@@ -77,6 +77,7 @@ def test_signature_changes_for_evidence_not_bookkeeping():
 @pytest.mark.parametrize('fallback',[False,True])
 def test_duplicate_guard_also_applies_to_deliberation_and_rules_fallback(fallback):
     lab,native=fake_lab();execute(lab,'workflow.inspect')
+    lab.routing_policy='legacy-threshold-v1'
     limits=Limits(lab_actions=5,llm_calls=20,graph_steps=100);state=initial_state(lab,'boundary',limits)
     state['observations']=lab.observe()
     sig=lab.verification_signature(state)

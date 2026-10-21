@@ -1,0 +1,38 @@
+{
+  "task_id": "furnace-short-program",
+  "device": "auto",
+  "objective": "Run one native furnace program with a 323.15 K segment, a 0.1 K/s ramp and a 10-second hold. Establish completed program state and the full hold using fresh public observations. This is empty-furnace program execution, not material synthesis.",
+  "predicates": [
+    {
+      "state_id": "program.phase",
+      "value": "completed",
+      "unit": "1"
+    },
+    {
+      "state_id": "program.hold_elapsed_s",
+      "operator": "ge",
+      "value": 10,
+      "unit": "s"
+    },
+    {
+      "state_id": "program.segments",
+      "path": [
+        0,
+        "temperature_K"
+      ],
+      "value": 323.15,
+      "unit": "1"
+    },
+    {
+      "state_id": "program.segments",
+      "path": [
+        0,
+        "ramp_rate_K_s"
+      ],
+      "value": 0.1,
+      "unit": "1"
+    }
+  ],
+  "max_simulated_seconds": 1200,
+  "max_wait_seconds": 600
+}

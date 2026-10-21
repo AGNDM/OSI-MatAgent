@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ika-speed-units",
+    "title": "Stirring angular speed units and discrete settings",
+    "source": "vendor/chemlab/scripts/asset_runtime/ika_plate_rctdigital.py",
+    "locator": "_cmd_stirring_set_speed and public stirring.set_speed contract",
+    "ownership": "Pinned native simulator behavior",
+    "text": "The stirring control accepts angular speed in rad/s. Conversion uses rpm = rad/s times 60 divided by 2 pi; the native control rounds to its discrete 5 rpm grid. Requested and displayed values must be compared with the declared resolution, not assumed identical real-fluid mixing."
+  },
+  {
+    "id": "furnace-program-lifecycle",
+    "title": "Furnace configuration versus completed program",
+    "source": "vendor/chemlab/scripts/basic40_runtime_thermal.py",
+    "locator": "NaberthermL9Runtime thermal.configure_program, thermal.start_program and public program fields",
+    "ownership": "Pinned native simulator contract",
+    "text": "Program configuration stores segment parameters; it does not establish that a program ran. Public program phase and hold elapsed time describe progress. A completed hold must be established from readback, not inferred from command acceptance."
+  },
+  {
+    "id": "furnace-units",
+    "title": "Thermal segment SI units",
+    "source": "cases/devices/public-catalog.json",
+    "locator": "nabertherm_l9 public thermal.configure_program input_schema",
+    "ownership": "Derived from authenticated native public describe; no task recipe",
+    "text": "A thermal segment specifies temperature_K in kelvin, ramp_rate_K_s in kelvin per second and hold_s in seconds. Degrees Celsius convert by adding 273.15. A rate stated per minute must also be converted to per second."
+  },
+  {
+    "id": "binder-timer-contract",
+    "title": "Oven timer argument ranges",
+    "source": "vendor/chemlab/scripts/asset_runtime/binder_fd056.py",
+    "locator": "Public timer.set contract and timer.state readback",
+    "ownership": "Pinned native simulator contract",
+    "text": "The oven timer takes integer days, hours and minutes. Hours range from 0 to 23 and minutes from 0 to 59. The expired flag and stored interval are distinct observations; reads alone do not advance simulated time."
+  },
+  {
+    "id": "balance-filter-scope",
+    "title": "Balance configuration and weighing scope",
+    "source": "cases/devices/public-catalog.json",
+    "locator": "mt_xpr204e public balance.set_filter and state_slots",
+    "ownership": "Native public contract projection",
+    "text": "Balance digital-filter settings Low, Medium and High are configuration choices. Reading the selected filter does not prove a stable weighing, calibration or known sample mass. Declared lifecycle support is separate from having a measurement or status capability."
+  },
+  {
+    "id": "native-read-quality",
+    "title": "Readout quality and current evidence",
+    "source": "app/single_instrument.py",
+    "locator": "evaluate, _validate_receipt and verification_status",
+    "ownership": "Explicit workflow task policy",
+    "text": "The native-goal task policy accepts valid and estimated readings with matching units and field paths. Unavailable, stale or identity-mismatched evidence cannot establish the requested outcome. Knowledge documents are not native observations."
+  },
+  {
+    "id": "catauro-titania-scope",
+    "title": "Titania heat-treatment evidence has a defined feedstock scope",
+    "source": "https://doi.org/10.3390/ma11122364",
+    "locator": "Section 2.2, Table 1; Section 3.2.1, Table 2",
+    "ownership": "Published protocol and qualitative endpoint paraphrase, checked 2026-10-21",
+    "text": "For separate aliquots of the reported dried sol-gel feedstock, 9 degrees C per minute ramps and two-hour holds at 400 degrees C yielded anatase, while 600 degrees C yielded anatase and rutile. This does not define general reaction kinetics or the outcome of sequential reheating."
+  },
+  {
+    "id": "native-process-limit",
+    "title": "Native process controls do not supply a chemistry model",
+    "source": "docs/demos/titania/scenario.md",
+    "locator": "Evidence boundary; historical authored example",
+    "ownership": "Simulator capability limitation, not an operation sequence",
+    "text": "A furnace program or control setpoint is an instrument-state outcome. It does not establish material phase conversion, physical sample transfer or calibrated composition. A requested outcome absent from native public state must remain unsupported or unresolved."
+  }
+]

@@ -172,6 +172,7 @@
     "assets/reactions/metrohm_omnis_acidbase_library/templates.json": "64480d3db43a3f1cb950b22c3d16dce4ad8d239958773f34fc9d7b73e2e2375b",
     "assets/reactions/multiwave_7101_digestion_library/templates.json": "5020fc7d9a3142b64dd401d658b56a9ae8fabf98ded966da94b1c8aff43e04fe",
     "assets/reactions/rigaku_miniflex600_xrd_library/templates.json": "8a8f0a0418a541e570dbd55c999a6cfd191284cdd4eb8af7d572cc88ae9864e5",
-    "assets/reactions/substances.json": "e50ce547ff920627f6086a42851659654d898a73d27230aa093aae99744e3773"
+    "assets/reactions/substances.json": "e50ce547ff920627f6086a42851659654d898a73d27230aa093aae99744e3773",
+    "assets/expansion_batch04/t4_measure/biotek_405ts/wash_liquid_library.json": "7ccac4c2d6fd152847ab0ddfa255d2396b3ec6d44dad8de2cd0eb34067b6df9b"
   }
 }

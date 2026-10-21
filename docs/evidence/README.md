@@ -10,3 +10,7 @@
 - [Device coverage](device-coverage.csv), [expansion summary](device-expansion-summary.json), and [trace manifest](trace-manifest.json)
 
 These are recorded development results. Historical source hashes identify the revision actually executed; document relocation does not relabel previous runs. Raw traces remain local under `results/`.
+
+- [Native automatic-selection acceptance and knowledge pairs](native-acceptance-and-knowledge.json): all ten attempts, four new strictly paired runs, source/oracle checks, actions/citations and reconciled record-only usage. See the [report](../reports/native-acceptance-and-knowledge.md).
+
+- [Native lifecycle coverage](native-lifecycle-coverage.json): per-device native binding,191 executed clock checks and retained first-audit integration failures. See the [report](../reports/native-lifecycle-coverage.md).

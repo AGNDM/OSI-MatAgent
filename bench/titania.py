@@ -27,7 +27,7 @@ def summarize_usage(events):
     total = dict.fromkeys(keys, 0)
     complete = True
     for event in events:
-        metadata = event.get('llm_metadata') or {}
+        metadata = event.get('llm_metadata') or event.get('backend_metadata') or {}
         if not metadata.get('request_sent'):
             continue
         usage = metadata.get('usage')
@@ -41,23 +41,34 @@ def summarize_usage(events):
     return total, complete
 
 
-def run(branch, output, roles=None, decision=None, operation=None):
-    lab = TitaniaLab(branch)
+def run(branch, output, roles=None, decision=None, operation=None, *, profile=None, lab_factory=TitaniaLab, limits=None, observer=None):
+    lab = lab_factory(branch)
+    lab.count_router_calls = True
     run_id = str(uuid4())
-    trace = Trace(run_id, output/'traces'/(run_id+'.jsonl'))
+    trace = Trace(run_id, output/'traces'/(run_id+'.jsonl'),observer)
     dump(output/(branch+'-reset.json'), {'fixture_events': lab.fixture_events,
          'thermal_runs': lab.thermal_runs, 'initial_analysis': lab.initial_analysis,
          'initial_pattern': lab._pattern, 'template_references': {p: public_reference(p) for p in ['anatase', 'rutile']}})
     backend = roles or ScriptedTitaniaRoles()
-    limits = Limits(lab_actions=8, llm_calls=16, episode_seconds=240, graph_steps=120)
-    graph = build_graph(lab, trace, limits, roles=backend, decision_backend=decision, profile=TitaniaProfile(), operation_backend=operation)
-    final = graph.invoke(initial_state(lab, run_id, limits),
-        {'configurable': {'thread_id': run_id}, 'recursion_limit': limits.graph_steps})
+    limits = limits or Limits(lab_actions=12, llm_calls=36, episode_seconds=360, graph_steps=200)
+    graph = build_graph(lab, trace, limits, roles=backend, decision_backend=decision, profile=profile or TitaniaProfile(), operation_backend=operation)
+    config={'configurable': {'thread_id':run_id},'recursion_limit':limits.graph_steps}
+    error=None
+    try:
+        final=graph.invoke(initial_state(lab,run_id,limits),config)
+    except Exception as exc:
+        error={'type':type(exc).__name__,'message':str(exc)[:1000]}
+        try:snapshot=graph.get_state(config).values
+        except Exception:snapshot={}
+        final={'report':{'status':'unresolved','evidence_ids':[],'terminal_reason':'bounded_failure',
+                         'llm_call_count':snapshot.get('llm_call_count',0)}}
+        trace.emit('report','bounded_failure',error=error,report=final['report'])
     score = lab.score(final['report'])
     trace.emit('evaluator', 'titania_score', score=score)
     usage, usage_complete = summarize_usage(trace.events)
     row = {'branch': branch, 'backend': backend.backend_id,
            'router': decision.backend_id if decision else 'rules-v1',
+           'routing_policy':'argmax-v1','exception':error,
            'operation_backend': operation.backend_id if operation else None,
            'report': final['report'], 'score': score, 'usage': usage, 'usage_complete': usage_complete,
            'router_fallbacks': sum(e.get('decision', {}).get('fallback_used', False) for e in trace.events),
@@ -119,7 +130,10 @@ def main():
     parser.add_argument('--controls', action='store_true')
     parser.add_argument('--operation-decision', choices=['off', 'scripted', 'openjev', 'deepseek'], default='off',
                         help='Separate next-operation chooser; expert router remains independent')
+    parser.add_argument('--legacy-demo',action='store_true',help='Explicitly opt into the historical task-specific macro demonstration')
     args = parser.parse_args()
+    if not args.legacy_demo:
+        parser.error('This is a legacy task-specific demonstration. New native-only tasks use app.instrument_cli; add --legacy-demo only for historical reproduction.')
     if args.output.exists():
         parser.error('Use a new output directory; attempts are retained.')
     roles = ledger = None

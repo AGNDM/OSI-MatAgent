@@ -1,5 +1,7 @@
 # Online next-operation decisions
 
+> Historical operation-feature guide and TiO2 examples. The current native-only path and argmax fail-closed routing policy are documented in the [single-instrument guide](single-instrument-agent.md). OpenRouter is now the real expert default; its authorized DeepSeek/Jev usage is record-only, and SiliconFlow remains explicitly selectable with its original cap.
+
 This implementation adds action selection to the existing LangGraph. The offline decision benchmark is deferred at the user's request. There is no new task generator, all-option label replay, model-ranking study or calibration experiment.
 
 ## Execution path
@@ -14,7 +16,7 @@ The chooser sees public observations, target/policy, hypotheses, capabilities, a
 
 Titania observations now identify the current aliquot's completed thermal receipt explicitly. After replacement, an old aliquot's scan is not exposed as the new aliquot's current measurement. Candidate prompting states inspection presence explicitly, and the titania profile rejects reinspection of unchanged valid evidence.
 
-Selection failures stop unresolved with an explicit error; there is no silent operation fallback to an expert or rule policy. Existing specialist-router fallback remains separately logged. Local operational calls count against the shared per-episode model-call limit, as do cloud calls and specialist format repairs; operation call count is also reported separately. Router calls retain the existing separate routing counters. Action/time limits still apply. Every attempted selection is logged, including errors.
+Selection failures stop unresolved with an explicit error; there is no silent operation fallback to an expert or rule policy. Default specialist routing now fails closed too; a separately named legacy threshold policy is retained for historical tests. Local operational calls count against the shared per-episode model-call limit, as do cloud calls and specialist format repairs; operation call count is also reported separately. Router calls retain the existing separate routing counters. Action/time limits still apply. Every attempted selection is logged, including errors.
 
 OpenJev probabilities are raw T=1 token probabilities conditioned on the supplied candidate letters. They are **not calibrated confidence**, and cannot indicate whether diagnosis omitted a better action. A singleton menu necessarily normalizes to 1.0. No new probability threshold is used to claim reliability. Inspection/measurement alternatives can be proposed explicitly; this version does not implement a general human-escalation protocol.
 
@@ -24,21 +26,21 @@ Defaults retain the prior workflow. Enable the new node explicitly:
 
 ```bash
 # No model/API calls: scripted candidates and scripted selection are test doubles.
-python -m bench.titania --operation-decision scripted \
+python -m bench.titania --legacy-demo --operation-decision scripted \
   --output results/titania-operation-scripted-smoke
 
 # Same local OpenJev service for specialist routing and action selection.
 # Candidate generation and verification remain explicitly scripted test doubles.
-python -m bench.titania --router openjev --operation-decision openjev \
+python -m bench.titania --legacy-demo --router openjev --operation-decision openjev \
   --output results/titania-operation-local-smoke
 
 # Real DeepSeek generates candidates/procedure/verification records.
-# Existing shared token ledger meters all SiliconFlow requests.
-python -m bench.titania --backend deepseek --router openjev \
+# Durable ledger records the authorized OpenRouter model usage.
+python -m bench.titania --legacy-demo --backend deepseek --router openjev \
   --operation-decision openjev --output results/titania-operation-real-smoke
 ```
 
-`--operation-decision deepseek` selects the existing budgeted SiliconFlow expert transport as the action chooser instead. `--operation-decision off` retains direct diagnostic intent selection. Never delete the durable budget ledger to restart the 5M allowance. No OpenRouter requests are made.
+`--operation-decision deepseek` selects the current OpenRouter DeepSeek transport as the action chooser instead. `--operation-decision off` retains direct diagnostic intent selection. Never delete the durable accounting ledger. Current authorized OpenRouter calls are record-only; the original 5M cap remains for non-exempt providers.
 
 The two titania branches remain independent reset worlds. A wrong thermal history calls for reference treatment of a retained dried sister aliquot followed by XRD; a truncated scan after correct treatment calls for a full scan without replacement. Physics/chemistry boundaries remain as declared in the [titania scenario](../demos/titania/scenario.md).
 

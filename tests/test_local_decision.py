@@ -100,7 +100,7 @@ def test_missing_probability_causes_explicit_rules_fallback(monkeypatch):
     state = initial_state(lab, "readout-test", Limits())
     state["observations"] = lab.observe()
     backend = LocalOpenJevBackend()
-    decision, error = select_route(backend, summarize(state), ["diagnose", "deliberate"])
+    decision, error = select_route(backend, summarize(state), ["diagnose", "deliberate"],policy="legacy-threshold-v1")
     assert decision.backend_id == "rules-v1" and decision.fallback_used
     assert decision.probabilities is None
     assert "Incomplete" in error

@@ -169,7 +169,7 @@ def test_pending_and_deadline_stop_without_mutation():
         assert lab.evaluator_snapshot() == before
 
 
-def test_invalid_router_fallback_is_logged_without_probabilities(tmp_path):
+def test_invalid_router_stops_without_fallback(tmp_path):
     class InvalidRouter:
         backend_id = "invalid-test-decision-backend"
 
@@ -177,25 +177,22 @@ def test_invalid_router_fallback_is_logged_without_probabilities(tmp_path):
             return {"backend_id": self.backend_id, "choice": "invented-route"}
 
     record = run_episode(case_by_id("dev-01"), tmp_path, decision_backend=InvalidRouter())
-    assert record["score"]["task_success"]
-    assert record["fallback_count"] > 0
+    assert not record["score"]["task_success"] and record["fallback_count"] == 0
+    assert record["report"]["terminal_reason"] == "decision_model_error"
     events = [json.loads(line) for line in Path(record["trace_path"]).read_text().splitlines()]
-    for event in events:
-        if event["kind"] == "routing":
-            assert event["decision"]["fallback_used"]
-            assert event["decision"]["backend_id"] == "rules-v1"
-            assert event["decision"]["probabilities"] is None
+    assert not any(e["kind"] == "tool_result" for e in events)
 
 
-def test_low_confidence_routes_through_one_bounded_deliberation():
+def test_low_confidence_keeps_argmax_without_deliberation(tmp_path):
     class UncertainRouter:
         backend_id = "uncertain-test-decision-backend"
 
         def decide(self, summary, allowed):
-            return RouteDecision(backend_id=self.backend_id, choice=allowed[0],
-                probabilities={r: 1 / len(allowed) for r in allowed})
+            choice="prepare_action" if summary['has_intent'] else "verify" if summary['has_measurement'] else "diagnose"
+            p={r:(.51 if r==choice else .49/(len(allowed)-1)) for r in allowed} if len(allowed)>1 else {choice:1.}
+            return RouteDecision(backend_id=self.backend_id, choice=choice, probabilities=p)
 
-    record = run_episode(case_by_id("dev-03"), decision_backend=UncertainRouter())
+    record = run_episode(case_by_id("dev-03"), tmp_path, decision_backend=UncertainRouter())
     assert record["score"]["task_success"]
     assert record["fallback_count"] == 0
 

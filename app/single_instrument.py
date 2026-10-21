@@ -1,7 +1,7 @@
 """Reference-free single-instrument execution over native public contracts.
 
 No generated device task, reference probe or solution sequence is loaded here.
-Clock/poll adapters are explicitly audited protocol families, not task scripts.
+Clock/poll adapters follow native API signatures and contracts, not task scripts.
 """
 from copy import deepcopy
 from hashlib import sha256
@@ -16,6 +16,7 @@ from pydantic import Field, field_validator
 from app.models import Record
 from app.device_registry import get_device, open_native, public_capabilities
 from app.lab_adapter import GateRejected
+from app.native_lifecycle import NativeLifecycle
 from app.roles import projection
 from app.device_roles import DeviceProfile
 
@@ -66,6 +67,12 @@ def evaluate(predicate, native):
             raise ValueError('quality_unavailable')
         if slot.get('unit') != predicate.unit:
             raise ValueError('unit_mismatch')
+        clock = native.get('clock', {}).get('time_s')
+        if clock is not None:
+            timestamp = slot.get('sample_time_s')
+            if (type(timestamp) not in (int, float) or not math.isfinite(timestamp)
+                    or abs(timestamp-clock) > 1e-6):
+                raise ValueError('stale_or_unavailable_sample_time')
         value = slot['value']
         for key in predicate.path:
             if type(key) is str and isinstance(value, dict):
@@ -94,48 +101,6 @@ def evaluate(predicate, native):
                 'error': str(exc)}
 
 
-class NativeLifecycle:
-    """A small explicit bridge registry. Merely having poll() is not support."""
-    DELTA = {('asset_runtime.binder_fd056', 'BinderFd056Runtime'),
-             ('asset_runtime.ika_plate_rctdigital', 'IkaPlateRctdigitalRuntime'),
-             ('basic40_runtime_thermal', 'NaberthermL9Runtime')}
-    QUANTOS = ('basic40_runtime_automation', 'QuantosQ2Runtime')
-
-    def __init__(self, spec, host, session, instance):
-        self.host, self.session, self.instance = host, session, instance
-        self.key = (spec['module'], spec['class'])
-        self.can_step = self.key in self.DELTA or self.key == self.QUANTOS
-        self.can_poll = self.key == self.QUANTOS
-        self.elapsed = 0.
-        self.calls = dict(read=0, invoke=0, step=0, poll=0, cancel=0)
-
-    def step(self, duration):
-        if not self.can_step:
-            raise ValueError('UNSUPPORTED_CLOCK')
-        self.calls['step'] += 1
-        if self.key == self.QUANTOS:
-            self.host.host_step(duration, world_time_s=self.host.time_s+duration)
-        else:
-            self.host.step(duration)
-        self.elapsed += duration
-
-    def poll(self, operation_id):
-        if not self.can_poll:
-            raise ValueError('UNSUPPORTED_POLL')
-        self.calls['poll'] += 1
-        return self.session.poll(instance_id=self.instance, operation_id=operation_id)
-
-    def cancel(self, operation_id, request_id):
-        if not self.can_poll:
-            raise ValueError('UNSUPPORTED_CANCEL')
-        self.calls['cancel'] += 1
-        return self.session.cancel(instance_id=self.instance, operation_id=operation_id, request_id=request_id)
-
-    def operation_status(self, response):
-        # Audited Quantos poll/cancel report operation status in the outer envelope.
-        return response.get('status')
-
-
 class InstrumentLab:
     manages_pending_operations = True
     count_router_calls = True
@@ -146,7 +111,7 @@ class InstrumentLab:
         self.spec = get_device(task.device)
         # Optional native injection is for offline contract tests only, never CLI input.
         self.host, self.session, self.instance_id, self.description = native or open_native(self.spec)
-        self.lifecycle = NativeLifecycle(self.spec, self.host, self.session, self.instance_id)
+        self.lifecycle = NativeLifecycle(self.spec, self.host, self.session, self.instance_id, self.description)
         self.sample_id = 'instrument:' + self.spec['slug']
         self.revision = self.action_count = self.last_mutation_step = 0
         self.pending_operation = None
@@ -183,16 +148,11 @@ class InstrumentLab:
             raise ValueError('NATIVE_CLOCK_MISMATCH')
         if not hasattr(self, '_initial_clock'):
             self._initial_clock = clock
+            self.lifecycle.initial_clock = clock
         revision = response.get('state_revision')
         if type(revision) is not int or revision < self._last_native_revision:
             raise ValueError('NATIVE_REVISION_MISMATCH')
         self._last_native_revision = revision
-        if read and response.get('status') == 'succeeded':
-            for slot in response.get('observations', {}).values():
-                timestamp = slot.get('sample_time_s')
-                evidence = slot.get('quality') in {'valid', 'estimated'}
-                if evidence and (type(timestamp) not in (int,float) or not math.isfinite(timestamp) or abs(timestamp-clock) > 1e-6):
-                    raise ValueError('STALE_NATIVE_OBSERVATION')
 
     def target(self):
         return {'task_id': self.task.task_id, 'sample_id': self.sample_id,
@@ -216,6 +176,7 @@ class InstrumentLab:
                   'maximum': self.task.max_wait_seconds}}, 'Host advances native clock in bounded chunks, polls supported pending operations, then reads fresh public state.')
         if self.lifecycle.can_poll:
             result['workflow.poll'] = cap({}, 'Poll the current operation without advancing time.')
+        if self.lifecycle.can_cancel:
             result['workflow.cancel'] = cap({}, 'Cancel the current operation; partial native effects are preserved.')
         for name, metadata in self._native_caps.items():
             result[self.spec['slug']+'::'+name] = deepcopy(metadata)
@@ -393,6 +354,9 @@ class InstrumentLab:
         m = self._measurement
         fresh = bool(m and m['quality'] == 'valid' and m['revision'] == self.revision and
                      m['captured_at_step'] > self.last_mutation_step)
+        if fresh:
+            fresh = all(evaluate(p, m['native']).get('error') is None
+                        for p in self.task.predicates + self.task.constraints)
         # A final independent read may differ (e.g. noisy readout); report both, never hide it.
         cached = bool(m and all(evaluate(p, m['native'])['met'] for p in self.task.predicates))
         met = bool(all(p['met'] for p in predicates) and all(p['met'] for p in constraints) and cached and fresh
@@ -540,7 +504,7 @@ class InstrumentProfile(DeviceProfile):
     prompts = {
         'diagnostic': 'Solve the stated single-instrument objective using native public contracts and observations. No reference action sequence is supplied. Inspect first. Use input_schema, optional fields, units, preconditions and actual errors to plan one next operation. A succeeded command may only start a continuing physical process. To let supported native dynamics progress request workflow.await with a bounded duration_s, then use fresh readback. Reads/polls never advance time. While pending, only inspect/read/await/poll/cancel/stop; do not start another native action. If prerequisites require unavailable host fixtures, or the goal is unsupported, use workflow.stop with an honest reason rather than inventing host calls. Cite only supplied inspection/measurement observation IDs; documentation IDs such as native-contract and state IDs are not observations. With no observations cite empty lists. Return short hypotheses and one intent; never execute code.',
         'procedure': 'Copy the supplied intent into exactly one ActionProposal. Copy sample_id, expected_revision, request_id, capability_id and arguments exactly. Do not invent steps, optional arguments or native operations.',
-        'verification': 'Verify the declared public-state predicates and constraints using fresh measurement.native.observations and unit/quality/path fields. Native qualities valid AND estimated are both accepted by this simulator task policy; estimated does not mean missing evidence. All predicates and constraints must hold; numeric eq uses absolute_tolerance. Evidence must match sample_id and revision and be captured after last_mutation_step. Never report supported while pending_operation exists. Cite the measurement id. If fresh accepted-quality evidence shows ANY evaluable predicate false, report contradicted; do not describe an observed mismatch as missing evidence. Report unresolved only for pending operations, stale/missing/unavailable/invalid identity, units, paths or evidence quality. Report supported only when every predicate and constraint holds. Do not confuse command acceptance with physical completion.',
+        'verification': 'Verify the declared public-state predicates and constraints using fresh measurement.native.observations and unit/quality/path fields. Native qualities valid AND estimated are both accepted by this simulator task policy; goal evidence also needs a current finite sample timestamp matching the native read clock; estimated does not mean missing evidence. All predicates and constraints must hold; numeric eq uses absolute_tolerance. Evidence must match sample_id and revision and be captured after last_mutation_step. Never report supported while pending_operation exists. Cite the measurement id. If fresh accepted-quality evidence shows ANY evaluable predicate false, report contradicted; do not describe an observed mismatch as missing evidence. Report unresolved only for pending operations, stale/missing/unavailable/invalid identity, units, paths or evidence quality. Report supported only when every predicate and constraint holds. Do not confuse command acceptance with physical completion.',
         'deliberation': 'Select one allowed specialist route. Prepare an existing intent; pending operations require diagnosis of await/poll/stop; verify only fresh completed evidence. Never execute tools.'}
     candidate_prompt = (prompts['diagnostic'] + ' Keep output compact: at most one short hypothesis and two candidates. Each prose field must be under 120 characters. Never reproduce contracts in the output. At the initial state without inspection return one workflow.inspect candidate with empty arguments and empty evidence IDs only.')
 

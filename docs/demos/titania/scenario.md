@@ -1,5 +1,7 @@
 # Scenario card: missing rutile evidence after titania processing
 
+> Historical authored TiO2 demo: this scenario uses task-specific macros and a material endpoint fixture. It is retained for provenance and does not satisfy the current native-only, reference-free execution requirement. See the [current native workflow](../../guides/single-instrument-agent.md).
+
 **Question.** Did the batch receive the wrong thermal treatment, or did characterization miss the relevant diffraction range? Recover qualitative evidence for both anatase and rutile while preserving a correctly processed aliquot.
 
 **Published anchor.** Catauro et al., *Materials* **11** (2018), 2364, [doi:10.3390/ma11122364](https://doi.org/10.3390/ma11122364), [open paper](https://res.mdpi.com/d_attachment/materials/materials-11-02364/article_deploy/materials-11-02364.pdf). Section 2.2 and Tables 1–2 compare sister aliquots from a dried sol–gel batch: 9 °C/min ramps and two-hour holds at 400 °C produced anatase, while 600 °C produced anatase plus rutile. Section 2.3.2 uses Cu Kα XRD. We model only this thermal-treatment/characterization substep; wet synthesis and drying are prerequisites outside the workflow.

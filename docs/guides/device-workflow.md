@@ -1,5 +1,7 @@
 # Native Device Workflow
 
+> Historical device-fixture runner: capability subsets and scripted reference doubles are developer regression assets. The current goal-only solver uses [automatic public-contract selection](single-instrument-agent.md). Current real expert defaults to OpenRouter; its authorized DeepSeek/Jev usage is record-only. SiliconFlow retains the original 5M cap.
+
 The existing diagnostic, procedure, gate, executor and verification LangGraph now accepts a device-specific profile. The original drying profile remains available. Native actions are named `device_slug::capability_id`, and their arguments are validated against the pinned agent-session contract.
 
 ## Coverage and boundaries
@@ -31,7 +33,7 @@ python -m bench.device_tasks --output results/my-device-offline
 # One device, scripted specialists and rules routing.
 python -m bench.device_tasks --device mt_xpr204e --output results/my-balance-test
 
-# Real DeepSeek specialists; uses SILICONFLOW_API_KEY from the environment.
+# Real DeepSeek specialists; defaults to OpenRouter and OPENROUTER_API_KEY.
 python -m bench.device_tasks --backend deepseek --device mt_xpr204e \
   --output results/my-balance-deepseek
 
@@ -44,11 +46,11 @@ Every output directory must be new. The default backend is explicitly labeled sc
 
 The browser on port 8793 remains the original drying demonstration. New device tasks currently use the CLI.
 
-## Shared 5M-token device debugging budget
+## Durable accounting and the historical 5M-token policy
 
-All device DeepSeek requests share `results/device-expansion-budget-v1/ledger.jsonl`. New output directories do not reset it. Do not delete or recreate the ledger to restart the allowance.
+All device DeepSeek requests retain accounting in `results/device-expansion-budget-v1/ledger.jsonl`. New output directories do not reset it. Do not delete or recreate the ledger to restart the allowance.
 
-Before transport, the ledger reserves the UTF-8 request-byte bound plus 8,192 framing tokens and the configured output ceiling. File locking prevents concurrent over-reservation. Complete provider prompt/completion usage settles the reservation; failed requests, missing usage and interrupted processes retain the full reserved amount. An accounting anomaly blocks subsequent requests.
+For bounded SiliconFlow requests, before transport the ledger reserves the UTF-8 request-byte bound plus 8,192 framing tokens and the configured output ceiling. File locking prevents concurrent over-reservation. Complete provider prompt/completion usage settles the reservation; failed requests, missing usage and interrupted processes retain the full reserved amount. An accounting anomaly blocks subsequent requests.
 
 Requests disable thinking and streaming, use a bounded output limit and have no transport retries. Output repairs are separately metered calls. The ledger contains request IDs, model IDs and token accounting, not credentials. It controls token usage; it is not a monetary billing statement. Other historical experiment entry points are not a substitute for this budgeted device runner.
 

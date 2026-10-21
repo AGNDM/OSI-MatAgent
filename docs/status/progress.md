@@ -1,6 +1,8 @@
 # Progress Against the Milestone Plan
 
-Snapshot: 21 October 2026. The reference plan is [the original milestone document](../plans/archive/milestones.md). Implementation status and research acceptance are tracked separately.
+Snapshot: 21 October 2026. The reference plan is [the original milestone document](../plans/archive/milestones.md). Implementation status and research acceptance are tracked separately. See the latest [Astra alignment audit and prioritized acceptance checklist](checklist.md#astra-alignment-audit--21-october-2026).
+
+Latest coverage correction: the clock/poll whitelist is removed. All194 registered devices retain 2,855 public native tools;191 actual clock/readback/replay checks pass, with three native hosts lacking a clock API and zero remaining integration failures. Async poll/cancel is exposed for 149 native contracts, with one real native HX204 acquisition test. Full suite: 201 passed;571 pinned files verified after restoring a missing washer library. The single new balance model rerun completed with correct protocol; its wait candidate was accepted and Jev selected the direct filter update (20 requests, 63,106 tokens). The [coverage report](../reports/native-lifecycle-coverage.md) distinguishes this from full acquisition/scientific acceptance and retains earlier failures.
 
 | Milestone | Status | Evidence and remaining work |
 |---|---|---|
@@ -9,10 +11,18 @@ Snapshot: 21 October 2026. The reference plan is [the original milestone documen
 | M2: Choose the case | Paper-grounded vertical slice implemented | TiO2 thermal-treatment/XRD scenario card and two distinguishable branches; qualitative phase analysis on synthetic reference-derived acquisitions. Chemistry remains authored. |
 | M3: Smallest loop | Complete | Drying and titania contrasting repairs, wrong-repair controls, fresh evidence and independent scoring. |
 | M4: Agent decisions | Minimum demonstrated | Real DeepSeek experts completed both drying and titania repair branches; titania used local OpenJev with zero routing fallback. Model stability is not established by a few development cases. |
-| M5: Materials retrieval | Partial | Fixed role-query lexical protocol context exists. No task-conditioned materials retrieval, Materials Encoder integration or measured retrieval benefit. |
-| M6: System 1 routing | Implemented with model substitution | Real local OpenJev replaces the planned Laya integration. Probabilities are uncalibrated; routing advantage is unproven. |
+| M5: Materials retrieval | Partial | Public-context lexical knowledge retrieval and scoped source passages now exist. Material-decision benefit, Materials Encoder and scientific acceptance remain pending. |
+| M6: System 1 routing | Implemented with model substitution | Real local OpenJev replaces the planned Laya integration; hosted TypeSafe Jev is separately selectable. The user explicitly selected legal argmax without confidence review; the earlier escalation requirement is superseded. Probabilities are uncalibrated; routing advantage is unproven. |
 | M7: Visibility | Basic implementation | Drying UI shows live state, actions, evidence, routing, recordings and replay. No integrated GLB view or multi-device UI. |
 | M8: Verify and freeze | Partial | Regression and development runs exist. Formal two-expert comparison, independent human failure annotation and final scientific demo acceptance remain pending. |
+
+## Current native-only acceptance update
+
+The user-approved route is now legal argmax without confidence review or deliberate escalation. The first expert can inspect all 194 public device entries and propose described candidates for Jev; fixed goals are not rewritten. The new real task path binds one generic native `InstrumentLab`, with no reference solution or Titania macro dependency. Four diverse real automatic-selection cases selected appropriate instruments; three completed their goals and all four preserved correct protocol handling. A separate native-only offline acceptance pack passed 28/28 checks.
+
+Task-conditioned lexical knowledge retrieval is implemented with separate source citations and an identical executor/oracle in paired arms. The earlier knowledge-on attempt was censored by the old conservative reservation cap; it does not establish a retrieval regression. OpenRouter is now record-only for the exact authorized DeepSeek/Jev models, while SiliconFlow retains its 5M cap. Historical attempts are unchanged; four fixed new paired attempts completed separately: 4/4 goal/protocol success, unchanged action sequences/call counts, and 582,602 tokens. Retrieval benefit is not established. Current offline suite: 193 passed in 86.78 s; 570 pinned upstream hashes match. See the [acceptance and knowledge report](../reports/native-acceptance-and-knowledge.md).
+
+The historical TiO2 demo is explicitly legacy because its authored macros and material endpoint fixture violate the new general-execution requirement. Generic multi-instrument sample transfer/chemistry and the final scientific UI are not completed; the UI and offline decision benchmark remain deferred. The earlier milestone table and dated entries below preserve historical claims, rather than certify these new requirements.
 
 ## Device expansion
 
@@ -30,7 +40,7 @@ Scripted drying regression passed 16/16 attempts across eight test fixtures and 
 
 ## Validation and next acceptance conditions
 
-The current project passes 111 tests. The upstream cache verifies against 570 pinned hashes. Credentials were absent from the device artifact scan, and all 206 returned model identities matched the configured DeepSeek model ID; no immutable provider weight revision was available.
+The latest recorded complete offline suite passes 172 tests (see the current Astra code review); this alignment audit did not rerun it. The upstream cache verifies against 570 pinned hashes. Credentials were absent from the device artifact scan, and all 206 returned model identities matched the configured DeepSeek model ID; no immutable provider weight revision was available.
 
 Next acceptance work is meaningful acquisition tasks, shared multi-device sample/time semantics, scientific evidence retrieval, a second expert, a frozen comparison and independent human error review. The current results do not establish model-routing superiority, scientific fidelity or general materials-research capability.
 

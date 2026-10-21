@@ -1,5 +1,7 @@
 # Five-Minute Local Demonstration
 
+> Historical drying demonstration with authored observations/fixtures and scripted defaults. It is not the current generic native task solver; use the [single-instrument guide](../guides/single-instrument-agent.md).
+
 The browser demonstrates bounded drying troubleshooting: a native oven process runtime plus an explicitly authored balance layer. Device expansion is available separately through the CLI; the browser does not currently list all devices.
 
 ## Start

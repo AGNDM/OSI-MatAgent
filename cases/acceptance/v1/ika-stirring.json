@@ -1,0 +1,17 @@
+{
+  "task_id": "stirring-setpoint",
+  "device": "auto",
+  "objective": "Power a stirring hotplate and set its stirring angular-speed control to 100 rpm (10.471975511965978 rad/s). Verify these public settings; actual loaded-fluid mixing is outside this goal.",
+  "predicates": [
+    {
+      "state_id": "stirring.set_rad_s",
+      "unit": "rad/s",
+      "value": 10.471975511965978
+    },
+    {
+      "state_id": "power.on",
+      "unit": "1",
+      "value": true
+    }
+  ]
+}

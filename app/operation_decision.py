@@ -14,20 +14,18 @@ CANDIDATE_INSTRUCTION = (
     'return hypotheses and 1-4 distinct candidates matching OperationOptions, not a final intent. '
     'Each candidate has candidate_id, intent, rationale and evidence_ids. Propose meaningful alternative '
     'next operations with exact schema-valid arguments and honest evidence/conditions; do not rank or '
-    'mark a preferred candidate. At the initial state without inspection, propose inspection only. After a correction, prioritize a fresh measurement before another mutation. '
+    'mark a preferred candidate. At the initial state without inspection, propose inspection only. After a state change, use fresh public readback and the declared goal before another mutation. '
     'Use only current public evidence; citations must be observation IDs, never document IDs. '
     'The decision maker, not the diagnostic expert, chooses which candidate proceeds to procedure.'
 )
 
 DECISION_PROMPT = (
-    'Choose the next laboratory operation from the supplied diagnostic candidates, using public '
-    'observations and target policy. Hypotheses and candidate rationales are proposals, not verified '
-    'facts. A current thermal receipt belongs to the current aliquot; do not reprocess it because '
-    'a different historical aliquot failed. A missing new measurement does not mean inspection is absent. '
-    'Inspect first only if inspection is missing or stale; preserve correctly processed material and seek a '
-    'discriminating measurement when needed. Do not invent capabilities, arguments or candidate IDs. '
-    'Return choice as one candidate_id and a complete normalized probability distribution over exactly '
-    'the supplied candidate IDs. Choice must be a maximum-probability candidate. Do not execute tools.'
+    'Choose the next native operation from the expert candidates using current public observations, '
+    'goal predicates, constraints and supplied knowledge evidence. Hypotheses and rationales are proposals, '
+    'not verified facts. Use the current state rather than obsolete observations. Inspect first when required; '
+    'a command receipt alone does not establish process completion. Do not invent capabilities, arguments '
+    'or candidate IDs. Return one supplied candidate ID and its complete normalized probability vector. '
+    'Select a maximum-probability candidate; do not execute tools.'
 )
 
 
@@ -55,7 +53,7 @@ def operation_payload(state):
     """No host internals, evaluator labels, or candidate reference ranking."""
     return deepcopy({k: state.get(k) for k in [
         'sample_id', 'observation_revision', 'target', 'observations', 'hypotheses',
-        'capabilities', 'last_error']})
+        'capabilities', 'last_error', 'retrieval_evidence']})
 
 
 class LocalOperationBackend(LocalOpenJevBackend):

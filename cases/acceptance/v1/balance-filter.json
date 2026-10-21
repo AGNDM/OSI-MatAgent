@@ -1,0 +1,12 @@
+{
+  "task_id": "balance-filter-high",
+  "device": "auto",
+  "objective": "Configure an analytical balance with its public digital filter set to High and verify it by fresh readback. This is instrument configuration, not scientific weighing.",
+  "predicates": [
+    {
+      "state_id": "balance.filter_level",
+      "unit": "1",
+      "value": "High"
+    }
+  ]
+}

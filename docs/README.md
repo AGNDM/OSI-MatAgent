@@ -4,6 +4,11 @@
 
 ## Start here
 
+- [Native lifecycle coverage without a device whitelist](reports/native-lifecycle-coverage.md): all 194 devices,191 actual clock checks,149 async interfaces and retained failures.
+
+- [Current native acceptance and knowledge report](reports/native-acceptance-and-knowledge.md): automatic instrument selection, argmax routing, no reference solution script, all outcomes and retrieval limits.
+- [Native single-instrument agent](guides/single-instrument-agent.md): the primary live entry point.
+
 - [Current progress](status/progress.md) and [delivery checklist](status/checklist.md)
 - [Titania scientific scenario](demos/titania/scenario.md) and [reproduction guide](demos/titania/workflow.md)
 - [Recorded evaluation summary](reports/evaluation-summary.md)

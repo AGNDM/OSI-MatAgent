@@ -1,14 +1,8 @@
 # Decision-Routed Lab
 
-A local LangGraph prototype for evidence-driven virtual laboratory control. Diagnostic, procedure and verification specialists propose structured actions; a deterministic gate checks them before native ChemLab execution. Routing uses a rules baseline, a separately deployed local OpenJev model, or hosted Jev typed decisions for the single-instrument runner. The default real expert is DeepSeek V4.1 Flash through OpenRouter, with SiliconFlow available through an explicit configuration.
+A local LangGraph workflow for native virtual-instrument tasks. DeepSeek V4.1 Flash generates typed candidates, procedures and evidence-based reports. Hosted TypeSafe Jev 1.14 chooses the instrument, next operation and expert route. A deterministic gate validates actions before the pinned ChemLab runtime executes them. The default routing policy takes a legal maximum-probability choice; it has no low-confidence escalation or silent model-failure fallback.
 
-The repository contains three workflow profiles:
-
-- **Drying troubleshooting:** distinguish a process-setting problem from a measurement problem, apply a justified correction, and verify fresh evidence with an independent evaluator.
-- **Device control:** run a small native control/readback task for each of 194 registered devices across 16 categories. These are independently reset single-device integration tasks, not complete scientific experiments.
-- **Paper-grounded titania:** distinguish a delivered thermal-program error from truncated XRD coverage; execute native furnace and diffraction acquisition macros. See the [scenario card](docs/demos/titania/scenario.md) and [run instructions](docs/demos/titania/workflow.md). Material chemistry remains an explicitly authored endpoint fixture.
-
-The online workflow also supports an opt-in [next-operation chooser](docs/guides/operation-decision.md): diagnostic candidates → operation decision → procedure → gate → execution. It is distinct from the specialist router and reuses the existing local OpenJev service. The offline decision benchmark remains deferred.
+The primary entry point accepts a goal and public-state predicates, discovers public instrument contracts and executes without a reference solution script. The expert can inspect the complete **194-device directory** and propose up to four described devices for Jev to choose from. Only one native instrument is bound per episode. Full directory visibility does not mean that every instrument supports every acquisition or time-control operation.
 
 ## Setup
 
@@ -17,83 +11,59 @@ conda env create -f environment.yml
 conda activate osi-hack
 python tools/fetch_device_runtime.py --download
 python tools/fetch_device_runtime.py
-python -m pytest -q
+python -B -m pytest -q
 ```
 
-The download script uses only the standard library. It restores the exact upstream files specified by the committed manifests and verifies SHA-256 hashes. The approximately 221 MB upstream cache, model weights, API credentials and generated experiment traces are excluded from Git.
+The manifests pin 571 upstream files, including the restored washer dependency. The approximately 221 MB cache, model weights, credentials and generated experiment traces are excluded from Git.
 
-## Run without external API calls
+## Run a goal without a solution script
 
-```bash
-# Run all registered device tasks with explicitly labeled scripted specialists.
-python -m bench.device_tasks --output results/my-device-offline
-
-# Run one device task.
-python -m bench.device_tasks --device mt_xpr204e --output results/my-balance-test
-
-# Start the original drying demonstration.
-python -m app.demo --port 8793 --output results/my-drying-demo
-```
-
-Open `http://127.0.0.1:8793` for the drying UI. Device tasks currently use the CLI. Defaults use scripted specialist test doubles and rules routing; they make no cloud requests.
-
-## Run real models
-
-Deploy the local router using [Local OpenJev deployment](docs/guides/local-openjev.md), then add `--router openjev` to a device command. OpenJev is the router, not the general expert.
-
-Set `OPENROUTER_API_KEY` in your environment, then explicitly request a real expert run:
-
-```bash
-python -m bench.device_tasks --backend deepseek --router openjev \
-  --device mt_xpr204e --output results/my-balance-model-run
-```
-
-This sends billable requests to OpenRouter model `deepseek/deepseek-v4.1-flash`. If the key was changed in shell startup settings, start a fresh interactive login shell before running. SiliconFlow remains selectable with `--config configs/siliconflow-deepseek-v4.1-flash.json` on the device runner. Device debugging shares a durable 5,000,000-token reservation ledger across output directories. Do not remove the ledger to restart the allowance. Free OpenRouter models are restricted to small, explicit debugging requests; free batch evaluation is disabled.
-
-For a task driven by public instrument contracts without a reference action script, use the [single-instrument runner](docs/guides/single-instrument-agent.md):
+Set `OPENROUTER_API_KEY` in the environment. After changing shell startup credentials, start a fresh interactive login shell. No key belongs in a task file or report.
 
 ```bash
 python -m app.instrument_cli --backend deepseek \
   --router openrouter-jev --operation openrouter-jev \
-  --task cases/instrument_tasks/binder-timer.json \
-  --output results/my-reference-free-binder
+  --task cases/acceptance/v1/binder-timer.json \
+  --knowledge on --output results/my-auto-binder
 ```
 
-The hosted mode uses pinned TypeSafe Jev 1.14 for routing and operation selection, with DeepSeek for general experts. It requires no local model service. Local OpenJev remains available with `--router openjev --operation openjev`. Expert and hosted decision calls share the same durable token ledger. The current [two-task validation](docs/evidence/hosted-jev-validation.md) records both successful tasks, verifier-quality alignment and the bounded 6,144-token expert output ceiling.
+This task declares `device: "auto"`, an objective and fixed outcome predicates. It supplies no action sequence, instrument shortlist or answer script. The expert searches/describes public contracts; Jev selects a proposed device, then the ordinary diagnostic → operation choice → procedure → gate → native execution → fresh evidence loop runs. The task oracle remains fixed throughout selection. Unsupported material-state goals stop honestly rather than invoke a chemistry fixture.
 
-## Verified snapshot
+`--knowledge on` adds task/evidence-conditioned lexical retrieval with separate knowledge and observation citations. It supplies facts, not an action plan. The corpus includes native instrument behavior and one scoped paper passage; it does not implement synthesis chemistry. See the [native acceptance and knowledge report](docs/reports/native-acceptance-and-knowledge.md) for results and limitations.
 
-| Check | Result |
-|---|---:|
-| Native session inventory | 198 of 203 catalog entries |
-| Registered device control tasks | 194 |
-| Offline LangGraph device regression | 194/194 passed |
-| Real DeepSeek sample across 16 categories | 20/20 final outcomes passed |
-| Real DeepSeek + local OpenJev device runs | 2/2 passed, no routing fallback |
-| Project tests | 111 passed |
-| Conservatively charged shared API debugging usage, including failed/interrupted calls | 450,497 tokens |
+The authorized OpenRouter DeepSeek/Jev transports record actual usage without a local token-amount cap, following the user's updated instruction. Finite action, model-call, time and output limits remain. SiliconFlow is explicitly selectable and retains the persistent 5M-token budget; no provider fallback is automatic. Free OpenRouter models remain limited to small explicit debug calls. See the [single-instrument guide](docs/guides/single-instrument-agent.md).
 
-The first real device pilot passed 0/3; the second passed 2/3. Their failures were retained. After fixing stale observation handoffs and returning fresh native readbacks after commands, the declared 20-device sample passed. These development results are not a statistical benchmark or evidence of routing superiority. See [the checked-in evidence summary](docs/reports/evaluation-summary.md).
+## Offline checks and historical demonstrations
 
-## Project layout
+```bash
+# Frozen development acceptance with clearly labeled offline doubles.
+python -m bench.acceptance --phase offline --output results/my-native-acceptance
+
+# Historical device integration fixtures; not the generic live task solver.
+python -m bench.device_tasks --output results/my-device-regression
+
+# Historical drying UI with scripted specialists.
+python -m app.demo --port 8793 --output results/my-drying-demo
+```
+
+The new live path uses `InstrumentLab` and native public methods only. The old drying/device fixtures and paper-grounded TiO2 demonstration remain for regression and historical comparison. **Titania uses authored `thermal.prepare_reference` / `xrd.acquire` macros and a material endpoint fixture. It does not satisfy the current no-task-specific-script requirement.** Its runner requires `--legacy-demo`. A generic multi-instrument TiO2 synthesis/transfer/acquisition workflow is still pending.
+
+## Evidence and boundaries
+
+The historical device suite passed 194/194 control/readback fixtures, including 116 power-only cases; this is interface coverage rather than 194 complete experiments. Current automatic native acceptance covers four diverse devices and records failed attempts as well as successful outcomes. Consult the [current report](docs/reports/native-acceptance-and-knowledge.md), [checklist](docs/status/checklist.md) and [evidence index](docs/evidence/README.md) for dated results, source freezes and exact counts.
+
+Native lifecycle adaptation now follows API signatures and declared asynchronous contracts without a device whitelist. Actual clock/readback/replay checks passed on 191 of 194 registered devices; the other three have no native host clock API and retain their public device tools. Poll/cancel interfaces are exposed for 149 declared asynchronous devices. See the [coverage report](docs/reports/native-lifecycle-coverage.md); these counts do not establish complete scientific acquisitions. Goal satisfaction, model claims and protocol correctness are reported separately. Knowledge retrieval benefit, held-out model generalization, a second general-expert comparison, calibrated routing advantage and physical sample transfer remain unaccepted. The scientific UI and offline decision benchmark are deferred.
+
+## Layout and attribution
 
 | Directory | Contents |
 |---|---|
-| `app/` | LangGraph workflow, lab adapters and model backends |
-| `bench/` | Evaluation and demo runners |
-| `cases/`, `corpus/`, `configs/` | Task fixtures, retrieval context and model configuration |
-| `tests/`, `tools/` | Regression tests and setup/reporting utilities |
-| `web/` | Local demo interface |
-| `docs/` | Guides, demos, status, proposals, reference and recorded evidence |
-| `vendor/` | Pinned upstream manifests and attribution |
-| `results/` | Ignored local runs and the active API budget ledger |
+| `app/` | LangGraph, public device discovery, native adapter and model transports |
+| `bench/` | Frozen acceptance and historical evaluation runners |
+| `cases/`, `corpus/`, `configs/` | Declarative tasks, public contract cache, knowledge facts and configuration |
+| `tests/`, `tools/` | Offline regression and pinned-runtime setup |
+| `docs/`, `web/` | English documentation, evidence and historical drying UI |
+| `vendor/` | Upstream manifests and attribution |
+| `results/` | Ignored local traces, frozen sources and durable usage ledger |
 
-## Documentation
-
-Start with the [documentation index](docs/README.md), [current progress](docs/status/progress.md), or [titania demo](docs/demos/titania/scenario.md). Proposal history is filed under `docs/plans/archive/`; the collaborator's [decision-mechanism proposal](docs/plans/decision-mechanisms-proposal.md) is retained separately from the implemented workflow proposal.
-
-## Boundaries and attribution
-
-The drying workflow uses the native ChemLab BINDER FD56 process runtime; its balance offset, cleaning and observation layer are authored fixtures. The device expansion uses native agent sessions and a task-specific capability subset. Of the 194 device tasks, 116 test power control; the remaining 78 test other controls/readbacks. The titania demo adds a shared two-runtime clock and logical aliquot lineage. Its material endpoints and transfer are authored fixtures, and its XRD curves are synthetic. Physical sample transport, validated hardware/robot behavior and a calibrated synthesis model remain outside the implementation.
-
-ChemLab code is pinned to `123cf78593469871e41b8dbd63a11dfb7c5ca251`; data is pinned to `4ca4a42dab2ca0a884e449d202e9ad96625d5648`. Upstream code and data have separate licenses: retain [LICENSE](vendor/chemlab/LICENSE), [LICENSE-ASSETS.md](vendor/chemlab/LICENSE-ASSETS.md) and [NOTICE.md](vendor/chemlab/NOTICE.md). The manifests record 570 verified upstream files. No 3D geometry is required for the current tasks.
+ChemLab code is pinned to `123cf78593469871e41b8dbd63a11dfb7c5ca251`; data to `4ca4a42dab2ca0a884e449d202e9ad96625d5648`. Preserve [LICENSE](vendor/chemlab/LICENSE), [LICENSE-ASSETS.md](vendor/chemlab/LICENSE-ASSETS.md) and [NOTICE.md](vendor/chemlab/NOTICE.md). No 3D geometry is required. Start with the [documentation index](docs/README.md).
