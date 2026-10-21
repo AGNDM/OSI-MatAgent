@@ -122,20 +122,20 @@ InstrumentLab(task) resolves get_device and calls open_native(spec). The latter 
 
 | Layer | Functions to inspect | Practical meaning |
 |---|---|---|
-| CLI | [app/instrument_cli.py:105](/home/AGNDM/code/OSI-hack/app/instrument_cli.py:105) | Parse task/configuration; construct expert, router, chooser and shared ledger |
-| Runner | [app/instrument_cli.py:25](/home/AGNDM/code/OSI-hack/app/instrument_cli.py:25) | Save frozen manifest/contract; invoke graph; preserve failures and evaluate |
-| Construction | [app/device_registry.py:17](/home/AGNDM/code/OSI-hack/app/device_registry.py:17) | Trusted registry class loading, declared fixtures, agent session and describe |
-| Routing | [app/graph.py:111](/home/AGNDM/code/OSI-hack/app/graph.py:111) | Make genuine model route decision and authorize offered waits |
-| Candidates | [app/graph.py:244](/home/AGNDM/code/OSI-hack/app/graph.py:244) | Validate chosen candidate identity/probabilities and current world revision |
-| Gate | [app/graph.py:328](/home/AGNDM/code/OSI-hack/app/graph.py:328) | Check selected proposal, schema, scope and budget before execution |
-| Native control | [app/single_instrument.py:314](/home/AGNDM/code/OSI-hack/app/single_instrument.py:314) | Invoke native commands or bounded host steps and obtain new snapshots |
-| Read receipt | [app/single_instrument.py:175](/home/AGNDM/code/OSI-hack/app/single_instrument.py:175) | Check native identity, nondecreasing revision, clock and observation timestamps |
-| Clock bridge | [app/single_instrument.py:112](/home/AGNDM/code/OSI-hack/app/single_instrument.py:112) | Call the audited runtime host.step for these device families |
-| Hosted decision | [app/openrouter_jev.py:52](/home/AGNDM/code/OSI-hack/app/openrouter_jev.py:52) | Send typed Choice; validate actual model and probability distribution |
-| Verification | [app/single_instrument.py:571](/home/AGNDM/code/OSI-hack/app/single_instrument.py:571) | Validate model verdict against shared predicate and freshness semantics |
-| Scoring | [app/single_instrument.py:389](/home/AGNDM/code/OSI-hack/app/single_instrument.py:389) | Independent final public read; record goal, claim, citations and protocol |
+| CLI | [app/instrument_cli.py:105](../../app/instrument_cli.py#L105) | Parse task/configuration; construct expert, router, chooser and shared ledger |
+| Runner | [app/instrument_cli.py:25](../../app/instrument_cli.py#L25) | Save frozen manifest/contract; invoke graph; preserve failures and evaluate |
+| Construction | [app/device_registry.py:17](../../app/device_registry.py#L17) | Trusted registry class loading, declared fixtures, agent session and describe |
+| Routing | [app/graph.py:111](../../app/graph.py#L111) | Make genuine model route decision and authorize offered waits |
+| Candidates | [app/graph.py:244](../../app/graph.py#L244) | Validate chosen candidate identity/probabilities and current world revision |
+| Gate | [app/graph.py:328](../../app/graph.py#L328) | Check selected proposal, schema, scope and budget before execution |
+| Native control | [app/single_instrument.py:314](../../app/single_instrument.py#L314) | Invoke native commands or bounded host steps and obtain new snapshots |
+| Read receipt | [app/single_instrument.py:175](../../app/single_instrument.py#L175) | Check native identity, nondecreasing revision, clock and observation timestamps |
+| Clock bridge | [app/single_instrument.py:112](../../app/single_instrument.py#L112) | Call the audited runtime host.step for these device families |
+| Hosted decision | [app/openrouter_jev.py:52](../../app/openrouter_jev.py#L52) | Send typed Choice; validate actual model and probability distribution |
+| Verification | [app/single_instrument.py:571](../../app/single_instrument.py#L571) | Validate model verdict against shared predicate and freshness semantics |
+| Scoring | [app/single_instrument.py:389](../../app/single_instrument.py#L389) | Independent final public read; record goal, claim, citations and protocol |
 
-Source links point to the current local checkout. Per-run source hashes in the accompanying JSON identify the exact implementation used; line numbers alone are not immutable provenance.
+Source links use repository-relative paths and GitHub line anchors. Per-run source hashes in the accompanying JSON identify the exact implementation used; line numbers alone are not immutable provenance.
 
 ## Binder timer trajectory
 
@@ -561,13 +561,13 @@ Both runs used graph_steps=260, one bounded format/schema repair, a 90-second ex
 
 | Artifact | Binder | Furnace |
 |---|---|---|
-| Raw events | [Binder trace.jsonl](/home/AGNDM/code/OSI-hack/results/hosted-jev-binder-v1/trace.jsonl) | [Furnace trace.jsonl](/home/AGNDM/code/OSI-hack/results/hosted-jev-furnace-v1/trace.jsonl) |
-| Frozen source/task/configuration | [Binder manifest.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-binder-v1/manifest.json) | [Furnace manifest.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-furnace-v1/manifest.json) |
-| Discovered native contract | [Binder public-contract.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-binder-v1/public-contract.json) | [Furnace public-contract.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-furnace-v1/public-contract.json) |
-| Final report and evaluator outcomes | [Binder result.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-binder-v1/result.json) | [Furnace result.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-furnace-v1/result.json) |
-| Effective expert configuration | [Binder expert-config.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-binder-v1/expert-config.json) | [Furnace expert-config.json](/home/AGNDM/code/OSI-hack/results/hosted-jev-furnace-v1/expert-config.json) |
+| Raw events | [Binder trace.jsonl](../../results/hosted-jev-binder-v1/trace.jsonl) | [Furnace trace.jsonl](../../results/hosted-jev-furnace-v1/trace.jsonl) |
+| Frozen source/task/configuration | [Binder manifest.json](../../results/hosted-jev-binder-v1/manifest.json) | [Furnace manifest.json](../../results/hosted-jev-furnace-v1/manifest.json) |
+| Discovered native contract | [Binder public-contract.json](../../results/hosted-jev-binder-v1/public-contract.json) | [Furnace public-contract.json](../../results/hosted-jev-furnace-v1/public-contract.json) |
+| Final report and evaluator outcomes | [Binder result.json](../../results/hosted-jev-binder-v1/result.json) | [Furnace result.json](../../results/hosted-jev-furnace-v1/result.json) |
+| Effective expert configuration | [Binder expert-config.json](../../results/hosted-jev-binder-v1/expert-config.json) | [Furnace expert-config.json](../../results/hosted-jev-furnace-v1/expert-config.json) |
 
-Raw traces remain local under ignored results/. The accompanying compact JSON under docs/evidence is portable and preserves selected public evidence, exact argument dictionaries, model usage and artifact hashes. It does not contain the full large model prompt bodies; the local raw traces retain those.
+Raw trace links above are relative to this document and require the ignored results/ directory in a local checkout; those raw files are not published on GitHub. The accompanying compact JSON under docs/evidence is portable and preserves selected public evidence, exact argument dictionaries, model usage and artifact hashes. It does not contain the full large model prompt bodies; the local raw traces retain those.
 
 The documentation extraction passed independent checks of all 18 executed proposals, all 33 native clock chunks, all 50 unique API reservations, 183,150 combined trajectory tokens, final action/read counters and eight recorded artifact hashes. No new model/API requests were made.
 
