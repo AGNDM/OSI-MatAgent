@@ -1,6 +1,6 @@
 # Decision-Routed Lab
 
-A local LangGraph prototype for evidence-driven virtual laboratory control. Diagnostic, procedure and verification specialists propose structured actions; a deterministic gate checks them before native ChemLab execution. Routing uses a rules baseline or a separately deployed local OpenJev model. The general expert backend supports the explicitly configured SiliconFlow DeepSeek endpoint.
+A local LangGraph prototype for evidence-driven virtual laboratory control. Diagnostic, procedure and verification specialists propose structured actions; a deterministic gate checks them before native ChemLab execution. Routing uses a rules baseline, a separately deployed local OpenJev model, or hosted Jev typed decisions for the single-instrument runner. The default real expert is DeepSeek V4.1 Flash through OpenRouter, with SiliconFlow available through an explicit configuration.
 
 The repository contains three workflow profiles:
 
@@ -41,14 +41,25 @@ Open `http://127.0.0.1:8793` for the drying UI. Device tasks currently use the C
 
 Deploy the local router using [Local OpenJev deployment](docs/guides/local-openjev.md), then add `--router openjev` to a device command. OpenJev is the router, not the general expert.
 
-Set `SILICONFLOW_API_KEY` in your environment, then explicitly request a real expert run:
+Set `OPENROUTER_API_KEY` in your environment, then explicitly request a real expert run:
 
 ```bash
 python -m bench.device_tasks --backend deepseek --router openjev \
   --device mt_xpr204e --output results/my-balance-model-run
 ```
 
-This sends billable requests to the configured `deepseek-ai/DeepSeek-V4.1-Flash` model. Device debugging shares a durable 5,000,000-token reservation ledger across output directories. Do not remove the ledger to restart the allowance. Free OpenRouter models are restricted to small, explicit debugging requests; free batch evaluation is disabled.
+This sends billable requests to OpenRouter model `deepseek/deepseek-v4.1-flash`. If the key was changed in shell startup settings, start a fresh interactive login shell before running. SiliconFlow remains selectable with `--config configs/siliconflow-deepseek-v4.1-flash.json` on the device runner. Device debugging shares a durable 5,000,000-token reservation ledger across output directories. Do not remove the ledger to restart the allowance. Free OpenRouter models are restricted to small, explicit debugging requests; free batch evaluation is disabled.
+
+For a task driven by public instrument contracts without a reference action script, use the [single-instrument runner](docs/guides/single-instrument-agent.md):
+
+```bash
+python -m app.instrument_cli --backend deepseek \
+  --router openrouter-jev --operation openrouter-jev \
+  --task cases/instrument_tasks/binder-timer.json \
+  --output results/my-reference-free-binder
+```
+
+The hosted mode uses pinned TypeSafe Jev 1.14 for routing and operation selection, with DeepSeek for general experts. It requires no local model service. Local OpenJev remains available with `--router openjev --operation openjev`. Expert and hosted decision calls share the same durable token ledger. The current [two-task validation](docs/evidence/hosted-jev-validation.md) records both successful tasks, verifier-quality alignment and the bounded 6,144-token expert output ceiling.
 
 ## Verified snapshot
 

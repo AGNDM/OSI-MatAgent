@@ -2,7 +2,7 @@ from typing import Any, Literal, TypedDict
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-Route = Literal["diagnose", "prepare_action", "verify", "deliberate"]
+Route = Literal["diagnose", "prepare_action", "verify", "deliberate", "wait_short", "wait_long"]
 
 
 class Record(BaseModel):
@@ -105,10 +105,15 @@ class LabState(TypedDict, total=False):
     operation_call_count: int
     pending_operation: dict | None
     verification: dict | None
+    verified_evidence_signatures: list[str]
+    last_verification_feedback: dict | None
     route: str
     action_count: int
     llm_call_count: int
     role_call_count: int
+    router_call_count: int
+    router_wait_count: int
+    router_wait_authorization: dict | None
     deadline: float
     terminal_reason: str | None
     gate_result: str

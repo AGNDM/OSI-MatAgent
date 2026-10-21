@@ -1,0 +1,11 @@
+{
+  "task_id": "binder-timer-expiration",
+  "device": "binder_fd056",
+  "objective": "Make the oven's native timer expire after a nonzero one-minute interval. Use the instrument's public controls and verify the expired flag from a fresh read. Stop honestly if the runtime cannot support the task.",
+  "predicates": [
+    {"state_id": "timer.state", "path": ["expired"], "value": true, "unit": "1"},
+    {"state_id": "timer.state", "path": ["set_s"], "value": 60, "unit": "1"}
+  ],
+  "max_simulated_seconds": 300,
+  "max_wait_seconds": 120
+}

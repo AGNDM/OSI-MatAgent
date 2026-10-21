@@ -61,9 +61,10 @@ def initial_state(lab: LabAdapter, episode_id: str, limits: Limits) -> LabState:
     return LabState(episode_id=episode_id, sample_id=lab.sample_id,
         observation_revision=lab.revision, observations={}, capabilities=lab.capabilities(),
         target=lab.target(), hypotheses=[], evidence_refs=[], intent=None, proposal=None,
-        pending_operation=None, verification=None, route="diagnose", action_count=0,
+        pending_operation=None, verification=None, verified_evidence_signatures=[],
+        last_verification_feedback=None, route="diagnose", action_count=0,
         candidates=[], operation_decision=None, operation_revision=None, operation_call_count=0,
-        llm_call_count=0, role_call_count=0, deadline=time.monotonic() + limits.episode_seconds,
+        llm_call_count=0, role_call_count=0, router_call_count=0, router_wait_count=0, router_wait_authorization=None, deadline=time.monotonic() + limits.episode_seconds,
         terminal_reason=None, last_error=None)
 
 
@@ -78,7 +79,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
             return state["terminal_reason"]
         if time.monotonic() >= state["deadline"]:
             return "deadline"
-        if state.get("pending_operation"):
+        if state.get("pending_operation") and not getattr(lab, "manages_pending_operations", False):
             return "pending_operation_unresolved"  # selected native capabilities are synchronous
         if for_action and state["action_count"] >= limits.lab_actions:
             return "action_budget"
@@ -87,21 +88,46 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
         return None
 
     def observe(state):
+        if hasattr(lab, "deadline") or getattr(lab, "manages_pending_operations", False):
+            lab.deadline = state["deadline"]
         observations = lab.observe()
         trace.emit("observe", "observation", observations=observations)
-        return {"observations": observations, "observation_revision": lab.revision,
-                "action_count": lab.action_count}
+        update = {"observations": observations, "observation_revision": lab.revision, "action_count": lab.action_count}
+        if getattr(lab, "manages_pending_operations", False):
+            update["pending_operation"] = deepcopy(lab.pending_operation)
+            if lab.termination_reason:
+                update["terminal_reason"] = lab.termination_reason
+        return update
+
+    def verification_signature(state):
+        if hasattr(lab, 'verification_signature'):
+            return lab.verification_signature(state)
+        return None
+
+    def verification_allowed(state):
+        signature = verification_signature(state)
+        return not signature or signature not in state.get('verified_evidence_signatures', [])
 
     def router(state):
         reason = stop_reason(state)
         if reason:
             return {"route": "stop", "terminal_reason": reason}
+        count_router = (getattr(lab, "count_router_calls", False) and
+                        (getattr(decision_backend, "is_decision_model", False) or getattr(decision_backend, "is_llm", False)))
+        if count_router and state["llm_call_count"] >= limits.llm_calls:
+            return {"route": "stop", "terminal_reason": "llm_budget"}
         allowed = ["diagnose", "deliberate"]
         if state.get("intent"):
             allowed.append("prepare_action")
-        if state["observations"].get("measurement"):
+        if state["observations"].get("measurement") and verification_allowed(state):
             allowed.append("verify")
         summary = summarize(state)
+        if getattr(lab, "router_wait_enabled", False):
+            summary["budget_remaining"] = {"model_calls": limits.llm_calls-state["llm_call_count"],
+                "lab_actions": limits.lab_actions-lab.action_count,
+                "wall_seconds": max(0., state["deadline"]-time.monotonic())}
+        if hasattr(lab, "route_context"):
+            summary, allowed = lab.route_context(state, summary, allowed)
         trace.emit("router", "routing_start", backend_id=decision_backend.backend_id)
         if hasattr(decision_backend, "deadline"):
             decision_backend.deadline = state["deadline"]
@@ -109,7 +135,30 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
         trace.emit("router", "routing", summary=summary, allowed_routes=allowed,
                    decision=decision.model_dump(), backend_metadata=getattr(decision_backend, "last_call", None),
                    error=error, error_code="E6" if error else None)
-        return {"route": decision.choice}
+        update = {"route": decision.choice, "router_wait_authorization": None}
+        if count_router:
+            update.update(llm_call_count=state["llm_call_count"]+1, router_call_count=state.get("router_call_count", 0)+1)
+        if error and not getattr(decision_backend, 'allow_rules_fallback', True):
+            return dict(update, route='stop', terminal_reason='decision_model_error')
+        if decision.choice in {'wait_short', 'wait_long'}:
+            if error or decision.fallback_used or not hasattr(lab, 'router_wait_offers'):
+                return dict(update, route='stop', terminal_reason='invalid_router_wait')
+            offers = lab.router_wait_offers(state)
+            if (decision.choice not in offers or lab.revision != state['observation_revision']
+                    or lab.sample_id != state['sample_id']):
+                return dict(update, route='stop', terminal_reason='stale_router_wait')
+            proposal = ActionProposal(sample_id=lab.sample_id, expected_revision=lab.revision,
+                capability_id='workflow.await', arguments={'duration_s':offers[decision.choice]},
+                request_id=str(uuid4()), postcondition='Advance the native clock and obtain fresh public process state.')
+            update.update(proposal=proposal.model_dump(), intent={
+                'capability_id':proposal.capability_id, 'arguments':proposal.arguments,
+                'discriminating_observation':'Fresh native process state after bounded wait.',
+                'postcondition':proposal.postcondition}, candidates=[], operation_decision=None,
+                operation_revision=None, verification=None,
+                router_wait_authorization={'decision':decision.model_dump(), 'proposal':proposal.model_dump(),
+                    'revision':lab.revision, 'sample_id':lab.sample_id})
+            trace.emit('router', 'direct_wait_proposed', decision=decision.model_dump(), proposal=proposal.model_dump())
+        return update
 
     def call_role(role, state, schema, payload=None):
         reason = stop_reason(state, for_model=True)
@@ -171,7 +220,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                     payload = dict(payload, format_repair={"instruction": "Fix only the JSON/schema error; return the requested record.",
                         "validation_error": str(exc)[:2000], "previous_response": raw if raw is not None else (metadata or {}).get("response")})
                     continue
-                return None, dict(counts, terminal_reason="role_error")
+                return None, dict(counts, terminal_reason=getattr(exc,"code","role_error"))
             trace.emit(role, "role_output", backend_id=roles.backend_id, is_llm=roles.is_llm,
                 input=payload, output=value.model_dump(), llm_metadata=getattr(roles, "last_call", None),
                 repair_attempt=attempt, elapsed_ms=(time.monotonic() - start) * 1000)
@@ -201,6 +250,8 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
         counts = {"operation_call_count": state.get("operation_call_count", 0)+1,
                   "llm_call_count": state["llm_call_count"]+int(operation_backend.is_llm)}
         context, candidates = operation_payload(state), deepcopy(state["candidates"])
+        if hasattr(lab, "operation_context"):
+            context = lab.operation_context(context, candidates)
         trace.emit("operation_decision", "operation_start", backend_id=operation_backend.backend_id,
                    is_llm=operation_backend.is_llm)
         if hasattr(operation_backend, "deadline"):
@@ -233,6 +284,25 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                     operation_revision=state["observation_revision"])
 
     def check_operation_selection(state):
+        authorization = state.get('router_wait_authorization')
+        if authorization:
+            decision = RouteDecision.model_validate(authorization['decision'])
+            offers = lab.router_wait_offers(state)
+            proposal = ActionProposal.model_validate(authorization['proposal'])
+            p = decision.probabilities
+            if (decision.backend_id != decision_backend.backend_id or decision.fallback_used
+                    or decision.choice not in offers or not p or decision.choice not in p
+                    or any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values())
+                    or abs(sum(p.values())-1)>1e-5 or p[decision.choice] != max(p.values())
+                    or authorization['revision'] != lab.revision or authorization['sample_id'] != lab.sample_id
+                    or proposal.sample_id != lab.sample_id or proposal.expected_revision != lab.revision
+                    or proposal.capability_id != 'workflow.await'
+                    or proposal.arguments != {'duration_s':offers[decision.choice]}
+                    or state.get('proposal') != proposal.model_dump()
+                    or state.get('intent',{}).get('capability_id') != 'workflow.await'
+                    or state.get('intent',{}).get('arguments') != proposal.arguments):
+                raise ValueError('Invalid or stale router wait authorization')
+            return
         if operation_backend is None:
             return
         if state.get("operation_revision") != lab.revision or not state.get("operation_decision"):
@@ -273,7 +343,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
             trace.emit("gate", "rejected", error=code, error_code="E5" if code == "STALE_PROPOSAL" else "E4")
             return {"gate_result": "reject", "proposal": None, "intent": None,
                     "candidates": [], "operation_decision": None, "operation_revision": None,
-                    "last_error": {"code": code}}
+                    "router_wait_authorization": None, "last_error": {"code": code}}
         trace.emit("gate", "accepted", proposal=proposal.model_dump())
         return {"gate_result": "execute"}
 
@@ -294,12 +364,22 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
         error = event["result"].get("error")
         return {"intent": None, "proposal": None, "verification": None,
                 "candidates": [], "operation_decision": None, "operation_revision": None,
-                "action_count": lab.action_count, "last_error": error}
+                "action_count": lab.action_count, "last_error": error, "router_wait_authorization": None,
+                "router_wait_count": state.get("router_wait_count", 0)+int(bool(state.get("router_wait_authorization")))}
 
     def verification(state):
+        if not verification_allowed(state):
+            return {"terminal_reason": "duplicate_verification_evidence"}
+        signature = verification_signature(state)
         value, update = call_role("verification", state, VerificationReport)
         if value:
             update["verification"] = value.model_dump()
+            if signature:
+                update['verified_evidence_signatures'] = list(dict.fromkeys(
+                    state.get('verified_evidence_signatures', []) + [signature]))
+                measurement = state['observations'].get('measurement') or {}
+                update['last_verification_feedback'] = dict(value.model_dump(),
+                    evidence_signature=signature, observation_id=measurement.get('id'))
         return update
 
     def termination(state):
@@ -322,10 +402,13 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
         allowed = ["diagnose"]
         if state.get("intent"):
             allowed.append("prepare_action")
-        if state["observations"].get("measurement"):
+        if state["observations"].get("measurement") and verification_allowed(state):
             allowed.append("verify")
+        summary = summarize(state)
+        if hasattr(lab, 'route_context'):
+            summary, _ = lab.route_context(state, summary, list(allowed))
         value, update = call_role("deliberation", state, RouteDecision,
-            {"summary": summarize(state), "allowed_routes": allowed})
+            {"summary": summary, "allowed_routes": allowed})
         if value and value.choice in allowed:
             update["route"] = value.choice
         else:
@@ -341,6 +424,9 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
             "role_call_count": state["role_call_count"],
             "operation_call_count": state.get("operation_call_count", 0),
             "operation_backend": operation_backend.backend_id if operation_backend is not None else None}
+        if getattr(lab, "count_router_calls", False):
+            value["router_call_count"] = state.get("router_call_count", 0)
+            value["router_wait_count"] = state.get("router_wait_count", 0)
         trace.emit("report", "agent_report", report=value)
         return {"report": value}
 
@@ -353,7 +439,8 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
     graph.add_edge(START, "observe")
     graph.add_edge("observe", "router")
     destinations = {"diagnose": "diagnostic", "prepare_action": "procedure",
-        "verify": "verification", "deliberate": "deliberation", "stop": "report"}
+        "verify": "verification", "deliberate": "deliberation", "stop": "report",
+        "wait_short": "gate", "wait_long": "gate"}
     graph.add_conditional_edges("router", lambda s: s["route"], destinations)
     graph.add_conditional_edges("diagnostic",
         lambda s: "operation_decision" if operation_backend is not None and not s.get("terminal_reason") else "router",

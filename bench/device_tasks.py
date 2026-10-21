@@ -1,7 +1,7 @@
 """Run single-device tool-call tasks through the existing LangGraph.
 
 Default scripted mode makes no API requests. --backend deepseek is explicit,
-uses a shared durable 5M ceiling, and never calls OpenRouter.
+uses the configured general expert (OpenRouter by default) and the shared durable 5M ceiling.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -76,7 +76,7 @@ def main():
     p.add_argument('--device',action='append',help='slug or CHEM ID; repeatable; default all registered tasks')
     p.add_argument('--sample',type=Path,help='Predeclared device selection JSON')
     p.add_argument('--output',type=Path,required=True)
-    p.add_argument('--config',type=Path,default=Path('configs/siliconflow-deepseek-v4.1-flash.json'))
+    p.add_argument('--config',type=Path,default=Path('configs/openrouter-deepseek-v4.1-flash.json'))
     p.add_argument('--workers',type=int,choices=range(1,5),default=1)
     args=p.parse_args()
     if args.sample:

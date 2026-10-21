@@ -9,6 +9,27 @@ import httpx
 from app.local_decision import LocalOpenJevBackend
 
 
+class ExpertResponseError(RuntimeError):
+    def __init__(self,code,message):
+        self.code=code
+        super().__init__(message)
+
+
+def completion_content(response):
+    if response.get('error'):
+        raise ExpertResponseError('expert_provider_error','Provider returned an error envelope')
+    choices=response.get('choices') or []
+    if not choices:
+        raise ExpertResponseError('expert_invalid_envelope','Provider returned no completion choices')
+    choice=choices[0]
+    if choice.get('finish_reason')=='length':
+        raise ExpertResponseError('expert_output_truncated','Completion reached its output-token limit; not a JSON formatting error')
+    content=(choice.get('message') or {}).get('content')
+    if not isinstance(content,str) or not content.strip():
+        raise ExpertResponseError('expert_empty_output','Provider returned no nonempty text completion')
+    return content
+
+
 class LocalLlamaRoles:
     is_llm = True
     backend_id = "local/OpenJev-Flash-9B-Q4_K_M-specialists-exploratory-v1"
@@ -38,7 +59,7 @@ class LocalLlamaRoles:
     def invoke(self, role, prompt, payload, schema):
         system = prompt + "\nReturn one JSON object matching this schema exactly. No Markdown or extra fields.\n" + json.dumps(schema.model_json_schema(), sort_keys=True)
         body = {"model": self.model_id, "messages": [{"role": "system", "content": system},
-            {"role": "user", "content": json.dumps(payload, allow_nan=False)}],
+            {"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(',', ':'), allow_nan=False)}],
             "max_tokens": self.max_tokens, "temperature": 0, "stream": False,
             "response_format": {"type": "json_object"}, "chat_template_kwargs": {"enable_thinking": False}}
         body = self.prepare_request(body)
@@ -55,9 +76,14 @@ class LocalLlamaRoles:
             self.last_call["request_sent"] = True
             response = asyncio.run(bounded())
             # Do not persist separate private reasoning fields from any completion API.
-            response = {**response, "choices": [{**c, "message": {k: v for k, v in c["message"].items()
-                if k not in {"reasoning", "reasoning_content", "reasoning_details"}}} for c in response["choices"]]}
+            response = {**response, "choices": [{**c, "message": {k: v for k, v in (c.get("message") or {}).items()
+                if k not in {"reasoning", "reasoning_content", "reasoning_details"}}} for c in response.get("choices", [])]}
             self.last_call.update(response=response, usage=response.get("usage"))
-            return schema.model_validate_json(response["choices"][0]["message"]["content"]).model_dump()
+            try:
+                content=completion_content(response)
+            except ExpertResponseError as exc:
+                self.last_call['response_classification']=exc.code
+                raise
+            return schema.model_validate_json(content).model_dump()
         finally:
             self.last_call["elapsed_ms"] = (time.monotonic() - start) * 1000

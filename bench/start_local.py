@@ -17,9 +17,12 @@ def main():
     parser.add_argument("--cpu", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--port", type=int, default=8792)
+    parser.add_argument("--context", type=int, default=2048)
     args = parser.parse_args()
     if args.output.exists():
         parser.error("Use a new startup directory to retain previous logs")
+    if not 512 <= args.context <= 32768:
+        parser.error("Context must be between 512 and 32768 tokens")
     if not 1 <= args.port <= 65535:
         parser.error("Invalid TCP port")
     try:
@@ -28,7 +31,7 @@ def main():
     except httpx.RequestError:
         pass
     args.output.mkdir(parents=True)
-    command = [sys.executable, str(ROOT / "tools/serve_openjev.py"), "--port", str(args.port)]
+    command = [sys.executable, str(ROOT / "tools/serve_openjev.py"), "--port", str(args.port), "--context", str(args.context)]
     if args.cpu:
         command.append("--cpu")
     result = {"label": "CPU" if args.cpu else "Vulkan", "command": command,

@@ -127,7 +127,7 @@ def main():
         from app.expert_config import load_plan
         from app.token_budget import BudgetedExpert, TokenLedger
         ledger = TokenLedger()
-        config = load_plan(Path('configs/siliconflow-deepseek-v4.1-flash.json')).reference
+        config = load_plan(Path('configs/openrouter-deepseek-v4.1-flash.json')).reference
         if args.backend == 'deepseek':
             roles = BudgetedExpert(config, ledger)
     decision = None

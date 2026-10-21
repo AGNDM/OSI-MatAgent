@@ -1,0 +1,848 @@
+{
+  "scope": "Reference-free single-instrument development integration; no offline benchmark or chemical validation.",
+  "runs": [
+    {
+      "directory": "results/single-instrument-binder-v1",
+      "episode_id": "5c9002f4-9432-4d7f-807b-3c4f4d10c2fa",
+      "task": {
+        "task_id": "binder-timer-expiration",
+        "device": "binder_fd056",
+        "objective": "Make the oven's native timer expire after a nonzero one-minute interval. Use the instrument's public controls and verify the expired flag from a fresh read. Stop honestly if the runtime cannot support the task.",
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "operator": "eq",
+            "value": true,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "operator": "eq",
+            "value": 60,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          }
+        ],
+        "constraints": [],
+        "readable_state_ids": null,
+        "max_simulated_seconds": 300.0,
+        "max_wait_seconds": 120.0
+      },
+      "reference_scripts_used": false,
+      "backend": "compatible/siliconflow-deepseek-v4.1-flash/deepseek-ai/DeepSeek-V4.1-Flash@revision-unavailable",
+      "report": {
+        "episode_id": "5c9002f4-9432-4d7f-807b-3c4f4d10c2fa",
+        "sample_id": "instrument:binder_fd056",
+        "status": "unresolved",
+        "evidence_ids": [],
+        "hypotheses": [
+          {
+            "cause": "No inspection has been performed yet, so the oven's current power, door, timer and alarm state are unknown; the timer cannot be safely set until prerequisites (power on, not standby) are confirmed.",
+            "supporting_ids": [],
+            "contradicting_ids": []
+          },
+          {
+            "cause": "The timer.set capability exists and can schedule a 60 s countdown, but its precondition requires power.on and plant.configured, which are unverified.",
+            "supporting_ids": [],
+            "contradicting_ids": []
+          }
+        ],
+        "terminal_reason": "operation_decision_error",
+        "action_count": 0,
+        "llm_call_count": 3,
+        "role_call_count": 2,
+        "operation_call_count": 1,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M"
+      },
+      "score": {
+        "goal_met": false,
+        "task_success": false,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": false,
+        "evidence_cited": false,
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": false,
+            "actual": false,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": false,
+            "actual": 0.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 0.0,
+        "terminal_reason": "operation_decision_error"
+      },
+      "usage": {
+        "prompt_tokens": 89083,
+        "completion_tokens": 1318,
+        "total_tokens": 90401
+      },
+      "usage_complete": true,
+      "model_calls": {
+        "expert": 2,
+        "router": 1,
+        "operation": 1
+      },
+      "executed_operations": [],
+      "discovered_capability_count": 23,
+      "forbidden_model_input_keys": [],
+      "errors": [
+        {
+          "component": "diagnostic",
+          "kind": "role_error",
+          "error": "EvidenceReferenceError: Cite only IDs present in the supplied observations/hypotheses; unknown IDs: native-contract"
+        },
+        {
+          "component": "operation_decision",
+          "kind": "operation_error",
+          "error": "ConnectError: All connection attempts failed"
+        }
+      ],
+      "trace_sha256": "953f4bfb0f36b9625675311b2e16d4df3295c5ffb8958f9aa4cced405352d8bc",
+      "manifest_sha256": "4e43d2018fd325452f313fe185ba42fcb57bf5ccb751d8998670cb0845aec009",
+      "executed_source_hashes": {
+        "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+        "app/device_registry.py": "6dc9f4e02811a5da71af84877e0bbed7811e3fc6e16a89c2d1ad419031ae1348",
+        "app/models.py": "b2cc70a1826b84321b07c9e8d522982abb345ab527a79880f6fc06de44789b83",
+        "app/local_roles.py": "6f172171c14945e7feca896d51601ad799c5948d293e322fac2b207840c7cf00",
+        "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+        "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+        "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+        "app/expert_config.py": "446d55f8fec5f50f958dd49cfd4ae92838b77500b32d8f57c999aab1d81ff3dc",
+        "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+        "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+        "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+        "app/instrument_cli.py": "8a627c4d622c41b76d7a6e9cde674d3390f9bcdb002829d731706b6ff059e494",
+        "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+        "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+        "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+        "app/token_budget.py": "163781f1ef1fb792f0554f46e6011762ea0c1289cd0392bb88e4d1228aba2448",
+        "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+        "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+        "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+        "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+        "app/graph.py": "3e00c85701499fc1ea5b04535a50565f57ad76fa35abcf123b5671a807317ea3",
+        "app/local_decision.py": "47f68fc2f201312dc82378771121e5c575f2c85494ecb55a9a68a8290a933221",
+        "app/single_instrument.py": "bca7cf36f2cf043c6a6651a786e9bdd2c238c452b92d9cb3b1c4ee2668620785",
+        "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "8a627c4d622c41b76d7a6e9cde674d3390f9bcdb002829d731706b6ff059e494",
+        "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+      },
+      "current_source_differences": [
+        "app/device_registry.py",
+        "app/models.py",
+        "app/local_roles.py",
+        "app/instrument_cli.py",
+        "app/graph.py",
+        "app/single_instrument.py",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py"
+      ],
+      "elapsed_seconds": 21.383843492999404
+    },
+    {
+      "directory": "results/single-instrument-binder-v2",
+      "episode_id": "090f0680-c1b1-4f44-a32d-a56afa3a87b3",
+      "task": {
+        "task_id": "binder-timer-expiration",
+        "device": "binder_fd056",
+        "objective": "Make the oven's native timer expire after a nonzero one-minute interval. Use the instrument's public controls and verify the expired flag from a fresh read. Stop honestly if the runtime cannot support the task.",
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "operator": "eq",
+            "value": true,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "operator": "eq",
+            "value": 60,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          }
+        ],
+        "constraints": [],
+        "readable_state_ids": null,
+        "max_simulated_seconds": 300.0,
+        "max_wait_seconds": 120.0
+      },
+      "reference_scripts_used": false,
+      "backend": "compatible/siliconflow-deepseek-v4.1-flash/deepseek-ai/DeepSeek-V4.1-Flash@revision-unavailable",
+      "report": {
+        "episode_id": "090f0680-c1b1-4f44-a32d-a56afa3a87b3",
+        "sample_id": "instrument:binder_fd056",
+        "status": "unresolved",
+        "evidence_ids": [],
+        "hypotheses": [
+          {
+            "cause": "The controller is in standby (power.on=false, indicator.standby=true), so any timer.set or temperature.set call would be rejected with STANDBY until power is turned on.",
+            "supporting_ids": [
+              "obs-1"
+            ],
+            "contradicting_ids": []
+          },
+          {
+            "cause": "The timer is currently unset (set=false, running=false, expired=false, set_s=0), so a fresh timer.set with minutes=1 is required to reach set_s=60 and later expired=true.",
+            "supporting_ids": [
+              "obs-1"
+            ],
+            "contradicting_ids": []
+          },
+          {
+            "cause": "The native timer.set capability accepts days/hours/minutes and starts counting immediately; a one-minute interval (days=0, hours=0, minutes=1) is within schema bounds and would satisfy the set_s=60 predicate.",
+            "supporting_ids": [
+              "obs-1"
+            ],
+            "contradicting_ids": []
+          }
+        ],
+        "terminal_reason": "operation_decision_error",
+        "action_count": 1,
+        "llm_call_count": 11,
+        "role_call_count": 5,
+        "operation_call_count": 2,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 4
+      },
+      "score": {
+        "goal_met": false,
+        "task_success": false,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": true,
+        "evidence_cited": false,
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": false,
+            "actual": false,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": false,
+            "actual": 0.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 0.0,
+        "native_io_counts": {
+          "read": 3,
+          "invoke": 0,
+          "step": 0,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "operation_decision_error"
+      },
+      "usage": {
+        "prompt_tokens": 141503,
+        "completion_tokens": 3014,
+        "total_tokens": 144517
+      },
+      "usage_complete": true,
+      "model_calls": {
+        "expert": 5,
+        "router": 4,
+        "operation": 2
+      },
+      "executed_operations": [
+        {
+          "sample_id": "instrument:binder_fd056",
+          "expected_revision": 0,
+          "capability_id": "workflow.inspect",
+          "arguments": {},
+          "request_id": "dbaf4a81-5dd2-45e6-8216-e1504afafffe",
+          "postcondition": "Inspection present with current state snapshot; no mutation performed."
+        }
+      ],
+      "discovered_capability_count": 23,
+      "forbidden_model_input_keys": [],
+      "errors": [
+        {
+          "component": "diagnostic",
+          "kind": "role_error",
+          "error": "ValidationError: 1 validation error for OperationOptions\n  Invalid JSON: EOF while parsing a string at line 1 column 6121 [type=json_invalid, input_value='{\"hypotheses\": [{\"cause\"...onfiguration; fan_after', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid"
+        },
+        {
+          "component": "operation_decision",
+          "kind": "operation_error",
+          "error": "HTTPStatusError: Client error '400 Bad Request' for url 'http://127.0.0.1:8792/completion'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+        }
+      ],
+      "trace_sha256": "4ae26a708f857d11f992a1312f5731d26d20e7ef677e91a9daf1a3a35d74ebf0",
+      "manifest_sha256": "5ecd517904fd068b97e93696314d0c0fa86fb3531db7ef681ad3f9e00b938a45",
+      "executed_source_hashes": {
+        "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+        "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+        "app/models.py": "c10f664955daa808cada8aaeaec9ffcf2402b1970f880fdf067c6a675730433b",
+        "app/local_roles.py": "6f172171c14945e7feca896d51601ad799c5948d293e322fac2b207840c7cf00",
+        "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+        "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+        "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+        "app/expert_config.py": "446d55f8fec5f50f958dd49cfd4ae92838b77500b32d8f57c999aab1d81ff3dc",
+        "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+        "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+        "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+        "app/instrument_cli.py": "131a95931fc8f2395b12e81fd3ebf4b35811109c5d84eac388d57357bed725ca",
+        "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+        "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+        "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+        "app/token_budget.py": "163781f1ef1fb792f0554f46e6011762ea0c1289cd0392bb88e4d1228aba2448",
+        "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+        "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+        "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+        "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+        "app/graph.py": "0e4bbf6c7f80a59f94d5fabb728a21ab6dec419b7ddeeef76c67d43ae80bee8a",
+        "app/local_decision.py": "47f68fc2f201312dc82378771121e5c575f2c85494ecb55a9a68a8290a933221",
+        "app/single_instrument.py": "7577cbf9afcaa017e3ca1ae0ed4f81653866ecd3e1177adb8b13ae68019c4a5c",
+        "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "131a95931fc8f2395b12e81fd3ebf4b35811109c5d84eac388d57357bed725ca",
+        "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+      },
+      "current_source_differences": [
+        "app/local_roles.py",
+        "app/instrument_cli.py",
+        "app/single_instrument.py",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py"
+      ],
+      "elapsed_seconds": 57.65891971800011
+    },
+    {
+      "directory": "results/single-instrument-furnace-v1",
+      "episode_id": "3b2a6402-7779-428b-8bc6-77e1fd66915a",
+      "task": {
+        "task_id": "furnace-short-program",
+        "device": "nabertherm_l9",
+        "objective": "Run one native furnace program with a 323.15 K segment, a 0.1 K/s ramp and a 10-second hold. Establish completed program state and the full hold using fresh public observations. This is empty-furnace program execution, not material synthesis.",
+        "predicates": [
+          {
+            "state_id": "program.phase",
+            "path": [],
+            "operator": "eq",
+            "value": "completed",
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          },
+          {
+            "state_id": "program.hold_elapsed_s",
+            "path": [],
+            "operator": "ge",
+            "value": 10,
+            "unit": "s",
+            "absolute_tolerance": 1e-06
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "temperature_K"
+            ],
+            "operator": "eq",
+            "value": 323.15,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "ramp_rate_K_s"
+            ],
+            "operator": "eq",
+            "value": 0.1,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          }
+        ],
+        "constraints": [],
+        "readable_state_ids": null,
+        "max_simulated_seconds": 1200.0,
+        "max_wait_seconds": 600.0
+      },
+      "reference_scripts_used": false,
+      "backend": "compatible/siliconflow-deepseek-v4.1-flash/deepseek-ai/DeepSeek-V4.1-Flash@revision-unavailable",
+      "report": {
+        "episode_id": "3b2a6402-7779-428b-8bc6-77e1fd66915a",
+        "sample_id": "instrument:nabertherm_l9",
+        "status": "unresolved",
+        "evidence_ids": [],
+        "hypotheses": [
+          {
+            "cause": "Program is mid-ramp toward 323.15 K; hold and completion need more simulated time.",
+            "supporting_ids": [
+              "obs-11"
+            ],
+            "contradicting_ids": []
+          }
+        ],
+        "terminal_reason": "llm_budget",
+        "action_count": 13,
+        "llm_call_count": 48,
+        "role_call_count": 20,
+        "operation_call_count": 7,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 21
+      },
+      "score": {
+        "goal_met": true,
+        "task_success": true,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": true,
+        "evidence_cited": false,
+        "predicates": [
+          {
+            "state_id": "program.phase",
+            "path": [],
+            "met": true,
+            "actual": "completed",
+            "expected": "completed",
+            "error": null
+          },
+          {
+            "state_id": "program.hold_elapsed_s",
+            "path": [],
+            "met": true,
+            "actual": 10,
+            "expected": 10,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "temperature_K"
+            ],
+            "met": true,
+            "actual": 323.15,
+            "expected": 323.15,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "ramp_rate_K_s"
+            ],
+            "met": true,
+            "actual": 0.1,
+            "expected": 0.1,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 360.0,
+        "native_io_counts": {
+          "read": 9,
+          "invoke": 3,
+          "step": 36,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "llm_budget"
+      },
+      "usage": {
+        "prompt_tokens": 61831,
+        "completion_tokens": 3132,
+        "total_tokens": 64963
+      },
+      "usage_complete": true,
+      "model_calls": {
+        "expert": 20,
+        "router": 21,
+        "operation": 7
+      },
+      "executed_operations": [
+        {
+          "sample_id": "instrument:nabertherm_l9",
+          "expected_revision": 0,
+          "capability_id": "workflow.inspect",
+          "arguments": {},
+          "request_id": "f8e43815-54e1-4b2c-a996-55d97b8b177f",
+          "postcondition": "Fresh inspection available for planning."
+        },
+        {
+          "sample_id": "instrument:nabertherm_l9",
+          "expected_revision": 0,
+          "capability_id": "nabertherm_l9::power.set",
+          "arguments": {
+            "enabled": true
+          },
+          "request_id": "abe20c23-e6f4-492e-ad19-53b74c0dea32",
+          "postcondition": "Furnace powered for program configuration."
+        },
+        {
+          "sample_id": "instrument:nabertherm_l9",
+          "expected_revision": 1,
+          "capability_id": "nabertherm_l9::thermal.configure_program",
+          "arguments": {
+            "segments": [
+              {
+                "temperature_K": 323.15,
+                "ramp_rate_K_s": 0.1,
+                "hold_s": 10
+              }
+            ]
+          },
+          "request_id": "ab785b61-fccc-4d6f-8a7e-2a05e39d1b34",
+          "postcondition": "One segment configured with 323.15 K, 0.1 K/s, 10 s hold."
+        },
+        {
+          "sample_id": "instrument:nabertherm_l9",
+          "expected_revision": 2,
+          "capability_id": "nabertherm_l9::thermal.start_program",
+          "arguments": {},
+          "request_id": "0e685b69-6986-4321-9603-fc0ebcbfb34c",
+          "postcondition": "Program running toward 323.15 K at 0.1 K/s with 10 s hold."
+        },
+        {
+          "sample_id": "instrument:nabertherm_l9",
+          "expected_revision": 3,
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 120
+          },
+          "request_id": "097fd39d-f89f-4baa-b866-cb6cad6ddf5a",
+          "postcondition": "Native clock advances; fresh readback shows ramp/hold progress."
+        },
+        {
+          "sample_id": "instrument:nabertherm_l9",
+          "expected_revision": 4,
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 120
+          },
+          "request_id": "9cdcc9e7-6d7d-4894-8f0f-17f9e70d7b98",
+          "postcondition": "Native clock advances; fresh readback shows hold progress or completion."
+        },
+        {
+          "sample_id": "instrument:nabertherm_l9",
+          "expected_revision": 5,
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 120
+          },
+          "request_id": "a29ec4fa-2e6b-480c-b4e5-a86122710420",
+          "postcondition": "Native clock advances; fresh readback shows hold progress or completion."
+        }
+      ],
+      "discovered_capability_count": 9,
+      "forbidden_model_input_keys": [],
+      "errors": [],
+      "trace_sha256": "747d156a46781f6d3b522f4a38418ea2ee37dddf49189c52e3069061f0dfdace",
+      "manifest_sha256": "e3b0f0df4546181b3902c7ceaec65ded5a077b868c66fb6988fd3eb490803179",
+      "executed_source_hashes": {
+        "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+        "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+        "app/models.py": "c10f664955daa808cada8aaeaec9ffcf2402b1970f880fdf067c6a675730433b",
+        "app/local_roles.py": "7e485bfa3066adec152699e56a94467933aeb91a0ed493f0c165a22f7fb05a76",
+        "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+        "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+        "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+        "app/expert_config.py": "446d55f8fec5f50f958dd49cfd4ae92838b77500b32d8f57c999aab1d81ff3dc",
+        "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+        "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+        "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+        "app/instrument_cli.py": "e9ee7954e19c27fb1954fd8ecc0d5627c353e04494f4c954060cf36d5eacdf11",
+        "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+        "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+        "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+        "app/token_budget.py": "163781f1ef1fb792f0554f46e6011762ea0c1289cd0392bb88e4d1228aba2448",
+        "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+        "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+        "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+        "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+        "app/graph.py": "0e4bbf6c7f80a59f94d5fabb728a21ab6dec419b7ddeeef76c67d43ae80bee8a",
+        "app/local_decision.py": "47f68fc2f201312dc82378771121e5c575f2c85494ecb55a9a68a8290a933221",
+        "app/single_instrument.py": "ccb92f498551295bfd1089fe88957d387a44bb383d33d618f4d127a1ee619a97",
+        "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "e9ee7954e19c27fb1954fd8ecc0d5627c353e04494f4c954060cf36d5eacdf11",
+        "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+      },
+      "current_source_differences": [
+        "app/instrument_cli.py",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py"
+      ],
+      "elapsed_seconds": 175.31680618100017
+    },
+    {
+      "directory": "results/single-instrument-binder-v3",
+      "episode_id": "5b09d9dd-cec4-47e7-baf6-0f75167f1736",
+      "task": {
+        "task_id": "binder-timer-expiration",
+        "device": "binder_fd056",
+        "objective": "Make the oven's native timer expire after a nonzero one-minute interval. Use the instrument's public controls and verify the expired flag from a fresh read. Stop honestly if the runtime cannot support the task.",
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "operator": "eq",
+            "value": true,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "operator": "eq",
+            "value": 60,
+            "unit": "1",
+            "absolute_tolerance": 1e-06
+          }
+        ],
+        "constraints": [],
+        "readable_state_ids": null,
+        "max_simulated_seconds": 300.0,
+        "max_wait_seconds": 120.0
+      },
+      "reference_scripts_used": false,
+      "backend": "compatible/siliconflow-deepseek-v4.1-flash/deepseek-ai/DeepSeek-V4.1-Flash@revision-unavailable",
+      "report": {
+        "episode_id": "5b09d9dd-cec4-47e7-baf6-0f75167f1736",
+        "sample_id": "instrument:binder_fd056",
+        "status": "supported",
+        "evidence_ids": [
+          "obs-7"
+        ],
+        "hypotheses": [
+          {
+            "cause": "Timer already set to 60 s and running; only elapsed simulation time is needed for expiry.",
+            "supporting_ids": [
+              "obs-5"
+            ],
+            "contradicting_ids": []
+          }
+        ],
+        "terminal_reason": "agent_supported",
+        "action_count": 7,
+        "llm_call_count": 28,
+        "role_call_count": 12,
+        "operation_call_count": 4,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 12
+      },
+      "score": {
+        "goal_met": true,
+        "task_success": true,
+        "agent_claim_supported": true,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": true,
+        "evidence_cited": true,
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": true,
+            "actual": true,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": true,
+            "actual": 60.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 65.0,
+        "native_io_counts": {
+          "read": 6,
+          "invoke": 2,
+          "step": 7,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "agent_supported"
+      },
+      "usage": {
+        "prompt_tokens": 115140,
+        "completion_tokens": 1798,
+        "total_tokens": 116938
+      },
+      "usage_complete": true,
+      "model_calls": {
+        "expert": 12,
+        "router": 12,
+        "operation": 4
+      },
+      "executed_operations": [
+        {
+          "sample_id": "instrument:binder_fd056",
+          "expected_revision": 0,
+          "capability_id": "workflow.inspect",
+          "arguments": {},
+          "request_id": "9c4ea755-d24f-4d90-9745-566ed1a8838f",
+          "postcondition": "Public native state and contract known."
+        },
+        {
+          "sample_id": "instrument:binder_fd056",
+          "expected_revision": 0,
+          "capability_id": "binder_fd056::power.set",
+          "arguments": {
+            "on": true
+          },
+          "request_id": "cfc66303-42c5-4c4f-9ff7-1a5c88284ea6",
+          "postcondition": "Controller powered on, not standby, ready for timer.set."
+        },
+        {
+          "sample_id": "instrument:binder_fd056",
+          "expected_revision": 1,
+          "capability_id": "binder_fd056::timer.set",
+          "arguments": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 1,
+            "fan_after": "on"
+          },
+          "request_id": "bc524bd7-cac0-4f42-89c1-f6a413841c96",
+          "postcondition": "Timer set to 60 s and counting down."
+        },
+        {
+          "sample_id": "instrument:binder_fd056",
+          "expected_revision": 2,
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 65
+          },
+          "request_id": "275d1b91-01bc-4855-8d9f-ab03fd06dd57",
+          "postcondition": "Simulation clock advances ~65 s; timer expires."
+        }
+      ],
+      "discovered_capability_count": 23,
+      "forbidden_model_input_keys": [],
+      "errors": [],
+      "trace_sha256": "344ab2a19b7de1d42172788280131d381af5d67d726f211ec741d1e09558f4fc",
+      "manifest_sha256": "02f105e08b1a015c149e32df9d5f438c655bb65a5931702123126901c8a0fa4a",
+      "executed_source_hashes": {
+        "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+        "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+        "app/models.py": "c10f664955daa808cada8aaeaec9ffcf2402b1970f880fdf067c6a675730433b",
+        "app/local_roles.py": "7e485bfa3066adec152699e56a94467933aeb91a0ed493f0c165a22f7fb05a76",
+        "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+        "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+        "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+        "app/expert_config.py": "446d55f8fec5f50f958dd49cfd4ae92838b77500b32d8f57c999aab1d81ff3dc",
+        "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+        "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+        "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+        "app/instrument_cli.py": "9d13e409f7e0bcf019f59796dc154d6d097e69527ff20c9329eedf6832b65716",
+        "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+        "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+        "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+        "app/token_budget.py": "163781f1ef1fb792f0554f46e6011762ea0c1289cd0392bb88e4d1228aba2448",
+        "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+        "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+        "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+        "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+        "app/graph.py": "0e4bbf6c7f80a59f94d5fabb728a21ab6dec419b7ddeeef76c67d43ae80bee8a",
+        "app/local_decision.py": "47f68fc2f201312dc82378771121e5c575f2c85494ecb55a9a68a8290a933221",
+        "app/single_instrument.py": "ccb92f498551295bfd1089fe88957d387a44bb383d33d618f4d127a1ee619a97",
+        "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "9d13e409f7e0bcf019f59796dc154d6d097e69527ff20c9329eedf6832b65716",
+        "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+      },
+      "current_source_differences": [
+        "app/instrument_cli.py",
+        "/home/AGNDM/code/OSI-hack/app/instrument_cli.py"
+      ],
+      "elapsed_seconds": 111.63956075499937
+    }
+  ],
+  "native_hashes_verified": 570,
+  "native_hash_mismatches": 0,
+  "astra_final_verdict": "PASS",
+  "external_api_budget": {
+    "limit": 5000000,
+    "reported_tokens": 846986,
+    "charged_tokens": 867316,
+    "remaining_tokens": 4132684,
+    "requests_reserved": 310,
+    "requests_settled": 310,
+    "unmetered_requests": 1,
+    "inflight_or_crashed": 0,
+    "accounting_violation": false
+  },
+  "new_reported_cloud_tokens": 416819,
+  "tests": {
+    "full_passed": 139,
+    "full_seconds": 88.73,
+    "astra_independent_targeted_passed": 28
+  },
+  "final_source_hashes": {
+    "app/single_instrument.py": "ccb92f498551295bfd1089fe88957d387a44bb383d33d618f4d127a1ee619a97",
+    "app/instrument_cli.py": "fa5a7f9c80b4db7a79c4d0fb715769ca7b3444e36982b5929dc9708f866ccbec",
+    "app/graph.py": "0e4bbf6c7f80a59f94d5fabb728a21ab6dec419b7ddeeef76c67d43ae80bee8a",
+    "app/local_roles.py": "7e485bfa3066adec152699e56a94467933aeb91a0ed493f0c165a22f7fb05a76",
+    "app/models.py": "c10f664955daa808cada8aaeaec9ffcf2402b1970f880fdf067c6a675730433b",
+    "bench/start_local.py": "21daf03a28e80cc17e93cf5b9d7a98d7522ab9fcb80a095979df31b97f842985",
+    "tests/test_single_instrument.py": "574a2b7dd9566405b5a9ffdff2358a0517681b833676b32c14bae6e79dc705c4",
+    "cases/instrument_tasks/binder-timer.json": "b4af77d2c762140ed63ffc1042b1b2fbef8973189e269858edd352a53af8c93f",
+    "cases/instrument_tasks/furnace-program.json": "5b36a00b1acfbf62fe1df26c1664b266536a2818ee7ea4ea18958b27a59d4376"
+  }
+}

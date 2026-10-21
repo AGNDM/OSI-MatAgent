@@ -49,6 +49,16 @@ Status snapshot: 21 October 2026. Checked items have implementation or execution
 
 - [x] Pass Astra re-review after rejecting cloud browser expert configurations and separating chooser identities in summaries; pass all 111 release tests.
 
+- [x] Execute declarative single-instrument tasks using discovered public native capabilities without task-specific reference scripts.
+- [x] Add bounded model-selected direct waits through the ordinary execution gate and count router requests.
+- [x] Support explicit hosted TypeSafe Jev routing/operation choice and the default OpenRouter DeepSeek expert through the shared 5M ledger.
+- [x] Complete recorded Binder timer and furnace program tasks with fresh cited evidence; retain prior failures and uncontrolled-comparison limitations.
+- [x] Publish detailed per-step tool/API/native-call reports and machine-readable provenance for benchmark design.
+- [x] Classify empty/truncated expert responses before JSON repair and enforce shared verifier predicate/quality semantics.
+- [x] Prevent duplicate verification of unchanged semantic evidence and require current citations for supported/contradicted reports.
+- [x] Pass Astra code/report re-review, all 172 offline tests and all 570 pinned native hashes. Review fixes were not re-run with live models.
+- [x] Retain the last settled shared ledger snapshot: 452 requests, 1,602,067 reported / 1,957,431 conservatively charged tokens; zero outstanding reservations. Earlier usage entries above are historical snapshots.
+
 ## Partial or still pending
 
 - [ ] Accept the remaining nine catalog entries with an appropriate native task/adapter.

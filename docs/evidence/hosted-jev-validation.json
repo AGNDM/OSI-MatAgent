@@ -1,0 +1,1475 @@
+{
+  "date": "2026-10-21",
+  "scope": "Two focused recorded-state replays and two original-task integration runs; no bulk benchmark",
+  "pairs": [
+    {
+      "task": "Binder",
+      "historical": {
+        "run": "single-instrument-binder-v3",
+        "trace_sha256": "344ab2a19b7de1d42172788280131d381af5d67d726f211ec741d1e09558f4fc",
+        "task": {
+          "task_id": "binder-timer-expiration",
+          "device": "binder_fd056",
+          "objective": "Make the oven's native timer expire after a nonzero one-minute interval. Use the instrument's public controls and verify the expired flag from a fresh read. Stop honestly if the runtime cannot support the task.",
+          "predicates": [
+            {
+              "state_id": "timer.state",
+              "path": [
+                "expired"
+              ],
+              "operator": "eq",
+              "value": true,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "timer.state",
+              "path": [
+                "set_s"
+              ],
+              "operator": "eq",
+              "value": 60,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            }
+          ],
+          "constraints": [],
+          "readable_state_ids": null,
+          "max_simulated_seconds": 300.0,
+          "max_wait_seconds": 120.0
+        },
+        "source_hashes": {
+          "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+          "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+          "app/models.py": "c10f664955daa808cada8aaeaec9ffcf2402b1970f880fdf067c6a675730433b",
+          "app/local_roles.py": "7e485bfa3066adec152699e56a94467933aeb91a0ed493f0c165a22f7fb05a76",
+          "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+          "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+          "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+          "app/expert_config.py": "446d55f8fec5f50f958dd49cfd4ae92838b77500b32d8f57c999aab1d81ff3dc",
+          "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+          "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+          "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+          "app/instrument_cli.py": "9d13e409f7e0bcf019f59796dc154d6d097e69527ff20c9329eedf6832b65716",
+          "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+          "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+          "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+          "app/token_budget.py": "163781f1ef1fb792f0554f46e6011762ea0c1289cd0392bb88e4d1228aba2448",
+          "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+          "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+          "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+          "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+          "app/graph.py": "0e4bbf6c7f80a59f94d5fabb728a21ab6dec419b7ddeeef76c67d43ae80bee8a",
+          "app/local_decision.py": "47f68fc2f201312dc82378771121e5c575f2c85494ecb55a9a68a8290a933221",
+          "app/single_instrument.py": "ccb92f498551295bfd1089fe88957d387a44bb383d33d618f4d127a1ee619a97",
+          "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+          "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "9d13e409f7e0bcf019f59796dc154d6d097e69527ff20c9329eedf6832b65716",
+          "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+        },
+        "goal_met": true,
+        "agent_status": "supported",
+        "agent_claim_supported": true,
+        "protocol_correct": true,
+        "false_success": false,
+        "terminal_reason": "agent_supported",
+        "model_calls": 28,
+        "expert_calls": 12,
+        "router_calls": 12,
+        "operation_calls": 4,
+        "direct_waits": 0,
+        "verification_calls": 4,
+        "role_counts": {
+          "diagnostic": 4,
+          "procedure": 4,
+          "verification": 4
+        },
+        "diagnose_with_existing_intent": 0,
+        "response_models": [
+          "deepseek-ai/DeepSeek-V4.1-Flash"
+        ],
+        "reported_tokens": 116938,
+        "usage_complete": true,
+        "elapsed_seconds": 111.64,
+        "simulated_seconds": 65.0,
+        "native_io_counts": {
+          "read": 6,
+          "invoke": 2,
+          "step": 7,
+          "poll": 0,
+          "cancel": 0
+        },
+        "steps": [
+          {
+            "capability_id": "workflow.inspect",
+            "arguments": {},
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "binder_fd056::power.set",
+            "arguments": {
+              "on": true
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "binder_fd056::timer.set",
+            "arguments": {
+              "days": 0,
+              "hours": 0,
+              "minutes": 1,
+              "fan_after": "on"
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 65
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 65.0
+          }
+        ],
+        "role_errors": [],
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": true,
+            "actual": true,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": true,
+            "actual": 60.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "evidence_ids": [
+          "obs-7"
+        ],
+        "api_usage_by_role": {
+          "expert": {
+            "requests": 12,
+            "tokens": 116938,
+            "reported_cost_usd": 0.0,
+            "reasoning_tokens": 0,
+            "max_completion_tokens": 440
+          }
+        }
+      },
+      "previous_local_jev": {
+        "run": "router-wait-openrouter-binder-v2",
+        "trace_sha256": "fd78afad26b4f52a6498f52b70c39878e6a70e6814bc3fe010da240b74955567",
+        "task": {
+          "task_id": "binder-timer-expiration",
+          "device": "binder_fd056",
+          "objective": "Make the oven's native timer expire after a nonzero one-minute interval. Use the instrument's public controls and verify the expired flag from a fresh read. Stop honestly if the runtime cannot support the task.",
+          "predicates": [
+            {
+              "state_id": "timer.state",
+              "path": [
+                "expired"
+              ],
+              "operator": "eq",
+              "value": true,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "timer.state",
+              "path": [
+                "set_s"
+              ],
+              "operator": "eq",
+              "value": 60,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            }
+          ],
+          "constraints": [],
+          "readable_state_ids": null,
+          "max_simulated_seconds": 300.0,
+          "max_wait_seconds": 120.0
+        },
+        "source_hashes": {
+          "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+          "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+          "app/models.py": "8231559df8bc93717ec9e22d1b8ca0da053ef107ed0e3e9d8c35a9ea4408424c",
+          "app/local_roles.py": "7e485bfa3066adec152699e56a94467933aeb91a0ed493f0c165a22f7fb05a76",
+          "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+          "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+          "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+          "app/expert_config.py": "0aa0af01084516e7d60b6c6ff5cca8b3ae2ea294fd0696c7e64429099953386d",
+          "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+          "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+          "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+          "app/instrument_cli.py": "4c0d50ce7580b00d4bbb2a6689735f3e29181a4e8d3652d4aa010980e83d5413",
+          "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+          "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+          "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+          "app/token_budget.py": "eaa2997155774b2f203dc6e51eddfbce50de21ab962fce91128701622f975ccf",
+          "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+          "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+          "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+          "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+          "app/graph.py": "5bd109b8fbfa51524246e9f803f2ec83ecceb95c77bc9006f37e6d90a040e4e3",
+          "app/local_decision.py": "b0d329f86d671b69ced0872b7ff77205b5142999ed6ef47ebbe36b2b938a17f0",
+          "app/single_instrument.py": "cb41ca94a0589a4dfbfae1a8cac8aa0a71d80e3783135dd4f31f55b7e18891ef",
+          "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+          "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "4c0d50ce7580b00d4bbb2a6689735f3e29181a4e8d3652d4aa010980e83d5413",
+          "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+        },
+        "goal_met": true,
+        "agent_status": "supported",
+        "agent_claim_supported": true,
+        "protocol_correct": true,
+        "false_success": false,
+        "terminal_reason": "agent_supported",
+        "model_calls": 19,
+        "expert_calls": 7,
+        "router_calls": 9,
+        "operation_calls": 3,
+        "direct_waits": 2,
+        "verification_calls": 1,
+        "role_counts": {
+          "diagnostic": 3,
+          "procedure": 3,
+          "verification": 1
+        },
+        "diagnose_with_existing_intent": 0,
+        "response_models": [
+          "deepseek/deepseek-v4.1-flash"
+        ],
+        "reported_tokens": 83263,
+        "usage_complete": true,
+        "elapsed_seconds": 113.241,
+        "simulated_seconds": 60.0,
+        "native_io_counts": {
+          "read": 7,
+          "invoke": 2,
+          "step": 6,
+          "poll": 0,
+          "cancel": 0
+        },
+        "steps": [
+          {
+            "capability_id": "workflow.inspect",
+            "arguments": {},
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "binder_fd056::power.set",
+            "arguments": {
+              "on": true
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "binder_fd056::timer.set",
+            "arguments": {
+              "days": 0,
+              "hours": 0,
+              "minutes": 1,
+              "fan_after": "on"
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          }
+        ],
+        "role_errors": [],
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": true,
+            "actual": true,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": true,
+            "actual": 60.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "evidence_ids": [
+          "obs-9"
+        ],
+        "api_usage_by_role": {
+          "expert": {
+            "requests": 7,
+            "tokens": 83263,
+            "reported_cost_usd": 0.014538276999999999,
+            "reasoning_tokens": 0,
+            "max_completion_tokens": 495
+          }
+        }
+      },
+      "hosted_jev": {
+        "run": "hosted-jev-binder-v1",
+        "trace_sha256": "378799abdfe21d37b1ba161fef86eaac498506b8faddbf4801a793f47fb90242",
+        "task": {
+          "task_id": "binder-timer-expiration",
+          "device": "binder_fd056",
+          "objective": "Make the oven's native timer expire after a nonzero one-minute interval. Use the instrument's public controls and verify the expired flag from a fresh read. Stop honestly if the runtime cannot support the task.",
+          "predicates": [
+            {
+              "state_id": "timer.state",
+              "path": [
+                "expired"
+              ],
+              "operator": "eq",
+              "value": true,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "timer.state",
+              "path": [
+                "set_s"
+              ],
+              "operator": "eq",
+              "value": 60,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            }
+          ],
+          "constraints": [],
+          "readable_state_ids": null,
+          "max_simulated_seconds": 300.0,
+          "max_wait_seconds": 120.0
+        },
+        "source_hashes": {
+          "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+          "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+          "app/models.py": "8231559df8bc93717ec9e22d1b8ca0da053ef107ed0e3e9d8c35a9ea4408424c",
+          "app/local_roles.py": "110443f6742b58da4353fbb05849047288cd0a41277b4fbdb49a9f5fedc5f8e4",
+          "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+          "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+          "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+          "app/expert_config.py": "0aa0af01084516e7d60b6c6ff5cca8b3ae2ea294fd0696c7e64429099953386d",
+          "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+          "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+          "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+          "app/openrouter_jev.py": "256e961e3582dffc0f228be72628187f93c41e10830a37d1cc1849ddc3a4f572",
+          "app/instrument_cli.py": "eb275328dd080d43c2140bce8c07845e37c95436fa0bf3ae3e3cc201143a289b",
+          "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+          "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+          "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+          "app/token_budget.py": "1ece697e08acb753a64d88867b38f4499fed7ca31c006267f1be782b59f416dd",
+          "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+          "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+          "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+          "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+          "app/graph.py": "7a4872ad960823fb569349c2827a6297f2e4c2386e833a29ea65ac194bfdd4a5",
+          "app/local_decision.py": "b0d329f86d671b69ced0872b7ff77205b5142999ed6ef47ebbe36b2b938a17f0",
+          "app/single_instrument.py": "7ed04565cb7d345b6b80e8ba082dc68f90db1661bf7bab01f34376db0b0a1bef",
+          "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+          "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "eb275328dd080d43c2140bce8c07845e37c95436fa0bf3ae3e3cc201143a289b",
+          "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+        },
+        "goal_met": true,
+        "agent_status": "supported",
+        "agent_claim_supported": true,
+        "protocol_correct": true,
+        "false_success": false,
+        "terminal_reason": "agent_supported",
+        "model_calls": 19,
+        "expert_calls": 7,
+        "router_calls": 9,
+        "operation_calls": 3,
+        "direct_waits": 2,
+        "verification_calls": 1,
+        "role_counts": {
+          "diagnostic": 3,
+          "procedure": 3,
+          "verification": 1
+        },
+        "diagnose_with_existing_intent": 0,
+        "response_models": [
+          "deepseek/deepseek-v4.1-flash",
+          "typesafe/jev-1.14-20261014"
+        ],
+        "reported_tokens": 107764,
+        "usage_complete": true,
+        "elapsed_seconds": 23.033,
+        "simulated_seconds": 60.0,
+        "native_io_counts": {
+          "read": 7,
+          "invoke": 2,
+          "step": 6,
+          "poll": 0,
+          "cancel": 0
+        },
+        "steps": [
+          {
+            "capability_id": "workflow.inspect",
+            "arguments": {},
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "binder_fd056::power.set",
+            "arguments": {
+              "on": true
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "binder_fd056::timer.set",
+            "arguments": {
+              "days": 0,
+              "hours": 0,
+              "minutes": 1,
+              "fan_after": "on"
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          }
+        ],
+        "role_errors": [],
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": true,
+            "actual": true,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": true,
+            "actual": 60.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "evidence_ids": [
+          "obs-9"
+        ],
+        "api_usage_by_role": {
+          "jev": {
+            "requests": 12,
+            "tokens": 24401,
+            "reported_cost_usd": 0.001006362,
+            "reasoning_tokens": 0,
+            "max_completion_tokens": 46
+          },
+          "expert": {
+            "requests": 7,
+            "tokens": 83363,
+            "reported_cost_usd": 0.014166149999999999,
+            "reasoning_tokens": 0,
+            "max_completion_tokens": 436
+          }
+        },
+        "router_manifest": {
+          "backend_id": "openrouter-decisions/typesafe/jev-1.14",
+          "model": "typesafe/jev-1.14",
+          "endpoint": "https://openrouter.ai/api/alpha/decisions",
+          "probability_semantics": "Native typed choice probabilities returned by Jev; not calibrated on these instrument tasks",
+          "transport_retries": 0,
+          "rules_fallback": false,
+          "context_byte_limit": 24000,
+          "reservation_policy": "Full 262144-token model context plus request bytes and framing; shared durable ledger"
+        },
+        "output_ceiling": 6144,
+        "verification_outputs": {
+          "supported": 1
+        },
+        "actual_decision_models": [
+          "typesafe/jev-1.14-20261014"
+        ]
+      }
+    },
+    {
+      "task": "Furnace",
+      "historical": {
+        "run": "single-instrument-furnace-v1",
+        "trace_sha256": "747d156a46781f6d3b522f4a38418ea2ee37dddf49189c52e3069061f0dfdace",
+        "task": {
+          "task_id": "furnace-short-program",
+          "device": "nabertherm_l9",
+          "objective": "Run one native furnace program with a 323.15 K segment, a 0.1 K/s ramp and a 10-second hold. Establish completed program state and the full hold using fresh public observations. This is empty-furnace program execution, not material synthesis.",
+          "predicates": [
+            {
+              "state_id": "program.phase",
+              "path": [],
+              "operator": "eq",
+              "value": "completed",
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.hold_elapsed_s",
+              "path": [],
+              "operator": "ge",
+              "value": 10,
+              "unit": "s",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.segments",
+              "path": [
+                0,
+                "temperature_K"
+              ],
+              "operator": "eq",
+              "value": 323.15,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.segments",
+              "path": [
+                0,
+                "ramp_rate_K_s"
+              ],
+              "operator": "eq",
+              "value": 0.1,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            }
+          ],
+          "constraints": [],
+          "readable_state_ids": null,
+          "max_simulated_seconds": 1200.0,
+          "max_wait_seconds": 600.0
+        },
+        "source_hashes": {
+          "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+          "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+          "app/models.py": "c10f664955daa808cada8aaeaec9ffcf2402b1970f880fdf067c6a675730433b",
+          "app/local_roles.py": "7e485bfa3066adec152699e56a94467933aeb91a0ed493f0c165a22f7fb05a76",
+          "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+          "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+          "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+          "app/expert_config.py": "446d55f8fec5f50f958dd49cfd4ae92838b77500b32d8f57c999aab1d81ff3dc",
+          "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+          "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+          "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+          "app/instrument_cli.py": "e9ee7954e19c27fb1954fd8ecc0d5627c353e04494f4c954060cf36d5eacdf11",
+          "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+          "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+          "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+          "app/token_budget.py": "163781f1ef1fb792f0554f46e6011762ea0c1289cd0392bb88e4d1228aba2448",
+          "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+          "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+          "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+          "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+          "app/graph.py": "0e4bbf6c7f80a59f94d5fabb728a21ab6dec419b7ddeeef76c67d43ae80bee8a",
+          "app/local_decision.py": "47f68fc2f201312dc82378771121e5c575f2c85494ecb55a9a68a8290a933221",
+          "app/single_instrument.py": "ccb92f498551295bfd1089fe88957d387a44bb383d33d618f4d127a1ee619a97",
+          "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+          "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "e9ee7954e19c27fb1954fd8ecc0d5627c353e04494f4c954060cf36d5eacdf11",
+          "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+        },
+        "goal_met": true,
+        "agent_status": "unresolved",
+        "agent_claim_supported": false,
+        "protocol_correct": true,
+        "false_success": false,
+        "terminal_reason": "llm_budget",
+        "model_calls": 48,
+        "expert_calls": 20,
+        "router_calls": 21,
+        "operation_calls": 7,
+        "direct_waits": 0,
+        "verification_calls": 6,
+        "role_counts": {
+          "diagnostic": 7,
+          "procedure": 7,
+          "verification": 6
+        },
+        "diagnose_with_existing_intent": 0,
+        "response_models": [
+          "deepseek-ai/DeepSeek-V4.1-Flash"
+        ],
+        "reported_tokens": 64963,
+        "usage_complete": true,
+        "elapsed_seconds": 175.317,
+        "simulated_seconds": 360.0,
+        "native_io_counts": {
+          "read": 9,
+          "invoke": 3,
+          "step": 36,
+          "poll": 0,
+          "cancel": 0
+        },
+        "steps": [
+          {
+            "capability_id": "workflow.inspect",
+            "arguments": {},
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::power.set",
+            "arguments": {
+              "enabled": true
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::thermal.configure_program",
+            "arguments": {
+              "segments": [
+                {
+                  "temperature_K": 323.15,
+                  "ramp_rate_K_s": 0.1,
+                  "hold_s": 10
+                }
+              ]
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::thermal.start_program",
+            "arguments": {},
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 120
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 120.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 120
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 120.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 120
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 120.0
+          }
+        ],
+        "role_errors": [],
+        "predicates": [
+          {
+            "state_id": "program.phase",
+            "path": [],
+            "met": true,
+            "actual": "completed",
+            "expected": "completed",
+            "error": null
+          },
+          {
+            "state_id": "program.hold_elapsed_s",
+            "path": [],
+            "met": true,
+            "actual": 10,
+            "expected": 10,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "temperature_K"
+            ],
+            "met": true,
+            "actual": 323.15,
+            "expected": 323.15,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "ramp_rate_K_s"
+            ],
+            "met": true,
+            "actual": 0.1,
+            "expected": 0.1,
+            "error": null
+          }
+        ],
+        "evidence_ids": [],
+        "api_usage_by_role": {
+          "expert": {
+            "requests": 20,
+            "tokens": 64963,
+            "reported_cost_usd": 0.0,
+            "reasoning_tokens": 0,
+            "max_completion_tokens": 452
+          }
+        }
+      },
+      "previous_local_jev": {
+        "run": "router-wait-openrouter-furnace-v2",
+        "trace_sha256": "9005e3da47e5fa5adbdf1e2e15e88b126ceb8fd222479529dd5e828cb60ab023",
+        "task": {
+          "task_id": "furnace-short-program",
+          "device": "nabertherm_l9",
+          "objective": "Run one native furnace program with a 323.15 K segment, a 0.1 K/s ramp and a 10-second hold. Establish completed program state and the full hold using fresh public observations. This is empty-furnace program execution, not material synthesis.",
+          "predicates": [
+            {
+              "state_id": "program.phase",
+              "path": [],
+              "operator": "eq",
+              "value": "completed",
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.hold_elapsed_s",
+              "path": [],
+              "operator": "ge",
+              "value": 10,
+              "unit": "s",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.segments",
+              "path": [
+                0,
+                "temperature_K"
+              ],
+              "operator": "eq",
+              "value": 323.15,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.segments",
+              "path": [
+                0,
+                "ramp_rate_K_s"
+              ],
+              "operator": "eq",
+              "value": 0.1,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            }
+          ],
+          "constraints": [],
+          "readable_state_ids": null,
+          "max_simulated_seconds": 1200.0,
+          "max_wait_seconds": 600.0
+        },
+        "source_hashes": {
+          "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+          "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+          "app/models.py": "8231559df8bc93717ec9e22d1b8ca0da053ef107ed0e3e9d8c35a9ea4408424c",
+          "app/local_roles.py": "7e485bfa3066adec152699e56a94467933aeb91a0ed493f0c165a22f7fb05a76",
+          "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+          "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+          "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+          "app/expert_config.py": "0aa0af01084516e7d60b6c6ff5cca8b3ae2ea294fd0696c7e64429099953386d",
+          "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+          "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+          "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+          "app/instrument_cli.py": "4c0d50ce7580b00d4bbb2a6689735f3e29181a4e8d3652d4aa010980e83d5413",
+          "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+          "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+          "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+          "app/token_budget.py": "eaa2997155774b2f203dc6e51eddfbce50de21ab962fce91128701622f975ccf",
+          "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+          "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+          "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+          "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+          "app/graph.py": "5bd109b8fbfa51524246e9f803f2ec83ecceb95c77bc9006f37e6d90a040e4e3",
+          "app/local_decision.py": "b0d329f86d671b69ced0872b7ff77205b5142999ed6ef47ebbe36b2b938a17f0",
+          "app/single_instrument.py": "cb41ca94a0589a4dfbfae1a8cac8aa0a71d80e3783135dd4f31f55b7e18891ef",
+          "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+          "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "4c0d50ce7580b00d4bbb2a6689735f3e29181a4e8d3652d4aa010980e83d5413",
+          "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+        },
+        "goal_met": false,
+        "agent_status": "contradicted",
+        "agent_claim_supported": false,
+        "protocol_correct": true,
+        "false_success": false,
+        "terminal_reason": "role_error",
+        "model_calls": 35,
+        "expert_calls": 18,
+        "router_calls": 14,
+        "operation_calls": 3,
+        "direct_waits": 0,
+        "verification_calls": 12,
+        "role_counts": {
+          "diagnostic": 3,
+          "procedure": 3,
+          "verification": 12
+        },
+        "diagnose_with_existing_intent": 0,
+        "response_models": [
+          "deepseek/deepseek-v4.1-flash"
+        ],
+        "reported_tokens": 70239,
+        "usage_complete": true,
+        "elapsed_seconds": 303.0,
+        "simulated_seconds": 0.0,
+        "native_io_counts": {
+          "read": 5,
+          "invoke": 2,
+          "step": 0,
+          "poll": 0,
+          "cancel": 0
+        },
+        "steps": [
+          {
+            "capability_id": "workflow.inspect",
+            "arguments": {},
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::power.set",
+            "arguments": {
+              "enabled": true
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::thermal.configure_program",
+            "arguments": {
+              "segments": [
+                {
+                  "temperature_K": 323.15,
+                  "ramp_rate_K_s": 0.1,
+                  "hold_s": 10
+                }
+              ]
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          }
+        ],
+        "role_errors": [
+          {
+            "role": "verification",
+            "error": "ValidationError: 1 validation error for VerificationReport\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_type",
+            "repair_attempt": 0
+          },
+          {
+            "role": "verification",
+            "error": "ValidationError: 1 validation error for VerificationReport\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_type",
+            "repair_attempt": 0
+          },
+          {
+            "role": "verification",
+            "error": "ValidationError: 1 validation error for VerificationReport\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_type",
+            "repair_attempt": 0
+          },
+          {
+            "role": "verification",
+            "error": "ValidationError: 1 validation error for VerificationReport\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_type",
+            "repair_attempt": 0
+          },
+          {
+            "role": "verification",
+            "error": "ValidationError: 1 validation error for VerificationReport\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_type",
+            "repair_attempt": 1
+          }
+        ],
+        "predicates": [
+          {
+            "state_id": "program.phase",
+            "path": [],
+            "met": false,
+            "actual": "idle",
+            "expected": "completed",
+            "error": null
+          },
+          {
+            "state_id": "program.hold_elapsed_s",
+            "path": [],
+            "met": false,
+            "actual": 0.0,
+            "expected": 10,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "temperature_K"
+            ],
+            "met": true,
+            "actual": 323.15,
+            "expected": 323.15,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "ramp_rate_K_s"
+            ],
+            "met": true,
+            "actual": 0.1,
+            "expected": 0.1,
+            "error": null
+          }
+        ],
+        "evidence_ids": [
+          "obs-5"
+        ],
+        "api_usage_by_role": {
+          "expert": {
+            "requests": 18,
+            "tokens": 70239,
+            "reported_cost_usd": 0.024177504600000004,
+            "reasoning_tokens": 25420,
+            "max_completion_tokens": 3072
+          }
+        }
+      },
+      "hosted_jev": {
+        "run": "hosted-jev-furnace-v1",
+        "trace_sha256": "8966b34ca9a3dd2c809d533e5e05dea6654efa342e7c8cc76b60d15e654e9021",
+        "task": {
+          "task_id": "furnace-short-program",
+          "device": "nabertherm_l9",
+          "objective": "Run one native furnace program with a 323.15 K segment, a 0.1 K/s ramp and a 10-second hold. Establish completed program state and the full hold using fresh public observations. This is empty-furnace program execution, not material synthesis.",
+          "predicates": [
+            {
+              "state_id": "program.phase",
+              "path": [],
+              "operator": "eq",
+              "value": "completed",
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.hold_elapsed_s",
+              "path": [],
+              "operator": "ge",
+              "value": 10,
+              "unit": "s",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.segments",
+              "path": [
+                0,
+                "temperature_K"
+              ],
+              "operator": "eq",
+              "value": 323.15,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            },
+            {
+              "state_id": "program.segments",
+              "path": [
+                0,
+                "ramp_rate_K_s"
+              ],
+              "operator": "eq",
+              "value": 0.1,
+              "unit": "1",
+              "absolute_tolerance": 1e-06
+            }
+          ],
+          "constraints": [],
+          "readable_state_ids": null,
+          "max_simulated_seconds": 1200.0,
+          "max_wait_seconds": 600.0
+        },
+        "source_hashes": {
+          "app/retrieval.py": "9336fd9b253a6948dbf7562c3265090d02196858508873cc3bd1a1d62f8d0053",
+          "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+          "app/models.py": "8231559df8bc93717ec9e22d1b8ca0da053ef107ed0e3e9d8c35a9ea4408424c",
+          "app/local_roles.py": "110443f6742b58da4353fbb05849047288cd0a41277b4fbdb49a9f5fedc5f8e4",
+          "app/titania.py": "ccc44346857434f30cd97fa9f21e61cc0590cc27560da8bbf131ce271047b00f",
+          "app/scenarios.py": "53b2ca57bcf30ace22255009b697b90c115de823af3d6da981bb9a0cb3195156",
+          "app/roles.py": "b3dba2926d21ab53c910cb715c0ed5438cde45499e94543da5f9601e906effc2",
+          "app/expert_config.py": "0aa0af01084516e7d60b6c6ff5cca8b3ae2ea294fd0696c7e64429099953386d",
+          "app/trace.py": "a7a41b720cee0806f8f597e9b6ae7225ffe0c6414b72d561e761c05be6ccf869",
+          "app/lab_adapter.py": "dba489578327e26c1856b35b708a54c2835870c315e46a481199c11d8db7c98e",
+          "app/operation_decision.py": "c4312534a0f52efac5b0e114e81fc42c07c02fe21ee30added5c91f1ae1b5db9",
+          "app/openrouter_jev.py": "256e961e3582dffc0f228be72628187f93c41e10830a37d1cc1849ddc3a4f572",
+          "app/instrument_cli.py": "eb275328dd080d43c2140bce8c07845e37c95436fa0bf3ae3e3cc201143a289b",
+          "app/openrouter.py": "dc78f0a2e6dbc01eb9af8fb6f7ff08d49789d5621fcc8e4f833507a0d8a67a5a",
+          "app/cli.py": "3920a9be4b1aa1e0579035d9664d87a489e4f77dedd787f2941f80a4809d2b5b",
+          "app/decision_backend.py": "49112d1472c6b22b6c8b2cdd7b005b19788081dd9ba42d4bfb8e21357bd29b9a",
+          "app/token_budget.py": "1ece697e08acb753a64d88867b38f4499fed7ca31c006267f1be782b59f416dd",
+          "app/device_lab.py": "828a7ccb275d5849d7a5d0b76c8da02f97acfe81c9d1b8a134035430fd3741f3",
+          "app/device_roles.py": "c35ffbe8c88da0371b608bdb8c4f13e584288c0fa544abb1aecaa5b9f077970a",
+          "app/demo.py": "b73645dbda993c6dde9016371f2cfb85adb93ac9ee67cbc69e0416d28aa2286a",
+          "app/native.py": "583e05cbb8857e9639f702c512041e5053ab27678d24b5f9cd2dbf24429df4cf",
+          "app/graph.py": "7a4872ad960823fb569349c2827a6297f2e4c2386e833a29ea65ac194bfdd4a5",
+          "app/local_decision.py": "b0d329f86d671b69ced0872b7ff77205b5142999ed6ef47ebbe36b2b938a17f0",
+          "app/single_instrument.py": "7ed04565cb7d345b6b80e8ba082dc68f90db1661bf7bab01f34376db0b0a1bef",
+          "app/__init__.py": "d4e571a7e9ddd68832488788b162c7a8ea4d2d17dbe264cd0952a5eeb5063be5",
+          "/home/AGNDM/code/OSI-hack/app/instrument_cli.py": "eb275328dd080d43c2140bce8c07845e37c95436fa0bf3ae3e3cc201143a289b",
+          "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3"
+        },
+        "goal_met": true,
+        "agent_status": "supported",
+        "agent_claim_supported": true,
+        "protocol_correct": true,
+        "false_success": false,
+        "terminal_reason": "agent_supported",
+        "model_calls": 31,
+        "expert_calls": 9,
+        "router_calls": 18,
+        "operation_calls": 4,
+        "direct_waits": 9,
+        "verification_calls": 1,
+        "role_counts": {
+          "diagnostic": 4,
+          "procedure": 4,
+          "verification": 1
+        },
+        "diagnose_with_existing_intent": 0,
+        "response_models": [
+          "deepseek/deepseek-v4.1-flash",
+          "typesafe/jev-1.14-20261014"
+        ],
+        "reported_tokens": 75386,
+        "usage_complete": true,
+        "elapsed_seconds": 27.897,
+        "simulated_seconds": 270.0,
+        "native_io_counts": {
+          "read": 15,
+          "invoke": 3,
+          "step": 27,
+          "poll": 0,
+          "cancel": 0
+        },
+        "steps": [
+          {
+            "capability_id": "workflow.inspect",
+            "arguments": {},
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::power.set",
+            "arguments": {
+              "enabled": true
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::thermal.configure_program",
+            "arguments": {
+              "segments": [
+                {
+                  "temperature_K": 323.15,
+                  "ramp_rate_K_s": 0.1,
+                  "hold_s": 10
+                }
+              ]
+            },
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "nabertherm_l9::thermal.start_program",
+            "arguments": {},
+            "native_status": "succeeded",
+            "error": null,
+            "advanced_seconds": null
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          },
+          {
+            "capability_id": "workflow.await",
+            "arguments": {
+              "duration_s": 30.0
+            },
+            "native_status": null,
+            "error": null,
+            "advanced_seconds": 30.0
+          }
+        ],
+        "role_errors": [],
+        "predicates": [
+          {
+            "state_id": "program.phase",
+            "path": [],
+            "met": true,
+            "actual": "completed",
+            "expected": "completed",
+            "error": null
+          },
+          {
+            "state_id": "program.hold_elapsed_s",
+            "path": [],
+            "met": true,
+            "actual": 10,
+            "expected": 10,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "temperature_K"
+            ],
+            "met": true,
+            "actual": 323.15,
+            "expected": 323.15,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "ramp_rate_K_s"
+            ],
+            "met": true,
+            "actual": 0.1,
+            "expected": 0.1,
+            "error": null
+          }
+        ],
+        "evidence_ids": [
+          "obs-25"
+        ],
+        "api_usage_by_role": {
+          "jev": {
+            "requests": 22,
+            "tokens": 42371,
+            "reported_cost_usd": 0.0017441339999999998,
+            "reasoning_tokens": 0,
+            "max_completion_tokens": 46
+          },
+          "expert": {
+            "requests": 9,
+            "tokens": 33015,
+            "reported_cost_usd": 0.0064587640000000005,
+            "reasoning_tokens": 0,
+            "max_completion_tokens": 314
+          }
+        },
+        "router_manifest": {
+          "backend_id": "openrouter-decisions/typesafe/jev-1.14",
+          "model": "typesafe/jev-1.14",
+          "endpoint": "https://openrouter.ai/api/alpha/decisions",
+          "probability_semantics": "Native typed choice probabilities returned by Jev; not calibrated on these instrument tasks",
+          "transport_retries": 0,
+          "rules_fallback": false,
+          "context_byte_limit": 24000,
+          "reservation_policy": "Full 262144-token model context plus request bytes and framing; shared durable ledger"
+        },
+        "output_ceiling": 6144,
+        "verification_outputs": {
+          "supported": 1
+        },
+        "actual_decision_models": [
+          "typesafe/jev-1.14-20261014"
+        ]
+      }
+    }
+  ],
+  "replays": [
+    {
+      "source_event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:43",
+      "local": {
+        "backend_id": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "choice": "verify",
+        "probabilities": {
+          "diagnose": 0.23414593515431184,
+          "verify": 0.7658540648456882
+        },
+        "latency_ms": 7765.574629000184,
+        "fallback_used": false
+      },
+      "hosted": {
+        "backend_id": "openrouter-decisions/typesafe/jev-1.14",
+        "choice": "diagnose",
+        "probabilities": {
+          "diagnose": 1.0,
+          "verify": 0.0
+        },
+        "latency_ms": 714.3552510005975,
+        "fallback_used": false
+      },
+      "usage": {
+        "prompt_tokens": 1812,
+        "completion_tokens": 32,
+        "total_tokens": 1844,
+        "cost": 7.6104e-05
+      },
+      "actual_model": "typesafe/jev-1.14-20261014"
+    },
+    {
+      "source_event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:47",
+      "local": {
+        "backend_id": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "choice": "verify",
+        "probabilities": {
+          "diagnose": 0.4364390697621481,
+          "verify": 0.5635609302378519
+        },
+        "latency_ms": 8178.231956999298,
+        "fallback_used": false
+      },
+      "hosted": {
+        "backend_id": "openrouter-decisions/typesafe/jev-1.14",
+        "choice": "diagnose",
+        "probabilities": {
+          "diagnose": 1.0,
+          "verify": 0.0
+        },
+        "latency_ms": 489.17850400175666,
+        "fallback_used": false
+      },
+      "usage": {
+        "prompt_tokens": 1811,
+        "completion_tokens": 32,
+        "total_tokens": 1843,
+        "cost": 7.6062e-05
+      },
+      "actual_model": "typesafe/jev-1.14-20261014"
+    }
+  ],
+  "offline_recorded_validation": {
+    "verdicts": [
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:45",
+        "previous_status": "unresolved",
+        "accepted_by_new_contract": false
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:49",
+        "previous_status": "unresolved",
+        "accepted_by_new_contract": false
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:55",
+        "previous_status": "contradicted",
+        "accepted_by_new_contract": true
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:59",
+        "previous_status": "unresolved",
+        "accepted_by_new_contract": false
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:63",
+        "previous_status": "unresolved",
+        "accepted_by_new_contract": false
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:69",
+        "previous_status": "contradicted",
+        "accepted_by_new_contract": true
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:75",
+        "previous_status": "contradicted",
+        "accepted_by_new_contract": true
+      }
+    ],
+    "outputs": [
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:53",
+        "classification": "expert_output_truncated"
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:67",
+        "classification": "expert_output_truncated"
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:73",
+        "classification": "expert_output_truncated"
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:79",
+        "classification": "expert_output_truncated"
+      },
+      {
+        "event_id": "760e14e7-1c8c-4062-83a6-48f3f4ccd163:81",
+        "classification": "expert_output_truncated"
+      }
+    ]
+  },
+  "validation": {
+    "tests_passed": 165,
+    "test_seconds": 80.8,
+    "tools_schema_checked": 18,
+    "forbidden_context_keys": [],
+    "native_hashes_verified": 570,
+    "native_hash_mismatches": 0
+  },
+  "session_reported_and_charged_tokens": 186837,
+  "shared_ledger": {
+    "limit": 5000000,
+    "reported_tokens": 1602067,
+    "charged_tokens": 1957431,
+    "remaining_tokens": 3042569,
+    "requests_reserved": 452,
+    "requests_settled": 452,
+    "unmetered_requests": 8,
+    "inflight_or_crashed": 0,
+    "accounting_violation": false
+  }
+}

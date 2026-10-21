@@ -20,7 +20,7 @@ class ExpertEndpoint(Record):
     api_key_env: str | None = None
     max_tokens: int = Field(default=1536, ge=64, le=8192)
     timeout_seconds: float = Field(default=45, gt=0, le=180)
-    provider: Literal["local", "siliconflow"] = "local"
+    provider: Literal["local", "siliconflow", "openrouter"] = "local"
 
     @model_validator(mode="after")
     def authorized_endpoint(self):
@@ -30,6 +30,9 @@ class ExpertEndpoint(Record):
                     raise ValueError("SiliconFlow requires the explicitly authorized https://api.siliconflow.cn/v1 endpoint")
                 if not self.api_key_env:
                     raise ValueError("SiliconFlow requires an environment credential name")
+            elif self.provider == "openrouter":
+                if self.base_url.rstrip("/") != "https://openrouter.ai/api/v1" or self.api_key_env != "OPENROUTER_API_KEY":
+                    raise ValueError("OpenRouter requires the authorized endpoint and OPENROUTER_API_KEY")
             else:
                 LocalOpenJevBackend(self.base_url)  # validates loopback/root URL, never calls it
         if self.model and (self.model.endswith(":free") or "openjev" in self.model.lower()):
@@ -60,7 +63,7 @@ def load_plan(path: Path) -> ExpertPlan:
 
 
 class CompatibleExpert(LocalLlamaRoles):
-    """Configured local or explicitly authorized SiliconFlow expert transport."""
+    """Configured local or explicitly authorized SiliconFlow/OpenRouter expert transport."""
     def __init__(self, config: ExpertEndpoint):
         if not config.configured:
             raise ValueError(f"Expert {config.name} is not configured; supply a local endpoint and model ID")
@@ -84,6 +87,9 @@ class CompatibleExpert(LocalLlamaRoles):
         if self.config.provider == "siliconflow":
             body.pop("chat_template_kwargs", None)
             body["enable_thinking"] = False
+        elif self.config.provider == "openrouter":
+            body.pop("chat_template_kwargs", None)
+            body["reasoning"] = {"enabled": False}
         return body
 
     def redact(self, value):
@@ -97,7 +103,7 @@ class CompatibleExpert(LocalLlamaRoles):
 
     async def _request(self, body, timeout):
         headers = {"Authorization": f"Bearer {self._key}"} if self._key else {}
-        suffix = "/chat/completions" if self.config.provider == "siliconflow" else "/v1/chat/completions"
+        suffix = "/chat/completions" if self.config.provider in {"siliconflow", "openrouter"} else "/v1/chat/completions"
         async with httpx.AsyncClient(timeout=timeout, trust_env=False) as client:
             response = await client.post(self.config.base_url.rstrip("/") + suffix, json=body, headers=headers)
             if response.is_error:

@@ -16,6 +16,12 @@ HARD_LIMIT = 5_000_000
 DEFAULT_LEDGER = Path(__file__).resolve().parents[1] / 'results/device-expansion-budget-v1/ledger.jsonl'
 
 
+def valid_usage(usage):
+    return (isinstance(usage,dict) and all(type(usage.get(k)) is int and usage[k]>=0
+        for k in ['prompt_tokens','completion_tokens','total_tokens'])
+        and usage['total_tokens']==usage['prompt_tokens']+usage['completion_tokens'])
+
+
 class TokenBudgetExceeded(RuntimeError):
     pass
 
@@ -69,18 +75,42 @@ class TokenLedger:
         messages=body.get('messages',[])
         if not messages or any(not isinstance(m.get('content'),str) for m in messages):
             raise ValueError('Only plain text requests have a defined input bound')
-        if body.get('enable_thinking') is not False or body.get('stream') is not False:
+        thinking_off = (body.get('enable_thinking') is False or body.get('reasoning') == {'enabled': False})
+        conflicting = (body.get('enable_thinking') is True or
+                       ('reasoning' in body and body['reasoning'] != {'enabled': False}))
+        if not thinking_off or conflicting or body.get('stream') is not False:
             raise ValueError('Budgeted debug requires bounded non-thinking, non-streaming calls')
         maximum=body.get('max_tokens')
         if type(maximum) is not int or not 1 <= maximum <= 8192:
             raise ValueError('A bounded output token ceiling is required')
         bound=len(json.dumps(body,ensure_ascii=False).encode('utf-8'))+8192+maximum
+        return self._reserve_bound(body.get('model'), bound)
+
+    def reserve_decision(self, body):
+        # One closed choice, plain text only. Reserve the entire documented model
+        # context plus framing/input bytes since this API has no max_tokens knob.
+        if body.get('model') != 'typesafe/jev-1.14' or not isinstance(body.get('state'), str):
+            raise ValueError('Only the authorized text Jev decision model is supported')
+        questions=body.get('questions', {})
+        if len(questions) != 1:
+            raise ValueError('Only one bounded decision question is allowed')
+        question=next(iter(questions.values()))
+        criteria=question.get('criteria', {})
+        if (question.get('type') != 'choice' or not isinstance(criteria,dict) or not 1 <= len(criteria) <= 4
+                or any(not isinstance(k,str) or not 1 <= len(k) <= 64 or not isinstance(v,str) for k,v in criteria.items())):
+            raise ValueError('Decision requires 1-4 text choices')
+        size=len(json.dumps(body,ensure_ascii=False,allow_nan=False).encode('utf-8'))
+        if size > 24000:
+            raise ValueError('Decision input exceeds the conservative debug limit')
+        return self._reserve_bound(body['model'], 262144+8192+size)
+
+    def _reserve_bound(self, model, bound):
         with self._locked() as entries:
             state=self._state(entries)
             if state['accounting_violation'] or bound>state['remaining_tokens']:
                 raise TokenBudgetExceeded('Insufficient reserved token budget; request not sent')
             key=str(uuid4())
-            self._append({'kind':'reserve','id':key,'tokens':bound,'model':body.get('model')})
+            self._append({'kind':'reserve','id':key,'tokens':bound,'model':model})
         return key
 
     def settle(self,key,usage):
@@ -88,9 +118,7 @@ class TokenLedger:
             reservation=next(e for e in entries if e['kind']=='reserve' and e['id']==key)
             if any(e['kind']=='settle' and e['id']==key for e in entries):
                 raise ValueError('Reservation already settled')
-            complete=isinstance(usage,dict) and all(type(usage.get(k)) is int and usage[k]>=0
-                for k in ['prompt_tokens','completion_tokens','total_tokens'])
-            complete=bool(complete and usage['total_tokens']==usage['prompt_tokens']+usage['completion_tokens'])
+            complete=valid_usage(usage)
             reported=usage['total_tokens'] if complete else 0
             violation=reported>reservation['tokens']
             self._append({'kind':'settle','id':key,'reported_tokens':reported,'usage_complete':complete,
@@ -102,7 +130,8 @@ class TokenLedger:
 class BudgetedExpert(CompatibleExpert):
     def __init__(self,config,ledger):
         super().__init__(config)
-        if config.provider != 'siliconflow' or config.model != 'deepseek-ai/DeepSeek-V4.1-Flash':
+        if (config.provider, config.model) not in {('siliconflow', 'deepseek-ai/DeepSeek-V4.1-Flash'),
+                ('openrouter', 'deepseek/deepseek-v4.1-flash')}:
             raise ValueError('Only the explicitly authorized DeepSeek expert is allowed')
         self.ledger=ledger
 

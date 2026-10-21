@@ -1,0 +1,683 @@
+{
+  "date": "2026-10-21",
+  "status": "OpenRouter key limit blocks corrected real-model comparison",
+  "requested_model": "deepseek/deepseek-v4.1-flash",
+  "openrouter_failure": {
+    "http_status": 403,
+    "scope": "key_limit",
+    "limit_usd": 0,
+    "request_sent": true,
+    "model_generation_confirmed": false
+  },
+  "native_hashes_verified": 570,
+  "native_hash_mismatches": 0,
+  "budget": {
+    "limit": 5000000,
+    "reported_tokens": 976804,
+    "charged_tokens": 1256963,
+    "remaining_tokens": 3743037,
+    "requests_reserved": 339,
+    "requests_settled": 339,
+    "unmetered_requests": 4,
+    "inflight_or_crashed": 0,
+    "accounting_violation": false
+  },
+  "runs": {
+    "single-instrument-binder-v3": {
+      "trace_sha256": "344ab2a19b7de1d42172788280131d381af5d67d726f211ec741d1e09558f4fc",
+      "complete_record": true,
+      "report": {
+        "episode_id": "5b09d9dd-cec4-47e7-baf6-0f75167f1736",
+        "sample_id": "instrument:binder_fd056",
+        "status": "supported",
+        "evidence_ids": [
+          "obs-7"
+        ],
+        "hypotheses": [
+          {
+            "cause": "Timer already set to 60 s and running; only elapsed simulation time is needed for expiry.",
+            "supporting_ids": [
+              "obs-5"
+            ],
+            "contradicting_ids": []
+          }
+        ],
+        "terminal_reason": "agent_supported",
+        "action_count": 7,
+        "llm_call_count": 28,
+        "role_call_count": 12,
+        "operation_call_count": 4,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 12
+      },
+      "score": {
+        "goal_met": true,
+        "task_success": true,
+        "agent_claim_supported": true,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": true,
+        "evidence_cited": true,
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": true,
+            "actual": true,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": true,
+            "actual": 60.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 65.0,
+        "native_io_counts": {
+          "read": 6,
+          "invoke": 2,
+          "step": 7,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "agent_supported"
+      },
+      "usage": {
+        "prompt_tokens": 115140,
+        "completion_tokens": 1798,
+        "total_tokens": 116938
+      },
+      "usage_complete": true,
+      "role_counts": {
+        "diagnostic": 4,
+        "procedure": 4,
+        "verification": 4
+      },
+      "tools": [
+        {
+          "capability_id": "workflow.inspect",
+          "arguments": {}
+        },
+        {
+          "capability_id": "binder_fd056::power.set",
+          "arguments": {
+            "on": true
+          }
+        },
+        {
+          "capability_id": "binder_fd056::timer.set",
+          "arguments": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 1,
+            "fan_after": "on"
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 65
+          }
+        }
+      ]
+    },
+    "single-instrument-furnace-v1": {
+      "trace_sha256": "747d156a46781f6d3b522f4a38418ea2ee37dddf49189c52e3069061f0dfdace",
+      "complete_record": true,
+      "report": {
+        "episode_id": "3b2a6402-7779-428b-8bc6-77e1fd66915a",
+        "sample_id": "instrument:nabertherm_l9",
+        "status": "unresolved",
+        "evidence_ids": [],
+        "hypotheses": [
+          {
+            "cause": "Program is mid-ramp toward 323.15 K; hold and completion need more simulated time.",
+            "supporting_ids": [
+              "obs-11"
+            ],
+            "contradicting_ids": []
+          }
+        ],
+        "terminal_reason": "llm_budget",
+        "action_count": 13,
+        "llm_call_count": 48,
+        "role_call_count": 20,
+        "operation_call_count": 7,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 21
+      },
+      "score": {
+        "goal_met": true,
+        "task_success": true,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": true,
+        "evidence_cited": false,
+        "predicates": [
+          {
+            "state_id": "program.phase",
+            "path": [],
+            "met": true,
+            "actual": "completed",
+            "expected": "completed",
+            "error": null
+          },
+          {
+            "state_id": "program.hold_elapsed_s",
+            "path": [],
+            "met": true,
+            "actual": 10,
+            "expected": 10,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "temperature_K"
+            ],
+            "met": true,
+            "actual": 323.15,
+            "expected": 323.15,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "ramp_rate_K_s"
+            ],
+            "met": true,
+            "actual": 0.1,
+            "expected": 0.1,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 360.0,
+        "native_io_counts": {
+          "read": 9,
+          "invoke": 3,
+          "step": 36,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "llm_budget"
+      },
+      "usage": {
+        "prompt_tokens": 61831,
+        "completion_tokens": 3132,
+        "total_tokens": 64963
+      },
+      "usage_complete": true,
+      "role_counts": {
+        "diagnostic": 7,
+        "procedure": 7,
+        "verification": 6
+      },
+      "tools": [
+        {
+          "capability_id": "workflow.inspect",
+          "arguments": {}
+        },
+        {
+          "capability_id": "nabertherm_l9::power.set",
+          "arguments": {
+            "enabled": true
+          }
+        },
+        {
+          "capability_id": "nabertherm_l9::thermal.configure_program",
+          "arguments": {
+            "segments": [
+              {
+                "temperature_K": 323.15,
+                "ramp_rate_K_s": 0.1,
+                "hold_s": 10
+              }
+            ]
+          }
+        },
+        {
+          "capability_id": "nabertherm_l9::thermal.start_program",
+          "arguments": {}
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 120
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 120
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 120
+          }
+        }
+      ]
+    },
+    "router-wait-binder-v1": {
+      "trace_sha256": "ed235de40f08e9303c0915db0aeb7e46be304d026ec288d87fb5c05301eb2b17",
+      "complete_record": true,
+      "report": {
+        "episode_id": "c9d9127e-a766-447d-9bac-278b51cc408c",
+        "sample_id": "instrument:binder_fd056",
+        "status": "unresolved",
+        "evidence_ids": [],
+        "hypotheses": [],
+        "terminal_reason": "role_error",
+        "action_count": 0,
+        "llm_call_count": 2,
+        "role_call_count": 1,
+        "operation_call_count": 0,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 1,
+        "router_wait_count": 0
+      },
+      "score": {
+        "goal_met": false,
+        "task_success": false,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": false,
+        "evidence_cited": false,
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": false,
+            "actual": false,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": false,
+            "actual": 0.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 0.0,
+        "native_io_counts": {
+          "read": 2,
+          "invoke": 0,
+          "step": 0,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "role_error"
+      },
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "usage_complete": false,
+      "role_counts": {
+        "diagnostic": 1
+      },
+      "tools": []
+    },
+    "router-wait-furnace-v1": {
+      "trace_sha256": "d18c6290482adbc4886248d0949a8cba832a28255e7ed24cb6732af60ae87e4c",
+      "complete_record": true,
+      "report": {
+        "episode_id": "0eca2836-3290-4309-9a4a-ad021129528b",
+        "sample_id": "instrument:nabertherm_l9",
+        "status": "unresolved",
+        "evidence_ids": [],
+        "hypotheses": [],
+        "terminal_reason": "role_error",
+        "action_count": 0,
+        "llm_call_count": 2,
+        "role_call_count": 1,
+        "operation_call_count": 0,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 1,
+        "router_wait_count": 0
+      },
+      "score": {
+        "goal_met": false,
+        "task_success": false,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": false,
+        "evidence_cited": false,
+        "predicates": [
+          {
+            "state_id": "program.phase",
+            "path": [],
+            "met": false,
+            "actual": "idle",
+            "expected": "completed",
+            "error": null
+          },
+          {
+            "state_id": "program.hold_elapsed_s",
+            "path": [],
+            "met": false,
+            "actual": 0.0,
+            "expected": 10,
+            "error": null
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "temperature_K"
+            ],
+            "met": false,
+            "error": "list index out of range"
+          },
+          {
+            "state_id": "program.segments",
+            "path": [
+              0,
+              "ramp_rate_K_s"
+            ],
+            "met": false,
+            "error": "list index out of range"
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 0.0,
+        "native_io_counts": {
+          "read": 2,
+          "invoke": 0,
+          "step": 0,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "role_error"
+      },
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "usage_complete": false,
+      "role_counts": {
+        "diagnostic": 1
+      },
+      "tools": []
+    },
+    "router-wait-binder-v2": {
+      "trace_sha256": "47b8261a41ea3970992a9929a98607e035dbe2eff8f4a9696a12175d90e7e090",
+      "complete_record": true,
+      "report": {
+        "episode_id": "f58aaa3f-54b5-4fe7-9d8b-c7b2f8c0ff10",
+        "sample_id": "instrument:binder_fd056",
+        "status": "contradicted",
+        "evidence_ids": [
+          "obs-19"
+        ],
+        "hypotheses": [
+          {
+            "cause": "Oven is in standby (power.on=false), so timer.set would be rejected with STANDBY.",
+            "supporting_ids": [
+              "obs-17"
+            ],
+            "contradicting_ids": []
+          }
+        ],
+        "terminal_reason": "llm_budget",
+        "action_count": 19,
+        "llm_call_count": 48,
+        "role_call_count": 19,
+        "operation_call_count": 2,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 27,
+        "router_wait_count": 8
+      },
+      "score": {
+        "goal_met": false,
+        "task_success": false,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": true,
+        "evidence_cited": true,
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": false,
+            "actual": false,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": false,
+            "actual": 0.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 300.0,
+        "native_io_counts": {
+          "read": 12,
+          "invoke": 1,
+          "step": 30,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "llm_budget"
+      },
+      "usage": {
+        "prompt_tokens": 85857,
+        "completion_tokens": 1040,
+        "total_tokens": 86897
+      },
+      "usage_complete": true,
+      "role_counts": {
+        "diagnostic": 2,
+        "procedure": 2,
+        "verification": 15
+      },
+      "tools": [
+        {
+          "capability_id": "workflow.inspect",
+          "arguments": {}
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 30.0
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 30.0
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 30.0
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 30.0
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 30.0
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 30.0
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 30.0
+          }
+        },
+        {
+          "capability_id": "workflow.await",
+          "arguments": {
+            "duration_s": 90.0
+          }
+        },
+        {
+          "capability_id": "binder_fd056::power.set",
+          "arguments": {
+            "on": true
+          }
+        }
+      ]
+    },
+    "router-wait-furnace-v2": {
+      "trace_sha256": "5f6c74ec7c0909c0956318edf122a0a6666a3651260e892f373f347bce0b38d8",
+      "complete_record": false,
+      "report": null,
+      "score": null,
+      "usage": null,
+      "usage_complete": false,
+      "role_counts": {
+        "diagnostic": 6,
+        "procedure": 1
+      },
+      "tools": [
+        {
+          "capability_id": "workflow.inspect",
+          "arguments": {}
+        }
+      ]
+    },
+    "router-wait-openrouter-binder-v1": {
+      "trace_sha256": "ed80e34bd92a7699c2ed80d97b16b830eba49b39f13dbbbc704f0b03f2dbee43",
+      "complete_record": true,
+      "report": {
+        "episode_id": "fe677f47-187a-44f2-9450-0fb2bf0e6987",
+        "sample_id": "instrument:binder_fd056",
+        "status": "unresolved",
+        "evidence_ids": [],
+        "hypotheses": [],
+        "terminal_reason": "role_error",
+        "action_count": 0,
+        "llm_call_count": 2,
+        "role_call_count": 1,
+        "operation_call_count": 0,
+        "operation_backend": "openjev/OpenJev-Flash-9B-GGUF@a3acd96966b06c2f161209f888b66235029f9ac1:Q4_K_M",
+        "router_call_count": 1,
+        "router_wait_count": 0
+      },
+      "score": {
+        "goal_met": false,
+        "task_success": false,
+        "agent_claim_supported": false,
+        "false_success": false,
+        "protocol_correct": true,
+        "protocol_errors": [],
+        "fresh_evidence": false,
+        "evidence_cited": false,
+        "predicates": [
+          {
+            "state_id": "timer.state",
+            "path": [
+              "expired"
+            ],
+            "met": false,
+            "actual": false,
+            "expected": true,
+            "error": null
+          },
+          {
+            "state_id": "timer.state",
+            "path": [
+              "set_s"
+            ],
+            "met": false,
+            "actual": 0.0,
+            "expected": 60,
+            "error": null
+          }
+        ],
+        "constraints": [],
+        "pending_operation": null,
+        "lifecycle_resolved": true,
+        "simulated_seconds": 0.0,
+        "native_io_counts": {
+          "read": 2,
+          "invoke": 0,
+          "step": 0,
+          "poll": 0,
+          "cancel": 0
+        },
+        "terminal_reason": "role_error"
+      },
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "usage_complete": false,
+      "role_counts": {
+        "diagnostic": 1
+      },
+      "tools": []
+    }
+  },
+  "tests": {
+    "full_suite_passed": 147,
+    "full_suite_seconds": 108.09,
+    "targeted_passed": 8
+  },
+  "follow_up_report": "router-wait-siliconflow-comparison.md"
+}

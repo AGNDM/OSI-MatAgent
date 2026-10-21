@@ -1,0 +1,18 @@
+{
+  "reference": {
+    "name": "openrouter-deepseek-v4.1-flash",
+    "provider": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "revision": null,
+    "api_key_env": "OPENROUTER_API_KEY",
+    "max_tokens": 6144,
+    "timeout_seconds": 90
+  },
+  "contrast": {
+    "name": "contrast-not-selected",
+    "base_url": null,
+    "model": null,
+    "revision": null
+  }
+}

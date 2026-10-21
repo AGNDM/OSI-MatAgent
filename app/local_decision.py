@@ -20,6 +20,8 @@ CRITERIA = {
     "diagnose": "Inspect evidence and identify the next check or correction. Use when no actionable intent or fresh measurement exists, or verification needs another diagnosis.",
     "prepare_action": "Convert the existing diagnostic intent into a validated action proposal. Use when has_intent is true.",
     "verify": "Assess the available fresh measurement against the requested outcome. Use when a fresh measurement exists and no intent is waiting.",
+    "wait_short": "Directly advance the supported native process by the offered short duration, then read fresh state. No specialist is needed just to wait.",
+    "wait_long": "Directly advance the supported native process by the offered long duration, then read fresh state. No specialist is needed just to wait.",
     "deliberate": "Escalate ambiguous or conflicting routing information when choosing a specialist needs deliberation.",
 }
 
@@ -29,8 +31,32 @@ def option_prompt(summary: dict, allowed: list[str]) -> tuple[str, dict[str, str
         raise ValueError("Invalid allowed route set")
     options = {chr(65 + i): route for i, route in enumerate(allowed)}
     lines = [f"[{letter}] {route}: {CRITERIA[route]}" for letter, route in options.items()]
-    text = ("State:\n" + json.dumps(summary, sort_keys=True) +
-            "\n\nQuestion: Which specialist should handle the next step of this laboratory workflow?\nOptions:\n" +
+    instruction = ""
+    if 'instrument_context' in summary:
+        rich = dict(CRITERIA,
+            diagnose='Inspect or plan when no current selected intent exists, or a new error/stale selection requires revision.',
+            prepare_action='Convert the already selected intent into a proposal; use when has_intent is true.',
+            verify='Verify the FINAL objective when its public goal checks hold with fresh evidence and no pending operation; not for routine intermediate progress.')
+        lines = [f"[{letter}] {route}: {rich[route]}" for letter, route in options.items()]
+        instruction = ("Choose a routing or bounded wait action. Use the objective, predicate checks, current native state and recent actions. "
+            "Command acceptance is not process completion. If an intent is ready, prepare_action. "
+            "If all public goal conditions hold with fresh evidence and no pending operation, verify. "
+            "For a running process whose goal is not yet met and with no error, choose a wait duration from the offered menu. "
+            "If configuration, starting, correction or investigation is required, diagnose. "
+            "A fresh intermediate read alone is not a reason to verify the final goal. "
+            "Use only offered options; no host truth or reference action script is provided.\n")
+        context = summary['instrument_context']
+        if context.get('selected_intent_current') and not context.get('last_error'):
+            instruction = ("A concrete operation has ALREADY been selected for the current revision; choose prepare_action. "
+                "Read selected_intent for its exact capability and arguments. Unmet goal checks describe what this operation "
+                "is intended to change; they are not a reason to repeat diagnosis. Replan only for a new error or stale selection.\n" + instruction)
+        lines = [line + (" duration_s=" + str(summary['instrument_context']['wait_offers'][route])
+                 if route in summary['instrument_context']['wait_offers'] else "")
+                 for line, route in zip(lines, allowed)]
+    question = ("Which routing or bounded waiting action should happen next?" if instruction else
+                "Which specialist should handle the next step of this laboratory workflow?")
+    text = (instruction + "State:\n" + json.dumps(summary, sort_keys=True, ensure_ascii=False) +
+            "\n\nQuestion: " + question + "\nOptions:\n" +
             "\n".join(lines) + "\n\nAnswer with the letter of the best option only.")
     return text, options
 

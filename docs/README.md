@@ -1,10 +1,14 @@
 # Documentation
 
+- [Astra code/report review](evidence/single-instrument-code-review.md): fixed verification liveness/citation blockers, independent re-review and commit validation.
+
 ## Start here
 
 - [Current progress](status/progress.md) and [delivery checklist](status/checklist.md)
 - [Titania scientific scenario](demos/titania/scenario.md) and [reproduction guide](demos/titania/workflow.md)
 - [Recorded evaluation summary](reports/evaluation-summary.md)
+- [Binder timer and furnace demo for benchmark development](reports/single-instrument-demo-for-benchmark.md): complete model decisions, native calls, public state transitions, scoring and benchmark design requirements.
+- [Detailed demo evidence](evidence/single-instrument-demo-details.json): machine-readable tasks, per-step snapshots, requests, probabilities and provenance hashes.
 
 ## Guides
 
