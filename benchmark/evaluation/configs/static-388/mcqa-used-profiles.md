@@ -16,7 +16,7 @@ For EACH profile, render a fresh configuration with render_plan.py --plan PROFIL
 separate fresh study:
 
     "$PYTHON" -m comparison.study prepare --config "$FRESH_CONFIG" \
-      --output "$FRESH_STUDY" --track mcqa --shards 8 --max-parallel 24 \
+      --output "$FRESH_STUDY" --track mcqa --shards 8 \
       --hf-python "$HF_PYTHON" --apus-python "$APUS_PYTHON"
 
 The 22-row R2 profile additionally requires --ollama-bin "$OLLAMA_BIN" and
@@ -26,8 +26,10 @@ tokenizer and template identities. No pull/import is automatic; recreating a tag
 or changing conversion settings requires a new runtime identity. Read the original
 binary/runtime lock and per-experiment identities in the provenance manifest.
 
-Execute each generated submit.sh only after inspecting its fresh study.json.
-For direct diagnostics use comparison.run --track mcqa explicitly. Neither plan
+Inspect each fresh study.json and worker-commands.json before execution. The command
+manifest records exact argv, working directory and environment for each task;
+execute each recorded command through your own compute allocation. For direct
+diagnostics use comparison.run --track mcqa explicitly. Neither plan
 authorizes or implies any 120-case sequential workload. All 388 MCQA rows include
 232 train and 42 validation diagnostics; report the 114 held-out rows separately.
 

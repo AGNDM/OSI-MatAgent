@@ -65,7 +65,7 @@ def main(argv=None):
                         help="Use a new environment path instead of .venv or .venv-models")
     args = parser.parse_args(argv)
     if not os.environ.get("SLURM_JOB_ID") or not os.environ.get("SLURMD_NODENAME"):
-        parser.error("Submit slurm/setup.sbatch: installation requires a Slurm compute allocation")
+        parser.error("Installation requires a genuine compute allocation")
     if sys.version_info[:2] != (3, 12):
         parser.error("The dependency lock requires Python 3.12; set BENCHMARK_BOOTSTRAP_PYTHON")
     if args.model and (platform.system(), platform.machine()) != ("Linux", "x86_64"):

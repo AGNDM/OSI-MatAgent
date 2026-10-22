@@ -1,4 +1,4 @@
-> Historical protocol and study record. These notes retain earlier milestones and original site paths; use [the current package guide](../README.md) for new runs.
+> Historical protocol and study record. Earlier milestones and site paths are retained for provenance. Software tests and scheduler scripts have been removed; use [the current Python package guide](../README.md) for all new execution.
 
 # Local instrument benchmark through the application graph
 
@@ -63,55 +63,15 @@ This uses the unchanged application plus a new public benchmark adapter. It is
 a follow-up to the PDF experiment, not an exact reproduction of its hosted
 models or adapter. Independent human validity review remains outstanding.
 
-## SCITAS execution
+## Historical execution environment
 
-Every installation, import, test, hash, simulation, model run and report render
-must execute through Slurm. Launchers require real `SLURMD_NODENAME` and
-`SLURM_JOB_ID`; do not run Python on the login node. Editing, job submission,
-status queries and plain log inspection are permitted there. Standard account
-`liac` normal QoS requires a GPU even for preparation/report jobs. Override the
-account/partition with normal `sbatch` flags on another cluster.
+The study was executed in genuine Slurm allocations, with pinned graph and model
+interpreters and separately authenticated APUS dependencies. Scheduler scripts
+and software tests used during qualification are no longer included. Historical
+job IDs and receipts below remain evidence of those runs; current execution
+uses the direct Python commands in [the package guide](../README.md).
 
-From the colleague repository root, set paths in your shell. These are the
-already verified SCITAS interpreters; model and artifact caches remain outside
-tracked source:
-
-```bash
-export GRAPH_PACKAGE="$PWD/benchmark/graph"
-export GRAPH_BASE_PYTHON=/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-models/bin/python
-export GRAPH_PYTHON=/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-local/bin/python
-export GRAPH_STUDY=/scratch/dsegura/graph-studies/local-study-new
-```
-
-Use an existing validated environment receipt, or create a **fresh** isolated
-graph environment. Its `.pth` adds the frozen inference site-packages read-only;
-graph dependencies are installed into the new environment. The existing model
-environment is never installed into, removed from or changed. Setup checks both
-the isolated graph closure and the complete import-visible dependency closure,
-then constructs the actual application graph after benchmark bootstrap:
-
-```bash
-sbatch "$GRAPH_PACKAGE/slurm/setup.sbatch" \
-  --environment /scratch/dsegura/graph-environments/local-new \
-  --receipt /scratch/dsegura/graph-environments/local-new-receipt.json \
-  --app-source "$PWD" --comparison-source "$PWD/benchmark" \
-  --uv /home/dsegura/.local/bin/uv
-```
-
-After setup succeeds, point `GRAPH_PYTHON` at the new environment's `bin/python`
-if using it. APUS retains its separate pinned Transformers 5.16.1 interpreter;
-the graph expert environment uses Transformers 4.57.1. The local IPC child is on
-the same allocated GPU, not an HTTP service.
-
-Run all package checks without expensive model inference:
-
-```bash
-sbatch "$GRAPH_PACKAGE/slurm/check.sbatch" \
-  --app-source "$PWD" --comparison-source "$PWD/benchmark" \
-  --junitxml /scratch/dsegura/graph-checks/local-new.xml
-```
-
-## Prepare and run
+## Historical protocol development
 
 ### Bounded public decisions: protocol v5
 
@@ -470,108 +430,24 @@ only because its incorrect choices were replaced. Keep it separate from B's
 autonomous attempts and their source identities rather than relabeling them as
 teacher-forced runs.
 
-Preparation accepts either an explicit `experiments` list with local `expert`
-and `backend` specifications, or an `experts` × `choosers` matrix like the shipped
-template. Relative artifact paths resolve against the input JSON directory.
-`{MODEL_ROOT}` and `{ARTIFACT_ROOT}` resolve only from their explicit CLI
-arguments; shell commands and arbitrary environment expansion are not evaluated.
-HF experts must generate complete typed JSON records. HF choosers use actual
-conditional label logits, native choosers use their real released heads, and
-fitted feature choosers use existing authenticated artifacts without graph-task
-fitting. Unsupported or hosted backend kinds are rejected.
+## Historical preparation and reports
 
-```bash
-sbatch "$GRAPH_PACKAGE/slurm/prepare.sbatch" \
-  --app-source "$PWD" \
-  --app-revision 22a8192e4e40f3a7d37e1164a8755b006f932d60 \
-  --comparison-source "$PWD/benchmark" \
-  --environment-receipt /scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-local-environment-20261022/receipt.json \
-  --plan "$GRAPH_PACKAGE/examples/matrix.json" \
-  --model-root /scratch/dsegura/git/osi_hackathon_AGMAT/external/models \
-  --artifact-root /scratch/dsegura/git/osi_hackathon_AGMAT/results/local-study-features-4633985 \
-  --apus-python "$PWD/benchmark/.venv-comparison-apus/bin/python" \
-  --mode both --shards 12 --output "$GRAPH_STUDY"
-```
+Historical preparation froze the application, public adapter, comparison package,
+original instrument bundle, input plan and environment receipt. The declared
+worker manifest owned disjoint case IDs; source or configuration changes required
+a fresh study. Model, interface and budget aborts remained in cohort denominators.
 
-The optional `--app-revision` checks the source checkout's exact commit. Every
-copied file is hashed regardless of Git metadata. Preparation snapshots only
-the selected app/corpus/configs/cases/vendor resources, adapter, shared comparison
-package and original instrument bundle. Input JSON and environment receipts are
-included in the immutable source inventory. `snapshot/upstream/` exists only in
-the ignored **experiment output**, not as a tracked duplicate application.
-Preparation submits no jobs. Existing output directories are refused.
+The matrix reporter was qualified in Slurm job `4635920` and the reachability
+appendix in `4635941`. Their historical qualification receipts remain under
+`docs/provenance/`; the software tests and scheduler scripts have been removed.
+Current implementations live under `graph_local/reporting/`, with direct Python
+entry points documented in [the package guide](../README.md).
 
-After preparation completes, inspect `prepared.json` and `jobs.json` as plain
-text. The shipped 2 × 9 matrix with 12 shards declares 216 workers, each owning
-disjoint case IDs. Its array is therefore `0-215`; a changed input plan may have
-a different range. Run the frozen launcher and keep source/configuration fixed:
+Reports preserve original grades and distinguish routing, candidate selection,
+procedure/gate progress and native handoffs. Different profile, policy, backend
+or application graph protocols require separate reports. Missing records and
+closed aborts retain distinct coverage states.
 
-```bash
-mkdir -p "$GRAPH_STUDY/logs"
-export GRAPH_PACKAGE="$GRAPH_STUDY/snapshot/package"
-sbatch --array=0-215%24 \
-  --output="$GRAPH_STUDY/logs/graph-%A_%a.log" \
-  "$GRAPH_PACKAGE/slurm/run.sbatch"
-```
-
-Workers select only their declared `jobs.json` entry, verify the frozen source,
-configuration and environment package versions, and never change the cohort.
-The default H100/12 CPU/64 GB allocation also supports larger expert rows.
-Smaller model pairs can use L40S with an appropriate allocation; record hardware
-for timing comparisons. A source, input-plan or configuration change requires a
-fresh output directory. Preserve failed attempts and their original provenance.
-
-## Reports and regeneration
-
-First build the standard comparison summary from raw runs and the full frozen
-plan. Bootstrap/paired inference settings are explicit. Supply the authenticated
-failure taxonomy when available:
-
-```bash
-sbatch "$GRAPH_PACKAGE/slurm/aggregate.sbatch" \
-  --bundle "$GRAPH_STUDY/snapshot/instrument" \
-  --runs "$GRAPH_STUDY/runs" --plan "$GRAPH_STUDY/configuration.json" \
-  --output "$GRAPH_STUDY/reports/combined" \
-  --bootstrap 1000 --permutations 10000
-```
-
-Then render the actual expert × chooser matrix using the separately validated
-reporter in `tools/reporting/matrix_report.py`. It is copied byte-for-byte from
-the validated Slurm `4635920` snapshot, alongside its 26 tests, receipt and
-original validation launcher. That original `tools/reporting/run.sbatch` is
-historical provenance with machine-specific paths; use the portable
-`slurm/report.sbatch` below. The wrapper forwards original studies and the
-combined report without inventing scores:
-
-```bash
-sbatch "$GRAPH_PACKAGE/slurm/report.sbatch" \
-  --study "$GRAPH_STUDY" \
-  --combined-report "$GRAPH_STUDY/reports/combined/report.json" \
-  --output "$GRAPH_STUDY/reports/matrix"
-```
-
-The wrapper also renders `matrix/reachability/index.html` using the separately
-validated appendix from Slurm `4635941`. It distinguishes routing calls from
-operation choices, nontrivial candidate menus, procedure/gate progression and
-actual native handoffs. It reads existing ledgers and never awards a new grade.
-The exact appendix source, ten tests and validation receipt are bundled under
-`tools/reporting/reachability/`; its original machine-specific `run.sbatch` is
-retained as historical validation provenance only.
-
-Multiple `--study` inputs support separate frozen study versions. Preserve all
-declared cohorts and label partial coverage. **Do not pool study-v2 and prompt-v3
-results.** The portable wrapper checks identical profile, policy, backend and
-application graph bytes before a multi-study call. The unchanged bundled matrix
-reporter itself has no common-protocol guard; calling it directly requires the
-same restriction. Different protocols need separate reports. Keep model/format aborts in the
-120-case goal denominator and state exclusions for conditional metrics. Source
-manifests, model/runtime identities, per-step graph traces and launch provenance
-are retained alongside compact reports. Keep large raw runs and caches ignored.
-
-`tools/regenerate_mcqa.py` is the separately verified portable regeneration
-tool. It authenticates the unchanged bundle/generator bytes and calls the
-original record generator without requiring `.git`. Run it in a compute
-allocation with `--bundle <benchmark/instrument> --output <fresh-directory>`;
-generated private oracle files retain mode 0600. The original 388 public tasks
-and private oracle hashes were matched in Slurm job `4635805`. Regeneration does
-not alter the canonical instrument release.
+The original 388 public tasks and private oracle hashes were matched during
+regeneration in Slurm job `4635805`. Regeneration preserves private oracle file
+mode 0600 and does not alter the canonical instrument release.

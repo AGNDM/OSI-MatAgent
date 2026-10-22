@@ -30,14 +30,9 @@ The included Qwen adapter preserves the validated v6 rendering: selected-machine
 
 ## Run and score
 
-From the distribution root, prepare the local environment with `sbatch slurm/setup.sbatch`, then submit a reference replay:
-
-```bash
-mkdir -p output
-sbatch slurm/sequential.sbatch --policy reference --mode both
-```
-
-The launcher uses `.venv/bin/python` and a fresh job-specific output directory. These direct commands are compute-job payloads; run them inside a genuine Slurm allocation on SCITAS:
+From the distribution root, prepare the native environment with
+`python3.12 tools/setup.py`. Run these direct Python commands inside a genuine
+compute allocation, using fresh output directories:
 
 ```bash
 # Deterministic privileged reference: checks execution, not model performance.
@@ -54,16 +49,18 @@ See the CLI help for case limits used in smoke checks. A limited run reports its
 
 The optional `examples.sequential_qwen:factory` adapter uses `SEQUENTIAL_MODEL_PATH` to locate separately staged local weights. Model weights and inference dependencies are not required for static validation, static scoring or native reference replay.
 
-For the optional Qwen adapter, first submit `sbatch slurm/setup.sbatch --model` and wait for successful completion. Then supply your staged weights and request a GPU:
+For the optional Qwen adapter, prepare `python3.12 tools/setup.py --model`,
+then supply staged weights inside a GPU compute allocation:
 
 ```bash
 SEQUENTIAL_MODEL_PATH=/absolute/path/to/local/model \
-BENCHMARK_PYTHON="$PWD/.venv-models/bin/python" \
-  sbatch --qos=normal --gres=gpu:1 --cpus-per-task=6 --mem=32G --time=04:00:00 \
-  slurm/sequential.sbatch --policy examples.sequential_qwen:factory --mode both
+.venv-models/bin/python eval/sequential.py run \
+  --policy examples.sequential_qwen:factory --mode both --output output/sequential-qwen
 ```
 
-The optional model lock targets Python 3.12, Linux x86_64 and CUDA 12.6. The launcher defaults to CPU resources. Adjust the GPU request and wall time for your model and allocation; record these settings with results. Weights are not included or downloaded by the adapter.
+The optional model lock targets Python 3.12, Linux x86_64 and CUDA 12.6.
+Record the GPU allocation and time budget with results. Weights are not included
+or downloaded by the adapter.
 
 ## Organization and metrics
 

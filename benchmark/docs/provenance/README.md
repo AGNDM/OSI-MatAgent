@@ -3,9 +3,13 @@
 For the current reorganization, see the [cleanup validation](cleanup-validation.md):
 796 passed tests, portable run-profile checks and both saved-result export replays.
 
+Software tests, cluster launchers and their archived source copies were removed
+after these qualifications. The receipts remain historical evidence; current
+package integrity is checked with `instrument/eval/validate.py`.
+
 These receipts authenticate earlier installation/validation snapshots on Kuma.
 They retain the original paths, source hashes, job IDs and scope. They do not
-certify the current working tree after cleanup; use the package checks for that.
+certify the current working tree after subsequent packaging changes.
 
 | Receipt | Scope |
 | --- | --- |

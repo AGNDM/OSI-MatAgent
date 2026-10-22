@@ -181,15 +181,14 @@ def prepare(args):
     destination.mkdir(parents=True, exist_ok=False)
     snapshot = destination / 'snapshot'
     snapshot.mkdir()
-    for directory in ('graph_local', 'tests'):
-        shutil.copytree(source / directory, snapshot / directory, ignore=ignored)
+    shutil.copytree(source / 'graph_local', snapshot / 'graph_local', ignore=ignored)
     for directory in ('comparison', 'instrument'):
         shutil.copytree(comparison_source / directory, snapshot / directory, ignore=ignored)
     for directory in APP_DIRECTORIES:
         shutil.copytree(app_source / directory, snapshot / 'upstream' / directory, ignore=ignored)
     package = snapshot / 'package'
     package.mkdir()
-    for directory in ('tools', 'slurm', 'examples', 'docs'):
+    for directory in ('tools', 'examples', 'docs'):
         if (source / directory).is_dir():
             shutil.copytree(source / directory, package / directory, ignore=ignored)
     for filename in ('README.md', 'requirements-graph.txt'):

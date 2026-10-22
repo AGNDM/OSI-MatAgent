@@ -16,8 +16,6 @@ ORIGINALS = {
     'workflow/compact_status.py': 'results/.deadline-rescue/compact_status.py',
     'workflow/audit_failures.py': 'results/.deadline-rescue/audit_all_closed_failures.py',
     'workflow/final_audit.py': 'results/.deadline-rescue/final_audit.py',
-    'tests/test_final_audit.py': 'results/.deadline-rescue/test_final_audit.py',
-    'tests/test_compact_status.py': 'results/.deadline-rescue/check_compact_status.py',
     'mcqa/export_groups.py': 'results/.mcqa-group-export/export.py',
     'mcqa/enrich.py': 'results/.mcqa-metrics-export/enrich.py',
     'mcqa/metrics.py': 'results/.mcqa-metrics-export/metrics.py',

@@ -14,7 +14,6 @@ import importlib
 import json
 import os
 from pathlib import Path
-import shlex
 import shutil
 import subprocess
 import sys
@@ -24,7 +23,7 @@ from .aggregate import mcqa_calibration
 from .backends import HuggingFaceBackend
 from .policies import load_bundle
 from .run import digest, fingerprint, require_allocation, select_tasks, write_json
-from .study import _ignored, _load_rows, _write_rows, authenticate_identities, validate_partition, submission_header
+from .study import _ignored, _load_rows, _write_rows, authenticate_identities, validate_partition
 
 
 PROTOCOL = "native-readonly-conditional-label-comparison-v1"
@@ -170,27 +169,17 @@ def prepare(args):
     configuration["manifest_sha256"] = fingerprint(configuration)
     write_json(destination / "tool-study.json", configuration)
     (destination / "logs").mkdir()
-    exported = "ALL,COMPARISON_TOOL_STUDY=" + str(destination) + ",COMPARISON_PYTHON=" + str(args.python.absolute())
-    if "," in str(destination) or "," in str(args.python) or "\n" in exported:
-        raise ValueError("Study paths cannot contain commas or newlines")
-    submit_command = ["sbatch", "--parsable", "--chdir", str(snapshot),
-                      "--array", f"0-{len(jobs)-1}%{args.max_parallel}",
-                      "--output", str(destination / "logs/tool-%A_%a.log"),
-                      "--export", exported, str(snapshot / "comparison/slurm/tool-study.sbatch")]
-    merge_command = ["sbatch", "--parsable", "--chdir", str(snapshot),
-                     "--output", str(destination / "logs/merge-%j.log"),
-                     "--export", exported, str(snapshot / "comparison/slurm/merge-tool-study.sbatch")]
-    submit = destination / "submit.sh"
-    submit.write_text("\n".join(submission_header(destination) + [
-        f"receipt={shlex.quote(str(destination / 'submitted.tsv'))}",
-        '[[ ! -e "$receipt" ]] || { echo "Submission receipt exists; refuse duplicate arrays." >&2; exit 2; }',
-        "tool_job=$(" + shlex.join(submit_command) + ")",
-        'printf "%s\\ttools\\n" "$tool_job" > "$receipt"',
-        "merge_job=$(" + shlex.join(merge_command[:-1]) + ' --dependency="afterany:${tool_job%%;*}" ' + shlex.quote(merge_command[-1]) + ")",
-        'printf "%s\\tmerge\\n" "$merge_job" >> "$receipt"', 'cat "$receipt"']) + "\n")
-    submit.chmod(0o755)
+    command_manifest = destination / "worker-commands.json"
+    write_json(command_manifest, {"schema_version": 1,
+        "tool_study_manifest_sha256": configuration["manifest_sha256"],
+        "max_parallel_hint": args.max_parallel,
+        "workers": [{"index": job["array_index"], "cwd": str(snapshot),
+            "argv": [str(args.python.absolute()), "-m", "comparison.tool_track", "worker",
+                "--study", str(destination), "--index", str(job["array_index"])]} for job in jobs],
+        "merge_after_workers": {"cwd": str(snapshot), "argv": [str(args.python.absolute()),
+            "-m", "comparison.tool_track", "merge", "--study", str(destination), "--allow-partial"]}})
     print(json.dumps({"status": "prepared", "study": str(destination), "array_tasks": len(jobs),
-                      "submit_command": "bash " + shlex.quote(str(submit))}))
+                      "worker_commands": str(command_manifest)}))
 
 
 def read_study(path):
@@ -355,7 +344,8 @@ def main(argv=None):
     prepare_parser.add_argument("--python", type=Path, required=True)
     prepare_parser.add_argument("--methods", nargs="+", choices=("choice", "logprobs", "verbalized"), default=["logprobs", "verbalized"])
     prepare_parser.add_argument("--shards", type=int, default=8)
-    prepare_parser.add_argument("--max-parallel", type=int, default=8)
+    prepare_parser.add_argument("--max-parallel", type=int, default=8,
+                                help="recorded caller concurrency hint; preparation launches no workers")
     for name in ("worker", "merge"):
         command = commands.add_parser(name)
         command.add_argument("--study", type=Path, required=True)

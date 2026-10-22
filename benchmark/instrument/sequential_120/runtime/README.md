@@ -8,10 +8,9 @@ included basic40 core and thermal runtime; the other seven instruments use the
 included device runtimes and JSON data directories.
 
 Copy the entire `benchmark/instrument/` directory to another location. From its
-root, submit `sbatch slurm/setup.sbatch` to create `.venv` with Python 3.12 and
-the complete pinned native dependency lock. Submit `sbatch slurm/check.sbatch`
-to verify the copy, then use `slurm/sequential.sbatch` for native evaluation.
-An absolute `BENCHMARK_PYTHON` can select a compatible existing environment.
+root, run `python3.12 tools/setup.py` inside a compute allocation to create
+the pinned native `.venv`. Use `.venv/bin/python eval/validate.py` to verify
+the copy and `.venv/bin/python eval/sequential.py run` for native evaluation.
 No environment, model
 weights, 3D meshes or links to the original checkout are included. The native
 simulator and model policies retain the original requirement for a real Slurm
@@ -37,7 +36,7 @@ generating cases is unnecessary for evaluating the release.
 
 `requirements-model.txt` locks the optional local Hugging Face finite-label
 policy dependencies for Python 3.12, Linux x86_64 and CUDA 12.6. Submit
-`sbatch slurm/setup.sbatch --model` to create the separate `.venv-models`.
+`python3.12 tools/setup.py --model` to create the separate `.venv-models`.
 Supply pinned model files and a compatible GPU driver separately. The runtime also
 includes the lossless public history projection and its integrity checks.
 

@@ -12,9 +12,9 @@
 
 ```bash
 # Submit from the distribution root after setup.
-sbatch slurm/sequential.sbatch --policy examples.sequential_policy:factory --mode both --limit 1
+.venv/bin/python eval/sequential.py run --policy examples.sequential_policy:factory --mode both --limit 1 --output output/example-policy
 ```
 
 A factory receives public context containing the protocol, mode, shared parameter bank and menu builder. Its policy implements `choose(view, history, options)` and returns a zero-based offered-menu index, or implements `next_action(view, history)` and returns an offered action. The evaluator retains private fixtures, reference actions and scoring rules. Machine/command/parameter selections form one scored native action. See the [sequential guide](../sequential_120/README.md) for correction feedback and metrics.
 
-`sequential_qwen.py` adapts separately staged local Qwen weights to finite-label selection. Prepare `.venv-models` with `slurm/setup.sbatch --model`, set `SEQUENTIAL_MODEL_PATH` to the absolute local model directory, and use `--policy examples.sequential_qwen:factory` with a GPU allocation. Weights are never downloaded by this adapter. Record weights, decoding and resource settings with each result.
+`sequential_qwen.py` adapts separately staged local Qwen weights to finite-label selection. Prepare `.venv-models` with `python3.12 tools/setup.py --model`, set `SEQUENTIAL_MODEL_PATH` to the absolute local model directory, and use `--policy examples.sequential_qwen:factory` with a GPU allocation. Weights are never downloaded by this adapter. Record weights, decoding and resource settings with each result.

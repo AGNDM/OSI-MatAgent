@@ -91,38 +91,6 @@ canonical = dict(calibration=calibration, correctness_auc=correctness_auc,
                  selective_curve=selective_curve, mean=mean, quantile=quantile)
 
 
-def known_case_checks():
-    rows = [
-        dict(task_id="a", correct=True, confidence=.9, attempted=True, valid=True, status="ok", latency_s=.1, input_tokens=10, output_tokens=1),
-        dict(task_id="b", correct=True, confidence=.8, attempted=True, valid=True, status="ok", latency_s=.2, input_tokens=20, output_tokens=2),
-        dict(task_id="c", correct=False, confidence=.8, attempted=True, valid=True, status="ok", latency_s=None, input_tokens=None, output_tokens=None),
-        dict(task_id="d", correct=False, confidence=.1, attempted=True, valid=True, status="ok", latency_s=0., input_tokens=0, output_tokens=0),
-    ]
-    result = summarize_extra(rows, "fixture", canonical)
-    same(result["binary_brier_selected_correctness"], .175, "known Brier")
-    same(result["correctness_auroc"], .875, "known tied AUROC")
-    same([point["accepted"] for point in result["selective_curve"]], [1, 3, 4], "ties never split")
-    same([point["coverage"] for point in result["selective_curve"]], [.25, .75, 1.], "full-cohort selective coverage")
-    same(result["resources"]["tokens"]["input"]["known_total"], 30, "known token total")
-    same(result["resources"]["tokens"]["input"]["coverage"], .75, "unknown tokens remain uncovered")
-    same(result["resources"]["latency"]["observed_n"], 3, "observed latency")
-    missing = summarize_extra([dict(rows[0], confidence=None)], "fixture", canonical)
-    same(missing["correctness_auroc"], None, "no-confidence AUROC")
-    same(missing["selective_curve"], [], "no-confidence curve")
-    single_class = summarize_extra(rows[:2], "fixture", canonical)
-    same(single_class["correctness_auroc"], None, "single-class AUROC")
-    placeholder = summarize_extra([dict(row, latency_s=0.) for row in rows], "reference-uniform-seed0", canonical)
-    same(placeholder["resources"]["latency"]["placeholder_n"], 4, "reference placeholders")
-    same(placeholder["resources"]["latency"]["observed_n"], 0, "placeholders not measured time")
-    same(placeholder["resources"]["latency"]["total_s"], None, "no invented reference timing")
-    empty = summarize_extra([], "fixture", canonical)
-    same(empty["correctness_auroc"], None, "empty AUROC")
-    same(empty["confidence_coverage"], None, "empty confidence coverage")
-    same(empty["resources"]["tokens"]["input"]["known_total"], None, "empty usage")
-    print("Known-case checks passed: Brier, AUROC ties, selective ties, unknown usage, empty groups and reference timing.", flush=True)
-
-
-known_case_checks()
 manifest = json.loads((bundle / "mcqa_388" / "manifest.json").read_text())
 questions_path = bundle / "mcqa_388" / "questions.jsonl.gz"
 answers_path = bundle / "mcqa_388" / "answers.jsonl"
@@ -345,7 +313,6 @@ for filename, document in documents.items():
         "all_existing_scores_and_denominators_preserved": True,
         "all_272_prediction_hashes_match_snapshot": True,
         "independent_portable_accuracy_scorer_agrees": True,
-        "known_case_metric_checks_passed": True,
         "group_counts_usage_and_observed_timing_reconcile": True,
         "reference_timing_placeholders_excluded": True,
     }

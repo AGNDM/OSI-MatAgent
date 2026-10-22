@@ -95,6 +95,28 @@ def load_profile(study, label, expected_count, static):
                 'experiments': [row['name'] for row in config['experiments']]}}
 
 
+def verify_receiving_bundle(repository, historical_manifest, expected_bundle_sha256):
+    """Permit packaging changes only after exact historical protected-asset checks."""
+    require(sha(historical_manifest) == expected_bundle_sha256,
+            'The original R2 instrument manifest differs from the static snapshot')
+    bundle = repository / 'benchmark/instrument'
+    maintenance_path = bundle / 'tools/release.py'
+    spec = importlib.util.spec_from_file_location('static_profile_release_maintenance', maintenance_path)
+    maintenance = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(maintenance)
+    current = maintenance._inventory(bundle)
+    protected_count = maintenance._verify_frozen(bundle, read(historical_manifest), current)
+    require(read(bundle / 'manifest.json')['files'] == current,
+            'Receiving packaging inventory is stale; refresh safely with instrument/tools/release.py')
+    return {'historical_root_manifest': proof(historical_manifest),
+            'receiving_root_manifest': proof(bundle / 'manifest.json'),
+            'maintenance_source': proof(maintenance_path),
+            'protected_assets_verified': protected_count,
+            'protected_assets_match_historical': True,
+            'packaging_manifest_matches_historical': sha(bundle / 'manifest.json') == expected_bundle_sha256,
+            'policy': 'Current packaging may differ; protected data, answers, splits, graders and native runtime assets must match the original static release exactly.'}
+
+
 def sanitize(config, *, label, originals):
     result = deepcopy(config)
     result['bundle'] = '${INSTRUMENT_BUNDLE}'
@@ -150,10 +172,10 @@ def main():
             'The static snapshot differs from the published metadata profile')
     require(static['all_applicable_mcqa_attempts_present'] is True,
             'Static snapshot is incomplete')
-    require(sha(repository / 'benchmark/instrument/manifest.json') == static['bundle_sha256'],
-            'The receiving instrument bundle differs from the static snapshot')
     profiles = [load_profile(args.r2_study, 'mcqa-r2-22', 22, static),
                 load_profile(args.feature_study, 'mcqa-features-12', 12, static)]
+    receiving_bundle = verify_receiving_bundle(repository,
+        profiles[0]['study'] / 'snapshot/instrument/manifest.json', static['bundle_sha256'])
     owners = {}
     for profile in profiles:
         for name in profile['experiments']:
@@ -264,6 +286,7 @@ def main():
         'slurm_job_id': os.environ['SLURM_JOB_ID'], 'compute_node': os.environ['SLURMD_NODENAME'],
         'generator': proof(__file__), 'static_snapshot': proof(args.static_snapshot),
         'historical_profiles': [profile['manifest'] for profile in profiles],
+        'receiving_bundle_compatibility': receiving_bundle,
         'portable_profiles': files,
         'historical_path_bindings': originals,
         'loaded_model_identities_by_experiment': identities,
@@ -307,7 +330,7 @@ For EACH profile, render a fresh configuration with render_plan.py --plan PROFIL
 separate fresh study:
 
     "$PYTHON" -m comparison.study prepare --config "$FRESH_CONFIG" \\
-      --output "$FRESH_STUDY" --track mcqa --shards 8 --max-parallel 24 \\
+      --output "$FRESH_STUDY" --track mcqa --shards 8 \\
       --hf-python "$HF_PYTHON" --apus-python "$APUS_PYTHON"
 
 The 22-row R2 profile additionally requires --ollama-bin "$OLLAMA_BIN" and
@@ -317,8 +340,10 @@ tokenizer and template identities. No pull/import is automatic; recreating a tag
 or changing conversion settings requires a new runtime identity. Read the original
 binary/runtime lock and per-experiment identities in the provenance manifest.
 
-Execute each generated submit.sh only after inspecting its fresh study.json.
-For direct diagnostics use comparison.run --track mcqa explicitly. Neither plan
+Inspect each fresh study.json and worker-commands.json before execution. The command
+manifest records exact argv, working directory and environment for each task;
+execute each recorded command through your own compute allocation. For direct
+diagnostics use comparison.run --track mcqa explicitly. Neither plan
 authorizes or implies any 120-case sequential workload. All 388 MCQA rows include
 232 train and 42 validation diagnostics; report the 114 held-out rows separately.
 

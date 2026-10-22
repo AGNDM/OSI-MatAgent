@@ -30,7 +30,7 @@ PROFILES = {
 
 def require_slurm():
     if not os.environ.get("SLURM_JOB_ID") or not os.environ.get("SLURMD_NODENAME"):
-        raise RuntimeError("Run this command through comparison/slurm/*.sbatch on a compute node")
+        raise RuntimeError("Run this command inside a real Slurm compute allocation")
 
 
 def digest(path):

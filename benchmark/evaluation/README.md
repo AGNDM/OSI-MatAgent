@@ -21,12 +21,13 @@ files must not be described as byte-identical historical artifacts.
 | `workflow/compact_status.py` | Original compact exporter, run after final full export; copies authenticated fields without recalculating scores. |
 | `workflow/audit_failures.py` | Original `audit_all_closed_failures.py`, final all22-cell error audit in Slurm4646285; not the earlier weak-only audit. |
 | `workflow/final_audit.py` | Original independent closure auditor, final pass in Slurm4646411. |
-| `tests/` | Copied final-audit/compact regressions, plus confidence/resource and explicit-path-binding fixtures. |
 
 [configs/original-source-provenance.json](configs/original-source-provenance.json)
 records the original file paths, SHA256 values, final E source/cohort bindings and
 which originals were pinned by published provenance. It is generated once from
 the actual historical artifacts by `prepare_profiles.py`, without changing them.
+Historical source inventories may name tests or launch scripts that are no longer
+distributed; those entries record past provenance, not current dependencies.
 The dated [tariff capture](configs/site-tariffs-20261022.yaml) is historical evidence,
 not a live price source or invoice.
 
@@ -43,13 +44,7 @@ and standard-library modules suffice for postprocessing, with the frozen scoring
 modules described below available. Models, weights, fitted artifacts, environments
 and raw run journals are deliberately not redistributed by this package.
 
-`slurm/run.sbatch` is a small postprocessing wrapper. Set absolute
-`EVALUATION_ROOT` (this directory) and `EVALUATION_PYTHON` (an existing interpreter),
-then use `sbatch "$EVALUATION_ROOT/slurm/run.sbatch" COMMAND ...`. Its default
-SCITAS resources may be overridden with normal `sbatch` flags. It clears inherited
-CPU-binding masks and runs a single explicit command. It performs no scheduler
-mutations other than the allocation explicitly submitted by the caller.
-
+Invoke the Python entrypoints directly inside an existing compute allocation.
 The commands below are **compute-allocation payloads**, not login-node commands.
 `EVAL`, `PYTHON`, `OUT`, `STUDY`, `EVIDENCE_ROOT`, `SNAPSHOT`, `TAXONOMY` and
 `SCORER_SOURCE` denote explicit absolute paths supplied by the caller. Use fresh
@@ -105,7 +100,7 @@ There is no automatic path rewriting, source rebinding or model reload.
 
 ```bash
 "$PYTHON" "$EVAL/workflow/report_grid.py" --study "$STUDY" --evidence-root "$EVIDENCE_ROOT" \
-  --scheduler --report-launcher "$EVAL/slurm/run.sbatch" --output "$OUT/workflow-results.json"
+  --scheduler --output "$OUT/workflow-results.json"
 "$PYTHON" "$EVAL/workflow/compact_status.py" --study "$STUDY" \
   --input "$OUT/workflow-results.json" --output "$OUT/workflow-status.json"
 "$PYTHON" "$EVAL/workflow/audit_failures.py" --study "$STUDY" --output "$OUT/workflow-failures.json"
@@ -119,6 +114,8 @@ historical failure report, additionally supply `--failure-helper` with the exact
 original classifier source it records; its bytes must match that report's hash.
 For the commands above, the default is this package's `workflow/audit_failures.py`.
 All input exports/raw records remain read-only, and audit outputs refuse replacement.
+The reporter records its own Python entrypoint as launcher provenance by default;
+optionally pass `--report-launcher` with the real invoking launcher or source file.
 
 Metrics preserve original-before-correction grading. All-closed action totals include
 saved abort decisions and auxiliary queries; `native_score` action/checkpoint/group
@@ -127,7 +124,7 @@ goal denominator. Null/unknown usage is preserved. Technical, startup, unknown,
 missing or inconsistent evidence blocks final completion; evidenced model-output
 and budget aborts remain valid failed attempts. See [results/120](../../results/120/README.md).
 
-## Portable model/protocol recipe and checks
+## Portable model/protocol recipe
 
 The [static inference profiles](configs/static-388/mcqa-used-profiles.md) preserve
 the two actual input plans behind the 34 static configurations: 22 R2 methods
@@ -148,19 +145,3 @@ fresh source receipts. `analysis.mode` is descriptive metadata; the preparation
 CLI's `--mode` selects the actual execution mode and otherwise defaults to both.
 Weights/artifacts are not downloaded or inferred from labels. This creates a new
 study identity, not the historical E scheduler/evidence envelope.
-
-The combined validation entrypoint is [../slurm/check.sbatch](../slurm/check.sbatch).
-Evaluation regressions can also be run within its compute allocation, without
-raw production runs or model files:
-
-```bash
-"$PYTHON" -m pytest -q --tb=short -p no:cacheprovider "$EVAL/tests"
-```
-
-Tests use synthetic evidence and the shipped instrument saved-record scorer.
-Optionally set `EVALUATION_STUDY` to use an authenticated historical study's frozen
-scorer instead; full archival audit commands still require all original evidence.
-The focused checks cover nested/group/per-case score tampering, same-count
-stale-source evidence, technical/unknown/startup failures, legitimate model/budget
-failures, incomplete cohorts, null usage, confidence ties and explicit bindings.
-They do not launch models, replay native workflows or alter published results.

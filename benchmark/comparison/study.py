@@ -1,6 +1,6 @@
-"""Freeze, partition, run and merge a local-model comparison study through Slurm.
+"""Freeze, partition, run and merge a local-model comparison study.
 
-Preparation produces a reviewable job manifest and a shell submission script;
+Preparation produces explicit worker commands for an existing compute allocation;
 it never submits jobs. A shard always retains the complete cohort denominator.
 Merging authenticates the frozen source and rejects overlapping or foreign rows.
 """
@@ -12,7 +12,6 @@ import json
 import os
 from pathlib import Path
 import re
-import shlex
 import shutil
 import subprocess
 import sys
@@ -24,17 +23,6 @@ from .aggregate import mcqa_calibration, sequential_calibration
 
 
 PROTOCOL = "frozen-local-comparison-study-v1"
-
-
-def submission_header(destination):
-    """Set sbatch's actual submission directory, independently of caller cwd."""
-    return ["#!/usr/bin/env bash", "set -euo pipefail",
-            f"study_root={shlex.quote(str(destination))}",
-            'cd "$study_root/snapshot"',
-            # Nested submissions must not export a parent srun CPU mask.
-            'unset SLURM_CPU_BIND_LIST SLURM_CPU_BIND_TYPE SLURM_CPU_BIND_VERBOSE',
-            'unset SRUN_CPU_BIND_LIST SRUN_CPU_BIND_TYPE SRUN_CPU_BIND_VERBOSE',
-            'export SLURM_CPU_BIND=none SRUN_CPU_BIND=none']
 
 
 def _ignored(directory, names):
@@ -152,46 +140,33 @@ def prepare(args):
         "ollama_bin": str(args.ollama_bin.resolve()) if args.ollama_bin else None,
         "ollama_models": str(args.ollama_models.resolve()) if args.ollama_models else None,
         "groups": groups,
-        "submission_policy": "Preparation does not submit jobs. Review study.json and execute submit.sh through normal cluster submission authorization.",
+        "execution_policy": "Preparation does not submit jobs. Run explicit worker-commands.json entries inside suitable compute allocations, then merge. Do not execute the same worker twice.",
         "data_policy": "All-388 scores include authored train/validation rows. Heldout-114 scores are reported separately. Sequential cases have no assigned heldout split."}
     study["study_manifest_sha256"] = fingerprint(study)
     write_json(destination / "study.json", study)
     (destination / "logs").mkdir()
-    commands = submission_header(destination) + [
-                '[[ ! -e "$study_root/submitted.tsv" ]] || { echo "Study already has a submission receipt; do not duplicate arrays." >&2; exit 2; }',
-                'touch "$study_root/submitted.tsv"', "study_dependencies=()"]
+    commands = []
     for group, jobs in groups.items():
-        export = {"COMPARISON_STUDY": str(destination), "COMPARISON_RUNTIME": group,
-                  "COMPARISON_PYTHON": python_paths[group]}
+        environment = {}
         if group == "ollama":
-            export.update(COMPARISON_OLLAMA_BIN=study["ollama_bin"], COMPARISON_OLLAMA_MODELS=study["ollama_models"])
-        if any("," in str(value) or "\n" in str(value) for value in export.values()):
-            raise ValueError("Slurm export values cannot contain commas or newlines")
-        command = ["sbatch", "--parsable", "--chdir", str(snapshot),
-                   "--array", f"0-{len(jobs)-1}%{args.max_parallel}",
-                   "--output", str(destination / "logs" / f"{group}-%A_%a.log"),
-                   "--export", "ALL," + ",".join(f"{key}={value}" for key, value in export.items()),
-                   str(snapshot / "comparison/slurm/study.sbatch")]
-        commands.extend(["study_job=$(" + shlex.join(command) + ")",
-                         'study_dependencies+=("${study_job%%;*}")',
-                         'printf "%s\\t%s\\n" "$study_job" ' + shlex.quote(group) + ' >> "$study_root/submitted.tsv"'])
-    # A lightweight dependent merge runs after every array finishes, including
-    # failed tasks. Missing records remain explicit rather than silently omitted.
-    merge_command = ["sbatch", "--parsable", "--chdir", str(snapshot),
-        "--output", str(destination / "logs/merge-%j.log"),
-        "--export", "ALL,COMPARISON_STUDY=" + str(destination) + ",COMPARISON_MERGE_PYTHON=" + python_paths["hf"],
-        str(snapshot / "comparison/slurm/merge-study.sbatch")]
-    commands.extend(['study_dependency=$(IFS=:; printf "%s" "${study_dependencies[*]}")',
-        "study_merge=$(" + shlex.join(merge_command[:-1]) + ' --dependency="afterany:$study_dependency" ' + shlex.quote(merge_command[-1]) + ")",
-        'printf "%s\\tmerge\\n" "$study_merge" >> "$study_root/submitted.tsv"',
-        'cat "$study_root/submitted.tsv"'])
-    submit = destination / "submit.sh"
-    submit.write_text("\n".join(commands) + "\n")
-    submit.chmod(0o755)
+            environment.update(COMPARISON_OLLAMA_BIN=study["ollama_bin"],
+                               OLLAMA_MODELS=study["ollama_models"])
+        for job in jobs:
+            commands.append({"group": group, "index": job["array_index"],
+                "cwd": str(snapshot), "environment": environment,
+                "argv": [python_paths[group], "-m", "comparison.study", "worker",
+                    "--study", str(destination), "--group", group,
+                    "--index", str(job["array_index"])]})
+    command_manifest = destination / "worker-commands.json"
+    write_json(command_manifest, {"schema_version": 1,
+        "study_manifest_sha256": study["study_manifest_sha256"], "workers": commands,
+        "runtime_note": "An Ollama worker needs a caller-managed pinned loopback server and COMPARISON_OLLAMA_URL. Allocation, environment and concurrency are caller-owned.",
+        "merge_after_workers": {"cwd": str(snapshot), "argv": [python_paths["hf"],
+            "-m", "comparison.study", "merge", "--study", str(destination), "--allow-partial"]}})
     print(json.dumps({"status": "prepared", "study": str(destination),
                       "array_tasks": sum(map(len, groups.values())),
                       "groups": {key: len(value) for key, value in groups.items()},
-                      "submit_command": "bash " + shlex.quote(str(submit))}))
+                      "worker_commands": str(command_manifest)}))
 
 
 def read_study(path, *, authenticate=True):
@@ -455,7 +430,8 @@ def main(argv=None):
     prepare_parser.add_argument("--output", type=Path, required=True)
     prepare_parser.add_argument("--track", choices=("mcqa", "sequential", "both"), default="both")
     prepare_parser.add_argument("--shards", type=int, default=8)
-    prepare_parser.add_argument("--max-parallel", type=int, default=8)
+    prepare_parser.add_argument("--max-parallel", type=int, default=8,
+                                help="recorded caller concurrency hint; preparation launches no workers")
     prepare_parser.add_argument("--hf-python", type=Path, required=True)
     prepare_parser.add_argument("--apus-python", type=Path)
     prepare_parser.add_argument("--ollama-bin", type=Path)

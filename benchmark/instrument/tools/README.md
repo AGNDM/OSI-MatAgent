@@ -1,68 +1,27 @@
-# Setup and release maintenance
+# Setup and packaging maintenance
 
-Run these tools inside genuine Slurm compute allocations on SCITAS. The
-submission commands below run from the distribution root. Source files must
-stay unchanged while an evaluation or validation job is using them.
-
-## Environment
+Run commands from the instrument package root inside a compute allocation.
 
 ```bash
-mkdir -p output
-sbatch slurm/setup.sbatch
-```
-
-This creates `.venv` with Python 3.12 and all six pinned native dependencies.
-`sbatch slurm/setup.sbatch --model` creates `.venv-models` with the optional
-Linux x86_64 / CUDA 12.6 dependency lock. Neither mode downloads model weights.
-Installation needs a reachable package index or configured mirror; model setup
-also uses the PyTorch CUDA wheel index. The model environment is much larger.
-
-Set `BENCHMARK_BOOTSTRAP_PYTHON` to an absolute Python 3.12 interpreter if
-`python3.12` is unavailable. Pass `--environment /absolute/fresh/path` for an
-alternative environment location. Existing environments are verified and
-reused only when their pinned packages match; they are never upgraded or
-replaced. A partial or mismatched environment requires a fresh path.
-
-`BENCHMARK_PYTHON=/absolute/environment/bin/python` overrides the interpreter
-used by `slurm/check.sbatch` and `slurm/sequential.sbatch`.
-
-## Verify a copy
-
-`sbatch slurm/check.sbatch` checks published checksums, dataset consistency and
-the unit tests. For an isolated-copy native smoke check, use this compute-job
-payload:
-
-```bash
-.venv/bin/python tools/check_copy.py --output output/isolated-check
-```
-
-The output directory must be new. This checks imports outside the original
-checkout, runs the tests in a temporary copy, and executes one case with
-reference, deliberately wrong and demonstration policies in both modes. These
-six episodes test portability and correction behavior, not model performance
-or full-dataset coverage. Environments, caches and outputs are not copied.
-
-## Refresh a maintained release
-
-Colleagues running the unchanged release do not need to refresh anything.
-For reviewed documentation or packaging-tool changes, these are compute-job
-payloads:
-
-```bash
-.venv/bin/python tools/release.py refresh --version 1.1.2 --output output/release-refresh.json
+python3.12 tools/setup.py
+# Optional model-inference environment; weights remain separately staged.
+python3.12 tools/setup.py --model
 .venv/bin/python tools/release.py check --output output/release-check.json
 ```
 
-Refresh uses the previous root manifest to protect frozen questions, answer
-keys, splits, scenario specifications, core graders and vendored runtime. It
-updates the parent and sequential inventories, then validates the result;
-failed validation rolls back both manifests. Dependency locks and documentation
-are packaging metadata. Changed benchmark data or grader behavior requires a
-separate reviewed release, not an inventory refresh.
+Setup verifies existing environments against exact dependency locks and never
+upgrades or replaces them. Use `--environment /absolute/fresh/path` for another
+destination. Package installation requires an accessible package index or mirror.
 
-`manifest.json` is the release version authority. `validation.json` describes
-the distributed release and is excluded from its own checksums. Refresh does
-not rewrite that receipt: before redistributing a changed release, replace it
-with current verification evidence and the new manifest hash. Keep run-specific
-receipts under `output/`, and exclude generated environments, caches and
-outputs when sharing a copy. Keep all licences and provenance files.
+For documentation or packaging changes, refresh the file inventory:
+
+```bash
+.venv/bin/python tools/release.py refresh --output output/release-refresh.json
+```
+
+Refresh authenticates the previous inventory and refuses changes to questions,
+answers, splits, case specifications, core graders or vendored runtime. It updates
+packaging inventories and validates the resulting copy. Failed validation rolls
+back the inventories. Changed scientific content requires a separately reviewed
+release. Keep generated environments, caches and outputs out of distributions.
+Historical validation receipts retain their original identities.

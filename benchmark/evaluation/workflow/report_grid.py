@@ -495,8 +495,8 @@ def main():
     parser.add_argument('--scheduler', action='store_true')
     parser.add_argument('--stopped-study', action='store_true',
                         help='Require complete terminal accounting and label this as a final stopped-study snapshot')
-    parser.add_argument('--report-launcher', type=Path, required=True,
-                        help='The actual reporting wrapper, included by path and hash in provenance')
+    parser.add_argument('--report-launcher', type=Path, default=Path(__file__),
+                        help='Optional invoking launcher/source for provenance; defaults to this direct Python entrypoint')
     args = parser.parse_args()
     EVIDENCE_ROOT = args.evidence_root.resolve()
     study = args.study.resolve()

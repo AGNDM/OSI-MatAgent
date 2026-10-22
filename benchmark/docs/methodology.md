@@ -513,7 +513,7 @@ model-output/budget aborts from unresolved technical or startup faults.
 | [evaluation/](../evaluation/README.md) | Saved-result exporters, metric enrichment and final closure audits |
 | [review/](../review/README.md) | 150-question human-review package |
 
-On SCITAS, installation, imports/validation, tests, simulation, fitting,
+On SCITAS, installation, imports/validation, simulation, fitting,
 inference and report rendering run **through Slurm on compute nodes**. Login
 nodes are used for editing, job submission, status queries and plain log
 inspection. A source/configuration change requires a new output directory and
@@ -524,10 +524,10 @@ Start with the portable instrument package:
 ```bash
 cd benchmark/instrument
 mkdir -p output
-sbatch slurm/setup.sbatch
-# After setup succeeds:
-sbatch slurm/check.sbatch
-sbatch slurm/sequential.sbatch --policy reference --mode both
+python3.12 tools/setup.py
+.venv/bin/python eval/validate.py
+.venv/bin/python eval/sequential.py run --policy reference --mode both \
+  --output output/sequential-reference
 ```
 
 The following are **compute-job payloads**, run from that same directory inside
