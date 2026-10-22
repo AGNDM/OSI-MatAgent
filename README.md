@@ -38,8 +38,6 @@ python -m bench.instrument_eval_langgraph \
 
 Use `--mode teacher_forced` for corrected trajectories, or repeated `--case-id` arguments instead of `--all` for a subset. Calls use the exact configured model and may incur provider charges.
 
-David's complete local-model pipeline from [PR #1](https://github.com/AGNDM/OSI-MatAgent/pull/1) is included under `benchmark/`: model adapters, feature baselines, teacher-forced graph execution, graders and reporting tools. Its local-model workers retain their Slurm allocation requirements. See [benchmarking](docs/benchmarking.md) for hosted MCQA, parallel execution and local-model setup.
-
 ## Layout
 
 | Path | Purpose |
