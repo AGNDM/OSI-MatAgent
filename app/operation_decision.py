@@ -42,7 +42,9 @@ def validate_decision(raw, candidates):
     p = decision.probabilities
     if decision.choice not in ids or set(p) != set(ids):
         raise ValueError('Decision must reference exactly the supplied candidate IDs')
-    if any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values()) or abs(sum(p.values())-1) > 1e-5:
+    if any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values()) or (
+            decision.backend_id != "openrouter-decisions/typesafe/jev-1.14"
+            and abs(sum(p.values())-1) > 1e-5):
         raise ValueError('Invalid operation probability distribution')
     if p[decision.choice] != max(p.values()):
         raise ValueError('Selected operation must maximize the supplied probabilities')

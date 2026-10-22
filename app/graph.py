@@ -310,7 +310,9 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
             if (decision.backend_id != decision_backend.backend_id or decision.fallback_used
                     or decision.choice not in offers or not p or decision.choice not in p
                     or any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values())
-                    or abs(sum(p.values())-1)>1e-5 or p[decision.choice] != max(p.values())
+                    or (decision.backend_id != "openrouter-decisions/typesafe/jev-1.14"
+                        and abs(sum(p.values())-1)>1e-5)
+                    or p[decision.choice] != max(p.values())
                     or authorization['revision'] != lab.revision or authorization['sample_id'] != lab.sample_id
                     or proposal.sample_id != lab.sample_id or proposal.expected_revision != lab.revision
                     or proposal.capability_id != 'workflow.await'

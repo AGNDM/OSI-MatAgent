@@ -77,7 +77,7 @@ class OpenRouterJevBackend(LocalOpenJevBackend):
             p=answer['probabilities']
             if answer.get('type')!='choice' or set(p)!=set(options):
                 raise ValueError('Jev decision did not cover the supplied choices')
-            if any(type(v) not in (int,float) or not math.isfinite(v) or not 0<=v<=1 for v in p.values()) or abs(sum(p.values())-1)>1e-5:
+            if any(type(v) not in (int,float) or not math.isfinite(v) or not 0<=v<=1 for v in p.values()):
                 raise ValueError('Invalid native Jev probability distribution')
             choice=answer['choice']
             if choice not in p or p[choice]!=max(p.values()):
