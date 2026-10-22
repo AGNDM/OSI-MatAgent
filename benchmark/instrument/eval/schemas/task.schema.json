@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemLab instrument decision task v1",
+  "description": "Public corpus record. Solver inputs must still use instrument_bench.io.solver_view; split, tier and seed are evaluation metadata.",
+  "type": "object",
+  "required": ["schema_version", "task_id", "group_id", "instrument_id", "domain", "task_type", "difficulty", "tier", "question", "options", "observation", "contract", "goal", "budget", "split"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "task_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"},
+    "group_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"},
+    "instrument_id": {"type": "string", "minLength": 1},
+    "domain": {"type": "string", "minLength": 1},
+    "task_type": {"enum": ["predict", "diagnose", "measure", "recover", "adapt"]},
+    "decision_kind": {"enum": ["precondition", "error_prediction", "action_selection", "argument_validity", "reading_trust", "alarm_diagnosis", "protocol_step"]},
+    "difficulty": {"enum": ["L1", "L2", "L3", "L4", "L5"]},
+    "tier": {"enum": ["T1", "T2", "T3"]},
+    "question": {"type": "string", "minLength": 1},
+    "options": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["option_id", "text", "steps"], "properties": {"option_id": {"type": "string", "minLength": 1}, "text": {"type": "string"}, "steps": {"type": "array", "items": {"$ref": "#/$defs/step"}}}}},
+    "observation": {"type": "object", "required": ["observations"], "properties": {"observations": {"type": "object", "additionalProperties": {"type": "object", "required": ["value"], "properties": {"value": {}, "unit": {"type": ["string", "null"]}, "quality": {"type": ["string", "null"]}}}}}},
+    "contract": {"type": "object", "required": ["capabilities", "state_slots"], "properties": {"capabilities": {"type": "object", "not": {"required": ["fault.inject"]}}, "state_slots": {"type": "object", "propertyNames": {"not": {"pattern": "^truth\\."}}}}},
+    "goal": {"type": "object", "required": ["objective", "conditions", "proposed_steps"], "properties": {"objective": {"type": "string"}, "conditions": {"type": "array", "items": {"type": "object", "properties": {"visibility": {"const": "agent"}}}}, "proposed_steps": {"type": "array", "items": {"$ref": "#/$defs/step"}}}},
+    "budget": {"type": "object", "required": ["max_actions", "max_sim_time_s"], "properties": {"max_actions": {"type": "integer", "minimum": 1}, "max_sim_time_s": {"type": "number", "minimum": 0}}},
+    "split": {"enum": ["train", "validation", "test", "test_template", "test_fault", "test_instrument"]}
+  },
+  "not": {"anyOf": [{"required": ["correct_option_ids"]}, {"required": ["candidate_results"]}, {"required": ["setup_steps"]}, {"required": ["reference_steps"]}, {"required": ["information_witness"]}]},
+  "$defs": {
+    "step": {"type": "object", "required": ["kind"], "properties": {"kind": {"enum": ["invoke", "read", "wait", "answer", "escalate"]}, "actor": {"enum": ["agent", "host"]}, "capability_id": {"type": ["string", "null"], "not": {"enum": ["fault.inject", "plant.configure"]}}, "arguments": {"type": "object"}, "dt_s": {"type": "number", "minimum": 0, "maximum": 86400}, "state_ids": {"type": ["array", "null"], "items": {"type": "string", "not": {"pattern": "^truth\\."}}}, "answer": {"type": ["string", "null"]}}}
+  }
+}

@@ -1,0 +1,262 @@
+{
+ "schema": "chemsim.incubator_model.v1",
+ "asset_type_id": "instrument.eppendorf_cellxpertc170i",
+ "built": "2026-10-01",
+ "parameters": {
+  "c_wall_j_k": {
+   "value": 40000.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "ua_wall_w_k": {
+   "value": 2.5505437536899986,
+   "evidence": "derived",
+   "note": "fitted: HTD 14 h (manual §13.4.2)"
+  },
+  "g_air_wall_w_k": {
+   "value": 9.104623660502288,
+   "evidence": "derived",
+   "note": "fitted: 30 s door-opening recovery chart (brochure p.6)"
+  },
+  "g_door_w_k": {
+   "value": 0.3,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "heater_max_w": {
+   "value": 1100.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "electronics_w": {
+   "value": 25.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "k_leak_per_s": {
+   "value": 1.5e-05,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "k_port_per_s": {
+   "value": 0.0003,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "k_gasket_fault_per_s": {
+   "value": 0.002,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "k_unlatched_per_s": {
+   "value": 5e-06,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "k_outer_only_per_s": {
+   "value": 0.0002,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "k_door_open_per_s": {
+   "value": 0.14041716933692788,
+   "evidence": "derived",
+   "note": "fitted: 30 s door-opening recovery chart (brochure p.6)"
+  },
+  "q_co2_max_mol_s": {
+   "value": 0.0025877090566483662,
+   "evidence": "derived",
+   "note": "fitted: 30 s door-opening recovery chart (brochure p.6)"
+  },
+  "q_n2_max_mol_s": {
+   "value": 0.0137,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "gas_restart_delay_s": {
+   "value": 20.517441365338442,
+   "evidence": "derived",
+   "note": "fitted: 30 s door-opening recovery chart (brochure p.6)"
+  },
+  "tau_t_sensor_s": {
+   "value": 8.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "tau_ndir_s": {
+   "value": 10.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "tau_o2_sensor_s": {
+   "value": 8.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "tau_rh_sensor_s": {
+   "value": 60.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "tau_rh_covered_s": {
+   "value": 3600.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "noise_t_k": {
+   "value": 0.02,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "noise_co2": {
+   "value": 0.0002,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "noise_o2": {
+   "value": 0.0004,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "noise_rh": {
+   "value": 0.003,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "h_m_tray_m_s": {
+   "value": 0.002,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "g_tray_w_k": {
+   "value": 6.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "h_m_glass_m_s": {
+   "value": 0.001,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "dt_glass_latched_k": {
+   "value": 0.3,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "dt_glass_unlatched_k": {
+   "value": 2.5,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "g_cold_spot_m3_s": {
+   "value": 0.00026,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "dt_cold_spot_k": {
+   "value": 2.951323465659971,
+   "evidence": "derived",
+   "note": "fitted: RH 92.5 % at 37 C (manual §13.4.4)"
+  },
+  "internal_heat_k": {
+   "value": 4.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "kp_air": {
+   "value": 1.2,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "ki_air": {
+   "value": 0.004,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "wall_band_lo_k": {
+   "value": -1.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "wall_band_hi_k": {
+   "value": 1.5,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "kp_wall": {
+   "value": 1.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "door_hold_s": {
+   "value": 300.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "kp_co2": {
+   "value": 60.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "ki_co2": {
+   "value": 0.02,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "kp_o2": {
+   "value": 40.0,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  },
+  "ki_o2": {
+   "value": 0.02,
+   "evidence": "assumption",
+   "note": "engineering value (not published)"
+  }
+ },
+ "fit_report": {
+  "htd": {
+   "ua_wall_w_k": 2.5505437536899986,
+   "duration_h": 14.0,
+   "result": "successful",
+   "steady_heater_w_at_37C": 32.55598129058998
+  },
+  "door": {
+   "fit": {
+    "k_door_open_per_s": 0.14041716933692788,
+    "g_air_wall_w_k": 9.104623660502288,
+    "q_co2_max_mmol_s": 2.5877090566483663,
+    "gas_restart_delay_s": 20.517441365338442,
+    "chart_t_open_s": 10.79444194396865,
+    "tau_ext_T_s": 5.4714189234865245,
+    "tau_ext_CO2_s": 19.16519522290831
+   },
+   "cost": 0.8898576885665248,
+   "n_eval": 468,
+   "rms_T_K": 0.44944306851702764,
+   "rms_CO2_percent": 0.22020731002474855,
+   "model_T_min_C": 26.368928079064858,
+   "chart_T_min_C": 25.3882,
+   "model_CO2_min_percent": 0.5914779089055845,
+   "chart_CO2_min_percent": 0.0713,
+   "model_T98_s": 91.20555805603135,
+   "model_CO2_98_s": 243.20555805603135,
+   "model_CO2_overshoot_percent": 0.04575308154586111
+  },
+  "rh": {
+   "dt_cold_spot_k": 2.951323465659971,
+   "rh_steady": 0.9249988950303066,
+   "tray_left_after_24h_L": 1.9791806713188633,
+   "rh_min_after_30s_opening": 0.2638244553061295,
+   "rh_80_after_s": 1027.0,
+   "rh_90_after_s": 1838.0
+  }
+ },
+ "method": "scripts: outputs/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/calibrate_incubator.py (brentq for UA and the cold-spot temperature difference, Nelder-Mead on the chart)",
+ "nuisance": {
+  "chart_t_open_s": 10.79444194396865,
+  "tau_ext_T_s": 5.4714189234865245,
+  "tau_ext_CO2_s": 19.16519522290831,
+  "note": "external-sensor lags and the door time of the chart are fitted but not used by the runtime"
+ }
+}

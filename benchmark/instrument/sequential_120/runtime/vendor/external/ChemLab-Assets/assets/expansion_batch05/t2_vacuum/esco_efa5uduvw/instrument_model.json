@@ -1,0 +1,777 @@
+{
+ "schema_version": "1.0.0",
+ "catalog_id": "CHEM-199",
+ "asset_type_id": "instrument.esco_efa5uduvw",
+ "built_at": "2026-10-04T01:22:58.302587+00:00",
+ "built_by": "outputs/expansion_batch05/t2_vacuum/esco_efa5uduvw/build_hood_libraries.py",
+ "documented": {
+  "model_item_code": {
+   "value": "EFA-5UDUVW-9 (2090256)",
+   "unit": "1",
+   "note_zh": "型号EFA-5UDUVW-9（物料号2090256；1.5 m、900 mm深、Resinate Plus内衬、垂直移门、Esco白、110–120 VAC）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "(2090256)",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "110-120 VAC, 50/60 Hz"
+  },
+  "external_dimensions_m": {
+   "value": {
+    "w": 1.525,
+    "d": 0.9,
+    "h": 1.406
+   },
+   "unit": "m",
+   "note_zh": "外形1525 W×900 D×1406 H mm（柜体，不含底柜）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1525 x 900 x 1406 mm",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "Fume Hood unit only"
+  },
+  "height_with_collar_m": {
+   "value": 1.521,
+   "unit": "m",
+   "note_zh": "含排风接口高1521 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1525 x 900 x 1521 mm",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "With Exhaust Collar"
+  },
+  "height_full_sash_m": {
+   "value": 1.603,
+   "unit": "m",
+   "note_zh": "移门全开时高1603 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1525 x 900 x 1603mm",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "With Fully-opened Sash"
+  },
+  "internal_dimensions_m": {
+   "value": {
+    "w": 1.301,
+    "d": 0.675,
+    "h": 1.23
+   },
+   "unit": "m",
+   "note_zh": "内腔1301 W×675 D×1230 H mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1301 x 675 x 1230 mm",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "exhaust_design_30": {
+   "value": {
+    "sash_m": 0.457,
+    "face_velocity_m_s": 0.3,
+    "flow_m3_s": 0.21583333333333332,
+    "static_pa": 14.6
+   },
+   "unit": "1",
+   "note_zh": "窗位457 mm、面风速0.3 m/s时需排风777 m³/h、静压14.6 Pa",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "777 cmh at 14.6 Pa",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "exhaust_design_40": {
+   "value": {
+    "sash_m": 0.457,
+    "face_velocity_m_s": 0.4,
+    "flow_m3_s": 0.26166666666666666,
+    "static_pa": 23.7
+   },
+   "unit": "1",
+   "note_zh": "窗位457 mm、面风速0.4 m/s时需排风942 m³/h、静压23.7 Pa",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "942 cmh at 23.7 Pa",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "exhaust_design_50": {
+   "value": {
+    "sash_m": 0.457,
+    "face_velocity_m_s": 0.5,
+    "flow_m3_s": 0.3269444444444444,
+    "static_pa": 34.7
+   },
+   "unit": "1",
+   "note_zh": "窗位457 mm、面风速0.5 m/s时需排风1177 m³/h、静压34.7 Pa",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1177 cmh at 34.7 Pa",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "exhaust_full_30": {
+   "value": {
+    "sash_m": 0.67,
+    "face_velocity_m_s": 0.3,
+    "flow_m3_s": 0.3263888888888889,
+    "static_pa": 28.7
+   },
+   "unit": "1",
+   "note_zh": "窗位670 mm、面风速0.3 m/s时需排风1175 m³/h、静压28.7 Pa",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1175 cmh at 28.7 Pa",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "exhaust_full_40": {
+   "value": {
+    "sash_m": 0.67,
+    "face_velocity_m_s": 0.4,
+    "flow_m3_s": 0.43222222222222223,
+    "static_pa": 49.3
+   },
+   "unit": "1",
+   "note_zh": "窗位670 mm、面风速0.4 m/s时需排风1556 m³/h、静压49.3 Pa",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1556 cmh at 49.3 Pa",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "exhaust_full_50": {
+   "value": {
+    "sash_m": 0.67,
+    "face_velocity_m_s": 0.5,
+    "flow_m3_s": 0.5438888888888889,
+    "static_pa": 76.6
+   },
+   "unit": "1",
+   "note_zh": "窗位670 mm、面风速0.5 m/s时需排风1958 m³/h、静压76.6 Pa",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1958 cmh at 76.6 Pa",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "exhaust_outlet": {
+   "value": {
+    "diameter_m": 0.305,
+    "material": "fiberglass",
+    "count": 1
+   },
+   "unit": "1",
+   "note_zh": "排风口直径305 mm（玻璃钢），1个",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "305 mm (12.0”), Fiberglass",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "lamp_intensity_lux": {
+   "value": 915.0,
+   "unit": "lux",
+   "note_zh": "照明915 lux（85 fc）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "915 lux (85 foot-candles)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "nominal_power_w": {
+   "value": 100.0,
+   "unit": "W",
+   "note_zh": "额定功率100 W（仅照明）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "100 W (lighting only)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "full_load_amps_a": {
+   "value": 32.0,
+   "unit": "A",
+   "note_zh": "柜体满载电流32 A（含插座回路）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Cabinet Full Load Amps (FLA) 32 A",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "controller": {
+   "value": "rocker switches",
+   "unit": "1",
+   "note_zh": "默认控制为翘板开关（照明、风机）；可升级Sentinel XL",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Rocker Switches (default)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "shipping_weight_kg": {
+   "value": 310.0,
+   "unit": "kg",
+   "note_zh": "运输重量310 kg（柜体，不含底柜）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "310 Kg (683 lbs)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "sash_glass": {
+   "value": "laminated tempered glass 6 mm",
+   "unit": "1",
+   "note_zh": "移门玻璃6 mm夹层钢化玻璃",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Laminated-Tempered Glass (6 mm)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "face_pitch_deg": {
+   "value": 5.0,
+   "unit": "deg",
+   "note_zh": "正面5°倾角（规格表“50 Sloped”为5°的排版）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "5­° Face Pitch",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "work_opening_m": {
+   "value": 0.46,
+   "unit": "m",
+   "note_zh": "工作开口460 mm（18 in）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Work Opening 460 mm (18\")",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "max_sash_opening_m": {
+   "value": 0.67,
+   "unit": "m",
+   "note_zh": "移门最大开度670 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Maximum Sash Opening 670 mm (26.4”)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "sash_stop_m": {
+   "value": 0.457,
+   "unit": "m",
+   "note_zh": "移门限位：超过457 mm要越过限位",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Sash stop limits sash movement beyond 457 mm (18.0”)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "creep_down": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "移门高于457 mm且未扶住时自动降回安全位置（Creep Down）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "automatically lower the sash to its safe level (unless held in place)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "key_lock": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "钥匙锁：限制457 mm以上开度，或把移门锁在全关",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Key Lock feature",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "lock down the sash in its fully closed position"
+  },
+  "sight_line_m": {
+   "value": 1.803,
+   "unit": "m",
+   "note_zh": "视线高度1803 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "High sight line of 1803 mm",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "collar_from_left_m": {
+   "value": 0.763,
+   "unit": "m",
+   "note_zh": "排风口中心距左外侧763 mm（5英尺型）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "610 mm / 763 mm / 915 mm",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "collar_from_rear_m": {
+   "value": 0.2245,
+   "unit": "m",
+   "note_zh": "排风口中心距后外侧224.5 mm（顶视图）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "224.5 mm",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "sash_above_top_m": {
+   "value": 0.203,
+   "unit": "m",
+   "note_zh": "移门全开时高出柜顶203 mm（侧视图）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "203 mm (8\")",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "inner_height_m": {
+   "value": 1.233,
+   "unit": "m",
+   "note_zh": "内腔高1233 mm（侧视图）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "1233 mm (48.5\")",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "working_height_m": {
+   "value": 0.457,
+   "unit": "m",
+   "note_zh": "工作窗位457 mm（前视图）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "457 mm (18 \") Working Height",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "sash_full_open_m": {
+   "value": 0.67,
+   "unit": "m",
+   "note_zh": "移门全开670 mm（前视图）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "670 mm (26.4\") Sash Full Open",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "body_material": {
+   "value": "electrogalvanized steel, Isocide powder coat",
+   "unit": "1",
+   "note_zh": "柜体电镀锌钢板+Isocide粉末涂层",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Electrogalvanized steel with Epoxy-polyester hybrid Isocide™ powder coating",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "liner_material": {
+   "value": "Esco Resinate Plus / Haysite FRP",
+   "unit": "1",
+   "note_zh": "内衬Resinate Plus/Haysite玻璃钢",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Esco Resinate™ Plus/Haysite (Fiberglass Reinforced Plastic)",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "worktop_material": {
+   "value": "epoxy resin",
+   "unit": "1",
+   "note_zh": "台面环氧树脂",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Worktop Epoxy Resin",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "sash_drive": {
+   "value": "chain and sprocket",
+   "unit": "1",
+   "note_zh": "移门为链条链轮平衡系统",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Chain and sprocket sash system",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "parts_drawing": {
+   "value": [
+    "sash keylock",
+    "sash glass",
+    "sash frame",
+    "front panel",
+    "sash stopper",
+    "airflow alarm",
+    "light and fan switches",
+    "side vane",
+    "electrical outlets",
+    "LED lamp",
+    "exhaust collar",
+    "baffle",
+    "sash handle",
+    "service fixture cold water",
+    "service fixture gas",
+    "internal liner"
+   ],
+   "unit": "1",
+   "note_zh": "工程图零件：钥匙锁、移门玻璃与框、前面板、限位、风速报警位、照明与风机开关、侧导流板、插座、LED灯、排风口、导流板、把手、冷水与燃气龙头、内衬",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Light and Fan Switches",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "Service Fixture, Cold Water"
+  },
+  "ashrae_certificate": {
+   "value": {
+    "face_velocity_m_s": 0.31,
+    "flow_m3_s": 0.1527777777777778,
+    "test_positions_ppm": 0.01,
+    "sash_movement_ppm": 0.01,
+    "opening_scans_ppm": 0.05,
+    "model": "EFA-4"
+   },
+   "unit": "1",
+   "note_zh": "ASHRAE 110-2016型式试验（EFA-4，0.31 m/s，550 m³/h）：各测试位<0.010 ppm，移门移动<0.010 ppm，开口扫描<0.050 ppm",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "At all test positions: <0.010ppm",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "Sash movement effect: <0.010ppm"
+  },
+  "sentinel_option": {
+   "value": "SXL-EFA 5070084",
+   "unit": "1",
+   "note_zh": "Sentinel XL风速监视器（出厂安装；需现场校准）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "SXL-EFA 5070084",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "blower_option": {
+   "value": {
+    "model": "Plastec P30-6",
+    "power_hp": 0.75,
+    "rpm": 1140
+   },
+   "unit": "1",
+   "note_zh": "可选排风机Plastec P30-6（0.75 hp、1140 rpm）",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Plastec P30-6",
+   "evidence_file": "source_cache/brochure.txt",
+   "label_quote": "1140 RPM"
+  },
+  "damper_option": {
+   "value": "12 in manual damper",
+   "unit": "1",
+   "note_zh": "可选12 in手动风阀",
+   "evidence": "documented",
+   "source_id": "manufacturer_brochure",
+   "quote": "Manual Damper for Fume Hoods, 12\" Dia.",
+   "evidence_file": "source_cache/brochure.txt"
+  },
+  "sxl_low_alarm_m_s": {
+   "value": 0.3,
+   "unit": "m/s",
+   "note_zh": "Sentinel低报警默认0.3 m/s（可调）",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "Default: 0.3 m/s (59 fpm) - adjustable",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_high_alarm_m_s": {
+   "value": 0.7,
+   "unit": "m/s",
+   "note_zh": "Sentinel高报警默认0.7 m/s（可调）",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "Default: 0.7 m/s (138 fpm) - adjustable",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_audible_dba": {
+   "value": 85.0,
+   "unit": "dBA",
+   "note_zh": "报警声85 dBA（可静音）",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "85 dBA",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_leds": {
+   "value": [
+    "SAFE green",
+    "UNSAFE red",
+    "MUTE yellow"
+   ],
+   "unit": "1",
+   "note_zh": "指示灯：SAFE绿、UNSAFE红、MUTE黄",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "SAFE (Green), UNSAFE (Red), MUTE (Yellow)",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_velocity_range_m_s": {
+   "value": [
+    0.2,
+    0.9
+   ],
+   "unit": "m/s",
+   "note_zh": "风速传感器量程0.2–0.9 m/s",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "0.2 - 0.9 m/s (39 - 177 fpm)",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_temp_comp_c": {
+   "value": [
+    18.0,
+    30.0
+   ],
+   "unit": "degC",
+   "note_zh": "温度补偿范围18–30 °C",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "18°C - 30°C (64°F - 86°F)",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_panel_m": {
+   "value": {
+    "w": 0.112,
+    "h": 0.08
+   },
+   "unit": "m",
+   "note_zh": "控制面板112×80 mm",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "112 mm (4.4\") x 80 mm (3.1\")",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_night_setback": {
+   "value": "SPST NO relay input; close to mute alarm",
+   "unit": "1",
+   "note_zh": "夜间节能继电器输入：闭合即静音报警",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "Close relay to mute alarm",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_power_w": {
+   "value": 2.7,
+   "unit": "W",
+   "note_zh": "功耗2.7 W",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "2.7 W",
+   "evidence_file": "source_cache/sentinel.txt"
+  },
+  "sxl_features": {
+   "value": [
+    "temperature compensated sensor",
+    "user-configurable PIN",
+    "metric / imperial units",
+    "self-test",
+    "membrane keypad"
+   ],
+   "unit": "1",
+   "note_zh": "温度补偿传感器、PIN、公/英制单位、自检、薄膜键盘",
+   "evidence": "documented",
+   "source_id": "sentinel_xl_sheet",
+   "quote": "Temperature compensated airflow sensor",
+   "evidence_file": "source_cache/sentinel.txt",
+   "label_quote": "User-configurable PIN"
+  }
+ },
+ "engineering": {
+  "a_eff_closed_m2": {
+   "value": 0.38,
+   "unit": "m2",
+   "evidence": "assumption",
+   "engineering_note_zh": "移门全关时的旁通与缝隙有效面积（厂家“Functionally Robust Bypass”只给示意图；取值使移门全关时面风速约为457 mm时的2倍、低于0.7 m/s高报警，工程值）"
+  },
+  "k_hood_closed": {
+   "value": 1500.0,
+   "unit": "Pa/(m3/s)^2",
+   "evidence": "assumption",
+   "engineering_note_zh": "移门全关时柜体阻力系数（旁通格栅，工程值；窗位之间按开度线性插值）"
+  },
+  "flow_time_constant_s": {
+   "value": 2.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "排风量对风阀/风机/移门变化的一阶响应时间常数（风管与风机惯性，工程值）"
+  },
+  "building_suction_pa": {
+   "value": 250.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "建筑排风总管在本支管处的静压（负压，工程默认值；由宿主声明）"
+  },
+  "duct_k": {
+   "value": 3000.0,
+   "unit": "Pa/(m3/s)^2",
+   "evidence": "assumption",
+   "engineering_note_zh": "支管风管阻力系数（约10 m的Ø305 mm风管加弯头，工程默认值）"
+  },
+  "damper_k1": {
+   "value": 3000.0,
+   "unit": "Pa/(m3/s)^2",
+   "evidence": "assumption",
+   "engineering_note_zh": "手动风阀阻力系数K=K1·(1/θ−1)²（θ为开度，工程值）"
+  },
+  "blower_curve": {
+   "value": {
+    "p0_pa": 420.0,
+    "c_pa_s2_m6": 500.0
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "专用风机（Plastec P30-6类）风压曲线Δp=p0·s²−c·Q²（s为变频转速比，工程值，非厂家曲线）"
+  },
+  "creep_speed_m_s": {
+   "value": 0.02,
+   "unit": "m/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "移门自降速度（链条平衡的配重差，工程值）"
+  },
+  "evaporation_k_m": {
+   "value": {
+    "k0": 0.003,
+    "k1": 0.004
+   },
+   "unit": "m/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "敞口液面传质系数k_m=k0+k1·u（u为柜内液面风速，工程值）"
+  },
+  "inner_air_speed_factor": {
+   "value": {
+    "a": 0.6,
+    "b": 0.03
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "柜内液面风速u=a·面风速+b（工程值）"
+  },
+  "containment": {
+   "value": {
+    "v50_m_s": 0.0715,
+    "scale_m_s": 0.017,
+    "cross_factor": 0.5,
+    "turbulence_onset_m_s": 0.75,
+    "turbulence_scale_m_s": 0.05,
+    "turbulence_amplitude": 0.0001
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "泄漏分数e=1/(1+exp((v_eff−v50)/s))+湍流项，v_eff=面风速−0.5·横向气流；按ASHRAE证书（0.31 m/s、4 L/min SF6时呼吸带<0.010 ppm）标定使设计点约0.005 ppm；尺度取0.017 m/s使（默认横向气流0.05 m/s下）面风速0.15 m/s时约4 %、0.20 m/s时约0.2 %、0.25 m/s时约0.01 %泄漏（逐渐变差，工程值，不是本型号的实测曲线）"
+  },
+  "room_cross_draft_m_s": {
+   "value": 0.05,
+   "unit": "m/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "室内横向气流默认值（ASHRAE试验条件附近，工程值；评测者可改）"
+  },
+  "breathing_zone_dilution_m3_s": {
+   "value": 0.05,
+   "unit": "m3/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "操作者呼吸带的局部稀释风量（ASHRAE假人位，工程值）"
+  },
+  "walk_by_cross_draft_m_s": {
+   "value": 0.25,
+   "unit": "m/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "有人从柜前走过时附加的横向气流（工程值）"
+  },
+  "sensor": {
+   "value": {
+    "gain_error_max": 0.1,
+    "noise_m_s": 0.004,
+    "time_constant_s": 1.0,
+    "temp_coeff_per_k": 0.005
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "Sentinel风速传感器：未现场校准时增益误差在±10 %内（按噪声种子），读数噪声0.004 m/s，时间常数1 s，18–30 °C外每K误差0.5 %（工程值）"
+  },
+  "reference_anemometer": {
+   "value": {
+    "bias_max": 0.02,
+    "noise_m_s": 0.005
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "现场校准用的参考热式风速计：系统误差±2 %内（按噪声种子）、每次网格平均读数噪声±0.005 m/s（工程值）"
+  },
+  "alarm_delay_s": {
+   "value": 5.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "风速越过报警设定后到报警的延时（工程值；厂家资料未给出）"
+  },
+  "self_test_s": {
+   "value": 3.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "自检时间（全部指示灯与蜂鸣器亮/响，工程值）"
+  },
+  "menu_timeout_s": {
+   "value": 30.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "设置菜单无操作自动退出时间（工程值）"
+  },
+  "water_supply": {
+   "value": {
+    "pressure_pa": 300000.0,
+    "max_flow_m3_s": 0.00015
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "冷水龙头：供水表压300 kPa时全开约9 L/min（工程值）"
+  },
+  "gas_supply": {
+   "value": {
+    "pressure_pa": 1743.0,
+    "max_flow_m3_s": 0.0001
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "燃气龙头：供气表压7 in WC（1.74 kPa）时全开约6 L/min天然气（工程值）"
+  },
+  "net_mass_kg": {
+   "value": 270.0,
+   "unit": "kg",
+   "evidence": "assumption",
+   "engineering_note_zh": "柜体净重：运输重量310 kg减包装木箱约40 kg（工程估计；厂家未给净重）"
+  },
+  "lamp_power_w": {
+   "value": 100.0,
+   "unit": "W",
+   "evidence": "documented_derived",
+   "engineering_note_zh": "照明功率（厂家额定功率100 W全部计为照明）"
+  }
+ },
+ "derived": {
+  "a_eff_457": {
+   "value": 0.6657777777777778,
+   "unit": "m2",
+   "note_zh": "窗位457 mm的有效开口面积（排风量/面风速的最小二乘，含旁通与导流翼；单点偏差≤8.1 %）",
+   "sources": [
+    "exhaust_design_30",
+    "exhaust_design_40",
+    "exhaust_design_50"
+   ]
+  },
+  "k_hood_457": {
+   "value": 328.8103981178191,
+   "unit": "Pa/(m3/s)^2",
+   "note_zh": "窗位457 mm的柜体阻力系数（静压=k·Q²的最小二乘；单点偏差≤5.3 %）",
+   "sources": [
+    "exhaust_design_30",
+    "exhaust_design_40",
+    "exhaust_design_50"
+   ]
+  },
+  "a_eff_670": {
+   "value": 1.0855,
+   "unit": "m2",
+   "note_zh": "窗位670 mm的有效开口面积（排风量/面风速的最小二乘，含旁通与导流翼；单点偏差≤0.5 %）",
+   "sources": [
+    "exhaust_full_30",
+    "exhaust_full_40",
+    "exhaust_full_50"
+   ]
+  },
+  "k_hood_670": {
+   "value": 261.12494713178,
+   "unit": "Pa/(m3/s)^2",
+   "note_zh": "窗位670 mm的柜体阻力系数（静压=k·Q²的最小二乘；单点偏差≤3.2 %）",
+   "sources": [
+    "exhaust_full_30",
+    "exhaust_full_40",
+    "exhaust_full_50"
+   ]
+  },
+  "hood_volume_m3": {
+   "value": 1.08015525,
+   "unit": "m3",
+   "note_zh": "内腔容积（内尺寸之积）",
+   "sources": [
+    "internal_dimensions_m"
+   ]
+  }
+ }
+}

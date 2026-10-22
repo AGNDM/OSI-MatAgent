@@ -1,0 +1,50 @@
+{
+  "answers": 388,
+  "bundle_manifest_sha256": "03da1f29da9fcc220d59ef5d7bcb639b75d735147d6dccad28a6dbb051bc572a",
+  "frozen_project_source_unchanged": true,
+  "host": "kh081",
+  "integrity": {
+    "bundle_version": "1.0.0",
+    "counts": {
+      "answers": 388,
+      "base_cases_declared": 194,
+      "files": 35,
+      "groups": 112,
+      "questions": 388
+    },
+    "native_replay_performed": false,
+    "prompt_boundary_checked": true,
+    "split_counts": {
+      "test": 60,
+      "test_fault": 8,
+      "test_instrument": 10,
+      "test_template": 36,
+      "train": 232,
+      "validation": 42
+    },
+    "status": "passed"
+  },
+  "isolated_copy_verified": true,
+  "new_model_inference": false,
+  "new_native_simulations": false,
+  "public_prompt_parity_checked": 388,
+  "publishable_bytes": 3379528,
+  "publishable_files": 35,
+  "questions": 388,
+  "recorded_qwen_score_reproduced": {
+    "all": {
+      "correct": 218,
+      "n": 388
+    },
+    "heldout": {
+      "correct": 69,
+      "n": 114
+    },
+    "heldout_tier_macro_accuracy": 0.6222222222222222
+  },
+  "sequential_120": "placeholder only",
+  "slurm_job_id": "4632651",
+  "status": "passed",
+  "third_party_packages_required": false,
+  "unit_tests_passed": 39
+}

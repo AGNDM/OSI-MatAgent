@@ -1,0 +1,646 @@
+{
+  "asset_type_id": "peak_precisionhydrogen",
+  "units": "m",
+  "frame": "component_local",
+  "note_zh": "按构件分解的接触代理；无整机实心包围盒；未验证接触求解或真实机器人。",
+  "components": {
+    "generator_body": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "root",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.37,
+            0.53,
+            0.406
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.203
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "front_decal": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.322,
+            0.001,
+            0.39
+          ],
+          "origin_m": [
+            0.0,
+            -0.2706,
+            0.197
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "panel_seam": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.3814,
+            0.0015999999999999903,
+            0.39470000000000005
+          ],
+          "origin_m": [
+            0.0,
+            -0.21000000000000002,
+            0.20935000000000004
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "hex_ring": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.14486117892254016,
+            0.0031999999999999806,
+            0.2618000000000001
+          ],
+          "origin_m": [
+            -0.04191554445662277,
+            -0.2696,
+            0.25860000000000005
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "tank_window": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.041707783446258556,
+            0.005199999999999982,
+            0.04815999999999998
+          ],
+          "origin_m": [
+            -0.06424871130596428,
+            -0.2686,
+            0.211
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "touch_screen": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.11600000000000002,
+            0.0040000000000000036,
+            0.07799999999999996
+          ],
+          "origin_m": [
+            0.106,
+            -0.26880000000000004,
+            0.335
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "screen_ui": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "touch_screen",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1,
+            0.001,
+            0.05999999999999994
+          ],
+          "origin_m": [
+            0.106,
+            -0.271,
+            0.335
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "display_digits": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "touch_screen",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.001,
+            0.020000000000000018
+          ],
+          "origin_m": [
+            0.126,
+            -0.27130000000000004,
+            0.34500000000000003
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "fault_frame": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "touch_screen",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.11200000000000002,
+            0.001,
+            0.07399999999999995
+          ],
+          "origin_m": [
+            0.106,
+            -0.271,
+            0.335
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "water_icon": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "touch_screen",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.00520000000000001,
+            0.001,
+            0.007199999999999984
+          ],
+          "origin_m": [
+            0.112,
+            -0.2712,
+            0.3284
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "vent_icon": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "touch_screen",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.006000000000000005,
+            0.001,
+            0.007000000000000006
+          ],
+          "origin_m": [
+            0.126,
+            -0.2712,
+            0.328
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "start_stop_key": {
+      "origin_m": [
+        0.076,
+        -0.27130000000000004,
+        0.315
+      ],
+      "parent": "touch_screen",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.036000000000000004,
+            0.0012000000000000344,
+            0.01100000000000001
+          ],
+          "origin_m": [
+            0.0,
+            5.551115123125783e-17,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "rear_panel": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.36,
+            0.013000000000000012,
+            0.27
+          ],
+          "origin_m": [
+            0.0,
+            0.2755,
+            0.16499999999999998
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "rear_fittings": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "rear_panel",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.07,
+            0.02400000000000002,
+            0.15889711431703
+          ],
+          "origin_m": [
+            -0.09,
+            0.28200000000000003,
+            0.17444855715851498
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "mains_inlet": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "rear_panel",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.030000000000000013,
+            0.01200000000000001,
+            0.023999999999999994
+          ],
+          "origin_m": [
+            0.12,
+            0.276,
+            0.08
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "mains_switch": {
+      "origin_m": [
+        0.12,
+        0.275,
+        0.13
+      ],
+      "parent": "rear_panel",
+      "joint": "prismatic",
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.014000000000000012,
+            0.010000000000000009,
+            0.022000000000000006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "fan_grille": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "rear_panel",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.09,
+            0.003500000000000003,
+            0.08999999999999997
+          ],
+          "origin_m": [
+            0.06,
+            0.27175000000000005,
+            0.26
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "pem_cell": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.14,
+            0.16,
+            0.14
+          ],
+          "origin_m": [
+            0.05,
+            0.05,
+            0.12
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "psa_dryers": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.10999999999999999,
+            0.25
+          ],
+          "origin_m": [
+            0.12,
+            0.18,
+            0.2
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "water_tank": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1,
+            0.07999999999999999,
+            0.14
+          ],
+          "origin_m": [
+            -0.06424871130596428,
+            -0.21000000000000002,
+            0.191
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "loading_pump": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.03999999999999998,
+            0.04000000000000001
+          ],
+          "origin_m": [
+            -0.1,
+            0.18,
+            0.05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "deioniser_column": {
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "generator_body",
+      "joint": null,
+      "primitives": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.05000000000000001,
+            0.18
+          ],
+          "origin_m": [
+            -0.13,
+            0.05,
+            0.14
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "all_proposals_and_corrections_are_offered_choices": true,
+  "cases": 120,
+  "completed_diagnostic_episodes": 480,
+  "expected_diagnostic_episodes": 480,
+  "failures": [],
+  "frozen_mcq_pilot_and_expanded_sources_unchanged": true,
+  "host": "kh081",
+  "independent_expert_review_completed": false,
+  "neural_model_loaded": false,
+  "semantic_wrong_choice_diagnostic": true,
+  "slurm_job_id": "4632390"
+}

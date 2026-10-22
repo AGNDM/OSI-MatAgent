@@ -1,0 +1,58 @@
+{
+  "answer_file": "answers.jsonl",
+  "answer_projection": [
+    "task_id",
+    "correct_option_ids"
+  ],
+  "answers_sha256": "3e8d1744e05fd3c1c39ab206a07ef6d3f2556b4815507e60660d823c211a65b1",
+  "base_cases": 194,
+  "category_names": {
+    "L1": "Single-action checks",
+    "L2": "Direct diagnosis and simple recovery",
+    "L3": "Evidence assessment, testing and escalation",
+    "L4": "Procedure and service plan selection",
+    "L5": "Interruption response plan selection"
+  },
+  "distribution_version": "1.0.0",
+  "empirical_difficulty_order_established": false,
+  "groups": 112,
+  "heldout_questions": 114,
+  "independent_expert_review_completed": false,
+  "input_protocol": "public-menu-union-v2",
+  "instruments": 8,
+  "option_counts": {
+    "2": 182,
+    "3": 136,
+    "4": 70
+  },
+  "original_oracles_sha256": "9f2e10cdbafcac7d38e6fd66060bb058cfcd0bdc292ad4b5ea9c1abedb7a0f68",
+  "original_tasks_uncompressed_sha256": "b720504d739c5f32a5677d4964bf60591ed48a645d3627bc85ede61af5398c04",
+  "question_archive_sha256": "b0f0403b1c0b9f8fc77f3038146f244d7d75db1876d4feb494715603e11b5538",
+  "question_file": "questions.jsonl.gz",
+  "questions": 388,
+  "schemas": {
+    "answer": "../eval/schemas/answer.schema.json",
+    "prediction": "../eval/schemas/prediction.schema.json",
+    "task": "../eval/schemas/task.schema.json"
+  },
+  "source": {
+    "actual_source_revision": "123cf78593469871e41b8dbd63a11dfb7c5ca251",
+    "dataset_repository": "MBZUAI/ChemLab-Assets",
+    "dataset_revision": "4ca4a42dab2ca0a884e449d202e9ad96625d5648",
+    "download_profile": "all-instruments-data-only",
+    "python": "3.12",
+    "release": "1.3.0",
+    "source_repository": "https://github.com/mbzuai-nlp/ChemLab-Assets.git",
+    "source_revision": "123cf78593469871e41b8dbd63a11dfb7c5ca251"
+  },
+  "source_release_manifest": "source-release-manifest.json",
+  "split_counts": {
+    "test": 60,
+    "test_fault": 8,
+    "test_instrument": 10,
+    "test_template": 36,
+    "train": 232,
+    "validation": 42
+  },
+  "static_scoring_requires_simulator": false
+}

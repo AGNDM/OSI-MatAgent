@@ -1,0 +1,429 @@
+{
+ "schema": "chemsim.culture_vessel_library.v1",
+ "asset_type_id": "instrument.eppendorf_cellxpertc170i",
+ "built": "2026-10-01",
+ "n_vessels": 13,
+ "vessels": {
+  "dish_35mm": {
+   "vessel_type": "dish_35mm",
+   "kind": "dish",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.0008800000000000001,
+   "growth_area_m2": 0.00088,
+   "seeding_cells_per_well": 300000.0,
+   "confluent_cells_per_well": 1200000.0,
+   "confluent_density_per_m2": 1363636363.6,
+   "medium_volume_per_well_m3": [
+    2e-06,
+    2e-06
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.04,
+    0.04
+   ],
+   "empty_mass_kg": 0.004,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.0096,
+   "tau_headspace_s": 120.0,
+   "vapour_conductance_m3_s": 2.56e-07,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "dish_60mm": {
+   "vessel_type": "dish_60mm",
+   "kind": "dish",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.00215,
+   "growth_area_m2": 0.00215,
+   "seeding_cells_per_well": 800000.0,
+   "confluent_cells_per_well": 3200000.0,
+   "confluent_density_per_m2": 1488372093.0,
+   "medium_volume_per_well_m3": [
+    4.9999999999999996e-06,
+    4.9999999999999996e-06
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.066,
+    0.066
+   ],
+   "empty_mass_kg": 0.008,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.02614,
+   "tau_headspace_s": 120.0,
+   "vapour_conductance_m3_s": 6.97e-07,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "dish_100mm": {
+   "vessel_type": "dish_100mm",
+   "kind": "dish",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.0056700000000000006,
+   "growth_area_m2": 0.00567,
+   "seeding_cells_per_well": 2200000.0,
+   "confluent_cells_per_well": 8800000.0,
+   "confluent_density_per_m2": 1552028218.7,
+   "medium_volume_per_well_m3": [
+    1.2e-05,
+    1.2e-05
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.1,
+    0.1
+   ],
+   "empty_mass_kg": 0.016,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.06,
+   "tau_headspace_s": 120.0,
+   "vapour_conductance_m3_s": 1.6e-06,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "dish_150mm": {
+   "vessel_type": "dish_150mm",
+   "kind": "dish",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.0145,
+   "growth_area_m2": 0.0145,
+   "seeding_cells_per_well": 5000000.0,
+   "confluent_cells_per_well": 20000000.0,
+   "confluent_density_per_m2": 1379310344.8,
+   "medium_volume_per_well_m3": [
+    2.9999999999999997e-05,
+    2.9999999999999997e-05
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.15,
+    0.15
+   ],
+   "empty_mass_kg": 0.036,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.135,
+   "tau_headspace_s": 120.0,
+   "vapour_conductance_m3_s": 3.6e-06,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "plate_6": {
+   "vessel_type": "plate_6",
+   "kind": "plate",
+   "wells": 6,
+   "growth_area_per_well_m2": 0.00096,
+   "growth_area_m2": 0.00576,
+   "seeding_cells_per_well": 300000.0,
+   "confluent_cells_per_well": 1200000.0,
+   "confluent_density_per_m2": 1250000000.0,
+   "medium_volume_per_well_m3": [
+    1e-06,
+    3e-06
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.128,
+    0.086
+   ],
+   "empty_mass_kg": 0.06,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.05504,
+   "tau_headspace_s": 300.0,
+   "vapour_conductance_m3_s": 1.321e-06,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "plate_12": {
+   "vessel_type": "plate_12",
+   "kind": "plate",
+   "wells": 12,
+   "growth_area_per_well_m2": 0.00035,
+   "growth_area_m2": 0.0042,
+   "seeding_cells_per_well": 100000.0,
+   "confluent_cells_per_well": 500000.0,
+   "confluent_density_per_m2": 1428571428.6,
+   "medium_volume_per_well_m3": [
+    1e-06,
+    2e-06
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.128,
+    0.086
+   ],
+   "empty_mass_kg": 0.06,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.05504,
+   "tau_headspace_s": 300.0,
+   "vapour_conductance_m3_s": 1.321e-06,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "plate_24": {
+   "vessel_type": "plate_24",
+   "kind": "plate",
+   "wells": 24,
+   "growth_area_per_well_m2": 0.00019,
+   "growth_area_m2": 0.00456,
+   "seeding_cells_per_well": 50000.0,
+   "confluent_cells_per_well": 240000.0,
+   "confluent_density_per_m2": 1263157894.7,
+   "medium_volume_per_well_m3": [
+    5e-07,
+    1e-06
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.128,
+    0.086
+   ],
+   "empty_mass_kg": 0.06,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.05504,
+   "tau_headspace_s": 300.0,
+   "vapour_conductance_m3_s": 1.321e-06,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "plate_96": {
+   "vessel_type": "plate_96",
+   "kind": "plate",
+   "wells": 96,
+   "growth_area_per_well_m2": 3.2000000000000005e-05,
+   "growth_area_m2": 0.003072,
+   "seeding_cells_per_well": 10000.0,
+   "confluent_cells_per_well": 40000.0,
+   "confluent_density_per_m2": 1250000000.0,
+   "medium_volume_per_well_m3": [
+    1e-07,
+    2e-07
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.128,
+    0.086
+   ],
+   "empty_mass_kg": 0.06,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.05504,
+   "tau_headspace_s": 300.0,
+   "vapour_conductance_m3_s": 1.321e-06,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "plate_384": {
+   "vessel_type": "plate_384",
+   "kind": "plate",
+   "wells": 384,
+   "growth_area_per_well_m2": 8.400000000000001e-06,
+   "growth_area_m2": 0.0032256,
+   "seeding_cells_per_well": 1800.0,
+   "confluent_cells_per_well": 7200.0,
+   "confluent_density_per_m2": 857142857.1,
+   "medium_volume_per_well_m3": [
+    8e-08,
+    8e-08
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.128,
+    0.086
+   ],
+   "empty_mass_kg": 0.07,
+   "closure_default": "lid",
+   "closures": [
+    "lid"
+   ],
+   "thermal_conductance_w_k": 0.05504,
+   "tau_headspace_s": 300.0,
+   "vapour_conductance_m3_s": 1.321e-06,
+   "internal_volume_m3": null,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "flask_t25": {
+   "vessel_type": "flask_t25",
+   "kind": "flask",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.0025,
+   "growth_area_m2": 0.0025,
+   "seeding_cells_per_well": 700000.0,
+   "confluent_cells_per_well": 2800000.0,
+   "confluent_density_per_m2": 1120000000.0,
+   "medium_volume_per_well_m3": [
+    3e-06,
+    4.9999999999999996e-06
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.13,
+    0.06
+   ],
+   "empty_mass_kg": 0.02,
+   "closure_default": "vented_cap",
+   "closures": [
+    "vented_cap",
+    "plug_seal_closed"
+   ],
+   "thermal_conductance_w_k": 0.039,
+   "tau_headspace_s": 900.0,
+   "vapour_conductance_m3_s": 1.17e-07,
+   "internal_volume_m3": 5.9999999999999995e-05,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "flask_t75": {
+   "vessel_type": "flask_t75",
+   "kind": "flask",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.007500000000000001,
+   "growth_area_m2": 0.0075,
+   "seeding_cells_per_well": 2100000.0,
+   "confluent_cells_per_well": 8400000.0,
+   "confluent_density_per_m2": 1120000000.0,
+   "medium_volume_per_well_m3": [
+    8e-06,
+    1.4999999999999999e-05
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.19,
+    0.09
+   ],
+   "empty_mass_kg": 0.05,
+   "closure_default": "vented_cap",
+   "closures": [
+    "vented_cap",
+    "plug_seal_closed"
+   ],
+   "thermal_conductance_w_k": 0.0855,
+   "tau_headspace_s": 900.0,
+   "vapour_conductance_m3_s": 2.565e-07,
+   "internal_volume_m3": 0.00026,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "flask_t175": {
+   "vessel_type": "flask_t175",
+   "kind": "flask",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.0175,
+   "growth_area_m2": 0.0175,
+   "seeding_cells_per_well": 4900000.0,
+   "confluent_cells_per_well": 23300000.0,
+   "confluent_density_per_m2": 1331428571.4,
+   "medium_volume_per_well_m3": [
+    3.5e-05,
+    5.3e-05
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.26,
+    0.14
+   ],
+   "empty_mass_kg": 0.11,
+   "closure_default": "vented_cap",
+   "closures": [
+    "vented_cap",
+    "plug_seal_closed"
+   ],
+   "thermal_conductance_w_k": 0.182,
+   "tau_headspace_s": 900.0,
+   "vapour_conductance_m3_s": 5.46e-07,
+   "internal_volume_m3": 0.0007,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  },
+  "flask_t225": {
+   "vessel_type": "flask_t225",
+   "kind": "flask",
+   "wells": 1,
+   "growth_area_per_well_m2": 0.022500000000000003,
+   "growth_area_m2": 0.0225,
+   "seeding_cells_per_well": 6300000.0,
+   "confluent_cells_per_well": 30000000.0,
+   "confluent_density_per_m2": 1333333333.3,
+   "medium_volume_per_well_m3": [
+    4.4999999999999996e-05,
+    6.8e-05
+   ],
+   "evidence": "documented",
+   "evidence_note": "manufacturer reference table (typical values for HeLa)",
+   "source": "Thermo Fisher \"Useful numbers for cell culture\" (HeLa; source_cache/thermo_useful_numbers.md sha256 e04d330d3e690636)",
+   "footprint_m": [
+    0.28,
+    0.15
+   ],
+   "empty_mass_kg": 0.14,
+   "closure_default": "vented_cap",
+   "closures": [
+    "vented_cap",
+    "plug_seal_closed"
+   ],
+   "thermal_conductance_w_k": 0.21,
+   "tau_headspace_s": 900.0,
+   "vapour_conductance_m3_s": 6.3e-07,
+   "internal_volume_m3": 0.0009,
+   "engineering_evidence": "assumption",
+   "engineering_note": "footprint, empty mass, heat conductance, headspace exchange time, vapour conductance and the internal (gas + liquid) volume of a capped flask are engineering values"
+  }
+ },
+ "license": "manufacturer reference table (facts cited)"
+}

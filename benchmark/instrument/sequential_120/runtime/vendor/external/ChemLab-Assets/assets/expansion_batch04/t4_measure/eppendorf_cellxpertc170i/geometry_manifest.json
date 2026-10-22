@@ -1,0 +1,4021 @@
+{
+  "asset_type_id": "instrument.eppendorf_cellxpertc170i",
+  "catalog_id": "CHEM-166",
+  "name_zh": "Eppendorf CellXpert C170i CO2细胞培养箱（O2 1–20 %、湿度与水位选件）",
+  "created_at": "2026-10-01T02:38:32Z",
+  "builder": "outputs/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/build_geometry.py",
+  "builder_backend": "trimesh detailed CellXpert C170i (hollow cabinet around the chamber, double doors, shelves, tray with a movable water surface, textured screen / labels / shelves in GLB and OBJ/MTL, primitive collisions); Blender pass adds model.blend and previews",
+  "coordinate_system": {
+    "unit": "m",
+    "angle_unit": "rad",
+    "up_axis": "+Z",
+    "back_axis": "+Y",
+    "root_origin_zh": "培养箱71.8×71.5 cm占地中心在台面/地面的投影（z=0为支承面，+X向右、+Y朝后；操作者在−Y一侧）",
+    "handedness": "right",
+    "glb_coordinate_conversion_zh": "GLB 按本项目 +Z 向上约定导出，无 Y-up 转换；节点层级与 URDF link 一一对应。"
+  },
+  "overall_dimensions_m": [
+    0.7199999975673854,
+    0.7152999937534332,
+    0.8999999761581421
+  ],
+  "total_mass_kg": 110.0,
+  "mass_evidence": "engineering_choice_within_documented_range",
+  "component_mass_evidence": "engineering_split_of_documented_total",
+  "sources": [
+    {
+      "source_id": "user_workbook",
+      "type": "publication",
+      "reference": "大学化学仪器资产调研_200种.xlsx",
+      "locator": "仪器总表第171行；参数与来源第171行；设置与输入输出第171行 CHEM-166",
+      "notes_zh": "用户清单；型号与规格为硬要求"
+    },
+    {
+      "source_id": "manufacturer_primary",
+      "type": "pdf",
+      "reference": "Eppendorf, \"Culture Tomorrow\" CellXpert CO2 Incubators brochure (C170 / C170i), p.16 C170i column, p.6 recovery chart",
+      "url": "https://www.eppendorf.com/product-media/doc/en/534066/CO2-Incubators_Brochure_C170-C170i_Culture-Tomorrow.pdf",
+      "locator": "p.16 C170i列；p.6恢复曲线",
+      "notes_zh": "厂家主来源（规格、尺寸、质量、恢复曲线）",
+      "cache": "source_cache/brochure.pdf",
+      "sha256": "74a148e19bd5606679bf6758b97f9073a268f87183ad6aaea967d4e2c6ff0449",
+      "accessed": "2026-10-01",
+      "status": "fetched"
+    },
+    {
+      "source_id": "manufacturer_operating_manual",
+      "type": "pdf",
+      "reference": "Eppendorf, CellXpert C170i Operating manual (English), technical data chapter 13, operation chapter 5, troubleshooting chapter 11",
+      "url": "https://www.eppendorf.com/product-media/doc/en/510060/CO2-Incubators_Operating-manual_CellXpert-C170i.pdf",
+      "notes_zh": "厂家操作手册（164页）",
+      "cache": "source_cache/operating_manual_C170i.pdf",
+      "sha256": "65826ff5d380a071ac248b4e980303c5f6a57512708e3c9afdde1e2a53e6bdb2",
+      "accessed": "2026-10-01",
+      "status": "fetched"
+    },
+    {
+      "source_id": "himedia_technical_data_sheets",
+      "type": "pdf",
+      "reference": "HiMedia Laboratories technical data sheets of liquid cell-culture media (product codes AL###)",
+      "url": "https://www.himedialabs.com/media/TD/",
+      "cache": "source_cache/media",
+      "accessed": "2026-10-01",
+      "status": "cached",
+      "notes_zh": "完整配方mg/L与QC pH/渗透压（事实引用，版权归厂家）"
+    },
+    {
+      "source_id": "cellosaurus",
+      "type": "database",
+      "reference": "Cellosaurus (SIB Swiss Institute of Bioinformatics), cell-line entries with doubling times",
+      "url": "https://api.cellosaurus.org/",
+      "license": "CC BY 4.0",
+      "cache": "source_cache/cellosaurus",
+      "accessed": "2026-10-01",
+      "status": "cached"
+    },
+    {
+      "source_id": "thermo_useful_numbers",
+      "type": "web",
+      "reference": "Thermo Fisher Scientific, Gibco Cell Culture Basics: Useful Numbers for Cell Culture (HeLa)",
+      "url": "https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics/cell-culture-protocols/cell-culture-useful-numbers.html",
+      "notes_zh": "脚本请求403；由会话网页工具取得并逐字转录",
+      "cache": "source_cache/thermo_useful_numbers.md",
+      "sha256": "e04d330d3e69063642a14de0d6c6661dc49a429f1e90316a3599fa0c6bbfa2a7",
+      "accessed": "2026-10-01",
+      "status": "fetched_via_session_tool"
+    },
+    {
+      "source_id": "sander_henry_compilation",
+      "type": "database",
+      "reference": "R. Sander, Compilation of Henry's law constants (www.henrys-law.org), CO2 (CAS 124-38-9)",
+      "url": "https://www.henrys-law.org/henry/casrn/124-38-9",
+      "cache": "source_cache/henry_co2.html",
+      "sha256": "50ab062fdc99627a39f3bcc23c6c580da6873eaf5457be4bde9473ecfdb2918a",
+      "accessed": "2026-10-01",
+      "status": "fetched"
+    },
+    {
+      "source_id": "harned_davis_1943",
+      "type": "publication",
+      "reference": "H. S. Harned, R. Davis, J. Am. Chem. Soc. 65 (1943) 2030: first ionisation constant of carbonic acid 0–50 °C",
+      "notes_zh": "pK1(T)方程（未缓存全文）"
+    },
+    {
+      "source_id": "severinghaus_plasma_pk",
+      "type": "publication",
+      "reference": "apparent pK' 6.1 of the CO2/bicarbonate system in plasma at 37 °C (Henderson–Hasselbalch; e.g. J. W. Severinghaus et al., J. Appl. Physiol. 9 (1956) 189)",
+      "notes_zh": "37 °C、离子强度约0.16时的表观pK'（用于培养基；未缓存）"
+    },
+    {
+      "source_id": "buck_1981",
+      "type": "publication",
+      "reference": "A. L. Buck, J. Appl. Meteorol. 20 (1981) 1527: saturation vapour pressure of water",
+      "notes_zh": "饱和水汽压公式"
+    },
+    {
+      "source_id": "good_1966",
+      "type": "publication",
+      "reference": "N. E. Good et al., Biochemistry 5 (1966) 467: HEPES pKa 7.55 at 20 °C, dpKa/dT −0.014 K⁻¹",
+      "notes_zh": "HEPES缓冲"
+    }
+  ],
+  "components": [
+    {
+      "id": "base_plinth",
+      "name_zh": "底座（深色）",
+      "function_zh": "机柜下方的深色底座，承载机柜并装调平脚",
+      "physical_meaning_zh": "承载结构：固定连接于父件，只提供支撑、围护与安装面，不参与过程物理；装配原点 (0, 0, 0) m 相对 root，碰撞代理为0.712×0.647×0.055 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：深色底座。",
+      "parent": "root",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__base_plinth"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.712,
+            0.647,
+            0.05499999999999999
+          ],
+          "origin_m": [
+            0.0,
+            0.02999999999999997,
+            0.0475
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 5.6593989024181095,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.03,
+        0.0475
+      ],
+      "simulation_inertia_kg_m2": [
+        0.1988495830685131,
+        0.24050983323893835,
+        0.43650613602748234
+      ],
+      "material": {
+        "base_color": [
+          0.035,
+          0.037,
+          0.04
+        ],
+        "metallic": 0.1,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深色底座"
+    },
+    {
+      "id": "feet",
+      "name_zh": "可调脚（4个）",
+      "function_zh": "四个可调平脚（手册§4.4.1用8 mm扳手调平）",
+      "physical_meaning_zh": "台面支撑点，把整机重力传到台面；摩擦系数与承载分配未标定；装配原点 (0, 0, 0) m 相对 base_plinth，碰撞代理为半径 0.018 m、高 0.02 m 圆柱 等 4 个基元；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：黑色可调脚。",
+      "parent": "base_plinth",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__feet"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.018,
+            0.02
+          ],
+          "origin_m": [
+            -0.32,
+            -0.25750000000000006,
+            0.01
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.018,
+            0.02
+          ],
+          "origin_m": [
+            0.32,
+            -0.25750000000000006,
+            0.01
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.018,
+            0.02
+          ],
+          "origin_m": [
+            -0.32,
+            0.3125,
+            0.01
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.018,
+            0.02
+          ],
+          "origin_m": [
+            0.32,
+            0.3125,
+            0.01
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.37729326016120734,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.027499999999999997,
+        0.01
+      ],
+      "simulation_inertia_kg_m2": [
+        0.011558882082718805,
+        0.014380406846624366,
+        0.025914136045332423
+      ],
+      "material": {
+        "base_color": [
+          0.015,
+          0.015,
+          0.017
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色可调脚"
+    },
+    {
+      "id": "service_interface",
+      "name_zh": "服务接口盖",
+      "function_zh": "前左下方的服务接口（手册图3-1第10项）",
+      "physical_meaning_zh": "接口点：流体/电气/数据连接的几何位置，只作拓扑端点；接头规格、密封与协议未实现；装配原点 (0, 0, 0) m 相对 base_plinth，碰撞代理为0.03×0.0045×0.02 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：小黑色盖板。",
+      "parent": "base_plinth",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__service_interface"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.030000000000000027,
+            0.0044999999999999485,
+            0.01999999999999999
+          ],
+          "origin_m": [
+            -0.31399999999999995,
+            -0.29575000000000007,
+            0.045
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        -0.314,
+        -0.29574999999999996,
+        0.045
+      ],
+      "simulation_inertia_kg_m2": [
+        3.502083333333333e-10,
+        1.0833333333333348e-09,
+        7.668750000000016e-10
+      ],
+      "material": {
+        "base_color": [
+          0.015,
+          0.015,
+          0.017
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "小黑色盖板"
+    },
+    {
+      "id": "body_shell",
+      "name_zh": "机柜（浅灰）",
+      "function_zh": "保温机柜：6面直接加热的内腔、保温层与电子部分（未建内部）；前框围住内玻璃门的凹槽与内腔开口",
+      "physical_meaning_zh": "承载结构：固定连接于父件，只提供支撑、围护与安装面，不参与过程物理；装配原点 (0, 0, 0) m 相对 base_plinth，碰撞代理为0.0895×0.565×0.825 m 长方体 等 9 个基元；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：浅灰喷塑机柜（中空，内腔与门槽开口）。",
+      "parent": "base_plinth",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "外形按厂家71.8×65.5（门面）×90 cm；壁厚、门槽为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__body_shell"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.08949999999999997,
+            0.5650000000000001,
+            0.8250000000000001
+          ],
+          "origin_m": [
+            -0.31425000000000003,
+            0.07499999999999997,
+            0.4875
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.08949999999999997,
+            0.5650000000000001,
+            0.8250000000000001
+          ],
+          "origin_m": [
+            0.31425000000000003,
+            0.07499999999999997,
+            0.4875
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.539,
+            0.5650000000000001,
+            0.09299999999999997
+          ],
+          "origin_m": [
+            0.0,
+            0.07499999999999997,
+            0.8535
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.539,
+            0.5650000000000001,
+            0.04000000000000001
+          ],
+          "origin_m": [
+            0.0,
+            0.07499999999999997,
+            0.095
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.539,
+            0.12000000000000002,
+            0.6920000000000001
+          ],
+          "origin_m": [
+            0.0,
+            0.2975,
+            0.461
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.07250000000000001,
+            0.024999999999999994,
+            0.8250000000000001
+          ],
+          "origin_m": [
+            -0.32275,
+            -0.22000000000000003,
+            0.4875
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.07250000000000001,
+            0.024999999999999994,
+            0.8250000000000001
+          ],
+          "origin_m": [
+            0.32275,
+            -0.22000000000000003,
+            0.4875
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.573,
+            0.024999999999999994,
+            0.07400000000000007
+          ],
+          "origin_m": [
+            0.0,
+            -0.22000000000000003,
+            0.863
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.573,
+            0.024999999999999994,
+            0.021000000000000005
+          ],
+          "origin_m": [
+            0.0,
+            -0.22000000000000003,
+            0.08549999999999999
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 67.9127868290173,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.062499999999999986,
+        0.4875
+      ],
+      "simulation_inertia_kg_m2": [
+        5.8219651358900695,
+        6.769484337728519,
+        4.887592717701937
+      ],
+      "material": {
+        "base_color": [
+          0.66,
+          0.68,
+          0.67
+        ],
+        "metallic": 0.0,
+        "roughness": 0.42,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "浅灰喷塑机柜（中空，内腔与门槽开口）"
+    },
+    {
+      "id": "chamber",
+      "name_zh": "不锈钢内腔",
+      "function_zh": "无缝抛光不锈钢内腔53.9×69.2×44.5 cm（6面加热，自然对流无风扇）",
+      "physical_meaning_zh": "容纳/承载件：容器或样品位，容量与持液由运行层账本记录，宿主 attach/release 登记占用；壁厚与内径为估计；装配原点 (0, 0, 0) m 相对 body_shell，碰撞代理为0.002×0.445×0.692 m 长方体 等 5 个基元；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：抛光不锈钢内胆（中空）。",
+      "parent": "body_shell",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：内腔尺寸53.9×69.2×44.5 cm、167 L。",
+      "objects": [
+        "eppendorf_cellxpertc170i__chamber"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0020000000000000018,
+            0.445,
+            0.6920000000000001
+          ],
+          "origin_m": [
+            -0.2685,
+            0.014999999999999958,
+            0.461
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.0020000000000000018,
+            0.445,
+            0.6920000000000001
+          ],
+          "origin_m": [
+            0.2685,
+            0.014999999999999958,
+            0.461
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.539,
+            0.445,
+            0.0020000000000000018
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.806
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.539,
+            0.445,
+            0.0020000000000000018
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.116
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.539,
+            0.0020000000000000018,
+            0.6920000000000001
+          ],
+          "origin_m": [
+            0.0,
+            0.23649999999999996,
+            0.461
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 8.489098353627163,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.461
+      ],
+      "simulation_inertia_kg_m2": [
+        0.47884810795736144,
+        0.5442820780671196,
+        0.34560958702259464
+      ],
+      "material": {
+        "base_color": [
+          0.6,
+          0.61,
+          0.62
+        ],
+        "metallic": 0.95,
+        "roughness": 0.22,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "抛光不锈钢内胆（中空）"
+    },
+    {
+      "id": "chamber_gasket",
+      "name_zh": "内腔门封",
+      "function_zh": "内玻璃门压在其上的硅胶门封",
+      "physical_meaning_zh": "被动物理界面：隔离/过滤/透光/密封作用在运行层按集中参数处理，几何不参与求解；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.573×0.003×0.722 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：灰色硅胶密封条。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__chamber_gasket"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.573,
+            0.0030000000000000027,
+            0.722
+          ],
+          "origin_m": [
+            0.0,
+            -0.20900000000000005,
+            0.46099999999999997
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.209,
+        0.46099999999999997
+      ],
+      "simulation_inertia_kg_m2": [
+        4.344108333333334e-07,
+        7.080108333333334e-07,
+        2.7361499999999995e-07
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "灰色硅胶密封条"
+    },
+    {
+      "id": "shelf_rack",
+      "name_zh": "搁板架",
+      "function_zh": "左右两侧的搁板架（8个架位；架子最大载重40 kg）",
+      "physical_meaning_zh": "容纳/承载件：容器或样品位，容量与持液由运行层账本记录，宿主 attach/release 登记占用；壁厚与内径为估计；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.012×0.397×0.612 m 长方体 等 2 个基元；局部尺寸为工程估计，质量/惯量/摩擦未知，URDF 数值占位。外观：不锈钢架。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "架位间距为工程值（手册：4层标准，可升级到8层）。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_rack"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.01200000000000001,
+            0.397,
+            0.612
+          ],
+          "origin_m": [
+            -0.2595,
+            0.014999999999999958,
+            0.461
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.01200000000000001,
+            0.397,
+            0.612
+          ],
+          "origin_m": [
+            0.2595,
+            0.014999999999999958,
+            0.461
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 2.3580828760075456,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.461
+      ],
+      "simulation_inertia_kg_m2": [
+        0.10457173972633696,
+        0.1281761493151725,
+        0.08554692358961441
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢架"
+    },
+    {
+      "id": "shelf_1",
+      "name_zh": "第1层搁板",
+      "function_zh": "第1层（自下而上）抛光不锈钢打孔搁板52.2×42.8 cm；放培养容器（≤10 kg）",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.522×0.428×0.004 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：不锈钢打孔搁板。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：52.2×42.8 cm、1.5 mm、4层；高度为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_1"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.522,
+            0.428,
+            0.0040000000000000036
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.263
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.744981328245584,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.259
+      ],
+      "simulation_inertia_kg_m2": [
+        0.026658661412050543,
+        0.03964423079641142,
+        0.06626101265658407
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢打孔搁板"
+    },
+    {
+      "id": "shelf_1_holes",
+      "name_zh": "第1层搁板孔（贴图）",
+      "function_zh": "打孔图案贴图",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 shelf_1，碰撞代理为0.518×0.424×0.001 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：孔纹贴图。",
+      "parent": "shelf_1",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_1_holes"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.518,
+            0.424,
+            0.001
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.26530000000000004
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.2653
+      ],
+      "simulation_inertia_kg_m2": [
+        1.498133333333334e-07,
+        2.2360333333333336e-07,
+        3.7341666666666675e-07
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/shelf.png"
+      },
+      "appearance_zh": "孔纹贴图"
+    },
+    {
+      "id": "shelf_2",
+      "name_zh": "第2层搁板",
+      "function_zh": "第2层（自下而上）抛光不锈钢打孔搁板52.2×42.8 cm；放培养容器（≤10 kg）",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.522×0.428×0.004 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：不锈钢打孔搁板。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：52.2×42.8 cm、1.5 mm、4层；高度为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_2"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.522,
+            0.428,
+            0.0040000000000000036
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.408
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.744981328245584,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.404
+      ],
+      "simulation_inertia_kg_m2": [
+        0.026658661412050543,
+        0.03964423079641142,
+        0.06626101265658407
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢打孔搁板"
+    },
+    {
+      "id": "shelf_2_holes",
+      "name_zh": "第2层搁板孔（贴图）",
+      "function_zh": "打孔图案贴图",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 shelf_2，碰撞代理为0.518×0.424×0.001 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：孔纹贴图。",
+      "parent": "shelf_2",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_2_holes"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.518,
+            0.424,
+            0.001
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.4103
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.4103
+      ],
+      "simulation_inertia_kg_m2": [
+        1.498133333333334e-07,
+        2.2360333333333336e-07,
+        3.7341666666666675e-07
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/shelf.png"
+      },
+      "appearance_zh": "孔纹贴图"
+    },
+    {
+      "id": "shelf_3",
+      "name_zh": "第3层搁板",
+      "function_zh": "第3层（自下而上）抛光不锈钢打孔搁板52.2×42.8 cm；放培养容器（≤10 kg）",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.522×0.428×0.004 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：不锈钢打孔搁板。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：52.2×42.8 cm、1.5 mm、4层；高度为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_3"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.522,
+            0.428,
+            0.0040000000000000036
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.553
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.744981328245584,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.549
+      ],
+      "simulation_inertia_kg_m2": [
+        0.026658661412050543,
+        0.03964423079641142,
+        0.06626101265658407
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢打孔搁板"
+    },
+    {
+      "id": "shelf_3_holes",
+      "name_zh": "第3层搁板孔（贴图）",
+      "function_zh": "打孔图案贴图",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 shelf_3，碰撞代理为0.518×0.424×0.001 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：孔纹贴图。",
+      "parent": "shelf_3",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_3_holes"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.518,
+            0.424,
+            0.001
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.5553
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.5553
+      ],
+      "simulation_inertia_kg_m2": [
+        1.498133333333334e-07,
+        2.2360333333333336e-07,
+        3.7341666666666675e-07
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/shelf.png"
+      },
+      "appearance_zh": "孔纹贴图"
+    },
+    {
+      "id": "shelf_4",
+      "name_zh": "第4层搁板",
+      "function_zh": "第4层（自下而上）抛光不锈钢打孔搁板52.2×42.8 cm；放培养容器（≤10 kg）",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.522×0.428×0.004 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：不锈钢打孔搁板。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：52.2×42.8 cm、1.5 mm、4层；高度为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_4"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.522,
+            0.428,
+            0.0040000000000000036
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.698
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.744981328245584,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.694
+      ],
+      "simulation_inertia_kg_m2": [
+        0.026658661412050543,
+        0.03964423079641142,
+        0.06626101265658407
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢打孔搁板"
+    },
+    {
+      "id": "shelf_4_holes",
+      "name_zh": "第4层搁板孔（贴图）",
+      "function_zh": "打孔图案贴图",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0, 0, 0) m 相对 shelf_4，碰撞代理为0.518×0.424×0.001 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：孔纹贴图。",
+      "parent": "shelf_4",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__shelf_4_holes"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.518,
+            0.424,
+            0.001
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.7002999999999999
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.7003
+      ],
+      "simulation_inertia_kg_m2": [
+        1.498133333333334e-07,
+        2.2360333333333336e-07,
+        3.7341666666666675e-07
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/shelf.png"
+      },
+      "appearance_zh": "孔纹贴图"
+    },
+    {
+      "id": "water_tray",
+      "name_zh": "水盘",
+      "function_zh": "腔底的不锈钢水盘（2.5 L；每7–14天倒空清洁后加1.5–2.5 L温热无菌蒸馏水）",
+      "physical_meaning_zh": "承载结构：固定连接于父件，只提供支撑、围护与安装面，不参与过程物理；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.42×0.32×0.002 m 长方体 等 5 个基元；局部尺寸为工程估计，质量/惯量/摩擦未知，URDF 数值占位。外观：不锈钢水盘。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "容量2.5 L为厂家值；盘的长宽高为工程值（0.42×0.32×0.03 m）。",
+      "objects": [
+        "eppendorf_cellxpertc170i__water_tray"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.42,
+            0.32,
+            0.0020000000000000018
+          ],
+          "origin_m": [
+            0.0,
+            0.014999999999999958,
+            0.1165
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.0020000000000000018,
+            0.32,
+            0.030000000000000013
+          ],
+          "origin_m": [
+            -0.209,
+            0.014999999999999958,
+            0.1305
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.0020000000000000018,
+            0.32,
+            0.030000000000000013
+          ],
+          "origin_m": [
+            0.209,
+            0.014999999999999958,
+            0.1305
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.42,
+            0.0020000000000000018,
+            0.030000000000000013
+          ],
+          "origin_m": [
+            0.0,
+            -0.14400000000000004,
+            0.1305
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.42,
+            0.0020000000000000018,
+            0.030000000000000013
+          ],
+          "origin_m": [
+            0.0,
+            0.17399999999999996,
+            0.1305
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.3205264105642254,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.015,
+        0.1305
+      ],
+      "simulation_inertia_kg_m2": [
+        0.011367531517607036,
+        0.01951077771608643,
+        0.030680230272108828
+      ],
+      "material": {
+        "base_color": [
+          0.6,
+          0.61,
+          0.62
+        ],
+        "metallic": 0.95,
+        "roughness": 0.22,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢水盘"
+    },
+    {
+      "id": "water_surface",
+      "name_zh": "水面",
+      "function_zh": "水盘水面（高度随运行层water_tray.level_m变化；空盘时在盘底）",
+      "physical_meaning_zh": "可动件：运动学教学自由度，不解驱动动力学；可动件：沿 +Z 平移 0–0.0186 m，状态 water_tray.level_m，行程为教学假设，竖直平移件在物理引擎中受重力，需宿主保持或关闭重力；装配原点 (0, 0.015, 0.117) m 相对 water_tray，碰撞代理为0.38×0.28×0.0008 m 长方体；局部尺寸为工程估计，质量/惯量/摩擦未知，URDF 数值占位。外观：半透明蓝色水面。",
+      "parent": "water_tray",
+      "origin_m": [
+        0.0,
+        0.014999999999999958,
+        0.1165
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "limits": [
+          0.0,
+          0.018601190476190476
+        ],
+        "state_id": "water_tray.level_m",
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "水面随水量线性升高（盘底面积0.1344 m2）。",
+      "objects": [
+        "eppendorf_cellxpertc170i__water_surface"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.38,
+            0.28,
+            0.0007999999999999952
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            -0.0003999999999999976
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        -0.0004
+      ],
+      "simulation_inertia_kg_m2": [
+        8.321386666666667e-08,
+        1.4421386666666667e-07,
+        2.2742666666666667e-07
+      ],
+      "material": {
+        "base_color": [
+          0.35,
+          0.55,
+          0.75
+        ],
+        "metallic": 0.0,
+        "roughness": 0.05,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.55,
+        "texture": null
+      },
+      "appearance_zh": "半透明蓝色水面"
+    },
+    {
+      "id": "chamber_sensors",
+      "name_zh": "腔内传感器与进气口",
+      "function_zh": "CO2传感器（NDIR）、O2传感器（ZrO2）、N2/CO2合并进气口、水位传感器与两个接入孔内口（手册图3-4）",
+      "physical_meaning_zh": "测量/电子件：产生观测量或执行控制逻辑的功能位置，响应、噪声与量化在运行层按代理处理，几何不参与求解；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为0.04×0.012×0.09 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：传感器与孔口。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "位置按手册图3-4示意；尺寸为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__chamber_sensors"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04000000000000001,
+            0.01200000000000001,
+            0.08999999999999997
+          ],
+          "origin_m": [
+            0.2,
+            0.23149999999999996,
+            0.7150000000000001
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.28296994512090545,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.075,
+        0.1945,
+        0.48125
+      ],
+      "simulation_inertia_kg_m2": [
+        0.010183339633588258,
+        0.01188417765039498,
+        0.002049645635825759
+      ],
+      "material": {
+        "base_color": [
+          0.3,
+          0.31,
+          0.33
+        ],
+        "metallic": 0.5,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "传感器与孔口"
+    },
+    {
+      "id": "rh_sensor",
+      "name_zh": "湿度传感器",
+      "function_zh": "腔顶左上角的湿度传感器（高温消毒时盖保护罩）",
+      "physical_meaning_zh": "测量/电子件：产生观测量或执行控制逻辑的功能位置，响应、噪声与量化在运行层按代理处理，几何不参与求解；装配原点 (0, 0, 0) m 相对 chamber，碰撞代理为半径 0.01 m、高 0.03 m 圆柱；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：圆柱探头。",
+      "parent": "chamber",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__rh_sensor"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.01,
+            0.03
+          ],
+          "origin_m": [
+            -0.2,
+            0.15749999999999997,
+            0.792
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.04716165752015092,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        -0.2,
+        0.1575,
+        0.792
+      ],
+      "simulation_inertia_kg_m2": [
+        5.1091795646830255e-06,
+        5.109179564683021e-06,
+        3.144110501343396e-06
+      ],
+      "material": {
+        "base_color": [
+          0.3,
+          0.31,
+          0.33
+        ],
+        "metallic": 0.5,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "圆柱探头"
+    },
+    {
+      "id": "inner_door",
+      "name_zh": "内玻璃门",
+      "function_zh": "内玻璃门（左铰链；开外门后可透过它看腔内；门闩水平时锁住压紧门封；下部有取样孔）",
+      "physical_meaning_zh": "开合边界件：开合状态参与运行层互锁（开盖停机/不允许启动），接触与握持未经机器人验证；可动件：绕 −Z 转动 0°–99.98°，状态 door.inner_angle_rad，行程为教学假设；装配原点 (-0.284, -0.231, 0.461) m 相对 body_shell，碰撞代理为0.569×0.018×0.722 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：灰色门框与玻璃。",
+      "parent": "body_shell",
+      "origin_m": [
+        -0.2845,
+        -0.23050000000000004,
+        0.46099999999999997
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "revolute",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          1.745
+        ],
+        "state_id": "door.inner_angle_rad",
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：内玻璃门、门闩与取样孔（手册图3-5）；框宽为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__inner_door"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.569,
+            0.017999999999999988,
+            0.722
+          ],
+          "origin_m": [
+            0.2845,
+            0.009000000000000008,
+            0.0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.1318797804836218,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.2815,
+        0.008,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        0.04922356518693191,
+        0.08035488099266848,
+        0.031239976264663002
+      ],
+      "material": {
+        "base_color": [
+          0.55,
+          0.57,
+          0.58
+        ],
+        "metallic": 0.3,
+        "roughness": 0.4,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "灰色门框与玻璃"
+    },
+    {
+      "id": "inner_door_glass",
+      "name_zh": "内门玻璃",
+      "function_zh": "内门玻璃板",
+      "physical_meaning_zh": "被动物理界面：隔离/过滤/透光/密封作用在运行层按集中参数处理，几何不参与求解；装配原点 (0.284, 0.231, -0.461) m 相对 inner_door，碰撞代理为0.509×0.006×0.662 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：透明玻璃。",
+      "parent": "inner_door",
+      "origin_m": [
+        0.2845,
+        0.23050000000000004,
+        -0.46099999999999997
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__inner_door_glass"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.5089999999999999,
+            0.006000000000000005,
+            0.6619999999999999
+          ],
+          "origin_m": [
+            0.0,
+            -0.22150000000000003,
+            0.46099999999999997
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 3.584285971531469,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.2215,
+        0.461
+      ],
+      "simulation_inertia_kg_m2": [
+        0.13091007130023435,
+        0.2082843512581818,
+        0.07739578567377663
+      ],
+      "material": {
+        "base_color": [
+          0.55,
+          0.66,
+          0.68
+        ],
+        "metallic": 0.0,
+        "roughness": 0.02,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.1,
+        "texture": null
+      },
+      "appearance_zh": "透明玻璃"
+    },
+    {
+      "id": "inner_door_latch",
+      "name_zh": "内门门闩",
+      "function_zh": "内门门闩（水平=锁住；向上转90°后才能拉开内门；带磁铁）",
+      "physical_meaning_zh": "开合边界件：开合状态参与运行层互锁（开盖停机/不允许启动），接触与握持未经机器人验证；可动件：绕 +Y 转动 0°–90°，状态 door.latch_angle_rad，行程有厂家依据；装配原点 (0.546, -0.004, 0.001) m 相对 inner_door，碰撞代理为0.069×0.015×0.018 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：灰色门闩。",
+      "parent": "inner_door",
+      "origin_m": [
+        0.5465,
+        -0.0040000000000000036,
+        0.0010000000000000564
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint": {
+        "type": "revolute",
+        "axis": [
+          0,
+          1,
+          0
+        ],
+        "limits": [
+          0.0,
+          1.5707963267948966
+        ],
+        "state_id": "door.latch_angle_rad",
+        "evidence": "manufacturer_datasheet"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：门闩转90°（手册图5-2）；长度为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__inner_door_latch"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.069,
+            0.015000000000000013,
+            0.018000000000000016
+          ],
+          "origin_m": [
+            -0.025499999999999995,
+            -0.0025000000000000022,
+            0.0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.04716165752015092,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        -0.0255,
+        -0.0025,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1576458315469044e-06,
+        1.9984752374163944e-05,
+        1.9595668699622704e-05
+      ],
+      "material": {
+        "base_color": [
+          0.55,
+          0.57,
+          0.58
+        ],
+        "metallic": 0.3,
+        "roughness": 0.4,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "灰色门闩"
+    },
+    {
+      "id": "outer_door",
+      "name_zh": "外门",
+      "function_zh": "外门（左铰链、磁吸关闭；门内加热；装把手与控制面板）",
+      "physical_meaning_zh": "开合边界件：开合状态参与运行层互锁（开盖停机/不允许启动），接触与握持未经机器人验证；可动件：绕 −Z 转动 0°–99.98°，状态 door.outer_angle_rad，行程为教学假设；装配原点 (-0.357, -0.29, 0.487) m 相对 body_shell，碰撞代理为0.714×0.064×0.815 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：浅灰喷塑外门。",
+      "parent": "body_shell",
+      "origin_m": [
+        -0.357,
+        -0.28950000000000004,
+        0.4875
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "revolute",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          1.745
+        ],
+        "state_id": "door.outer_angle_rad",
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：外门、左铰链（可换向）；门厚为工程值。",
+      "objects": [
+        "eppendorf_cellxpertc170i__outer_door"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.714,
+            0.064,
+            0.8150000000000001
+          ],
+          "origin_m": [
+            0.357,
+            0.023999999999999966,
+            0.0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 8.489098353627163,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.357,
+        0.024,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        0.47278689173287153,
+        0.8305316448519762,
+        0.36353997759518075
+      ],
+      "material": {
+        "base_color": [
+          0.7,
+          0.72,
+          0.71
+        ],
+        "metallic": 0.0,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "浅灰喷塑外门"
+    },
+    {
+      "id": "door_gasket",
+      "name_zh": "外门磁性门封",
+      "function_zh": "外门内侧的磁性门封",
+      "physical_meaning_zh": "被动物理界面：隔离/过滤/透光/密封作用在运行层按集中参数处理，几何不参与求解；装配原点 (0.357, 0.29, -0.487) m 相对 outer_door，碰撞代理为0.674×0.002×0.775 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：灰色门封。",
+      "parent": "outer_door",
+      "origin_m": [
+        0.357,
+        0.28950000000000004,
+        -0.4875
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__door_gasket"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.6739999999999999,
+            0.0020000000000000018,
+            0.775
+          ],
+          "origin_m": [
+            0.0,
+            -0.23250000000000004,
+            0.4875
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.2325,
+        0.4875
+      ],
+      "simulation_inertia_kg_m2": [
+        5.005241666666668e-07,
+        8.790841666666668e-07,
+        3.7856666666666677e-07
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "灰色门封"
+    },
+    {
+      "id": "door_handle",
+      "name_zh": "门把手",
+      "function_zh": "外门右缘的竖直把手（拉开外门）",
+      "physical_meaning_zh": "被动机械件：紧固、导向、握持或连接，无独立过程作用；真实螺纹、接触与握持未仿真；装配原点 (0.357, 0.29, -0.487) m 相对 outer_door，碰撞代理为0.04×0.06×0.58 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：深灰把手。",
+      "parent": "outer_door",
+      "origin_m": [
+        0.357,
+        0.28950000000000004,
+        -0.4875
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片；伸出量按厂家总深71.5与65.5 cm之差。",
+      "objects": [
+        "eppendorf_cellxpertc170i__door_handle"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.040000000000000036,
+            0.05999999999999994,
+            0.5800000000000001
+          ],
+          "origin_m": [
+            0.32,
+            -0.3275,
+            0.49
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.4716165752015091,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.32,
+        -0.3275,
+        0.49
+      ],
+      "simulation_inertia_kg_m2": [
+        0.013362469630709427,
+        0.013283866868175842,
+        0.00020436718258732073
+      ],
+      "material": {
+        "base_color": [
+          0.045,
+          0.048,
+          0.052
+        ],
+        "metallic": 0.2,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深灰把手"
+    },
+    {
+      "id": "control_panel",
+      "name_zh": "控制面板",
+      "function_zh": "外门上的控制单元（VisioNize触摸屏与USB口）",
+      "physical_meaning_zh": "操作输入面：接触/按压触发对应能力，Matterix 中为 1.5 mm 弹簧关节或触屏区代理；本身不承载过程物理；装配原点 (0.357, 0.29, -0.487) m 相对 outer_door，碰撞代理为0.3×0.025×0.13 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：银色面板框。",
+      "parent": "outer_door",
+      "origin_m": [
+        0.357,
+        0.28950000000000004,
+        -0.4875
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "厂家：控制面板=触摸屏+USB口（手册图3-2）；尺寸按照片。",
+      "objects": [
+        "eppendorf_cellxpertc170i__control_panel"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.3,
+            0.025000000000000022,
+            0.13000000000000012
+          ],
+          "origin_m": [
+            0.0,
+            -0.31000000000000005,
+            0.66
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.1318797804836218,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.31,
+        0.6599999999999999
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0016530160960812896,
+        0.010083162377808264,
+        0.008548050425527353
+      ],
+      "material": {
+        "base_color": [
+          0.42,
+          0.44,
+          0.46
+        ],
+        "metallic": 0.7,
+        "roughness": 0.28,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "银色面板框"
+    },
+    {
+      "id": "touch_screen",
+      "name_zh": "触摸屏",
+      "function_zh": "人机界面：设定温度/CO2/O2、报警、事件、曲线、高温消毒、周期任务",
+      "physical_meaning_zh": "操作输入面：接触/按压触发对应能力，Matterix 中为 1.5 mm 弹簧关节或触屏区代理；本身不承载过程物理；装配原点 (0, 0, 0) m 相对 control_panel，碰撞代理为0.163×0.0015×0.0949 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：深色玻璃触摸屏。",
+      "parent": "control_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__touch_screen"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1625,
+            0.0015000000000000568,
+            0.09489999999999998
+          ],
+          "origin_m": [
+            0.0,
+            -0.3237500000000001,
+            0.66
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.37729326016120734,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.32375,
+        0.66
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0002832296486483164,
+        0.0011134005854230263,
+        0.0008303124217472704
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.025,
+          0.03
+        ],
+        "metallic": 0.2,
+        "roughness": 0.05,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深色玻璃触摸屏"
+    },
+    {
+      "id": "screen_ui",
+      "name_zh": "屏幕界面（贴图）",
+      "function_zh": "主页面（通用重绘：温度/CO2/O2/RH磁贴、曲线、工具栏）",
+      "physical_meaning_zh": "视觉输出面：只承载显示/指示，运行状态通过 Matterix 段码或颜色映射，不产生力和热；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.154×0.001×0.0869 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：屏幕贴图。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__screen_ui"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1545,
+            0.001,
+            0.08689999999999998
+          ],
+          "origin_m": [
+            0.0,
+            -0.32470000000000004,
+            0.66
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.3247,
+        0.66
+      ],
+      "simulation_inertia_kg_m2": [
+        6.2930083333333304e-09,
+        2.6184883333333334e-08,
+        1.9891875e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/screen_ui.png"
+      },
+      "appearance_zh": "屏幕贴图"
+    },
+    {
+      "id": "display_temperature_digits",
+      "name_zh": "温度数字区",
+      "function_zh": "仿真数字覆盖定位面（Matterix按运行层display.temperature_c写数字）",
+      "physical_meaning_zh": "视觉输出面：只承载显示/指示，运行状态通过 Matterix 段码或颜色映射，不产生力和热；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.0438×0.001×0.0151 m 长方体；局部尺寸为工程估计，质量/惯量/摩擦未知，URDF 数值占位。外观：数值框。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "仿真UI覆盖位置（不是厂家界面元素）。",
+      "objects": [
+        "eppendorf_cellxpertc170i__display_temperature_digits"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04375488281249999,
+            0.001,
+            0.015086805555555527
+          ],
+          "origin_m": [
+            -0.049337402343749996,
+            -0.3249000000000001,
+            0.673276388888889
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        -0.049337400000000003,
+        -0.3249,
+        0.6732763900000001
+      ],
+      "simulation_inertia_kg_m2": [
+        1.8967627853333503e-10,
+        1.7850842150453351e-09,
+        1.5954079365120003e-09
+      ],
+      "material": {
+        "base_color": [
+          0.93,
+          0.95,
+          0.97
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "数值框"
+    },
+    {
+      "id": "display_co2_digits",
+      "name_zh": "CO2数字区",
+      "function_zh": "仿真数字覆盖定位面（Matterix按运行层display.co2_percent写数字）",
+      "physical_meaning_zh": "视觉输出面：只承载显示/指示，运行状态通过 Matterix 段码或颜色映射，不产生力和热；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.0438×0.001×0.0151 m 长方体；局部尺寸为工程估计，质量/惯量/摩擦未知，URDF 数值占位。外观：数值框。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "仿真UI覆盖位置（不是厂家界面元素）。",
+      "objects": [
+        "eppendorf_cellxpertc170i__display_co2_digits"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04375488281249999,
+            0.001,
+            0.015086805555555527
+          ],
+          "origin_m": [
+            -0.049337402343749996,
+            -0.3249000000000001,
+            0.646120138888889
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        -0.049337400000000003,
+        -0.3249,
+        0.6461201400000001
+      ],
+      "simulation_inertia_kg_m2": [
+        1.8967627853333503e-10,
+        1.7850842150453351e-09,
+        1.5954079365120003e-09
+      ],
+      "material": {
+        "base_color": [
+          0.93,
+          0.95,
+          0.97
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "数值框"
+    },
+    {
+      "id": "bezel_label",
+      "name_zh": "面板字样",
+      "function_zh": "型号字样“C170i”（通用字体重绘）",
+      "physical_meaning_zh": "承载结构：固定连接于父件，只提供支撑、围护与安装面，不参与过程物理；装配原点 (0, 0, 0) m 相对 control_panel，碰撞代理为0.048×0.001×0.012 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：字样贴图。",
+      "parent": "control_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__bezel_label"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04799999999999999,
+            0.001,
+            0.01200000000000001
+          ],
+          "origin_m": [
+            0.11399999999999999,
+            -0.32260000000000005,
+            0.7050000000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.114,
+        -0.3226,
+        0.705
+      ],
+      "simulation_inertia_kg_m2": [
+        1.2000000000000023e-10,
+        2.0400000000000012e-09,
+        1.9200000000000012e-09
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/bezel_label.png"
+      },
+      "appearance_zh": "字样贴图"
+    },
+    {
+      "id": "usb_port",
+      "name_zh": "USB口",
+      "function_zh": "控制面板上的USB口（导出数据）",
+      "physical_meaning_zh": "接口点：流体/电气/数据连接的几何位置，只作拓扑端点；接头规格、密封与协议未实现；装配原点 (0, 0, 0) m 相对 control_panel，碰撞代理为0.012×0.001×0.01 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：黑色USB口。",
+      "parent": "control_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：控制单元USB口（手册图3-2）；位置按照片。",
+      "objects": [
+        "eppendorf_cellxpertc170i__usb_port"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.01200000000000001,
+            0.0010000000000000009,
+            0.010000000000000009
+          ],
+          "origin_m": [
+            0.138,
+            -0.32250000000000006,
+            0.625
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.009432331504030183,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.138,
+        -0.3225,
+        0.625
+      ],
+      "simulation_inertia_kg_m2": [
+        7.938879015892084e-08,
+        1.9179074058194688e-07,
+        1.1397400567369772e-07
+      ],
+      "material": {
+        "base_color": [
+          0.015,
+          0.015,
+          0.017
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色USB口"
+    },
+    {
+      "id": "door_label",
+      "name_zh": "门上字样",
+      "function_zh": "型号字样“CellXpert”（通用字体重绘）",
+      "physical_meaning_zh": "功能几何分件：作用见 function_zh，几何不参与过程求解；装配原点 (0.357, 0.29, -0.487) m 相对 outer_door，碰撞代理为0.16×0.001×0.04 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：字样贴图。",
+      "parent": "outer_door",
+      "origin_m": [
+        0.357,
+        0.28950000000000004,
+        -0.4875
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__door_label"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.15999999999999998,
+            0.001,
+            0.03999999999999998
+          ],
+          "origin_m": [
+            0.215,
+            -0.29810000000000003,
+            0.17
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.215,
+        -0.2981,
+        0.16999999999999998
+      ],
+      "simulation_inertia_kg_m2": [
+        1.3333333333333341e-09,
+        2.266666666666666e-08,
+        2.133333333333333e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/door_label.png"
+      },
+      "appearance_zh": "字样贴图"
+    },
+    {
+      "id": "rear_panel",
+      "name_zh": "后部接口面板",
+      "function_zh": "后部凹入的接口面板（CO2/N2接管、电源、BMS、扩展与内网接口）",
+      "physical_meaning_zh": "接口点：流体/电气/数据连接的几何位置，只作拓扑端点；接头规格、密封与协议未实现；装配原点 (0, 0, 0) m 相对 body_shell，碰撞代理为0.34×0.003×0.52 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：金属接口面板。",
+      "parent": "body_shell",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "布置按手册图3-3示意。",
+      "objects": [
+        "eppendorf_cellxpertc170i__rear_panel"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.33999999999999997,
+            0.0030000000000000027,
+            0.52
+          ],
+          "origin_m": [
+            0.05,
+            0.33599999999999997,
+            0.36
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.9432331504030183,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.05,
+        0.34550000000000003,
+        0.36
+      ],
+      "simulation_inertia_kg_m2": [
+        0.021620475862487852,
+        0.030883968632595894,
+        0.00933958024424055
+      ],
+      "material": {
+        "base_color": [
+          0.58,
+          0.6,
+          0.61
+        ],
+        "metallic": 0.3,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "金属接口面板"
+    },
+    {
+      "id": "rear_label",
+      "name_zh": "后面板字样",
+      "function_zh": "接口标识（通用字体重绘）",
+      "physical_meaning_zh": "承载结构：固定连接于父件，只提供支撑、围护与安装面，不参与过程物理；装配原点 (0, 0, 0) m 相对 rear_panel，碰撞代理为0.32×0.001×0.5 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：后面板贴图。",
+      "parent": "rear_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__rear_label"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.31999999999999995,
+            0.001,
+            0.5
+          ],
+          "origin_m": [
+            0.049999999999999996,
+            0.33799999999999997,
+            0.36
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        0.049999999999999996,
+        0.338,
+        0.36
+      ],
+      "simulation_inertia_kg_m2": [
+        2.0833333333333336e-07,
+        2.936666666666667e-07,
+        8.533333333333334e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/rear_label.png"
+      },
+      "appearance_zh": "后面板贴图"
+    },
+    {
+      "id": "rear_connectors",
+      "name_zh": "后部接头",
+      "function_zh": "CO2接管、N2接管（O2选件）、C19电源插座、BMS继电器接口、扩展接口、内网接口",
+      "physical_meaning_zh": "承载结构：固定连接于父件，只提供支撑、围护与安装面，不参与过程物理；装配原点 (0, 0, 0) m 相对 rear_panel，碰撞代理为0.295×0.016×0.397 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：黑色接头。",
+      "parent": "rear_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：接口种类（手册图3-3、§13.3）；位置为工程布置。",
+      "objects": [
+        "eppendorf_cellxpertc170i__rear_connectors"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.295,
+            0.016000000000000014,
+            0.397
+          ],
+          "origin_m": [
+            0.0425,
+            0.3455,
+            0.3285
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.28296994512090545,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0425,
+        0.34550000000000003,
+        0.3285
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0037225875322093125,
+        0.005768672462892299,
+        0.0020581583150081455
+      ],
+      "material": {
+        "base_color": [
+          0.015,
+          0.015,
+          0.017
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色接头"
+    },
+    {
+      "id": "access_ports",
+      "name_zh": "接入孔堵头",
+      "function_zh": "后部上下两个接入孔（内径25 mm）的堵头（穿线时割口绕线）",
+      "physical_meaning_zh": "被动机械件：紧固、导向、握持或连接，无独立过程作用；真实螺纹、接触与握持未仿真；装配原点 (0, 0, 0) m 相对 body_shell，碰撞代理为半径 0.019 m、高 0.01 m 圆柱 等 2 个基元；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：黑色堵头。",
+      "parent": "body_shell",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "厂家：2个接入孔、内径25 mm。",
+      "objects": [
+        "eppendorf_cellxpertc170i__access_ports"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.019,
+            0.01
+          ],
+          "origin_m": [
+            0.0,
+            0.34249999999999997,
+            0.58
+          ],
+          "rpy_rad": [
+            1.5707963267948966,
+            0,
+            0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.019,
+            0.01
+          ],
+          "origin_m": [
+            0.0,
+            0.34249999999999997,
+            0.25
+          ],
+          "rpy_rad": [
+            1.5707963267948966,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.09432331504030184,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.3425,
+        0.415
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0010652560789601554,
+        0.0010758202902446691,
+        1.2136266535185494e-05
+      ],
+      "material": {
+        "base_color": [
+          0.015,
+          0.015,
+          0.017
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色堵头"
+    },
+    {
+      "id": "name_plate",
+      "name_zh": "铭牌",
+      "function_zh": "后部铭牌（型号与电源规格，通用字体重绘）",
+      "physical_meaning_zh": "承载结构：固定连接于父件，只提供支撑、围护与安装面，不参与过程物理；装配原点 (0, 0, 0) m 相对 body_shell，碰撞代理为0.09×0.001×0.045 m 长方体；局部尺寸按照片估计，质量/惯量/摩擦未知，URDF 数值占位。外观：铭牌贴图。",
+      "parent": "body_shell",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品册照片与手册示意图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "eppendorf_cellxpertc170i__name_plate"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.08999999999999997,
+            0.001,
+            0.044999999999999984
+          ],
+          "origin_m": [
+            -0.25,
+            0.3578,
+            0.22
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1e-05,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "visual proxy",
+      "simulation_center_of_mass_m": [
+        -0.25,
+        0.3578,
+        0.22
+      ],
+      "simulation_inertia_kg_m2": [
+        1.687499999999999e-09,
+        8.4375e-09,
+        6.750000000000001e-09
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/name_plate.png"
+      },
+      "appearance_zh": "铭牌贴图"
+    },
+    {
+      "id": "switch_mains",
+      "name_zh": "电源开关",
+      "function_zh": "右后侧电源开关（手册：用设备右侧的开关开机）",
+      "physical_meaning_zh": "可动件：运动学教学自由度，不解驱动动力学；可动件：沿 −X 平移 0–0.002 m，瞬时按键（接power.press_switch，不镜像状态），行程为教学假设；装配原点 (0.357, 0.297, 0.14) m 相对 body_shell，碰撞代理为0.008×0.024×0.03 m 长方体；尺寸有厂家依据，质量/惯量/摩擦未知，URDF 数值占位。外观：黑色翘板开关。",
+      "parent": "body_shell",
+      "origin_m": [
+        0.357,
+        0.2975,
+        0.14
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -1,
+        0,
+        0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -1,
+          0,
+          0
+        ],
+        "limits": [
+          0.0,
+          0.002
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "手册§5.1：设备右侧的开关；位置按图3-1后视图。",
+      "objects": [
+        "eppendorf_cellxpertc170i__switch_mains"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.008000000000000007,
+            0.02400000000000002,
+            0.030000000000000027
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.009432331504030183,
+      "simulation_mass_evidence": "engineering_split_of_documented_total",
+      "simulation_mass_note": "share of the 110 kg mid value of the documented 107-113 kg (engineering volume split)",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        1.1601767749957124e-06,
+        7.57730630823758e-07,
+        5.030576802149431e-07
+      ],
+      "material": {
+        "base_color": [
+          0.015,
+          0.015,
+          0.017
+        ],
+        "metallic": 0.1,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色翘板开关"
+    }
+  ],
+  "root_object": "eppendorf_cellxpertc170i__root",
+  "joint_definitions": {
+    "water_surface": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits_m": [
+        0.0,
+        0.018601190476190476
+      ],
+      "accessor": "joint[water_surface_joint]",
+      "state_id": "water_tray.level_m",
+      "range_evidence": "engineering_assumption"
+    },
+    "inner_door": {
+      "type": "revolute",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_rad": [
+        0.0,
+        1.745
+      ],
+      "accessor": "joint[inner_door_joint]",
+      "state_id": "door.inner_angle_rad",
+      "range_evidence": "engineering_assumption"
+    },
+    "inner_door_latch": {
+      "type": "revolute",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits_rad": [
+        0.0,
+        1.5707963267948966
+      ],
+      "accessor": "joint[inner_door_latch_joint]",
+      "state_id": "door.latch_angle_rad",
+      "range_evidence": "manufacturer_datasheet"
+    },
+    "outer_door": {
+      "type": "revolute",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_rad": [
+        0.0,
+        1.745
+      ],
+      "accessor": "joint[outer_door_joint]",
+      "state_id": "door.outer_angle_rad",
+      "range_evidence": "engineering_assumption"
+    },
+    "switch_mains": {
+      "type": "prismatic",
+      "axis": [
+        -1,
+        0,
+        0
+      ],
+      "limits_m": [
+        0.0,
+        0.002
+      ],
+      "accessor": "joint[switch_mains_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    }
+  },
+  "artifacts": {
+    "model_glb": "model.glb",
+    "model_urdf": "model.urdf",
+    "meshes_dir": "meshes",
+    "model_blend": "model.blend"
+  },
+  "limitations_zh": [
+    "外形按调研表/产品册/手册71.8 W×71.5 D×90.0 H cm（门面到后背65.5 cm，把手与控制面板再伸出6 cm）；内腔53.9×69.2×44.5 cm。",
+    "外观（浅灰机柜与门、深色底座、门右缘深色竖把手、门上中部银色控制面板与触摸屏、抛光不锈钢内腔）按产品册照片；字样为通用字体重绘，不复制厂家标志。",
+    "工程构件（非厂家尺寸）：壁厚与门厚、搁板高度（8个架位中的4个）、水盘尺寸（容量2.5 L为厂家值）、腔内传感器与后部接口的位置（按手册示意图）。",
+    "参考姿态：外门与内门关闭、门闩水平锁住、水盘为空（水面在盘底）、电源开关未按下。",
+    "培养容器是外部物体：搁板上表面为接口面，容器与细胞由运行层状态表示。",
+    "质量：手册107–113 kg（取决于选件、不含附件）；本配置按区间中点110 kg，各部件质量为按体量分配的工程值。"
+  ],
+  "manufacturer_dimensions_m": {
+    "external_W_D_H": [
+      0.718,
+      0.715,
+      0.9
+    ],
+    "depth_without_handle_panel": 0.655,
+    "internal_W_H_D": [
+      0.539,
+      0.692,
+      0.445
+    ]
+  },
+  "manufacturer_dimensions_scope_zh": "手册§13.1：外形71.8×71.5×90.0 cm（门面到后背65.5 cm）、内腔53.9×69.2×44.5 cm；本资产按此建模",
+  "documented_mass_range_kg": [
+    107.0,
+    113.0
+  ],
+  "documented_mass_evidence": "manufacturer_datasheet",
+  "mass_scope_zh": "手册/调研表107–113 kg（取决于选件、不含附件）；仿真取区间中点110 kg（工程取值）",
+  "simulation_mass_budget": {
+    "total_mass_kg": 109.99999999999999,
+    "chosen_total_kg": 110.0,
+    "documented_range_kg": [
+      107.0,
+      113.0
+    ],
+    "evidence": "mid value of the documented 107-113 kg split over the parts by engineering volume weights"
+  },
+  "reference_pose_zh": "参考姿态：外门与内门关闭、门闩水平锁住、水盘为空（水面在盘底）、电源开关未按下。",
+  "selected_configuration": {
+    "model": "Eppendorf CellXpert C170i",
+    "options": [
+      "O2 control 1-20 % (N2)",
+      "relative humidity sensor",
+      "water level sensor"
+    ],
+    "shelves": 4,
+    "hinge": "left",
+    "inner_door": "unsegmented",
+    "options_not_included": [
+      "segmented inner door",
+      "copper interior",
+      "door lock",
+      "door damper",
+      "VisioNize cloud"
+    ]
+  },
+  "chamber": {
+    "x_m": [
+      -0.2695,
+      0.2695
+    ],
+    "y_m": [
+      -0.20750000000000005,
+      0.23749999999999996
+    ],
+    "z_m": [
+      0.115,
+      0.807
+    ],
+    "shelf_top_z_m": [
+      0.265,
+      0.41,
+      0.555,
+      0.7
+    ],
+    "shelf_centre_y_m": 0.014999999999999958,
+    "tray_xy_m": [
+      [
+        -0.21,
+        0.21
+      ],
+      [
+        -0.14500000000000005,
+        0.17499999999999996
+      ]
+    ],
+    "tray_z_m": [
+      0.1155,
+      0.14550000000000002
+    ],
+    "water_max_m": 0.018601190476190476,
+    "evidence": "chamber size documented; shelf heights and tray engineering"
+  },
+  "readouts": [
+    {
+      "name": "temperature_c",
+      "part": "display_temperature_digits",
+      "face": "screen",
+      "digits": 4,
+      "decimals": 1,
+      "unit": "°C",
+      "on": [
+        0.1,
+        0.35,
+        0.8
+      ],
+      "off": [
+        0.92,
+        0.94,
+        0.96
+      ],
+      "source": {
+        "bridge": [
+          "display.temperature_c"
+        ]
+      }
+    },
+    {
+      "name": "co2_percent",
+      "part": "display_co2_digits",
+      "face": "screen",
+      "digits": 4,
+      "decimals": 1,
+      "unit": "%",
+      "on": [
+        0.1,
+        0.35,
+        0.8
+      ],
+      "off": [
+        0.92,
+        0.94,
+        0.96
+      ],
+      "source": {
+        "bridge": [
+          "display.co2_percent"
+        ]
+      }
+    }
+  ],
+  "lamps": [],
+  "readout_note_zh": "CellXpert C170i为VisioNize触摸屏（图形界面）；本模型在屏上温度与CO2数值处放两个仿真数字覆盖，绑定运行层display.temperature_c与display.co2_percent（面板显示值，°C与%，0.1位），是仿真UI提示，不是厂家界面的复制；界面其余部分为贴图。",
+  "panel_keys": [
+    "switch_mains"
+  ],
+  "knobs": [],
+  "textures": {
+    "screen_ui": "textures/screen_ui.png",
+    "door_label": "textures/door_label.png",
+    "bezel_label": "textures/bezel_label.png",
+    "rear_label": "textures/rear_label.png",
+    "shelf": "textures/shelf.png",
+    "name_plate": "textures/name_plate.png"
+  },
+  "geometry_evidence_by_component": {
+    "base_plinth": "photo_estimate",
+    "feet": "photo_estimate",
+    "service_interface": "photo_estimate",
+    "body_shell": "manufacturer_datasheet",
+    "chamber": "manufacturer_datasheet",
+    "chamber_gasket": "photo_estimate",
+    "shelf_rack": "engineering_assumption",
+    "shelf_1": "manufacturer_datasheet",
+    "shelf_1_holes": "photo_estimate",
+    "shelf_2": "manufacturer_datasheet",
+    "shelf_2_holes": "photo_estimate",
+    "shelf_3": "manufacturer_datasheet",
+    "shelf_3_holes": "photo_estimate",
+    "shelf_4": "manufacturer_datasheet",
+    "shelf_4_holes": "photo_estimate",
+    "water_tray": "engineering_assumption",
+    "water_surface": "engineering_assumption",
+    "chamber_sensors": "photo_estimate",
+    "rh_sensor": "photo_estimate",
+    "inner_door": "manufacturer_datasheet",
+    "inner_door_glass": "photo_estimate",
+    "inner_door_latch": "manufacturer_datasheet",
+    "outer_door": "manufacturer_datasheet",
+    "door_gasket": "photo_estimate",
+    "door_handle": "photo_estimate",
+    "control_panel": "photo_estimate",
+    "touch_screen": "photo_estimate",
+    "screen_ui": "photo_estimate",
+    "display_temperature_digits": "engineering_assumption",
+    "display_co2_digits": "engineering_assumption",
+    "bezel_label": "photo_estimate",
+    "usb_port": "manufacturer_datasheet",
+    "door_label": "photo_estimate",
+    "rear_panel": "photo_estimate",
+    "rear_label": "manufacturer_datasheet",
+    "rear_connectors": "manufacturer_datasheet",
+    "access_ports": "manufacturer_datasheet",
+    "name_plate": "photo_estimate",
+    "switch_mains": "manufacturer_datasheet"
+  },
+  "world_origins_m": {
+    "base_plinth": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "feet": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "service_interface": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "body_shell": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "chamber": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "chamber_gasket": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_rack": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_1_holes": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_2": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_2_holes": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_3": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_3_holes": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_4": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shelf_4_holes": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "water_tray": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "water_surface": [
+      0.0,
+      0.014999999999999958,
+      0.1165
+    ],
+    "chamber_sensors": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rh_sensor": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "inner_door": [
+      -0.2845,
+      -0.23050000000000004,
+      0.46099999999999997
+    ],
+    "inner_door_glass": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "inner_door_latch": [
+      0.262,
+      -0.23450000000000004,
+      0.462
+    ],
+    "outer_door": [
+      -0.357,
+      -0.28950000000000004,
+      0.4875
+    ],
+    "door_gasket": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "door_handle": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "control_panel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "touch_screen": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screen_ui": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "display_temperature_digits": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "display_co2_digits": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "bezel_label": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "usb_port": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "door_label": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rear_panel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rear_label": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rear_connectors": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "access_ports": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name_plate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "switch_mains": [
+      0.357,
+      0.2975,
+      0.14
+    ]
+  }
+}

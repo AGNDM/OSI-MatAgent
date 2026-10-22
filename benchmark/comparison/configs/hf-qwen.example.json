@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "tracks": {"mcqa": {"split": "heldout"}, "sequential": {"mode": "both"}},
+  "experiments": [
+    {"name": "qwen-hf-choice-seed0", "method": "choice", "seed": 0,
+     "backend": {"kind": "hf", "model_path": "${COMPARISON_QWEN_MODEL}", "device": "cuda:0", "dtype": "float16", "max_context": 30000, "max_new_tokens": 192}},
+    {"name": "qwen-hf-logprobs-seed0", "method": "logprobs", "seed": 0,
+     "backend": {"kind": "hf", "model_path": "${COMPARISON_QWEN_MODEL}", "device": "cuda:0", "dtype": "float16", "max_context": 30000, "max_new_tokens": 192}},
+    {"name": "qwen-hf-verbalized-seed0", "method": "verbalized", "seed": 0,
+     "backend": {"kind": "hf", "model_path": "${COMPARISON_QWEN_MODEL}", "device": "cuda:0", "dtype": "float16", "max_context": 30000, "max_new_tokens": 192}},
+    {"name": "qwen-hf-sampling-seed0", "method": "sampling", "samples": 10, "temperature": 0.8, "seed": 0,
+     "backend": {"kind": "hf", "model_path": "${COMPARISON_QWEN_MODEL}", "device": "cuda:0", "dtype": "float16", "max_context": 30000, "max_new_tokens": 192}}
+  ]
+}

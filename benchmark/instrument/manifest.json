@@ -1,0 +1,664 @@
+{
+  "bundle_version": "1.1.1",
+  "created_at_utc": "2026-10-22T20:39:24.921220+00:00",
+  "datasets": {
+    "mcqa_388": {
+      "answers_file": "mcqa_388/answers.jsonl",
+      "base_cases": 194,
+      "groups": 112,
+      "questions": 388,
+      "questions_file": "mcqa_388/questions.jsonl.gz",
+      "split_dir": "mcqa_388/splits"
+    },
+    "sequential_120": {
+      "action_presets_file": "sequential_120/action-presets.json",
+      "cases": 120,
+      "cases_file": "sequential_120/cases.jsonl",
+      "data_included": true,
+      "evaluator_cases_file": "sequential_120/evaluator/case-specs.jsonl",
+      "instruments": 8,
+      "manifest_file": "sequential_120/manifest.json",
+      "model_weights_included": false,
+      "native_runtime_included": true,
+      "public_commands": 146,
+      "public_contracts_file": "sequential_120/public-contracts.json",
+      "schema_validated_argument_presets": 1954,
+      "status": "packaged",
+      "teacher_forcing_evaluator_included": true,
+      "train_test_split_assigned": false,
+      "workflow_templates": 14
+    }
+  },
+  "files": {
+    ".gitignore": {
+      "bytes": 75,
+      "sha256": "260e9e56b8d239adb722e6db6d75758679fef2ce9358da4a2e338c45a95993b5"
+    },
+    "CITATION.cff": {
+      "bytes": 1319,
+      "sha256": "a13d89173f2d10525f9ac2029e84294eb76df70c35d4038120a9ea71c525f2cf"
+    },
+    "LICENSE": {
+      "bytes": 1434,
+      "sha256": "23ecf781435fe5c904d813b0e30856cef805792819329c7336be07d32d13002a"
+    },
+    "LICENSE-ASSETS.md": {
+      "bytes": 1157,
+      "sha256": "b9c2481ed61d7d2694d52978d7477db2362a33b6485248bcffdbe1993d5c9fa5"
+    },
+    "NOTICE.md": {
+      "bytes": 116541,
+      "sha256": "f06d533d667f9a802d110e5027146ac8c8d0010b413b2b9ea0ec7f27cadda89b"
+    },
+    "README.md": {
+      "bytes": 2646,
+      "sha256": "8d4c935ec32253ca85c00226155c4a9dc5aa28d3f6accf738ca15de0d7af94ec"
+    },
+    "eval/__init__.py": {
+      "bytes": 77,
+      "sha256": "0229233c4549386a9823dc03fe93251eb458276a219d54296ed8d654218c5e22"
+    },
+    "eval/common.py": {
+      "bytes": 5812,
+      "sha256": "d5f83622ee8d08d7ff8a6185e61e5b9344ac97f21bc061e10e9b93ef22023d97"
+    },
+    "eval/mcqa.py": {
+      "bytes": 7998,
+      "sha256": "579603fd941c13d958c007a148eae9541de937e289b7d605727ab3645b0cc305"
+    },
+    "eval/prompts.py": {
+      "bytes": 8461,
+      "sha256": "0940ee3f6b8806aac794924ae543d276ac0c17fe2260f18a99b045187fc3e056"
+    },
+    "eval/schemas/answer.schema.json": {
+      "bytes": 595,
+      "sha256": "42f73826e4ab1027963bfab04193c36054e0bfa567bb0f6c2e56211b53b5882d"
+    },
+    "eval/schemas/prediction.schema.json": {
+      "bytes": 850,
+      "sha256": "8bfe53fc2da215fc122e5b229a1a357903e6ccc4ffca83437f64c16442091fb2"
+    },
+    "eval/schemas/sequential-episode.schema.json": {
+      "bytes": 1968,
+      "sha256": "797090bb5613fe859ba3dfc762bdadac7b24ac7ea3886121aecad6644e82f0cc"
+    },
+    "eval/schemas/sequential-policy-choice.schema.json": {
+      "bytes": 573,
+      "sha256": "10924e61e3e15852ab2c9a10df8334724a6e7660d0d83399bf5c62acd5e730e0"
+    },
+    "eval/schemas/task.schema.json": {
+      "bytes": 3373,
+      "sha256": "0bc647367dacc1c2bf81e83fb5d69a5bdcce0648f2511cf012285a0826e26d2b"
+    },
+    "eval/sequential.py": {
+      "bytes": 24464,
+      "sha256": "8dbbcf81a4573724b92cb1f144e4d8e22a3cc61bf75edf2fcd072d65c2b1272a"
+    },
+    "eval/validate.py": {
+      "bytes": 11761,
+      "sha256": "852afcaea3983c47f3deddcbe3718c9eca60220a7c35501367fc7c99c7ca42c7"
+    },
+    "eval/validate_sequential.py": {
+      "bytes": 27431,
+      "sha256": "d6c96be2d54b28e38d92e16d17c32fa12863550019615b4f8166fd5efef68efa"
+    },
+    "examples/README.md": {
+      "bytes": 1808,
+      "sha256": "b9d4e07340ce3b00f79bf7e51da9ba53a6a6fc87f48c57e096bd2cb18ab44ee1"
+    },
+    "examples/__init__.py": {
+      "bytes": 72,
+      "sha256": "f2034fc1f9eb8e10a1b361f850675e9157af9729f369a34a1658b75aada9b40f"
+    },
+    "examples/prediction.jsonl": {
+      "bytes": 67,
+      "sha256": "ec65cb044c1f387f33aee20a9d042b03b26a27b091b67456b237022f6d453533"
+    },
+    "examples/public-prompt.jsonl": {
+      "bytes": 7478,
+      "sha256": "e1ee451e150f7b8b012303a6b0907c154ab5de59be92582447caa62cba60c303"
+    },
+    "examples/qwen-baseline-protocol.json": {
+      "bytes": 4362,
+      "sha256": "25e9db783db65ed57dc9cfead7c05d200478ae4b5bb0682c827f84dc2f491f05"
+    },
+    "examples/sequential-case.json": {
+      "bytes": 4197,
+      "sha256": "2991ee068000f78ca93ed7b923c3cde10caf55ef7dd832ff44b0a7f80b87c20d"
+    },
+    "examples/sequential_policy.py": {
+      "bytes": 1075,
+      "sha256": "a81e102df07456d762f0321bcf60293d7640267a198492672352aa798e02a267"
+    },
+    "examples/sequential_qwen.py": {
+      "bytes": 2101,
+      "sha256": "d29a3c314ad6fcb08854b2fb9530944250b528e0e7c227fa606df7c5106bda78"
+    },
+    "mcqa_388/README.md": {
+      "bytes": 4547,
+      "sha256": "bc1171bf01af734ef033261bf06e1ac57dd0a2996805f63cf6587807dce2ac03"
+    },
+    "mcqa_388/answers.jsonl": {
+      "bytes": 26772,
+      "sha256": "3e8d1744e05fd3c1c39ab206a07ef6d3f2556b4815507e60660d823c211a65b1"
+    },
+    "mcqa_388/manifest.json": {
+      "bytes": 2048,
+      "sha256": "5ca7a31727fc11275d20473b7c885802b79e92c4b0923cf1cadf9cbec00af0d0"
+    },
+    "mcqa_388/provenance/README.md": {
+      "bytes": 522,
+      "sha256": "2660f35f21f568e8e0702044b970c574ea646803ca5578f8f859913b47bf1e64"
+    },
+    "mcqa_388/provenance/source-bundle-manifest.json": {
+      "bytes": 7989,
+      "sha256": "03da1f29da9fcc220d59ef5d7bcb639b75d735147d6dccad28a6dbb051bc572a"
+    },
+    "mcqa_388/provenance/source-bundle-validation.json": {
+      "bytes": 1234,
+      "sha256": "1957303a202ade2e92a3112fee66fc2c06dd8d67460659365ae4ea29ea1f98c8"
+    },
+    "mcqa_388/questions.jsonl.gz": {
+      "bytes": 3109132,
+      "sha256": "b0f0403b1c0b9f8fc77f3038146f244d7d75db1876d4feb494715603e11b5538"
+    },
+    "mcqa_388/source-release-manifest.json": {
+      "bytes": 20471,
+      "sha256": "16b2313df81cf35a1e36c0148c8035a9c3bf3dbc658018409de568d7aa22b95d"
+    },
+    "mcqa_388/splits/test.txt": {
+      "bytes": 1500,
+      "sha256": "85c1a2a3bb858d8bfc7ba2142b0c0b583a153a5e5abd64d43eb0a086b381b9c6"
+    },
+    "mcqa_388/splits/test_fault.txt": {
+      "bytes": 200,
+      "sha256": "00b6f39db7c3c93a56e20db415e14a87cc6e91671515da975f2bec64f7b721a4"
+    },
+    "mcqa_388/splits/test_instrument.txt": {
+      "bytes": 250,
+      "sha256": "62a97ab27593a0d2a48cae023bfe3b1e65787ed7633a27f30c7c9499abeda937"
+    },
+    "mcqa_388/splits/test_template.txt": {
+      "bytes": 900,
+      "sha256": "0d7411a57467f1362f1729122d672596c9dc92147f1e5aad91444d0c04b5201f"
+    },
+    "mcqa_388/splits/train.txt": {
+      "bytes": 5800,
+      "sha256": "8c5ecfd680f67ca0693d0ad41d26bda0c39954d1f30c59168f1bced2fcc262b2"
+    },
+    "mcqa_388/splits/validation.txt": {
+      "bytes": 1050,
+      "sha256": "a300c46350ac5fb49fb7a1ce8cd33d7a94545b872bed56721ee3fb735b8c1b28"
+    },
+    "sequential_120/README.md": {
+      "bytes": 8546,
+      "sha256": "4ad81528ddf4528d0882d686d216799c1052af5c97689776d08e8dad70296b13"
+    },
+    "sequential_120/action-presets.json": {
+      "bytes": 285305,
+      "sha256": "a26269ed4106789d52092935c7f885f39b286e61add14fd33cea27aeba084dc7"
+    },
+    "sequential_120/cases.jsonl": {
+      "bytes": 390940,
+      "sha256": "67e11921fa653835d7b66798b8f5cd81343c2fa1958181e59e53719354570fc7"
+    },
+    "sequential_120/evaluator/case-specs.jsonl": {
+      "bytes": 671509,
+      "sha256": "7fdb3cd865cb03de08914caffc4b41e8cefc6f24842117775b903a9891cca592"
+    },
+    "sequential_120/manifest.json": {
+      "bytes": 52467,
+      "sha256": "5a463e960150b253783f03572dabb9d2c2c8dc5ce2f8c6941d79ea066f904e77"
+    },
+    "sequential_120/provenance/context-preflight.json": {
+      "bytes": 19437,
+      "sha256": "633a423d6ad60e5532eceb191db296af195a374ee79ca681a792fa9de693647e"
+    },
+    "sequential_120/provenance/cross-machine-preflight.json": {
+      "bytes": 31647,
+      "sha256": "ee12fbb5a68a53cdad0490b5b7fb2b9f3d51f0120d76532d8132687021e6eeaf"
+    },
+    "sequential_120/provenance/native-evidence.json": {
+      "bytes": 4679,
+      "sha256": "5bc1e0b46980d81b06315575a461c6a3d7fcdead0812c99d0232d186dce61a06"
+    },
+    "sequential_120/provenance/native-validation.json": {
+      "bytes": 408,
+      "sha256": "cd1645e19aff1c7b98039726308052d29daa562d47c94218b3b3bafd393820bb"
+    },
+    "sequential_120/provenance/public-contracts-receipt.json": {
+      "bytes": 274,
+      "sha256": "1bd35e8913d84ed5d1689eaf52f0679350cdc60542792c1f966c3f2f075aa642"
+    },
+    "sequential_120/provenance/source-configuration.json": {
+      "bytes": 290593,
+      "sha256": "ec03964430520d9c629920391a18217f5f055e4cdc546770916264f362d7c44f"
+    },
+    "sequential_120/provenance/source-manifest.json": {
+      "bytes": 7540,
+      "sha256": "6bf3ad1720b4e8b26b7c76170a8fc77bbbc83aee22c35aee986a0b5f2467993b"
+    },
+    "sequential_120/public-contracts.json": {
+      "bytes": 452849,
+      "sha256": "164c817bd81b0969f6fc3d4179f7b8a6ac0d3c8a1a30dc5eb9e299fe544ee940"
+    },
+    "sequential_120/runtime/README.md": {
+      "bytes": 2627,
+      "sha256": "b9ea517913ada5b619289f186836ad8a9df449a7c3205f935155f86b69ca4ef9"
+    },
+    "sequential_120/runtime/__init__.py": {
+      "bytes": 81,
+      "sha256": "8de763162dc4eb8fb0287950170c794370da3c70ca861da0e20cb7ee58e319ca"
+    },
+    "sequential_120/runtime/bootstrap.py": {
+      "bytes": 1054,
+      "sha256": "eb8edbb720311aba47430614ce97ab186dc0129982c8b85a6aabdf0fdb76b07e"
+    },
+    "sequential_120/runtime/provenance.json": {
+      "bytes": 29373,
+      "sha256": "770aae72c2f3de2bff21b80ada9f88e74323e29397acee7778a551cab87e2da3"
+    },
+    "sequential_120/runtime/requirements-model.txt": {
+      "bytes": 1215,
+      "sha256": "30ea97c794f393bddc3119c7ccad573d91c9f0d12739dad296be0e3589c04dab"
+    },
+    "sequential_120/runtime/requirements.txt": {
+      "bytes": 272,
+      "sha256": "666e32245a662fb25c513edc2b1ca944df492734d1a7ec766061450e41a770db"
+    },
+    "sequential_120/runtime/vendor/environment/chemlab-source.json": {
+      "bytes": 351,
+      "sha256": "c373b3a4c52e562763eec983342d69b47592f5a5e84d679b286442cf1dfcd0c2"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/CITATION.cff": {
+      "bytes": 1319,
+      "sha256": "a13d89173f2d10525f9ac2029e84294eb76df70c35d4038120a9ea71c525f2cf"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSE": {
+      "bytes": 1370,
+      "sha256": "f9db67b0ff46c0230cda5a1a8ab6238cf3efb3bfbae9c5d1de81def2b123f89b"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSE-ASSETS.md": {
+      "bytes": 1157,
+      "sha256": "b9c2481ed61d7d2694d52978d7477db2362a33b6485248bcffdbe1993d5c9fa5"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/Biopython.rst": {
+      "bytes": 3267,
+      "sha256": "d4bbb0c4e5345e6f2508c3b93fb247fcb2db95783fb8a584c23cd88e3c03df6c"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/COGNI-CC0-1.0.txt": {
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/CoolProp-MIT.txt": {
+      "bytes": 1103,
+      "sha256": "9bf835333ef602af4cb19338b9f9d43671e174fa029b00280e9bdba6ea4719b2"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/KiMoPack-GPL-3.0.txt": {
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/OPERA-MIT.txt": {
+      "bytes": 1066,
+      "sha256": "c37f7781c055ba891fadbfedc6fd8b71f74cbeb21e747ceed21c5a41407511fd"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/XrayDB.txt": {
+      "bytes": 1128,
+      "sha256": "b8bbda80483f200cd1d530a3a23e9c51481026904cc8f10453e78bc99d30728c"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/chemicals-MIT.txt": {
+      "bytes": 1127,
+      "sha256": "dc8d90b7aed69e19ad9ca2528ee00c02be22e1d063b2b00db7c35e0b99854edb"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/openpoly-MIT.txt": {
+      "bytes": 1069,
+      "sha256": "29594199ad4920fcd9d41f0d5ca2def6fcc302d3363cca6767f973f52666a670"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/srsinst-rga-MIT.txt": {
+      "bytes": 1092,
+      "sha256": "9a4c619f204c6d509206eab7eaa61ba6fa2c3a83b3fee5c2cb23927992d8a1bc"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/teMatDb-MIT.txt": {
+      "bytes": 1033,
+      "sha256": "c48b8629b48a8e6001a66da53cbb4229ef5ccdb03b3a5b82ccd9803a09851eb3"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/NOTICE.md": {
+      "bytes": 116541,
+      "sha256": "f06d533d667f9a802d110e5027146ac8c8d0010b413b2b9ea0ec7f27cadda89b"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/asset.contract.json": {
+      "bytes": 413224,
+      "sha256": "8c3f320402cbc11513a00ff1244758e0557fba4a5e8338a32821a1c0958975d0"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/collision_proxies.json": {
+      "bytes": 11915,
+      "sha256": "055cf7cd3b946f11bc720eb8207acf08caac93559c81c2919ad9b7f0fb649fc4"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/geometry_manifest.json": {
+      "bytes": 62087,
+      "sha256": "bfd5cf27ab1b24b938c51017153a24a8803796e56c844246f03bd98ef3751b8c"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/instrument_model.json": {
+      "bytes": 13312,
+      "sha256": "8e7af1da0fa71f41b3e5ae2144887e67699e48b88541aa15a0b2ba44fc1da555"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/asset.contract.json": {
+      "bytes": 363972,
+      "sha256": "23cfffce336ddbb0be1a0ce41b078a255d8b85c5063be0bb6226a04d189963cc"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/collision_proxies.json": {
+      "bytes": 5954,
+      "sha256": "83d8987dc7d1646f253dbcc634a64bb099607ea4635753c3f5f19126f94bb2ea"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/gas_library.json": {
+      "bytes": 55779,
+      "sha256": "cf3b411c29b9c2cc1048441716baf83e14bf202792efe59e858f426c5461e0b9"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/geometry_manifest.json": {
+      "bytes": 34726,
+      "sha256": "62f7a118679c379b82890fa682f5edf0770ac6d0a6175c5ae685648b7dd51fca"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/humidity_formulation.json": {
+      "bytes": 15941,
+      "sha256": "73080b88bfb19e817326e9cb18f11f6c69855476c08e6180260003f41572a0e1"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/instrument_model.json": {
+      "bytes": 20222,
+      "sha256": "24f3c4ae87654107e2a48bb487487d9dab10481ab1ec4e6ef6e6b3967c71aec3"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/tubing_library.json": {
+      "bytes": 8186,
+      "sha256": "82acc753c18093ec91bbdc2830f62ddade7b50588b2496c3a1f66f092df01237"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/asset.contract.json": {
+      "bytes": 865790,
+      "sha256": "29a383d7c1c228ad791b4e1ff3c5619f56c1b166030cad0f92f5c6d07eaa2f07"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/cell_line_library.json": {
+      "bytes": 148110,
+      "sha256": "541e18bbdbcff494206d20570f750e9721ab8c5e86516358cb42a2e10d7bad76"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/collision_proxies.json": {
+      "bytes": 28250,
+      "sha256": "84902cfb2d97b696a05ad89385cf0beebb886670fa101c3f59eaec5a036905ad"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/equilibrium_model.json": {
+      "bytes": 3501,
+      "sha256": "b74b4b3cb8249073dab354ab975608090249d013ae8655a95c3c57835c9d019e"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/geometry_manifest.json": {
+      "bytes": 109517,
+      "sha256": "8d0bc4a22f993f93c85e1459f2384db39f3294eaae146396896f1ca7ca593819"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/incubator_model.json": {
+      "bytes": 6929,
+      "sha256": "8cb622309eacf3623389cb1b46dd4e3837c2485d37e8e70841297d11705cdb5d"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/media_library.json": {
+      "bytes": 140064,
+      "sha256": "20b306d23281250f5c3bdd224f12b7f644707cd5ea207f311d269295489e3bd5"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/vessel_library.json": {
+      "bytes": 14776,
+      "sha256": "ab5a475fd28db8c756cb685c6a26e87b25f80b8bbba9efe70274ae57993cc3c2"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/asset.contract.json": {
+      "bytes": 612109,
+      "sha256": "f78f257e1f0bacd39081d40c93bdc325968455135c2fbbb759a001379c741159"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/collision_proxies.json": {
+      "bytes": 25232,
+      "sha256": "93cf6b9380c84f6f3effcfd1c563829c027702ec0b92959ceee8e5928c456097"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/geometry_manifest.json": {
+      "bytes": 115206,
+      "sha256": "f1c12b9e1eea9ee988b5bd25862ae4a35652040625f6405e4925914866f6a2dc"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/instrument_model.json": {
+      "bytes": 24237,
+      "sha256": "e3524b9ca08671d26c501536cf12cc30ac8592bebd7bb1e9a88952d9de5c704f"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/vapour_templates.json": {
+      "bytes": 197061,
+      "sha256": "92b558b1cbbd7d44ea58fd74afbe5d109749b80b05aff03ee95d3533ae01bcfd"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/asset.contract.json": {
+      "bytes": 575589,
+      "sha256": "8e2085f9b372a37035feefc4e1a6ef2cec9e9fab170c19c46e98dd82e33aa40d"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/collision_proxies.json": {
+      "bytes": 22165,
+      "sha256": "3235120dace84628c745f07d1be95555a86238fa998085bf93ba3b4be30d7c4e"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/geometry_manifest.json": {
+      "bytes": 96302,
+      "sha256": "044af7bb322b10cfcc5cd3dcc9e6375a308e52e29e33b7c3390e001b6edf858f"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/instrument_model.json": {
+      "bytes": 37882,
+      "sha256": "0da893ba70c36c4c91f3279968be1198c0bfafa39774495458f68428410fc403"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/load_templates.json": {
+      "bytes": 191578,
+      "sha256": "4173fce5f312e784cc8cc86176bd863f8bd529c3cb2a1838b69bbad31cee1904"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/asset.contract.json": {
+      "bytes": 654597,
+      "sha256": "53f934eecc09aee8b06d02350b17b2836d17da86af7a155577b33220bfe3ab4b"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/collision_proxies.json": {
+      "bytes": 17024,
+      "sha256": "5704f2097dd0521667ba9367c80c05d611285029eff5f7871a221c320a8f507f"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/geometry_manifest.json": {
+      "bytes": 89172,
+      "sha256": "8f808d277058d2454345468a22ba9ba8fb6fa3d1dcb307b130735c450119145b"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/instrument_model.json": {
+      "bytes": 28789,
+      "sha256": "2e694fe6ace3f1f14a0392857f6d489913d75062c6e067972a49259fee8c7160"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json": {
+      "bytes": 178812,
+      "sha256": "5d6206255f699229e2ec2f5d43133f9978b4c0dbb99c22bf937a6cdee0014c3f"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/asset.contract.json": {
+      "bytes": 722130,
+      "sha256": "46f327d3077699d5c5797e788216ea4e76a0450a69934be61333ff0a37ad1303"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/collision_proxies.json": {
+      "bytes": 31382,
+      "sha256": "ac324a7100999c343694c32502e3a90d4af683cbb057f9905b2affa6eca9321e"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/geometry_manifest.json": {
+      "bytes": 136633,
+      "sha256": "4523e67985fa00e0f3dac2280c6bbc53fefe21d875a1b2fa0dd543ed7d10e00e"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/instrument_model.json": {
+      "bytes": 17107,
+      "sha256": "205f4d1a37aadbdc29c28fbf18799d520221d44bef80ab8c1704125ef4d3b8eb"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/syringe_templates.json": {
+      "bytes": 210558,
+      "sha256": "5d9b375029fec571b1d7afa3a98b7f39072252b0815c554e34129ae74957b8fa"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/catalog/catalog.csv": {
+      "bytes": 98434,
+      "sha256": "84c0993110ac18cb6b070197de3344802f26e9f9ad142bda2f6c5382df0f9b99"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/__init__.py": {
+      "bytes": 102,
+      "sha256": "0143ca66bfe451484cebd1fbdabf12de8b7499bf747257f5ae18f5672548d462"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/_annotations.py": {
+      "bytes": 56564,
+      "sha256": "0c88b91ac1914c6da176a202ae5cbd993fd86b51a4374369d1f7d6d22150ff4e"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/binder_fd056.py": {
+      "bytes": 90614,
+      "sha256": "0901bccc2f8fd62f6d536f4622054f01d4abc4ac374bfa7a2d68c2ad8e8bacf8"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/eppendorf_cellxpertc170i.py": {
+      "bytes": 169449,
+      "sha256": "d07dde318aab82d440156a957efbd70eaef095e5ad75b69195c4b3b8c492802f"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/esco_efa5uduvw.py": {
+      "bytes": 86906,
+      "sha256": "08cfda8c90fb0045e7542137adbb83cb378473ed4a2a67356db7ea1cbdffc622"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/ika_plate_rctdigital.py": {
+      "bytes": 104679,
+      "sha256": "7c38cf36e50d1e78db2d14a6810b66db4c77120df6b2e3ba7a1fb29c9da938f0"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/newera_ne1000.py": {
+      "bytes": 126314,
+      "sha256": "bd7589c84ca61fad32ee560c330dd3a00ae17c5e21510349d98af913767a94ff"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/peak_precisionhydrogen.py": {
+      "bytes": 71682,
+      "sha256": "dd0e22f988f7ce925c558ba5348bf83bf9302fda20e8f834c0d4172958078ac2"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/vaisala_dmt152.py": {
+      "bytes": 92717,
+      "sha256": "a96545ef62dea72bdeb3d79e3959247ed5af5ee11cb3d0a7c82cf6883d28b943"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/basic40_runtime.py": {
+      "bytes": 54856,
+      "sha256": "91c29abe3be38dd01a76d3d09da07ffb8d95ec34ec5a0c80c7ddc322e10322b5"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/basic40_runtime_thermal.py": {
+      "bytes": 313460,
+      "sha256": "b7ab66f25f2b98d37518dfaa79d75e8049a953c22e4332a5ecec4a7824f62192"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/__init__.py": {
+      "bytes": 101,
+      "sha256": "3fdbb422be8691e983671805a5b7c061b96a7f429f8572d42af696f443a462a6"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/adapters.py": {
+      "bytes": 8803,
+      "sha256": "c6f29a6fce66f77e1b9b15fdbce9503487148626bfc5c0c163a285e6aedf57e3"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/generator.py": {
+      "bytes": 29164,
+      "sha256": "5a28c16f3544144915150a5ce1d0d0ab85a472244f02bfa2d5caecfaf6c58ba9"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/io.py": {
+      "bytes": 7162,
+      "sha256": "52088d4c605b542ebecf0cc76d5953f41c00aebd93d657054fd6b07cd1911150"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/local_llm.py": {
+      "bytes": 12094,
+      "sha256": "a099041922c00882ca69aaa2549e4bafe42aa859ce4fa11c01228c2a5e8eacc1"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/scenarios.py": {
+      "bytes": 40050,
+      "sha256": "ffc3a2d374570710fa0c52e1241a5a38b8be4e2dbda758a531b56acad614127f"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/schema.py": {
+      "bytes": 2666,
+      "sha256": "f800be8278349029c6a6eb7e768dad065e6669b2403b531fcbec0c7d778706cf"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/__init__.py": {
+      "bytes": 104,
+      "sha256": "d4cdb893592aa391d136e6ecadda64ed7c274b450f179984fe6181ca09d5979d"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/__main__.py": {
+      "bytes": 19373,
+      "sha256": "89262ecf13733c6eea7449450056e91cfbff257df991f35b289bda1d173eed04"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/engine.py": {
+      "bytes": 23808,
+      "sha256": "e9e3e5f5ef172f98dc720f4edee7ae08da3b63e32d6289ade0d847b2b7bb57e3"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/policies.py": {
+      "bytes": 10174,
+      "sha256": "987cc987b059e19c8cde00d34bb31c1e9d77dd228894d0b1de2e879c9870fd20"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/tasks.py": {
+      "bytes": 18792,
+      "sha256": "49f794b6073a5ee1b9ebc26d546eefd0fe3e891b16b7d71eb98e6974a3884f97"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/__init__.py": {
+      "bytes": 96,
+      "sha256": "02c0c2a51e1066d935eb160e5269661862600e8e990c3507bd17f9df900587d0"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/durable.py": {
+      "bytes": 813,
+      "sha256": "c2d1b3da47ef606f2979886b109c3ce3f168f8998cc4caab6a8102680b896865"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/engine.py": {
+      "bytes": 7013,
+      "sha256": "aa128db21df960ed72a857133f54e299ffb534d796c6be387974c23cfc8864ea"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/menus.py": {
+      "bytes": 17389,
+      "sha256": "d85a412004d37e4a144742463e3f5f5387eaa31b7741732181e4bae1293c9fb6"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/policies.py": {
+      "bytes": 41356,
+      "sha256": "b438e0df62fca2f0e5e5c3aea9be46b2fee56cd1bf4ad24507c9e6fffd1d0051"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/__init__.py": {
+      "bytes": 106,
+      "sha256": "5373f460a1621a80b5869f05665e0b08fc1d22c2c13a281f038a13d713f09da9"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/engine.py": {
+      "bytes": 10217,
+      "sha256": "6dd9d68a5261a4c518a618afd130dbaf3d10fb17bf994469641f7cb1d99f584e"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/new_workflows.py": {
+      "bytes": 29322,
+      "sha256": "7483e5be522e0906db039a4c7a44fd53821cfc7fc3856eae0cdd7ea3ddefce54"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/tasks.py": {
+      "bytes": 2938,
+      "sha256": "ac720bfd5ec587620938e067184b9fd8ad599f55e26cc10cac1d092df5897620"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/variants.py": {
+      "bytes": 28182,
+      "sha256": "2151e5f69a5a228e490e1dbec44f08bf6805fbaca8a4b9e523949ae5f6e84554"
+    },
+    "tools/README.md": {
+      "bytes": 1201,
+      "sha256": "7656d81dbd9dc1c5576b92b8b6fb202745d5b095014dc4b71ef6c4e4f598943d"
+    },
+    "tools/release.py": {
+      "bytes": 8473,
+      "sha256": "e585626fa14ea248bb699e56f6829ff3fe9ef57eadafa0da9548b8144621502b"
+    },
+    "tools/setup.py": {
+      "bytes": 4877,
+      "sha256": "6ccd04814e9cd4a01ebac5a72780b0dd0d5e46645dca0482d11799a5da9d9faa"
+    }
+  },
+  "original_source_package_sha256": {
+    "instrument_bench/__init__.py": "3fdbb422be8691e983671805a5b7c061b96a7f429f8572d42af696f443a462a6",
+    "instrument_bench/__main__.py": "631dd4aca53e35ae3f5aeb96d11efb6711972f9a832edf644e7b683387dd915d",
+    "instrument_bench/adapters.py": "c6f29a6fce66f77e1b9b15fdbce9503487148626bfc5c0c163a285e6aedf57e3",
+    "instrument_bench/api_model.py": "7b90d03dcb7f30190c0d810cef48e926ff5f2f276c79f35357dde2b11c96e624",
+    "instrument_bench/baselines.py": "b38a4ab9b301583cbc9801da1ac11a15e3dc6918c62118afd6e1581d1c84acc7",
+    "instrument_bench/decision_models.py": "0731e40a8e978c6e296657976ae606f10d6cf859596016f912282163b135502a",
+    "instrument_bench/episode_metrics.py": "6b3a09fe9bd24cc7f33f8b987f38e71828682ab5b63d048fe067994174461849",
+    "instrument_bench/episodes.py": "4bd93dc80980603501eff4455a89c45c84ba9a2f798f24b7953147f533dd6865",
+    "instrument_bench/experiments.py": "6fc6da237ab7b58224581164903294f9c715fbb07206459707ce23afbe4ec31b",
+    "instrument_bench/feature_models.py": "2714fa13d02d26fb77113ca1df7ccd1b4f9c538e6f8401ebfadbed9326fd9df9",
+    "instrument_bench/feedback.py": "692f4c667e22a8f911064d282bc764b9f10ba97e1e7b3c4494922a2f01a0247d",
+    "instrument_bench/generative_sampling.py": "511ba3f6265d2558bebc98da3c6e4dd8cf5fae37a5a5564c11cc34a6ef4c7138",
+    "instrument_bench/generator.py": "5a28c16f3544144915150a5ce1d0d0ab85a472244f02bfa2d5caecfaf6c58ba9",
+    "instrument_bench/hosted_methods.py": "b6927cb5c04e0830243c594183765a523a98ce96bc57dae14769b7bcbed9b922",
+    "instrument_bench/io.py": "52088d4c605b542ebecf0cc76d5953f41c00aebd93d657054fd6b07cd1911150",
+    "instrument_bench/local_llm.py": "a099041922c00882ca69aaa2549e4bafe42aa859ce4fa11c01228c2a5e8eacc1",
+    "instrument_bench/metrics.py": "d6243c73dddd6d054ad432cf27d45b2e5753ff3396c53598f62d811be7cc0e7a",
+    "instrument_bench/runner.py": "02f57c6d443058d4c030181da8a1cfe350651f38464d1db3982ceb26c663a68d",
+    "instrument_bench/scenarios.py": "ffc3a2d374570710fa0c52e1241a5a38b8be4e2dbda758a531b56acad614127f",
+    "instrument_bench/schema.py": "f800be8278349029c6a6eb7e768dad065e6669b2403b531fcbec0c7d778706cf",
+    "instrument_bench/t1_rules.py": "21334d4e97cb1f1544e27ea5147b0a94679ca477851a7e2cbdf9347e894b8e04",
+    "instrument_bench/tool_decisions.py": "447494d23be134b3421d6861959b07cea42c7a1859b93c6ec14f61247825f0a5"
+  },
+  "requirements": {
+    "interactive_sequential_runtime": "See sequential_120/runtime/requirements.txt; native execution requires Slurm.",
+    "python": ">=3.10",
+    "simulator_for_static_scoring": false,
+    "third_party_dependencies": []
+  }
+}

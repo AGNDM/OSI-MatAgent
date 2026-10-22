@@ -1,0 +1,101 @@
+{
+ "schema": "chemsim.co2_equilibrium_model.v2",
+ "asset_type_id": "instrument.eppendorf_cellxpertc170i",
+ "built": "2026-10-01",
+ "co2_henry": {
+  "H_ref_mol_m3_pa": 0.00034,
+  "T_ref_k": 298.15,
+  "dlnH_d1overT_k": 2300.0,
+  "evidence": "measured_literature",
+  "source": "Sander, Henry's law compilation (www.henrys-law.org, CAS 124-38-9; value of Burkholder et al. 2019), cached source_cache/henry_co2.html sha256 50ab062fdc99627a",
+  "salting_out_factor": 0.97,
+  "salting_out_evidence": "assumption",
+  "salting_out_note": "culture media ~0.16 mol/kg salts: gas solubility about 3 % below pure water (engineering)"
+ },
+ "o2_henry": {
+  "H_ref_mol_m3_pa": 1.3e-05,
+  "T_ref_k": 298.15,
+  "dlnH_d1overT_k": 1500.0,
+  "evidence": "measured_literature",
+  "source": "Sander, Henry's law compilation (www.henrys-law.org, CAS 7782-44-7; value of Burkholder et al. 2019), cached source_cache/henry_o2.html sha256 d13c788e7551f2d9",
+  "salting_out_factor": 0.97,
+  "salting_out_evidence": "assumption"
+ },
+ "carbonic_pk1": {
+  "apparent_pk_310k": 6.1,
+  "apparent_evidence": "measured_literature",
+  "apparent_source": "apparent pK' 6.1 of CO2/bicarbonate in plasma at 37 C (ionic strength ~0.16), Henderson-Hasselbalch; not cached",
+  "temperature_formula": "pK1 = 3404.71 / T + 0.032786 T - 14.8435 (Harned & Davis, J. Am. Chem. Soc. 65 (1943) 2030)",
+  "a": 3404.71,
+  "b": 0.032786,
+  "c": -14.8435,
+  "temperature_use": "pK1'(T) = 6.10 + pK1(T) - pK1(310.15 K)",
+  "evidence": "measured_literature"
+ },
+ "phosphate_pk2": {
+  "apparent_pk_310k": 6.8,
+  "evidence": "assumption",
+  "source": "textbook value: apparent pK2 of phosphate ~6.8 at 37 C and physiological ionic strength (no cached citation)",
+  "uncertainty": "+-0.05"
+ },
+ "water_pkw_310k": {
+  "value": 13.62,
+  "evidence": "assumption",
+  "source": "textbook value: ion product of water at 37 C (no cached citation)"
+ },
+ "hepes": {
+  "pKa_293k": 7.55,
+  "dpKa_dT_per_k": -0.014,
+  "evidence": "measured_literature",
+  "source": "Good et al., Biochemistry 5 (1966) 467",
+  "titration": {
+   "pH": 7.4,
+   "T_k": 298.15,
+   "evidence": "assumption",
+   "note": "HEPES-buffered media assumed titrated with NaOH to pH 7.4 at 25 C (common practice; the sheets give no NaOH)"
+  }
+ },
+ "diffusion": {
+  "co2_m2_s_298k": 1.91e-09,
+  "o2_m2_s_298k": 2.1e-09,
+  "co2_m2_s_310k": 2.56283e-09,
+  "o2_m2_s_310k": 2.81777e-09,
+  "evidence": "derived",
+  "source": "diffusion coefficients in water at 25 C (CRC Handbook of Chemistry and Physics; not cached) scaled to 37 C with the Stokes-Einstein relation D ~ T / mu and the Vogel fit of the water viscosity"
+ },
+ "water_vapour": {
+  "formula": "p_w = 611.21 exp((18.678 - t/234.5) t / (257.14 + t)) Pa, t in degC",
+  "evidence": "measured_literature",
+  "source": "Buck, J. Appl. Meteorol. 20 (1981) 1527 (not cached)"
+ },
+ "phenol_red": {
+  "pKa": 7.7,
+  "colour_classes": [
+   [
+    6.9,
+    "orange"
+   ],
+   [
+    7.2,
+    "red"
+   ],
+   [
+    7.7,
+    "pink"
+   ],
+   [
+    8.1,
+    "purple"
+   ]
+  ],
+  "colour_below_first": "yellow",
+  "evidence": "assumption",
+  "source": "textbook value: phenol red (phenolsulfonphthalein) transition pH 6.8 (yellow) - 8.2 (red / pink), pKa ~7.7-7.9 (no cached citation); colour classes engineering",
+  "uncertainty": "approximate colour classes"
+ },
+ "lactic_acid": {
+  "pKa": 3.86,
+  "evidence": "assumption",
+  "source": "textbook value: lactic acid pKa 3.86 (no cached citation); weak acid in the charge balance, fully dissociated at culture pH"
+ }
+}

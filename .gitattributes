@@ -1,0 +1,2 @@
+# Preserve the authenticated upstream release exactly, including line endings.
+benchmark/instrument/** -text -whitespace

@@ -1,0 +1,13 @@
+{
+  "ARTIFACT_MINILM_COSINE": "/absolute/path/to/artifact_minilm_cosine",
+  "ARTIFACT_MINILM_KNN": "/absolute/path/to/artifact_minilm_knn",
+  "ARTIFACT_MINILM_LINEAR": "/absolute/path/to/artifact_minilm_linear",
+  "ARTIFACT_QWEN25_HIDDEN_LINEAR": "/absolute/path/to/artifact_qwen25_hidden_linear",
+  "MODEL_APUS_REFLEX4B": "/absolute/path/to/model_apus_reflex4b",
+  "MODEL_DEEPSEEK_V2_LITE": "/absolute/path/to/model_deepseek_v2_lite",
+  "MODEL_MINILM_L6": "/absolute/path/to/model_minilm_l6",
+  "MODEL_OPENJEV8B": "/absolute/path/to/model_openjev8b",
+  "MODEL_QWEN25_14B": "/absolute/path/to/model_qwen25_14b",
+  "MODEL_QWEN25_3B": "/absolute/path/to/model_qwen25_3b",
+  "MODEL_QWEN3_4B": "/absolute/path/to/model_qwen3_4b"
+}

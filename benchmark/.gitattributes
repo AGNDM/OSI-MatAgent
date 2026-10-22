@@ -1,0 +1,3 @@
+# The release manifest authenticates exact bytes, including upstream runtime files.
+# Preserve them across Git checkouts regardless of repository line-ending defaults.
+instrument/** -text
