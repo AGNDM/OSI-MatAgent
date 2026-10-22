@@ -2,10 +2,10 @@
   "version": "public-catalog-v1",
   "source_hashes": {
     "cases/devices/registry.json": "409c6dd747129d34360c009845af5372d82d19d73b9d14e4800a21f553bcccc3",
-    "app/device_registry.py": "ddda7fd1acc4deea266709e1042da80721c07adbea7741b9dc412525d858a8ba",
+    "app/device_registry.py": "e686bab33bd3a3c46fbe17f40cc62d4e6bda413d428f2d93ba6b4692a5ee370f",
     "app/device_catalog.py": "e71a5d439fb99a5e4007689fbc09bfaa4b2915d7c8fff314c88c960cdfc4d40d",
-    "app/single_instrument.py": "08c6919c087cc70c019f96ce6dc818b0df71422856a2c6080f1fcce15f62c428",
-    "app/native_lifecycle.py": "49c58dba654b6bb7692132856be290765ae056395fe7af4fd159be73e61771fa",
+    "app/single_instrument.py": "e98da3c5c73cd6e6d05f86d7ed6317155025663ffcd546acaa82c380c57bf4a9",
+    "app/native_lifecycle.py": "25fb22b369c9fe0df1275707abe79d9e241f2940674f1ee94befe6b14b19a306",
     "vendor/chemlab/manifest.json": "f70eb58ef41d8c2162b08f835df0e9a1d128ad94c588404204301659135bbed7",
     "vendor/chemlab/expansion-code-manifest.json": "931e4bc5b2364af3571eaa4548555f34e4f9c5e1894c6fb48d7a140a4605e2e0",
     "vendor/chemlab/expansion-data-manifest.json": "34134bff85d688597447f8673591a56957ff125807976aef09686788cc75b94f"
@@ -66724,8 +66724,8 @@
       },
       "lifecycle": {
         "step": true,
-        "poll": false,
-        "cancel": false,
+        "poll": true,
+        "cancel": true,
         "clock_binding": {
           "method": "step",
           "mode": "delta",
@@ -66733,7 +66733,11 @@
           "signature": "(dt_s)",
           "effect": "native_dynamics"
         },
-        "async_capabilities": [],
+        "async_capabilities": [
+          "sample.aspirate",
+          "sample.dispense",
+          "method.start"
+        ],
         "discovery": "Native method signatures and declared asynchronous capability contracts; no device whitelist"
       }
     },

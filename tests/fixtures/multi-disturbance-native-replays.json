@@ -1,0 +1,955 @@
+{
+  "nabertherm_l9-door_pause": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "thermal.configure_program",
+      "arguments": {
+        "segments": [
+          {
+            "temperature_K": 323.15,
+            "ramp_rate_K_s": 1.0,
+            "hold_s": 120
+          }
+        ]
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "thermal.start_program",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 30
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "door.close",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 1200
+    }
+  ],
+  "nabertherm_l9-external_program_stop": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "thermal.configure_program",
+      "arguments": {
+        "segments": [
+          {
+            "temperature_K": 323.15,
+            "ramp_rate_K_s": 1.0,
+            "hold_s": 120
+          }
+        ]
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "thermal.start_program",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 30
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    }
+  ],
+  "binder_fd056-door_interlock": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "temperature.set",
+      "arguments": {
+        "temperature_k": 333.15
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 60
+    },
+    {
+      "kind": "wait",
+      "duration_s": 1
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "door.set",
+      "arguments": {
+        "angle_rad": 0.0
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 1800
+    }
+  ],
+  "binder_fd056-sensor_rupture": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "temperature.set",
+      "arguments": {
+        "temperature_k": 333.15
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 60
+    },
+    {
+      "kind": "wait",
+      "duration_s": 1
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": false
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 1
+    }
+  ],
+  "ika_plate_rctdigital-safety_setpoint_clamp": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "heating.set_temperature",
+      "arguments": {
+        "temperature_k": 333.15
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "heating.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "stirring.set_speed",
+      "arguments": {
+        "speed_rad_s": 20.943951023931955
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "stirring.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "safety.set_limit",
+      "arguments": {
+        "limit_k": 373.15
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": false
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "heating.set_temperature",
+      "arguments": {
+        "temperature_k": 333.15
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "heating.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "stirring.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 600
+    }
+  ],
+  "ika_plate_rctdigital-heater_switch_fault": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "heating.set_temperature",
+      "arguments": {
+        "temperature_k": 333.15
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "heating.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "stirring.set_speed",
+      "arguments": {
+        "speed_rad_s": 20.943951023931955
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "stirring.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "heating.set",
+      "arguments": {
+        "on": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "on": false
+      }
+    }
+  ],
+  "ika_ks4000-hood_pause": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "timer.configure",
+      "arguments": {
+        "mode": "timed",
+        "duration_s": 120
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "shaking.start",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 30
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "hood.set_angle",
+      "arguments": {
+        "angle_rad": 0.0
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 100
+    }
+  ],
+  "ika_ks4000-hood_timeout": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "timer.configure",
+      "arguments": {
+        "mode": "timed",
+        "duration_s": 120
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "shaking.start",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 30
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": false
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 30
+    }
+  ],
+  "julabo_corio_cd200f-lid_thermal_loss": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "thermal.set_temperature",
+      "arguments": {
+        "temperature_K": 313.15
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "circulation.set_running",
+      "arguments": {
+        "running": true
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "wait",
+      "duration_s": 120
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "scene.set_bath_lid",
+      "arguments": {
+        "angle_rad": 0.0
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 120
+    }
+  ],
+  "julabo_corio_cd200f-external_loop_disconnect": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "thermal.set_temperature",
+      "arguments": {
+        "temperature_K": 313.15
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "circulation.set_running",
+      "arguments": {
+        "running": true
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "wait",
+      "duration_s": 120
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "circulation.set_running",
+      "arguments": {
+        "running": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "circulation.set_running",
+      "arguments": {
+        "running": false
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": false
+      }
+    }
+  ],
+  "eppendorf-running-power-loss": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "centrifuge.set_method",
+      "arguments": {
+        "speed_rad_s": 100,
+        "temperature_k": 293.15,
+        "duration_s": 12,
+        "acceleration_level": 1,
+        "braking_level": 1
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "centrifuge.measure",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 2
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "centrifuge.measure",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 15
+    }
+  ],
+  "eppendorf-startup-imbalance": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "centrifuge.set_method",
+      "arguments": {
+        "speed_rad_s": 100,
+        "temperature_k": 293.15,
+        "duration_s": 12,
+        "acceleration_level": 1,
+        "braking_level": 1
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "centrifuge.measure",
+      "arguments": {}
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "lid.set_angle",
+      "arguments": {
+        "angle_rad": 1.5707963267948966
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "sample.unload",
+      "arguments": {
+        "slot_id": "slot_3"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "sample.load",
+      "arguments": {
+        "slot_id": "slot_2",
+        "sample_id": "sample_b"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "lid.set_angle",
+      "arguments": {
+        "angle_rad": 0
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "centrifuge.measure",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 15
+    }
+  ],
+  "xpr-door-open": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "balance.set_filter",
+      "arguments": {
+        "level": "High"
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "scene.set_door",
+      "arguments": {
+        "side": "left",
+        "opening_m": 0
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 30
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "balance.calibrate_span",
+      "arguments": {
+        "known_mass_kg": 0.1
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 30
+    }
+  ],
+  "xpr-persistent-vibration": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 1
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "balance.set_filter",
+      "arguments": {
+        "level": "High"
+      }
+    },
+    {
+      "kind": "wait",
+      "duration_s": 10
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": false
+      }
+    }
+  ],
+  "quantos-door-invalidates-tare": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "head.select",
+      "arguments": {
+        "head_id": "host_head"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "container.select_position",
+      "arguments": {
+        "position_id": "balance_pan"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "dosing.set_target",
+      "arguments": {
+        "target_mass_kg": 1e-05
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "dosing.set_tolerance",
+      "arguments": {
+        "tolerance_kg": 1e-07
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "balance.tare",
+      "arguments": {}
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "door.set_opening",
+      "arguments": {
+        "opening_m": 0
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "balance.tare",
+      "arguments": {}
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "dosing.start",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 12
+    }
+  ],
+  "quantos-source-depletion": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "head.select",
+      "arguments": {
+        "head_id": "host_head"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "container.select_position",
+      "arguments": {
+        "position_id": "balance_pan"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "dosing.set_target",
+      "arguments": {
+        "target_mass_kg": 1e-05
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "dosing.set_tolerance",
+      "arguments": {
+        "tolerance_kg": 1e-07
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "balance.tare",
+      "arguments": {}
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "head.select",
+      "arguments": {
+        "head_id": "host_head"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "balance.tare",
+      "arguments": {}
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "dosing.start",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 12
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": false
+      }
+    }
+  ],
+  "xrd-cooling-loss": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "xrd.configure_scan",
+      "arguments": {
+        "start_rad": 0.4363323129985824,
+        "stop_rad": 0.6108652381980153,
+        "step_rad": 0.017453292519943295,
+        "integration_time_s": 1
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "xrd.start_scan",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 2
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "xrd.stop_scan",
+      "arguments": {}
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": false
+      }
+    }
+  ],
+  "xrd-power-loss": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "xrd.configure_scan",
+      "arguments": {
+        "start_rad": 0.4363323129985824,
+        "stop_rad": 0.6108652381980153,
+        "step_rad": 0.017453292519943295,
+        "integration_time_s": 1
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "xrd.start_scan",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 2
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "xrd.start_scan",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 11
+    }
+  ],
+  "nmr-power-loss": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "acquisition.configure",
+      "arguments": {
+        "nucleus": "1H",
+        "pulse_sequence": "single_pulse",
+        "scans": 8,
+        "relaxation_delay_s": 1,
+        "acquisition_time_s": 0.02,
+        "points": 128,
+        "decoupling": false,
+        "gradient_enabled": false
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "acquisition.start",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 2
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "acquisition.start",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 8.16
+    }
+  ],
+  "nmr-sample-removed": [
+    {
+      "kind": "invoke",
+      "capability_id": "power.set",
+      "arguments": {
+        "enabled": true
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "acquisition.configure",
+      "arguments": {
+        "nucleus": "1H",
+        "pulse_sequence": "single_pulse",
+        "scans": 8,
+        "relaxation_delay_s": 1,
+        "acquisition_time_s": 0.02,
+        "points": 128,
+        "decoupling": false,
+        "gradient_enabled": false
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "sample.insert",
+      "arguments": {
+        "sample_id": "sample_01"
+      }
+    },
+    {
+      "kind": "invoke",
+      "capability_id": "acquisition.start",
+      "arguments": {}
+    },
+    {
+      "kind": "wait",
+      "duration_s": 8.16
+    }
+  ]
+}

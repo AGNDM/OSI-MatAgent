@@ -13,19 +13,21 @@ from app.trace import Trace
 from tests.test_router_wait import WaitingRouter, TestRoles, TestChooser, fake_lab
 
 
+@pytest.mark.parametrize('model', [MODEL, 'openai/gpt-6-luna-decisions'])
 @pytest.mark.parametrize('operation', [False, True])
-def test_native_rounded_scores_pass_downstream_validation(tmp_path, monkeypatch, operation):
+def test_native_rounded_scores_pass_downstream_validation(tmp_path, monkeypatch, operation, model):
     monkeypatch.setenv('OPENROUTER_API_KEY', 'test-key')
     scores = {'A': .05, 'B': .93, 'C': .01}
 
     async def post(*args, **kwargs):
-        return httpx.Response(200, json={'model': MODEL, 'answers': {'next_action': {
+        return httpx.Response(200, json={'model': model, 'answers': {'next_action': {
             'type': 'choice', 'choice': 'B', 'probabilities': scores}},
             'usage': {'input_tokens': 10, 'output_tokens': 2}})
 
     monkeypatch.setattr(httpx.AsyncClient, 'post', post)
     backend_type = OpenRouterJevOperationBackend if operation else OpenRouterJevBackend
-    backend = backend_type(TokenLedger(tmp_path / 'ledger.jsonl'))
+    backend = backend_type(TokenLedger(tmp_path / 'ledger.jsonl'), model=model)
+    assert backend.manifest()['model'] == model
     options = ['diagnose', 'verify', 'deliberate']
     if operation:
         candidates = [{'candidate_id': name, 'intent': {'capability_id': 'workflow.inspect',
@@ -94,3 +96,17 @@ def test_rounded_scores_still_require_valid_complete_argmax(tmp_path, monkeypatc
     with pytest.raises(ValueError):
         asyncio.run(backend._infer_options('choose', {'A': 'first', 'B': 'second', 'C': 'third'}, 1))
     assert backend.ledger.snapshot()['charged_tokens'] == 12
+
+
+@pytest.mark.parametrize("model", [MODEL, "openai/gpt-6-luna-decisions"])
+def test_single_legal_option_is_forced_without_api(tmp_path, monkeypatch, model):
+    import asyncio
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-key")
+    async def forbidden(*args, **kwargs):
+        raise AssertionError("Singleton must not call the model API")
+    monkeypatch.setattr(httpx.AsyncClient, "post", forbidden)
+    backend=OpenRouterJevBackend(TokenLedger(tmp_path / "ledger.jsonl"), model=model,force_singleton=True)
+    backend.last_call={}
+    assert asyncio.run(backend._infer_options("choose", {"A":"diagnose"}, 1)) == {"diagnose":1.0}
+    assert backend.last_call["decision_source"] == "single_legal_option"
+    assert backend.last_call["request_sent"] is False

@@ -71,7 +71,7 @@ def run_auto_episode(task, output, roles, *, router, operation, limits=None, rou
     return result
 
 
-def run_episode(task, output, roles, *, router=None, operation=None, limits=None, router_wait=True, absolute_deadline=None, profile=None):
+def run_episode(task, output, roles, *, router=None, operation=None, limits=None, router_wait=True, absolute_deadline=None, profile=None, lab_factory=None):
     """Offline tests inject doubles here; public run()/CLI require real roles."""
     if task.device=='auto':
         if operation is None:raise ValueError('Auto device selection requires an explicit chooser')
@@ -83,7 +83,7 @@ def run_episode(task, output, roles, *, router=None, operation=None, limits=None
     episode_deadline=absolute_deadline if absolute_deadline is not None else time.monotonic()+limits.episode_seconds
     episode = str(uuid4());trace = Trace(episode, output/'trace.jsonl')
     try:
-        lab = InstrumentLab(task)
+        lab = (lab_factory or InstrumentLab)(task)
         lab.router_wait_enabled = router_wait
     except Exception as exc:
         report = {'episode_id': episode, 'status': 'unresolved', 'evidence_ids': [], 'terminal_reason': 'initialization_error'}
@@ -101,7 +101,7 @@ def run_episode(task, output, roles, *, router=None, operation=None, limits=None
         'reference_scripts_used': False, 'source_hashes': source_hashes,'routing_policy':'argmax-v1',
         'router_direct_wait': router_wait, 'expert_output_tokens': getattr(roles,'max_tokens',None),
         'native_fixture_events': getattr(lab.host, '_workflow_fixture_events', []),
-        'scene_callback': 'No callback supplied; native scene prerequisites remain enforced',
+        'scene_callback': getattr(lab, 'scene_callback_description', 'No callback supplied; native scene prerequisites remain enforced'),
         'clock_bridge': {'runtime_class': lab.spec['class'], **lab.lifecycle.manifest()},
         'decision_manifests': {name:backend.manifest() for name,backend in [('router',router),('operation',operation)] if hasattr(backend,'manifest')},
         'limits': limits.model_dump()}

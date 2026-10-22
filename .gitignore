@@ -31,3 +31,27 @@ __pycache__/
 !/vendor/chemlab/LICENSE
 !/vendor/chemlab/LICENSE-ASSETS.md
 !/vendor/chemlab/NOTICE.md
+
+# Publication boundary: retain experiment evidence and drafts locally.
+*.log
+/docs/evidence/
+/docs/plans/
+/docs/status/
+/docs/demos/
+/docs/reports/*
+!/docs/reports/instrument-evaluation-report.html
+!/docs/reports/assets/
+/docs/reports/assets/*
+!/docs/reports/assets/benchmark-suite-contribution-v3.png
+!/docs/reports/assets/compact-mcqa-summary-v2.svg
+!/docs/reports/assets/instrument-mcqa-categories-v2.svg
+!/docs/reports/assets/instrument-mcqa-summary-v2.svg
+!/docs/reports/assets/instrument-workflow-summary.pdf
+!/docs/reports/assets/instrument-workflow-summary.png
+!/docs/reports/assets/instrument-workflow-summary.svg
+!/docs/reports/assets/teacher-forced-model-comparison-v2.svg
+!/docs/reports/assets/workflow-contribution-v2.png
+/output/*
+!/output/pdf/
+/output/pdf/*
+!/output/pdf/instrument-evaluation-report.pdf

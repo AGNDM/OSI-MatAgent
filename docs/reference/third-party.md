@@ -16,7 +16,7 @@ The three manifests under `vendor/chemlab/` record the selected files and their 
 
 ## OpenJev and llama.cpp
 
-Model and runtime revisions, integrity hashes, installation paths and weight-license boundaries are documented in [Local OpenJev deployment](../guides/local-openjev.md). Model weights and executables are downloaded separately and are not committed.
+The optional local backend uses `openjev/OpenJev-Flash-9B-GGUF` at revision `a3acd96966b06c2f161209f888b66235029f9ac1`, file `OpenJev-Flash-9B-Q4_K_M.gguf`, with llama.cpp `b11147` (`fee39dd92`). The weights use CC BY-NC 4.0; retain their downloaded license and notices. Installation helpers are `tools/install_openjev_runtime.py`, `tools/fetch_openjev.py` and `tools/serve_openjev.py`. Artifacts live under `~/.local/share/osi-hack/`, outside Git. Hosted TypeSafe Jev 1.14 is a separate service, not this local model.
 
 ## Python dependencies
 

@@ -14,7 +14,7 @@ for path in (VENDOR_ROOT, VENDOR_ROOT / 'scripts'):
         sys.path.insert(0, str(path))
 
 
-def open_native(spec):
+def open_native(spec, *, scene_adapter=None):
     # Specs are developer-owned registry entries, never LLM-provided entrypoints.
     name = spec['module']
     if not (name.startswith('asset_runtime.') or name.startswith('basic40_runtime')):
@@ -24,15 +24,24 @@ def open_native(spec):
     constructor = inspect.signature(cls)
     required = [p for p in constructor.parameters.values() if p.default is inspect.Parameter.empty
         and p.kind in (p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD, p.KEYWORD_ONLY)]
-    host = cls(instance_id='device-01') if len(required) == 1 and required[0].name == 'instance_id' else cls()
+    constructor_scene = scene_adapter is not None and 'scene_adapter' in constructor.parameters
+    kwargs = {'scene_adapter': scene_adapter} if constructor_scene else {}
+    host = cls(instance_id='device-01', **kwargs) if len(required) == 1 and required[0].name == 'instance_id' else cls(**kwargs)
     instance = getattr(host, 'instance_id', None)
     if hasattr(host, 'create_instance'):
         instance = 'device-01'
         create = inspect.signature(host.create_instance)
+        create_kwargs = {}
+        if scene_adapter is not None and not constructor_scene:
+            if 'scene_adapter' not in create.parameters:
+                raise ValueError('Native contract does not accept a scene adapter')
+            create_kwargs['scene_adapter'] = scene_adapter
         if 'asset_type_id' in create.parameters:
-            host.create_instance(instance, spec.get('runtime_asset_id', spec['asset_id']))
+            host.create_instance(instance, spec.get('runtime_asset_id', spec['asset_id']), **create_kwargs)
         else:
-            host.create_instance(instance)
+            host.create_instance(instance, **create_kwargs)
+    elif scene_adapter is not None and not constructor_scene:
+        raise ValueError('Native contract does not accept a scene adapter')
     if not instance:
         raise ValueError('No known native instance contract')
     # Explicit developer-owned ambient environment setup, never an agent capability.

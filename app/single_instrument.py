@@ -299,9 +299,10 @@ class InstrumentLab:
                         if time.monotonic() >= deadline:
                             self.termination_reason = 'deadline'
                             break
-                        dt = min(10., left)
+                        dt = min(getattr(self, 'clock_step_seconds', 10.), left)
                         self.lifecycle.step(dt);left -= dt
                         steps.append({'dt_s':dt, 'elapsed_s':self.lifecycle.elapsed})
+                        interrupted = self.after_clock_step()
                         if self.task.constraints:
                             observed = self._read()
                             constraint_reads.append(observed)
@@ -309,6 +310,8 @@ class InstrumentLab:
                                 self.termination_reason = 'constraint_violated'
                                 result['constraint_observation'] = observed
                                 break
+                        if interrupted:
+                            break
                         if self.pending_operation:
                             response = self.lifecycle.poll(self.pending_operation['operation_id'])
                             polls.append(response)
@@ -387,6 +390,10 @@ class InstrumentLab:
                     for k,v in snapshot['native'].get('observations', {}).items()}}
         return context
 
+    def after_clock_step(self):
+        """Trusted environment boundary; ordinary episodes have no external events."""
+        return False
+
     def active_goal_process(self, native):
         """Conservative public lifecycle guard, scoped to goal state families.
 
@@ -404,7 +411,7 @@ class InstrumentLab:
             markers = value if isinstance(value, dict) else {state_id.rsplit('.', 1)[-1]: value}
             for key, marker in markers.items():
                 if key in {'phase', 'status', 'state'} and isinstance(marker, str):
-                    if marker.lower() in {'paused', 'blocked', 'fault', 'failed', 'stopped', 'idle'}:
+                    if marker.lower().split('_', 1)[0] in {'paused', 'blocked', 'fault', 'failed', 'stopped', 'idle'}:
                         return False
                     active |= marker.lower() in {'running', 'ramp', 'hold', 'ramping', 'holding'}
                 if key == 'running':

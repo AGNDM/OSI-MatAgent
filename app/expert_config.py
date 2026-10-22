@@ -18,12 +18,18 @@ class ExpertEndpoint(Record):
     model: str | None = None
     revision: str | None = None
     api_key_env: str | None = None
-    max_tokens: int = Field(default=1536, ge=64, le=8192)
-    timeout_seconds: float = Field(default=45, gt=0, le=180)
+    max_tokens: int = Field(default=1536, ge=64, le=524288)
+    timeout_seconds: float = Field(default=45, gt=0, le=1800)
+    reasoning_enabled: bool = False
+    reasoning_effort: Literal["low", "medium", "max"] | None = None
     provider: Literal["local", "siliconflow", "openrouter"] = "local"
 
     @model_validator(mode="after")
     def authorized_endpoint(self):
+        if self.reasoning_effort is not None and not (self.provider=="openrouter" and self.model in {"minimax/minimax-m3.1-flash", "minimax/minimax-m3.1-flash:free", "deepseek/deepseek-v4.1-flash"}):
+            raise ValueError("Explicit reasoning effort is configured for the authorized benchmark expert endpoints only")
+        if self.max_tokens>8192 and not (self.provider=="openrouter" and self.model in {"minimax/minimax-m3.1-flash", "minimax/minimax-m3.1-flash:free", "deepseek/deepseek-v4.1-flash"}):
+            raise ValueError("Expanded completion allowance is authorized for the benchmark expert endpoints only")
         if self.base_url:
             if self.provider == "siliconflow":
                 if self.base_url.rstrip("/") != "https://api.siliconflow.cn/v1":
@@ -35,7 +41,8 @@ class ExpertEndpoint(Record):
                     raise ValueError("OpenRouter requires the authorized endpoint and OPENROUTER_API_KEY")
             else:
                 LocalOpenJevBackend(self.base_url)  # validates loopback/root URL, never calls it
-        if self.model and (self.model.endswith(":free") or "openjev" in self.model.lower()):
+        if self.model and ((self.model.endswith(":free") and (self.provider,self.model) !=
+                ("openrouter","minimax/minimax-m3.1-flash:free")) or "openjev" in self.model.lower()):
             raise ValueError("Formal specialists must be general models; free OpenRouter and OpenJev exploratory experts are excluded")
         return self
 
@@ -89,7 +96,10 @@ class CompatibleExpert(LocalLlamaRoles):
             body["enable_thinking"] = False
         elif self.config.provider == "openrouter":
             body.pop("chat_template_kwargs", None)
-            body["reasoning"] = {"enabled": False}
+            body["reasoning"] = ({"exclude": True} if self.config.model in {"minimax/minimax-m3.1-flash", "minimax/minimax-m3.1-flash:free"} or self.config.reasoning_enabled or self.config.reasoning_effort is not None
+                                 else {"enabled": False})
+            if self.config.reasoning_effort is not None:
+                body["reasoning"]["effort"] = self.config.reasoning_effort
         return body
 
     def redact(self, value):

@@ -1,11 +1,18 @@
-# Configuration Guide
+# Model configuration
 
-`experts.template.json` defines separate reference and contrast general experts. Unselected models remain null. The expert endpoint/model identity is separate from the local OpenJev router, and credentials are represented only by environment-variable names.
+Expert endpoint identity is independent of the decision model. Credentials are environment-variable names, never literal keys.
 
-`siliconflow-deepseek-v4.1-flash.json` configures the explicitly authorized `https://api.siliconflow.cn/v1` endpoint and `deepseek-ai/DeepSeek-V4.1-Flash` model using `SILICONFLOW_API_KEY`. The contrast expert is still unselected. The budgeted device entry point is `python -m bench.device_tasks --backend deepseek`; the shared 5M ledger survives new output directories.
+| Configuration | Use |
+|---|---|
+| `openrouter-deepseek-v4.1-flash.json` | Default native-task expert |
+| `openrouter-deepseek-v4.1-flash-benchmark.json` | Low-reasoning benchmark expert |
+| `openrouter-minimax-m3.1-flash-low.json` / `-max.json` | Paid MiniMax benchmark expert with explicit effort |
+| `openrouter-minimax-m3.1-flash-free*.json` | Exact free endpoint; no automatic paid fallback |
+| `siliconflow-deepseek-v4.1-flash.json` | Explicit SiliconFlow alternative |
+| `experts.template.json` | Separate reference and contrast endpoints |
 
-`device-debug-sample.json` declares the 20-device, 16-category development sample. It is a tool-interface debugging sample, not a scientific benchmark or a randomized performance study.
+OpenRouter uses `OPENROUTER_API_KEY`. SiliconFlow uses `SILICONFLOW_API_KEY`. Loopback endpoints serve optional local experts. The sequential benchmark selects Jev or Luna through `--decision-model`; the native CLI selects hosted Jev through `--router openrouter-jev --operation openrouter-jev`.
 
-Local OpenAI-compatible expert endpoints use loopback HTTP. An optional revision is a declared provenance value; returned model identity is recorded separately. No implicit fallback replaces an unconfigured expert with OpenJev.
+Reasoning effort, completion allowance and request timeout are explicit. Reasoning text is excluded from stored responses while token usage is retained. Supported OpenRouter calls use record-only accounting; SiliconFlow retains its shared 5M-token policy. Finite episode and request limits still apply.
 
-`proposal_v1.json` and `proposal_v2.json` describe retired free-model batch plans. They must not be executed or resumed as OpenRouter free batches. Current free-model use is restricted to small, explicitly requested debugging.
+`proposal_v1.json` and `proposal_v2.json` are retired plan inputs, not supported batch entry points. `device-debug-sample.json` is an offline integration sample. See the [benchmark guide](../docs/guides/instrument-eval-langgraph.md).

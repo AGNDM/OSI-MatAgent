@@ -16,4 +16,6 @@ Every error claim must cite concrete trace events. `bench.annotate` emits machin
 
 `errors.csv` records run, step, component, label, evidence, expected/actual behavior, candidate first/downstream status and review state. Heatmaps count episodes with each label divided by all attempts for that configuration. Labels may overlap; failures and infrastructure errors are retained.
 
-Automatic ordering identifies the first mechanically visible anomaly, not necessarily the first consequential causal error. Semantic E2/E3 attribution requires review; a failure without mechanical evidence remains uncertain. The formal proposal requires two independent human reviewers for at least six failed trajectories with disagreement resolution. Current tools and AI reviews do not fabricate or substitute for that review.
+Automatic ordering identifies the first mechanically visible anomaly, not necessarily the first consequential causal error. Semantic E2/E3 attribution requires review; a failure without mechanical evidence remains uncertain.
+
+For reporting, distinguish model output/call errors, framework/interface defects and external service failures. A rejected call that violates a fully supplied contract is a model error. A raw early-exit counter remains unattributed until its trace is reviewed.

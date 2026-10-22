@@ -50,7 +50,7 @@ def select_route(backend: DecisionBackend, summary: dict, allowed: list[str], *,
         p = decision.probabilities
         if p is not None:
             if (set(p) != set(allowed) or any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values())
-                    or (decision.backend_id != "openrouter-decisions/typesafe/jev-1.14"
+                    or (decision.backend_id not in {"openrouter-decisions/typesafe/jev-1.14", "openrouter-decisions/openai/gpt-6-luna-decisions"}
                         and abs(sum(p.values()) - 1) > 1e-5)):
                 raise ValueError("invalid route probabilities")
             ordered = sorted(p, key=p.get, reverse=True)

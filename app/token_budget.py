@@ -13,7 +13,7 @@ from uuid import uuid4
 from app.expert_config import CompatibleExpert
 
 HARD_LIMIT = 5_000_000
-RECORD_ONLY_MODELS={'deepseek/deepseek-v4.1-flash','typesafe/jev-1.14'}
+RECORD_ONLY_MODELS={'openai/gpt-6-luna-decisions','deepseek/deepseek-v4.1-flash','typesafe/jev-1.14','minimax/minimax-m3.1-flash','minimax/minimax-m3.1-flash:free'}
 DEFAULT_LEDGER = Path(__file__).resolve().parents[1] / 'results/device-expansion-budget-v1/ledger.jsonl'
 
 
@@ -65,8 +65,9 @@ class TokenLedger:
 
     def enable_openrouter_record_only(self):
         with self._locked() as entries:
-            if not any(e['kind']=='policy' and e.get('id')=='openrouter-record-only-v1' for e in entries):
-                self._append({'kind':'policy','id':'openrouter-record-only-v1','provider':'openrouter',
+            policies=[e for e in entries if e['kind']=='policy' and e.get('provider')=='openrouter']
+            if not policies or policies[-1].get('models')!=sorted(RECORD_ONLY_MODELS):
+                self._append({'kind':'policy','id':'openrouter-record-only-v'+str(len(policies)+1),'provider':'openrouter',
                     'models':sorted(RECORD_ONLY_MODELS),'effective_after_reservations':self._state(entries)['requests_reserved'],
                     'reason':'User removed OpenRouter quota concerns; retain accounting and finite experiment plans'})
             self.record_only_openrouter=True
@@ -138,21 +139,27 @@ class TokenLedger:
         messages=body.get('messages',[])
         if not messages or any(not isinstance(m.get('content'),str) for m in messages):
             raise ValueError('Only plain text requests have a defined input bound')
-        thinking_off = (body.get('enable_thinking') is False or body.get('reasoning') == {'enabled': False})
+        reasoning = body.get('reasoning')
+        native_reasoning=(provider=='openrouter' and body.get('model') in {'minimax/minimax-m3.1-flash','minimax/minimax-m3.1-flash:free','deepseek/deepseek-v4.1-flash'}
+                          and isinstance(reasoning,dict) and reasoning.get('exclude') is True
+                          and set(reasoning) <= {'exclude','effort'}
+                          and ('effort' not in reasoning or reasoning['effort'] in ('low','medium','max')))
+        thinking_off = native_reasoning or (body.get('enable_thinking') is False or body.get('reasoning') == {'enabled': False})
         conflicting = (body.get('enable_thinking') is True or
-                       ('reasoning' in body and body['reasoning'] != {'enabled': False}))
+                       ('reasoning' in body and body['reasoning'] != {'enabled': False} and not native_reasoning))
         if not thinking_off or conflicting or body.get('stream') is not False:
             raise ValueError('Budgeted debug requires bounded non-thinking, non-streaming calls')
         maximum=body.get('max_tokens')
-        if type(maximum) is not int or not 1 <= maximum <= 8192:
+        ceiling=524288 if native_reasoning or (provider=='openrouter' and body.get('model')=='deepseek/deepseek-v4.1-flash') else 8192
+        if type(maximum) is not int or not 1 <= maximum <= ceiling:
             raise ValueError('A bounded output token ceiling is required')
         bound=len(json.dumps(body,ensure_ascii=False).encode('utf-8'))+8192+maximum
         return self._reserve_bound(body.get('model'), bound,provider=provider)
 
-    def reserve_decision(self, body,*,provider=None):
+    def reserve_decision(self, body,*,provider=None,context_byte_limit=24000):
         # One closed choice, plain text only. Reserve the entire documented model
         # context plus framing/input bytes since this API has no max_tokens knob.
-        if body.get('model') != 'typesafe/jev-1.14' or not isinstance(body.get('state'), str):
+        if body.get('model') not in {'typesafe/jev-1.14','openai/gpt-6-luna-decisions'} or not isinstance(body.get('state'), str):
             raise ValueError('Only the authorized text Jev decision model is supported')
         questions=body.get('questions', {})
         if len(questions) != 1:
@@ -163,7 +170,9 @@ class TokenLedger:
                 or any(not isinstance(k,str) or not 1 <= len(k) <= 64 or not isinstance(v,str) for k,v in criteria.items())):
             raise ValueError('Decision requires 1-4 text choices')
         size=len(json.dumps(body,ensure_ascii=False,allow_nan=False).encode('utf-8'))
-        if size > 24000:
+        if type(context_byte_limit) is not int or not 1<=context_byte_limit<=262144-8192:
+            raise ValueError('Invalid Jev context byte bound')
+        if size > context_byte_limit:
             raise ValueError('Decision input exceeds the conservative debug limit')
         return self._reserve_bound(body['model'], 262144+8192+size,provider=provider)
 
@@ -198,7 +207,7 @@ class BudgetedExpert(CompatibleExpert):
     def __init__(self,config,ledger):
         super().__init__(config)
         if (config.provider, config.model) not in {('siliconflow', 'deepseek-ai/DeepSeek-V4.1-Flash'),
-                ('openrouter', 'deepseek/deepseek-v4.1-flash')}:
+                ('openrouter', 'deepseek/deepseek-v4.1-flash'), ('openrouter','minimax/minimax-m3.1-flash'), ('openrouter','minimax/minimax-m3.1-flash:free')}:
             raise ValueError('Only the explicitly authorized DeepSeek expert is allowed')
         self.ledger=ledger
         if config.provider=='openrouter':ledger.enable_openrouter_record_only()

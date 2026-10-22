@@ -64,8 +64,9 @@ class NativeLifecycle:
         self.async_capabilities = [name for name, cap in description.get('capabilities', {}).items()
             if cap.get('availability', 'implemented') == 'implemented'
             and cap.get('visibility', 'agent') == 'agent'
-            and any(isinstance(cap.get(field), dict) and cap[field].get('mode') == 'asynchronous'
-                    for field in ('execution', 'execution_notes'))]
+            and (cap.get('asynchronous') is True or
+                 any(isinstance(cap.get(field), dict) and cap[field].get('mode') == 'asynchronous'
+                     for field in ('execution', 'execution_notes')))]
         # Placeholder poll methods on synchronous runtimes are not async support.
         self.poll_binding = operation_binding(session, 'poll', instance) if self.async_capabilities else None
         self.cancel_binding = operation_binding(session, 'cancel', instance) if self.async_capabilities else None

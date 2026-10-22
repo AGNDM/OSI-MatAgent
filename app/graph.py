@@ -77,7 +77,7 @@ def initial_state(lab: LabAdapter, episode_id: str, limits: Limits) -> LabState:
 
 
 def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
-                roles=None, decision_backend=None, checkpointer=None, profile=None, operation_backend=None):
+                roles=None, decision_backend=None, checkpointer=None, profile=None, operation_backend=None, yield_after_execute=False):
     limits = limits or Limits()
     roles = roles or ScriptedRoles()
     decision_backend = decision_backend or RulesBackend()
@@ -312,7 +312,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
             if (decision.backend_id != decision_backend.backend_id or decision.fallback_used
                     or decision.choice not in offers or not p or decision.choice not in p
                     or any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values())
-                    or (decision.backend_id != "openrouter-decisions/typesafe/jev-1.14"
+                    or (decision.backend_id not in {"openrouter-decisions/typesafe/jev-1.14", "openrouter-decisions/openai/gpt-6-luna-decisions"}
                         and abs(sum(p.values())-1)>1e-5)
                     or p[decision.choice] != max(p.values())
                     or authorization['revision'] != lab.revision or authorization['sample_id'] != lab.sample_id
@@ -476,4 +476,5 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
     graph.add_edge("verification", "termination")
     graph.add_conditional_edges("termination", lambda s: s["stop_result"], {"stop": "report", "continue": "router"})
     graph.add_edge("report", END)
-    return graph.compile(checkpointer=checkpointer if checkpointer is not None else InMemorySaver())
+    return graph.compile(checkpointer=checkpointer if checkpointer is not None else InMemorySaver(),
+                         interrupt_after=["execute"] if yield_after_execute else None)

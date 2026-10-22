@@ -1,0 +1,14 @@
+{
+  "reference": {
+    "name": "openrouter-minimax-m3.1-flash-free",
+    "provider": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "model": "minimax/minimax-m3.1-flash:free",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "max_tokens": 524288,
+    "timeout_seconds": 900
+  },
+  "contrast": {
+    "name": "contrast-not-selected"
+  }
+}

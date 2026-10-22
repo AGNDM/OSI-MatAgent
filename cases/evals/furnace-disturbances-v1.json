@@ -1,0 +1,110 @@
+{
+  "version": "furnace-disturbances-v1",
+  "task": {
+    "task_id": "furnace-disturbance-public-goal",
+    "device": "nabertherm_l9",
+    "objective": "Run one empty-furnace program with exactly one 323.15 K segment, a 0.1 K/s ramp and a 60-second accumulated hold. Establish completed program state and the full hold using fresh public observations. This is simulated empty-furnace program execution, not material synthesis.",
+    "predicates": [
+      {
+        "state_id": "program.phase",
+        "value": "completed",
+        "unit": "1"
+      },
+      {
+        "state_id": "program.hold_elapsed_s",
+        "operator": "ge",
+        "value": 60,
+        "unit": "s"
+      },
+      {
+        "state_id": "program.segments",
+        "path": [
+          0,
+          "temperature_K"
+        ],
+        "value": 323.15,
+        "unit": "1"
+      },
+      {
+        "state_id": "program.segments",
+        "path": [
+          0,
+          "ramp_rate_K_s"
+        ],
+        "value": 0.1,
+        "unit": "1"
+      },
+      {
+        "state_id": "program.segments",
+        "path": [
+          0,
+          "hold_s"
+        ],
+        "value": 60,
+        "unit": "1"
+      }
+    ],
+    "max_simulated_seconds": 1800,
+    "max_wait_seconds": 120
+  },
+  "cases": [
+    {
+      "id": "F1",
+      "trigger": "ramp90",
+      "actions": [
+        [
+          "door.open",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "F2",
+      "trigger": "hold20",
+      "actions": [
+        [
+          "door.open",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "F3",
+      "trigger": "ramp90",
+      "actions": [
+        [
+          "power.set",
+          {
+            "enabled": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "F4",
+      "trigger": "hold20",
+      "actions": [
+        [
+          "thermal.stop_program",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "F5",
+      "trigger": "ramp90",
+      "actions": [
+        [
+          "door.open",
+          {}
+        ],
+        [
+          "power.set",
+          {
+            "enabled": false
+          }
+        ]
+      ]
+    }
+  ]
+}
