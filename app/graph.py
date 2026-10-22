@@ -13,6 +13,7 @@ from app.models import ActionProposal, HypothesisSet, LabState, Limits, RouteDec
 from app.operation_decision import CANDIDATE_INSTRUCTION, operation_payload, validate_decision
 from app.roles import PROMPTS, ScriptedRoles, projection
 from app.trace import Trace
+from app.readback_contract import normalize_record
 
 
 class EvidenceReferenceError(ValueError):
@@ -219,6 +220,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                               + json.dumps(payload["operation_context"], sort_keys=True, allow_nan=False))
                 raw = roles.invoke(role, prompt, payload, schema)
                 value = schema.model_validate(raw)
+                value = normalize_record(value, payload.get("capabilities", {}))
                 validate_evidence(role, value, payload)
                 validator = profile.validate_role_contract if profile else validate_role_contract
                 if isinstance(value, OperationOptions):
