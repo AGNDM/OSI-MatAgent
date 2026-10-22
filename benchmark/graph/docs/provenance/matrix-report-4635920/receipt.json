@@ -1,0 +1,17 @@
+{
+  "cohort_zero_goals_after_model_abort_test_passed": true,
+  "compute_node": "kh062",
+  "full_html_pdf_svg_png_render_test_passed": true,
+  "matplotlib": "3.10.7",
+  "new_all_observed_partial_control_metric_test_passed": true,
+  "numpy": "2.3.5",
+  "python": "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-models/bin/python",
+  "slurm_job_id": "4635920",
+  "source_sha256": {
+    "matrix_report.py": "673999624748da641434ed688f32da346f377750dd90fcee7b64c786ee5a456a",
+    "run.sbatch": "3e02ecfef6a92ceb934dd7f3496910820b94110e7031a8f0bd22475b1f1428bb",
+    "test_matrix_report.py": "3edefdb2a5cece601a81bb0f963e2663a1aff1bee7889ee8db50345c0b97364d"
+  },
+  "status": "validated",
+  "tests_passed": 26
+}

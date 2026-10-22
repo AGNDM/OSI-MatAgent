@@ -1,0 +1,3337 @@
+{
+  "asset_type_id": "instrument.ika_plate_rctdigital",
+  "catalog_id": "CHEM-008",
+  "name_zh": "IKA Plate (RCT digital) 磁力加热搅拌器（25004601，附PT1000）",
+  "created_at": "2026-10-03T20:41:48Z",
+  "builder": "outputs/expansion_batch05/t4_measure/ika_plate_rctdigital/build_geometry.py",
+  "builder_backend": "trimesh detailed IKA Plate (RCT digital) (blue lower body, grey frame, black glass top with printing, LCD with lamp icons, standby LED and hot-surface triangle, dark collar and polished aluminium plate, temperature and speed knobs on push keys, Menu / Timer / Lock touch keys, side power rocker and safety screw, rear connectors and labels, stand plug, feet; textures in GLB and OBJ/MTL, primitive collisions); Blender pass adds model.blend and previews",
+  "coordinate_system": {
+    "unit": "m",
+    "angle_unit": "rad",
+    "up_axis": "+Z",
+    "back_axis": "+Y",
+    "root_origin_zh": "仪器占地160×270 mm中心在台面的投影（z=0为台面；+X向右、+Y朝后；操作者面对−Y的显示与旋钮）",
+    "handedness": "right",
+    "glb_coordinate_conversion_zh": "GLB 按本项目 +Z 向上约定导出，无 Y-up 转换；节点层级与 URDF link 一一对应。"
+  },
+  "overall_dimensions_m": [
+    0.1599999964237213,
+    0.27000001072883606,
+    0.08489999920129776
+  ],
+  "total_mass_kg": 2.4,
+  "mass_evidence": "manufacturer_datasheet",
+  "component_mass_evidence": "documented_total_split",
+  "sources": [
+    {
+      "source_id": "user_workbook",
+      "type": "publication",
+      "reference": "大学化学仪器资产调研_200种.xlsx",
+      "locator": "仪器总表第13行；参数与来源第13行；设置与输入输出第13行 CHEM-008",
+      "notes_zh": "用户清单；型号（IKA Plate RCT digital 25004601）与规格为硬要求；几何“本体三维边长可查”",
+      "sha256": null
+    },
+    {
+      "source_id": "manufacturer_datasheet",
+      "type": "web",
+      "reference": "IKA Plate (RCT digital) Datenblatt (IKA layout; German), dealer mirror of the IKA datasheet 25004601",
+      "locator": "source_cache/datasheet_dealer.pdf（第1页特性与照片，第2–3页Technische Daten）",
+      "url": "https://shop.fleischhacker.biz/media/pdf/0d/ef/19/Datenblatt_IKA_Plate_-RCT_digital.pdf",
+      "accessed": "2026-10-03",
+      "notes_zh": "调研表主来源（www.ika.com的数据表下载链接被机器人验证拦截，用经销商镜像的同一IKA数据表）：600 W、0–310 °C、50–1500 rpm/10 rpm、20 L、6.5 K/min、安全回路50–370 °C、控温精度、160×85×270 mm、2.4 kg、+13 K自升温",
+      "sha256": "b2e74a529aa393edac181b9dadead88ffb0a486bd51e6cc877f3d6d73cffedb4"
+    },
+    {
+      "source_id": "manufacturer_manual_2018",
+      "type": "web",
+      "reference": "IKA Plate (RCT digital) operating instructions 20014388a (11/2018), English part pp.14-61",
+      "locator": "source_cache/manual_2018.pdf（PDF第6–30页：设备与显示、安全、开机、安全温度、接触温度计、菜单、定时、锁定、NAMUR与看门狗、错误码、技术数据）",
+      "url": "https://cdn.abicart.com/shop/ws72/72372/art12/156948912-a58526-20000015643_20014388a_A2_IKA_Plate_112018_web.pdf",
+      "accessed": "2026-10-03",
+      "notes_zh": "操作说明：控件与显示编号、HOT!、安全温度设定、PID/2P、间歇与换向、Error 5、定时结束动作、黏度趋势、NAMUR命令与看门狗、错误码、技术数据（7 K/min、+8 °C）",
+      "sha256": "a324c844e62cb49a44eb40c609ec64443b23f7d41763daede359cb6eba8f7837"
+    },
+    {
+      "source_id": "manufacturer_photo",
+      "type": "web",
+      "reference": "Product photograph (datasheet p.1) and the labelled device / display drawing (manual pp.14-15)",
+      "locator": "source_cache/ds-1.png、manual_p-06.png",
+      "url": "https://shop.fleischhacker.biz/media/pdf/0d/ef/19/Datenblatt_IKA_Plate_-RCT_digital.pdf",
+      "accessed": "2026-10-03",
+      "notes_zh": "外观：蓝色底座、灰色框、黑色玻璃面板与LCD、两个光面深灰旋钮（左前温度、右前转速，同一深度）、三个触摸键（Menu、Timer、Lock）、抛光铝盘下深色环座、右后支架螺孔黑色盖、前面板电源翘板A与安全螺钉B（手册正视图“B A”）、后部接口（从后看自左至右J电源、K USB、L RS 232、M PT1000）",
+      "sha256": "42296f7c8a951187f27e1774c89efb20cf4a440424c18a865d63db12b37ce21a"
+    },
+    {
+      "source_id": "nist_webbook",
+      "type": "publication",
+      "reference": "NIST Chemistry WebBook (SRD 69): condensed phase heat capacity and phase change data",
+      "locator": "source_cache/nist/<cas>_m2.html、<cas>_m4.html",
+      "url": "https://webbook.nist.gov/chemistry/",
+      "accessed": "2026-10-03",
+      "notes_zh": "51种液体的液相比热（290–305 K中位数；水用液态Shomate方程）、正常沸点与汽化热",
+      "sha256": null
+    },
+    {
+      "source_id": "pubchem",
+      "type": "publication",
+      "reference": "PubChem PUG-View (HSDB and other contributors): water density, viscosity and heat of vaporization",
+      "locator": "source_cache/pubchem_water_*.json",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/962",
+      "accessed": "2026-10-03",
+      "notes_zh": "水的黏度0.8949 cP、汽化热9.717 kcal/mol（其余液体的密度与黏度经CHEM-200溶剂库引用PubChem）",
+      "sha256": "21cfca8d89b0ebbdba3440aa67c1523fd88fba50b5d206015a51ff8aa3e6b778"
+    },
+    {
+      "source_id": "liquid_libraries",
+      "type": "publication",
+      "reference": "CHEM-200 solvent library and the shared Anton Paar DMA 5002 density library (each record keeps its PubChem / NIST source)",
+      "locator": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json；assets/reactions/antonpaar_dma5002_density_library/templates.json",
+      "notes_zh": "50种溶剂的密度、黏度（PubChem/HSDB）与蒸气压（NIST Antoine或PubChem两点）；水的密度",
+      "sha256": null
+    }
+  ],
+  "components": [
+    {
+      "id": "housing",
+      "name_zh": "下机身",
+      "function_zh": "蓝色下机身（承载加热元件、驱动电机与磁体、电子学；根构件）",
+      "physical_meaning_zh": "承载结构与根构件：下机身；装配原点 (0, 0, 0) m 相对 root，碰撞代理为0.16×0.27×0.026 m 长方体；尺寸或规格为厂家数据，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：蓝色机身。",
+      "parent": "root",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "外形160×270 mm为厂家数据；机身分层与圆角按照片估计。",
+      "objects": [
+        "ika_plate_rctdigital__housing"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.16,
+            0.27,
+            0.026
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.392,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.017
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00834794,
+        0.0029376999999999997,
+        0.011128808
+      ],
+      "material": {
+        "base_color": [
+          0.105,
+          0.23,
+          0.64
+        ],
+        "metallic": 0.0,
+        "roughness": 0.42,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "蓝色机身"
+    },
+    {
+      "id": "frame",
+      "name_zh": "灰色框",
+      "function_zh": "玻璃面板外的灰色框（照片）",
+      "physical_meaning_zh": "外观件：框；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为0.16×0.27×0.014 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：灰色框。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__frame"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.16,
+            0.27,
+            0.013999999999999999
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.037
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.18,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.037
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0010964400000000002,
+        0.00038693999999999995,
+        0.0014775
+      ],
+      "material": {
+        "base_color": [
+          0.17,
+          0.175,
+          0.185
+        ],
+        "metallic": 0.1,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "灰色框"
+    },
+    {
+      "id": "glass_top",
+      "name_zh": "玻璃面板",
+      "function_zh": "黑色钢化玻璃面板（机壳上表面，耐化学与易清洁；数据表）",
+      "physical_meaning_zh": "外观件：玻璃面板；装配原点 (0, 0, 0) m 相对 frame，碰撞代理为0.156×0.266×0.003 m 长方体；尺寸或规格为厂家数据，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：黑色玻璃。",
+      "parent": "frame",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "玻璃机壳表面为厂家数据；厚度为工程估计。",
+      "objects": [
+        "ika_plate_rctdigital__glass_top"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.156,
+            0.266,
+            0.0030000000000000027
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0455
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.2,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0451
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0011758933333333333,
+        0.0004036933333333333,
+        0.0015792453333333333
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色玻璃"
+    },
+    {
+      "id": "glass_print",
+      "name_zh": "玻璃面板印刷",
+      "function_zh": "玻璃面板印刷：IKA RCT digital字样、温度与转速说明、三个按键图标、显示上方细线与警示三角（通用字体重绘）",
+      "physical_meaning_zh": "外观贴图：面板印刷；装配原点 (0, 0, 0) m 相对 glass_top，碰撞代理为0.155×0.265×0.001 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：面板印刷。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__glass_print"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.155,
+            0.265,
+            0.001
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.047
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.047
+      ],
+      "simulation_inertia_kg_m2": [
+        5.852084166666667e-06,
+        2.002084166666667e-06,
+        7.854166666666668e-06
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.08,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/glass.png"
+      },
+      "appearance_zh": "面板印刷"
+    },
+    {
+      "id": "lcd",
+      "name_zh": "显示屏",
+      "function_zh": "显示屏H（LCD：实际温度07、实际转速08、设定温度02、设定转速01、定时04与图标；运行层display.*）",
+      "physical_meaning_zh": "显示件：LCD（读数）；装配原点 (0, 0, 0) m 相对 glass_top，碰撞代理为0.1×0.048×0.0005 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：LCD。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__lcd"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1,
+            0.047999999999999994,
+            0.0005000000000000004
+          ],
+          "origin_m": [
+            0.016,
+            -0.064,
+            0.04695
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.016,
+        -0.064,
+        0.0472
+      ],
+      "simulation_inertia_kg_m2": [
+        1.920008333333333e-06,
+        8.333341666666669e-06,
+        1.0253333333333336e-05
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.15,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/lcd.png"
+      },
+      "appearance_zh": "LCD"
+    },
+    {
+      "id": "heating_lamp",
+      "name_zh": "加热符号06",
+      "function_zh": "加热符号06（运行层indicator.heating）",
+      "physical_meaning_zh": "指示件：加热符号06；装配原点 (0, 0, 0) m 相对 lcd，碰撞代理为0.0045×0.0134×0.0002 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：LCD图标。",
+      "parent": "lcd",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__heating_lamp"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.004499999999999997,
+            0.013439999999999994,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            -0.030250000000000003,
+            -0.07744000000000001,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.03025,
+        -0.077776,
+        0.04735
+      ],
+      "simulation_inertia_kg_m2": [
+        6.7942426666666685e-09,
+        8.454166666666668e-10,
+        7.636326000000003e-09
+      ],
+      "material": {
+        "base_color": [
+          0.04,
+          0.05,
+          0.07
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "LCD图标"
+    },
+    {
+      "id": "motor_lamp",
+      "name_zh": "电机转动符号03",
+      "function_zh": "电机转动符号03（运行层indicator.motor）",
+      "physical_meaning_zh": "指示件：电机转动符号03；装配原点 (0, 0, 0) m 相对 lcd，碰撞代理为0.005×0.0125×0.0002 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：LCD图标。",
+      "parent": "lcd",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__motor_lamp"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.005000000000000018,
+            0.012479999999999991,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            0.04,
+            -0.07696,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.04015,
+        -0.07696,
+        0.04735
+      ],
+      "simulation_inertia_kg_m2": [
+        8.454166666666681e-10,
+        9.616666666666661e-10,
+        1.8037500000000007e-09
+      ],
+      "material": {
+        "base_color": [
+          0.04,
+          0.05,
+          0.07
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "LCD图标"
+    },
+    {
+      "id": "sensor_lamp",
+      "name_zh": "PT1000符号13",
+      "function_zh": "PT1000符号13（运行层indicator.sensor）",
+      "physical_meaning_zh": "指示件：PT1000符号13；装配原点 (0, 0, 0) m 相对 lcd，碰撞代理为0.005×0.00528×0.0002 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：LCD图标。",
+      "parent": "lcd",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__sensor_lamp"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0049999999999999975,
+            0.00528,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            0.014000000000000002,
+            -0.0436,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.014,
+        -0.043550000000000005,
+        0.04735
+      ],
+      "simulation_inertia_kg_m2": [
+        1.119683333333332e-09,
+        3.2833333333333344e-10,
+        1.444683333333332e-09
+      ],
+      "material": {
+        "base_color": [
+          0.04,
+          0.05,
+          0.07
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "LCD图标"
+    },
+    {
+      "id": "lock_lamp",
+      "name_zh": "锁定符号15",
+      "function_zh": "锁定符号15（运行层indicator.lock）",
+      "physical_meaning_zh": "指示件：锁定符号15；装配原点 (0, 0, 0) m 相对 lcd，碰撞代理为0.005×0.00528×0.0002 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：LCD图标。",
+      "parent": "lcd",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__lock_lamp"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0049999999999999906,
+            0.00528,
+            0.0001999999999999988
+          ],
+          "origin_m": [
+            0.022,
+            -0.0436,
+            0.04735
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0218,
+        -0.043774,
+        0.04735
+      ],
+      "simulation_inertia_kg_m2": [
+        4.687126666666677e-10,
+        1.2166666666666676e-09,
+        1.682046000000002e-09
+      ],
+      "material": {
+        "base_color": [
+          0.04,
+          0.05,
+          0.07
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "LCD图标"
+    },
+    {
+      "id": "standby_led",
+      "name_zh": "待机LED",
+      "function_zh": "待机LED I（插电且电源开关在关位时亮；运行层indicator.standby）",
+      "physical_meaning_zh": "指示件：待机LED；装配原点 (0, 0, 0) m 相对 glass_top，碰撞代理为0.0036×0.0036×0.001 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：待机LED。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__standby_led"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.003600000000000006,
+            0.003600000000000006,
+            0.001
+          ],
+          "origin_m": [
+            -0.04,
+            -0.034,
+            0.0472
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.039999999999999994,
+        -0.034,
+        0.0472
+      ],
+      "simulation_inertia_kg_m2": [
+        5.466666666666663e-10,
+        5.466666666666663e-10,
+        1.0799999999999994e-09
+      ],
+      "material": {
+        "base_color": [
+          0.04,
+          0.05,
+          0.07
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "待机LED"
+    },
+    {
+      "id": "hot_lamp",
+      "name_zh": "热表面警示",
+      "function_zh": "SmartTemp热表面警示三角（加热盘>50 °C时亮；运行层indicator.hot）",
+      "physical_meaning_zh": "指示件：热表面警示；装配原点 (0, 0, 0) m 相对 glass_top，碰撞代理为0.011×0.0095×0.001 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：警示三角。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__hot_lamp"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.011000000000000003,
+            0.009499999999999998,
+            0.001
+          ],
+          "origin_m": [
+            0.062,
+            -0.02975,
+            0.047175
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.062,
+        -0.029750000000000002,
+        0.047175
+      ],
+      "simulation_inertia_kg_m2": [
+        3.763020833333334e-09,
+        5.044270833333335e-09,
+        8.802083333333337e-09
+      ],
+      "material": {
+        "base_color": [
+          0.3,
+          0.3,
+          0.31
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "警示三角"
+    },
+    {
+      "id": "plate_collar",
+      "name_zh": "加热盘座",
+      "function_zh": "加热盘下的深色环座（隔热；照片）",
+      "physical_meaning_zh": "承载件：加热盘座；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为半径 0.0735 m、高 0.023 m 圆柱；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：深色环座。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__plate_collar"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0735,
+            0.023000000000000007
+          ],
+          "origin_m": [
+            0.0,
+            0.056,
+            0.0585
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.12,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.056,
+        0.05855
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00022180210000000006,
+        0.00022180209999999995,
+        0.00043218000000000005
+      ],
+      "material": {
+        "base_color": [
+          0.045,
+          0.047,
+          0.052
+        ],
+        "metallic": 0.2,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深色环座"
+    },
+    {
+      "id": "heating_plate",
+      "name_zh": "加热盘",
+      "function_zh": "Ø135 mm铝合金加热盘N（600 W加热元件在下；运行层plate温度；接口plate）",
+      "physical_meaning_zh": "加热件：加热盘（接口plate）；装配原点 (0, 0, 0) m 相对 plate_collar，碰撞代理为半径 0.0675 m、高 0.015 m 圆柱；尺寸或规格为厂家数据，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：抛光铝盘。",
+      "parent": "plate_collar",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "直径135 mm与铝合金为厂家数据；厚度与倒角按照片估计。",
+      "objects": [
+        "ika_plate_rctdigital__heating_plate"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0675,
+            0.015
+          ],
+          "origin_m": [
+            0.0,
+            0.056,
+            0.07750000000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.39,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.056,
+        0.07745
+      ],
+      "simulation_inertia_kg_m2": [
+        0.000599527825,
+        0.000599527825,
+        0.0011846250000000001
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.95,
+        "roughness": 0.18,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/plate.png"
+      },
+      "appearance_zh": "抛光铝盘"
+    },
+    {
+      "id": "temp_ring",
+      "name_zh": "温度旋钮C座圈",
+      "function_zh": "温度旋钮C下的深色座圈（照片）",
+      "physical_meaning_zh": "安装件：旋钮座圈；装配原点 (0, 0, 0) m 相对 glass_top，碰撞代理为0.037×0.037×0.0014 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：深色座圈。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__temp_ring"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.03699999999999999,
+            0.037000000000000005,
+            0.0013999999999999985
+          ],
+          "origin_m": [
+            -0.054,
+            -0.11,
+            0.0475
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.05399999999999999,
+        -0.11,
+        0.0475
+      ],
+      "simulation_inertia_kg_m2": [
+        4.569866666666668e-07,
+        4.569866666666666e-07,
+        9.126666666666667e-07
+      ],
+      "material": {
+        "base_color": [
+          0.045,
+          0.047,
+          0.052
+        ],
+        "metallic": 0.2,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深色座圈"
+    },
+    {
+      "id": "temp_push_key",
+      "name_zh": "温度旋钮按压",
+      "function_zh": "按温度旋钮C：开/关加热功能",
+      "physical_meaning_zh": "输入器件：temp_push_key（弹簧键），按下调用heating.toggle；关节：沿 −Z 平移 0–0.0015 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (-0.054, -0.11, 0.0485) m 相对 glass_top，碰撞代理为半径 0.004 m、高 0.003 m 圆柱；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：旋钮轴。",
+      "parent": "glass_top",
+      "origin_m": [
+        -0.054,
+        -0.11,
+        0.0485
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          0.0015
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "按压行程为工程估计（手册：按旋钮启动/停止）。",
+      "objects": [
+        "ika_plate_rctdigital__temp_push_key"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.004,
+            0.003
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        2.4333333333333333e-08,
+        2.4333333333333333e-08,
+        4.2666666666666665e-08
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "旋钮轴"
+    },
+    {
+      "id": "knob_temperature",
+      "name_zh": "温度旋钮C",
+      "function_zh": "温度旋钮C：转角=(设定温度−273.15 K)×2π/100 K（0–310 °C，1 K步进；编码器，工程表示）；运行层heating.set_k（双向）",
+      "physical_meaning_zh": "输入器件：knob_temperature（旋钮，双向：转动即heating.set_temperature）；关节：绕 −Z 转动 0°–1116°，状态 heating.set_k，行程为工程估计；装配原点 (0, 0, -0.0002) m 相对 temp_push_key，碰撞代理为半径 0.0155 m、高 0.017 m 圆柱；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：深灰光面旋钮。",
+      "parent": "temp_push_key",
+      "origin_m": [
+        0.0,
+        0.0,
+        -0.0001999999999999988
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "revolute",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          19.477874452256717
+        ],
+        "state_id": "heating.set_k",
+        "evidence": "photo_estimate"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "旋钮直径与高度按照片估计；刻度（温度100 K/圈、转速500 rpm/圈）为工程表示。",
+      "objects": [
+        "ika_plate_rctdigital__knob_temperature"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0155,
+            0.017
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0085
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.012,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.00785
+      ],
+      "simulation_inertia_kg_m2": [
+        1.2074899999999998e-06,
+        1.2074899999999998e-06,
+        1.922e-06
+      ],
+      "material": {
+        "base_color": [
+          0.042,
+          0.044,
+          0.049
+        ],
+        "metallic": 0.0,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深灰光面旋钮"
+    },
+    {
+      "id": "speed_ring",
+      "name_zh": "转速旋钮D座圈",
+      "function_zh": "转速旋钮D下的深色座圈（照片）",
+      "physical_meaning_zh": "安装件：旋钮座圈；装配原点 (0, 0, 0) m 相对 glass_top，碰撞代理为0.037×0.037×0.0014 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：深色座圈。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__speed_ring"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.037000000000000005,
+            0.037000000000000005,
+            0.0013999999999999985
+          ],
+          "origin_m": [
+            0.046,
+            -0.11,
+            0.0475
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.046,
+        -0.11,
+        0.0475
+      ],
+      "simulation_inertia_kg_m2": [
+        4.569866666666668e-07,
+        4.569866666666668e-07,
+        9.126666666666669e-07
+      ],
+      "material": {
+        "base_color": [
+          0.045,
+          0.047,
+          0.052
+        ],
+        "metallic": 0.2,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深色座圈"
+    },
+    {
+      "id": "speed_push_key",
+      "name_zh": "转速旋钮按压",
+      "function_zh": "按转速旋钮D：开/关搅拌功能",
+      "physical_meaning_zh": "输入器件：speed_push_key（弹簧键），按下调用stirring.toggle；关节：沿 −Z 平移 0–0.0015 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (0.046, -0.11, 0.0485) m 相对 glass_top，碰撞代理为半径 0.004 m、高 0.003 m 圆柱；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：旋钮轴。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.046,
+        -0.11,
+        0.0485
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          0.0015
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "按压行程为工程估计（手册：按旋钮启动/停止）。",
+      "objects": [
+        "ika_plate_rctdigital__speed_push_key"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.004,
+            0.003
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        2.4333333333333333e-08,
+        2.4333333333333333e-08,
+        4.2666666666666665e-08
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "旋钮轴"
+    },
+    {
+      "id": "knob_speed",
+      "name_zh": "转速旋钮D",
+      "function_zh": "转速旋钮D：转角=设定转速(rpm)×2π/500（0–1500 rpm，10 rpm步进）；运行层stirring.set_rad_s（双向）",
+      "physical_meaning_zh": "输入器件：knob_speed（旋钮，双向：转动即stirring.set_speed）；关节：绕 −Z 转动 0°–1080°，状态 stirring.set_rad_s，行程为工程估计；装配原点 (0, 0, -0.0002) m 相对 speed_push_key，碰撞代理为半径 0.0155 m、高 0.017 m 圆柱；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：深灰光面旋钮。",
+      "parent": "speed_push_key",
+      "origin_m": [
+        0.0,
+        0.0,
+        -0.0001999999999999988
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "revolute",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          18.849555921538762
+        ],
+        "state_id": "stirring.set_rad_s",
+        "evidence": "photo_estimate"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "旋钮直径与高度按照片估计；刻度（温度100 K/圈、转速500 rpm/圈）为工程表示。",
+      "objects": [
+        "ika_plate_rctdigital__knob_speed"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0155,
+            0.017
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0085
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.012,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.00785
+      ],
+      "simulation_inertia_kg_m2": [
+        1.2074899999999998e-06,
+        1.2074899999999998e-06,
+        1.922e-06
+      ],
+      "material": {
+        "base_color": [
+          0.042,
+          0.044,
+          0.049
+        ],
+        "metallic": 0.0,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深灰光面旋钮"
+    },
+    {
+      "id": "menu_key",
+      "name_zh": "Menu键",
+      "function_zh": "Menu键E：按住2 s把黏度趋势复位为100 %（VISC显示时）",
+      "physical_meaning_zh": "输入器件：menu_key（弹簧键），按下调用viscosity.reset；关节：沿 −Z 平移 0–0.0006 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (-0.03, -0.112, 0.0474) m 相对 glass_top，碰撞代理为0.009×0.009×0.0006 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：触摸键。",
+      "parent": "glass_top",
+      "origin_m": [
+        -0.03,
+        -0.112,
+        0.0474
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          0.0006
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "触摸键位置按照片；按压行程为工程表示（场景中用小行程弹簧键表示触摸）。",
+      "objects": [
+        "ika_plate_rctdigital__menu_key"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.009,
+            0.009,
+            0.0006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        6.779999999999999e-09,
+        6.779999999999999e-09,
+        1.3499999999999998e-08
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.1,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.25,
+        "texture": null
+      },
+      "appearance_zh": "触摸键"
+    },
+    {
+      "id": "timer_key",
+      "name_zh": "Timer键",
+      "function_zh": "Timer键F：启动/暂停定时或计数",
+      "physical_meaning_zh": "输入器件：timer_key（弹簧键），按下调用timer.toggle；关节：沿 −Z 平移 0–0.0006 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (-0.008, -0.112, 0.0474) m 相对 glass_top，碰撞代理为0.009×0.009×0.0006 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：触摸键。",
+      "parent": "glass_top",
+      "origin_m": [
+        -0.008,
+        -0.112,
+        0.0474
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          0.0006
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "触摸键位置按照片；按压行程为工程表示（场景中用小行程弹簧键表示触摸）。",
+      "objects": [
+        "ika_plate_rctdigital__timer_key"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.009,
+            0.009,
+            0.0006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        6.779999999999999e-09,
+        6.779999999999999e-09,
+        1.3499999999999998e-08
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.1,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.25,
+        "texture": null
+      },
+      "appearance_zh": "触摸键"
+    },
+    {
+      "id": "lock_key",
+      "name_zh": "Lock键",
+      "function_zh": "Lock键G：按住2 s锁定/解锁",
+      "physical_meaning_zh": "输入器件：lock_key（弹簧键），按下调用lock.toggle；关节：沿 −Z 平移 0–0.0006 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (0.014, -0.112, 0.0474) m 相对 glass_top，碰撞代理为0.009×0.009×0.0006 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：触摸键。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.014,
+        -0.112,
+        0.0474
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "limits": [
+          0.0,
+          0.0006
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "触摸键位置按照片；按压行程为工程表示（场景中用小行程弹簧键表示触摸）。",
+      "objects": [
+        "ika_plate_rctdigital__lock_key"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.009,
+            0.009,
+            0.0006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        6.779999999999999e-09,
+        6.779999999999999e-09,
+        1.3499999999999998e-08
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.1,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.25,
+        "texture": null
+      },
+      "appearance_zh": "触摸键"
+    },
+    {
+      "id": "power_surround",
+      "name_zh": "电源开关座",
+      "function_zh": "前面板电源开关A的黑色座",
+      "physical_meaning_zh": "安装件：电源开关座；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为0.022×0.0016×0.015 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：黑色开关座。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__power_surround"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.022,
+            0.0015999999999999903,
+            0.015
+          ],
+          "origin_m": [
+            0.012,
+            -0.1325,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.012,
+        -0.1325,
+        0.017
+      ],
+      "simulation_inertia_kg_m2": [
+        7.585333333333334e-08,
+        2.3633333333333332e-07,
+        1.6218666666666663e-07
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色开关座"
+    },
+    {
+      "id": "power_switch",
+      "name_zh": "电源开关",
+      "function_zh": "前面板电源开关A（翘板：左开右关；场景中按一下切换）",
+      "physical_meaning_zh": "输入器件：power_switch（弹簧键），按下调用power.toggle；关节：沿 +Y 平移 0–0.003 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (0.012, -0.1341, 0.017) m 相对 housing，碰撞代理为0.016×0.0015×0.011 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：黑色翘板。",
+      "parent": "housing",
+      "origin_m": [
+        0.012,
+        -0.13410000000000002,
+        0.017
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          1,
+          0
+        ],
+        "limits": [
+          0.0,
+          0.003
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "前面板电源翘板A为手册正视图“B A”与数据表照片；尺寸为照片估计。",
+      "objects": [
+        "ika_plate_rctdigital__power_switch"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.016,
+            0.0015,
+            0.011
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.003,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -4.999999999999997e-05,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        3.0972499999999995e-08,
+        9.424999999999999e-08,
+        6.47225e-08
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色翘板"
+    },
+    {
+      "id": "safety_screw",
+      "name_zh": "安全温度螺钉",
+      "function_zh": "前面板安全回路调节螺钉B（用附带螺丝刀调安全温度；运行层safety.limit_k；接口safety_screw）",
+      "physical_meaning_zh": "调节件：安全温度螺钉；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为0.0064×0.0013×0.0064 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：安全螺钉。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__safety_screw"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0063999999999999994,
+            0.0012999999999999678,
+            0.006400000000000001
+          ],
+          "origin_m": [
+            -0.014,
+            -0.13315000000000002,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.014,
+        -0.13315,
+        0.017
+      ],
+      "simulation_inertia_kg_m2": [
+        7.10833333333333e-09,
+        1.3653333333333331e-08,
+        7.10833333333333e-09
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "安全螺钉"
+    },
+    {
+      "id": "rear_panel",
+      "name_zh": "后部接口板",
+      "function_zh": "后部接口：电源插座J与RS 232接口L（接口power_socket、rs232_port）",
+      "physical_meaning_zh": "连接件：电源与RS 232（power_socket、rs232_port）；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为0.073×0.0016×0.02 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：黑色接口。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "接口种类与顺序为手册设备图；尺寸为照片估计。",
+      "objects": [
+        "ika_plate_rctdigital__rear_panel"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.073,
+            0.0015999999999999903,
+            0.020000000000000004
+          ],
+          "origin_m": [
+            0.0165,
+            0.1342,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.03,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0165,
+        0.13419999999999999,
+        0.017
+      ],
+      "simulation_inertia_kg_m2": [
+        1.0064000000000002e-06,
+        1.4322499999999999e-05,
+        1.33289e-05
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色接口"
+    },
+    {
+      "id": "rear_label",
+      "name_zh": "后部标签",
+      "function_zh": "后部接口字母J、K、L、M与铭牌一行（通用字体）",
+      "physical_meaning_zh": "外观贴图：后部标签；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为0.124×0.001×0.02 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：后部标签。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "ika_plate_rctdigital__rear_label"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.124,
+            0.001,
+            0.020000000000000004
+          ],
+          "origin_m": [
+            0.0,
+            0.1338,
+            0.016
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.1338,
+        0.016
+      ],
+      "simulation_inertia_kg_m2": [
+        3.333416666666665e-08,
+        1.3146666666666665e-06,
+        1.2813341666666666e-06
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/rear.png"
+      },
+      "appearance_zh": "后部标签"
+    },
+    {
+      "id": "usb_port",
+      "name_zh": "USB接口",
+      "function_zh": "后部USB接口K（labworldsoft/NAMUR；接口usb_port）",
+      "physical_meaning_zh": "连接件：USB（usb_port）；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为0.012×0.0016×0.009 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：USB接口。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__usb_port"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.011999999999999997,
+            0.0015999999999999903,
+            0.009000000000000001
+          ],
+          "origin_m": [
+            0.015,
+            0.1342,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.003,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.015,
+        0.13419999999999999,
+        0.017
+      ],
+      "simulation_inertia_kg_m2": [
+        2.0890000000000004e-08,
+        5.6250000000000004e-08,
+        3.664000000000003e-08
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.025
+        ],
+        "metallic": 0.0,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "USB接口"
+    },
+    {
+      "id": "sensor_jack",
+      "name_zh": "PT1000接口",
+      "function_zh": "后部PT1000/接触温度计接口M（6针圆形；运行层sensor.state；接口sensor_jack）",
+      "physical_meaning_zh": "连接件：传感器接口（sensor_jack）；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为0.015×0.0016×0.015 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：圆形插座。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__sensor_jack"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.015,
+            0.0015999999999999903,
+            0.015
+          ],
+          "origin_m": [
+            -0.042,
+            0.1342,
+            0.017
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.006,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.042,
+        0.13419999999999999,
+        0.017
+      ],
+      "simulation_inertia_kg_m2": [
+        1.1378000000000006e-07,
+        2.2500000000000002e-07,
+        1.1378000000000003e-07
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "圆形插座"
+    },
+    {
+      "id": "stand_cap",
+      "name_zh": "支架螺塞",
+      "function_zh": "右后支架螺孔O的黑色滚花螺塞（接口stand_hole）",
+      "physical_meaning_zh": "连接件：支架螺孔（stand_hole）；装配原点 (0, 0, 0) m 相对 glass_top，碰撞代理为0.017×0.017×0.006 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：黑色螺塞。",
+      "parent": "glass_top",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__stand_cap"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.017000000000000008,
+            0.017000000000000015,
+            0.006000000000000005
+          ],
+          "origin_m": [
+            0.062,
+            0.118,
+            0.05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.062,
+        0.118,
+        0.05
+      ],
+      "simulation_inertia_kg_m2": [
+        1.0833333333333332e-07,
+        1.0833333333333326e-07,
+        1.9266666666666662e-07
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色螺塞"
+    },
+    {
+      "id": "feet",
+      "name_zh": "支脚",
+      "function_zh": "4个橡胶支脚（场景中根部固定）",
+      "physical_meaning_zh": "支承件：支脚；装配原点 (0, 0, 0) m 相对 housing，碰撞代理为半径 0.007 m、高 0.004 m 圆柱 等 4 个基元；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家整机2.4 kg的工程拆分）。外观：橡胶脚。",
+      "parent": "housing",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按数据表照片与手册设备图估计，尺寸在厂家外形之内。",
+      "objects": [
+        "ika_plate_rctdigital__feet"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            -0.058,
+            -0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            -0.058,
+            0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            0.058,
+            -0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.007,
+            0.004
+          ],
+          "origin_m": [
+            0.058,
+            0.10500000000000001,
+            0.002
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.008,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机2.4 kg（厂家数据）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.002
+      ],
+      "simulation_inertia_kg_m2": [
+        3.346133333333334e-05,
+        1.1277333333333333e-05,
+        4.471733333333334e-05
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "橡胶脚"
+    }
+  ],
+  "root_object": "ika_plate_rctdigital__root",
+  "joint_definitions": {
+    "temp_push_key": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_m": [
+        0.0,
+        0.0015
+      ],
+      "accessor": "joint[temp_push_key_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "knob_temperature": {
+      "type": "revolute",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_rad": [
+        0.0,
+        19.477874452256717
+      ],
+      "accessor": "joint[knob_temperature_joint]",
+      "state_id": "heating.set_k",
+      "range_evidence": "photo_estimate"
+    },
+    "speed_push_key": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_m": [
+        0.0,
+        0.0015
+      ],
+      "accessor": "joint[speed_push_key_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "knob_speed": {
+      "type": "revolute",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_rad": [
+        0.0,
+        18.849555921538762
+      ],
+      "accessor": "joint[knob_speed_joint]",
+      "state_id": "stirring.set_rad_s",
+      "range_evidence": "photo_estimate"
+    },
+    "menu_key": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_m": [
+        0.0,
+        0.0006
+      ],
+      "accessor": "joint[menu_key_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "timer_key": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_m": [
+        0.0,
+        0.0006
+      ],
+      "accessor": "joint[timer_key_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "lock_key": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "limits_m": [
+        0.0,
+        0.0006
+      ],
+      "accessor": "joint[lock_key_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "power_switch": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits_m": [
+        0.0,
+        0.003
+      ],
+      "accessor": "joint[power_switch_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    }
+  },
+  "artifacts": {
+    "model_glb": "model.glb",
+    "model_urdf": "model.urdf",
+    "meshes_dir": "meshes",
+    "model_blend": "model.blend"
+  },
+  "limitations_zh": [
+    "外形160 W×85 H×270 D mm、2.4 kg、Ø135 mm铝合金加热盘、玻璃机壳表面为厂家数据（数据表）；控件A–O的种类与位置关系为手册设备图。",
+    "外观（蓝色下机身、灰色框、黑色玻璃面、LCD、前角两个光面深灰旋钮、三个触摸键、抛光铝盘下深色环座、右后支架螺塞、前面板电源翘板A与安全螺钉B、后部接口J–M）按数据表照片与手册设备图估计；字样为通用字体重绘，不复制IKA标志。",
+    "工程构件：各层高度、玻璃面上元件的位置、按键行程、旋钮刻度（温度100 K/圈，转速500 rpm/圈）；机内加热元件与驱动磁体没有建模（运行层表示）。",
+    "参考姿态：旋钮在0（0 °C、0 rpm）、按键弹起、显示熄灭（关机）；容器、液体、搅拌子与PT1000传感器没有几何（运行层状态）。",
+    "质量：整机2.4 kg为厂家数据；各构件按材料与尺寸取工程估计，机身取余量（documented_total_split），单件质量不是称量值。"
+  ],
+  "manufacturer_dimensions_m": {
+    "W_D_H": [
+      0.16,
+      0.27,
+      0.085
+    ]
+  },
+  "manufacturer_dimensions_scope_zh": "160 W×85 H×270 D mm、2.4 kg、加热盘Ø135 mm（数据表Technische Daten）",
+  "mass_scope_zh": "整机2.4 kg（数据表）；各构件取工程估计质量，机身取余量",
+  "simulation_mass_budget": {
+    "total_mass_kg": 2.4,
+    "documented_total_kg": 2.4,
+    "evidence": "documented total mass split over the parts"
+  },
+  "reference_pose_zh": "参考姿态：旋钮在0（0 °C、0 rpm）、按键弹起、显示熄灭（关机）；容器、液体、搅拌子与PT1000传感器没有几何（运行层状态）。",
+  "selected_configuration": {
+    "model": "IKA Plate (RCT digital) 25004601, 220-230 V, with the PT1000.60 temperature sensor, IKAFLON stir bars 30 / 40 mm, USB cable (scope of delivery)",
+    "not_included": [
+      "ETS-D5 / ETS-D6 contact thermometers",
+      "support rod and boss head clamp",
+      "heating blocks and flask carriers",
+      "labworldsoft software"
+    ],
+    "note_zh": "容器、液体与搅拌子由宿主在vessel.place声明；液体取自模板库"
+  },
+  "readouts": [
+    {
+      "name": "temperature",
+      "part": "lcd",
+      "face": "+Z",
+      "digits": 4,
+      "decimals": 1,
+      "unit": "degC",
+      "on": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "region": [
+        0.02,
+        0.33,
+        0.5,
+        0.96
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.temperature"
+        ],
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "safe_visc",
+      "part": "lcd",
+      "face": "+Z",
+      "digits": 3,
+      "decimals": 0,
+      "unit": "degC|%",
+      "on": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "region": [
+        0.45,
+        0.6,
+        0.5,
+        0.84
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.safe_temperature",
+          "display.visc_trend"
+        ],
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "speed",
+      "part": "lcd",
+      "face": "+Z",
+      "digits": 4,
+      "decimals": 0,
+      "unit": "rpm",
+      "on": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "region": [
+        0.66,
+        0.93,
+        0.5,
+        0.96
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.speed"
+        ],
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "set_temperature",
+      "part": "lcd",
+      "face": "+Z",
+      "digits": 3,
+      "decimals": 0,
+      "unit": "degC",
+      "on": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "region": [
+        0.075,
+        0.205,
+        0.06,
+        0.4
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.set_temperature"
+        ],
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "timer",
+      "part": "lcd",
+      "face": "+Z",
+      "digits": 6,
+      "decimals": 0,
+      "unit": "hhmmss",
+      "on": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "region": [
+        0.28,
+        0.55,
+        0.06,
+        0.4
+      ],
+      "hide": [],
+      "source": {
+        "bridge_text": "display.timer"
+      }
+    },
+    {
+      "name": "message",
+      "part": "lcd",
+      "face": "+Z",
+      "digits": 4,
+      "decimals": 0,
+      "unit": "1",
+      "on": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "region": [
+        0.575,
+        0.705,
+        0.06,
+        0.4
+      ],
+      "hide": [],
+      "source": {
+        "bridge_text": "display.message"
+      }
+    },
+    {
+      "name": "set_speed",
+      "part": "lcd",
+      "face": "+Z",
+      "digits": 4,
+      "decimals": 0,
+      "unit": "rpm",
+      "on": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "region": [
+        0.775,
+        0.905,
+        0.06,
+        0.4
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.set_speed"
+        ],
+        "scale": 1.0
+      }
+    }
+  ],
+  "lamps": [
+    {
+      "name": "heating",
+      "part": "heating_lamp",
+      "face": "+Z",
+      "color": [
+        1.0,
+        0.45,
+        0.12
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.heating"
+        }
+      }
+    },
+    {
+      "name": "motor",
+      "part": "motor_lamp",
+      "face": "+Z",
+      "color": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.motor"
+        }
+      }
+    },
+    {
+      "name": "lock",
+      "part": "lock_lamp",
+      "face": "+Z",
+      "color": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.lock"
+        }
+      }
+    },
+    {
+      "name": "sensor",
+      "part": "sensor_lamp",
+      "face": "+Z",
+      "color": [
+        0.88,
+        0.94,
+        1.0
+      ],
+      "off": [
+        0.04,
+        0.05,
+        0.07
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.sensor"
+        }
+      }
+    },
+    {
+      "name": "standby",
+      "part": "standby_led",
+      "face": "+Z",
+      "color": [
+        1.0,
+        0.55,
+        0.08
+      ],
+      "off": [
+        0.1,
+        0.11,
+        0.12
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.standby"
+        }
+      }
+    },
+    {
+      "name": "hot",
+      "part": "hot_lamp",
+      "face": "+Z",
+      "color": [
+        1.0,
+        0.12,
+        0.06
+      ],
+      "off": [
+        0.3,
+        0.3,
+        0.31
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.hot"
+        }
+      }
+    }
+  ],
+  "readout_note_zh": "LCD在场景中按运行层显示（手册显示图的位置）：上排实际温度07（display.temperature，0.1 °C）、安全温度11或黏度趋势12（display.safe_temperature/display.visc_trend）、实际转速08（display.speed，rpm）；下排设定温度02（display.set_temperature）、定时/计数04（display.timer，hhmmss）、文字（display.message：HOt、Enn错误、SAFE＝看门狗2）、设定转速01（display.set_speed）；加热符号06、电机符号03、锁定15、PT1000符号13、待机LED（I）与右侧SmartTemp热表面三角按indicator.*点亮。两个旋钮按设定值转动（双向：在场景里转旋钮即设定温度/转速），按下旋钮开关加热/搅拌，三个触摸键与前面板电源开关为弹簧键。",
+  "panel_keys": [
+    "power_switch",
+    "temp_push_key",
+    "speed_push_key",
+    "menu_key",
+    "timer_key",
+    "lock_key"
+  ],
+  "knobs": [
+    "knob_temperature",
+    "knob_speed"
+  ],
+  "textures": {
+    "glass": "textures/glass.png",
+    "lcd": "textures/lcd.png",
+    "plate": "textures/plate.png",
+    "rear": "textures/rear.png"
+  },
+  "geometry_evidence_by_component": {
+    "housing": "manufacturer_datasheet",
+    "frame": "photo_estimate",
+    "glass_top": "manufacturer_datasheet",
+    "glass_print": "photo_estimate",
+    "lcd": "photo_estimate",
+    "heating_lamp": "photo_estimate",
+    "motor_lamp": "photo_estimate",
+    "sensor_lamp": "photo_estimate",
+    "lock_lamp": "photo_estimate",
+    "standby_led": "photo_estimate",
+    "hot_lamp": "photo_estimate",
+    "plate_collar": "photo_estimate",
+    "heating_plate": "manufacturer_datasheet",
+    "temp_ring": "photo_estimate",
+    "temp_push_key": "engineering_assumption",
+    "knob_temperature": "photo_estimate",
+    "speed_ring": "photo_estimate",
+    "speed_push_key": "engineering_assumption",
+    "knob_speed": "photo_estimate",
+    "menu_key": "photo_estimate",
+    "timer_key": "photo_estimate",
+    "lock_key": "photo_estimate",
+    "power_surround": "photo_estimate",
+    "power_switch": "photo_estimate",
+    "safety_screw": "photo_estimate",
+    "rear_panel": "photo_estimate",
+    "rear_label": "engineering_assumption",
+    "usb_port": "photo_estimate",
+    "sensor_jack": "photo_estimate",
+    "stand_cap": "photo_estimate",
+    "feet": "photo_estimate"
+  },
+  "world_origins_m": {
+    "housing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "frame": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "glass_top": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "glass_print": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "lcd": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "heating_lamp": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "motor_lamp": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sensor_lamp": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "lock_lamp": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "standby_led": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "hot_lamp": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "plate_collar": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "heating_plate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "temp_ring": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "temp_push_key": [
+      -0.054,
+      -0.11,
+      0.0485
+    ],
+    "knob_temperature": [
+      -0.054,
+      -0.11,
+      0.0483
+    ],
+    "speed_ring": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "speed_push_key": [
+      0.046,
+      -0.11,
+      0.0485
+    ],
+    "knob_speed": [
+      0.046,
+      -0.11,
+      0.0483
+    ],
+    "menu_key": [
+      -0.03,
+      -0.112,
+      0.0474
+    ],
+    "timer_key": [
+      -0.008,
+      -0.112,
+      0.0474
+    ],
+    "lock_key": [
+      0.014,
+      -0.112,
+      0.0474
+    ],
+    "power_surround": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "power_switch": [
+      0.012,
+      -0.13410000000000002,
+      0.017
+    ],
+    "safety_screw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rear_panel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rear_label": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "usb_port": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sensor_jack": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "stand_cap": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "feet": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

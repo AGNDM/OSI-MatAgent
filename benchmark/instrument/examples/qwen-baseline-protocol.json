@@ -1,0 +1,109 @@
+{
+  "all_questions_diagnostic": {
+    "accuracy": 0.5618556701030928,
+    "clustered_accuracy_ci95": {
+      "estimand": "question-weighted mean; whole scenario groups resampled",
+      "groups": 112,
+      "high": 0.61843671679198,
+      "low": 0.5069093145943241,
+      "mean": 0.5618556701030928,
+      "resamples": 1000
+    },
+    "correct": 218,
+    "invalid_predictions": 2,
+    "questions": 388,
+    "tier_macro_accuracy": 0.6143925518925518
+  },
+  "answer_instruction": "Generate one complete answer. Return ONLY a JSON object with \"selected_option_id\" and \"causes_cited\" (a list of public slot, precondition, or documented error identifiers). Select exactly one offered option. Use [] when no supplied identifier supports a citation. Do not include markdown or text outside the JSON object.",
+  "heldout": {
+    "accuracy": 0.6052631578947368,
+    "clustered_accuracy_ci95": {
+      "estimand": "question-weighted mean; whole scenario groups resampled",
+      "groups": 36,
+      "high": 0.7058823529411765,
+      "low": 0.5161226318484383,
+      "mean": 0.6052631578947368,
+      "resamples": 1000
+    },
+    "correct": 69,
+    "invalid_predictions": 0,
+    "questions": 114,
+    "tier_macro_accuracy": 0.6222222222222222
+  },
+  "heldout_by_choice_count": {
+    "2": {
+      "accuracy": 0.5,
+      "category_counts": {
+        "L1": 44,
+        "L2": 20
+      },
+      "correct": 32,
+      "independent_groups": 16,
+      "invalid_predictions": 0,
+      "questions": 64,
+      "uniform_guessing_expected_accuracy": 0.5
+    },
+    "3": {
+      "accuracy": 0.5384615384615384,
+      "category_counts": {
+        "L3": 14,
+        "L4": 2,
+        "L5": 10
+      },
+      "correct": 14,
+      "independent_groups": 8,
+      "invalid_predictions": 0,
+      "questions": 26,
+      "uniform_guessing_expected_accuracy": 0.3333333333333333
+    },
+    "4": {
+      "accuracy": 0.9583333333333334,
+      "category_counts": {
+        "L3": 4,
+        "L4": 20
+      },
+      "correct": 23,
+      "independent_groups": 12,
+      "invalid_predictions": 0,
+      "questions": 24,
+      "uniform_guessing_expected_accuracy": 0.25
+    }
+  },
+  "input_protocol": "public-menu-union-v2",
+  "messages": "system_message; user=task_text(public task) + newline + answer_instruction; native tokenizer chat template with add_generation_prompt=True",
+  "method": "qwen-generative-sampling-0",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "note": "Historical single-seed aggregate result; this package does not include model inference or calibration evaluation. Distinguish ten-answer voting from a single greedy completion.",
+  "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "runtime": {
+    "attention": "sdpa",
+    "hardware": "NVIDIA H100",
+    "max_context": 30000,
+    "overflow_policy": "record error, retain question; no silent truncation",
+    "torch_dtype": "bfloat16"
+  },
+  "sampling": {
+    "do_sample": true,
+    "incomplete_valid_draw_budget": "error prediction; counted incorrect",
+    "max_attempts": 30,
+    "max_new_tokens": 192,
+    "per_attempt_seed": "first 8 bytes of SHA256(f'{seed}\\0{public_input_sha256}\\0{zero_based_attempt}'), big-endian, modulo 2**63-1",
+    "temperature": 0.8,
+    "tie_break": "first offered option among tied vote counts",
+    "top_k": 0,
+    "top_p": 1.0,
+    "valid_complete_answers_per_question": 10
+  },
+  "seed": 0,
+  "source_code_sha256": {
+    "instrument_bench/generative_sampling.py": "511ba3f6265d2558bebc98da3c6e4dd8cf5fae37a5a5564c11cc34a6ef4c7138",
+    "instrument_bench/io.py": "52088d4c605b542ebecf0cc76d5953f41c00aebd93d657054fd6b07cd1911150",
+    "instrument_bench/local_llm.py": "a099041922c00882ca69aaa2549e4bafe42aa859ce4fa11c01228c2a5e8eacc1"
+  },
+  "source_jobs": {
+    "choice_count_scoring": "4632329",
+    "immutable_scoring": "4631973",
+    "inference": "4631365"
+  },
+  "system_message": "You operate a simulated laboratory instrument. Use ONLY the supplied public observations, history, instrument contract, and operating notes. Select the best option. Commands being accepted do not establish that a timed operational goal has completed. Request more information when it is actually insufficient, and request maintenance when public controls cannot repair a persistent fault. Option identifiers are arbitrary and shuffled. Do not assume access to evaluator state or fault injection."
+}

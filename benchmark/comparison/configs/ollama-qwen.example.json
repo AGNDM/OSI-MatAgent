@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "tracks": {"mcqa": {"split": "heldout"}, "sequential": {"mode": "both"}},
+  "experiments": [
+    {"name": "qwen-ollama-choice-seed0", "method": "choice", "seed": 0,
+     "backend": {"kind": "ollama", "model": "qwen25-3b-local:imported", "tokenizer_path": "${COMPARISON_QWEN_MODEL}", "max_context": 30000, "max_new_tokens": 192}},
+    {"name": "qwen-ollama-verbalized-seed0", "method": "verbalized", "seed": 0,
+     "backend": {"kind": "ollama", "model": "qwen25-3b-local:imported", "tokenizer_path": "${COMPARISON_QWEN_MODEL}", "max_context": 30000, "max_new_tokens": 192}},
+    {"name": "qwen-ollama-sampling-seed0", "method": "sampling", "samples": 10, "temperature": 0.8, "seed": 0,
+     "backend": {"kind": "ollama", "model": "qwen25-3b-local:imported", "tokenizer_path": "${COMPARISON_QWEN_MODEL}", "max_context": 30000, "max_new_tokens": 192}}
+  ]
+}

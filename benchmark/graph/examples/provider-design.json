@@ -1,0 +1,14 @@
+{
+  "purpose": "Conceptual provider-neutral expert-by-chooser design, not an executable study plan",
+  "executable": false,
+  "conceptual_expert_rows": [
+    {"family": "Qwen", "local_example": "Qwen/Qwen2.5-14B-Instruct", "local_weight_staging_verified": true},
+    {"family": "DeepSeek", "local_example": "deepseek-ai/DeepSeek-V2-Lite-Chat", "local_weight_staging_verified": true, "schema_and_trajectory_success_not_implied": true},
+    {"family": "MiniMax", "status": "unrun placeholder", "local_artifact": null, "hosted_calls": 0}
+  ],
+  "conceptual_chooser_columns": [
+    {"family": "Jev", "status": "deployment-specific design placeholder; hosted Jev not run", "hosted_calls": 0},
+    {"family": "OpenJev", "local_example": "Released local OpenJev-8B native pointer head"}
+  ],
+  "execution_rule": "Executable plans require actual local HF expert paths and supported local chooser artifacts. No hosted backend kind is accepted. A placeholder must never be represented as an executed cell."
+}

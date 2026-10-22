@@ -1,0 +1,1397 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-22T13:21:49.070780+00:00",
+  "slurm_job_id": "4640669",
+  "compute_node": "kh063",
+  "followup_saved_record_snapshot_utc": "2026-10-22T13:19:39.412110+00:00",
+  "cohort": {
+    "cases": 120,
+    "modes": [
+      "free_run",
+      "teacher_forced"
+    ],
+    "seed": 0
+  },
+  "scope": "Existing actual-application-graph combinations only. Static MCQA and direct comparison-owned sequential adapters are excluded. This export performs no inference or regrading.",
+  "interpretation": [
+    "Original study-v2 and v4 guidance use separate protocols; do not pool their scores.",
+    "Attempt coverage is distinct from native episode completion and verified goal success.",
+    "Original study-v2 reached router calls, but no native operational decisions; these failures cannot establish a ranking of operational choosers.",
+    "Framework infrastructure_error labels in v4 include preserved model/protocol/budget aborts and do not by themselves mean Slurm or GPU failure.",
+    "The original small-expert rows have not been repeated under v4.",
+    "Colleague-hosted models are outside this local inventory."
+  ],
+  "cells": [
+    {
+      "experiment": "graph-qwen25-to-qwen25-hf-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "Qwen/Qwen2.5-3B-Instruct (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-qwen3-hf-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "Qwen/Qwen3-4B-Instruct-2507 (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-openjev8b-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "alanhuangya/OpenJev-8B (native decision head)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-apus-low-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (low effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-apus-high-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (high effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-minilm-cosine-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "all-MiniLM-L6-v2 cosine similarity",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-minilm-linear-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "all-MiniLM-L6-v2 logistic regression",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-minilm-knn-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "all-MiniLM-L6-v2 k-nearest neighbors",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen25-to-qwen25-hidden-linear-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen2.5-3B-Instruct",
+      "chooser": "Qwen2.5-3B frozen hidden features and logistic regression",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 1,
+            "model_json_schema": 119
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_citation": 3,
+            "model_json_schema": 117
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-qwen25-hf-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "Qwen/Qwen2.5-3B-Instruct (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-qwen3-hf-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "Qwen/Qwen3-4B-Instruct-2507 (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-openjev8b-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "alanhuangya/OpenJev-8B (native decision head)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-apus-low-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (low effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-apus-high-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (high effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-minilm-cosine-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "all-MiniLM-L6-v2 cosine similarity",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-minilm-linear-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "all-MiniLM-L6-v2 logistic regression",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-minilm-knn-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "all-MiniLM-L6-v2 k-nearest neighbors",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-qwen3-to-qwen25-hidden-linear-seed0",
+      "protocol": "study-v2",
+      "expert": "Qwen/Qwen3-4B-Instruct-2507",
+      "chooser": "Qwen2.5-3B frozen hidden features and logistic regression",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 49,
+            "model_json_schema": 71
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "cohort_goal_completion": 0.0,
+          "aborted": 120,
+          "abort_categories": {
+            "model_invalid_preset": 48,
+            "model_json_schema": 72
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-apus-high-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (high effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-apus-low-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (low effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-minilm-cosine-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "all-MiniLM-L6-v2 cosine similarity",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-minilm-knn-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "all-MiniLM-L6-v2 k-nearest neighbors",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-minilm-linear-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "all-MiniLM-L6-v2 logistic regression",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-openjev8b-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "alanhuangya/OpenJev-8B (native decision head)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-qwen25-hf-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "Qwen/Qwen2.5-3B-Instruct (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-qwen25-hidden-linear-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "Qwen2.5-3B frozen hidden features and logistic regression",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-deepseek-v2-lite-chat-to-qwen3-hf-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "Qwen/Qwen3-4B-Instruct-2507 (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 120
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-apus-high-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (high effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 87,
+            "role_error": 22,
+            "expert_output_truncated": 11
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 88,
+            "role_error": 19,
+            "expert_output_truncated": 13
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-apus-low-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "apus-ailab/APUS-Reflex4B-5949 (low effort)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 87,
+            "role_error": 18,
+            "expert_output_truncated": 15
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 88,
+            "role_error": 19,
+            "expert_output_truncated": 13
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-minilm-cosine-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "all-MiniLM-L6-v2 cosine similarity",
+      "seed": 0,
+      "state": "partial_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 64,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 64,
+          "status_counts": {
+            "infrastructure_error": 64
+          },
+          "terminal_reason_counts": {
+            "llm_budget": 45,
+            "role_error": 13,
+            "expert_output_truncated": 6
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 58,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 58,
+          "status_counts": {
+            "infrastructure_error": 58
+          },
+          "terminal_reason_counts": {
+            "llm_budget": 39,
+            "expert_output_truncated": 5,
+            "role_error": 14
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-minilm-knn-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "all-MiniLM-L6-v2 k-nearest neighbors",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "role_error": 109,
+            "llm_budget": 5,
+            "expert_output_truncated": 6
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 1,
+          "verified_goal_completions": 1,
+          "aborted": 119,
+          "status_counts": {
+            "infrastructure_error": 119,
+            "ok": 1
+          },
+          "terminal_reason_counts": {
+            "llm_budget": 4,
+            "role_error": 109,
+            "expert_output_truncated": 5,
+            "deadline": 1,
+            "escalated": 1
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-minilm-linear-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "all-MiniLM-L6-v2 logistic regression",
+      "seed": 0,
+      "state": "partial_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 61,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 61,
+          "status_counts": {
+            "infrastructure_error": 61
+          },
+          "terminal_reason_counts": {
+            "llm_budget": 44,
+            "role_error": 15,
+            "expert_output_truncated": 2
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 58,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 58,
+          "status_counts": {
+            "infrastructure_error": 58
+          },
+          "terminal_reason_counts": {
+            "llm_budget": 39,
+            "role_error": 17,
+            "expert_output_truncated": 2
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-openjev8b-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "alanhuangya/OpenJev-8B (native decision head)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 82,
+            "llm_budget": 5,
+            "role_error": 27,
+            "expert_output_truncated": 6
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 120,
+          "status_counts": {
+            "infrastructure_error": 120
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 83,
+            "llm_budget": 5,
+            "expert_output_truncated": 6,
+            "role_error": 26
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-qwen25-hf-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "Qwen/Qwen2.5-3B-Instruct (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 3,
+          "verified_goal_completions": 0,
+          "aborted": 117,
+          "status_counts": {
+            "infrastructure_error": 117,
+            "ok": 3
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 67,
+            "llm_budget": 8,
+            "role_error": 36,
+            "expert_output_truncated": 6,
+            "finished": 3
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 5,
+          "verified_goal_completions": 5,
+          "aborted": 115,
+          "status_counts": {
+            "infrastructure_error": 115,
+            "ok": 5
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 74,
+            "llm_budget": 2,
+            "expert_output_truncated": 5,
+            "finished": 5,
+            "role_error": 34
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-qwen25-hidden-linear-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "Qwen2.5-3B frozen hidden features and logistic regression",
+      "seed": 0,
+      "state": "partial_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 60,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 60,
+          "status_counts": {
+            "infrastructure_error": 60
+          },
+          "terminal_reason_counts": {
+            "llm_budget": 42,
+            "role_error": 15,
+            "expert_output_truncated": 3
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 54,
+          "native_episodes_completed": 0,
+          "verified_goal_completions": 0,
+          "aborted": 54,
+          "status_counts": {
+            "infrastructure_error": 54
+          },
+          "terminal_reason_counts": {
+            "llm_budget": 35,
+            "expert_output_truncated": 7,
+            "role_error": 12
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    },
+    {
+      "experiment": "graph-qwen25-14b-to-qwen3-hf-seed0",
+      "protocol": "v4-structural-json-schema-lmfe",
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "Qwen/Qwen3-4B-Instruct-2507 (conditional option logits)",
+      "seed": 0,
+      "state": "all_attempts_recorded",
+      "modes": {
+        "free_run": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 3,
+          "verified_goal_completions": 0,
+          "aborted": 117,
+          "status_counts": {
+            "infrastructure_error": 117,
+            "ok": 3
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 75,
+            "expert_output_truncated": 11,
+            "finished": 3,
+            "role_error": 31
+          }
+        },
+        "teacher_forced": {
+          "expected": 120,
+          "attempted": 120,
+          "native_episodes_completed": 3,
+          "verified_goal_completions": 3,
+          "aborted": 117,
+          "status_counts": {
+            "infrastructure_error": 117,
+            "ok": 3
+          },
+          "terminal_reason_counts": {
+            "decision_model_error": 78,
+            "expert_output_truncated": 9,
+            "finished": 3,
+            "role_error": 30
+          }
+        }
+      },
+      "source": "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json"
+    }
+  ],
+  "missing_same_expert_controls": [
+    {
+      "expert": "Qwen/Qwen2.5-14B-Instruct",
+      "chooser": "Qwen/Qwen2.5-14B-Instruct",
+      "state": "not_launched",
+      "seed": 0,
+      "cases_per_mode": 120,
+      "reason": "Same strong expert selecting its own decisions is absent from the current matrix; existing LLM chooser columns use smaller checkpoints."
+    },
+    {
+      "expert": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "chooser": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "state": "not_launched",
+      "seed": 0,
+      "cases_per_mode": 120,
+      "reason": "Same strong expert selecting its own decisions is absent from the current matrix; existing LLM chooser columns use smaller checkpoints."
+    }
+  ],
+  "provenance": {
+    "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-final-4635923/matrix/matrix.json": "2a5c3dd961b66c12e3c04da6be6b9dd6816e07cee09662090780e4da115809fb",
+    "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-local-study-20261022-v2/configuration.json": "cc5bf1d47aea852ce131f9ecd2e9057a3649fa7bcd960f248ebcfe971f81bf2f",
+    "/scratch/dsegura/git/OSI-MatAgent/results/.run-status/graph-status-4640630.json": "bd701795d91d26a93af25b682943026640584f57e4d764a6ef13c7f39e4f3ffa",
+    "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-protocol-v4-full-study-20261022-v3/configuration.json": "e0ac4cffc79941331f4e4a63e901e77723eec6afcc5e5f61575c79281a5347ec"
+  }
+}

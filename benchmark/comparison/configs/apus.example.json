@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "tracks": {"mcqa": {"split": "heldout"}, "sequential": {"mode": "both"}},
+  "experiments": [
+    {"name": "apus-native-low", "method": "native",
+     "backend": {"kind": "native", "family": "apus", "model_path": "${COMPARISON_APUS_MODEL}", "device": "cuda:0", "effort": "low"}},
+    {"name": "apus-native-high", "method": "native",
+     "backend": {"kind": "native", "family": "apus", "model_path": "${COMPARISON_APUS_MODEL}", "device": "cuda:0", "effort": "high"}}
+  ]
+}

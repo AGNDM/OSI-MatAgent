@@ -1,0 +1,573 @@
+{
+ "schema_version": "1.0.0",
+ "catalog_id": "CHEM-184",
+ "asset_type_id": "instrument.newera_ne1000",
+ "built_at": "2026-10-03T22:22:49+00:00",
+ "built_by": "outputs/expansion_batch05/t5_automation/newera_ne1000/build_pump_libraries.py",
+ "documented": {
+  "syringe_sizes": {
+   "value": "up to 60 mL (140 mL partially filled)",
+   "unit": "1",
+   "note_zh": "注射器至60 mL（140 mL部分装液）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Syringe sizes: Up to 60 mL (140 mL",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "partially filled)"
+  },
+  "max_speed_m_s": {
+   "value": 0.0008500833333333333,
+   "unit": "m/s",
+   "note_zh": "最高推进速度5.1005 cm/min",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Maximum speed: 5.1005 cm/min",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "min_speed_m_s": {
+   "value": 1.1680555555555555e-08,
+   "unit": "m/s",
+   "note_zh": "最低推进速度0.004205 cm/hr",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Minimum speed: 0.004205 cm/hr",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "max_rate_bd60_m3_s": {
+   "value": 4.7194444444444444e-07,
+   "unit": "m3/s",
+   "note_zh": "最大流量1699 mL/h（B-D 60 mL）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "1699 mL/hr with a B-D",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "60 mL syringe"
+  },
+  "min_rate_bd1_m3_s": {
+   "value": 2.0277777777777776e-13,
+   "unit": "m3/s",
+   "note_zh": "最小流量0.73 µL/h（B-D 1 mL）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "0.73 µL/hr with a B-D 1",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "motor": {
+   "value": {
+    "type": "step motor",
+    "steps_per_rev": 400,
+    "microstep": [
+     0.125,
+     0.5
+    ]
+   },
+   "unit": "1",
+   "note_zh": "步进电机，400步/转，1/8–1/2微步",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Motor type: Step motor",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "Microstepping: 1/8 to 1/2 depending on"
+  },
+  "advance_per_step_m": {
+   "value": [
+    2.126e-07,
+    8.504e-07
+   ],
+   "unit": "m",
+   "note_zh": "每步推进0.2126–0.8504 µm（随速度）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Advance per step: 0.2126 um to 0.8504 um",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "max_force_n": {
+   "value": {
+    "at_min_speed": 155.68775653411748,
+    "at_max_speed": 80.067989074689
+   },
+   "unit": "N",
+   "note_zh": "最大推力：最低速35 lbf、最高速18 lbf",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Maximum force: 35 lbs. at minimum",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "speed, 18 lbs. at"
+  },
+  "motor_screw_ratio": {
+   "value": 0.5357142857142857,
+   "unit": "1",
+   "note_zh": "电机到丝杠传动比15/28",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Motor to drive screw 15/28",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "screw_pitch_m": {
+   "value": 0.0012699999999999999,
+   "unit": "m",
+   "note_zh": "丝杠导程每英寸20转（1.27 mm/转）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Drive screw pitch: 20 revolutions/”",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "program_phases": {
+   "value": 41,
+   "unit": "1",
+   "note_zh": "程序最多41个阶段",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Number of Program 41",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "network_pumps": {
+   "value": 100,
+   "unit": "1",
+   "note_zh": "RS-232网络最多100台",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "RS-232 pump network: 100 pumps maximum",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "baud_rates": {
+   "value": [
+    300,
+    1200,
+    2400,
+    9600,
+    19200
+   ],
+   "unit": "1",
+   "note_zh": "RS-232波特率300–19200",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "RS-232 selectable baud 300, 1200, 2400, 9600,",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "diameter_range_m": {
+   "value": [
+    0.0001,
+    0.05
+   ],
+   "unit": "m",
+   "note_zh": "注射器内径设置0.100–50.00 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Syringe inside diameter 0.100 to 50.00 mm",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "dc_input": {
+   "value": {
+    "volts": 12.0,
+    "amps": 0.8,
+    "connector": "2.1 mm center positive"
+   },
+   "unit": "1",
+   "note_zh": "12 V DC，满载800 mA，2.1 mm中心正",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Voltage at DC 12V DC at full load",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "Amperage: 800 mA at full load"
+  },
+  "dimensions_inch": {
+   "value": {
+    "l": 8.75,
+    "w": 5.75,
+    "h": 4.5
+   },
+   "unit": "in",
+   "note_zh": "外形8 3/4×5 3/4×4 1/2 in（长×宽×高）；括号内22.86 cm与8.75 in（22.225 cm）不一致，见冲突",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Dimensions: 8 3/4” x 5 3/4” x 4 1/2” (LxWxH) (22.86 cm x 14.605 cm x 11.43 cm)",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "mass_kg": {
+   "value": 1.63,
+   "unit": "kg",
+   "note_zh": "质量3.6 lb（1.63 kg）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Weight: 3.6 lbs. (1.63 kg)",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "features_rate_range": {
+   "value": {
+    "min_ul_h": 0.73,
+    "max_ml_h": 2120.0
+   },
+   "unit": "1",
+   "note_zh": "特性列表：0.73 µL/h（1 mL）至2120 mL/h（60 mL；为Terumo 60 mL，规格表B-D 60 mL为1699 mL/h，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Pumping rates from 0.73 µL/hr with a 1 mL",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "syringe to 2120 mL/hr with a 60 mL syringe."
+  },
+  "stall_detection": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "失速检测：受阻时自动停泵",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Stall detection: Automatically stops pump",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "valid_diameter_text": {
+   "value": [
+    0.0001,
+    0.05
+   ],
+   "unit": "m",
+   "note_zh": "有效内径0.1–50.0 mm，超出显示oor",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Valid syringe diameters are from 0.1 mm to 50.0 mm.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "volume_units_rule": {
+   "value": {
+    "ul_below_m": 0.014
+   },
+   "unit": "m",
+   "note_zh": "内径≤14.0 mm体积单位µL，≥14.01 mm为mL",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "From 0.1 to 14.0 mm Syringes smaller than 10 mL: Volume units are ‘µL’",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "From 14.01 to 50.0 mm Syringes greater than or equal to 10 mL: Volume units are ‘mL’"
+  },
+  "max_phase": {
+   "value": 41,
+   "unit": "1",
+   "note_zh": "最大阶段号41",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "The maximum Phase number is 41.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "loop_nesting": {
+   "value": 3,
+   "unit": "1",
+   "note_zh": "循环最多嵌套3层",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Loops can be nested for a total of 3 layers deep.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "pause_max_s": {
+   "value": 99.0,
+   "unit": "s",
+   "note_zh": "暂停功能最长99 s（0.1–9.9 s可用小数）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "For pauses longer than the ‘99’ second maximum pause for this function",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "lcd": {
+   "value": {
+    "digits": 4
+   },
+   "unit": "1",
+   "note_zh": "4位反射式LCD",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "The display consists of a 4 digit reflective LCD",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "leds": {
+   "value": 8,
+   "unit": "1",
+   "note_zh": "LCD右侧8个红色圆LED",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "To the right of the LCD are 8 red, round, LED",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "ttl_min_level_s": {
+   "value": 0.1,
+   "unit": "s",
+   "note_zh": "TTL电平须保持≥100 ms",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "logic levels must be held steady for a minimum of 100 ms to be recognized",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "purge_hold_s": {
+   "value": 1.0,
+   "unit": "s",
+   "note_zh": "按住Start/Stop 1 s后开始最高速清洗（purge）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Purge will begin after the key is held for one second",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "collar_stall": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "推块碰到限位夹时失速报警",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "pusher block comes in contact with the collar clamp while infusing, a stall alarm will occur.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "power_jack_rear": {
+   "value": "lower right of the rear",
+   "unit": "1",
+   "note_zh": "电源插座在后部右下",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "power plug located on the lower right of the pump's rear",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "power_switch_rear": {
+   "value": "upper right of the rear",
+   "unit": "1",
+   "note_zh": "电源开关在后部右上（按“1”开）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "located on the upper right of the rear of the pump",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "power_failure_mode": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "断电模式：来电后重新启动程序",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual",
+   "quote": "Power Failure Mode: Restarts the Pumping",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "drawing_length_m": {
+   "value": 0.22225,
+   "unit": "m",
+   "note_zh": "尺寸图：总长8.75 in（222.25 mm）",
+   "evidence": "documented",
+   "source_id": "manufacturer_drawing",
+   "quote": "8.75 TOP VIEW",
+   "evidence_file": "source_cache/drawing.txt"
+  },
+  "drawing_depth_m": {
+   "value": 0.145796,
+   "unit": "m",
+   "note_zh": "尺寸图：深5.74 in（145.8 mm）",
+   "evidence": "documented",
+   "source_id": "manufacturer_drawing",
+   "quote": "5.74 FRONT VIEW LEFT SIDE VIEW",
+   "evidence_file": "source_cache/drawing.txt"
+  },
+  "drawing_heights_m": {
+   "value": {
+    "overall": 0.115062,
+    "end_plate": 0.11353799999999999,
+    "holder": 0.104648,
+    "chassis": 0.073152,
+    "feet": 0.007365999999999999
+   },
+   "unit": "m",
+   "note_zh": "尺寸图高度：总高4.53、4.47、4.12、机箱2.88、脚0.29 in",
+   "evidence": "documented",
+   "source_id": "manufacturer_drawing",
+   "quote": "4.53 4.47 4.12 2.88",
+   "evidence_file": "source_cache/drawing.txt",
+   "label_quote": ".29"
+  },
+  "drawing_mechanism_m": {
+   "value": {
+    "width": 0.211074,
+    "end_plate_depth": 0.07619999999999999,
+    "holder_depth": 0.08255
+   },
+   "unit": "m",
+   "note_zh": "尺寸图：机构宽8.31 in，末端板深3.00 in，注射器座深3.25 in",
+   "evidence": "documented",
+   "source_id": "manufacturer_drawing",
+   "quote": "8.31 .187 MAX PLUNGER THICKNESS",
+   "evidence_file": "source_cache/drawing.txt",
+   "label_quote": "3.00 3.25"
+  },
+  "max_travel_m": {
+   "value": {
+    "without_collar": 0.120396,
+    "with_collar": 0.113284
+   },
+   "unit": "m",
+   "note_zh": "推块最大行程4.74 in（有限位夹4.46 in）",
+   "evidence": "documented",
+   "source_id": "manufacturer_drawing",
+   "quote": "4.74 MAX TRAVEL W/OUT COLLAR 4.46 WITH COLLAR",
+   "evidence_file": "source_cache/drawing.txt"
+  },
+  "max_plunger_flange_m": {
+   "value": 0.0047498,
+   "unit": "m",
+   "note_zh": "活塞法兰最大厚度0.187 in",
+   "evidence": "documented",
+   "source_id": "manufacturer_drawing",
+   "quote": ".187 MAX PLUNGER THICKNESS",
+   "evidence_file": "source_cache/drawing.txt"
+  }
+ },
+ "engineering": {
+  "syringe_compliance_m3_pa": {
+   "value": {
+    "plastic": 5e-09,
+    "glass": 2e-10,
+    "steel": 5e-11
+   },
+   "unit": "m3/(Pa m3)",
+   "evidence": "assumption",
+   "engineering_note_zh": "注射器顺应性，按每1 m³标称容积（塑料：胶塞与筒壁形变，约0.05 %/bar，60 mL约30 µL/bar；玻璃：PTFE活塞头约0.002 %/bar；钢近似刚性；量级取自微流控文献中塑料注射器的数分钟启动滞后，工程值，不是本型号实测；液体与气泡的可压缩性另计）"
+  },
+  "friction_n": {
+   "value": {
+    "plastic": 6.0,
+    "glass": 2.0,
+    "steel": 3.0
+   },
+   "unit": "N",
+   "evidence": "assumption",
+   "engineering_note_zh": "注射器活塞静摩擦+滑动摩擦合力（工程值）"
+  },
+  "liquid_bulk_modulus_pa": {
+   "value": 2000000000.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "液体体积模量（水约2.2 GPa，有机溶剂约1 GPa；取2 GPa工程值）"
+  },
+  "tubing": {
+   "value": {
+    "ptfe_0p5mm": {
+     "id_m": 0.0005,
+     "od_m": 0.0016,
+     "material": "PTFE",
+     "modulus_pa": 500000000.0
+    },
+    "ptfe_0p8mm": {
+     "id_m": 0.0008,
+     "od_m": 0.0016,
+     "material": "PTFE",
+     "modulus_pa": 500000000.0
+    },
+    "ptfe_1p0mm": {
+     "id_m": 0.001,
+     "od_m": 0.0016,
+     "material": "PTFE",
+     "modulus_pa": 500000000.0
+    },
+    "ptfe_1p6mm": {
+     "id_m": 0.0016,
+     "od_m": 0.0032,
+     "material": "PTFE",
+     "modulus_pa": 500000000.0
+    },
+    "peek_0p25mm": {
+     "id_m": 0.00025,
+     "od_m": 0.0016,
+     "material": "PEEK",
+     "modulus_pa": 3600000000.0
+    },
+    "tygon_1p6mm": {
+     "id_m": 0.0016,
+     "od_m": 0.0032,
+     "material": "Tygon",
+     "modulus_pa": 5000000.0
+    },
+    "silicone_1p0mm": {
+     "id_m": 0.001,
+     "od_m": 0.003,
+     "material": "silicone",
+     "modulus_pa": 2000000.0
+    }
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "管路目录：常用实验室软管内外径与弹性模量（顺应性dV/dp=πr²L·2r/(E·t)；工程值）"
+  },
+  "needles": {
+   "value": {
+    "none": {
+     "id_m": null,
+     "length_m": 0.0
+    },
+    "18g": {
+     "id_m": 0.000838,
+     "length_m": 0.038
+    },
+    "21g": {
+     "id_m": 0.000514,
+     "length_m": 0.038
+    },
+    "23g": {
+     "id_m": 0.000337,
+     "length_m": 0.025
+    },
+    "25g": {
+     "id_m": 0.00026,
+     "length_m": 0.016
+    },
+    "27g": {
+     "id_m": 0.00021,
+     "length_m": 0.013
+    },
+    "30g": {
+     "id_m": 0.000159,
+     "length_m": 0.013
+    }
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "针头目录：标准壁针头内径与长度（ISO 9626典型值；工程取用）"
+  },
+  "minor_loss_pa": {
+   "value": 0.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "接头与鲁尔口局部损失（忽略；工程值）"
+  },
+  "cavitation_abs_pa": {
+   "value": 20000.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "抽液时液体绝对压力低于该值即析气/空化（流量受限，记入真值；工程值）"
+  },
+  "step_motor_force_curve": {
+   "value": "log_speed",
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "最大推力在最低速35 lbf与最高速18 lbf之间按速度对数线性插值（手册只给两端；工程值）"
+  },
+  "stall_debounce_s": {
+   "value": 0.2,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "推力超限持续该时间判失速（工程值）"
+  },
+  "display_commit_s": {
+   "value": 2.0,
+   "unit": "s",
+   "evidence": "documented_derived",
+   "engineering_note_zh": "方向键输入停止2 s后存入（手册6.1）"
+  },
+  "pressure_noise_pa": {
+   "value": 0.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "（无压力传感器；运行层压力为真值）"
+  }
+ },
+ "derived": {
+  "screw_advance_per_motor_rev_m": {
+   "value": 0.0006803571428571428,
+   "unit": "m",
+   "note_zh": "丝杠导程1.27 mm×传动比15/28=0.6804 mm/电机转"
+  },
+  "full_step_advance_m": {
+   "value": 1.700892857142857e-06,
+   "unit": "m",
+   "note_zh": "整步推进1.701 µm；1/8微步0.2126 µm、1/2微步0.8504 µm（与规格一致）"
+  }
+ }
+}

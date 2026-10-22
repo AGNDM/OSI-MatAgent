@@ -1,0 +1,905 @@
+{
+ "schema_version": "1.0.0",
+ "catalog_id": "CHEM-008",
+ "asset_type_id": "instrument.ika_plate_rctdigital",
+ "built_at": "2026-10-03T20:07:59+00:00",
+ "built_by": "outputs/expansion_batch05/t4_measure/ika_plate_rctdigital/build_hotplate_libraries.py",
+ "documented": {
+  "stirring_positions": {
+   "value": 1,
+   "unit": "1",
+   "note_zh": "1个搅拌位",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Rührstellenanzahl 1",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "stir_volume_max_m3": {
+   "value": 0.02,
+   "unit": "m3",
+   "note_zh": "最大搅拌量20 L（水）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Rührmenge max. pro Rührstelle (H2O) [l] 20",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "motor_output_w": {
+   "value": 9.0,
+   "unit": "W",
+   "note_zh": "电机输出功率9 W",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Motorleistung Abgabe [W] 9",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "rotation_directions": {
+   "value": [
+    "cw",
+    "ccw"
+   ],
+   "unit": "1",
+   "note_zh": "电机正反转",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Drehrichtung Motor rechts / links",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "speed_range_rpm": {
+   "value": [
+    50.0,
+    1500.0
+   ],
+   "unit": "rpm",
+   "note_zh": "转速50–1500 rpm（另可为0）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Drehzahlbereich [rpm] 50 - 1500",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "speed_step_rpm": {
+   "value": 10.0,
+   "unit": "rpm",
+   "note_zh": "转速设定步进10 rpm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Einstellgenauigkeit Drehzahl [rpm] 10",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "stir_bar_length_m": {
+   "value": [
+    0.03,
+    0.08
+   ],
+   "unit": "m",
+   "note_zh": "搅拌子长度30–80 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Rührstäbchenlänge [mm] 30 - 80",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "self_heating_k": {
+   "value": 13.0,
+   "unit": "K",
+   "note_zh": "最高转速搅拌1 h（室温22 °C）加热盘自升温+13 K（手册技术数据为+8 °C，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Eigenerwärmung Aufstellfläche durch max. Rühren (RT:22°C/Dauer:1h) [K] +13",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "heater_power_w": {
+   "value": 600.0,
+   "unit": "W",
+   "note_zh": "加热功率600 W",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Heizleistung [W] 600",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "set_temperature_range_c": {
+   "value": [
+    0.0,
+    310.0
+   ],
+   "unit": "degC",
+   "note_zh": "加热温度设定范围0–310 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Heiztemperatur Einstellbereich [°C] 0 - 310",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "plate_setting_resolution_k": {
+   "value": 1.0,
+   "unit": "K",
+   "note_zh": "加热盘温度设定分辨1 K",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Einstellgenauigkeit Heizplattentemperatur [K] 1",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "external_sensors": {
+   "value": [
+    "PT1000",
+    "ETS-D5",
+    "ETS-D6"
+   ],
+   "unit": "1",
+   "note_zh": "外接温度传感器PT1000、ETS-D5、ETS-D6",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Anschluss für ext. Temperaturmessfühler PT1000, ETS-D5, ETS-D6",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "medium_setting_resolution_k": {
+   "value": 1.0,
+   "unit": "K",
+   "note_zh": "介质温度设定分辨1 K",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Einstellgenauigkeit Mediumstemperatur [K] 1",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "safety_circuit_c": {
+   "value": [
+    50.0,
+    370.0
+   ],
+   "unit": "degC",
+   "note_zh": "安全回路可调50–370 °C（特性列表写“bis zu 360 °C”，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Sicherheitskreis einstellbar [°C] 50 - 370",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "plate_material": {
+   "value": "aluminium alloy",
+   "unit": "1",
+   "note_zh": "加热盘铝合金",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Aufstellfläche Werkstoff Aluminium-Legierung",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "plate_diameter_m": {
+   "value": 0.135,
+   "unit": "m",
+   "note_zh": "加热盘直径135 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Aufstellfläche Abmessungen [mm] Ø 135",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "auto_reverse": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "自动换向",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Automatische Drehrichtungsumkehr ja",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "intermittent_mode": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "间歇运行",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Intervallbetrieb ja",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "viscosity_trend": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "黏度趋势测量",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Viskositätstrendmessung ja",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "timer_range_s": {
+   "value": [
+    1.0,
+    8636400.0
+   ],
+   "unit": "s",
+   "note_zh": "定时1 s至143940 min",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Zeiteinstellung max. [min] 143940",
+   "evidence_file": "source_cache/datasheet.txt",
+   "label_quote": "Zeiteinstellung min. [s] 1"
+  },
+  "error5_detection": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "传感器不在介质中检测（Error 5）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Fühler im Medium Erkennung (Error 5) ja",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "speed_deviation": {
+   "value": 0.02,
+   "unit": "1",
+   "note_zh": "转速偏差±2 %（空载、1500 rpm、25 °C）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Drehzahl Abweichung (keine Last, Nennspannung, bei 1500rpm + 25 °C) [%] ±2",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "heating_rate_k_s": {
+   "value": 0.10833333333333334,
+   "unit": "K/s",
+   "note_zh": "升温速率6.5 K/min（1 L水，H1500烧杯；手册技术数据7 K/min，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Heizrate (1l H2O in H1500) [K/min] 6.5",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "plate_control_accuracy_k": {
+   "value": 5.0,
+   "unit": "K",
+   "note_zh": "加热盘温度控制精度±5 K（100 °C）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Regelgenauigkeit der Heizplattentemperatur (bei 100°C) [K] ±5",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "medium_control_accuracy_pt1000_k": {
+   "value": 0.5,
+   "unit": "K",
+   "note_zh": "PT1000控温精度±0.5 K（500 mL水，40 mm搅拌子，600 rpm，50 °C）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Regelgenauigkeit der Temperatur mit ext. PT1000 (500ml H2O, 40 mm Magnetstäbchen, 600rpm, 50°C) [K] ±0.5",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "medium_control_accuracy_etsd6_k": {
+   "value": 0.2,
+   "unit": "K",
+   "note_zh": "ETS-D6控温精度±0.2 K（同条件）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Regelgenauigkeit der Temperatur mit ETS-D6 (500ml H2O, 40 mm Magnetstäbchen, 600rpm, 50°C) [K] ±0.2",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "dimensions_m": {
+   "value": {
+    "w": 0.16,
+    "h": 0.085,
+    "d": 0.27
+   },
+   "unit": "m",
+   "note_zh": "外形宽160×高85×深270 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Abmessungen (B x H x T) [mm] 160 x 85 x 270",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "mass_kg": {
+   "value": 2.4,
+   "unit": "kg",
+   "note_zh": "质量2.4 kg",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Gewicht [kg] 2.4",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "ambient_range_c": {
+   "value": [
+    5.0,
+    40.0
+   ],
+   "unit": "degC",
+   "note_zh": "允许环境温度5–40 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Zulässiger Umgebungstemperaturbereich [°C] 5 - 40",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "humidity_max": {
+   "value": 0.8,
+   "unit": "1",
+   "note_zh": "允许相对湿度80 %",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Zulässige Relative Feuchte [%] 80",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "ip_class": {
+   "value": "IP 42",
+   "unit": "1",
+   "note_zh": "IP 42",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Schutzart nach DIN EN 60529 IP 42",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "interfaces": {
+   "value": [
+    "RS 232",
+    "USB"
+   ],
+   "unit": "1",
+   "note_zh": "RS 232与USB接口",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "RS 232 Schnittstelle ja",
+   "evidence_file": "source_cache/datasheet.txt",
+   "label_quote": "USB Schnittstelle ja"
+  },
+  "mains_v": {
+   "value": [
+    220.0,
+    230.0
+   ],
+   "unit": "V",
+   "note_zh": "电压220–230 V（25004601）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Spannung [V] 220 - 230",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "power_input_w": {
+   "value": 650.0,
+   "unit": "W",
+   "note_zh": "整机输入功率650 W",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Geräteaufnahmeleistung [W] 650",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "standby_power_w": {
+   "value": 1.6,
+   "unit": "W",
+   "note_zh": "待机功率1.6 W",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Geräteaufnahmeleistung Standby [W] 1.6",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "smart_temp": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "SmartTemp热表面警示",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "IKA SmartTemp® Warnung bei heißer Oberfläche zum Schutz vor Verbrennungen!",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "self_heating_manual_k": {
+   "value": 8.0,
+   "unit": "K",
+   "note_zh": "手册技术数据：最高转速自升温+8 °C（与数据表+13 K冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "Self-heating of the hotplate by max. stirring",
+   "evidence_file": "source_cache/techdata.txt",
+   "label_quote": "+ 8 °C"
+  },
+  "heating_rate_manual_k_s": {
+   "value": 0.11666666666666667,
+   "unit": "K/s",
+   "note_zh": "手册技术数据：升温速率7 K/min（1 L水，H 1500）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "7 K / min",
+   "evidence_file": "source_cache/techdata.txt",
+   "label_quote": "Heating rate (1 l water in H 1,500)"
+  },
+  "hot_display_c": {
+   "value": 50.0,
+   "unit": "degC",
+   "note_zh": "关机时加热盘高于50 °C显示HOT!与当前温度",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "When the device is switched off while the heating plate temperature is higher than + 50 °C, the display (H) shows HOT!",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "safe_margin_k": {
+   "value": 15.0,
+   "unit": "K",
+   "note_zh": "最高加热盘设定温度至少比安全温度低15 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "The adjustable maximum heating plate temperature must always be set at least + 15 °C under the set safety temperature limit.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "safe_range_c": {
+   "value": [
+    50.0,
+    "max_set+60"
+   ],
+   "unit": "degC",
+   "note_zh": "安全温度设定范围50 °C至最高设定+60 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "Setting range: [+ 50 °C] to [max. SET temperature + 60 °C]",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "safe_factory": {
+   "value": "max_set+60",
+   "unit": "1",
+   "note_zh": "出厂安全温度为最高设定温度+60 °C（370 °C）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "Factory setting: [max. SET temperature + 60 °C]",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "safe_stops_heating": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "达到安全温度后停止加热",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "Once this limit has been reached, the device stops heating.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "safe_trip_err25": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "安全回路切断加热时显示Err. 25",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "until the heating function switches off and the display shows „Err. 25“.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "flash_point_margin_k": {
+   "value": 25.0,
+   "unit": "K",
+   "note_zh": "安全温度至少比介质燃点低25 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "The safe temperature limit must always be set at least + 25 °C",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "pid_mode": {
+   "value": "PID",
+   "unit": "1",
+   "note_zh": "PID：控制好、超调小、升温慢",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "Good control results, minimized overshooting, slow rise in temperature.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "two_point_mode": {
+   "value": "2P",
+   "unit": "1",
+   "note_zh": "两点控制：升温最快、超调大",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "Maximum heating rate, increased overshooting.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "contact_thermometer_rule": {
+   "value": 2.0,
+   "unit": "1",
+   "note_zh": "接触温度计控温时加热盘约设为设定值两倍",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "approximately twice the set-point value of contact thermometer",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "intermittent_run_pause_s": {
+   "value": {
+    "run": [
+     10.0,
+     600.0,
+     10.0
+    ],
+    "pause": [
+     3.0,
+     300.0,
+     1.0
+    ]
+   },
+   "unit": "s",
+   "note_zh": "间歇运行：运行10 s–10 min（10 s步进），暂停3 s–5 min（1 s步进）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "The run time (0 / 10 sec – 10 min, 10 sec steps) and pause time (3 sec – 5 min, 1 sec steps) should both be set.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "error5_timeout_min": {
+   "value": [
+    1.0,
+    30.0
+   ],
+   "unit": "min",
+   "note_zh": "Error 5时限1–30 min，0为关闭",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "You can set a value from 1 to 30 min for this time limit depending on the application.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "error5_conditions": {
+   "value": {
+    "sensor_below_c": 50.0,
+    "difference_k": 5.0
+   },
+   "unit": "1",
+   "note_zh": "Error 5只在传感器<50 °C且设定与读数差>5 K时有效",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "sensor temperature is < + 50 °C",
+   "evidence_file": "source_cache/manual_en_flow.txt",
+   "label_quote": "difference target temperature / sensor temperature > 5 K"
+  },
+  "visc_start_percent": {
+   "value": 100.0,
+   "unit": "%",
+   "note_zh": "黏度趋势从100 %开始（相对扭矩）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "the viscosity measurement is started at 100 %",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "watchdog_s": {
+   "value": [
+    20.0,
+    1500.0
+   ],
+   "unit": "s",
+   "note_zh": "看门狗时间20–1500 s",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "Set watchdog time to m (20 – 1,500) seconds",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "mode_b_restart": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "B模式断电恢复后自动继续",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "The device will automatically restart in mode B following any interruption to the power supply.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "sensor_depth_m": {
+   "value": 0.02,
+   "unit": "m",
+   "note_zh": "外接传感器插入介质至少20 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "inserted into the medium to a depth of at least 20 mm",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  },
+  "magnet_self_heating": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "高转速时磁体作用使加热盘自升温（即使未加热）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2018",
+   "quote": "The heating plate can heat up due to the action of the magnets at high motor speeds, even if the heater is switched off.",
+   "evidence_file": "source_cache/manual_en_flow.txt"
+  }
+ },
+ "engineering": {
+  "plate_heat_capacity_j_k": {
+   "value": 520.0,
+   "unit": "J/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热盘总热容：Ø135 mm铝合金盘约0.39 kg（900 J/(kg K)）加加热元件与支架（工程估计）"
+  },
+  "plate_loss_w_k": {
+   "value": 0.3,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热盘（无容器）对环境的对流与经机壳的导热损失（工程值）"
+  },
+  "plate_emissivity": {
+   "value": 0.1,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "抛光铝合金盘发射率（工程值，辐射损失）"
+  },
+  "plate_area_m2": {
+   "value": 0.014313915000000002,
+   "unit": "m2",
+   "evidence": "derived",
+   "engineering_note_zh": "加热盘上表面积（直径135 mm）"
+  },
+  "magnet_heating_w_at_max": {
+   "value": 4.551658630371094,
+   "unit": "W",
+   "evidence": "calibrated",
+   "engineering_note_zh": "最高转速1500 rpm时磁体在铝盘中涡流发热（与转速平方成正比；标定到数据表+13 K/1 h）（已标定，见calibration_report.json）"
+  },
+  "contact_conductance_w_m2k": {
+   "value": 1216.8547801950126,
+   "unit": "W/(m2 K)",
+   "evidence": "calibrated",
+   "engineering_note_zh": "加热盘—玻璃平底—搅拌液体的总传热系数（按底面积；标定到1 L水在H1500中6.5 K/min）（已标定，见calibration_report.json）"
+  },
+  "unstirred_factor": {
+   "value": 0.55,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "不搅拌时盘—液传热系数相对充分搅拌的比例（自然对流，工程值）"
+  },
+  "stir_full_rpm": {
+   "value": 600.0,
+   "unit": "rpm",
+   "evidence": "assumption",
+   "engineering_note_zh": "盘—液传热达到充分搅拌值的转速（以下线性过渡；工程值）"
+  },
+  "side_loss_w_m2k": {
+   "value": 11.0,
+   "unit": "W/(m2 K)",
+   "evidence": "assumption",
+   "engineering_note_zh": "容器侧壁与液面对环境的对流加辐射（线性化，工程值）"
+  },
+  "evap_mass_transfer_m_s": {
+   "value": 0.004,
+   "unit": "m/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "敞口容器液面蒸发传质系数（静止空气，工程值）"
+  },
+  "glass_cp_j_kgk": {
+   "value": 830.0,
+   "unit": "J/(kg K)",
+   "evidence": "assumption",
+   "engineering_note_zh": "硼硅玻璃比热（文献典型值，工程取用）"
+  },
+  "steel_cp_j_kgk": {
+   "value": 500.0,
+   "unit": "J/(kg K)",
+   "evidence": "assumption",
+   "engineering_note_zh": "不锈钢比热（文献典型值，工程取用）"
+  },
+  "vessels": {
+   "value": {
+    "beaker_250ml": {
+     "od_m": 0.07,
+     "height_m": 0.095,
+     "mass_kg": 0.09,
+     "material": "glass",
+     "bottom_mm": 1.6,
+     "capacity_m3": 0.00025
+    },
+    "beaker_600ml": {
+     "od_m": 0.09,
+     "height_m": 0.125,
+     "mass_kg": 0.17,
+     "material": "glass",
+     "bottom_mm": 1.8,
+     "capacity_m3": 0.0006
+    },
+    "h1000": {
+     "od_m": 0.105,
+     "height_m": 0.145,
+     "mass_kg": 0.28,
+     "material": "glass",
+     "bottom_mm": 2.0,
+     "capacity_m3": 0.001
+    },
+    "h1500": {
+     "od_m": 0.12,
+     "height_m": 0.17,
+     "mass_kg": 0.4,
+     "material": "glass",
+     "bottom_mm": 2.2,
+     "capacity_m3": 0.0015
+    },
+    "h3000": {
+     "od_m": 0.15,
+     "height_m": 0.21,
+     "mass_kg": 0.75,
+     "material": "glass",
+     "bottom_mm": 2.6,
+     "capacity_m3": 0.003
+    },
+    "h5000": {
+     "od_m": 0.17,
+     "height_m": 0.27,
+     "mass_kg": 1.15,
+     "material": "glass",
+     "bottom_mm": 3.0,
+     "capacity_m3": 0.005
+    },
+    "metal_pot_2l": {
+     "od_m": 0.14,
+     "height_m": 0.15,
+     "mass_kg": 0.6,
+     "material": "steel",
+     "bottom_mm": 1.2,
+     "capacity_m3": 0.002
+    }
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "容器目录：IKA H系列烧杯与常用低型烧杯、不锈钢锅的外径、高度、质量（按DIN低型烧杯尺寸估计；工程值）"
+  },
+  "steel_bottom_factor": {
+   "value": 1.6,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "不锈钢锅底相对玻璃底的传热系数倍数（导热更好；手册：可用金属锅代替玻璃容器）"
+  },
+  "sensor_tau_liquid_s": {
+   "value": 6.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "PT1000.60在搅拌液体中的时间常数（工程值）"
+  },
+  "sensor_tau_air_s": {
+   "value": 90.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "PT1000在空气中的时间常数（工程值）"
+  },
+  "sensor_noise_k": {
+   "value": 0.03,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "PT1000读数噪声（1σ，工程值）"
+  },
+  "sensor_air_coupling": {
+   "value": 0.005,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "传感器不在介质中（放在旁边空气里）时读数=环境+系数×(加热盘−环境)（工程值）"
+  },
+  "ambient_snap_k": {
+   "value": 0.001,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "无加热、无搅拌时温差小于该值即视为回到室温（之后静止区间整段跳过；差值计入守恒账）"
+  },
+  "plate_sensor_noise_k": {
+   "value": 0.3,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热盘温度读数噪声（1σ，工程值）"
+  },
+  "plate_kp_w_k": {
+   "value": 40.0,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热盘温度控制比例增益（工程值）"
+  },
+  "plate_ki_w_ks": {
+   "value": 0.8,
+   "unit": "W/(K s)",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热盘温度控制积分增益（工程值）"
+  },
+  "pid_kp": {
+   "value": 4.0,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "介质PID：加热盘目标相对介质误差的比例系数（K/K，工程值）"
+  },
+  "pid_ki_s": {
+   "value": 0.01,
+   "unit": "1/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "介质PID积分系数（工程值）"
+  },
+  "pid_kd_s": {
+   "value": 100.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "介质PID微分时间（工程值）"
+  },
+  "pid_d_filter_s": {
+   "value": 20.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "介质PID微分的一阶滤波时间（传感器噪声；工程值）"
+  },
+  "pid_i_band_k": {
+   "value": 2.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "介质PID只在误差小于该值时积分（防积分饱和；工程值）"
+  },
+  "two_point_hysteresis_k": {
+   "value": 0.3,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "两点控制回差（工程值）"
+  },
+  "max_plate_over_medium_k": {
+   "value": 40.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "PID控温时加热盘目标最多高出介质设定的温差（两点控制用加热盘最高温度；工程值）"
+  },
+  "motor_ramp_s": {
+   "value": 2.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "电机从0到1500 rpm的加速时间（工程值）"
+  },
+  "coupling_torque_nm_per_m": {
+   "value": 0.3,
+   "unit": "N m/m",
+   "evidence": "assumption",
+   "engineering_note_zh": "磁力耦合最大传递扭矩按搅拌子长度（40 mm约0.012 N m；工程值）"
+  },
+  "drag_viscous": {
+   "value": 6.0,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "搅拌子黏性阻力系数：τ=c·μ·ω·L³（工程值）"
+  },
+  "drag_inertial": {
+   "value": 0.0004,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "搅拌子惯性阻力系数：τ=c·ρ·ω²·L⁵（工程值；水中80 mm搅拌子约1300 rpm开始脱耦）"
+  },
+  "motor_torque_nm": {
+   "value": 0.06,
+   "unit": "N m",
+   "evidence": "assumption",
+   "engineering_note_zh": "电机最大扭矩（9 W输出在1500 rpm约0.057 N m；大于磁耦合能传的最大扭矩，所以介质黏度只会让搅拌子脱耦、不会使电机过载；Err. 4只由卡死故障给出；工程值）"
+  },
+  "volume_mixing_limit_m3": {
+   "value": 0.02,
+   "unit": "m3",
+   "evidence": "documented_derived",
+   "engineering_note_zh": "有效混合的最大液量（数据表20 L水；超过时按未搅拌处理）"
+  },
+  "internal_coupling": {
+   "value": 0.14,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "机内温度=环境+系数×(加热盘−环境)（Err 3内部>80 °C判定；工程值，额定条件310 °C/40 °C下不报警）"
+  },
+  "overhang_internal_factor": {
+   "value": 1.3,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "容器外径比加热盘大20 mm以上时机内热积累倍数（手册Err 3原因：加热盘与机壳间热积累；工程值）"
+  },
+  "err5_rise_k": {
+   "value": 2.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "Error 5：时限内传感器读数上升小于该值判为不在介质中（工程值）"
+  },
+  "hot_surface_warn_c": {
+   "value": 50.0,
+   "unit": "degC",
+   "evidence": "documented_derived",
+   "engineering_note_zh": "SmartTemp热表面警示阈值（与HOT!显示同为50 °C）"
+  },
+  "visc_settle_s": {
+   "value": 5.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "转速稳定后开始黏度趋势参考值的等待时间（工程值）"
+  },
+  "torque_noise": {
+   "value": 0.004,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "黏度趋势读数的相对噪声（工程值）"
+  },
+  "speed_noise": {
+   "value": 0.004,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "实际转速读数相对噪声（远小于±2 %规格；工程值）"
+  },
+  "safety_sensor_offset_k": {
+   "value": 2.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "安全温度传感器读数比控制传感器高（盘中心；工程值）"
+  }
+ },
+ "derived": {
+  "max_plate_set_k": {
+   "value": 583.15,
+   "unit": "K",
+   "note_zh": "最高加热盘设定310 °C"
+  },
+  "safe_factory_k": {
+   "value": 643.15,
+   "unit": "K",
+   "note_zh": "出厂安全温度=最高设定+60 °C=370 °C（与可调上限370 °C一致）"
+  }
+ }
+}

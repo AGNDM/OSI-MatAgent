@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tracks": {"mcqa": {"split": "heldout"}, "sequential": {"mode": "both"}},
+  "experiments": [
+    {"name": "openjev-native-pointer", "method": "native",
+     "backend": {"kind": "native", "family": "openjev", "model_path": "${COMPARISON_OPENJEV_MODEL}", "device": "cuda:0", "effort": "high"}}
+  ]
+}

@@ -1,0 +1,12 @@
+# Exact local HF and native OpenJev runtime; Python 3.12 / CUDA 12.6.
+# Includes the frozen simulator lock and Hugging Face dependency closure.
+-r ../instrument/sequential_120/runtime/requirements-model.txt
+accelerate==1.10.1
+annotated-types==0.8.0
+peft==0.17.1
+psutil==7.2.2
+pydantic==2.14.1
+pydantic-core==2.50.1
+typing-extensions==4.16.0
+typing-inspection==0.4.4
+wev-ai==0.1.0

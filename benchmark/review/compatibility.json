@@ -1,0 +1,29 @@
+{
+  "task_sha256": "b720504d739c5f32a5677d4964bf60591ed48a645d3627bc85ede61af5398c04",
+  "oracle_sha256": "9f2e10cdbafcac7d38e6fd66060bb058cfcd0bdc292ad4b5ea9c1abedb7a0f68",
+  "blinded_jsonl_sha256": "454c8e6cd9dda0c358d75a0d8a053f0413c0e12079620ab50288ae80e239dc01",
+  "cases": 150,
+  "ids_unique": true,
+  "current_public_task_content_matches": true,
+  "mismatches": [],
+  "ui": {
+    "review.html": {
+      "payload_cases_match_blinded_jsonl": true,
+      "case_count": 150,
+      "html_sha256": "ce1377a48e024c252945f9cb0922cc738f5fd14d26a5eb21b1f82611ae32ea10",
+      "blinded_source_sha256_matches": null,
+      "payload_contains_reference_answers": false
+    },
+    "quick-review.html": {
+      "payload_cases_match_blinded_jsonl": true,
+      "case_count": 150,
+      "html_sha256": "14f839f8f28fc5ba19357f81564e8d859c6eaa7a4c5322999d24a35944fba021",
+      "blinded_source_sha256_matches": true,
+      "payload_contains_reference_answers": false
+    }
+  },
+  "canonical_ratings_rows": 150,
+  "canonical_ratings_rows_with_any_human_cells": 0,
+  "independent_expert_review_complete": false,
+  "note": "No private answer-key content was read. Browser-local progress cannot be inferred from server CSV files. Quick 1–5 quality scores are supplemental and do not themselves complete the expert validity protocol."
+}

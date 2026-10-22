@@ -1,0 +1,7 @@
+# Generated local inference environments, caches, weights, logs and reports.
+.venv*/
+.cache/
+output/
+__pycache__/
+*.py[cod]
+.pytest_cache/

@@ -1,0 +1,140 @@
+{
+  "bundle_version": "1.1.1",
+  "created_at_utc": "2026-10-21T23:09:37.795074+00:00",
+  "environment_reuse_verified": true,
+  "expert_review_completed": false,
+  "frozen_assets_verified_against_previous_release": 118,
+  "host": "kh081",
+  "isolated_copy_validation": {
+    "full_dataset_replayed": false,
+    "host": "kh081",
+    "isolated_copy": true,
+    "manifest_sha256": "26b67caad9e7d57248c38980b77c78196d88d9ad05c81bd963fbb7d452e36ef7",
+    "model_weights_loaded": false,
+    "native_reference_cases": 1,
+    "native_reference_episodes": 2,
+    "native_replay_performed": true,
+    "native_wrong_menu_episodes": 2,
+    "neural_inference_performed": false,
+    "original_project_imports_used": false,
+    "public_plugin_episodes": 2,
+    "slurm_job_id": "4632898",
+    "status": "passed",
+    "unit_tests_passed": 82
+  },
+  "manifest_sha256": "26b67caad9e7d57248c38980b77c78196d88d9ad05c81bd963fbb7d452e36ef7",
+  "mcqa_data_keys_and_splits_unchanged": true,
+  "model_inference_performed": false,
+  "native_environment_setup": {
+    "environment": "/scratch/dsegura/git/osi_hackathon_AGMAT/benchmark/instrument/.venv",
+    "lock_files_sha256": {
+      "requirements.txt": "666e32245a662fb25c513edc2b1ca944df492734d1a7ec766061450e41a770db"
+    },
+    "model_weights_downloaded": false,
+    "packages": {
+      "attrs": "26.1.0",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.9.1",
+      "typing-extensions": "4.16.0"
+    },
+    "platform": "Linux-5.14.0-427.42.1.el9_4.x86_64-x86_64-with-glibc2.34",
+    "python": "3.12.9 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 18:56:27) [GCC 11.2.0]",
+    "slurm_job_id": "4632897",
+    "slurm_node": "kh081",
+    "status": "created"
+  },
+  "optional_model_environment_fresh_install_tested": false,
+  "previous_full_native_replay": {
+    "host": "kh081",
+    "isolated_copy": true,
+    "model_weights_loaded": false,
+    "native_reference_cases": 120,
+    "native_reference_episodes": 240,
+    "native_replay_performed": true,
+    "native_wrong_menu_episodes": 2,
+    "neural_inference_performed": false,
+    "original_project_imports_used": false,
+    "partial_full_cohort_denominators_verified": true,
+    "public_plugin_episodes": 2,
+    "slurm_job_id": "4632874",
+    "status": "passed"
+  },
+  "previous_full_native_replay_scope": "Before packaging cleanup, same frozen data/core grader/vendor; not a new replay of all cases.",
+  "sequential_cases_core_grader_and_vendored_runtime_unchanged": true,
+  "slurm_job_id": "4632898",
+  "slurm_launcher_syntax_checked": true,
+  "static_bundle_validation": {
+    "bundle_version": "1.1.1",
+    "counts": {
+      "answers": 388,
+      "base_cases_declared": 194,
+      "files": 160,
+      "groups": 112,
+      "questions": 388
+    },
+    "manifest_sha256": "26b67caad9e7d57248c38980b77c78196d88d9ad05c81bd963fbb7d452e36ef7",
+    "native_replay_performed": false,
+    "nested_inventory_checked": true,
+    "prompt_boundary_checked": true,
+    "sequential_120": {
+      "counts": {
+        "cases": 120,
+        "instruments": 8,
+        "public_commands": 146,
+        "schema_validated_argument_presets": 1954,
+        "workflow_templates": 14
+      },
+      "instrument_counts": {
+        "binder_fd056": 18,
+        "eppendorf_cellxpertc170i": 6,
+        "esco_efa5uduvw": 18,
+        "ika_plate_rctdigital": 18,
+        "nabertherm_l9": 18,
+        "newera_ne1000": 24,
+        "peak_precisionhydrogen": 6,
+        "vaisala_dmt152": 12
+      },
+      "model_performance_measured": false,
+      "native_diagnostic_episodes_in_preserved_evidence": 480,
+      "native_replay_performed": false,
+      "public_evaluator_boundary_checked": true,
+      "source_exports_authenticated": true,
+      "status": "passed",
+      "train_test_split_assigned": false,
+      "unmodified_runtime_files": 88,
+      "workflow_counts": {
+        "dewpoint_offline_calibration": 6,
+        "dewpoint_startup_measurement_diagnosis": 6,
+        "furnace_door_pause_recovery": 6,
+        "furnace_program": 12,
+        "hood_illumination": 12,
+        "hood_sash_access_resecure": 6,
+        "hotplate_motor_diagnostic": 6,
+        "hotplate_unlock_stirring": 12,
+        "hydrogen_startup_diagnosis": 6,
+        "incubator_sensor_cover_access": 6,
+        "oven_standby_restoration": 6,
+        "oven_usb_recording": 12,
+        "pump_delivery": 12,
+        "pump_timed_monitoring": 12
+      }
+    },
+    "split_counts": {
+      "test": 60,
+      "test_fault": 8,
+      "test_instrument": 10,
+      "test_template": 36,
+      "train": 232,
+      "validation": 42
+    },
+    "status": "passed"
+  },
+  "status": "passed",
+  "unit_tests": {
+    "failed": 0,
+    "isolated_copy": true,
+    "passed": 82
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "compute_node": "kh062",
+  "slurm_job_id": "4635941",
+  "source_sha256": {
+    "reachability.py": "4e17ff879714e577e71fa6653c79453a6f3fa2a1b2062343cac2bb8b97710da3",
+    "run.sbatch": "7cc09d5ccbadee0d3b25948ed416ed39e9e06a78f43a53e6341f799430d83343",
+    "test_reachability.py": "17283231adea2f3e4d00735fc4c4f8f3dc2c58f40a33ebe09b250d79d323ac4b"
+  },
+  "status": "validated",
+  "tests_passed": 10
+}

@@ -1,0 +1,5341 @@
+{
+ "schema": "chemsim.cell_line_library.v1",
+ "asset_type_id": "instrument.eppendorf_cellxpertc170i",
+ "built": "2026-10-01",
+ "n_substances": 81,
+ "substances": {
+  "hela": {
+   "substance_id": "hela",
+   "name": "HeLa",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0030",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "30Y6M",
+   "derived_from_site": [
+    "Uterus, cervix"
+   ],
+   "disease": [
+    "Human papillomavirus-related endocervical adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "30-48 hours",
+     "hours": 39.0,
+     "sources": [
+      "Hysigen TCH-C193"
+     ]
+    },
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "DSMZ ACC-57"
+     ]
+    },
+    {
+     "value_text": "1.3 days",
+     "hours": 31.200000000000003,
+     "sources": [
+      "PubMed=29156801"
+     ]
+    }
+   ],
+   "doubling_time_s": 140400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    108000.0,
+    172800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0030 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0030.json sha256 a4b05671c2626ec0",
+   "accessed": "2026-10-01"
+  },
+  "hek293": {
+   "substance_id": "hek293",
+   "name": "HEK293",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0045",
+   "species": "Homo sapiens (Human)",
+   "category": "Transformed cell line",
+   "sex": "Female",
+   "age": "Fetus",
+   "derived_from_site": [
+    "Fetal kidney"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~24-30 hours",
+     "hours": 27.0,
+     "sources": [
+      "DSMZ ACC-305"
+     ]
+    },
+    {
+     "value_text": "~30 hours",
+     "hours": 30.0,
+     "sources": [
+      "CLS 300192"
+     ]
+    }
+   ],
+   "doubling_time_s": 102600.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    108000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0045 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0045.json sha256 4ccfb57c78d4e054",
+   "accessed": "2026-10-01"
+  },
+  "hek293t": {
+   "substance_id": "hek293t",
+   "name": "HEK293T",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0063",
+   "species": "Homo sapiens (Human)",
+   "category": "Transformed cell line",
+   "sex": "Female",
+   "age": "Fetus",
+   "derived_from_site": [
+    "Fetal kidney"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~24-30 hours",
+     "hours": 27.0,
+     "sources": [
+      "DSMZ ACC-635"
+     ]
+    }
+   ],
+   "doubling_time_s": 97200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    108000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0063 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0063.json sha256 3802f1fe8cdd7c08",
+   "accessed": "2026-10-01"
+  },
+  "a_549": {
+   "substance_id": "a_549",
+   "name": "A-549",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0023",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "58Y",
+   "derived_from_site": [
+    "Lung"
+   ],
+   "disease": [
+    "Lung adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "22.9 hours",
+     "hours": 22.9,
+     "sources": [
+      "NCI-DCTD A549"
+     ]
+    },
+    {
+     "value_text": "~40 hours",
+     "hours": 40.0,
+     "sources": [
+      "DSMZ ACC-107"
+     ]
+    },
+    {
+     "value_text": "~28 hours",
+     "hours": 28.0,
+     "sources": [
+      "CLS 300114"
+     ]
+    },
+    {
+     "value_text": "26.08 hours",
+     "hours": 26.08,
+     "sources": [
+      "PubMed=35976051"
+     ]
+    },
+    {
+     "value_text": "27 hours",
+     "hours": 27.0,
+     "sources": [
+      "DOI=10.5897/IJBMBR2013.0154"
+     ]
+    },
+    {
+     "value_text": "27 hours",
+     "hours": 27.0,
+     "sources": [
+      "DOI=10.5897/IJBMBR2013.0154"
+     ]
+    },
+    {
+     "value_text": "23.9 hours",
+     "hours": 23.9,
+     "sources": [
+      "PubMed=29681454"
+     ]
+    },
+    {
+     "value_text": "22 hours",
+     "hours": 22.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "27.0 hours",
+     "hours": 27.0,
+     "sources": [
+      "PubMed=8286010"
+     ]
+    },
+    {
+     "value_text": "36 hours",
+     "hours": 36.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    },
+    {
+     "value_text": "37 hours",
+     "hours": 37.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    },
+    {
+     "value_text": "18 hours",
+     "hours": 18.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    }
+   ],
+   "doubling_time_s": 97200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    64800.0,
+    144000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0023 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0023.json sha256 d3ecf9f254501614",
+   "accessed": "2026-10-01"
+  },
+  "mcf_7": {
+   "substance_id": "mcf_7",
+   "name": "MCF-7",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0031",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "69Y",
+   "derived_from_site": [
+    "Pleural effusion"
+   ],
+   "disease": [
+    "Invasive breast carcinoma of no special type"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "56.47 hours",
+     "hours": 56.47,
+     "sources": []
+    },
+    {
+     "value_text": "~38 hours",
+     "hours": 38.0,
+     "sources": []
+    },
+    {
+     "value_text": "25.4 hours",
+     "hours": 25.4,
+     "sources": [
+      "NCI-DCTD MCF7"
+     ]
+    },
+    {
+     "value_text": "~50 hours",
+     "hours": 50.0,
+     "sources": [
+      "DSMZ ACC-115"
+     ]
+    },
+    {
+     "value_text": "24.4 hours",
+     "hours": 24.4,
+     "sources": [
+      "PubMed=34238275"
+     ]
+    },
+    {
+     "value_text": "25.3 hours",
+     "hours": 25.3,
+     "sources": [
+      "PubMed=24389870"
+     ]
+    },
+    {
+     "value_text": "31.2 hours",
+     "hours": 31.2,
+     "sources": [
+      "PubMed=22628656"
+     ]
+    },
+    {
+     "value_text": "24 hours",
+     "hours": 24.0,
+     "sources": [
+      "PubMed=9488600"
+     ]
+    },
+    {
+     "value_text": "80 hours",
+     "hours": 80.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "1.8 days",
+     "hours": 43.2,
+     "sources": [
+      "PubMed=9671407"
+     ]
+    }
+   ],
+   "doubling_time_s": 124560.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    288000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0031 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0031.json sha256 bff07cfe48f2838e",
+   "accessed": "2026-10-01"
+  },
+  "mda_mb_231": {
+   "substance_id": "mda_mb_231",
+   "name": "MDA-MB-231",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0062",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "51Y",
+   "derived_from_site": [
+    "Pleural effusion"
+   ],
+   "disease": [
+    "Breast adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "31.43 hours",
+     "hours": 31.43,
+     "sources": []
+    },
+    {
+     "value_text": "~38 hours",
+     "hours": 38.0,
+     "sources": []
+    },
+    {
+     "value_text": "41.9 hours",
+     "hours": 41.9,
+     "sources": [
+      "NCI-DCTD MDA-MB-231"
+     ]
+    },
+    {
+     "value_text": "~25-30 hours",
+     "hours": 27.5,
+     "sources": [
+      "DSMZ ACC-732"
+     ]
+    },
+    {
+     "value_text": "38 hours",
+     "hours": 38.0,
+     "sources": [
+      "ATCC HTB-26"
+     ]
+    },
+    {
+     "value_text": "36.2 hours",
+     "hours": 36.2,
+     "sources": [
+      "PubMed=34238275"
+     ]
+    },
+    {
+     "value_text": "24.7 hours",
+     "hours": 24.7,
+     "sources": [
+      "PubMed=24389870"
+     ]
+    },
+    {
+     "value_text": "26.7 hours",
+     "hours": 26.7,
+     "sources": [
+      "PubMed=9815641"
+     ]
+    },
+    {
+     "value_text": "1.3 days",
+     "hours": 31.200000000000003,
+     "sources": [
+      "PubMed=9671407"
+     ]
+    }
+   ],
+   "doubling_time_s": 113148.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    151200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0062 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0062.json sha256 6829cf5ba0e8ddce",
+   "accessed": "2026-10-01"
+  },
+  "hep_g2": {
+   "substance_id": "hep_g2",
+   "name": "Hep-G2",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0027",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "15Y",
+   "derived_from_site": [
+    "Liver"
+   ],
+   "disease": [
+    "Hepatoblastoma",
+    "Hepatoblastoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~50-60 hours",
+     "hours": 55.0,
+     "sources": [
+      "DSMZ ACC-180"
+     ]
+    },
+    {
+     "value_text": "25.65 hours",
+     "hours": 25.65,
+     "sources": [
+      "PubMed=31378681"
+     ]
+    }
+   ],
+   "doubling_time_s": 145170.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    90000.0,
+    216000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0027 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0027.json sha256 b08bc974732b8d98",
+   "accessed": "2026-10-01"
+  },
+  "huh_7": {
+   "substance_id": "huh_7",
+   "name": "Huh-7",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0336",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "57Y",
+   "derived_from_site": [
+    "Liver"
+   ],
+   "disease": [
+    "Adult hepatocellular carcinoma",
+    "Adult hepatocellular carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "CLS 300156"
+     ]
+    },
+    {
+     "value_text": "32.2 hours",
+     "hours": 32.2,
+     "sources": [
+      "PubMed=31378681"
+     ]
+    },
+    {
+     "value_text": "22 +- 1 hours",
+     "hours": 22.0,
+     "sources": [
+      "PubMed=11152498"
+     ]
+    },
+    {
+     "value_text": "60.9 hours",
+     "hours": 60.9,
+     "sources": [
+      "PubMed=6203805"
+     ]
+    },
+    {
+     "value_text": "56.3 hours",
+     "hours": 56.3,
+     "sources": [
+      "PubMed=6203805"
+     ]
+    },
+    {
+     "value_text": "46.4 hours",
+     "hours": 46.4,
+     "sources": [
+      "PubMed=6203805"
+     ]
+    },
+    {
+     "value_text": "40.2 hours",
+     "hours": 40.2,
+     "sources": [
+      "PubMed=6203805"
+     ]
+    }
+   ],
+   "doubling_time_s": 167040.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    75600.0,
+    219600.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0336 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0336.json sha256 7bc3ccf675e87888",
+   "accessed": "2026-10-01"
+  },
+  "hct_116": {
+   "substance_id": "hct_116",
+   "name": "HCT 116",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0291",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "48Y",
+   "derived_from_site": [
+    "Colon"
+   ],
+   "disease": [
+    "Colon carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~21 hours",
+     "hours": 21.0,
+     "sources": []
+    },
+    {
+     "value_text": "17.4 hours",
+     "hours": 17.4,
+     "sources": [
+      "NCI-DCTD HCT-116"
+     ]
+    },
+    {
+     "value_text": "~25-48 hours",
+     "hours": 36.5,
+     "sources": [
+      "DSMZ ACC-581"
+     ]
+    },
+    {
+     "value_text": "18.14 +- 0.051 hours",
+     "hours": 18.14,
+     "sources": [
+      "PubMed=32927768"
+     ]
+    },
+    {
+     "value_text": "36 hours",
+     "hours": 36.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "25.02 hours",
+     "hours": 25.02,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    },
+    {
+     "value_text": "22 hours",
+     "hours": 22.0,
+     "sources": [
+      "PubMed=23546019"
+     ]
+    },
+    {
+     "value_text": "17.1 hours",
+     "hours": 17.1,
+     "sources": [
+      "PubMed=22628656"
+     ]
+    },
+    {
+     "value_text": "27 hours",
+     "hours": 27.0,
+     "sources": [
+      "PubMed=9563901"
+     ]
+    }
+   ],
+   "doubling_time_s": 79200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    61200.0,
+    172800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0291 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0291.json sha256 0608fdb5a3d69bcf",
+   "accessed": "2026-10-01"
+  },
+  "ht_29": {
+   "substance_id": "ht_29",
+   "name": "HT-29",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0320",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "44Y",
+   "derived_from_site": [
+    "Colon"
+   ],
+   "disease": [
+    "Colon adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~23 hours",
+     "hours": 23.0,
+     "sources": []
+    },
+    {
+     "value_text": "19.5 hours",
+     "hours": 19.5,
+     "sources": [
+      "NCI-DCTD HT-29"
+     ]
+    },
+    {
+     "value_text": "~40-60 hours",
+     "hours": 50.0,
+     "sources": [
+      "DSMZ ACC-299"
+     ]
+    },
+    {
+     "value_text": "~24 hours",
+     "hours": 24.0,
+     "sources": [
+      "CLS 300215"
+     ]
+    },
+    {
+     "value_text": "21.87 +- 0.12 hours",
+     "hours": 21.87,
+     "sources": [
+      "PubMed=32927768"
+     ]
+    },
+    {
+     "value_text": "24 hours",
+     "hours": 24.0,
+     "sources": [
+      "PubMed=23546019"
+     ]
+    },
+    {
+     "value_text": "24 hours",
+     "hours": 24.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "36.93 hours",
+     "hours": 36.93,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    },
+    {
+     "value_text": "26.9 +- 3.3 hours",
+     "hours": 26.9,
+     "sources": [
+      "PubMed=3281752"
+     ]
+    },
+    {
+     "value_text": "1.2 days",
+     "hours": 28.799999999999997,
+     "sources": [
+      "PubMed=6445228"
+     ]
+    }
+   ],
+   "doubling_time_s": 86400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    68400.0,
+    216000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0320 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0320.json sha256 217974a4ef07ffc9",
+   "accessed": "2026-10-01"
+  },
+  "caco_2": {
+   "substance_id": "caco_2",
+   "name": "Caco-2",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0025",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "72Y",
+   "derived_from_site": [
+    "Colon"
+   ],
+   "disease": [
+    "Colon adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~32 hours",
+     "hours": 32.0,
+     "sources": []
+    },
+    {
+     "value_text": "~80 hours",
+     "hours": 80.0,
+     "sources": [
+      "DSMZ ACC-169"
+     ]
+    },
+    {
+     "value_text": "~60-70 hours",
+     "hours": 65.0,
+     "sources": [
+      "CLS 300137"
+     ]
+    },
+    {
+     "value_text": "3-4 days",
+     "hours": 84.0,
+     "sources": [
+      "ATCC HTB-37"
+     ]
+    },
+    {
+     "value_text": "51.41 hours",
+     "hours": 51.41,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    }
+   ],
+   "doubling_time_s": 234000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    115200.0,
+    345600.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0025 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0025.json sha256 5ae1e03a202a5264",
+   "accessed": "2026-10-01"
+  },
+  "sw480": {
+   "substance_id": "sw480",
+   "name": "SW480",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0546",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "51Y",
+   "derived_from_site": [
+    "Colon"
+   ],
+   "disease": [
+    "Colon adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "48-60 hours",
+     "hours": 54.0,
+     "sources": [
+      "Hysigen TCH-C348"
+     ]
+    },
+    {
+     "value_text": "~38 hours",
+     "hours": 38.0,
+     "sources": []
+    },
+    {
+     "value_text": "~25-30 hours",
+     "hours": 27.5,
+     "sources": [
+      "DSMZ ACC-313"
+     ]
+    },
+    {
+     "value_text": "20-25 hours",
+     "hours": 22.5,
+     "sources": [
+      "CLS 300302"
+     ]
+    },
+    {
+     "value_text": "24 hours",
+     "hours": 24.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "30.74 hours",
+     "hours": 30.74,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    },
+    {
+     "value_text": "28.2 hours",
+     "hours": 28.2,
+     "sources": [
+      "PubMed=1458472"
+     ]
+    },
+    {
+     "value_text": "50 hours",
+     "hours": 50.0,
+     "sources": [
+      "PubMed=1000501"
+     ]
+    }
+   ],
+   "doubling_time_s": 106092.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    216000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0546 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0546.json sha256 a9dc49d63ed19a96",
+   "accessed": "2026-10-01"
+  },
+  "sw620": {
+   "substance_id": "sw620",
+   "name": "SW620",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0547",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "51Y",
+   "derived_from_site": [
+    "Lymph node"
+   ],
+   "disease": [
+    "Colon adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~26 hours",
+     "hours": 26.0,
+     "sources": []
+    },
+    {
+     "value_text": "20.4 hours",
+     "hours": 20.4,
+     "sources": [
+      "NCI-DCTD SW-620"
+     ]
+    },
+    {
+     "value_text": "37.06 hours",
+     "hours": 37.06,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    }
+   ],
+   "doubling_time_s": 93600.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    136800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0547 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0547.json sha256 22c9a456fd7f05e5",
+   "accessed": "2026-10-01"
+  },
+  "lovo": {
+   "substance_id": "lovo",
+   "name": "LoVo",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0399",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "56Y",
+   "derived_from_site": [
+    "Left supraclavicular lymph node"
+   ],
+   "disease": [
+    "Colon adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~34 hours",
+     "hours": 34.0,
+     "sources": []
+    },
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "DSMZ ACC-350"
+     ]
+    },
+    {
+     "value_text": "52 hours",
+     "hours": 52.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "33.16 hours",
+     "hours": 33.16,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    },
+    {
+     "value_text": "37 hours",
+     "hours": 37.0,
+     "sources": [
+      "PubMed=1260746"
+     ]
+    }
+   ],
+   "doubling_time_s": 133200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    118800.0,
+    187200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0399 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0399.json sha256 dc11348d72ed0868",
+   "accessed": "2026-10-01"
+  },
+  "pc_3": {
+   "substance_id": "pc_3",
+   "name": "PC-3",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0035",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "62Y",
+   "derived_from_site": [
+    "Bone"
+   ],
+   "disease": [
+    "Prostate carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "24-36 hours",
+     "hours": 30.0,
+     "sources": [
+      "Hysigen TCH-C297"
+     ]
+    },
+    {
+     "value_text": "~25 hours",
+     "hours": 25.0,
+     "sources": []
+    },
+    {
+     "value_text": "27.1 hours",
+     "hours": 27.1,
+     "sources": [
+      "NCI-DCTD PC-3"
+     ]
+    },
+    {
+     "value_text": "~50 hours",
+     "hours": 50.0,
+     "sources": [
+      "DSMZ ACC-465"
+     ]
+    },
+    {
+     "value_text": "40 +- 10 hours",
+     "hours": 40.0,
+     "sources": [
+      "CLS 300312"
+     ]
+    },
+    {
+     "value_text": "25 hours",
+     "hours": 25.0,
+     "sources": [
+      "ATCC CRL-7934"
+     ]
+    },
+    {
+     "value_text": "25.34 +- 0.02 hours",
+     "hours": 25.34,
+     "sources": [
+      "PubMed=32968452"
+     ]
+    },
+    {
+     "value_text": "29 +- 3 hours",
+     "hours": 29.0,
+     "sources": [
+      "PubMed=10687853"
+     ]
+    }
+   ],
+   "doubling_time_s": 100980.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    180000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0035 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0035.json sha256 a20fd3e34e3fabd4",
+   "accessed": "2026-10-01"
+  },
+  "du145": {
+   "substance_id": "du145",
+   "name": "DU145",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0105",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "69Y",
+   "derived_from_site": [
+    "Brain"
+   ],
+   "disease": [
+    "Prostate carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "51.21 hours",
+     "hours": 51.21,
+     "sources": []
+    },
+    {
+     "value_text": "~29 hours",
+     "hours": 29.0,
+     "sources": []
+    },
+    {
+     "value_text": "32.3 hours",
+     "hours": 32.3,
+     "sources": [
+      "NCI-DCTD DU-145"
+     ]
+    },
+    {
+     "value_text": "~30-40 hours",
+     "hours": 35.0,
+     "sources": [
+      "DSMZ ACC-261"
+     ]
+    },
+    {
+     "value_text": "28-38 hours",
+     "hours": 33.0,
+     "sources": [
+      "CLS 300168"
+     ]
+    },
+    {
+     "value_text": "~29 hours",
+     "hours": 29.0,
+     "sources": [
+      "ATCC HTB-81"
+     ]
+    },
+    {
+     "value_text": "34 hours",
+     "hours": 34.0,
+     "sources": [
+      "PubMed=631930"
+     ]
+    }
+   ],
+   "doubling_time_s": 118800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    100800.0,
+    187200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0105 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0105.json sha256 4a3cd66d2b5a911c",
+   "accessed": "2026-10-01"
+  },
+  "lncap_clone_fgc": {
+   "substance_id": "lncap_clone_fgc",
+   "name": "LNCaP clone FGC",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_1379",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "50Y",
+   "derived_from_site": [
+    "Left supraclavicular lymph node"
+   ],
+   "disease": [
+    "Prostate carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "38.71 hours",
+     "hours": 38.71,
+     "sources": []
+    },
+    {
+     "value_text": "~36 hours",
+     "hours": 36.0,
+     "sources": []
+    },
+    {
+     "value_text": "~34 hours",
+     "hours": 34.0,
+     "sources": [
+      "ATCC CRL-1740"
+     ]
+    },
+    {
+     "value_text": "43 hours",
+     "hours": 43.0,
+     "sources": [
+      "PubMed=15389782"
+     ]
+    }
+   ],
+   "doubling_time_s": 134478.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    122400.0,
+    154800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_1379 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_1379.json sha256 d2e4d060db33ee52",
+   "accessed": "2026-10-01"
+  },
+  "u_87mg_atcc": {
+   "substance_id": "u_87mg_atcc",
+   "name": "U-87MG ATCC",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0022",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "Age unspecified",
+   "derived_from_site": [],
+   "disease": [
+    "Glioblastoma",
+    "Glioblastoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~34 hours",
+     "hours": 34.0,
+     "sources": []
+    },
+    {
+     "value_text": "72 hours",
+     "hours": 72.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "39 hours",
+     "hours": 39.0,
+     "sources": [
+      "PubMed=9842975"
+     ]
+    }
+   ],
+   "doubling_time_s": 140400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    122400.0,
+    259200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0022 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0022.json sha256 c5dbe326dd7946b7",
+   "accessed": "2026-10-01"
+  },
+  "u2os": {
+   "substance_id": "u2os",
+   "name": "U2OS",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0042",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "15Y",
+   "derived_from_site": [
+    "Bone, tibia"
+   ],
+   "disease": [
+    "Osteosarcoma",
+    "Osteosarcoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~25-30 hours",
+     "hours": 27.5,
+     "sources": [
+      "DSMZ ACC-785"
+     ]
+    },
+    {
+     "value_text": "~36 hours",
+     "hours": 36.0,
+     "sources": [
+      "PubMed=21519327"
+     ]
+    }
+   ],
+   "doubling_time_s": 114300.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    90000.0,
+    129600.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0042 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0042.json sha256 0334c4854c9547de",
+   "accessed": "2026-10-01"
+  },
+  "sh_sy5y": {
+   "substance_id": "sh_sy5y",
+   "name": "SH-SY5Y",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0019",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "4Y",
+   "derived_from_site": [
+    "Bone marrow"
+   ],
+   "disease": [
+    "Neuroblastoma",
+    "Neuroblastoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "48-60 hours",
+     "hours": 54.0,
+     "sources": [
+      "Hysigen TCH-C325"
+     ]
+    },
+    {
+     "value_text": ">55 hours",
+     "hours": 55.0,
+     "sources": [
+      "DSMZ ACC-209"
+     ]
+    },
+    {
+     "value_text": "67.3 +- 5.8 hours",
+     "hours": 67.3,
+     "sources": [
+      "PubMed=35893584"
+     ]
+    }
+   ],
+   "doubling_time_s": 198000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    172800.0,
+    266400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0019 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0019.json sha256 a2dd34653770f31f",
+   "accessed": "2026-10-01"
+  },
+  "sk_n_sh": {
+   "substance_id": "sk_n_sh",
+   "name": "SK-N-SH",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0531",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "4Y",
+   "derived_from_site": [
+    "Bone marrow"
+   ],
+   "disease": [
+    "Neuroblastoma",
+    "Neuroblastoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "36 +- 8 hours",
+     "hours": 36.0,
+     "sources": [
+      "PubMed=856461"
+     ]
+    },
+    {
+     "value_text": "44 hours",
+     "hours": 44.0,
+     "sources": [
+      "PubMed=4748425"
+     ]
+    }
+   ],
+   "doubling_time_s": 144000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    100800.0,
+    158400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0531 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0531.json sha256 f30c7a04b36da823",
+   "accessed": "2026-10-01"
+  },
+  "k_562": {
+   "substance_id": "k_562",
+   "name": "K-562",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0004",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "53Y",
+   "derived_from_site": [
+    "Pleural effusion"
+   ],
+   "disease": [
+    "Blast phase chronic myelogenous leukemia, BCR-ABL1 positive",
+    "Chronic myeloid leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "19.6 hours",
+     "hours": 19.6,
+     "sources": [
+      "NCI-DCTD K-562"
+     ]
+    },
+    {
+     "value_text": "~30-40 hours",
+     "hours": 35.0,
+     "sources": [
+      "DSMZ ACC-10"
+     ]
+    },
+    {
+     "value_text": "18 hours",
+     "hours": 18.0,
+     "sources": [
+      "PubMed=8142256"
+     ]
+    },
+    {
+     "value_text": "47 hours",
+     "hours": 47.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "17 hours",
+     "hours": 17.0,
+     "sources": [
+      "CelloPub=CLPUB00761"
+     ]
+    }
+   ],
+   "doubling_time_s": 70560.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    61200.0,
+    169200.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0004 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0004.json sha256 a391957561292011",
+   "accessed": "2026-10-01"
+  },
+  "jurkat_e6_1": {
+   "substance_id": "jurkat_e6_1",
+   "name": "Jurkat E6.1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0367",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "14Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Childhood T acute lymphoblastic leukemia",
+    "Precursor T-cell acute lymphoblastic leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "20.7 +- 2.2 hours",
+     "hours": 20.7,
+     "sources": [
+      "PubMed=10468210"
+     ]
+    }
+   ],
+   "doubling_time_s": 74520.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    64800.0,
+    82800.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0367 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0367.json sha256 463c3f7519431d37",
+   "accessed": "2026-10-01"
+  },
+  "hl_60": {
+   "substance_id": "hl_60",
+   "name": "HL-60",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0002",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "36Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Adult acute myeloid leukemia with maturation",
+    "Acute myeloblastic leukemia with maturation"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~40 hours",
+     "hours": 40.0,
+     "sources": [
+      "DSMZ ACC-3"
+     ]
+    },
+    {
+     "value_text": "28 hours",
+     "hours": 28.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "16 hours",
+     "hours": 16.0,
+     "sources": [
+      "PubMed=8343448"
+     ]
+    }
+   ],
+   "doubling_time_s": 100800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    57600.0,
+    144000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0002 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0002.json sha256 9d7217c571c2c941",
+   "accessed": "2026-10-01"
+  },
+  "thp_1": {
+   "substance_id": "thp_1",
+   "name": "THP-1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0006",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "1Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Childhood acute monocytic leukemia",
+    "Acute monoblastic/monocytic leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~35-50 hours",
+     "hours": 42.5,
+     "sources": [
+      "DSMZ ACC-16"
+     ]
+    },
+    {
+     "value_text": "26 hours",
+     "hours": 26.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "60-70 hours",
+     "hours": 65.0,
+     "sources": [
+      "PubMed=6970727"
+     ]
+    }
+   ],
+   "doubling_time_s": 153000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    93600.0,
+    252000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0006 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0006.json sha256 a50296598f72c6d1",
+   "accessed": "2026-10-01"
+  },
+  "u_937": {
+   "substance_id": "u_937",
+   "name": "U-937",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0007",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "37Y",
+   "derived_from_site": [
+    "Pleural effusion"
+   ],
+   "disease": [
+    "Adult acute monocytic leukemia",
+    "Acute monoblastic/monocytic leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~30-40 hours",
+     "hours": 35.0,
+     "sources": [
+      "DSMZ ACC-5"
+     ]
+    },
+    {
+     "value_text": "95-100 hours",
+     "hours": 97.5,
+     "sources": [
+      "PubMed=178611"
+     ]
+    }
+   ],
+   "doubling_time_s": 238500.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    108000.0,
+    360000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0007 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0007.json sha256 bfd6eca6e8139b68",
+   "accessed": "2026-10-01"
+  },
+  "raji": {
+   "substance_id": "raji",
+   "name": "Raji",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0511",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "11Y",
+   "derived_from_site": [
+    "Bone, jaw, maxilla"
+   ],
+   "disease": [
+    "EBV-related Burkitt lymphoma",
+    "Burkitt lymphoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~20 hours",
+     "hours": 20.0,
+     "sources": [
+      "BEI_Resources ARP-9944"
+     ]
+    },
+    {
+     "value_text": "~24-36 hours",
+     "hours": 30.0,
+     "sources": [
+      "DSMZ ACC-319"
+     ]
+    },
+    {
+     "value_text": "23.2 hours",
+     "hours": 23.2,
+     "sources": [
+      "PubMed=8847894"
+     ]
+    }
+   ],
+   "doubling_time_s": 83520.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    129600.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0511 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0511.json sha256 3931593fd92c01ef",
+   "accessed": "2026-10-01"
+  },
+  "daudi": {
+   "substance_id": "daudi",
+   "name": "Daudi",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0008",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "16Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "EBV-related Burkitt lymphoma",
+    "Burkitt lymphoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "DSMZ ACC-78"
+     ]
+    },
+    {
+     "value_text": "23.7 hours",
+     "hours": 23.7,
+     "sources": [
+      "PubMed=8847894"
+     ]
+    }
+   ],
+   "doubling_time_s": 129060.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    82800.0,
+    172800.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0008 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0008.json sha256 be6f2e575ab5ccd1",
+   "accessed": "2026-10-01"
+  },
+  "molt_4": {
+   "substance_id": "molt_4",
+   "name": "MOLT-4",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0013",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "19Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Adult T acute lymphoblastic leukemia",
+    "Precursor T-cell acute lymphoblastic leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "27.9 hours",
+     "hours": 27.9,
+     "sources": [
+      "NCI-DCTD MOLT-4"
+     ]
+    },
+    {
+     "value_text": "~40 hours",
+     "hours": 40.0,
+     "sources": [
+      "DSMZ ACC-362"
+     ]
+    },
+    {
+     "value_text": "24-48 hours",
+     "hours": 36.0,
+     "sources": [
+      "CLS 300115"
+     ]
+    },
+    {
+     "value_text": "29 hours",
+     "hours": 29.0,
+     "sources": [
+      "PubMed=20922763"
+     ]
+    },
+    {
+     "value_text": "33 hours",
+     "hours": 33.0,
+     "sources": [
+      "PubMed=17117183"
+     ]
+    },
+    {
+     "value_text": "31.56 +- 1.49 hours",
+     "hours": 31.56,
+     "sources": [
+      "PubMed=24762992"
+     ]
+    }
+   ],
+   "doubling_time_s": 116208.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    172800.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0013 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0013.json sha256 928c5afaac9ef694",
+   "accessed": "2026-10-01"
+  },
+  "ht_1080": {
+   "substance_id": "ht_1080",
+   "name": "HT-1080",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0317",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "35Y",
+   "derived_from_site": [
+    "Bone, pelvis, acetabulum"
+   ],
+   "disease": [
+    "Fibrosarcoma",
+    "Fibrosarcoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~30 hours",
+     "hours": 30.0,
+     "sources": [
+      "DSMZ ACC-315"
+     ]
+    },
+    {
+     "value_text": "26 hours",
+     "hours": 26.0,
+     "sources": [
+      "PubMed=4132053"
+     ]
+    }
+   ],
+   "doubling_time_s": 100800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    93600.0,
+    108000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0317 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0317.json sha256 a4540570cc20f864",
+   "accessed": "2026-10-01"
+  },
+  "a_431": {
+   "substance_id": "a_431",
+   "name": "A-431",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0037",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "85Y",
+   "derived_from_site": [
+    "Skin, epidermis"
+   ],
+   "disease": [
+    "Skin squamous cell carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~80-100 hours",
+     "hours": 90.0,
+     "sources": [
+      "DSMZ ACC-91"
+     ]
+    }
+   ],
+   "doubling_time_s": 324000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    288000.0,
+    360000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0037 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0037.json sha256 2ef7b99caf53e807",
+   "accessed": "2026-10-01"
+  },
+  "t24": {
+   "substance_id": "t24",
+   "name": "T24",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0554",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "82Y",
+   "derived_from_site": [
+    "Urinary bladder"
+   ],
+   "disease": [
+    "Bladder carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~1 day",
+     "hours": 24.0,
+     "sources": [
+      "JCRB JCRB0711"
+     ]
+    },
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "DSMZ ACC-376"
+     ]
+    },
+    {
+     "value_text": "23.2 hours",
+     "hours": 23.2,
+     "sources": [
+      "PubMed=26055179"
+     ]
+    },
+    {
+     "value_text": "21 hours",
+     "hours": 21.0,
+     "sources": [
+      "PubMed=3708594"
+     ]
+    },
+    {
+     "value_text": "19 hours",
+     "hours": 19.0,
+     "sources": [
+      "PubMed=4133950"
+     ]
+    }
+   ],
+   "doubling_time_s": 83520.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    68400.0,
+    172800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0554 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0554.json sha256 4d58079c54169314",
+   "accessed": "2026-10-01"
+  },
+  "sk_ov_3": {
+   "substance_id": "sk_ov_3",
+   "name": "SK-OV-3",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0532",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "64Y",
+   "derived_from_site": [
+    "Ascites"
+   ],
+   "disease": [
+    "Ovarian serous cystadenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "33.29 hours",
+     "hours": 33.29,
+     "sources": []
+    },
+    {
+     "value_text": "~35 hours",
+     "hours": 35.0,
+     "sources": []
+    },
+    {
+     "value_text": "48.7 hours",
+     "hours": 48.7,
+     "sources": [
+      "NCI-DCTD SK-OV-3"
+     ]
+    },
+    {
+     "value_text": "75 hours",
+     "hours": 75.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "28.8 hours",
+     "hours": 28.8,
+     "sources": [
+      "PubMed=4016745"
+     ]
+    },
+    {
+     "value_text": "28 +- 2 hours",
+     "hours": 28.0,
+     "sources": [
+      "PubMed=3804493"
+     ]
+    },
+    {
+     "value_text": "19 hours",
+     "hours": 19.0,
+     "sources": [
+      "PubMed=2653399"
+     ]
+    },
+    {
+     "value_text": "44 hours",
+     "hours": 44.0,
+     "sources": [
+      "PubMed=7718330"
+     ]
+    }
+   ],
+   "doubling_time_s": 122922.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    68400.0,
+    270000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0532 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0532.json sha256 58e564503b1f62cd",
+   "accessed": "2026-10-01"
+  },
+  "ovcar_3": {
+   "substance_id": "ovcar_3",
+   "name": "OVCAR-3",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0465",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "60Y",
+   "derived_from_site": [
+    "Ascites"
+   ],
+   "disease": [
+    "High grade ovarian serous adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "53.77 hours",
+     "hours": 53.77,
+     "sources": []
+    },
+    {
+     "value_text": "~69 hours",
+     "hours": 69.0,
+     "sources": []
+    },
+    {
+     "value_text": "34.7 hours",
+     "hours": 34.7,
+     "sources": [
+      "NCI-DCTD OVCAR-3"
+     ]
+    },
+    {
+     "value_text": "64 hours",
+     "hours": 64.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "35 hours",
+     "hours": 35.0,
+     "sources": [
+      "PubMed=2653399"
+     ]
+    },
+    {
+     "value_text": "48 hours",
+     "hours": 48.0,
+     "sources": [
+      "PubMed=6604576"
+     ]
+    }
+   ],
+   "doubling_time_s": 183186.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    122400.0,
+    248400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0465 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0465.json sha256 a1059c6185517a76",
+   "accessed": "2026-10-01"
+  },
+  "hela_s3": {
+   "substance_id": "hela_s3",
+   "name": "HeLa S3",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0058",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "30Y6M",
+   "derived_from_site": [
+    "Uterus, cervix"
+   ],
+   "disease": [
+    "Human papillomavirus-related endocervical adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "DSMZ ACC-161"
+     ]
+    }
+   ],
+   "doubling_time_s": 172800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    172800.0,
+    172800.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0058 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0058.json sha256 70989e8fae77f688",
+   "accessed": "2026-10-01"
+  },
+  "hep_3b2_1_7": {
+   "substance_id": "hep_3b2_1_7",
+   "name": "Hep 3B2.1-7",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0326",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "8Y",
+   "derived_from_site": [
+    "Liver"
+   ],
+   "disease": [
+    "Childhood hepatocellular carcinoma",
+    "Pediatric hepatocellular carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "24-36 hours",
+     "hours": 30.0,
+     "sources": [
+      "Hysigen TCH-C195"
+     ]
+    },
+    {
+     "value_text": "~40-50 hours",
+     "hours": 45.0,
+     "sources": [
+      "DSMZ ACC-93"
+     ]
+    },
+    {
+     "value_text": "28.05 hours",
+     "hours": 28.05,
+     "sources": [
+      "PubMed=31378681"
+     ]
+    }
+   ],
+   "doubling_time_s": 108000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    180000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0326 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0326.json sha256 21c15fd276600957",
+   "accessed": "2026-10-01"
+  },
+  "panc_1": {
+   "substance_id": "panc_1",
+   "name": "PANC-1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0480",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "56Y",
+   "derived_from_site": [
+    "Pancreas"
+   ],
+   "disease": [
+    "Pancreatic ductal adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "15.02 hours",
+     "hours": 15.02,
+     "sources": []
+    },
+    {
+     "value_text": "~32 hours",
+     "hours": 32.0,
+     "sources": []
+    },
+    {
+     "value_text": "~42 hours",
+     "hours": 42.0,
+     "sources": [
+      "DSMZ ACC-783"
+     ]
+    },
+    {
+     "value_text": "52 hours",
+     "hours": 52.0,
+     "sources": [
+      "CLS 300228"
+     ]
+    },
+    {
+     "value_text": "25.8 +- 2.8 hours",
+     "hours": 25.8,
+     "sources": [
+      "PubMed=27067801"
+     ]
+    },
+    {
+     "value_text": "25.83 +- 2.03 hours",
+     "hours": 25.83,
+     "sources": [
+      "PubMed=25394408"
+     ]
+    },
+    {
+     "value_text": "21 +- 1.6 hours",
+     "hours": 21.0,
+     "sources": [
+      "PubMed=21515691"
+     ]
+    },
+    {
+     "value_text": "52 hours",
+     "hours": 52.0,
+     "sources": [
+      "PubMed=1140870"
+     ]
+    }
+   ],
+   "doubling_time_s": 104094.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    54000.0,
+    187200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0480 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0480.json sha256 ec9718626886c0d4",
+   "accessed": "2026-10-01"
+  },
+  "mia_paca_2": {
+   "substance_id": "mia_paca_2",
+   "name": "MIA PaCa-2",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0428",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "65Y",
+   "derived_from_site": [
+    "Pancreas"
+   ],
+   "disease": [
+    "Pancreatic undifferentiated carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~30-40 hours",
+     "hours": 35.0,
+     "sources": [
+      "DSMZ ACC-733"
+     ]
+    },
+    {
+     "value_text": "~40 hours",
+     "hours": 40.0,
+     "sources": [
+      "ATCC CRL-1420"
+     ]
+    },
+    {
+     "value_text": "18 hours",
+     "hours": 18.0,
+     "sources": [
+      "PubMed=23386380"
+     ]
+    },
+    {
+     "value_text": "40 hours",
+     "hours": 40.0,
+     "sources": [
+      "PubMed=23386380"
+     ]
+    },
+    {
+     "value_text": "25.7 +- 4.3 hours",
+     "hours": 25.7,
+     "sources": [
+      "PubMed=27067801"
+     ]
+    },
+    {
+     "value_text": "26 hours",
+     "hours": 26.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "40 hours",
+     "hours": 40.0,
+     "sources": [
+      "PubMed=832918"
+     ]
+    }
+   ],
+   "doubling_time_s": 126000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    64800.0,
+    144000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0428 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0428.json sha256 fb76afda78e827dc",
+   "accessed": "2026-10-01"
+  },
+  "bxpc_3": {
+   "substance_id": "bxpc_3",
+   "name": "BxPC-3",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0186",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "61Y",
+   "derived_from_site": [
+    "Pancreas"
+   ],
+   "disease": [
+    "Pancreatic ductal adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "DSMZ ACC-760"
+     ]
+    },
+    {
+     "value_text": "48 hours",
+     "hours": 48.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "48-60 hours",
+     "hours": 54.0,
+     "sources": [
+      "PubMed=3754176"
+     ]
+    }
+   ],
+   "doubling_time_s": 172800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    172800.0,
+    216000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0186 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0186.json sha256 0f6af1cbf93645bb",
+   "accessed": "2026-10-01"
+  },
+  "t_47d": {
+   "substance_id": "t_47d",
+   "name": "T-47D",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0553",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "54Y",
+   "derived_from_site": [
+    "Pleural effusion"
+   ],
+   "disease": [
+    "Invasive breast carcinoma of no special type"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "36-48 hours",
+     "hours": 42.0,
+     "sources": [
+      "Hysigen TCH-C353"
+     ]
+    },
+    {
+     "value_text": "55.80 hours",
+     "hours": 55.8,
+     "sources": []
+    },
+    {
+     "value_text": "~43 hours",
+     "hours": 43.0,
+     "sources": []
+    },
+    {
+     "value_text": "45.5 hours",
+     "hours": 45.5,
+     "sources": [
+      "NCI-DCTD T-47D"
+     ]
+    },
+    {
+     "value_text": "~30-40 hours",
+     "hours": 35.0,
+     "sources": [
+      "DSMZ ACC-739"
+     ]
+    },
+    {
+     "value_text": "32 hours",
+     "hours": 32.0,
+     "sources": [
+      "CLS 300353"
+     ]
+    },
+    {
+     "value_text": "49.2 hours",
+     "hours": 49.2,
+     "sources": [
+      "PubMed=9815641",
+      "PubMed=8562478"
+     ]
+    },
+    {
+     "value_text": "33.8 hours",
+     "hours": 33.8,
+     "sources": [
+      "PubMed=32576280"
+     ]
+    },
+    {
+     "value_text": "59.7 hours",
+     "hours": 59.7,
+     "sources": [
+      "PubMed=32576280"
+     ]
+    },
+    {
+     "value_text": "1.6 days",
+     "hours": 38.400000000000006,
+     "sources": [
+      "PubMed=9671407"
+     ]
+    }
+   ],
+   "doubling_time_s": 153000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    108000.0,
+    216000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0553 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0553.json sha256 c687db7501d8e093",
+   "accessed": "2026-10-01"
+  },
+  "bt_474": {
+   "substance_id": "bt_474",
+   "name": "BT-474",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0179",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "60Y",
+   "derived_from_site": [
+    "Breast"
+   ],
+   "disease": [
+    "Invasive breast carcinoma of no special type"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "96-120 hours",
+     "hours": 108.0,
+     "sources": [
+      "Hysigen TCH-C139"
+     ]
+    },
+    {
+     "value_text": "92.49 hours",
+     "hours": 92.49,
+     "sources": []
+    },
+    {
+     "value_text": "~100 hours",
+     "hours": 100.0,
+     "sources": [
+      "DSMZ ACC-64"
+     ]
+    },
+    {
+     "value_text": "~60-80 hours",
+     "hours": 70.0,
+     "sources": [
+      "CLS 300131"
+     ]
+    },
+    {
+     "value_text": "45.8 hours",
+     "hours": 45.8,
+     "sources": [
+      "PubMed=24389870"
+     ]
+    },
+    {
+     "value_text": "78 hours",
+     "hours": 78.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "3.5 days",
+     "hours": 84.0,
+     "sources": [
+      "PubMed=9671407"
+     ]
+    }
+   ],
+   "doubling_time_s": 302400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    162000.0,
+    432000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0179 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0179.json sha256 e6259693f3ac2f15",
+   "accessed": "2026-10-01"
+  },
+  "zr_75_1": {
+   "substance_id": "zr_75_1",
+   "name": "ZR-75-1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0588",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "63Y",
+   "derived_from_site": [
+    "Ascites"
+   ],
+   "disease": [
+    "Invasive breast carcinoma of no special type"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "70.09 hours",
+     "hours": 70.09,
+     "sources": []
+    },
+    {
+     "value_text": "~54 hours",
+     "hours": 54.0,
+     "sources": []
+    },
+    {
+     "value_text": "79 hours",
+     "hours": 79.0,
+     "sources": [
+      "PubMed=24389870"
+     ]
+    },
+    {
+     "value_text": "80 hours",
+     "hours": 80.0,
+     "sources": [
+      "PubMed=688225"
+     ]
+    }
+   ],
+   "doubling_time_s": 268362.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    194400.0,
+    288000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0588 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0588.json sha256 c42c538b4c82b985",
+   "accessed": "2026-10-01"
+  },
+  "nci_h460": {
+   "substance_id": "nci_h460",
+   "name": "NCI-H460",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0459",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Pleural effusion"
+   ],
+   "disease": [
+    "Lung large cell carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "17.8 hours",
+     "hours": 17.8,
+     "sources": [
+      "NCI-DCTD NCI-H460"
+     ]
+    },
+    {
+     "value_text": "~23 hours",
+     "hours": 23.0,
+     "sources": [
+      "DSMZ ACC-737"
+     ]
+    },
+    {
+     "value_text": "18.39 +- 1.35 hours",
+     "hours": 18.39,
+     "sources": [
+      "PubMed=33425914"
+     ]
+    },
+    {
+     "value_text": "21.5 hours",
+     "hours": 21.5,
+     "sources": [
+      "PubMed=29681454"
+     ]
+    },
+    {
+     "value_text": "0.8 day",
+     "hours": 19.200000000000003,
+     "sources": [
+      "PubMed=11551417"
+     ]
+    },
+    {
+     "value_text": "19 hours",
+     "hours": 19.0,
+     "sources": [
+      "PubMed=7718330"
+     ]
+    },
+    {
+     "value_text": "42 hours",
+     "hours": 42.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    },
+    {
+     "value_text": "60 hours",
+     "hours": 60.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    },
+    {
+     "value_text": "33 hours",
+     "hours": 33.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    }
+   ],
+   "doubling_time_s": 77400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    61200.0,
+    216000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0459 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0459.json sha256 d2f3dee21e6d0643",
+   "accessed": "2026-10-01"
+  },
+  "nci_h1299": {
+   "substance_id": "nci_h1299",
+   "name": "NCI-H1299",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0060",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "43Y",
+   "derived_from_site": [
+    "Lymph node"
+   ],
+   "disease": [
+    "Lung large cell carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "22.5 hours",
+     "hours": 22.5,
+     "sources": [
+      "PubMed=29681454"
+     ]
+    },
+    {
+     "value_text": "30 hours",
+     "hours": 30.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    }
+   ],
+   "doubling_time_s": 94500.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    79200.0,
+    108000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0060 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0060.json sha256 2082fd37a1887736",
+   "accessed": "2026-10-01"
+  },
+  "calu_3": {
+   "substance_id": "calu_3",
+   "name": "Calu-3",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0609",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "25Y",
+   "derived_from_site": [
+    "Pleural effusion"
+   ],
+   "disease": [
+    "Lung adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~84 hours",
+     "hours": 84.0,
+     "sources": [
+      "PubMed=34339474"
+     ]
+    },
+    {
+     "value_text": "40.1 hours",
+     "hours": 40.1,
+     "sources": [
+      "PubMed=29681454"
+     ]
+    },
+    {
+     "value_text": "37 hours",
+     "hours": 37.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    },
+    {
+     "value_text": "45 hours",
+     "hours": 45.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    },
+    {
+     "value_text": "35 hours",
+     "hours": 35.0,
+     "sources": [
+      "PubMed=3940644"
+     ]
+    }
+   ],
+   "doubling_time_s": 144360.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    126000.0,
+    302400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0609 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0609.json sha256 917e14de2677d5eb",
+   "accessed": "2026-10-01"
+  },
+  "a_375": {
+   "substance_id": "a_375",
+   "name": "A-375",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0132",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "54Y",
+   "derived_from_site": [
+    "Leg, skin"
+   ],
+   "disease": [
+    "Amelanotic melanoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~32 hours",
+     "hours": 32.0,
+     "sources": []
+    },
+    {
+     "value_text": "26.9 +- 6.9 hours",
+     "hours": 26.9,
+     "sources": [
+      "PubMed=29275043"
+     ]
+    }
+   ],
+   "doubling_time_s": 106020.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    122400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0132 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0132.json sha256 5c679d876de7d384",
+   "accessed": "2026-10-01"
+  },
+  "sk_mel_28": {
+   "substance_id": "sk_mel_28",
+   "name": "SK-MEL-28",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0526",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "51Y",
+   "derived_from_site": [
+    "Skin"
+   ],
+   "disease": [
+    "Cutaneous melanoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "35.1 hours",
+     "hours": 35.1,
+     "sources": [
+      "NCI-DCTD SK-MEL-28"
+     ]
+    },
+    {
+     "value_text": "26.9 hours",
+     "hours": 26.9,
+     "sources": [
+      "PubMed=20406486"
+     ]
+    },
+    {
+     "value_text": "72 hours",
+     "hours": 72.0,
+     "sources": [
+      "PubMed=12479222"
+     ]
+    },
+    {
+     "value_text": "36 hours",
+     "hours": 36.0,
+     "sources": [
+      "PubMed=8631022"
+     ]
+    },
+    {
+     "value_text": "27 hours",
+     "hours": 27.0,
+     "sources": [
+      "PubMed=7718330"
+     ]
+    }
+   ],
+   "doubling_time_s": 126360.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    93600.0,
+    259200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0526 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0526.json sha256 61205067752c8d7d",
+   "accessed": "2026-10-01"
+  },
+  "rko": {
+   "substance_id": "rko",
+   "name": "RKO",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0504",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Sex unspecified",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Colon"
+   ],
+   "disease": [
+    "Colon carcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "21 hours",
+     "hours": 21.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "36.34 hours",
+     "hours": 36.34,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    }
+   ],
+   "doubling_time_s": 103212.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    75600.0,
+    133200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0504 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0504.json sha256 63d3f3a5eb13daf0",
+   "accessed": "2026-10-01"
+  },
+  "dld_1": {
+   "substance_id": "dld_1",
+   "name": "DLD-1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0248",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "67Y",
+   "derived_from_site": [
+    "Colon"
+   ],
+   "disease": [
+    "Colon adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "DSMZ ACC-278"
+     ]
+    },
+    {
+     "value_text": "~15 hours",
+     "hours": 15.0,
+     "sources": [
+      "CLS 300220"
+     ]
+    },
+    {
+     "value_text": "33 hours",
+     "hours": 33.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "25.27 hours",
+     "hours": 25.27,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    },
+    {
+     "value_text": "20 hours",
+     "hours": 20.0,
+     "sources": [
+      "PubMed=427742"
+     ]
+    }
+   ],
+   "doubling_time_s": 90972.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    54000.0,
+    172800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0248 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0248.json sha256 0f35d73dd7b16ca6",
+   "accessed": "2026-10-01"
+  },
+  "hct_15": {
+   "substance_id": "hct_15",
+   "name": "HCT 15",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0292",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "67Y",
+   "derived_from_site": [
+    "Colon"
+   ],
+   "disease": [
+    "Colon adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "20.6 hours",
+     "hours": 20.6,
+     "sources": [
+      "NCI-DCTD HCT-15"
+     ]
+    },
+    {
+     "value_text": "~20-25 hours",
+     "hours": 22.5,
+     "sources": [
+      "DSMZ ACC-357"
+     ]
+    },
+    {
+     "value_text": "15 hours",
+     "hours": 15.0,
+     "sources": [
+      "CLS 300229"
+     ]
+    },
+    {
+     "value_text": "29.57 hours",
+     "hours": 29.57,
+     "sources": [
+      "PubMed=25944804"
+     ]
+    },
+    {
+     "value_text": "~20 hours",
+     "hours": 20.0,
+     "sources": [
+      "PubMed=7139607"
+     ]
+    },
+    {
+     "value_text": "19 hours",
+     "hours": 19.0,
+     "sources": [
+      "PubMed=427742"
+     ]
+    }
+   ],
+   "doubling_time_s": 73080.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    54000.0,
+    108000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0292 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0292.json sha256 4568090d5f71397d",
+   "accessed": "2026-10-01"
+  },
+  "kg_1": {
+   "substance_id": "kg_1",
+   "name": "KG-1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0374",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "59Y",
+   "derived_from_site": [
+    "Bone marrow"
+   ],
+   "disease": [
+    "Acute myeloid leukemia without maturation",
+    "Adult acute myeloid leukemia",
+    "Acute myeloid leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~38 hours",
+     "hours": 38.0,
+     "sources": [
+      "DSMZ ACC-14"
+     ]
+    },
+    {
+     "value_text": "45 hours",
+     "hours": 45.0,
+     "sources": [
+      "CLS 300208"
+     ]
+    }
+   ],
+   "doubling_time_s": 149400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    136800.0,
+    162000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0374 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0374.json sha256 f26fd2bd1b49e871",
+   "accessed": "2026-10-01"
+  },
+  "nb4": {
+   "substance_id": "nb4",
+   "name": "NB4",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0005",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "23Y",
+   "derived_from_site": [
+    "Bone marrow"
+   ],
+   "disease": [
+    "Acute promyelocytic leukemia with PML-RARA",
+    "Acute promyelocytic leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~35-45 hours",
+     "hours": 40.0,
+     "sources": [
+      "DSMZ ACC-207"
+     ]
+    },
+    {
+     "value_text": "30 hours",
+     "hours": 30.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "36-40 hours",
+     "hours": 38.0,
+     "sources": [
+      "PubMed=1995093"
+     ]
+    }
+   ],
+   "doubling_time_s": 136800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    108000.0,
+    162000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0005 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0005.json sha256 8b2a642e63a28a2e",
+   "accessed": "2026-10-01"
+  },
+  "kasumi_1": {
+   "substance_id": "kasumi_1",
+   "name": "Kasumi-1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0589",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "7Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Childhood acute myeloid leukemia with maturation",
+    "Acute myeloblastic leukemia with maturation"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~48-72 hours",
+     "hours": 60.0,
+     "sources": [
+      "DSMZ ACC-220"
+     ]
+    },
+    {
+     "value_text": "53 hours",
+     "hours": 53.0,
+     "sources": [
+      "PubMed=20922763"
+     ]
+    },
+    {
+     "value_text": "40 hours",
+     "hours": 40.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "40-45 hours",
+     "hours": 42.5,
+     "sources": [
+      "PubMed=2018839"
+     ]
+    }
+   ],
+   "doubling_time_s": 171900.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    144000.0,
+    259200.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0589 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0589.json sha256 afc0b80be3279820",
+   "accessed": "2026-10-01"
+  },
+  "mv4_11": {
+   "substance_id": "mv4_11",
+   "name": "MV4-11",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0064",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "10Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Childhood acute monocytic leukemia",
+    "Acute monoblastic/monocytic leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~50 hours",
+     "hours": 50.0,
+     "sources": [
+      "DSMZ ACC-102"
+     ]
+    },
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "CLS 300295"
+     ]
+    },
+    {
+     "value_text": "32 hours",
+     "hours": 32.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    }
+   ],
+   "doubling_time_s": 172800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    115200.0,
+    180000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0064 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0064.json sha256 6c42bb13a011f796",
+   "accessed": "2026-10-01"
+  },
+  "rpmi_8226": {
+   "substance_id": "rpmi_8226",
+   "name": "RPMI-8226",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0014",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "61Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Plasma cell myeloma",
+    "Multiple myeloma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "33.5 hours",
+     "hours": 33.5,
+     "sources": [
+      "NCI-DCTD RPMI-8226"
+     ]
+    },
+    {
+     "value_text": "~60-70 hours",
+     "hours": 65.0,
+     "sources": [
+      "DSMZ ACC-402"
+     ]
+    },
+    {
+     "value_text": "60 hours",
+     "hours": 60.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "26.7 hours",
+     "hours": 26.7,
+     "sources": [
+      "PubMed=2875788"
+     ]
+    }
+   ],
+   "doubling_time_s": 168300.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    93600.0,
+    252000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0014 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0014.json sha256 379a324ba55d375a",
+   "accessed": "2026-10-01"
+  },
+  "u266b1": {
+   "substance_id": "u266b1",
+   "name": "U266B1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0566",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "53Y",
+   "derived_from_site": [
+    "Peripheral blood"
+   ],
+   "disease": [
+    "Plasma cell myeloma",
+    "Multiple myeloma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~55 hours",
+     "hours": 55.0,
+     "sources": [
+      "DSMZ ACC-9"
+     ]
+    },
+    {
+     "value_text": "108-144 hours",
+     "hours": 126.0,
+     "sources": [
+      "PubMed=4104421"
+     ]
+    }
+   ],
+   "doubling_time_s": 325800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    198000.0,
+    518400.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0566 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0566.json sha256 83ae83dc61d077d2",
+   "accessed": "2026-10-01"
+  },
+  "mrc_5": {
+   "substance_id": "mrc_5",
+   "name": "MRC-5",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0440",
+   "species": "Homo sapiens (Human)",
+   "category": "Finite cell line",
+   "sex": "Male",
+   "age": "14FW",
+   "derived_from_site": [
+    "Fetal lung"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~38 hours",
+     "hours": 38.0,
+     "sources": [
+      "JCRB JCRB9008"
+     ]
+    },
+    {
+     "value_text": "~34 hours",
+     "hours": 34.0,
+     "sources": [
+      "JCRB JCRB9008"
+     ]
+    },
+    {
+     "value_text": "~1.5 days",
+     "hours": 36.0,
+     "sources": [
+      "JCRB JCRB9008"
+     ]
+    },
+    {
+     "value_text": "~2 days",
+     "hours": 48.0,
+     "sources": [
+      "JCRB JCRB9008"
+     ]
+    },
+    {
+     "value_text": "~5 days",
+     "hours": 120.0,
+     "sources": [
+      "JCRB JCRB9008"
+     ]
+    },
+    {
+     "value_text": "36 hours",
+     "hours": 36.0,
+     "sources": [
+      "JCRB JCRB9008"
+     ]
+    },
+    {
+     "value_text": "~40 hours",
+     "hours": 40.0,
+     "sources": [
+      "JCRB IFO50073"
+     ]
+    },
+    {
+     "value_text": "45 hours",
+     "hours": 45.0,
+     "sources": [
+      "JCRB IFO50073"
+     ]
+    }
+   ],
+   "doubling_time_s": 140400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    122400.0,
+    432000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0440 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0440.json sha256 3715977ff4eeb6be",
+   "accessed": "2026-10-01"
+  },
+  "wi_38": {
+   "substance_id": "wi_38",
+   "name": "WI-38",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0579",
+   "species": "Homo sapiens (Human)",
+   "category": "Finite cell line",
+   "sex": "Female",
+   "age": "16FW",
+   "derived_from_site": [
+    "Fetal lung"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~24 hours",
+     "hours": 24.0,
+     "sources": [
+      "ECACC 90020107",
+      "ATCC CCL-75"
+     ]
+    }
+   ],
+   "doubling_time_s": 86400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    86400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0579 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0579.json sha256 4eb8f066b211ec5d",
+   "accessed": "2026-10-01"
+  },
+  "hacat": {
+   "substance_id": "hacat",
+   "name": "HaCaT",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0038",
+   "species": "Homo sapiens (Human)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Male",
+   "age": "62Y",
+   "derived_from_site": [
+    "Back, skin, epidermis"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "28 hours",
+     "hours": 28.0,
+     "sources": [
+      "PubMed=32938951"
+     ]
+    }
+   ],
+   "doubling_time_s": 100800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    100800.0,
+    100800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0038 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0038.json sha256 47423e50752f31e1",
+   "accessed": "2026-10-01"
+  },
+  "beas_2b": {
+   "substance_id": "beas_2b",
+   "name": "BEAS-2B",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0168",
+   "species": "Homo sapiens (Human)",
+   "category": "Transformed cell line",
+   "sex": "Male",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Lung, bronchus, epithelium"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "36-48 hours",
+     "hours": 42.0,
+     "sources": [
+      "Hysigen TCH-C132"
+     ]
+    }
+   ],
+   "doubling_time_s": 151200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    129600.0,
+    172800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0168 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0168.json sha256 e694f1959d356e26",
+   "accessed": "2026-10-01"
+  },
+  "mcf_10a": {
+   "substance_id": "mcf_10a",
+   "name": "MCF-10A",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0598",
+   "species": "Homo sapiens (Human)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Female",
+   "age": "36Y",
+   "derived_from_site": [
+    "Breast, epithelium"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "26.74 hours",
+     "hours": 26.74,
+     "sources": []
+    },
+    {
+     "value_text": "20 hours",
+     "hours": 20.0,
+     "sources": [
+      "PubMed=34238275"
+     ]
+    },
+    {
+     "value_text": "97.4 hours",
+     "hours": 97.4,
+     "sources": [
+      "PubMed=24389870"
+     ]
+    }
+   ],
+   "doubling_time_s": 96264.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    352800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0598 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0598.json sha256 4f1cd32ac9092702",
+   "accessed": "2026-10-01"
+  },
+  "cho_k1": {
+   "substance_id": "cho_k1",
+   "name": "CHO-K1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0214",
+   "species": "Cricetulus griseus (Chinese hamster)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Female",
+   "age": "Adult",
+   "derived_from_site": [
+    "Ovary"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~24 hours",
+     "hours": 24.0,
+     "sources": [
+      "DSMZ ACC-110"
+     ]
+    }
+   ],
+   "doubling_time_s": 86400.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    86400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0214 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0214.json sha256 7ead924e5fadffb4",
+   "accessed": "2026-10-01"
+  },
+  "nih_3t3": {
+   "substance_id": "nih_3t3",
+   "name": "NIH 3T3",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0594",
+   "species": "Mus musculus (Mouse)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Male",
+   "age": "Embryo",
+   "derived_from_site": [
+    "Whole embryo"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~20 hours",
+     "hours": 20.0,
+     "sources": [
+      "DSMZ ACC-59"
+     ]
+    },
+    {
+     "value_text": "21.3 +- 0.5 hours",
+     "hours": 21.3,
+     "sources": [
+      "PubMed=22619183"
+     ]
+    }
+   ],
+   "doubling_time_s": 74340.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    79200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0594 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0594.json sha256 aad3ca6fd0325c29",
+   "accessed": "2026-10-01"
+  },
+  "3t3_l1": {
+   "substance_id": "3t3_l1",
+   "name": "3T3-L1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0123",
+   "species": "Mus musculus (Mouse)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Male",
+   "age": "Embryo",
+   "derived_from_site": [
+    "Whole embryo"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~27 hours",
+     "hours": 27.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "20-64 hours",
+     "hours": 42.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~30 hours",
+     "hours": 30.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~37 hours",
+     "hours": 37.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~3 days",
+     "hours": 72.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "60-70 hours",
+     "hours": 65.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~40 hours",
+     "hours": 40.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~33 hours",
+     "hours": 33.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~1.5 days",
+     "hours": 36.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~1 day",
+     "hours": 24.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~31 hours",
+     "hours": 31.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~26 hours",
+     "hours": 26.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~23 hours",
+     "hours": 23.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~28 hours",
+     "hours": 28.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~41 hours",
+     "hours": 41.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~43 hours",
+     "hours": 43.0,
+     "sources": [
+      "Hysigen TCM-C702"
+     ]
+    },
+    {
+     "value_text": "~28 hours",
+     "hours": 28.0,
+     "sources": [
+      "JCRB IFO50416"
+     ]
+    },
+    {
+     "value_text": "~39 hours",
+     "hours": 39.0,
+     "sources": [
+      "JCRB IFO50416"
+     ]
+    },
+    {
+     "value_text": "~54 hours",
+     "hours": 54.0,
+     "sources": [
+      "JCRB IFO50416"
+     ]
+    },
+    {
+     "value_text": "~28 hours",
+     "hours": 28.0,
+     "sources": [
+      "JCRB IFO50416"
+     ]
+    },
+    {
+     "value_text": "31 hours",
+     "hours": 31.0,
+     "sources": [
+      "JCRB IFO50416"
+     ]
+    },
+    {
+     "value_text": "~2.2 days",
+     "hours": 52.800000000000004,
+     "sources": [
+      "JCRB IFO50416"
+     ]
+    }
+   ],
+   "doubling_time_s": 124200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    259200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0123 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0123.json sha256 9fd4108f78740033",
+   "accessed": "2026-10-01"
+  },
+  "raw_264_7": {
+   "substance_id": "raw_264_7",
+   "name": "RAW 264.7",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0493",
+   "species": "Mus musculus (Mouse)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "Adult",
+   "derived_from_site": [
+    "Ascites"
+   ],
+   "disease": [
+    "Mouse leukemia"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~30 hours",
+     "hours": 30.0,
+     "sources": [
+      "CLS 400319"
+     ]
+    },
+    {
+     "value_text": "12 hours",
+     "hours": 12.0,
+     "sources": [
+      "DOI=10.5897/IJBMBR2013.0154"
+     ]
+    },
+    {
+     "value_text": "11 hours",
+     "hours": 11.0,
+     "sources": [
+      "DOI=10.5897/IJBMBR2013.0154"
+     ]
+    }
+   ],
+   "doubling_time_s": 43200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    39600.0,
+    108000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0493 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0493.json sha256 c1055ac834dd5856",
+   "accessed": "2026-10-01"
+  },
+  "neuro_2a": {
+   "substance_id": "neuro_2a",
+   "name": "Neuro-2a",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0470",
+   "species": "Mus musculus (Mouse)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Peripheral nervous system"
+   ],
+   "disease": [
+    "Mouse neuroblastoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "60-72 hours",
+     "hours": 66.0,
+     "sources": [
+      "Hysigen TCM-C750"
+     ]
+    },
+    {
+     "value_text": "~70 hours",
+     "hours": 70.0,
+     "sources": [
+      "DSMZ ACC-148"
+     ]
+    }
+   ],
+   "doubling_time_s": 244800.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    216000.0,
+    259200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0470 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0470.json sha256 ee56a1c8821a9936",
+   "accessed": "2026-10-01"
+  },
+  "c2c12": {
+   "substance_id": "c2c12",
+   "name": "C2C12",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0188",
+   "species": "Mus musculus (Mouse)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Female",
+   "age": "2M",
+   "derived_from_site": [
+    "Skeletal muscle"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~20 hours",
+     "hours": 20.0,
+     "sources": [
+      "DSMZ ACC-565"
+     ]
+    },
+    {
+     "value_text": "18.4 +- 0.2 hours",
+     "hours": 18.4,
+     "sources": [
+      "PubMed=22020321"
+     ]
+    },
+    {
+     "value_text": "19.6 +- 0.4 hours",
+     "hours": 19.6,
+     "sources": [
+      "PubMed=22020321"
+     ]
+    }
+   ],
+   "doubling_time_s": 70560.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    64800.0,
+    72000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0188 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0188.json sha256 c35c3ef8d657c0f3",
+   "accessed": "2026-10-01"
+  },
+  "b16_f10": {
+   "substance_id": "b16_f10",
+   "name": "B16-F10",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0159",
+   "species": "Mus musculus (Mouse)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Skin"
+   ],
+   "disease": [
+    "Mouse melanoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "17.2 hours",
+     "hours": 17.2,
+     "sources": [
+      "PubMed=23890195"
+     ]
+    },
+    {
+     "value_text": "17 hours",
+     "hours": 17.0,
+     "sources": [
+      "PubMed=1109790"
+     ]
+    }
+   ],
+   "doubling_time_s": 61560.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    61200.0,
+    64800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0159 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0159.json sha256 13dcd39993b0ecdd",
+   "accessed": "2026-10-01"
+  },
+  "4t1": {
+   "substance_id": "4t1",
+   "name": "4T1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0125",
+   "species": "Mus musculus (Mouse)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Mammary gland"
+   ],
+   "disease": [
+    "Malignant neoplasms of the mouse mammary gland"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "12.6 hours",
+     "hours": 12.6,
+     "sources": [
+      "ATCC CRL-2539"
+     ]
+    }
+   ],
+   "doubling_time_s": 45360.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    43200.0,
+    46800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0125 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0125.json sha256 6709b06ccd808263",
+   "accessed": "2026-10-01"
+  },
+  "hepa_1_6": {
+   "substance_id": "hepa_1_6",
+   "name": "Hepa 1-6",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0327",
+   "species": "Mus musculus (Mouse)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Liver"
+   ],
+   "disease": [
+    "Hepatocellular carcinoma of the mouse"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~30 hours",
+     "hours": 30.0,
+     "sources": [
+      "DSMZ ACC-175"
+     ]
+    },
+    {
+     "value_text": "26.99 +- 1.93 hours",
+     "hours": 26.99,
+     "sources": [
+      "PubMed=28152020"
+     ]
+    }
+   ],
+   "doubling_time_s": 102582.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    90000.0,
+    108000.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0327 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0327.json sha256 23f762a85af60c4e",
+   "accessed": "2026-10-01"
+  },
+  "bhk_21": {
+   "substance_id": "bhk_21",
+   "name": "BHK-21",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_1914",
+   "species": "Mesocricetus auratus (Golden hamster)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Male",
+   "age": "1D",
+   "derived_from_site": [
+    "Kidney"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "12 hours",
+     "hours": 12.0,
+     "sources": [
+      "PubMed=14207308"
+     ]
+    }
+   ],
+   "doubling_time_s": 43200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    43200.0,
+    43200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_1914 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_1914.json sha256 496d4ca426287d9b",
+   "accessed": "2026-10-01"
+  },
+  "vero": {
+   "substance_id": "vero",
+   "name": "Vero",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0059",
+   "species": "Chlorocebus sabaeus (Green monkey)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Female",
+   "age": "Adult",
+   "derived_from_site": [
+    "Kidney, epithelium"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "26 hours",
+     "hours": 26.0,
+     "sources": [
+      "PubMed=19003288"
+     ]
+    },
+    {
+     "value_text": "16 hours",
+     "hours": 16.0,
+     "sources": [
+      "PubMed=19003288"
+     ]
+    }
+   ],
+   "doubling_time_s": 75600.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    57600.0,
+    93600.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0059 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0059.json sha256 44f786422240d098",
+   "accessed": "2026-10-01"
+  },
+  "cos_7": {
+   "substance_id": "cos_7",
+   "name": "COS-7",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0224",
+   "species": "Chlorocebus aethiops (Green monkey)",
+   "category": "Transformed cell line",
+   "sex": "Male",
+   "age": "Adult",
+   "derived_from_site": [
+    "Kidney"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~30 hours",
+     "hours": 30.0,
+     "sources": [
+      "JCRB JCRB9127"
+     ]
+    },
+    {
+     "value_text": "~34 hours",
+     "hours": 34.0,
+     "sources": [
+      "JCRB JCRB9127"
+     ]
+    },
+    {
+     "value_text": "~2 days",
+     "hours": 48.0,
+     "sources": [
+      "JCRB IFO50068"
+     ]
+    },
+    {
+     "value_text": "~35-48 hours",
+     "hours": 41.5,
+     "sources": [
+      "DSMZ ACC-60"
+     ]
+    }
+   ],
+   "doubling_time_s": 135900.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    108000.0,
+    172800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0224 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0224.json sha256 33423e402b4dddfc",
+   "accessed": "2026-10-01"
+  },
+  "cv_1": {
+   "substance_id": "cv_1",
+   "name": "CV-1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0229",
+   "species": "Chlorocebus aethiops (Green monkey)",
+   "category": "Finite cell line",
+   "sex": "Male",
+   "age": "Adult",
+   "derived_from_site": [
+    "Kidney"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "20.1 hours",
+     "hours": 20.1,
+     "sources": [
+      "PubMed=28203643"
+     ]
+    }
+   ],
+   "doubling_time_s": 72360.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    72000.0,
+    75600.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0229 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0229.json sha256 c5ddf6f89cfbbc37",
+   "accessed": "2026-10-01"
+  },
+  "llc_pk1": {
+   "substance_id": "llc_pk1",
+   "name": "LLC-PK1",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0391",
+   "species": "Sus scrofa (Pig)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Male",
+   "age": "3-4W",
+   "derived_from_site": [
+    "Kidney"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~24 hours",
+     "hours": 24.0,
+     "sources": [
+      "DSMZ ACC-637"
+     ]
+    },
+    {
+     "value_text": "25.7 hours",
+     "hours": 25.7,
+     "sources": [
+      "PubMed=23460964"
+     ]
+    }
+   ],
+   "doubling_time_s": 89460.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    86400.0,
+    93600.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0391 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0391.json sha256 77f7d7895859b3b7",
+   "accessed": "2026-10-01"
+  },
+  "sf9": {
+   "substance_id": "sf9",
+   "name": "Sf9",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0549",
+   "species": "Spodoptera frugiperda (Fall armyworm)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Female",
+   "age": "Pupal stage",
+   "derived_from_site": [
+    "Ovary"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~50 hours",
+     "hours": 50.0,
+     "sources": [
+      "DSMZ ACC-125"
+     ]
+    },
+    {
+     "value_text": "27 hours",
+     "hours": 27.0,
+     "sources": [
+      "PubMed=21667340"
+     ]
+    },
+    {
+     "value_text": "25.2 +- 2.8 hours",
+     "hours": 25.2,
+     "sources": [
+      "PubMed=10718368"
+     ]
+    }
+   ],
+   "doubling_time_s": 97200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    79200.0,
+    180000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 300.15,
+   "co2_buffered_medium": false,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0549 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0549.json sha256 7c9d0b226857686d",
+   "accessed": "2026-10-01"
+  },
+  "nci_h1975": {
+   "substance_id": "nci_h1975",
+   "name": "NCI-H1975",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_1511",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Lung"
+   ],
+   "disease": [
+    "Lung adenocarcinoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "42.2 hours",
+     "hours": 42.2,
+     "sources": [
+      "PubMed=29681454"
+     ]
+    },
+    {
+     "value_text": "28 hours",
+     "hours": 28.0,
+     "sources": [
+      "PubMed=25984343"
+     ]
+    },
+    {
+     "value_text": "30.531 +- 1.823 hours",
+     "hours": 30.531,
+     "sources": [
+      "PubMed=25483995"
+     ]
+    },
+    {
+     "value_text": "38.7 +- 5.92 hours",
+     "hours": 38.7,
+     "sources": [
+      "PubMed=25008024"
+     ]
+    },
+    {
+     "value_text": "36-48 hours",
+     "hours": 42.0,
+     "sources": [
+      "Hysigen TCH-C276"
+     ]
+    }
+   ],
+   "doubling_time_s": 139320.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    100800.0,
+    172800.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_1511 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_1511.json sha256 50f94c6e40dfb422",
+   "accessed": "2026-10-01"
+  },
+  "saos_2": {
+   "substance_id": "saos_2",
+   "name": "SaOS-2",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0548",
+   "species": "Homo sapiens (Human)",
+   "category": "Cancer cell line",
+   "sex": "Female",
+   "age": "11Y",
+   "derived_from_site": [
+    "Bone"
+   ],
+   "disease": [
+    "Osteosarcoma",
+    "Osteosarcoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~43 hours",
+     "hours": 43.0,
+     "sources": [
+      "DSMZ ACC-243"
+     ]
+    },
+    {
+     "value_text": "35-40 hours",
+     "hours": 37.5,
+     "sources": [
+      "CLS 300331"
+     ]
+    },
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "PubMed=21519327"
+     ]
+    },
+    {
+     "value_text": "45.7 +- 3.3 hours",
+     "hours": 45.7,
+     "sources": [
+      "PubMed=10763916"
+     ]
+    },
+    {
+     "value_text": "48 hours",
+     "hours": 48.0,
+     "sources": [
+      "PubMed=16888811"
+     ]
+    }
+   ],
+   "doubling_time_s": 164520.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    126000.0,
+    176400.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0548 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0548.json sha256 8e662de9aa18876e",
+   "accessed": "2026-10-01"
+  },
+  "bti_tn_5b1_4": {
+   "substance_id": "bti_tn_5b1_4",
+   "name": "BTI-Tn-5B1-4",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_C190",
+   "species": "Trichoplusia ni (Cabbage looper)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Sex unspecified",
+   "age": "Embryonic stage",
+   "derived_from_site": [
+    "Whole embryo"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "27 +- 2 hours",
+     "hours": 27.0,
+     "sources": [
+      "PubMed=10585188"
+     ]
+    },
+    {
+     "value_text": "34 +- 1 hours",
+     "hours": 34.0,
+     "sources": [
+      "PubMed=10585188"
+     ]
+    },
+    {
+     "value_text": "26 hours",
+     "hours": 26.0,
+     "sources": [
+      "PubMed=21667340",
+      "DOI=10.1111/j.1744-7917.2004.tb00236.x"
+     ]
+    }
+   ],
+   "doubling_time_s": 97200.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    90000.0,
+    126000.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 300.15,
+   "co2_buffered_medium": false,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_C190 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_C190.json sha256 31d71d1043b284a7",
+   "accessed": "2026-10-01"
+  },
+  "pc12": {
+   "substance_id": "pc12",
+   "name": "PC12",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_0481",
+   "species": "Rattus norvegicus (Rat)",
+   "category": "Cancer cell line",
+   "sex": "Male",
+   "age": "Age unspecified",
+   "derived_from_site": [
+    "Adrenal gland"
+   ],
+   "disease": [
+    "Rat adrenal gland pheochromocytoma"
+   ],
+   "doubling_times": [
+    {
+     "value_text": "~50-60 hours",
+     "hours": 55.0,
+     "sources": [
+      "DSMZ ACC-159"
+     ]
+    },
+    {
+     "value_text": "92 hours",
+     "hours": 92.0,
+     "sources": [
+      "ECACC 88022401",
+      "CLS 500311"
+     ]
+    },
+    {
+     "value_text": "40 hours",
+     "hours": 40.0,
+     "sources": [
+      "PubMed=9886495"
+     ]
+    }
+   ],
+   "doubling_time_s": 198000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    144000.0,
+    331200.0
+   ],
+   "growth_mode": "adherent",
+   "culture_temperature_k": 310.15,
+   "co2_buffered_medium": true,
+   "max_density": {
+    "per_area_m2": 1363636363.6,
+    "per_volume_m3": null
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_0481 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_0481.json sha256 0db81748a7ee72a0",
+   "accessed": "2026-10-01"
+  },
+  "schneider_2": {
+   "substance_id": "schneider_2",
+   "name": "Schneider 2",
+   "kind": "cell_line",
+   "cellosaurus": "CVCL_Z232",
+   "species": "Drosophila melanogaster (Fruit fly)",
+   "category": "Spontaneously immortalized cell line",
+   "sex": "Male",
+   "age": "Late embryonic stage",
+   "derived_from_site": [
+    "Whole embryo"
+   ],
+   "disease": [],
+   "doubling_times": [
+    {
+     "value_text": "~48 hours",
+     "hours": 48.0,
+     "sources": [
+      "PubMed=39052691"
+     ]
+    },
+    {
+     "value_text": "~40 hours",
+     "hours": 40.0,
+     "sources": [
+      "DSMZ ACC-130"
+     ]
+    },
+    {
+     "value_text": "~30 hours",
+     "hours": 30.0,
+     "sources": [
+      "PubMed=873048"
+     ]
+    }
+   ],
+   "doubling_time_s": 144000.0,
+   "doubling_time_evidence": "derived",
+   "doubling_time_formula": "median of the Cellosaurus doubling-time values parsed to hours (ranges -> midpoint)",
+   "doubling_time_range_s": [
+    108000.0,
+    172800.0
+   ],
+   "growth_mode": "suspension",
+   "culture_temperature_k": 298.15,
+   "co2_buffered_medium": false,
+   "max_density": {
+    "per_area_m2": null,
+    "per_volume_m3": 2000000000000.0
+   },
+   "classification_evidence": "assumption",
+   "classification_note": "growth mode, culture temperature and CO2 need: engineering classification of common practice; maximum density: the HeLa confluency of the Thermo Fisher table (1.2e6 cells on 8.8 cm2) for every adherent line, 2e6 cells/mL for suspension lines (engineering)",
+   "evidence": "measured_literature",
+   "source": "Cellosaurus CVCL_Z232 (api.cellosaurus.org, CC BY 4.0), cached source_cache/cellosaurus/CVCL_Z232.json sha256 fb1f7c0c9ab3ac5a",
+   "accessed": "2026-10-01"
+  }
+ },
+ "license": "Cellosaurus data CC BY 4.0 (SIB Swiss Institute of Bioinformatics)",
+ "limitations_zh": [
+  "倍增时间为文献/细胞库给出的典型值（不同培养条件下差异大），取其中位数",
+  "贴壁/悬浮、培养温度、CO2需要与最大密度为常规做法的工程分类"
+ ]
+}

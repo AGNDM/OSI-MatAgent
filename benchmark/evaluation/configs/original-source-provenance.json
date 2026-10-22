@@ -1,0 +1,152 @@
+{
+  "adaptation": "Narrow explicit path/CLI parameterization; metrics, source checks and E closure gates retained. New helper hashes/timestamps differ from the historical exports.",
+  "app_revision": "e116c6b42b3dffbd7870d0e5e98ca965328064d3",
+  "mcqa_snapshot_sha256": "5981a192d81984a09bd6976f5d038931fb340930dd1d8bed3cda38beba841c83",
+  "schema_version": 1,
+  "source_files": [
+    {
+      "original_bytes": 48979,
+      "original_path_relative_to_repository": "results/.deadline-rescue/report_grid.py",
+      "original_sha256": "74815fabaa0c6e9ede990b90c43e78f826f467fd388694431621bd60b1d5b6bb",
+      "portable_path": "workflow/report_grid.py",
+      "publicly_pinned_original": true
+    },
+    {
+      "original_bytes": 10332,
+      "original_path_relative_to_repository": "results/.deadline-rescue/compact_status.py",
+      "original_sha256": "025c0da99051175706a8f4bce0e035d4f6f051ac5a65658875a677183617dfe5",
+      "portable_path": "workflow/compact_status.py",
+      "publicly_pinned_original": true
+    },
+    {
+      "original_bytes": 15581,
+      "original_path_relative_to_repository": "results/.deadline-rescue/audit_all_closed_failures.py",
+      "original_sha256": "9cb6e1d921448ab0e481aa43a01a1dd4a6203e7db3a730be91884cc53cc6fe40",
+      "portable_path": "workflow/audit_failures.py",
+      "publicly_pinned_original": true
+    },
+    {
+      "original_bytes": 56912,
+      "original_path_relative_to_repository": "results/.deadline-rescue/final_audit.py",
+      "original_sha256": "67d07b59f4c99d26870acc865882140870b26e27b74e5fa41d0313c76ca8bc37",
+      "portable_path": "workflow/final_audit.py",
+      "publicly_pinned_original": true
+    },
+    {
+      "original_bytes": 13620,
+      "original_path_relative_to_repository": "results/.deadline-rescue/test_final_audit.py",
+      "original_sha256": "ecbe85920091a1b0ebe407812906385bc4928a4f15a2940e9f0c94bfa3ac5263",
+      "portable_path": "tests/test_final_audit.py",
+      "publicly_pinned_original": false
+    },
+    {
+      "original_bytes": 7444,
+      "original_path_relative_to_repository": "results/.deadline-rescue/check_compact_status.py",
+      "original_sha256": "ecd0c4227ed6d80212e7cbbc42797c59e6cc24eab5f8fec149384768b95680f9",
+      "portable_path": "tests/test_compact_status.py",
+      "publicly_pinned_original": false
+    },
+    {
+      "original_bytes": 16948,
+      "original_path_relative_to_repository": "results/.mcqa-group-export/export.py",
+      "original_sha256": "5e9f886d392b4d5f3adc802a2f68b5c9882565ecd2514f3a42a7605c716d04f2",
+      "portable_path": "mcqa/export_groups.py",
+      "publicly_pinned_original": false
+    },
+    {
+      "original_bytes": 22388,
+      "original_path_relative_to_repository": "results/.mcqa-metrics-export/enrich.py",
+      "original_sha256": "a7eb769ef2341ec8964a9a20d1e9143165b561bb9cacc6e8645cdcc8e2199b4d",
+      "portable_path": "mcqa/enrich.py",
+      "publicly_pinned_original": true
+    },
+    {
+      "original_bytes": 5583,
+      "original_path_relative_to_repository": "results/.mcqa-metrics-export/metrics.py",
+      "original_sha256": "1291b8306d3592e5227b393d841e7db54f22223e5fe033efde2d2ffba9209964",
+      "portable_path": "mcqa/metrics.py",
+      "publicly_pinned_original": true
+    },
+    {
+      "original_bytes": 14398,
+      "original_path_relative_to_repository": "results/.mcqa-metrics-export/accounting.py",
+      "original_sha256": "58d10a5bc4008e4f4d002aa81673c15d185b1afaac318519b72510fd39edb5bc",
+      "portable_path": "mcqa/accounting.py",
+      "publicly_pinned_original": true
+    },
+    {
+      "original_bytes": 453,
+      "original_path_relative_to_repository": "results/.mcqa-metrics-export/site-tariffs.yaml",
+      "original_sha256": "1760fce7b830e3bd9745d4c0f12fdc5ce2338ba788c0860e0e28bcbd43731fa6",
+      "portable_path": "configs/site-tariffs-20261022.yaml",
+      "publicly_pinned_original": false
+    }
+  ],
+  "workflow_cohort": {
+    "cases_per_cell": 120,
+    "cells": 22,
+    "deadline_utc": "2026-10-22T20:43:00+00:00",
+    "declared_episode_count": 2640,
+    "development_smokes_included": false,
+    "group_counts_per_cell": {
+      "condition": {
+        "both_open": 2,
+        "cell_failure": 3,
+        "door_interruption": 3,
+        "healthy": 75,
+        "lamp_failure": 6,
+        "motor_blocked": 3,
+        "operator_standby": 3,
+        "outer_open": 2,
+        "secured": 2,
+        "sensor_damage": 3,
+        "timed_motor_failure": 6,
+        "visible_keylock": 6,
+        "visible_service_prerequisites": 6
+      },
+      "instrument_id": {
+        "binder_fd056": 18,
+        "eppendorf_cellxpertc170i": 6,
+        "esco_efa5uduvw": 18,
+        "ika_plate_rctdigital": 18,
+        "nabertherm_l9": 18,
+        "newera_ne1000": 24,
+        "peak_precisionhydrogen": 6,
+        "vaisala_dmt152": 12
+      },
+      "workflow_id": {
+        "dewpoint_offline_calibration": 6,
+        "dewpoint_startup_measurement_diagnosis": 6,
+        "furnace_door_pause_recovery": 6,
+        "furnace_program": 12,
+        "hood_illumination": 12,
+        "hood_sash_access_resecure": 6,
+        "hotplate_motor_diagnostic": 6,
+        "hotplate_unlock_stirring": 12,
+        "hydrogen_startup_diagnosis": 6,
+        "incubator_sensor_cover_access": 6,
+        "oven_standby_restoration": 6,
+        "oven_usb_recording": 12,
+        "pump_delivery": 12,
+        "pump_timed_monitoring": 12
+      }
+    },
+    "mode": "teacher_forced",
+    "seed": 0,
+    "train_test_split_assigned": false
+  },
+  "workflow_frozen_hashes": {
+    "configuration_sha256": "76f9050536e9cae61f6ed4b075a04ae248b5858efcabbd85891858930c3b44b2",
+    "deadline_scope_sha256": "fcc06ee3079aacee047a4b4469e3414b1cd6de08191492e15c0e6617750266ed",
+    "jobs_sha256": "207b9eb06e484a24cef192d34759f42ba789ea80cf495d3ce353e216a6581b1a",
+    "source_manifest_sha256": "65b99fd3da7ac97fefab9c2fa1106a3ef7aa3b46a249ce34d10834a3db4fb039"
+  },
+  "workflow_mode": "teacher_forced",
+  "workflow_reporting_inputs_sha256": {
+    "instrument/eval/common.py": "d5f83622ee8d08d7ff8a6185e61e5b9344ac97f21bc061e10e9b93ef22023d97",
+    "instrument/eval/sequential.py": "8dbbcf81a4573724b92cb1f144e4d8e22a3cc61bf75edf2fcd072d65c2b1272a",
+    "instrument/sequential_120/cases.jsonl": "67e11921fa653835d7b66798b8f5cd81343c2fa1958181e59e53719354570fc7",
+    "instrument/sequential_120/evaluator/case-specs.jsonl": "7fdb3cd865cb03de08914caffc4b41e8cefc6f24842117775b903a9891cca592",
+    "provenance/application.json": "bdd15e8d239fb0d787f52fac5b15e8118c899e2db9337473417f89f0a8e6910e"
+  }
+}

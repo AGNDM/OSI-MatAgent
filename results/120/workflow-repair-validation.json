@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-22T13:56:24.028967+00:00",
+  "slurm_job_id": "4641505",
+  "compute_node": "kh063",
+  "protocol": "public-native-menu-ids-decision-view-v5",
+  "status": "choice_interfaces_verified; full_workflow_pilots_pending",
+  "changes": [
+    "Experts propose currently offered public menu IDs, bound to exact native actions and arguments.",
+    "The unchanged graph gate and native evaluator retain execution/scoring authority.",
+    "Specialist context is losslessly factored; chooser context is an explicit current-decision projection with declared history omissions.",
+    "Procedure envelopes copy the selected action and current transport identifiers without model inference.",
+    "Preparation failures clear old usage metadata; genuine selected-option probabilities remain unchanged."
+  ],
+  "focused_code_tests": {
+    "passed": 93,
+    "slurm_job_id": "4641261"
+  },
+  "exact_tokenizer_replay": {
+    "original_state_tokens": 22977,
+    "new_state_tokens": 1755,
+    "released_state_limit": 4096,
+    "strict_encoding_passed": true,
+    "preservation_checks": {
+      "full_source_hash_matches": true,
+      "goal_preserved": true,
+      "instrument_preserved": true,
+      "last_error_preserved": true,
+      "native_observations_preserved": true,
+      "observation_wrappers_preserved": true
+    },
+    "slurm_job_id": "4641170"
+  },
+  "actual_native_head_calls": [
+    {
+      "purpose": "routing",
+      "slurm_job_id": "4641358",
+      "decision": {
+        "backend_id": "local-graph-chooser:native:/scratch/dsegura/git/osi_hackathon_AGMAT/external/models/openjev8b:openjev:high",
+        "choice": "diagnose",
+        "probabilities": {
+          "diagnose": 0.8630410981892721,
+          "verify": 0.13695890181072787
+        },
+        "latency_ms": 37430.21588004194,
+        "fallback_used": false
+      },
+      "usage": {
+        "prompt_tokens": 1839,
+        "completion_tokens": 0,
+        "total_tokens": 1839
+      },
+      "scope": "Actual released native-head inference on one saved public routing input. No expert inference, native tool execution or workflow success grade."
+    },
+    {
+      "purpose": "operational_action_selection",
+      "slurm_job_id": "4641408",
+      "decision": {
+        "backend_id": "local-graph-chooser:native:/scratch/dsegura/git/osi_hackathon_AGMAT/external/models/openjev8b:openjev:high",
+        "choice": "select_nabertherm_l9",
+        "probabilities": {
+          "select_nabertherm_l9": 0.6895584073531154,
+          "power_set_true": 0.3079362603406984,
+          "configure_program_303_15": 0.0025053323061863275
+        },
+        "latency_ms": 894.6755304932594
+      },
+      "usage": {
+        "prompt_tokens": 4115,
+        "completion_tokens": 0,
+        "total_tokens": 4115
+      },
+      "scope": "Actual released native-head inference over three stored expert candidates from a public teacher-forced development state. No tool execution, fresh autonomous episode, or workflow score."
+    }
+  ],
+  "actual_agent_calls": [
+    {
+      "purpose": "routing",
+      "decision": {
+        "backend_id": "local-graph-chooser:hf:/scratch/dsegura/git/osi_hackathon_AGMAT/external/models/qwen3-4b-instruct-2507",
+        "choice": "verify",
+        "probabilities": {
+          "diagnose": 3.6688632008008426e-06,
+          "verify": 0.9999963045120239
+        },
+        "latency_ms": 350.3613453358412,
+        "fallback_used": false
+      },
+      "usage": {
+        "prompt_tokens": 1817,
+        "completion_tokens": 0,
+        "total_tokens": 1817
+      }
+    },
+    {
+      "purpose": "operational_action_selection",
+      "decision": {
+        "backend_id": "local-graph-chooser:hf:/scratch/dsegura/git/osi_hackathon_AGMAT/external/models/qwen3-4b-instruct-2507",
+        "choice": "select_nabertherm_l9",
+        "probabilities": {
+          "select_nabertherm_l9": 0.9998255372047424,
+          "power_set_true": 0.00017400535580236465,
+          "configure_program_303_15": 5.202666102377407e-07
+        },
+        "latency_ms": 349.3614215403795
+      },
+      "usage": {
+        "prompt_tokens": 3397,
+        "completion_tokens": 0,
+        "total_tokens": 3397
+      }
+    }
+  ],
+  "agent_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "native_head_model": "alanhuangya/OpenJev-8B",
+  "interpretation": "Passed interface checks establish legal normalized real-model readouts, not correct task decisions, calibrated confidence or successful autonomous workflows. Saved development states include a teacher-forced state; no replay is counted as a fresh free-run episode.",
+  "full_workflow_pilots": {
+    "array_job_id": "4641290",
+    "study": "/scratch/dsegura/git/OSI-MatAgent/results/workflow-repair-pilot-v5-20261022-b",
+    "case_id": "343dac338d5eea533721cc18",
+    "seed": 0,
+    "mode": "free_run",
+    "combinations": [
+      "Qwen2.5-14B -> Qwen2.5-14B self chooser",
+      "Qwen2.5-14B -> OpenJev-8B",
+      "Qwen2.5-14B -> APUS high"
+    ],
+    "scheduler_snapshot": "4641290_[0-2%3]|PENDING|00:00:00|Unknown",
+    "full_120_case_results_ready": false
+  },
+  "provenance": {
+    "/scratch/dsegura/git/OSI-MatAgent/results/.workflow-repair/validation-4641261.json": "841d0f90961f7f32eb5afa4adf7c000328b94f8f3b19f664724c407493775375",
+    "/scratch/dsegura/git/OSI-MatAgent/results/.workflow-repair/context-input-validation.json": "190a42415a3df3b1fe4d8ffa1c23ede63d040c8e3dfeb78d143404afa8687b4f",
+    "/scratch/dsegura/git/OSI-MatAgent/results/.workflow-repair/head-smoke-4641358.json": "87f8f6b67718ba64f40902437c3b53711111c8dadca7c7b4020bbccf15198e42",
+    "/scratch/dsegura/git/OSI-MatAgent/results/.workflow-repair/operation-head-smoke-4641408.json": "d68e02175846335b5044147814a2168318c4fcc5c2b4fbc0b7b3dcaf503a9468",
+    "/scratch/dsegura/git/OSI-MatAgent/results/.workflow-repair/agent-choice-smoke-4641445.json": "88e79a86a003d4bef0de5a3ac4e120eeb3608760a20c70716deabdb42370076c"
+  },
+  "checked_source_sha256": {
+    "benchmark/graph/graph_local/public_context.py": "527caaafa360e118d60db22223049e05974d0b81a2b6f1e7df6590044d33048b",
+    "benchmark/graph/graph_local/menu_records.py": "9279ad0cbcb5bc057df2696d6971b99b8770806e8011b291a894bfef203c9af1",
+    "benchmark/graph/graph_local/run.py": "90ee524435960d87d10d763d0aba17fabb218be99e6709fd410ab37ecc844dbb",
+    "benchmark/graph/graph_local/prepare.py": "7321979489cf00ffea542dea8861dcba559f5189268704bb963c0fe28aa0283f",
+    "benchmark/graph/graph_local/process_backend.py": "2dd8e8d059bc8ce7853852658ee9728455faff0d9e906aa81cc477a54f5ed66a",
+    "benchmark/graph/graph_local/__init__.py": "65cce1633d01d4f247af4512f8012bdfcd5740ed94851f4a9099880d05433b20",
+    "benchmark/graph/graph_local/decision_context.py": "967777fc635482ac020ed7eb21f7797f177b22588b0b18221a2b6fc01fa815a2",
+    "benchmark/graph/graph_local/guided_json.py": "ae1363df59382c71ec4b0a697dcf1805db8ba1ebefea45deb44fd3c9db9dc20f",
+    "benchmark/graph/graph_local/policy.py": "f96ef04b65d7ac2b7ecf4ffddcba04193fcfa32d37d334e477793be2bf7368d5",
+    "benchmark/graph/graph_local/backends.py": "c2468e1761e2abe17aba6464efe5e8a49ad14dff7d0bbf5f22a8582ca13a7e3c",
+    "benchmark/graph/graph_local/profile.py": "cfeef49b94f18038b6bb3d2e1ada5218e5f51f3b466c38b68125775a778ac8d9",
+    "benchmark/comparison/backends.py": "1c2dd7e57f31552df7f57a3c6710374bbf0b3a00d9d3ef8dff4f0d768dcc84d2"
+  }
+}

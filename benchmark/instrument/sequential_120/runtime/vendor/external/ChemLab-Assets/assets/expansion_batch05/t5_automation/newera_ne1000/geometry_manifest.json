@@ -1,0 +1,4835 @@
+{
+  "asset_type_id": "instrument.newera_ne1000",
+  "catalog_id": "CHEM-184",
+  "name_zh": "New Era NE-1000 单通道可编程注射泵（12 V DC，装B-D 60 mL注射器）",
+  "created_at": "2026-10-03T23:28:22Z",
+  "builder": "outputs/expansion_batch05/t5_automation/newera_ne1000/build_geometry.py",
+  "builder_backend": "trimesh detailed New Era NE-1000 (red wedge chassis with feet, keypad membrane, LCD with the RS-232 triangle, 8 LEDs and 9 keys on the slope, rear print, power switch, power jack, two RJ-11, TTL I/O; end plate, two guide rods, drive screw with its 0.05 in thread, holder block with the V slot, retainer bracket and thumbscrews, syringe clamp, hex wrench; pusher block on a prismatic joint with the drive-nut button, anti-siphon plate and screw and the plunger of a B-D 60 mL syringe; translucent barrel with printed graduations; guide rod collar on a prismatic joint; textures in GLB and OBJ/MTL, primitive collisions); Blender pass adds model.blend and previews",
+  "coordinate_system": {
+    "unit": "m",
+    "angle_unit": "rad",
+    "up_axis": "+Z",
+    "back_axis": "+Y",
+    "root_origin_zh": "泵体占地8.75×5.74 in中心在台面的投影（z=0为台面；+X为推块注入方向与注射器出口方向，+Y朝后；斜面键盘朝−Y操作者）",
+    "handedness": "right",
+    "glb_coordinate_conversion_zh": "GLB 按本项目 +Z 向上约定导出，无 Y-up 转换；节点层级与 URDF link 一一对应。"
+  },
+  "overall_dimensions_m": [
+    0.29652000218629837,
+    0.1526885595712364,
+    0.11506199836730957
+  ],
+  "total_mass_kg": 1.63,
+  "mass_evidence": "manufacturer_datasheet",
+  "component_mass_evidence": "documented_total_split",
+  "sources": [
+    {
+      "source_id": "user_workbook",
+      "type": "publication",
+      "reference": "大学化学仪器资产调研_200种.xlsx",
+      "locator": "仪器总表第189行；参数与来源第189行；设置与输入输出第189行 CHEM-184",
+      "notes_zh": "用户清单；型号（New Era NE-1000 Multi-Phaser，手册Publication 1200-01，2016-04-06）与规格为硬要求；缺口：管路顺应性、背压、注射器真实内径与真实流量误差",
+      "sha256": null
+    },
+    {
+      "source_id": "manufacturer_manual",
+      "type": "web",
+      "reference": "New Era Pump Systems, NE-1000 Multi-Phaser Programmable Syringe Pump User Manual, Publication #1200-01 (04/06/16)",
+      "locator": "source_cache/manual_ne1000.pdf（3 规格与特性；5 面板与后部；6 键盘、LCD、LED、报警与状态信息；7 运行、清洗、失速；8 程序功能；9 程序录入；10 RS-232；11 TTL I/O；12.7 注射器内径与流量表；印刷第49–50页规格）",
+      "url": "https://syringepump.com/download/NE-1000%20Syringe%20Pump%20User%20Manual.pdf",
+      "accessed": "2026-10-04",
+      "notes_zh": "调研表主来源：0.73 µL/h（B-D 1 mL）、1699 mL/h（B-D 60 mL）、0.100–50.00 mm、41阶段、35/18 lbf、12 V DC 800 mA、8.75×5.75×4.5 in、1.63 kg",
+      "sha256": "cc8e7918ce93cd67a37ac12f1868d3091b54534abeda29d948dd76844d83bb66"
+    },
+    {
+      "source_id": "manufacturer_drawing",
+      "type": "web",
+      "reference": "New Era Pump Systems, Single Syringe Pump Model NE-1000, Pump Overall Dimensions, Rev. A, 5/8/08",
+      "locator": "source_cache/drawing_ne1000_revA.pdf（前视、顶视、左视与等轴测；drw-1.png）",
+      "url": "https://syringepump.com/download/NE-1000%20SINGLE%20SYRINGE%20PUMP%20Rev%20A.pdf",
+      "accessed": "2026-10-04",
+      "notes_zh": "外形8.75 in长、5.74 in深、4.53/4.47/4.12/2.88 in高、脚0.29 in、机构8.31 in、3.00/3.25 in宽、推块最大行程4.74 in（有限位夹4.46 in）、活塞法兰最厚0.187 in；后部电源开关与电源插座位置",
+      "sha256": "e544c48851a11419d48e00dc5770851566f8a35c9d8a3dcb5923d7e5f53f8ada"
+    },
+    {
+      "source_id": "manufacturer_photo",
+      "type": "web",
+      "reference": "New Era product photograph \"NE-1000 white.jpg\" and the manual front-panel figure (Figure 1)",
+      "locator": "source_cache/photo_ne1000_white.jpg、man-11.png",
+      "url": "https://www.syringepump.com/images/NE-1000%20white.jpg",
+      "accessed": "2026-10-04",
+      "notes_zh": "外观：红色楔形机身、黑色端板、推块与注射器夹、两根不锈钢导杆与丝杠、导杆上的限位夹、斜面键盘（4位LCD、8个LED、4个方向键、Rate/Volume/Diameter/方向/Start-Stop键）",
+      "sha256": "0d94f6071a843b4f28a91da1198082daa2942a627fde8f5dc5a4b5deecfec68c"
+    },
+    {
+      "source_id": "manufacturer_product_page",
+      "type": "web",
+      "reference": "New Era NE-1000 product page",
+      "locator": "source_cache/product_page.html",
+      "url": "https://www.syringepump.com/NE-1000.php",
+      "accessed": "2026-10-04",
+      "notes_zh": "型号说明与照片链接",
+      "sha256": "6586ad38075674c45b6ee053347ce408fb48c196b76e9e99a5d1df15b0e595f3"
+    },
+    {
+      "source_id": "nist_webbook",
+      "type": "publication",
+      "reference": "NIST Chemistry WebBook (SRD 69) via the CHEM-008 liquid template library",
+      "locator": "assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json",
+      "url": "https://webbook.nist.gov/chemistry/",
+      "accessed": "2026-10-03",
+      "notes_zh": "液体热物性（见各条记录的来源）",
+      "sha256": null
+    },
+    {
+      "source_id": "pubchem",
+      "type": "publication",
+      "reference": "PubChem PUG-View via the CHEM-008 liquid template library",
+      "locator": "assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/",
+      "accessed": "2026-10-03",
+      "notes_zh": "液体密度与黏度（见各条记录的来源）",
+      "sha256": null
+    },
+    {
+      "source_id": "liquid_library",
+      "type": "publication",
+      "reference": "CHEM-008 liquid template library (51 liquids)",
+      "locator": "assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json",
+      "notes_zh": "注射器中的液体：黏度（流阻）、密度；每条记录保留原始来源",
+      "sha256": null
+    }
+  ],
+  "components": [
+    {
+      "id": "chassis",
+      "name_zh": "机身",
+      "function_zh": "承载机构与键盘的红色楔形机身（内有步进电机、齿轮与电路板）",
+      "physical_meaning_zh": "结构件：机身（根）；装配原点 (0, 0, 0) m 相对 root，碰撞代理为0.222×0.0825×0.0658 m 长方体 等 4 个基元；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色喷塑钢板机身（#100-30 chassis与#100-31 cover）。",
+      "parent": "root",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "外形长、深、机身顶高与脚高为尺寸图；斜面坡度与前沿高度按侧视图估计。",
+      "objects": [
+        "newera_ne1000__chassis"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.22225,
+            0.08255,
+            0.065786
+          ],
+          "origin_m": [
+            0.0,
+            0.031623000000000005,
+            0.040258999999999996
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.22225,
+            0.06324600000000001,
+            0.013970000000000002
+          ],
+          "origin_m": [
+            0.0,
+            -0.041275,
+            0.014351
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.22225,
+            0.08176157026378592,
+            0.008
+          ],
+          "origin_m": [
+            0.0,
+            -0.03874001933204918,
+            0.0441498324200012
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.22225,
+            0.04824600000000001,
+            0.025907999999999994
+          ],
+          "origin_m": [
+            0.0,
+            -0.033775,
+            0.03429
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.9966999999999999,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.040258999999999996
+      ],
+      "simulation_inertia_kg_m2": [
+        0.002124986943028367,
+        0.004462131238085266,
+        0.005868198837234767
+      ],
+      "material": {
+        "base_color": [
+          0.43,
+          0.012,
+          0.018
+        ],
+        "metallic": 0.0,
+        "roughness": 0.42,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色喷塑钢板机身（#100-30 chassis与#100-31 cover）"
+    },
+    {
+      "id": "feet",
+      "name_zh": "橡胶脚",
+      "function_zh": "4个橡胶脚（#950-003）",
+      "physical_meaning_zh": "结构件：脚；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.198×0.126×0.00737 m 长方体；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色橡胶脚。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "脚高0.29 in为尺寸图；直径与位置按尺寸图估计。",
+      "objects": [
+        "newera_ne1000__feet"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.19825,
+            0.12579600000000002,
+            0.007365999999999999
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0036829999999999996
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.008,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.003683
+      ],
+      "simulation_inertia_kg_m2": [
+        1.0788161314666664e-05,
+        2.655637363733333e-05,
+        3.727219101066666e-05
+      ],
+      "material": {
+        "base_color": [
+          0.025,
+          0.025,
+          0.028
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色橡胶脚"
+    },
+    {
+      "id": "keypad_membrane",
+      "name_zh": "键盘面膜",
+      "function_zh": "斜面上的键盘面膜：单位与状态LED标注、按键说明、SyringePump.com标牌",
+      "physical_meaning_zh": "标识件：键盘面膜；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.198×0.0768×0.0006 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：印刷面膜（#100-07 keypad / main PCB assembly）。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "布局按手册面板图与照片；字样为通用字体重绘。",
+      "objects": [
+        "newera_ne1000__keypad_membrane"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.19824999999999998,
+            0.07676157026378591,
+            0.0006
+          ],
+          "origin_m": [
+            0.0,
+            -0.043398978287595556,
+            0.04589169965103065
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.003,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.043398975000000006,
+        0.0458917
+      ],
+      "simulation_inertia_kg_m2": [
+        1.4730847936806254e-06,
+        1.0417405087849602e-05,
+        1.0707210955831028e-05
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/membrane.png"
+      },
+      "appearance_zh": "印刷面膜（#100-07 keypad / main PCB assembly）"
+    },
+    {
+      "id": "lcd",
+      "name_zh": "LCD显示屏",
+      "function_zh": "4位反射式LCD（读数display.lcd_cells；左上RS-232接收三角）",
+      "physical_meaning_zh": "显示件：LCD（读数display.lcd_cells）；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.054×0.021×0.0008 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰绿反射式LCD窗口。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "LCD位置与大小按手册面板图与照片估计；4位七段加冒号为手册6.2。",
+      "objects": [
+        "newera_ne1000__lcd"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.05399999999999999,
+            0.021000000000000005,
+            0.0008
+          ],
+          "origin_m": [
+            -0.064125,
+            -0.02944638099931208,
+            0.057452018692805217
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.006,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.064125,
+        -0.029699879999999998,
+        0.057761435
+      ],
+      "simulation_inertia_kg_m2": [
+        2.2050002320345006e-07,
+        1.54656008241125e-06,
+        1.5899399407922e-06
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.25,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/lcd.png"
+      },
+      "appearance_zh": "浅灰绿反射式LCD窗口"
+    },
+    {
+      "id": "rs232_icon",
+      "name_zh": "RS-232接收三角",
+      "function_zh": "LCD左上角三角：RS-232有效接收时显示（indicator.rs232）",
+      "physical_meaning_zh": "指示件：RS-232三角；装配原点 (-0.086625, -0.0247352, 0.0619581) m 相对 lcd，碰撞代理为0.0028×0.00198×0.00168 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：LCD上的三角图标。",
+      "parent": "lcd",
+      "origin_m": [
+        -0.08662500000000001,
+        -0.02473523126530789,
+        0.06195813322572515
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "位置按手册面板图（LCD左上角）。",
+      "objects": [
+        "newera_ne1000__rs232_icon"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.002799999999999997,
+            0.001983249581396819,
+            0.00167569677977044
+          ],
+          "origin_m": [
+            0.0,
+            1.3979672801200937e-05,
+            0.00014072870619873806
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        1.3974999999999947e-05,
+        0.00014073
+      ],
+      "simulation_inertia_kg_m2": [
+        5.6177092104166656e-11,
+        8.873308741666667e-11,
+        9.811067135416665e-11
+      ],
+      "material": {
+        "base_color": [
+          0.5,
+          0.53,
+          0.48
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "LCD上的三角图标"
+    },
+    {
+      "id": "led_mm",
+      "name_zh": "mm LED",
+      "function_zh": "红色LED（indicator.mm）",
+      "physical_meaning_zh": "指示件：led_mm（indicator.mm）；装配原点 (-0.028125, -0.0235814, 0.0621278) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.028124999999999997,
+        -0.023581442270115566,
+        0.06212775325571304
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_mm"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0032000000000000015,
+            0.0027347967911892992,
+            0.002444019596924349
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359513068,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "led_ml",
+      "name_zh": "mL LED",
+      "function_zh": "红色LED（indicator.ml）",
+      "physical_meaning_zh": "指示件：led_ml（indicator.ml）；装配原点 (-0.028125, -0.0289962, 0.0576915) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.028124999999999997,
+        -0.028996235535113466,
+        0.057691537086799104
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_ml"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0032000000000000015,
+            0.0027347967911892992,
+            0.002444019596924356
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359513068,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "led_ul",
+      "name_zh": "µL LED",
+      "function_zh": "红色LED（indicator.ul）",
+      "physical_meaning_zh": "指示件：led_ul（indicator.ul）；装配原点 (-0.028125, -0.034411, 0.0532553) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.028124999999999997,
+        -0.034411028800111355,
+        0.05325532091788517
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_ul"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0032000000000000015,
+            0.0027347967911892992,
+            0.002444019596924356
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359512721,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "led_dispensed",
+      "name_zh": "Dispensed LED",
+      "function_zh": "红色LED（indicator.dispensed）",
+      "physical_meaning_zh": "指示件：led_dispensed（indicator.dispensed）；装配原点 (-0.001125, -0.0235814, 0.0621278) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.001125000000000001,
+        -0.023581442270115566,
+        0.06212775325571304
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_dispensed"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0031999999999999997,
+            0.0027347967911892992,
+            0.002444019596924349
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359513068,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "led_min",
+      "name_zh": "min LED",
+      "function_zh": "红色LED（indicator.min）",
+      "physical_meaning_zh": "指示件：led_min（indicator.min）；装配原点 (-0.001125, -0.0289962, 0.0576915) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.001125000000000001,
+        -0.028996235535113466,
+        0.057691537086799104
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_min"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0031999999999999997,
+            0.0027347967911892992,
+            0.002444019596924356
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359513068,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "led_hr",
+      "name_zh": "hr LED",
+      "function_zh": "红色LED（indicator.hr）",
+      "physical_meaning_zh": "指示件：led_hr（indicator.hr）；装配原点 (-0.001125, -0.034411, 0.0532553) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.001125000000000001,
+        -0.034411028800111355,
+        0.05325532091788517
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_hr"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0031999999999999997,
+            0.0027347967911892992,
+            0.002444019596924356
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359512721,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "led_withdraw",
+      "name_zh": "Withdraw LED",
+      "function_zh": "红色LED（indicator.withdraw）",
+      "physical_meaning_zh": "指示件：led_withdraw（indicator.withdraw）；装配原点 (0.034875, -0.0367317, 0.0513541) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        0.03487499999999999,
+        -0.036731654485110454,
+        0.05135408541692205
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_withdraw"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0031999999999999945,
+            0.0027347967911892992,
+            0.002444019596924356
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359513415,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "led_pumping",
+      "name_zh": "Pumping LED",
+      "function_zh": "红色LED（indicator.pumping）",
+      "physical_meaning_zh": "指示件：led_pumping（indicator.pumping）；装配原点 (0.068875, -0.0367317, 0.0513541) m 相对 chassis，碰撞代理为0.0032×0.00273×0.00244 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：红色圆形LED。",
+      "parent": "chassis",
+      "origin_m": [
+        0.06887499999999999,
+        -0.036731654485110454,
+        0.05135408541692205
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "8个红色圆形LED（手册6.3）；位置按手册面板图估计。",
+      "objects": [
+        "newera_ne1000__led_pumping"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0032000000000000084,
+            0.0027347967911892992,
+            0.002444019596924356
+          ],
+          "origin_m": [
+            0.0,
+            -0.00012973136359513415,
+            0.0002080175312818497
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.00012973,
+        0.00020802000000000006
+      ],
+      "simulation_inertia_kg_m2": [
+        4.4841216001333334e-10,
+        5.404411253466666e-10,
+        5.906377013333333e-10
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.035,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.2,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "红色圆形LED"
+    },
+    {
+      "id": "key_up_1",
+      "name_zh": "第1位方向键",
+      "function_zh": "第1位方向键（该位数字加1；与第2键同按设小数点）",
+      "physical_meaning_zh": "输入器件：key_up_1（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (-0.074495, -0.0456274, 0.044066) m 相对 chassis，碰撞代理为0.0095×0.0125×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.074495,
+        -0.04562738627760699,
+        0.04406601599656344
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_up_1"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0095,
+            0.0125,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005069949999999997,
+        0.0006188299999999999
+      ],
+      "simulation_inertia_kg_m2": [
+        3.300472196055e-08,
+        2.9024345645066666e-08,
+        3.4063709648816666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_up_1.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_up_2",
+      "name_zh": "第2位方向键",
+      "function_zh": "第2位方向键",
+      "physical_meaning_zh": "输入器件：key_up_2（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (-0.064125, -0.0456274, 0.044066) m 相对 chassis，碰撞代理为0.0095×0.0125×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.064125,
+        -0.04562738627760699,
+        0.04406601599656344
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_up_2"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0095,
+            0.0125,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005069949999999997,
+        0.0006188299999999999
+      ],
+      "simulation_inertia_kg_m2": [
+        3.300472196055e-08,
+        2.9024345645066666e-08,
+        3.4063709648816666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_up_2.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_up_3",
+      "name_zh": "第3位方向键",
+      "function_zh": "第3位方向键",
+      "physical_meaning_zh": "输入器件：key_up_3（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (-0.053755, -0.0456274, 0.044066) m 相对 chassis，碰撞代理为0.0095×0.0125×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.053755000000000004,
+        -0.04562738627760699,
+        0.04406601599656344
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_up_3"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0095,
+            0.0125,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005069949999999997,
+        0.0006188299999999999
+      ],
+      "simulation_inertia_kg_m2": [
+        3.300472196055e-08,
+        2.9024345645066666e-08,
+        3.4063709648816666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_up_3.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_up_4",
+      "name_zh": "第4位方向键",
+      "function_zh": "第4位方向键（开机时按住=复位程序）",
+      "physical_meaning_zh": "输入器件：key_up_4（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (-0.043385, -0.0456274, 0.044066) m 相对 chassis，碰撞代理为0.0095×0.0125×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.04338500000000001,
+        -0.04562738627760699,
+        0.04406601599656344
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_up_4"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0095,
+            0.0125,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005069949999999997,
+        0.0006188299999999999
+      ],
+      "simulation_inertia_kg_m2": [
+        3.300472196055e-08,
+        2.9024345645066666e-08,
+        3.4063709648816666e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_up_4.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_rate",
+      "name_zh": "Rate键",
+      "function_zh": "Rate键（显示/设定流量；按住为程序阶段号）",
+      "physical_meaning_zh": "输入器件：key_rate（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (-0.018125, -0.0467877, 0.0431154) m 相对 chassis，碰撞代理为0.018×0.0095×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.018125000000000002,
+        -0.046787699120106545,
+        0.04311539824608188
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_rate"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.018,
+            0.0095,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005070000000000001,
+        0.0006188350000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        2.0435990138683337e-08,
+        6.278036551041665e-08,
+        6.565562462826667e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_rate.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_volume",
+      "name_zh": "Volume键",
+      "function_zh": "Volume键（待排体积/已排体积切换；按住为程序功能）",
+      "physical_meaning_zh": "输入器件：key_volume（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.002875, -0.0467877, 0.0431154) m 相对 chassis，碰撞代理为0.018×0.0095×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0028750000000000026,
+        -0.046787699120106545,
+        0.04311539824608188
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_volume"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.018,
+            0.0095,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005070000000000001,
+        0.0006188350000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        2.0435990138683337e-08,
+        6.278036551041665e-08,
+        6.565562462826667e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_volume.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_diameter",
+      "name_zh": "Diameter键",
+      "function_zh": "Diameter键（显示/设定内径；按住为Setup）",
+      "physical_meaning_zh": "输入器件：key_diameter（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.023875, -0.0467877, 0.0431154) m 相对 chassis，碰撞代理为0.018×0.0095×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        0.023875000000000007,
+        -0.046787699120106545,
+        0.04311539824608188
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_diameter"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.018,
+            0.0095,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005070000000000001,
+        0.0006188350000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        2.0435990138683337e-08,
+        6.278036551041665e-08,
+        6.565562462826667e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_diameter.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_direction",
+      "name_zh": "方向键",
+      "function_zh": "方向键（注入/抽取切换）",
+      "physical_meaning_zh": "输入器件：key_direction（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.045875, -0.0467877, 0.0431154) m 相对 chassis，碰撞代理为0.018×0.0095×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：浅灰薄膜按键。",
+      "parent": "chassis",
+      "origin_m": [
+        0.045875,
+        -0.046787699120106545,
+        0.04311539824608188
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_direction"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.018,
+            0.0095,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005070000000000001,
+        0.0006188350000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        2.0435990138683337e-08,
+        6.278036551041665e-08,
+        6.565562462826667e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_direction.png"
+      },
+      "appearance_zh": "浅灰薄膜按键"
+    },
+    {
+      "id": "key_start",
+      "name_zh": "Start/Stop键",
+      "function_zh": "Start/Stop键（启动、暂停、复位；按住1 s清洗）",
+      "physical_meaning_zh": "输入器件：key_start（弹簧键），按下调用keypad.press；关节：沿 (-0.000, 0.634, -0.774) 平移 0–0.001 m，瞬时按键（不镜像状态）；装配原点 (0.080875, -0.0467877, 0.0431154) m 相对 chassis，碰撞代理为0.026×0.017×0.0016 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：深灰Start/Stop键。",
+      "parent": "chassis",
+      "origin_m": [
+        0.080875,
+        -0.046787699120106545,
+        0.04311539824608188
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          -0.0,
+          0.6337451669877051,
+          -0.7735418949996992
+        ],
+        "limits": [
+          0.0,
+          0.001
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按键位置与大小按手册面板图与照片；行程为工程表示。",
+      "objects": [
+        "newera_ne1000__key_start"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.026,
+            0.017,
+            0.0016
+          ],
+          "origin_m": [
+            0.0,
+            -0.0005069961335901693,
+            0.000618833515999756
+          ],
+          "rpy_rad": [
+            0.6863852485172168,
+            -0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0005069949999999997,
+        0.0006188350000000003
+      ],
+      "simulation_inertia_kg_m2": [
+        5.748281554883334e-08,
+        1.3671200806148333e-07,
+        1.4610414082068331e-07
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key_start.png"
+      },
+      "appearance_zh": "深灰Start/Stop键"
+    },
+    {
+      "id": "rear_print",
+      "name_zh": "后板标识",
+      "function_zh": "后部接口标识与型号标签（To Computer、To Network、TTL I/O、12 VDC）",
+      "physical_meaning_zh": "标识件：后板；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.222×0.0005×0.0658 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：后板印刷。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按手册零件图、面板图、尺寸图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "newera_ne1000__rear_print"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.22225,
+            0.0005000000000000004,
+            0.065786
+          ],
+          "origin_m": [
+            0.0,
+            0.073148,
+            0.040258999999999996
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.073098,
+        0.040259
+      ],
+      "simulation_inertia_kg_m2": [
+        3.1812664966666673e-07,
+        4.360631024666667e-06,
+        4.042506041666667e-06
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/rear.png"
+      },
+      "appearance_zh": "后板印刷"
+    },
+    {
+      "id": "power_switch",
+      "name_zh": "电源开关",
+      "function_zh": "后部电源开关（翘板，按一下切换开/关）",
+      "physical_meaning_zh": "输入器件：power_switch（弹簧键），按下调用power.toggle；关节：沿 −Y 平移 0–0.0015 m，瞬时按键（不镜像状态）；装配原点 (-0.097155, 0.075898, 0.05969) m 相对 chassis，碰撞代理为0.013×0.006×0.019 m 长方体；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色翘板开关（#920-001）。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.097155,
+        0.07589800000000001,
+        0.05969
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "limits": [
+          0.0,
+          0.0015
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "后部左上位置为尺寸图与手册；开关外形按照片估计。",
+      "objects": [
+        "newera_ne1000__power_switch"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.013000000000000012,
+            0.006000000000000005,
+            0.019000000000000003
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.00035121999999999996,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        1.6913445914733334e-07,
+        2.2083333333333335e-07,
+        8.913445914733334e-08
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色翘板开关（#920-001）"
+    },
+    {
+      "id": "power_jack",
+      "name_zh": "电源插座",
+      "function_zh": "12 V DC电源输入插座（2.1 mm中心正；接口power_jack）",
+      "physical_meaning_zh": "连接件：电源插座（power_jack）；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为半径 0.0045 m、高 0.0045 m 圆柱；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：镀镍圆形DC插座（#925-003）。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "后部左下位置为尺寸图与手册。",
+      "objects": [
+        "newera_ne1000__power_jack"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0045,
+            0.0045
+          ],
+          "origin_m": [
+            -0.097155,
+            0.075148,
+            0.021589999999999998
+          ],
+          "rpy_rad": [
+            1.5707963267948966,
+            0,
+            0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.006,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.09715499999999999,
+        0.07539799999999999,
+        0.021589999999999998
+      ],
+      "simulation_inertia_kg_m2": [
+        5.299999999999993e-08,
+        8.099999999999993e-08,
+        5.29999999999999e-08
+      ],
+      "material": {
+        "base_color": [
+          0.66,
+          0.66,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "镀镍圆形DC插座（#925-003）"
+    },
+    {
+      "id": "rs232_to_computer",
+      "name_zh": "RS-232插座（To Computer）",
+      "function_zh": "RJ-11 RS-232插座（接电脑；接口rs232_to_computer）",
+      "physical_meaning_zh": "连接件：RS-232（rs232_to_computer）；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.0116×0.0019×0.0104 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：米白色RJ-11插座。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "手册10：后部两个方形RJ-11插座；位置为估计。",
+      "objects": [
+        "newera_ne1000__rs232_to_computer"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0116,
+            0.001899999999999999,
+            0.0104
+          ],
+          "origin_m": [
+            -0.045085,
+            0.073848,
+            0.02413
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.045085,
+        0.073848,
+        0.02413
+      ],
+      "simulation_inertia_kg_m2": [
+        3.7256666666666665e-08,
+        8.090666666666666e-08,
+        4.605666666666666e-08
+      ],
+      "material": {
+        "base_color": [
+          0.75,
+          0.76,
+          0.74
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "米白色RJ-11插座"
+    },
+    {
+      "id": "rs232_to_network",
+      "name_zh": "RS-232插座（To Network）",
+      "function_zh": "RJ-11 RS-232插座（接下一台泵；接口rs232_to_network）",
+      "physical_meaning_zh": "连接件：RS-232（rs232_to_network）；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.0116×0.0019×0.0104 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：米白色RJ-11插座。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "手册10：后部两个方形RJ-11插座；位置为估计。",
+      "objects": [
+        "newera_ne1000__rs232_to_network"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0116,
+            0.001899999999999999,
+            0.0104
+          ],
+          "origin_m": [
+            -0.02476500000000001,
+            0.073848,
+            0.02413
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.024765,
+        0.073848,
+        0.02413
+      ],
+      "simulation_inertia_kg_m2": [
+        3.7256666666666665e-08,
+        8.090666666666666e-08,
+        4.605666666666666e-08
+      ],
+      "material": {
+        "base_color": [
+          0.75,
+          0.76,
+          0.74
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "米白色RJ-11插座"
+    },
+    {
+      "id": "ttl_io",
+      "name_zh": "TTL I/O接口",
+      "function_zh": "TTL I/O接口（DB-9；运行触发、方向、事件、程序输出/输入、电机运转；接口ttl_io）",
+      "physical_meaning_zh": "连接件：TTL I/O（ttl_io）；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.031×0.0062×0.0124 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：镀镍DB-9母座。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "手册11：TTL I/O接口在后部；DB-9外形与位置为估计。",
+      "objects": [
+        "newera_ne1000__ttl_io"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.031,
+            0.006199999999999997,
+            0.012399999999999998
+          ],
+          "origin_m": [
+            0.015875,
+            0.07599800000000001,
+            0.036829999999999995
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.012,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.015875,
+        0.07599800000000001,
+        0.03683
+      ],
+      "simulation_inertia_kg_m2": [
+        1.921999999999999e-07,
+        1.1147599999999999e-06,
+        9.9944e-07
+      ],
+      "material": {
+        "base_color": [
+          0.66,
+          0.66,
+          0.64
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "镀镍DB-9母座"
+    },
+    {
+      "id": "end_plate",
+      "name_zh": "端板",
+      "function_zh": "固定导杆与丝杠一端的端板",
+      "physical_meaning_zh": "结构件：端板；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.0066×0.0762×0.0404 m 长方体；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色阳极氧化铝端板。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "高4.47 in、宽3.00 in为尺寸图；厚度按顶视图估计。",
+      "objects": [
+        "newera_ne1000__end_plate"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.006603999999999999,
+            0.07619999999999999,
+            0.04038599999999999
+          ],
+          "origin_m": [
+            -0.101727,
+            0.03162300000000001,
+            0.09334499999999998
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.085,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.101727,
+        0.031623,
+        0.093095
+      ],
+      "simulation_inertia_kg_m2": [
+        5.296991038833333e-05,
+        1.2149884501666669e-05,
+        4.143787411333333e-05
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色阳极氧化铝端板"
+    },
+    {
+      "id": "guide_rod_rear",
+      "name_zh": "导杆（后）",
+      "function_zh": "推块滑动的导杆（2根）",
+      "physical_meaning_zh": "结构件：guide_rod_rear；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为半径 0.00317 m、高 0.164 m 圆柱；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：不锈钢磨光导杆Ø1/4 in。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "两根导杆位置按手册零件图；直径1/4 in为工程估计。",
+      "objects": [
+        "newera_ne1000__guide_rod_rear"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.003175,
+            0.16392400000000001
+          ],
+          "origin_m": [
+            -0.021066999999999995,
+            0.046101,
+            0.08635999999999999
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.036,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.021067,
+        0.046101,
+        0.08635999999999999
+      ],
+      "simulation_inertia_kg_m2": [
+        2.4193500000000035e-07,
+        8.073420082799997e-05,
+        8.073420082799997e-05
+      ],
+      "material": {
+        "base_color": [
+          0.7,
+          0.71,
+          0.72
+        ],
+        "metallic": 1.0,
+        "roughness": 0.18,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢磨光导杆Ø1/4 in"
+    },
+    {
+      "id": "guide_rod_front",
+      "name_zh": "导杆（前，带限位夹）",
+      "function_zh": "推块滑动的导杆（2根）",
+      "physical_meaning_zh": "结构件：guide_rod_front；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为半径 0.00317 m、高 0.164 m 圆柱；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：不锈钢磨光导杆Ø1/4 in。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "两根导杆位置按手册零件图；直径1/4 in为工程估计。",
+      "objects": [
+        "newera_ne1000__guide_rod_front"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.003175,
+            0.16392400000000001
+          ],
+          "origin_m": [
+            -0.021066999999999995,
+            0.010795000000000006,
+            0.08635999999999999
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.036,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.021067,
+        0.010794999999999999,
+        0.08635999999999999
+      ],
+      "simulation_inertia_kg_m2": [
+        2.419350000000003e-07,
+        8.073420082799997e-05,
+        8.073420082799997e-05
+      ],
+      "material": {
+        "base_color": [
+          0.7,
+          0.71,
+          0.72
+        ],
+        "metallic": 1.0,
+        "roughness": 0.18,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "不锈钢磨光导杆Ø1/4 in"
+    },
+    {
+      "id": "drive_screw",
+      "name_zh": "丝杠",
+      "function_zh": "步进电机经齿轮驱动的丝杠（螺距0.05 in），带动推块",
+      "physical_meaning_zh": "传动件：丝杠；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为半径 0.00381 m、高 0.164 m 圆柱；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：钢制丝杠。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "丝杠在后侧（手册零件图）；螺距0.05 in为手册；直径为工程估计。",
+      "objects": [
+        "newera_ne1000__drive_screw"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0038099999999999996,
+            0.16383
+          ],
+          "origin_m": [
+            -0.021113999999999994,
+            0.054991000000000005,
+            0.091948
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.045,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.021113999999999997,
+        0.054991,
+        0.091948
+      ],
+      "simulation_inertia_kg_m2": [
+        4.3548300000000017e-07,
+        0.000100868749875,
+        0.000100868749875
+      ],
+      "material": {
+        "base_color": [
+          0.55,
+          0.56,
+          0.57
+        ],
+        "metallic": 1.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "钢制丝杠"
+    },
+    {
+      "id": "holder_block",
+      "name_zh": "注射器夹块",
+      "function_zh": "放注射器筒身的V形槽夹块（内有电机与齿轮罩）",
+      "physical_meaning_zh": "结构件：注射器夹块（syringe_v_slot）；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.0514×0.0818×3.91e-05 m 长方体 等 3 个基元；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色阳极氧化铝夹块（V形槽）。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "高4.12 in、宽3.25 in与左端面=行程终点为尺寸图；V形槽按零件图与照片（90°槽）。",
+      "objects": [
+        "newera_ne1000__holder_block"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.05144999999999999,
+            0.08175,
+            3.906063311549801e-05
+          ],
+          "origin_m": [
+            0.08032,
+            0.031223000000000008,
+            0.07317153031655774
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.05144999999999999,
+            0.022400836379869293,
+            0.03145693936688451
+          ],
+          "origin_m": [
+            0.08032,
+            0.0015484181899346524,
+            0.08891953031655775
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.05144999999999999,
+            0.0216008363798693,
+            0.03145693936688451
+          ],
+          "origin_m": [
+            0.08032,
+            0.06129758181006536,
+            0.08891953031655775
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.17,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.08032,
+        0.031222999999999997,
+        0.0889
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00010873002397666666,
+        5.155392397666668e-05,
+        0.00013217733749999998
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色阳极氧化铝夹块（V形槽）"
+    },
+    {
+      "id": "retainer_bracket",
+      "name_zh": "注射器固定架",
+      "function_zh": "卡住注射器筒身法兰的固定架（U形口）",
+      "physical_meaning_zh": "结构件：固定架；装配原点 (0, 0, 0) m 相对 chassis，碰撞代理为0.0032×0.0258×0.035 m 长方体 等 3 个基元；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色铝板固定架。",
+      "parent": "chassis",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按手册零件图、面板图、尺寸图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "newera_ne1000__retainer_bracket"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0032000000000000015,
+            0.025775,
+            0.03499600000000001
+          ],
+          "origin_m": [
+            0.052995000000000014,
+            0.0032355000000000057,
+            0.09065000000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.0032000000000000015,
+            0.024975000000000004,
+            0.03499600000000001
+          ],
+          "origin_m": [
+            0.052995000000000014,
+            0.05961050000000001,
+            0.09065000000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.0032000000000000015,
+            0.031,
+            0.005327999999999999
+          ],
+          "origin_m": [
+            0.052995000000000014,
+            0.031623000000000005,
+            0.075816
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.022,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.052995,
+        0.031222999999999997,
+        0.09065
+      ],
+      "simulation_inertia_kg_m2": [
+        1.449760127933333e-05,
+        2.2640933626666665e-06,
+        1.227105458333333e-05
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色铝板固定架"
+    },
+    {
+      "id": "retainer_thumbscrew_rear",
+      "name_zh": "固定架指旋螺钉（后）",
+      "function_zh": "压紧固定架的指旋螺钉（2颗，两侧各一）",
+      "physical_meaning_zh": "紧固件：固定架指旋螺钉；装配原点 (0, 0, 0) m 相对 retainer_bracket，碰撞代理为半径 0.0045 m、高 0.006 m 圆柱；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色滚花指旋螺钉。",
+      "parent": "retainer_bracket",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按手册零件图、面板图、尺寸图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "newera_ne1000__retainer_thumbscrew_rear"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0045,
+            0.006
+          ],
+          "origin_m": [
+            0.057595000000000014,
+            0.066598,
+            0.10764800000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.057595,
+        0.06659799999999999,
+        0.10727300000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        4.968749999999993e-08,
+        4.968749999999993e-08,
+        5.399999999999993e-08
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色滚花指旋螺钉"
+    },
+    {
+      "id": "retainer_thumbscrew_front",
+      "name_zh": "固定架指旋螺钉（前）",
+      "function_zh": "压紧固定架的指旋螺钉（2颗，两侧各一）",
+      "physical_meaning_zh": "紧固件：固定架指旋螺钉；装配原点 (0, 0, 0) m 相对 retainer_bracket，碰撞代理为半径 0.0045 m、高 0.006 m 圆柱；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色滚花指旋螺钉。",
+      "parent": "retainer_bracket",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按手册零件图、面板图、尺寸图与照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "newera_ne1000__retainer_thumbscrew_front"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0045,
+            0.006
+          ],
+          "origin_m": [
+            0.057595000000000014,
+            -0.004151999999999994,
+            0.10764800000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.057595,
+        -0.004152,
+        0.10727300000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        4.968749999999996e-08,
+        4.968749999999993e-08,
+        5.3999999999999954e-08
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色滚花指旋螺钉"
+    },
+    {
+      "id": "syringe_clamp",
+      "name_zh": "注射器压板",
+      "function_zh": "从上方压住注射器筒身的压板与指旋螺钉",
+      "physical_meaning_zh": "紧固件：注射器压板；装配原点 (0, 0, 0) m 相对 holder_block，碰撞代理为0.014×0.0455×0.004 m 长方体 等 3 个基元；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色压板与滚花螺钉。",
+      "parent": "holder_block",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "压板在夹块前上方（零件图13号）；顶高4.53 in为尺寸图。",
+      "objects": [
+        "newera_ne1000__syringe_clamp"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.013999999999999999,
+            0.04545693936688451,
+            0.0040000000000000036
+          ],
+          "origin_m": [
+            0.07589500000000002,
+            0.014894530316557748,
+            0.11128
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.013999999999999999,
+            0.008,
+            0.004631999999999997
+          ],
+          "origin_m": [
+            0.07589500000000002,
+            -0.003833939366884507,
+            0.106964
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0055,
+            0.004
+          ],
+          "origin_m": [
+            0.075895,
+            0.030623000000000004,
+            0.113062
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.02,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.07589499999999999,
+        0.01489453,
+        0.10935500000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        3.661021316939332e-06,
+        5.43798993333333e-07,
+        3.7705556569393325e-06
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色压板与滚花螺钉"
+    },
+    {
+      "id": "hex_wrench",
+      "name_zh": "六角扳手",
+      "function_zh": "工具座中的六角扳手（调整防虹吸板）",
+      "physical_meaning_zh": "附件：六角扳手；装配原点 (0, 0, 0) m 相对 holder_block，碰撞代理为0.037×0.006×0.01 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：钢制六角扳手。",
+      "parent": "holder_block",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "零件图9号（工具座在夹块后上方）；尺寸为估计。",
+      "objects": [
+        "newera_ne1000__hex_wrench"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.037000000000000005,
+            0.0059999999999999915,
+            0.009999999999999995
+          ],
+          "origin_m": [
+            0.078545,
+            0.06609800000000002,
+            0.109648
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.006,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.078545,
+        0.066098,
+        0.109648
+      ],
+      "simulation_inertia_kg_m2": [
+        6.799999999999997e-08,
+        7.345000000000001e-07,
+        7.025000000000003e-07
+      ],
+      "material": {
+        "base_color": [
+          0.55,
+          0.56,
+          0.57
+        ],
+        "metallic": 1.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "钢制六角扳手"
+    },
+    {
+      "id": "pusher_block",
+      "name_zh": "推块",
+      "function_zh": "推块：沿+X的行程=pusher.position_m（0为靠端板，注入时增大；运行层单向镜像，推块带着注射器活塞移动）",
+      "physical_meaning_zh": "运动件：推块（棱柱关节，pusher.position_m）；关节：沿 +X 平移 0–0.120396 m，状态 pusher.position_m；装配原点 (-0.071501, 0.031623, 0.09398) m 相对 chassis，碰撞代理为0.0269×0.0722×0.0325 m 长方体；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色阳极氧化铝推块。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.071501,
+        0.031623000000000005,
+        0.09398
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          1,
+          0,
+          0
+        ],
+        "limits": [
+          0.0,
+          0.120396
+        ],
+        "state_id": "pusher.position_m",
+        "evidence": "manufacturer_datasheet"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "行程4.74 in与0位置靠端板为尺寸图；推块外形按尺寸图前视与零件图估计。",
+      "objects": [
+        "newera_ne1000__pusher_block"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.026924000000000003,
+            0.0722,
+            0.03251200000000001
+          ],
+          "origin_m": [
+            -0.013462000000000002,
+            0.0,
+            -0.002793999999999991
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.11,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.013662,
+        0.0,
+        -0.0027940000000000005
+      ],
+      "simulation_inertia_kg_m2": [
+        5.7473809653333334e-05,
+        1.613839993333333e-05,
+        5.4233323613333336e-05
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色阳极氧化铝推块"
+    },
+    {
+      "id": "drive_nut_release",
+      "name_zh": "驱动螺母键",
+      "function_zh": "按下松开驱动螺母、可手动滑动推块（接口drive_nut_button）",
+      "physical_meaning_zh": "操作件：驱动螺母键（drive_nut_button）；装配原点 (0.071501, -0.031623, -0.09398) m 相对 pusher_block，碰撞代理为半径 0.005 m、高 0.004 m 圆柱；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：推块顶部的圆形按键。",
+      "parent": "pusher_block",
+      "origin_m": [
+        0.071501,
+        -0.031623000000000005,
+        -0.09398
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "零件图5号（推块顶部后侧）；尺寸为估计。",
+      "objects": [
+        "newera_ne1000__drive_nut_release"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.005,
+            0.004
+          ],
+          "origin_m": [
+            -0.084963,
+            0.058293000000000005,
+            0.10944200000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.004,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.08496300000000001,
+        0.058293,
+        0.109792
+      ],
+      "simulation_inertia_kg_m2": [
+        4.069666666666671e-08,
+        4.069666666666666e-08,
+        6.666666666666664e-08
+      ],
+      "material": {
+        "base_color": [
+          0.025,
+          0.025,
+          0.028
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "推块顶部的圆形按键"
+    },
+    {
+      "id": "anti_siphon_plate",
+      "name_zh": "防虹吸板",
+      "function_zh": "把活塞法兰夹在推块面上的防虹吸板（抽取时拉活塞）",
+      "physical_meaning_zh": "夹持件：防虹吸板（plunger_retainer）；装配原点 (0.071501, -0.031623, -0.09398) m 相对 pusher_block，碰撞代理为0.002×0.04×0.0045 m 长方体；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色铝板（U形口）。",
+      "parent": "pusher_block",
+      "origin_m": [
+        0.071501,
+        -0.031623000000000005,
+        -0.09398
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "零件图6号；尺寸为估计。",
+      "objects": [
+        "newera_ne1000__anti_siphon_plate"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0020000000000000018,
+            0.039999999999999994,
+            0.004500000000000004
+          ],
+          "origin_m": [
+            -0.06790099999999999,
+            0.031623000000000005,
+            0.10873
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.008,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.067901,
+        0.031623,
+        0.09248
+      ],
+      "simulation_inertia_kg_m2": [
+        1.979333333333333e-06,
+        9.153333333333329e-07,
+        1.0693333333333335e-06
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色铝板（U形口）"
+    },
+    {
+      "id": "antisiphon_screw",
+      "name_zh": "防虹吸板调节螺钉",
+      "function_zh": "调节防虹吸板间隙的滚花螺钉",
+      "physical_meaning_zh": "紧固件：防虹吸板调节螺钉；装配原点 (0.071501, -0.031623, -0.09398) m 相对 pusher_block，碰撞代理为半径 0.004 m、高 0.006 m 圆柱；尺寸按手册零件图、面板图与照片估计，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色滚花螺钉。",
+      "parent": "pusher_block",
+      "origin_m": [
+        0.071501,
+        -0.031623000000000005,
+        -0.09398
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "零件图3号；位置与尺寸为估计。",
+      "objects": [
+        "newera_ne1000__antisiphon_screw"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.004,
+            0.006
+          ],
+          "origin_m": [
+            -0.07950099999999999,
+            0.0016230000000000064,
+            0.11044200000000001
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.003,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        -0.079501,
+        0.001623,
+        0.110292
+      ],
+      "simulation_inertia_kg_m2": [
+        2.5922500000000003e-08,
+        2.592250000000003e-08,
+        3.2000000000000035e-08
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色滚花螺钉"
+    },
+    {
+      "id": "plunger",
+      "name_zh": "注射器活塞",
+      "function_zh": "B-D 60 mL注射器的活塞杆与法兰（法兰夹在推块与防虹吸板之间，随推块运动）",
+      "physical_meaning_zh": "注射器：活塞杆；装配原点 (0.071501, -0.031623, -0.09398) m 相对 pusher_block，碰撞代理为半径 0.011 m、高 0.122 m 圆柱 等 2 个基元；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量为注射器工程估计）。外观：半透明白色塑料活塞杆（十字截面）。",
+      "parent": "pusher_block",
+      "origin_m": [
+        0.071501,
+        -0.031623000000000005,
+        -0.09398
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "注射器为参考场景的B-D 60 mL：活塞长度使其在停放的限位夹前2 mm（行程4.38 in）到底（运行层），外形为工程值。",
+      "objects": [
+        "newera_ne1000__plunger"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.011,
+            0.122112
+          ],
+          "origin_m": [
+            -0.010444999999999992,
+            0.031623000000000005,
+            0.09398
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0145,
+            0.0025000000000000022
+          ],
+          "origin_m": [
+            -0.070251,
+            0.031623000000000005,
+            0.09398
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.012,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "注射器构件（不计入泵体1.63 kg）：塑料件工程估计",
+      "simulation_center_of_mass_m": [
+        -0.010444999999999996,
+        0.031623,
+        0.09398
+      ],
+      "simulation_inertia_kg_m2": [
+        1.6819999999999997e-06,
+        1.5752340544000003e-05,
+        1.5752340544000003e-05
+      ],
+      "material": {
+        "base_color": [
+          0.88,
+          0.89,
+          0.9
+        ],
+        "metallic": 0.0,
+        "roughness": 0.35,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "半透明白色塑料活塞杆（十字截面）"
+    },
+    {
+      "id": "plunger_tip",
+      "name_zh": "活塞胶塞",
+      "function_zh": "活塞头的黑色橡胶塞（与筒内壁密封；位置即注射器内液体的后端）",
+      "physical_meaning_zh": "注射器：活塞胶塞；装配原点 (0, 0, 0) m 相对 plunger，碰撞代理为半径 0.0133 m、高 0.0075 m 圆柱；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量为注射器工程估计）。外观：黑色丁基橡胶塞。",
+      "parent": "plunger",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "胶塞外径=手册内径26.59 mm；长度与筋为工程值。",
+      "objects": [
+        "newera_ne1000__plunger_tip"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.013295,
+            0.0075
+          ],
+          "origin_m": [
+            0.05436100000000001,
+            0.031623000000000005,
+            0.09398
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.003,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "注射器构件（不计入泵体1.63 kg）：塑料件工程估计",
+      "simulation_center_of_mass_m": [
+        0.05436100000000001,
+        0.031623,
+        0.09398000000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        3.535140499999999e-07,
+        1.9081952499999985e-07,
+        1.90819525e-07
+      ],
+      "material": {
+        "base_color": [
+          0.025,
+          0.025,
+          0.028
+        ],
+        "metallic": 0.0,
+        "roughness": 0.85,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色丁基橡胶塞"
+    },
+    {
+      "id": "syringe_barrel",
+      "name_zh": "注射器筒",
+      "function_zh": "B-D 60 mL注射器筒（内径26.59 mm；筒身法兰卡在固定架上；鲁尔接头接出口，接口syringe_outlet）",
+      "physical_meaning_zh": "注射器：筒（syringe_v_slot，syringe_outlet）；装配原点 (0, 0, 0) m 相对 holder_block，碰撞代理为半径 0.0147 m、高 0.121 m 圆柱 等 3 个基元；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量为注射器工程估计）。外观：透明聚丙烯注射器筒。",
+      "parent": "holder_block",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "内径26.59 mm为手册表；外径、长度、法兰与鲁尔接头为工程值。",
+      "objects": [
+        "newera_ne1000__syringe_barrel"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0147,
+            0.12050000000000001
+          ],
+          "origin_m": [
+            0.10914500000000002,
+            0.031623000000000005,
+            0.09398
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        },
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.004,
+            0.016000000000000014
+          ],
+          "origin_m": [
+            0.17739500000000002,
+            0.031623000000000005,
+            0.09398
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size_m": [
+            0.0025000000000000022,
+            0.05,
+            0.036000000000000004
+          ],
+          "origin_m": [
+            0.05014500000000001,
+            0.031623000000000005,
+            0.09398
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.021,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "注射器构件（不计入泵体1.63 kg）：塑料件工程估计",
+      "simulation_center_of_mass_m": [
+        0.117145,
+        0.031623,
+        0.09398000000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        6.643e-06,
+        3.4874437500000005e-05,
+        3.698143750000001e-05
+      ],
+      "material": {
+        "base_color": [
+          0.93,
+          0.94,
+          0.95
+        ],
+        "metallic": 0.0,
+        "roughness": 0.15,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.3,
+        "texture": null
+      },
+      "appearance_zh": "透明聚丙烯注射器筒"
+    },
+    {
+      "id": "syringe_print",
+      "name_zh": "注射器刻度",
+      "function_zh": "注射器筒正面的0–60 mL刻度（1 mL小格，10 mL标数）",
+      "physical_meaning_zh": "注射器：刻度；装配原点 (0, 0, 0) m 相对 syringe_barrel，碰撞代理为半径 0.002 m、高 0.118 m 圆柱；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量为注射器工程估计）。外观：黑色印刷刻度。",
+      "parent": "syringe_barrel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "刻度按内径26.59 mm的截面积换算（1 mL=1.80 mm）；字样为通用字体。",
+      "objects": [
+        "newera_ne1000__syringe_print"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.002,
+            0.11800000000000001
+          ],
+          "origin_m": [
+            0.11039500000000002,
+            0.022803000000000004,
+            0.09398
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0001,
+      "simulation_mass_evidence": "engineering_assumption",
+      "simulation_mass_note": "注射器构件（不计入泵体1.63 kg）：塑料件工程估计",
+      "simulation_center_of_mass_m": [
+        0.110395,
+        0.0204855,
+        0.09398000000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        5.972486736013334e-09,
+        1.2154639819434666e-07,
+        1.1649275520833333e-07
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.99,
+        "texture": "textures/syringe.png"
+      },
+      "appearance_zh": "黑色印刷刻度"
+    },
+    {
+      "id": "guide_collar",
+      "name_zh": "导杆限位夹",
+      "function_zh": "导杆限位夹：左端面位置=collar.joint_m（推块右端面碰到即失速；不用时推到注射器夹块旁停放=4.46 in，限位夹始终在导杆上）",
+      "physical_meaning_zh": "运动件：导杆限位夹（棱柱关节，collar.joint_m；collar_clamp）；关节：沿 +X 平移 0–0.113284 m，状态 collar.joint_m；装配原点 (-0.071501, 0.010795, 0.08636) m 相对 chassis，碰撞代理为半径 0.0076 m、高 0.00711 m 圆柱；尺寸或规格为厂家尺寸图与手册，单件质量/惯量/摩擦未知（URDF质量为厂家泵体1.63 kg的工程拆分）。外观：黑色限位夹（带指旋螺钉）。",
+      "parent": "chassis",
+      "origin_m": [
+        -0.071501,
+        0.010795000000000006,
+        0.08635999999999999
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          1,
+          0,
+          0
+        ],
+        "limits": [
+          0.0,
+          0.113284
+        ],
+        "state_id": "collar.joint_m",
+        "evidence": "manufacturer_datasheet"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "限位夹长0.28 in由尺寸图4.74/4.46 in之差；外径与螺钉为估计。",
+      "objects": [
+        "newera_ne1000__guide_collar"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0076,
+            0.007112000000000007
+          ],
+          "origin_m": [
+            0.0035560000000000036,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "泵体1.63 kg（手册）中各构件取工程估计质量、机身取余量",
+      "simulation_center_of_mass_m": [
+        0.003556,
+        0.0,
+        0.0028499999999999997
+      ],
+      "simulation_inertia_kg_m2": [
+        5.565416666666667e-07,
+        4.061587866666666e-07,
+        2.3468378666666668e-07
+      ],
+      "material": {
+        "base_color": [
+          0.022,
+          0.022,
+          0.025
+        ],
+        "metallic": 0.25,
+        "roughness": 0.38,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色限位夹（带指旋螺钉）"
+    }
+  ],
+  "root_object": "newera_ne1000__root",
+  "joint_definitions": {
+    "key_up_1": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_up_1_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_up_2": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_up_2_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_up_3": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_up_3_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_up_4": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_up_4_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_rate": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_rate_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_volume": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_volume_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_diameter": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_diameter_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_direction": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_direction_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "key_start": {
+      "type": "prismatic",
+      "axis": [
+        -0.0,
+        0.6337451669877051,
+        -0.7735418949996992
+      ],
+      "limits_m": [
+        0.0,
+        0.001
+      ],
+      "accessor": "joint[key_start_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "power_switch": {
+      "type": "prismatic",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limits_m": [
+        0.0,
+        0.0015
+      ],
+      "accessor": "joint[power_switch_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "pusher_block": {
+      "type": "prismatic",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits_m": [
+        0.0,
+        0.120396
+      ],
+      "accessor": "joint[pusher_block_joint]",
+      "state_id": "pusher.position_m",
+      "range_evidence": "manufacturer_datasheet"
+    },
+    "guide_collar": {
+      "type": "prismatic",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits_m": [
+        0.0,
+        0.113284
+      ],
+      "accessor": "joint[guide_collar_joint]",
+      "state_id": "collar.joint_m",
+      "range_evidence": "manufacturer_datasheet"
+    }
+  },
+  "artifacts": {
+    "model_glb": "model.glb",
+    "model_urdf": "model.urdf",
+    "meshes_dir": "meshes",
+    "model_blend": "model.blend"
+  },
+  "limitations_zh": [
+    "外形8.75 in长×5.74 in深×4.53 in高（端板4.47 in、注射器夹块4.12 in、机身顶2.88 in、脚0.29 in）、机构8.31 in（端板3.00 in、夹块3.25 in宽）、推块行程4.74 in（有限位夹4.46 in）、整机1.63 kg为厂家尺寸图与手册。",
+    "外观（红色楔形机身、斜面键盘与LCD/LED/9键、黑色端板/推块/注射器夹块、两根不锈钢导杆与丝杠、导杆限位夹、夹块V形槽、固定架与两颗指旋螺钉、注射器压板、六角扳手、后部电源开关/电源插座/两个RJ-11/TTL I/O）按手册零件图、面板图与照片估计；字样为通用字体重绘，不复制New Era标志。",
+    "工程构件：斜面坡度与前沿高度（由尺寸图侧视估计）、按键与LED布局、导杆与丝杠直径、推块与夹块形状、B-D 60 mL注射器外形（内径26.59 mm为手册表值）；电机、齿轮与电路板没有建模（运行层表示）。",
+    "参考姿态：推块靠端板（行程0）、限位夹靠推块、按键弹起、LCD与LED熄灭（关机）；V形槽中放一支B-D 60 mL注射器（活塞随推块拉出）；管路与液体没有几何（运行层状态）。",
+    "质量：泵体1.63 kg（手册）按构件工程估计拆分，机身取余量（documented_total_split）；注射器（筒、印刷、活塞）另计、不计入泵体质量。"
+  ],
+  "manufacturer_dimensions_m": {
+    "L_D_H": [
+      0.22225,
+      0.145796,
+      0.115062
+    ]
+  },
+  "manufacturer_dimensions_scope_zh": "泵体8.75 in长×5.74 in深×4.53 in高（尺寸图Rev A；手册8.75×5.75×4.5 in）、1.63 kg；整体包络含伸出夹块右侧的B-D 60 mL注射器",
+  "mass_scope_zh": "泵体1.63 kg（手册）；各构件取工程估计质量，机身取余量；注射器另计",
+  "simulation_mass_budget": {
+    "total_mass_kg": 1.6661,
+    "documented_total_kg": 1.63,
+    "syringe_kg": 0.0361,
+    "evidence": "documented total mass split over the pump parts; the syringe is extra (engineering)"
+  },
+  "reference_pose_zh": "参考姿态：推块靠端板（行程0）、限位夹靠推块、按键弹起、LCD与LED熄灭（关机）；V形槽中放一支B-D 60 mL注射器（活塞随推块拉出）；管路与液体没有几何（运行层状态）。",
+  "selected_configuration": {
+    "model": "New Era NE-1000 Multi-Phaser single-syringe programmable pump (firmware V3.9x; Publication 1200-01, 04/06/16), 12 V DC 800 mA wall adapter",
+    "not_included": [
+      "NE-1000X / X2 variants",
+      "footswitch and foot-pedal accessories",
+      "second pump for reciprocating / dual mode (RS-232 network)",
+      "Safe communications mode",
+      "heated syringe jackets"
+    ],
+    "note_zh": "注射器（61种目录）、液体（51种模板）、管路与针头由宿主经syringe.load与outlet.connect声明"
+  },
+  "readouts": [
+    {
+      "name": "lcd",
+      "part": "lcd",
+      "face": "-Y",
+      "digits": 5,
+      "decimals": 0,
+      "unit": "1",
+      "on": [
+        0.025,
+        0.028,
+        0.03
+      ],
+      "off": [
+        0.5,
+        0.53,
+        0.48
+      ],
+      "region": [
+        0.02,
+        0.98,
+        0.1,
+        0.82
+      ],
+      "hide": [],
+      "source": {
+        "bridge_text": "display.lcd_cells"
+      }
+    }
+  ],
+  "lamps": [
+    {
+      "name": "mm",
+      "part": "led_mm",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.mm"
+        }
+      }
+    },
+    {
+      "name": "ml",
+      "part": "led_ml",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.ml"
+        }
+      }
+    },
+    {
+      "name": "ul",
+      "part": "led_ul",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.ul"
+        }
+      }
+    },
+    {
+      "name": "dispensed",
+      "part": "led_dispensed",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.dispensed"
+        }
+      }
+    },
+    {
+      "name": "min",
+      "part": "led_min",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.min"
+        }
+      }
+    },
+    {
+      "name": "hr",
+      "part": "led_hr",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.hr"
+        }
+      }
+    },
+    {
+      "name": "withdraw",
+      "part": "led_withdraw",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.withdraw"
+        }
+      }
+    },
+    {
+      "name": "pumping",
+      "part": "led_pumping",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.1,
+        0.05
+      ],
+      "off": [
+        0.2,
+        0.035,
+        0.035
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.pumping"
+        }
+      }
+    },
+    {
+      "name": "rs232",
+      "part": "rs232_icon",
+      "face": "-Y",
+      "color": [
+        0.025,
+        0.028,
+        0.03
+      ],
+      "off": [
+        0.5,
+        0.53,
+        0.48
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.rs232"
+        }
+      }
+    }
+  ],
+  "readout_note_zh": "NE-1000的4位反射式LCD在场景中按运行层显示display.lcd_cells（数值含小数点，或StAL、oor、or12、Er12、----、LoC-、PAUS、 oFF、PUr6、PS30；读数为5格，最左格恒空），左上角RS-232三角与8个红色LED（mm、mL、µL、Dispensed、min、hr、Withdraw、Pumping）按indicator.*点亮；推块按pusher.position_m沿+X移动并带着注射器活塞，导杆限位夹按collar.joint_m移动；9个面板键与后部电源开关为弹簧键。",
+  "panel_keys": [
+    "key_up_1",
+    "key_up_2",
+    "key_up_3",
+    "key_up_4",
+    "key_rate",
+    "key_volume",
+    "key_diameter",
+    "key_direction",
+    "key_start",
+    "power_switch"
+  ],
+  "knobs": [],
+  "mirrored_joints": [
+    "pusher_block",
+    "guide_collar"
+  ],
+  "textures": {
+    "membrane": "textures/membrane.png",
+    "lcd": "textures/lcd.png",
+    "rear": "textures/rear.png",
+    "syringe": "textures/syringe.png",
+    "key_up_1": "textures/key_up_1.png",
+    "key_up_2": "textures/key_up_2.png",
+    "key_up_3": "textures/key_up_3.png",
+    "key_up_4": "textures/key_up_4.png",
+    "key_rate": "textures/key_rate.png",
+    "key_volume": "textures/key_volume.png",
+    "key_diameter": "textures/key_diameter.png",
+    "key_direction": "textures/key_direction.png",
+    "key_start": "textures/key_start.png"
+  },
+  "geometry_evidence_by_component": {
+    "chassis": "manufacturer_datasheet",
+    "feet": "manufacturer_datasheet",
+    "keypad_membrane": "photo_estimate",
+    "lcd": "photo_estimate",
+    "rs232_icon": "photo_estimate",
+    "led_mm": "photo_estimate",
+    "led_ml": "photo_estimate",
+    "led_ul": "photo_estimate",
+    "led_dispensed": "photo_estimate",
+    "led_min": "photo_estimate",
+    "led_hr": "photo_estimate",
+    "led_withdraw": "photo_estimate",
+    "led_pumping": "photo_estimate",
+    "key_up_1": "photo_estimate",
+    "key_up_2": "photo_estimate",
+    "key_up_3": "photo_estimate",
+    "key_up_4": "photo_estimate",
+    "key_rate": "photo_estimate",
+    "key_volume": "photo_estimate",
+    "key_diameter": "photo_estimate",
+    "key_direction": "photo_estimate",
+    "key_start": "photo_estimate",
+    "rear_print": "photo_estimate",
+    "power_switch": "manufacturer_datasheet",
+    "power_jack": "manufacturer_datasheet",
+    "rs232_to_computer": "photo_estimate",
+    "rs232_to_network": "photo_estimate",
+    "ttl_io": "photo_estimate",
+    "end_plate": "manufacturer_datasheet",
+    "guide_rod_rear": "photo_estimate",
+    "guide_rod_front": "photo_estimate",
+    "drive_screw": "photo_estimate",
+    "holder_block": "manufacturer_datasheet",
+    "retainer_bracket": "photo_estimate",
+    "retainer_thumbscrew_rear": "photo_estimate",
+    "retainer_thumbscrew_front": "photo_estimate",
+    "syringe_clamp": "photo_estimate",
+    "hex_wrench": "photo_estimate",
+    "pusher_block": "manufacturer_datasheet",
+    "drive_nut_release": "photo_estimate",
+    "anti_siphon_plate": "photo_estimate",
+    "antisiphon_screw": "photo_estimate",
+    "plunger": "engineering_assumption",
+    "plunger_tip": "engineering_assumption",
+    "syringe_barrel": "engineering_assumption",
+    "syringe_print": "engineering_assumption",
+    "guide_collar": "manufacturer_datasheet"
+  },
+  "world_origins_m": {
+    "chassis": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "feet": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "keypad_membrane": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "lcd": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rs232_icon": [
+      -0.08662500000000001,
+      -0.02473523126530789,
+      0.06195813322572515
+    ],
+    "led_mm": [
+      -0.028124999999999997,
+      -0.023581442270115566,
+      0.06212775325571304
+    ],
+    "led_ml": [
+      -0.028124999999999997,
+      -0.028996235535113466,
+      0.057691537086799104
+    ],
+    "led_ul": [
+      -0.028124999999999997,
+      -0.034411028800111355,
+      0.05325532091788517
+    ],
+    "led_dispensed": [
+      -0.001125000000000001,
+      -0.023581442270115566,
+      0.06212775325571304
+    ],
+    "led_min": [
+      -0.001125000000000001,
+      -0.028996235535113466,
+      0.057691537086799104
+    ],
+    "led_hr": [
+      -0.001125000000000001,
+      -0.034411028800111355,
+      0.05325532091788517
+    ],
+    "led_withdraw": [
+      0.03487499999999999,
+      -0.036731654485110454,
+      0.05135408541692205
+    ],
+    "led_pumping": [
+      0.06887499999999999,
+      -0.036731654485110454,
+      0.05135408541692205
+    ],
+    "key_up_1": [
+      -0.074495,
+      -0.04562738627760699,
+      0.04406601599656344
+    ],
+    "key_up_2": [
+      -0.064125,
+      -0.04562738627760699,
+      0.04406601599656344
+    ],
+    "key_up_3": [
+      -0.053755000000000004,
+      -0.04562738627760699,
+      0.04406601599656344
+    ],
+    "key_up_4": [
+      -0.04338500000000001,
+      -0.04562738627760699,
+      0.04406601599656344
+    ],
+    "key_rate": [
+      -0.018125000000000002,
+      -0.046787699120106545,
+      0.04311539824608188
+    ],
+    "key_volume": [
+      0.0028750000000000026,
+      -0.046787699120106545,
+      0.04311539824608188
+    ],
+    "key_diameter": [
+      0.023875000000000007,
+      -0.046787699120106545,
+      0.04311539824608188
+    ],
+    "key_direction": [
+      0.045875,
+      -0.046787699120106545,
+      0.04311539824608188
+    ],
+    "key_start": [
+      0.080875,
+      -0.046787699120106545,
+      0.04311539824608188
+    ],
+    "rear_print": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "power_switch": [
+      -0.097155,
+      0.07589800000000001,
+      0.05969
+    ],
+    "power_jack": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rs232_to_computer": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rs232_to_network": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ttl_io": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "end_plate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "guide_rod_rear": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "guide_rod_front": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "drive_screw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "holder_block": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "retainer_bracket": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "retainer_thumbscrew_rear": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "retainer_thumbscrew_front": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "syringe_clamp": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "hex_wrench": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pusher_block": [
+      -0.071501,
+      0.031623000000000005,
+      0.09398
+    ],
+    "drive_nut_release": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "anti_siphon_plate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "antisiphon_screw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "plunger": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "plunger_tip": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "syringe_barrel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "syringe_print": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "guide_collar": [
+      -0.071501,
+      0.010795000000000006,
+      0.08635999999999999
+    ]
+  }
+}
