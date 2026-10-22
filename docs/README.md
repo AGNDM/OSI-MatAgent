@@ -4,6 +4,10 @@
 
 ## Start here
 
+- [Demo walkthrough](guides/demo-walkthrough.md): the experiment, LangGraph roles, three replay panels, and stop conditions.
+- [Open the instrument replay](guides/instrument-replay.md): one-click setup, controls, importing histories, and troubleshooting.
+- [Run the RC1mx + HFCal workflow](guides/rc1mx-hfcal-workflow.md): full simulator setup and live model calls.
+
 - [Native lifecycle coverage without a device whitelist](reports/native-lifecycle-coverage.md): all 194 devices,191 actual clock checks,149 async interfaces and retained failures.
 
 - [Current native acceptance and knowledge report](reports/native-acceptance-and-knowledge.md): automatic instrument selection, argmax routing, no reference solution script, all outcomes and retrieval limits.

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MatAgent · Instrument Replay</title>
+  <link rel="stylesheet" href="/replay/replay.css">
+  <script type="importmap">{"imports":{"three":"/replay/vendor/three/build/three.module.js","three/addons/":"/replay/vendor/three/examples/jsm/"}}</script>
+  <script type="module" src="/replay/replay.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/replay"><span class="brand-mark">M<span>·</span></span><span>MatAgent<small>INSTRUMENT REPLAY</small></span></a>
+  <div class="run-picker"><label for="run-select">RUN RECORD</label><select id="run-select" aria-label="Choose run"><option>Loading runs…</option></select></div>
+  <button id="refresh" class="quiet" title="Refresh run records">↻ Refresh</button>
+  <a id="original-link" class="log-link" href="/" target="_blank" rel="noopener">Original logs ↗</a>
+</header>
+<div id="page-error" class="page-error" role="alert" hidden></div>
+<main id="workspace" aria-busy="true">
+  <aside class="information panel">
+    <div class="panel-head"><span class="eyebrow">01 / INTERACTION</span><span id="actor-badge" class="badge">History</span></div>
+    <h1 id="step-title">Loading recorded steps</h1>
+    <p id="step-meta" class="muted">Read-only playback. No model calls.</p>
+    <label class="select-label" for="step-select">JUMP TO STEP</label><select id="step-select" aria-label="Choose recorded step"></select>
+    <div class="message-direction" id="direction">Workflow → Instrument</div>
+    <div id="step-summary" class="step-summary"></div>
+    <div class="tabs" role="tablist" aria-label="Message content">
+      <button data-tab="request" role="tab" aria-selected="true">Request</button>
+      <button data-tab="response" role="tab" aria-selected="false">Response</button>
+      <button data-tab="event" role="tab" aria-selected="false">Raw event</button>
+    </div>
+    <div id="message-content" class="message-content" aria-live="polite"></div>
+    <div class="message-footer"><span id="source-label">Original saved record</span><button id="copy-message" class="quiet">Copy</button></div>
+  </aside>
+
+  <section class="stage" aria-label="Three dimensional instrument replay">
+    <div class="stage-top"><div><div class="eyebrow">DIGITAL INSTRUMENT</div><h2 id="instrument-title">RC1mx <span>+ HFCal</span></h2></div><span class="history-badge"><i></i> RECORDED RUN</span></div>
+    <div id="scene" class="scene"><div id="scene-status" class="scene-status">Loading instrument model…</div></div>
+    <div class="stage-tools"><button id="focus-reactor">Focus reactor</button><button id="reset-camera">Reset view</button></div>
+    <div id="heat-status" class="heat-status">Heating unknown</div>
+    <div class="scene-caption"><span id="scene-phase">Awaiting recorded state</span><span>Drag to orbit · Scroll to zoom</span></div>
+    <div class="stage-readout"><div><span>SIMULATION CLOCK</span><strong id="stage-time">— <small>s</small></strong></div><div><span id="stage-temp-label">SIMULATOR TEMPERATURE</span><strong id="stage-temp">— <small>°C</small></strong></div><div><span>AGITATOR</span><strong id="stage-rpm">— <small>rpm</small></strong></div></div>
+    <p class="stage-note" id="stage-note">Keyframe playback · Waiting intervals are compressed into short transitions.</p>
+  </section>
+
+  <aside class="state-panel panel">
+    <div class="panel-head"><span class="eyebrow">02 / INSTRUMENT STATE</span><span id="revision" class="badge">rev —</span></div>
+    <div class="truth-card"><div class="card-label"><span>Simulator ground truth</span><span class="truth-dot"></span></div><div class="temperature"><span id="true-temp">—</span><small>°C</small></div><p id="truth-source">Independent monitor · not visible to the agent</p></div>
+    <div class="readings-head"><h3>Last readings available to agent</h3><span id="reading-badge" class="badge">Not read yet</span></div>
+    <div id="last-readings" class="last-readings"></div>
+    <div id="state-values" class="state-values"></div>
+    <details class="heat-explanation"><summary>Heating indicator</summary><p id="heat-explanation"></p><p>The oil heater and jacket glow indicate thermostat heat demand. The separate HFCal calibration rod lights only when its saved on/off state is on. Orange agitator parts identify rotation, not heating.</p></details>
+    <details class="trend-details"><summary>Recorded temperature trend</summary><div class="trend-head"><span>Simulator temperature · past samples only</span></div><svg id="trend" viewBox="0 0 260 90" role="img" aria-label="Temperature samples up to the selected step"></svg></details>
+    <details class="provenance"><summary>How to read this view</summary><p>Ground truth is the simulator's internal temperature, not a physical sensor measurement. Agent readings change only when a read is logged. Older readings keep their timestamp and evidence ID.</p><p>The 3D model follows recorded state. Transitions interpolate visual motion; they do not run the reaction again. The agitator follows the displayed RPM continuously, including while step playback is paused. This motion does not advance the replay clock.</p><p>Each step shows the state after its recorded action or model response. No future monitor samples are used.</p></details>
+  </aside>
+</main>
+<footer class="transport">
+  <div class="transport-buttons"><button id="prev" aria-label="Previous step">←</button><button id="play" class="play">▶ Play</button><button id="next" aria-label="Next step">→</button></div>
+  <div class="timeline-control"><div><span id="position">0 / 0</span><span id="advance-note">Choose a run to begin</span></div><input id="scrubber" aria-label="Replay position" type="range" min="0" max="0" value="0"></div>
+  <div class="mode-picker"><label for="step-mode">STEP THROUGH</label><select id="step-mode"><option value="all">All interactions</option><option value="keyframes">Action keyframes</option></select></div>
+  <div class="transition-picker"><label for="transition">TRANSITION</label><select id="transition"><option value="900">Smooth · 0.9 s</option><option value="0">Instant</option></select></div>
+  <span id="outcome" class="badge">Read only</span>
+</footer>
+<div id="toast" role="status" hidden></div>
+</body></html>

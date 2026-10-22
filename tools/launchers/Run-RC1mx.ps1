@@ -1,11 +1,12 @@
 param([string]$OutputPath)
 $ErrorActionPreference = 'Stop'
-Set-Location -LiteralPath $PSScriptRoot
+$projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
+Set-Location -LiteralPath $projectRoot
 $env:PYTHONUTF8 = '1'
 $env:PYTHONDONTWRITEBYTECODE = '1'
 $env:LANGSMITH_TRACING = 'false'
 $env:LANGCHAIN_TRACING_V2 = 'false'
-$localConfig = Join-Path $PSScriptRoot '.env'
+$localConfig = Join-Path $projectRoot '.env'
 if (Test-Path -LiteralPath $localConfig) {
     foreach ($configLine in [System.IO.File]::ReadAllLines($localConfig)) {
         if ($configLine -match '^\s*OPENROUTER_API_KEY\s*=\s*(.+?)\s*$') {

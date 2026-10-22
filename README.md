@@ -1,4 +1,33 @@
-# Decision-Routed Lab
+# MatAgent: instrument workflow and replay
+
+MatAgent separates diagnostic reasoning from operational decisions in a LangGraph
+workflow. This branch contains the **DeepSeek + Jev** instrument workflow and an
+interactive **RC1mx + HFCal** replay rendered from **ChemLab Assets**. The replay
+connects saved model requests and choices to instrument actions, temperature,
+stirring, and the evaluator's final result.
+
+**Try the demo:** [download this branch as a ZIP](https://github.com/AGNDM/OSI-MatAgent/archive/refs/heads/rc1mx-hfcal.zip),
+extract the entire folder, and double-click **`Start-Replay.cmd`** on Windows.
+On macOS/Linux with Python 3.11+, run **`bash start-replay.sh`** from that folder.
+The browser opens automatically, normally at `http://127.0.0.1:8793/replay`.
+Keep the launcher window open while viewing.
+
+No API key is needed to replay the included sanitized recording. First launch
+downloads a verified instrument model and, on Windows if needed, local Python.
+Replaying saved files does not make new model calls or rerun the experiment.
+
+| Where to start | What you will find |
+| --- | --- |
+| [Demo walkthrough](docs/guides/demo-walkthrough.md) | Experiment, workflow roles, three panels, heating/stirring, and stopping boundaries |
+| [Replay setup and troubleshooting](docs/guides/instrument-replay.md) | One-click launch, controls, your own recordings, and common setup issues |
+| [Run a new experiment](docs/guides/rc1mx-hfcal-workflow.md) | Full simulator setup and paid model calls |
+
+Local `results/` histories, Codex outputs, videos, credentials, and downloaded
+runtimes are excluded from Git. The small, sanitized recording under
+`examples/replay/` is the only bundled demo run; the launcher installs it locally
+when no saved runs exist.
+
+## Workflow overview
 
 A local LangGraph workflow for native virtual-instrument tasks. DeepSeek V4.1 Flash generates typed candidates, procedures and evidence-based reports. Hosted TypeSafe Jev 1.14 chooses the instrument, next operation and expert route. A deterministic gate validates actions before the pinned ChemLab runtime executes them. The default routing policy takes a legal maximum-probability choice; it has no low-confidence escalation or silent model-failure fallback.
 
@@ -9,6 +38,21 @@ The primary entry point accepts a goal and public-state predicates, discovers pu
 The bounded acetic-anhydride hydrolysis simulator task and English result viewer are documented in the [RC1mx + HFCal workflow guide](docs/guides/rc1mx-hfcal-workflow.md). The task starts from a 25 °C fixed batch and asks the models to warm it to 35 °C while respecting the staged temperature boundaries.
 
 ## Setup
+
+### Open the saved instrument replay
+
+Download and extract the entire folder, then **double-click `Start-Replay.cmd` on
+Windows**. It opens the replay page and automatically prepares a local Python if
+needed. No API key or full simulator installation is required. A sanitized example
+recording is included; copy other saved run folders into `results/` to view them.
+Keep the launcher window open while viewing the page.
+
+On macOS/Linux, install Python 3.11+ and run `bash start-replay.sh`.
+First launch may download the pinned instrument model and, on Windows, Python.
+Read the [replay guide](docs/guides/instrument-replay.md) for details. Advanced live
+experiment/demo scripts are grouped under `tools/launchers/`.
+
+### Full workflow development
 
 ```bash
 conda env create -f environment.yml
@@ -66,8 +110,9 @@ Native lifecycle adaptation now follows API signatures and declared asynchronous
 | `bench/` | Frozen acceptance and historical evaluation runners |
 | `cases/`, `corpus/`, `configs/` | Declarative tasks, public contract cache, knowledge facts and configuration |
 | `tests/`, `tools/` | Offline regression and pinned-runtime setup |
-| `docs/`, `web/` | English documentation, evidence and historical drying UI |
+| `docs/`, `web/` | English guides, evidence, the 3D replay, original history viewer and historical drying UI |
+| `examples/replay/` | One sanitized recording for a reproducible first launch |
 | `vendor/` | Upstream manifests and attribution |
 | `results/` | Ignored local traces, frozen sources and durable usage ledger |
 
-ChemLab code is pinned to `123cf78593469871e41b8dbd63a11dfb7c5ca251`; data to `4ca4a42dab2ca0a884e449d202e9ad96625d5648`. Preserve [LICENSE](vendor/chemlab/LICENSE), [LICENSE-ASSETS.md](vendor/chemlab/LICENSE-ASSETS.md) and [NOTICE.md](vendor/chemlab/NOTICE.md). No 3D geometry is required. Start with the [documentation index](docs/README.md).
+ChemLab code is pinned to `123cf78593469871e41b8dbd63a11dfb7c5ca251`; data to `4ca4a42dab2ca0a884e449d202e9ad96625d5648`. Preserve [LICENSE](vendor/chemlab/LICENSE), [LICENSE-ASSETS.md](vendor/chemlab/LICENSE-ASSETS.md) and [NOTICE.md](vendor/chemlab/NOTICE.md). The workflow does not require 3D geometry; the optional replay downloads one pinned model. Start with the [documentation index](docs/README.md).

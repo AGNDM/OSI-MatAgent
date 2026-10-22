@@ -1,1 +1,7 @@
 * text=auto eol=lf
+
+*.cmd text eol=crlf
+*.sh text eol=lf
+
+# Preserve vendored upstream modules without local whitespace rewrites.
+web/vendor/three/** -whitespace

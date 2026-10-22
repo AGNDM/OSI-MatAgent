@@ -145,7 +145,10 @@ def handler_for(controller):
 
         def do_GET(self):
             from app.result_viewer import response_for
-            viewer_response = response_for(self.path, ROOT / "results", ROOT / "web")
+            from app.replay_viewer import response_for as replay_response_for
+            viewer_response = replay_response_for(self.path, ROOT / "results", ROOT / "web", ROOT)
+            if viewer_response is None:
+                viewer_response = response_for(self.path, ROOT / "results", ROOT / "web")
             if viewer_response is not None:
                 code, content_type, body = viewer_response
                 self.send_response(code)

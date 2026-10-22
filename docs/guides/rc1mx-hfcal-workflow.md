@@ -24,10 +24,10 @@ Set `OPENROUTER_API_KEY` in `.env`. Keep it local. A live run makes paid OpenRou
 Then start one bounded live run:
 
 ```powershell
-.\Run-RC1mx.ps1
+.\tools\launchers\Run-RC1mx.ps1
 ```
 
-The script creates a fresh directory under `results/` and opens the read-only result viewer at `http://127.0.0.1:8793/`. The viewer shows model questions and answers, selected actions, instrument receipts, the result JSON, and the final checks. It reads saved records without making model calls. Use `Start-Viewer.cmd` to open it again later.
+The script creates a fresh directory under `results/`. Double-click `Start-Replay.cmd` to view saved runs, then use **Original logs** to open the original result viewer. The viewer shows model questions and answers, selected actions, instrument receipts, the result JSON, and the final checks. It reads saved records without making model calls. See the [replay guide](instrument-replay.md) for portable launch and sharing instructions.
 
 Each live run stops at the first completion or boundary. The current limits are 500 model calls, 200 lab actions, 120 seconds per wait, 5,400 seconds of simulated time, and 1,200 seconds of wall-clock time. Logs include source hashes, original API requests and replies, independent monitor samples, native export, and a temperature/conversion CSV. `results/` and `.env` are ignored by Git.
 

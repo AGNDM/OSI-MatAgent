@@ -15,6 +15,11 @@ __pycache__/
 /results/*
 !/results/.gitkeep
 
+# Codex/local exports and scratch work are not source deliverables.
+/result/
+/outputs/
+/work/
+
 # Local Chinese notes and historical review documents
 *.zh.md
 /reviews/
@@ -35,3 +40,7 @@ __pycache__/
 # Personal local notes; the public usage guide is in docs/guides/.
 /可视化界面使用说明.md
 /本机运行说明.md
+
+# Portable replay runtime and personal machine notes
+/.replay-runtime/
+/docs/local/
