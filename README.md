@@ -4,6 +4,10 @@ A local LangGraph workflow for native virtual-instrument tasks. DeepSeek V4.1 Fl
 
 The primary entry point accepts a goal and public-state predicates, discovers public instrument contracts and executes without a reference solution script. The expert can inspect the complete **194-device directory** and propose up to four described devices for Jev to choose from. Only one native instrument is bound per episode. Full directory visibility does not mean that every instrument supports every acquisition or time-control operation.
 
+## RC1mx + HFCal experiment
+
+The bounded acetic-anhydride hydrolysis simulator task and English result viewer are documented in the [RC1mx + HFCal workflow guide](docs/guides/rc1mx-hfcal-workflow.md). The task starts from a 25 °C fixed batch and asks the models to warm it to 35 °C while respecting the staged temperature boundaries.
+
 ## Setup
 
 ```bash
@@ -52,7 +56,7 @@ The new live path uses `InstrumentLab` and native public methods only. The old d
 
 The historical device suite passed 194/194 control/readback fixtures, including 116 power-only cases; this is interface coverage rather than 194 complete experiments. Current automatic native acceptance covers four diverse devices and records failed attempts as well as successful outcomes. Consult the [current report](docs/reports/native-acceptance-and-knowledge.md), [checklist](docs/status/checklist.md) and [evidence index](docs/evidence/README.md) for dated results, source freezes and exact counts.
 
-Native lifecycle adaptation now follows API signatures and declared asynchronous contracts without a device whitelist. Actual clock/readback/replay checks passed on 191 of 194 registered devices; the other three have no native host clock API and retain their public device tools. Poll/cancel interfaces are exposed for 149 declared asynchronous devices. See the [coverage report](docs/reports/native-lifecycle-coverage.md); these counts do not establish complete scientific acquisitions. Goal satisfaction, model claims and protocol correctness are reported separately. Knowledge retrieval benefit, held-out model generalization, a second general-expert comparison, calibrated routing advantage and physical sample transfer remain unaccepted. The scientific UI and offline decision benchmark are deferred.
+Native lifecycle adaptation now follows API signatures and declared asynchronous contracts without a device whitelist. Actual clock/readback/replay checks passed on 191 of 194 registered devices; the other three have no native host clock API and retain their public device tools. Poll/cancel interfaces are exposed for 149 declared asynchronous devices. See the [coverage report](docs/reports/native-lifecycle-coverage.md); these counts do not establish complete scientific acquisitions. Goal satisfaction, model claims and protocol correctness are reported separately. Knowledge retrieval benefit, held-out model generalization, a second general-expert comparison, calibrated routing advantage and physical sample transfer remain unaccepted. An interactive instrument-control UI and the offline decision benchmark are deferred.
 
 ## Layout and attribution
 

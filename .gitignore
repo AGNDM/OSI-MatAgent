@@ -31,3 +31,7 @@ __pycache__/
 !/vendor/chemlab/LICENSE
 !/vendor/chemlab/LICENSE-ASSETS.md
 !/vendor/chemlab/NOTICE.md
+
+# Personal local notes; the public usage guide is in docs/guides/.
+/可视化界面使用说明.md
+/本机运行说明.md

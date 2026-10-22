@@ -40,7 +40,7 @@ class OpenRouterJevBackend(LocalOpenJevBackend):
 
     def manifest(self):
         return {'backend_id':self.backend_id,'model':MODEL,'endpoint':ENDPOINT,
-            'probability_semantics':'Native typed choice probabilities returned by Jev; not calibrated on these instrument tasks',
+            'probability_semantics':'Raw native Jev option values in [0,1]; argmax comparison without sum-to-one validation or normalization; not calibrated on these instrument tasks',
             'transport_retries':0,'rules_fallback':False,'context_byte_limit':24000,
             'reservation_policy':'Full 262144-token model context plus request bytes and framing; shared durable ledger'}
 
@@ -56,6 +56,9 @@ class OpenRouterJevBackend(LocalOpenJevBackend):
         body={'model':MODEL,'state':text,'questions':{'next_action':{'type':'choice',
             'instructions':'Choose the best next option using the instructions, current public state and option descriptions supplied in state.',
             'criteria':criteria}}}
+        return await self._infer_body(body, options, timeout)
+
+    async def _infer_body(self, body, options, timeout):
         self.last_call.update(request=body,request_sent=False)
         key=self.ledger.reserve_decision(body,provider="openrouter")
         self.last_call.update(request_sent=True,budget_reservation_id=key)
@@ -75,14 +78,16 @@ class OpenRouterJevBackend(LocalOpenJevBackend):
                 raise ValueError('Jev returned an unexpected model identity')
             answer=raw['answers']['next_action']
             p=answer['probabilities']
-            if answer.get('type')!='choice' or set(p)!=set(options):
+            if answer.get('type')!='choice' or not isinstance(p,dict) or set(p)!=set(options):
                 raise ValueError('Jev decision did not cover the supplied choices')
-            if any(type(v) not in (int,float) or not math.isfinite(v) or not 0<=v<=1 for v in p.values()) or abs(sum(p.values())-1)>1e-5:
-                raise ValueError('Invalid native Jev probability distribution')
+            # Argmax needs comparable values, not a normalized distribution.
+            if any(type(v) not in (int,float) or not math.isfinite(v) or not 0<=v<=1 for v in p.values()):
+                raise ValueError('Invalid native Jev option value')
             choice=answer['choice']
             if choice not in p or p[choice]!=max(p.values()):
                 raise ValueError('Jev choice disagrees with its probabilities')
             self.last_call['native_confidence']=answer.get('confidence')
+            self.last_call['native_probability_sum']=sum(p.values())
             return {options[k]:v for k,v in p.items()}
         finally:
             self.ledger.settle(key,usage)
@@ -90,3 +95,16 @@ class OpenRouterJevBackend(LocalOpenJevBackend):
 
 class OpenRouterJevOperationBackend(OpenRouterJevBackend):
     choose = LocalOperationBackend.choose
+
+    def manifest(self):
+        from app.jev_context import POLICY_VERSION
+        return dict(super().manifest(), input_projection=POLICY_VERSION,
+            candidate_encoding="Once in typed question criteria; UTF-8 compact JSON")
+
+    async def _infer_options(self, text, options, timeout):
+        from app.jev_context import operation_request, POLICY_VERSION
+        body, context = operation_request(self.last_call["context"],
+            self.last_call["candidates"], MODEL)
+        self.last_call.update(input_projection=POLICY_VERSION, sent_context=context,
+            request_body_bytes=len(json.dumps(body, ensure_ascii=False, allow_nan=False).encode("utf-8")))
+        return await self._infer_body(body, options, timeout)

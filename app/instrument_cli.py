@@ -22,7 +22,7 @@ def run(task, output, roles, *, router=None, operation=None, limits=None, router
     return run_episode(task, output, roles, router=router, operation=operation, limits=limits, router_wait=router_wait,profile=profile)
 
 
-def run_auto_episode(task, output, roles, *, router, operation, limits=None, router_wait=True, profile=None):
+def run_auto_episode(task, output, roles, *, router, operation, limits=None, router_wait=True, profile=None, lab_factory=None, selection_options=None):
     """One shared budget/deadline for discovery, selection and bound execution."""
     from app.device_selection import select_device
     from app.device_catalog import CACHE
@@ -40,13 +40,13 @@ def run_auto_episode(task, output, roles, *, router, operation, limits=None, rou
         'scope':'One-time device selection; no cross-instrument transfer'}
     (output/'manifest.json').write_text(json.dumps(initial_manifest,indent=2)+'\n')
     try:
-        selected,selection=select_device(task,roles,operation,trace,limits)
+        selected,selection=select_device(task,roles,operation,trace,limits,**(selection_options or {}))
         left=limits.llm_calls-selection['model_calls']
         seconds=limits.episode_seconds-(time.monotonic()-started)
         if left<=0 or seconds<=0:raise RuntimeError('device_selection_exhausted_episode')
         result=run_episode(selected,output/'execution',roles,router=router,operation=operation,
             limits=limits.model_copy(update={'llm_calls':left,'episode_seconds':seconds}),router_wait=router_wait,
-            absolute_deadline=started+limits.episode_seconds,profile=profile)
+            absolute_deadline=started+limits.episode_seconds,profile=profile,lab_factory=lab_factory)
         result['selection']=selection
         result['report']['llm_call_count']=result['report'].get('llm_call_count',0)+selection['model_calls']
     except Exception as exc:
@@ -71,11 +71,11 @@ def run_auto_episode(task, output, roles, *, router, operation, limits=None, rou
     return result
 
 
-def run_episode(task, output, roles, *, router=None, operation=None, limits=None, router_wait=True, absolute_deadline=None, profile=None):
+def run_episode(task, output, roles, *, router=None, operation=None, limits=None, router_wait=True, absolute_deadline=None, profile=None, lab_factory=None, selection_options=None):
     """Offline tests inject doubles here; public run()/CLI require real roles."""
     if task.device=='auto':
         if operation is None:raise ValueError('Auto device selection requires an explicit chooser')
-        return run_auto_episode(task,output,roles,router=router,operation=operation,limits=limits,router_wait=router_wait,profile=profile)
+        return run_auto_episode(task,output,roles,router=router,operation=operation,limits=limits,router_wait=router_wait,profile=profile,lab_factory=lab_factory,selection_options=selection_options)
     if output.exists():
         raise ValueError('Use a new output directory; attempts are never overwritten')
     limits = limits or Limits(lab_actions=32, llm_calls=36, episode_seconds=360, graph_steps=260)
@@ -83,10 +83,10 @@ def run_episode(task, output, roles, *, router=None, operation=None, limits=None
     episode_deadline=absolute_deadline if absolute_deadline is not None else time.monotonic()+limits.episode_seconds
     episode = str(uuid4());trace = Trace(episode, output/'trace.jsonl')
     try:
-        lab = InstrumentLab(task)
+        lab = (lab_factory or InstrumentLab)(task)
         lab.router_wait_enabled = router_wait
     except Exception as exc:
-        report = {'episode_id': episode, 'status': 'unresolved', 'evidence_ids': [], 'terminal_reason': 'initialization_error'}
+        report = {'episode_id': episode, 'status': 'unresolved', 'evidence_ids': [], 'terminal_reason': getattr(exc, 'code', 'initialization_error')}
         result = {'episode_id': episode, 'task_id': task.task_id, 'backend': roles.backend_id, 'report': report,
                   'score': {'goal_met': False, 'task_success': False, 'protocol_correct': False, 'false_success': False},
                   'exception': {'type': type(exc).__name__, 'message': str(exc)[:1000]}, 'reference_scripts_used': False}

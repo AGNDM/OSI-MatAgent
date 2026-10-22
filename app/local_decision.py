@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 import httpx
 
 from app.models import RouteDecision
+from app.router_context import ROUTING_INSTRUCTION, ROUTING_CRITERIA
 
 MODEL_REVISION = "a3acd96966b06c2f161209f888b66235029f9ac1"
 MODEL_SHA = "6209cf51aec005b00cb80fdfef1b961adde57d5a8f181a377bd3882a4668b91d"
@@ -53,6 +54,10 @@ def option_prompt(summary: dict, allowed: list[str]) -> tuple[str, dict[str, str
         lines = [line + (" duration_s=" + str(summary['instrument_context']['wait_offers'][route])
                  if route in summary['instrument_context']['wait_offers'] else "")
                  for line, route in zip(lines, allowed)]
+    elif 'routing_context_policy' in summary:
+        instruction = ROUTING_INSTRUCTION
+        rich = dict(CRITERIA, **ROUTING_CRITERIA)
+        lines = [f"[{letter}] {route}: {rich[route]}" for letter, route in options.items()]
     question = ("Which routing or bounded waiting action should happen next?" if instruction else
                 "Which specialist should handle the next step of this laboratory workflow?")
     text = (instruction + "State:\n" + json.dumps(summary, sort_keys=True, ensure_ascii=False) +

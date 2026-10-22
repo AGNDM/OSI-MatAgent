@@ -32,7 +32,9 @@ class DeviceProfile:
                 raise ValueError('Use a listed capability')
             json_error = next(Draft202012Validator(cap['input_schema']).iter_errors(record.intent.arguments),None)
             if json_error:
-                raise ValueError(json_error.message)
+                path = '.'.join(['arguments', *(str(p) for p in json_error.absolute_path)])
+                raise ValueError('WORKFLOW_ARGUMENT_VALIDATION: ' + record.intent.capability_id
+                                 + ' ' + path + ': ' + json_error.message)
         elif role == 'procedure':
             validate_role_contract(role,record,payload)
 

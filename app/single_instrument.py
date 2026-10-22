@@ -231,13 +231,14 @@ class InstrumentLab:
         if cap is None or list(Draft202012Validator(cap['input_schema']).iter_errors(proposal.arguments)):
             raise GateRejected('UNSUPPORTED_CAPABILITY_OR_INVALID_ARGUMENT')
         if self.pending_operation and proposal.capability_id not in {
-                'workflow.inspect', 'workflow.readback', 'workflow.await', 'workflow.poll', 'workflow.cancel', 'workflow.stop'}:
+                'workflow.inspect', 'workflow.readback', 'workflow.describe', 'workflow.await', 'workflow.poll', 'workflow.cancel', 'workflow.stop'}:
             raise GateRejected('PENDING_OPERATION_UNRESOLVED')
         if proposal.capability_id in {'workflow.poll', 'workflow.cancel'} and not self.pending_operation:
             raise GateRejected('NO_PENDING_OPERATION')
         if proposal.capability_id == 'workflow.await' and self.lifecycle.elapsed + proposal.arguments['duration_s'] > self.task.max_simulated_seconds:
             raise GateRejected('SIMULATION_BUDGET')
-        if not proposal.capability_id.startswith('workflow.') and not self._inspection:
+        if (getattr(self, 'require_initial_inspection', True)
+                and not proposal.capability_id.startswith('workflow.') and not self._inspection):
             raise GateRejected('INSPECTION_REQUIRED')
 
     def _update_pending(self, response, capability):
@@ -299,7 +300,7 @@ class InstrumentLab:
                         if time.monotonic() >= deadline:
                             self.termination_reason = 'deadline'
                             break
-                        dt = min(10., left)
+                        dt = min(getattr(self, 'await_step_seconds', 10.), left)
                         self.lifecycle.step(dt);left -= dt
                         steps.append({'dt_s':dt, 'elapsed_s':self.lifecycle.elapsed})
                         if self.task.constraints:
@@ -309,7 +310,9 @@ class InstrumentLab:
                                 self.termination_reason = 'constraint_violated'
                                 result['constraint_observation'] = observed
                                 break
-                        if self.pending_operation:
+                        if self.termination_reason:
+                            break
+                        if self.pending_operation and getattr(self, 'auto_poll_during_wait', True):
                             response = self.lifecycle.poll(self.pending_operation['operation_id'])
                             polls.append(response)
                             status = self._update_pending(response, self.pending_operation['capability'])

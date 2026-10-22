@@ -56,15 +56,20 @@ class LocalLlamaRoles:
     def prepare_request(self, body):
         return body
 
+    def response_format(self, role, payload, schema):
+        return {"type": "json_object"}
+
     def invoke(self, role, prompt, payload, schema):
-        system = prompt + "\nReturn one JSON object matching this schema exactly. No Markdown or extra fields.\n" + json.dumps(schema.model_json_schema(), sort_keys=True)
+        response_format = self.response_format(role, payload, schema)
+        output_schema = response_format.get("json_schema", {}).get("schema", schema.model_json_schema())
+        system = prompt + "\nReturn one JSON object matching this schema exactly. No Markdown or extra fields.\n" + json.dumps(output_schema, sort_keys=True)
         body = {"model": self.model_id, "messages": [{"role": "system", "content": system},
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(',', ':'), allow_nan=False)}],
             "max_tokens": self.max_tokens, "temperature": 0, "stream": False,
-            "response_format": {"type": "json_object"}, "chat_template_kwargs": {"enable_thinking": False}}
+            "response_format": response_format, "chat_template_kwargs": {"enable_thinking": False}}
         body = self.prepare_request(body)
         self.last_call = {"model_id": self.model_id, "role": role, "request": body,
-            "prompt_hash": sha256(system.encode()).hexdigest(), "schema_hash": sha256(json.dumps(schema.model_json_schema(), sort_keys=True).encode()).hexdigest(),
+            "prompt_hash": sha256(system.encode()).hexdigest(), "schema_hash": sha256(json.dumps(output_schema, sort_keys=True).encode()).hexdigest(),
             "request_sent": False, "response": None, "usage": None}
         timeout = min(self.timeout_seconds, self.deadline - time.monotonic())
         if timeout <= 0:
@@ -84,6 +89,13 @@ class LocalLlamaRoles:
             except ExpertResponseError as exc:
                 self.last_call['response_classification']=exc.code
                 raise
+            if response_format["type"] == "json_schema":
+                from jsonschema import Draft202012Validator, ValidationError as SchemaValidationError
+                try:
+                    Draft202012Validator(output_schema).validate(json.loads(content))
+                except (ValueError, SchemaValidationError) as exc:
+                    self.last_call["response_classification"] = "expert_schema_violation"
+                    raise ExpertResponseError("expert_schema_violation", str(exc)[:1200]) from exc
             return schema.model_validate_json(content).model_dump()
         finally:
             self.last_call["elapsed_ms"] = (time.monotonic() - start) * 1000

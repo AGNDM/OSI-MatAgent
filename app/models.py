@@ -9,9 +9,24 @@ class Record(BaseModel):
     model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
 
 
+ARGUMENTS_DESCRIPTION = (
+    "Required JSON object containing the selected operation's parameters. Must satisfy "
+    "capabilities[capability_id].input_schema, including all required properties, types and ranges. "
+    "Use {} only when that input_schema accepts an empty object. Never omit arguments or use null."
+)
+
+INTENT_OUTPUT_INSTRUCTION = (
+    ' Each intent must explicitly include capability_id, arguments, discriminating_observation and postcondition. '
+    'arguments must be a JSON object satisfying capabilities[capability_id].input_schema: include every '
+    'required parameter and obey its types, units and bounds. Use {} only when that schema accepts '
+    'an empty object. Never omit arguments, use null, or replace parameter values with prose. '
+    'Every candidate must be fully parameterized before selection; the procedure copies it unchanged.'
+)
+
+
 class Intent(Record):
     capability_id: str
-    arguments: dict[str, Any] = Field(default_factory=dict)
+    arguments: dict[str, Any] = Field(description=ARGUMENTS_DESCRIPTION)
     discriminating_observation: str
     postcondition: str
 
@@ -63,7 +78,7 @@ class ActionProposal(Record):
     sample_id: str
     expected_revision: int = Field(ge=0)
     capability_id: str
-    arguments: dict[str, Any]
+    arguments: dict[str, Any] = Field(description=ARGUMENTS_DESCRIPTION)
     request_id: str = Field(min_length=1)
     postcondition: str
 

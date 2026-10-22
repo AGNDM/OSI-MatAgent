@@ -49,8 +49,7 @@ def select_route(backend: DecisionBackend, summary: dict, allowed: list[str], *,
             raise ValueError("route not in allowed set")
         p = decision.probabilities
         if p is not None:
-            if (set(p) != set(allowed) or any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values())
-                    or abs(sum(p.values()) - 1) > 1e-5):
+            if set(p) != set(allowed) or any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values()):
                 raise ValueError("invalid route probabilities")
             ordered = sorted(p, key=p.get, reverse=True)
             if p[decision.choice] != max(p.values()):

@@ -21,9 +21,15 @@ class ExpertEndpoint(Record):
     max_tokens: int = Field(default=1536, ge=64, le=8192)
     timeout_seconds: float = Field(default=45, gt=0, le=180)
     provider: Literal["local", "siliconflow", "openrouter"] = "local"
+    output_format: Literal["json_object", "json_schema"] = "json_object"
+    provider_only: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def authorized_endpoint(self):
+        if self.output_format == "json_schema" and (self.provider != "openrouter" or not self.provider_only):
+            raise ValueError("Strict Schema output requires OpenRouter and an explicitly selected supported provider")
+        if self.provider_only and self.provider != "openrouter":
+            raise ValueError("Provider routing is only configured for OpenRouter")
         if self.base_url:
             if self.provider == "siliconflow":
                 if self.base_url.rstrip("/") != "https://api.siliconflow.cn/v1":
@@ -80,8 +86,16 @@ class CompatibleExpert(LocalLlamaRoles):
     def manifest(self):
         return {"backend_id": self.backend_id, "configuration": self.config.model_dump(),
             "identity_status": "User-declared model/revision; actual response model retained, alias equivalence not verified",
-            "temperature": 0, "output_mode": "JSON object + common Pydantic validation",
+            "temperature": 0, "output_mode": ("strict JSON Schema + local JSON Schema/Pydantic validation"
+                if self.config.output_format == "json_schema" else "JSON object + common Pydantic validation"),
             "transport_retries": 0, "purpose": "general specialist", "is_openjev_router": False}
+
+    def response_format(self, role, payload, schema):
+        if self.config.output_format != "json_schema":
+            return super().response_format(role, payload, schema)
+        from app.structured_output import output_schema
+        return {"type": "json_schema", "json_schema": {"name": schema.__name__,
+            "strict": True, "schema": output_schema(schema, payload)}}
 
     def prepare_request(self, body):
         if self.config.provider == "siliconflow":
@@ -90,6 +104,10 @@ class CompatibleExpert(LocalLlamaRoles):
         elif self.config.provider == "openrouter":
             body.pop("chat_template_kwargs", None)
             body["reasoning"] = {"enabled": False}
+            if self.config.provider_only:
+                body["provider"] = {"only": list(self.config.provider_only),
+                    "order": list(self.config.provider_only), "allow_fallbacks": False,
+                    "require_parameters": True}
         return body
 
     def redact(self, value):

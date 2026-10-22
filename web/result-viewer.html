@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MatAgent · Workflow Viewer</title><link rel="stylesheet" href="/viewer.css"><script src="/viewer.js" defer></script></head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/results"><span class="brand-icon">M<span>·</span></span><span>MatAgent<small>Workflow Viewer</small></span></a>
+    <div class="sidebar-heading"><span>Runs</span><button class="icon-button" id="refresh" title="Refresh runs" aria-label="Refresh runs">↻</button></div>
+    <div id="run-list" class="run-list" aria-label="Run list"></div>
+    <div class="sidebar-note"><span class="dot"></span> Local log playback<p>Reads the project results folder.<br>Viewing and playback do not call models.</p></div>
+    <a class="legacy-link" href="/demo">Open the original scripted demo ↗</a>
+  </aside>
+  <main>
+    <header class="topbar"><span class="breadcrumb">Lab workflows <span>/</span> Run explorer</span><span class="local-badge"><i></i> Local only</span></header>
+    <div id="loading" class="loading">Loading run records…</div>
+    <div id="empty" class="empty" hidden><h2>No run records yet</h2><p>Run Run-Live.cmd or Run-RC1mx.ps1, then refresh the sidebar. Save outputs in the project results folder.</p></div>
+    <div id="error" class="error-banner" role="alert" hidden></div>
+    <div id="workspace" hidden>
+      <section class="hero"><div><div class="eyebrow">NATIVE WORKFLOW / RECORDED RUN</div><h1 id="task-title">Workflow results</h1><p id="task-description"></p><details class="original-goal"><summary>View the original objective</summary><p id="original-goal"></p></details></div><div id="outcome" class="outcome"></div></section>
+      <section class="metrics" id="metrics" aria-label="Run statistics"></section>
+      <section class="flow-section"><div class="section-caption"><span>From objective to evidence</span><span>Select a stage to find its interactions</span></div><div class="flow" id="flow"></div></section>
+      <section class="workbench">
+        <div class="workbench-header"><div class="view-tabs" role="tablist" aria-label="View mode"><button role="tab" aria-selected="true" data-view="conversation">Conversation</button><button role="tab" aria-selected="false" data-view="actions">Instrument actions</button><button role="tab" aria-selected="false" data-view="json">Result JSON</button></div><button id="export" class="text-button">Download result ↓</button></div>
+        <div id="conversation-view">
+          <div class="replay-bar"><button id="prev" class="icon-button" aria-label="Previous step">←</button><button id="play" class="play-button">▶ Play log</button><button id="next" class="icon-button" aria-label="Next step">→</button><input id="scrubber" type="range" min="0" max="0" value="0" aria-label="Playback step"><span id="position"></span><button id="last" class="text-button">Jump to end</button></div>
+          <div class="conversation-layout">
+            <div class="timeline-pane"><label class="search-box"><span>⌕</span><input id="search" placeholder="Search actions, responses, or stages" aria-label="Search interactions"></label><div class="filters" id="filters"><button class="active" data-filter="all">All</button><button data-filter="deepseek">DeepSeek</button><button data-filter="jev">Jev</button><button data-filter="action">Instrument</button></div><div id="timeline" class="timeline" aria-label="Interaction steps"></div></div>
+            <div class="conversation-pane"><div id="interaction" aria-live="polite"></div></div>
+          </div>
+        </div>
+        <div id="actions-view" class="tab-content" hidden></div>
+        <div id="json-view" class="tab-content" hidden><div class="json-intro"><h2>Understand the result fields</h2><p>Values come from this run of result.json. Expand the fields below to inspect their structure.</p></div><div id="field-guide" class="field-guide"></div><div class="json-toolbar"><strong>result.json</strong><button class="text-button" id="copy-result">Copy JSON</button></div><div id="json-tree" class="json-tree"></div></div>
+      </section>
+      <section class="evidence-section"><div class="section-title"><div class="eyebrow">FINAL EVIDENCE</div><h2>Final condition checks</h2><p>The independent evaluator checks the recorded state against the task conditions shown below.</p></div><div id="evidence"></div></section>
+      <footer><span id="source-path"></span><span>Requests and responses come from saved logs. Interface explanations are in English; original records are preserved.</span></footer>
+    </div>
+  </main>
+</div><div id="toast" class="toast" role="status" hidden></div>
+</body></html>

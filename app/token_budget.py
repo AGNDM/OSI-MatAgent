@@ -4,7 +4,7 @@ Missing usage, transport failures and crashed requests retain the entire input
 upper-bound reservation. No estimate is silently treated as reported usage.
 """
 from contextlib import contextmanager
-import fcntl
+from app.file_lock import exclusive_file_lock
 import json
 import os
 from pathlib import Path
@@ -73,13 +73,9 @@ class TokenLedger:
 
     @contextmanager
     def _locked(self):
-        with self.path.with_suffix('.lock').open('a') as lock:
-            fcntl.flock(lock,fcntl.LOCK_EX)
-            try:
-                entries=[json.loads(x) for x in self.path.read_text().splitlines()] if self.path.exists() else []
-                yield entries
-            finally:
-                fcntl.flock(lock,fcntl.LOCK_UN)
+        with exclusive_file_lock(self.path.with_suffix('.lock')):
+            entries=[json.loads(x) for x in self.path.read_text().splitlines()] if self.path.exists() else []
+            yield entries
 
     def _append(self,value):
         with self.path.open('a') as stream:

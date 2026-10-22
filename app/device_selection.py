@@ -47,14 +47,16 @@ PROMPT=('Select a native instrument for the supplied objective and fixed public-
 class UnsupportedObjective(RuntimeError):pass
 
 
-def select_device(task,expert,chooser,trace,limits,*,catalog=None):
+def select_device(task,expert,chooser,trace,limits,*,catalog=None,public_task=None,prompt=None,describe_device=None):
     catalog=catalog or device_catalog.load_catalog()
     for predicate in task.predicates+task.constraints:
         if not any(d['state_slots'].get(predicate.state_id,{}).get('unit')==predicate.unit for d in catalog['devices']):
             raise UnsupportedObjective('No registered public native state supports '+predicate.state_id+' with unit '+predicate.unit)
     start=time.monotonic();deadline=start+limits.episode_seconds
     calls=0;described={};history=[]
-    public_task=task.model_dump(exclude={'device'})
+    public_task=task.model_dump(exclude={'device'}) if public_task is None else deepcopy(public_task)
+    prompt=prompt or PROMPT
+    describe_device=describe_device or device_catalog.describe
     for turn in range(6):
         payload={'task':public_task,'device_directory':device_catalog.index(catalog),
                  'discovered_contracts':deepcopy(described),'query_history':history,
@@ -64,7 +66,7 @@ def select_device(task,expert,chooser,trace,limits,*,catalog=None):
             if calls>=limits.llm_calls or time.monotonic()>=deadline:raise RuntimeError('device_discovery_budget')
             expert.deadline=deadline;calls+=int(expert.is_llm)
             try:
-                raw=expert.invoke('device_discovery',PROMPT,payload,DiscoveryRequest)
+                raw=expert.invoke('device_discovery',prompt,payload,DiscoveryRequest)
                 request=DiscoveryRequest.model_validate(raw)
                 if request.action=='describe':
                     if len(set(described)|set(request.device_ids))>4:raise ValueError('At most four detailed device contracts')
@@ -82,7 +84,7 @@ def select_device(task,expert,chooser,trace,limits,*,catalog=None):
         if request.action=='stop':raise UnsupportedObjective(request.reason)
         if request.action=='search':history.append(device_catalog.search(catalog,request.query,limit=30))
         elif request.action=='describe':
-            described.update({d:device_catalog.describe(catalog,d) for d in request.device_ids})
+            described.update({d:describe_device(catalog,d) for d in request.device_ids})
         else:
             candidates=[ActionCandidate(candidate_id=c.candidate_id,
                 intent=Intent(capability_id='catalog.bind',arguments={'device_id':c.device_id},

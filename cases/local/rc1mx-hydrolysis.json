@@ -1,0 +1,46 @@
+{
+  "task_id": "batch-hydrolysis-stable-temperature",
+  "device": "auto",
+  "objective": "Hydrolyze a batch initially containing 0.020 kg acetic anhydride and 0.800 kg water at 25 degC. Bring the reaction mixture to 35 degC, then keep it within 34-36 degC until at least 99% conversion. Stay within 24-36 degC during warm-up.",
+  "predicates": [
+    {
+      "state_id": "clock.time_s",
+      "operator": "ge",
+      "value": 0,
+      "unit": "s"
+    },
+    {
+      "state_id": "reactor.indicated_k",
+      "operator": "ge",
+      "value": 307.15,
+      "unit": "K"
+    },
+    {
+      "state_id": "reactor.indicated_k",
+      "operator": "le",
+      "value": 309.15,
+      "unit": "K"
+    }
+  ],
+  "constraints": [
+    {
+      "state_id": "reactor.indicated_k",
+      "operator": "ge",
+      "value": 297.15,
+      "unit": "K"
+    },
+    {
+      "state_id": "reactor.indicated_k",
+      "operator": "le",
+      "value": 309.15,
+      "unit": "K"
+    },
+    {
+      "state_id": "emergency.active",
+      "value": false,
+      "unit": "1"
+    }
+  ],
+  "max_simulated_seconds": 5400,
+  "max_wait_seconds": 120
+}

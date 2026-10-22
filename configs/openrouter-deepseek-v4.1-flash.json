@@ -7,7 +7,11 @@
     "revision": null,
     "api_key_env": "OPENROUTER_API_KEY",
     "max_tokens": 6144,
-    "timeout_seconds": 90
+    "timeout_seconds": 90,
+    "output_format": "json_schema",
+    "provider_only": [
+      "fireworks/spot"
+    ]
   },
   "contrast": {
     "name": "contrast-not-selected",

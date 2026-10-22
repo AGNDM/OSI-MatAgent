@@ -144,9 +144,9 @@ def test_procedure_cannot_replace_selected_operation():
     assert lab.action_count == 0 and final['report']['terminal_reason'] == 'role_error'
 
 
-@pytest.mark.parametrize('probabilities,choice', [({'a': .8}, 'a'), ({'a': .4, 'b': .4}, 'a'),
+@pytest.mark.parametrize('probabilities,choice', [({'a': .8}, 'a'), ({'a': -.1, 'b': 1.1}, 'b'),
                                                 ({'a': .7, 'b': .3}, 'b')])
-def test_probability_contract_rejects_missing_mass_or_wrong_argmax(probabilities, choice):
+def test_probability_contract_rejects_missing_candidates_invalid_values_or_wrong_argmax(probabilities, choice):
     candidates = [{'candidate_id': k, 'intent': {'capability_id': 'workflow.inspect', 'arguments': {},
         'postcondition': 'Inspect.', 'discriminating_observation': 'Read public state.'},
         'rationale': 'Check evidence.', 'evidence_ids': []} for k in ['a', 'b']]

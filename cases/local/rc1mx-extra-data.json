@@ -1,0 +1,8 @@
+{
+  "url": "https://huggingface.co/datasets/MBZUAI/ChemLab-Assets/resolve/4ca4a42dab2ca0a884e449d202e9ad96625d5648/assets/expansion_batch04/t1_thermal/mt_rc1mxhfcal/geometry_manifest.json",
+  "revision": "4ca4a42dab2ca0a884e449d202e9ad96625d5648",
+  "relative_path": "assets/expansion_batch04/t1_thermal/mt_rc1mxhfcal/geometry_manifest.json",
+  "sha256": "e962487636671ccd66a27db63cc651c4e8d49ff71ab381c5af929e869601c870",
+  "size": 212475,
+  "purpose": "Required by native RC1mx heat transfer; missing from upstream minimal download subset"
+}

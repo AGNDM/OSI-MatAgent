@@ -82,6 +82,8 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
     decision_backend = decision_backend or RulesBackend()
 
     def stop_reason(state, for_model=False, for_action=False):
+        if getattr(lab, "termination_reason", None):
+            return lab.termination_reason
         if state.get("terminal_reason"):
             return state["terminal_reason"]
         if time.monotonic() >= state["deadline"]:
@@ -196,6 +198,8 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                 "current_thermal_run": inspection.get("current_thermal_run") if inspection else None,
                 "current_scan_method": inspection.get("scan_method") if inspection else None,
                 "instruction": "Use the CURRENT inspection above; do not restart the episode or assume it is absent."})
+        if hasattr(profile, "model_payload"):
+            payload = profile.model_payload(payload)
         counts = {"role_call_count": state["role_call_count"], "llm_call_count": state["llm_call_count"]}
         if role=='diagnostic':counts['retrieval_evidence']=deepcopy(payload.get('retrieval_evidence',[]))
         attempts = 1 + (limits.format_repairs if roles.is_llm else 0)
@@ -214,7 +218,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
                 prompt = (profile.prompts if profile else PROMPTS)[role]
                 if role == "diagnostic" and operation_backend is not None:
                     import json
-                    prompt = (getattr(profile, "candidate_prompt", prompt) + CANDIDATE_INSTRUCTION
+                    prompt = (getattr(profile, "candidate_prompt", prompt) + getattr(profile, "candidate_instruction", CANDIDATE_INSTRUCTION)
                               + "\nCURRENT PUBLIC STATE FOR THIS CALL (not the episode initial state):\n"
                               + json.dumps(payload["operation_context"], sort_keys=True, allow_nan=False))
                 raw = roles.invoke(role, prompt, payload, schema)
@@ -310,7 +314,7 @@ def build_graph(lab: LabAdapter, trace: Trace, limits: Limits | None = None,
             if (decision.backend_id != decision_backend.backend_id or decision.fallback_used
                     or decision.choice not in offers or not p or decision.choice not in p
                     or any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values())
-                    or abs(sum(p.values())-1)>1e-5 or p[decision.choice] != max(p.values())
+                    or p[decision.choice] != max(p.values())
                     or authorization['revision'] != lab.revision or authorization['sample_id'] != lab.sample_id
                     or proposal.sample_id != lab.sample_id or proposal.expected_revision != lab.revision
                     or proposal.capability_id != 'workflow.await'

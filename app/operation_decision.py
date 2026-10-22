@@ -7,7 +7,7 @@ import time
 from typing import Protocol
 
 from app.local_decision import LocalOpenJevBackend
-from app.models import ActionCandidate, OperationDecision
+from app.models import ActionCandidate, OperationDecision, INTENT_OUTPUT_INSTRUCTION
 
 CANDIDATE_INSTRUCTION = (
     ' This run uses a separate operational decision maker. Override the instruction to select one intent: '
@@ -17,14 +17,15 @@ CANDIDATE_INSTRUCTION = (
     'mark a preferred candidate. At the initial state without inspection, propose inspection only. After a state change, use fresh public readback and the declared goal before another mutation. '
     'Use only current public evidence; citations must be observation IDs, never document IDs. '
     'The decision maker, not the diagnostic expert, chooses which candidate proceeds to procedure.'
-)
+) + INTENT_OUTPUT_INSTRUCTION
 
 DECISION_PROMPT = (
     'Choose the next native operation from the expert candidates using current public observations, '
     'goal predicates, constraints and supplied knowledge evidence. Hypotheses and rationales are proposals, '
     'not verified facts. Use the current state rather than obsolete observations. Inspect first when required; '
     'a command receipt alone does not establish process completion. Do not invent capabilities, arguments '
-    'or candidate IDs. Return one supplied candidate ID and its complete normalized probability vector. '
+    'or candidate IDs. Return one supplied candidate ID and a value in [0,1] for every candidate. '
+    'The values are compared by argmax; they do not need to sum to one. '
     'Select a maximum-probability candidate; do not execute tools.'
 )
 
@@ -42,8 +43,8 @@ def validate_decision(raw, candidates):
     p = decision.probabilities
     if decision.choice not in ids or set(p) != set(ids):
         raise ValueError('Decision must reference exactly the supplied candidate IDs')
-    if any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values()) or abs(sum(p.values())-1) > 1e-5:
-        raise ValueError('Invalid operation probability distribution')
+    if any(not math.isfinite(v) or not 0 <= v <= 1 for v in p.values()):
+        raise ValueError('Invalid operation option value')
     if p[decision.choice] != max(p.values()):
         raise ValueError('Selected operation must maximize the supplied probabilities')
     return decision
