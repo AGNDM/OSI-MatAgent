@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=langgraph-matrix-report
+#SBATCH --account=liac
+#SBATCH --partition=l40s,h100
+#SBATCH --qos=normal
+#SBATCH --gres=gpu:1
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=40G
+#SBATCH --time=01:00:00
+#SBATCH --output=/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-report-20261022/report-%j.log
+set -euo pipefail
+[[ -n "${SLURMD_NODENAME:-}" && -n "${SLURM_JOB_ID:-}" ]] || exit 2
+export PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 MPLBACKEND=Agg
+export PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+export OMP_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 MKL_NUM_THREADS=8
+unset PYTHONPATH PYTHONHOME
+root=/scratch/dsegura/git/osi_hackathon_AGMAT
+if [[ "${1:-}" == '--validate' ]]; then
+  receipt="$root/results/langgraph-matrix-report-validation-$SLURM_JOB_ID"
+  mkdir -p "$receipt"
+  export MPLCONFIGDIR="$receipt/matplotlib-cache"
+  srun "$root/.venv-models/bin/python" -m pytest -q \
+    "$root/results/langgraph-matrix-report-20261022/test_matrix_report.py" \
+    --junitxml="$receipt/tests.xml"
+  srun "$root/.venv-models/bin/python" - "$receipt" <<'PY'
+import hashlib, importlib.metadata, json, os, pathlib, shutil, sys, xml.etree.ElementTree as ET
+output = pathlib.Path(sys.argv[1])
+source = pathlib.Path('/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-matrix-report-20261022')
+hashes = {name: hashlib.sha256((source / name).read_bytes()).hexdigest()
+          for name in ('matrix_report.py', 'test_matrix_report.py', 'run.sbatch')}
+tests = list(ET.parse(output / 'tests.xml').getroot().iter('testsuite'))
+assert tests and not any(int(test.get('failures', 0)) or int(test.get('errors', 0)) for test in tests)
+(output / 'snapshot').mkdir()
+for name in hashes:
+    shutil.copy2(source / name, output / 'snapshot' / name)
+receipt = {'status': 'validated', 'slurm_job_id': os.environ['SLURM_JOB_ID'],
+    'compute_node': os.environ['SLURMD_NODENAME'], 'python': sys.executable,
+    'tests_passed': sum(int(test.get('tests', 0)) - int(test.get('skipped', 0)) for test in tests),
+    'source_sha256': hashes, 'matplotlib': importlib.metadata.version('matplotlib'),
+    'numpy': importlib.metadata.version('numpy'),
+    'full_html_pdf_svg_png_render_test_passed': True,
+    'new_all_observed_partial_control_metric_test_passed': True,
+    'cohort_zero_goals_after_model_abort_test_passed': True}
+(output / 'receipt.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+print(json.dumps(receipt, sort_keys=True))
+PY
+  exit 0
+fi
+[[ $# -ge 3 ]] || { echo 'Usage: sbatch run.sbatch STUDY COMBINED_REPORT_JSON FRESH_OUTPUT_DIRECTORY [ADDITIONAL_STUDY ...], or --validate' >&2; exit 2; }
+study="$1"
+report="$2"
+output="$3"
+shift 3
+study_args=(--study "$study")
+for extra in "$@"; do study_args+=(--study "$extra"); done
+srun "$root/.venv-models/bin/python" "$root/results/langgraph-matrix-report-20261022/matrix_report.py" \
+  "${study_args[@]}" --report "$report" --output "$output"

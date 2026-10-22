@@ -1,0 +1,254 @@
+{
+  "analysis": {
+    "all388": "includes training and validation diagnostics",
+    "execution_scope": "MCQA only; use --track mcqa. Original sequential settings are retained only in provenance.",
+    "expert_review_completed": false,
+    "groups": "authored instrument failure mechanism, condition and workflow",
+    "historical_source_identity": "See mcqa-used-profiles-provenance.json; source profiles remain separate.",
+    "hosted_inference_calls": 0,
+    "menu_seed": 42,
+    "portable_profile": "mcqa-features-12",
+    "primary_mcqa": "heldout114",
+    "sampling_seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "bundle": "${INSTRUMENT_BUNDLE}",
+  "experiments": [
+    {
+      "analysis_family": "qwen3-4b-hf-choice",
+      "architecture": "direct",
+      "backend": {
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "menu_seed": 42,
+      "method": "choice",
+      "name": "qwen3-4b-hf-choice-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "qwen3-4b-hf-logprobs",
+      "architecture": "direct",
+      "backend": {
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "menu_seed": 42,
+      "method": "logprobs",
+      "name": "qwen3-4b-hf-logprobs-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "qwen3-4b-hf-verbalized",
+      "architecture": "direct",
+      "backend": {
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "menu_seed": 42,
+      "method": "verbalized",
+      "name": "qwen3-4b-hf-verbalized-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "qwen3-4b-hf-verbalized-cited",
+      "architecture": "direct",
+      "backend": {
+        "cite_causes": true,
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "menu_seed": 42,
+      "method": "verbalized",
+      "name": "qwen3-4b-hf-verbalized-cited-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "qwen3-4b-hf-sampling",
+      "architecture": "direct",
+      "backend": {
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "menu_seed": 42,
+      "method": "sampling",
+      "name": "qwen3-4b-hf-sampling-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "qwen3-4b-hf-sampling",
+      "architecture": "direct",
+      "backend": {
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "menu_seed": 42,
+      "method": "sampling",
+      "name": "qwen3-4b-hf-sampling-seed1",
+      "samples": 10,
+      "seed": 1,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "qwen3-4b-hf-sampling",
+      "architecture": "direct",
+      "backend": {
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "menu_seed": 42,
+      "method": "sampling",
+      "name": "qwen3-4b-hf-sampling-seed2",
+      "samples": 10,
+      "seed": 2,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "minilm-cosine",
+      "architecture": "direct",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_COSINE}",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "fitted_scope": "mcqa-train232-validation42; sequential transfer without fitting",
+      "menu_seed": 42,
+      "method": "native",
+      "name": "minilm-cosine-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "minilm-linear",
+      "architecture": "direct",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_LINEAR}",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "fitted_scope": "mcqa-train232-validation42; sequential transfer without fitting",
+      "menu_seed": 42,
+      "method": "native",
+      "name": "minilm-linear-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "minilm-knn",
+      "architecture": "direct",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_KNN}",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "fitted_scope": "mcqa-train232-validation42; sequential transfer without fitting",
+      "menu_seed": 42,
+      "method": "native",
+      "name": "minilm-knn-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "qwen25-hidden-linear",
+      "architecture": "direct",
+      "backend": {
+        "artifact_path": "${ARTIFACT_QWEN25_HIDDEN_LINEAR}",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "encoder_kind": "hf_hidden",
+        "kind": "features",
+        "max_context": 32768,
+        "max_new_tokens": 192,
+        "model_path": "${MODEL_QWEN25_3B}",
+        "repository": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+      },
+      "fitted_scope": "mcqa-train232-validation42; sequential transfer without fitting",
+      "menu_seed": 42,
+      "method": "native",
+      "name": "qwen25-hidden-linear-seed0",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    },
+    {
+      "analysis_family": "reference-majority",
+      "architecture": "direct",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MAJORITY}",
+        "kind": "reference",
+        "reference": "majority"
+      },
+      "menu_seed": 42,
+      "method": "native",
+      "name": "reference-majority-seed0",
+      "reporting_role": "reference",
+      "samples": 10,
+      "seed": 0,
+      "temperature": 0.8
+    }
+  ],
+  "schema_version": 1,
+  "study_protocol": "local-instrument-study-20261022-v1",
+  "tracks": {
+    "mcqa": {
+      "split": "all"
+    }
+  }
+}

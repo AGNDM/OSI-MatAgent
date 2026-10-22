@@ -1,0 +1,893 @@
+{
+  "analysis": {
+    "mode": "teacher_forced",
+    "note": "Portable E model/protocol recipe only; prepare fresh source/configuration bindings and retain mode/case scope. Historical scheduler and evidence identities are not regenerated.",
+    "primary": "Original-action accuracy and corrections; goal completion is assisted.",
+    "protocol": "deadline-rescue-qwen-yarn64k-menu-ids-v3-decision-view-v4",
+    "source_configuration_sha256": "76f9050536e9cae61f6ed4b075a04ae248b5858efcabbd85891858930c3b44b2"
+  },
+  "experiments": [
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-qwen25-14b-self",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen25-14b-self",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-qwen25-14b-to-qwen25-14b-self-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-deepseek-v2-lite-self",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "deepseek-v2-lite-self",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-deepseek-v2-lite-to-deepseek-v2-lite-self-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-openjev8b",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "family": "openjev",
+        "kind": "native",
+        "model_path": "${MODEL_OPENJEV8B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "openjev8b",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "native",
+      "name": "rescue-graph-qwen25-14b-to-openjev8b-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-openjev8b",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "family": "openjev",
+        "kind": "native",
+        "model_path": "${MODEL_OPENJEV8B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "openjev8b",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "native",
+      "name": "rescue-graph-deepseek-v2-lite-to-openjev8b-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-apus-low",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "effort": "low",
+        "family": "apus",
+        "kind": "native",
+        "model_path": "${MODEL_APUS_REFLEX4B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "apus-low",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "native",
+      "name": "rescue-graph-qwen25-14b-to-apus-low-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-apus-low",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "effort": "low",
+        "family": "apus",
+        "kind": "native",
+        "model_path": "${MODEL_APUS_REFLEX4B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "apus-low",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "native",
+      "name": "rescue-graph-deepseek-v2-lite-to-apus-low-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-apus-high",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "effort": "high",
+        "family": "apus",
+        "kind": "native",
+        "model_path": "${MODEL_APUS_REFLEX4B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "apus-high",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "native",
+      "name": "rescue-graph-qwen25-14b-to-apus-high-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-apus-high",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "effort": "high",
+        "family": "apus",
+        "kind": "native",
+        "model_path": "${MODEL_APUS_REFLEX4B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "apus-high",
+      "deadline_batch": "core",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "native",
+      "name": "rescue-graph-deepseek-v2-lite-to-apus-high-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-to-qwen25-self",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_3B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen25-self",
+      "deadline_batch": "weak_controls",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_3B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-qwen25-to-qwen25-self-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen3-to-qwen3-self",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN3_4B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen3-self",
+      "deadline_batch": "weak_controls",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN3_4B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen3",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-qwen3-to-qwen3-self-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-qwen25-hf",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_3B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen25-hf",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-qwen25-14b-to-qwen25-hf-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-qwen25-hf",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_3B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen25-hf",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-deepseek-v2-lite-to-qwen25-hf-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-qwen3-hf",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen3-hf",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-qwen25-14b-to-qwen3-hf-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-qwen3-hf",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 32768,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN3_4B}"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen3-hf",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "logprobs",
+      "name": "rescue-graph-deepseek-v2-lite-to-qwen3-hf-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-minilm-cosine",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_COSINE}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "minilm-cosine",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-qwen25-14b-to-minilm-cosine-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-minilm-cosine",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_COSINE}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "minilm-cosine",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-deepseek-v2-lite-to-minilm-cosine-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-minilm-linear",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_LINEAR}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "minilm-linear",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-qwen25-14b-to-minilm-linear-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-minilm-linear",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_LINEAR}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "minilm-linear",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-deepseek-v2-lite-to-minilm-linear-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-minilm-knn",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_KNN}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "minilm-knn",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-qwen25-14b-to-minilm-knn-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-minilm-knn",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_MINILM_KNN}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "encoder_kind": "embedding",
+        "kind": "features",
+        "model_path": "${MODEL_MINILM_L6}",
+        "repository": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "minilm-knn",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-deepseek-v2-lite-to-minilm-knn-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-qwen25-14b-to-qwen25-hidden-linear",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_QWEN25_HIDDEN_LINEAR}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "encoder_kind": "hf_hidden",
+        "kind": "features",
+        "max_context": 32768,
+        "model_path": "${MODEL_QWEN25_3B}",
+        "repository": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen25-hidden-linear",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_extension": "qwen25-yarn-v1",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "kind": "hf",
+        "max_context": 65536,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_QWEN25_14B}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "qwen25-14b",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-qwen25-14b-to-qwen25-hidden-linear-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    },
+    {
+      "analysis_family": "rescue-graph-deepseek-v2-lite-to-qwen25-hidden-linear",
+      "architecture": "repository_langgraph",
+      "backend": {
+        "artifact_path": "${ARTIFACT_QWEN25_HIDDEN_LINEAR}",
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "encoder_kind": "hf_hidden",
+        "kind": "features",
+        "max_context": 32768,
+        "model_path": "${MODEL_QWEN25_3B}",
+        "repository": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+      },
+      "call_timeout_seconds": 120,
+      "chooser_column": "qwen25-hidden-linear",
+      "deadline_batch": "support",
+      "episode_seconds": 300,
+      "expert": {
+        "context_max_bytes": 32000,
+        "context_protocol": "decision-view-v4",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "kind": "hf",
+        "max_context": 163840,
+        "max_new_tokens": 2048,
+        "model_path": "${MODEL_DEEPSEEK_V2_LITE}",
+        "record_protocol": "menu-ids-v3",
+        "structured_output": "json_schema_lmfe_v4"
+      },
+      "expert_row": "deepseek-v2-lite",
+      "graph_steps": 2048,
+      "max_model_calls": 128,
+      "method": "features",
+      "name": "rescue-graph-deepseek-v2-lite-to-qwen25-hidden-linear-seed0",
+      "seed": 0,
+      "tracks": [
+        "sequential"
+      ]
+    }
+  ],
+  "schema_version": 1
+}

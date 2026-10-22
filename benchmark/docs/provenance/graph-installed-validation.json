@@ -1,0 +1,19 @@
+{
+  "status": "validated",
+  "installed_package": "/scratch/dsegura/git/OSI-MatAgent/benchmark/graph",
+  "source_receipt": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-local-environment-20261022/package-final-4635954/receipt.json",
+  "source_receipt_sha256": "63ea9b9338cbf3608e5be9ca1c3169126adafef08a9ddbaf6a72c2da2339a793",
+  "package_manifest_sha256": "da8f2fdad5ac42cd0f600e7f1c7dd18509e4cd32dd0a65ff535aab73f5f4a617",
+  "package_files": 40,
+  "installed_bytes_identical_before_and_after_tests": true,
+  "installed_portability_reporting_checks_passed": true,
+  "shared_comparison_bytes_match_validated_controller": true,
+  "instrument_manifest_sha256": "26b67caad9e7d57248c38980b77c78196d88d9ad05c81bd963fbb7d452e36ef7",
+  "instrument_release_validation_passed": true,
+  "application_source_matches_validated_snapshot": true,
+  "application_revision": "22a8192e4e40f3a7d37e1164a8755b006f932d60",
+  "compute_node": "kh062",
+  "slurm_job_id": "4635984",
+  "hosted_inference_calls": 0,
+  "expert_review_completed": false
+}

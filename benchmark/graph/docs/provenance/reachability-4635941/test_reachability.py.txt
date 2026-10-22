@@ -1,0 +1,140 @@
+"""Boundary evidence regression tests; run only inside Slurm."""
+from copy import deepcopy
+import hashlib
+import json
+import os
+from pathlib import Path
+
+import pytest
+
+if not os.environ.get('SLURM_JOB_ID') or not os.environ.get('SLURMD_NODENAME'):
+    pytest.skip('Reachability computation requires Slurm', allow_module_level=True)
+
+import reachability as appendix
+
+
+def event(component, kind, index, *, options=None):
+    result = {'event_id': 'episode:' + str(index), 'component': component, 'kind': kind}
+    if options is not None:
+        result['backend_metadata'] = {'request_sent': True, 'options': options}
+    return result
+
+
+def call(component, kind):
+    return {'experiment': 'cell', 'task_id': 'case-0', 'mode': 'free_run',
+            'component': component, 'kind': kind}
+
+
+def test_expert_schema_failure_does_not_reach_or_implicate_operation_chooser():
+    events = [event('router', 'routing_start', 1), event('router', 'routing', 2, options={'A': 'diagnose'}),
+              event('diagnostic', 'role_start', 3), event('diagnostic', 'role_error', 4)]
+    result = appendix.stage_evidence(events, [call('router', 'routing'), call('diagnostic', 'role_error')], {})
+    assert result['router_entered'] and result['diagnostic_entered']
+    assert result['router_call_attempts'] == 1 and result['nontrivial_router_call_attempts'] == 0
+    assert result['operation_chooser_entered'] is False
+    assert result['operation_call_attempts'] == 0
+    assert appendix.barrier(result) == 'expert_before_operation_chooser'
+
+
+def test_nontrivial_routing_is_separate_from_operational_choice():
+    result = appendix.stage_evidence([event('router', 'routing', 1, options={'A': 'diagnose', 'B': 'verify'})],
+                                     [call('router', 'routing')], {})
+    assert result['nontrivial_router_call_attempts'] == 1
+    assert result['nontrivial_operation_choice_observed'] is False
+
+
+def test_single_candidate_does_not_establish_learned_operation_choice():
+    events = [event('operation_decision', 'operation_start', 1),
+              event('operation_decision', 'operation_selected', 2, options={'A': 'inspect'})]
+    result = appendix.stage_evidence(events, [call('operation_decision', 'operation_selected')], {})
+    assert result['operation_choice_valid'] is True
+    assert result['operation_call_attempts'] == 1
+    assert result['nontrivial_operation_choice_observed'] is False
+    assert result['nontrivial_operation_call_attempts'] == 0
+
+
+def test_two_candidate_valid_choice_and_gate_native_boundaries_are_independent():
+    events = [event('operation_decision', 'operation_selected', 1, options={'A': 'inspect', 'B': 'start'}),
+              event('procedure', 'role_start', 2), event('procedure', 'role_output', 3),
+              event('gate', 'accepted', 4), event('native_bridge', 'action_handoff', 5)]
+    result = appendix.stage_evidence(events, [call('operation_decision', 'operation_selected'), call('procedure', 'role_output')], {})
+    assert result['nontrivial_operation_choice_observed']
+    assert result['nontrivial_operation_valid_selections'] == 1
+    assert result['procedure_schema_valid'] and result['typed_gate_accepted'] and result['native_handoff_reached']
+    assert result['native_grading_reached'] is False
+    assert appendix.barrier(result) == 'native_handoff_without_grade'
+
+
+def test_authentic_partial_native_grade_proves_handoff_without_terminal_outcome():
+    result = appendix.stage_evidence([], [], {'observed_native_grades': [{'proposal_correct': False}]})
+    assert result['native_handoff_reached'] and result['native_grading_reached']
+    assert 'trajectory_outcome_met' not in result
+    assert appendix.barrier(result) == 'native_grades_observed'
+
+
+def test_repeated_trace_event_is_not_counted_twice():
+    value = event('operation_decision', 'operation_selected', 1, options={'A': 'inspect', 'B': 'start'})
+    result = appendix.stage_evidence([value, deepcopy(value)], [call('operation_decision', 'operation_selected')], {})
+    assert result['nontrivial_operation_valid_selections'] == 1
+
+
+def write(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value, sort_keys=True) + '\n')
+
+
+def fixture(tmp_path):
+    study = tmp_path / 'study'
+    cases = study / 'snapshot/instrument/sequential_120/cases.jsonl'
+    cases.parent.mkdir(parents=True)
+    cases.write_text(''.join(json.dumps({'task_id': 'case-' + str(i)}) + '\n' for i in range(120)))
+    manifest = study / 'source-manifest.json'
+    write(manifest, {'instrument/sequential_120/cases.jsonl': appendix.digest(cases)})
+    config = study / 'configuration.json'
+    write(config, {'experiments': [{'name': 'cell', 'graph_source_manifest_sha256': 'protocol-fixture'}]})
+    write(study / 'prepared.json', {'source_manifest_sha256': appendix.digest(manifest),
+                                   'configuration_sha256': appendix.digest(config)})
+    source = study / 'runs/shard-000'
+    trace = source / 'cell/sequential/steps' / hashlib.sha256(b'case-0').hexdigest()[:24] / 'free_run/graph.jsonl'
+    trace.parent.mkdir(parents=True)
+    events = [event('router', 'routing', 1, options={'A': 'diagnose'}), event('diagnostic', 'role_error', 2)]
+    trace.write_text(''.join(json.dumps(value) + '\n' for value in events))
+    matrix = {'cells': [{'name': 'cell', 'expert_row': 'expert', 'chooser_column': 'chooser',
+                         'study': str(study), 'sources': [str(source)]}],
+              'source_files_sha256': {str(trace): appendix.digest(trace)}}
+    diagnostic = {'experiment': 'cell', 'task_id': 'case-0', 'mode': 'free_run',
+                  'primary_abort_category': 'model_json_schema', 'observed_native_grades': []}
+    return matrix, diagnostic, trace
+
+
+def test_all_original_cases_remain_in_stage_denominators(tmp_path):
+    matrix, diagnostic, _ = fixture(tmp_path)
+    result = appendix.analyze(matrix, [diagnostic], [call('router', 'routing'), call('diagnostic', 'role_error')])
+    assert len(result['episode_reachability']) == 240
+    free = next(row for row in result['cells'] if row['mode'] == 'free_run')
+    assert free['cohort'] == 120 and free['attempted_episodes'] == 1
+    assert free['router_entered_episodes'] == 1 and free['operation_chooser_entered_episodes'] == 0
+    assert 'No valid nontrivial' in free['operational_chooser_attribution']
+    assert result['homogeneous_graph_source_protocol'] is True
+
+
+def test_trace_hash_change_rejected(tmp_path):
+    matrix, diagnostic, trace = fixture(tmp_path)
+    trace.write_text(trace.read_text() + '\n')
+    with pytest.raises(ValueError, match='authenticated matrix evidence'):
+        appendix.analyze(matrix, [diagnostic], [])
+
+
+def test_reachability_html_keeps_router_attribution_separate(tmp_path):
+    matrix, diagnostic, _ = fixture(tmp_path)
+    result = appendix.analyze(matrix, [diagnostic], [call('router', 'routing')])
+    page = appendix.render_html(result)
+    assert 'same backend can still affect routing' in page
+    assert '0/120' in page and 'operation chooser' in page
+    assert 'No final outcome is inferred from partial records' in page
+
+
+def test_slurm_guard(monkeypatch):
+    monkeypatch.delenv('SLURMD_NODENAME', raising=False)
+    with pytest.raises(RuntimeError, match='Slurm'):
+        appendix.require_slurm()

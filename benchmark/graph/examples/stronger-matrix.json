@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "defaults": {"seed": 0, "max_model_calls": 256, "episode_seconds": 1800, "graph_steps": 4096, "call_timeout_seconds": 180},
+  "analysis": {"description": "Larger local Qwen/DeepSeek expert rows under frozen study-v2 protocol; declaration is not schema capability or trajectory success"},
+  "experts": [
+    {"label": "qwen25-14b", "backend": {"kind": "hf", "model_path": "{MODEL_ROOT}/qwen2.5-14b", "device": "cuda:0", "dtype": "bfloat16", "max_context": 32768, "max_new_tokens": 4096}},
+    {"label": "deepseek-v2-lite", "backend": {"kind": "hf", "model_path": "{MODEL_ROOT}/deepseek-v2-lite-chat", "device": "cuda:0", "dtype": "bfloat16", "max_context": 163840, "max_new_tokens": 4096}}
+  ],
+  "choosers": [
+    {"label": "qwen25-hf", "backend": {"kind": "hf", "model_path": "{MODEL_ROOT}/qwen2.5-3b", "device": "cuda:0", "dtype": "float16", "max_context": 32768}},
+    {"label": "qwen3-hf", "backend": {"kind": "hf", "model_path": "{MODEL_ROOT}/qwen3-4b-instruct-2507", "device": "cuda:0", "dtype": "float16", "max_context": 32768}},
+    {"label": "openjev8b", "backend": {"kind": "native", "family": "openjev", "model_path": "{MODEL_ROOT}/openjev8b", "device": "cuda:0"}},
+    {"label": "apus-low", "backend": {"kind": "native", "family": "apus", "effort": "low", "model_path": "{MODEL_ROOT}/apus-reflex/4B-5949", "device": "cuda:0"}},
+    {"label": "apus-high", "backend": {"kind": "native", "family": "apus", "effort": "high", "model_path": "{MODEL_ROOT}/apus-reflex/4B-5949", "device": "cuda:0"}},
+    {"label": "minilm-cosine", "backend": {"kind": "features", "encoder_kind": "embedding", "artifact_path": "{ARTIFACT_ROOT}/minilm/cosine", "model_path": "{MODEL_ROOT}/minilm-l6", "repository": "sentence-transformers/all-MiniLM-L6-v2", "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41", "device": "cuda:0"}},
+    {"label": "minilm-linear", "backend": {"kind": "features", "encoder_kind": "embedding", "artifact_path": "{ARTIFACT_ROOT}/minilm/linear", "model_path": "{MODEL_ROOT}/minilm-l6", "repository": "sentence-transformers/all-MiniLM-L6-v2", "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41", "device": "cuda:0"}},
+    {"label": "minilm-knn", "backend": {"kind": "features", "encoder_kind": "embedding", "artifact_path": "{ARTIFACT_ROOT}/minilm/knn", "model_path": "{MODEL_ROOT}/minilm-l6", "repository": "sentence-transformers/all-MiniLM-L6-v2", "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41", "device": "cuda:0"}},
+    {"label": "qwen25-hidden-linear", "backend": {"kind": "features", "encoder_kind": "hf_hidden", "artifact_path": "{ARTIFACT_ROOT}/qwen25-hidden/linear", "model_path": "{MODEL_ROOT}/qwen2.5-3b", "repository": "Qwen/Qwen2.5-3B-Instruct", "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "device": "cuda:0", "dtype": "float16", "max_context": 32768}}
+  ]
+}

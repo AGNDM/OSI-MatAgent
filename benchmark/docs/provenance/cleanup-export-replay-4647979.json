@@ -1,0 +1,268 @@
+{
+  "artifacts": {
+    "mcqa-base/mcqa-results-by-category.json": {
+      "bytes": 374228,
+      "sha256": "d999b518e1ea4125e279c0613ff51a41ab8bd21fb6a2a7db27afdddb4e1eef48"
+    },
+    "mcqa-base/mcqa-results-by-option-count.json": {
+      "bytes": 286478,
+      "sha256": "bc3822bdd3075992b5da602ccab27b858a9e41fbc77ad710f134a5b4ee2176a8"
+    },
+    "mcqa-base/mcqa-results.json": {
+      "bytes": 25971,
+      "sha256": "8d6ab3a8cd06c7cd9871e9880d9f758a059ab9a97fc2c0ecda4257db13aee411"
+    },
+    "mcqa-enriched/mcqa-results-by-category.json": {
+      "bytes": 3829462,
+      "sha256": "9145b02c5a557ae1561fd5427ea4fcf68e3aa54e2a6e2aaa13729ff066b7e808"
+    },
+    "mcqa-enriched/mcqa-results-by-option-count.json": {
+      "bytes": 3458637,
+      "sha256": "e7b0262d364f3fec01d769aedbf873315f3eb19d0439e8577138c54c140f3571"
+    },
+    "mcqa-enriched/mcqa-results.json": {
+      "bytes": 828520,
+      "sha256": "61a77bb86908c40b00688b31a8f172d32f316f94e2fefecd5d3dd9f075893d5b"
+    },
+    "workflow/workflow-failures.json": {
+      "bytes": 9310855,
+      "sha256": "f897f46dac11d86eadef7925266249892cfed9518fe4808def9741aa8b0b9c07"
+    },
+    "workflow/workflow-final-audit.json": {
+      "bytes": 14444366,
+      "sha256": "bc69c9b84d24b09507a1f5866ac72bd189ab315ba910d5425b0b882611dae9f8"
+    },
+    "workflow/workflow-results.json": {
+      "bytes": 17620571,
+      "sha256": "fc0bf6c41eff3b30f580b66db37d83b50e63a5891aa1a061aaad2589bb86d9ac"
+    },
+    "workflow/workflow-status.json": {
+      "bytes": 14568,
+      "sha256": "2004ff6a85b1a3d8f6d1bccf4d3798286b3d7e479f09c8b83ee498082a245ca1"
+    }
+  },
+  "bindings": {
+    "output": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979",
+    "scorer_source": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/local-study-source-20261022-v2",
+    "snapshot": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/current-static-4636947/snapshot.json",
+    "study": "/scratch/dsegura/git/OSI-MatAgent/results/workflow-teacher-forced-v11-20261022-e",
+    "taxonomy": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/local-study-source-20261022-v1/output/validated-source-4633981/taxonomy.json"
+  },
+  "comparisons": {
+    "mcqa-results-by-category.json": "All method score/count/calibration/selective and measured timing/token fields match; only allocation accounting/provenance excluded.",
+    "mcqa-results-by-option-count.json": "All method score/count/calibration/selective and measured timing/token fields match; only allocation accounting/provenance excluded.",
+    "mcqa-results.json": "All method score/count/calibration/selective and measured timing/token fields match; only allocation accounting/provenance excluded.",
+    "workflow-final-audit": {
+      "all23_gates": true,
+      "observed_raw_totals": {
+        "aborted": 1296,
+        "assisted_goals": 1344,
+        "closed": 2640,
+        "correct": 5477,
+        "correction_known": 2640,
+        "corrections": 6989,
+        "explicit_initialization_failures": 0,
+        "missing": 0,
+        "native_completed": 1344,
+        "proposal_known": 2640,
+        "proposals": 12466
+      },
+      "zero_issues": true
+    },
+    "workflow-teacher-forced-results.json": "All22 native scores/groups/checkpoints, cases/outcomes, all-closed and completed-only metrics, measured usage, cohort/batch/error counts match."
+  },
+  "compute_node": "kh062",
+  "finished_utc": "2026-10-22T20:23:53.103227+00:00",
+  "native_simulation_performed": false,
+  "neural_inference_performed": false,
+  "original_public_sha256": {
+    "/scratch/dsegura/git/OSI-MatAgent/results/120/workflow-teacher-forced-final-audit.json": "d27b62d12501eb6d33afef7a9c134a398c61ba9147a365642567a74a54c4bd10",
+    "/scratch/dsegura/git/OSI-MatAgent/results/120/workflow-teacher-forced-results.json": "ff450d4cdfbe5bb2538e74abda09811dc0843a4d6a0e50b524ab9ea44dcece6b",
+    "/scratch/dsegura/git/OSI-MatAgent/results/120/workflow-teacher-forced-status.json": "ad1b634442f2448cd380354391c5e5341a92a80cd750f3e4b5c53900bd52529b",
+    "/scratch/dsegura/git/OSI-MatAgent/results/388/mcqa-results-by-category.json": "0b5bf96a1ab0a3ac5ec7b49dc6bc43671015d2003f256398f05c2d145963ab3a",
+    "/scratch/dsegura/git/OSI-MatAgent/results/388/mcqa-results-by-option-count.json": "765cd29a24972d8f3a1e94b066cc30cfe813001fd4b75a6a94c6905759376313",
+    "/scratch/dsegura/git/OSI-MatAgent/results/388/mcqa-results.json": "82f14ae959774d2c05516bc6fc3ead38d15259fbdd79b46ddf015bf2b7fd89d5"
+  },
+  "original_public_unchanged": true,
+  "portable_source_sha256": {
+    "benchmark/evaluation/README.md": "9a9b35bce6bf44b65ed3ac4f679c903511db3af0466424ee83c1b085d537861f",
+    "benchmark/evaluation/__init__.py": "7c11e6da84dd22ddfe74922ecee66445df6cf8547666de266eb8be348ddf771b",
+    "benchmark/evaluation/configs/mcqa-overall-metadata.json": "b26cb3d74bfa75a8312e95f463b8bcdf0ccad205e89b9950938fd7062891efd7",
+    "benchmark/evaluation/configs/original-source-provenance.json": "29c24c91cfa2896230c4106a6d881fe7e1aee74476d935bb8d691f6f17779d6d",
+    "benchmark/evaluation/configs/site-tariffs-20261022.yaml": "1760fce7b830e3bd9745d4c0f12fdc5ce2338ba788c0860e0e28bcbd43731fa6",
+    "benchmark/evaluation/configs/workflow-e-bindings.example.json": "f69bace89ba3757cdd9a97839e07031fec123c6f692175ce7a1f0a2347a219de",
+    "benchmark/evaluation/configs/workflow-e-plan.json": "3af3e0717dad1ead946fcef5fd28faed5489e7420d369bdbe1bb5e27f033a516",
+    "benchmark/evaluation/mcqa/__init__.py": "1a3d5d0d56993c738ab0b522c7f6feb8699a26a7ee7a8b16a8f95839b5dd04f3",
+    "benchmark/evaluation/mcqa/accounting.py": "3a91dfc83dc15f999afc42af08649b6b36a890372a344a2e358df4360acb8d12",
+    "benchmark/evaluation/mcqa/enrich.py": "3a9a9da142527d1fd00e59fd54a27d10c3f2307617c90223bef9a25ee1640dd0",
+    "benchmark/evaluation/mcqa/export_groups.py": "c0999c078b40c0c3afdfa3f786b587368a303ef0cdddcfb14e0d0182a98d10c3",
+    "benchmark/evaluation/mcqa/export_overall.py": "4a5c8752b115ada7a28c88bb7aa23200c4bbdb5358334e869bb5a33952465410",
+    "benchmark/evaluation/mcqa/metrics.py": "1291b8306d3592e5227b393d841e7db54f22223e5fe033efde2d2ffba9209964",
+    "benchmark/evaluation/prepare_profiles.py": "1de56478d50817058edeaed7966202c85de23ebc39256f711540900d80c6cead",
+    "benchmark/evaluation/slurm/run.sbatch": "9db571ceb36808a65c5b1b4f240e33bc44fba8fca71eaa0003b9142d100df768",
+    "benchmark/evaluation/tests/test_compact_status.py": "70f74687d7b3fb0f1e497e668bc450b077c0003c55844ec77c5d07c70484cee1",
+    "benchmark/evaluation/tests/test_final_audit.py": "a3143c17d6960121aa32bd8a6ded65ba80693283f64d03e568b3ee52fb081ad0",
+    "benchmark/evaluation/tests/test_mcqa_metrics.py": "b34606277f7f5f111f9da3cc96702b97284101a0c759d8470fb6d0ceb4dc52dd",
+    "benchmark/evaluation/tests/test_render_plan.py": "ee24fd072df55053ab12eb2343ee798f339b786f525f35e352adbebb7dce2646",
+    "benchmark/evaluation/workflow/__init__.py": "7fad00a923678b7ec23dbe63986662f9d5c4299e1a82d1123b57b3e5082c0bde",
+    "benchmark/evaluation/workflow/audit_failures.py": "c9ea0f9ba21b1233b6d0057d70dc200ef30d6f83f84ecd9abd2094b3fb5441de",
+    "benchmark/evaluation/workflow/compact_status.py": "6b28730f42fdf2870609319582edac08c838dc3bd871c203da7a75f6b2d2a93f",
+    "benchmark/evaluation/workflow/final_audit.py": "44d79dd0b031fa65b77203a8b0b88cc7f392f49e05bac280523abf8a9b96fe35",
+    "benchmark/evaluation/workflow/render_plan.py": "05e7d11b8f65696fc440b782e91a58ef3f4d7be35c9c6890abe38919b6aec3e8",
+    "benchmark/evaluation/workflow/report_grid.py": "6869d599fca5b75cc497aac3255e76a1a40cafed7fcf491a33e89f1327b96348"
+  },
+  "portable_source_unchanged": true,
+  "replay_script_sha256": "d913a7eb34f37f83a5479e2ea5ea0ae91b01cd1af95980cdc4274cc6a0a6bea2",
+  "schema_version": 1,
+  "slurm_job_id": "4647979",
+  "started_utc": "2026-10-22T20:21:53.072487+00:00",
+  "status": "passed",
+  "steps": [
+    {
+      "command": [
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-guided-v4/bin/python",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/mcqa/export_overall.py",
+        "--snapshot",
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/results/current-static-4636947/snapshot.json",
+        "--metadata",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/configs/mcqa-overall-metadata.json",
+        "--output",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/mcqa-base/mcqa-results.json"
+      ],
+      "ended_utc": "2026-10-22T20:21:53.187050+00:00",
+      "label": "01-mcqa-overall",
+      "log": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/01-mcqa-overall.log",
+      "log_sha256": "4a89bea4b80622f0441ce229257f6986825b88b3db9d683cfd81c4ada3d16c1f",
+      "returncode": 0,
+      "started_utc": "2026-10-22T20:21:53.072622+00:00"
+    },
+    {
+      "command": [
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-guided-v4/bin/python",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/mcqa/export_groups.py",
+        "--overall",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/mcqa-base/mcqa-results.json",
+        "--snapshot",
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/results/current-static-4636947/snapshot.json",
+        "--taxonomy",
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/results/local-study-source-20261022-v1/output/validated-source-4633981/taxonomy.json",
+        "--source-root",
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/results/local-study-source-20261022-v2",
+        "--output-dir",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/mcqa-base"
+      ],
+      "ended_utc": "2026-10-22T20:21:57.058729+00:00",
+      "label": "02-mcqa-groups",
+      "log": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/02-mcqa-groups.log",
+      "log_sha256": "df41492b6c7ffd3ba6db715ae8708d566dd91318f21bb202350ef003610c5416",
+      "returncode": 0,
+      "started_utc": "2026-10-22T20:21:53.187958+00:00"
+    },
+    {
+      "command": [
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-guided-v4/bin/python",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/mcqa/enrich.py",
+        "--input-dir",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/mcqa-base",
+        "--output-dir",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/mcqa-enriched",
+        "--work-dir",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/mcqa-accounting",
+        "--snapshot",
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/results/current-static-4636947/snapshot.json",
+        "--taxonomy",
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/results/local-study-source-20261022-v1/output/validated-source-4633981/taxonomy.json",
+        "--source-root",
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/results/local-study-source-20261022-v2",
+        "--tariffs",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/configs/site-tariffs-20261022.yaml"
+      ],
+      "ended_utc": "2026-10-22T20:22:03.234819+00:00",
+      "label": "03-mcqa-enrich",
+      "log": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/03-mcqa-enrich.log",
+      "log_sha256": "82eb28135b195590b6db2d9437792561a6543efcce888c970009035a26e87f92",
+      "returncode": 0,
+      "started_utc": "2026-10-22T20:21:57.059506+00:00"
+    },
+    {
+      "command": [
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-guided-v4/bin/python",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/workflow/report_grid.py",
+        "--study",
+        "/scratch/dsegura/git/OSI-MatAgent/results/workflow-teacher-forced-v11-20261022-e",
+        "--evidence-root",
+        "/scratch/dsegura/git/OSI-MatAgent/results",
+        "--scheduler",
+        "--report-launcher",
+        "/scratch/dsegura/git/OSI-MatAgent/results/.evaluation-export-replay-driver/replay.sbatch",
+        "--output",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-results.json"
+      ],
+      "ended_utc": "2026-10-22T20:22:15.884333+00:00",
+      "label": "04-workflow-full",
+      "log": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/04-workflow-full.log",
+      "log_sha256": "ace93369bcf0524648fd8217427ddfb5a49f68afd070730a2377096f3c0f0542",
+      "returncode": 0,
+      "started_utc": "2026-10-22T20:22:03.398787+00:00"
+    },
+    {
+      "command": [
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-guided-v4/bin/python",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/workflow/compact_status.py",
+        "--study",
+        "/scratch/dsegura/git/OSI-MatAgent/results/workflow-teacher-forced-v11-20261022-e",
+        "--input",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-results.json",
+        "--output",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-status.json"
+      ],
+      "ended_utc": "2026-10-22T20:22:16.050715+00:00",
+      "label": "05-workflow-status",
+      "log": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/05-workflow-status.log",
+      "log_sha256": "270f2bfa08eb97b130b9ae5e011346a74ee50e327810d1994b9a06603655aba5",
+      "returncode": 0,
+      "started_utc": "2026-10-22T20:22:15.885778+00:00"
+    },
+    {
+      "command": [
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-guided-v4/bin/python",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/workflow/audit_failures.py",
+        "--study",
+        "/scratch/dsegura/git/OSI-MatAgent/results/workflow-teacher-forced-v11-20261022-e",
+        "--output",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-failures.json"
+      ],
+      "ended_utc": "2026-10-22T20:23:19.230825+00:00",
+      "label": "06-workflow-failures",
+      "log": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/06-workflow-failures.log",
+      "log_sha256": "d63da2cd037dace3554b0a61be9fd8f7078bae0ef03ebbfaa6600bac43a9c909",
+      "returncode": 0,
+      "started_utc": "2026-10-22T20:22:16.051409+00:00"
+    },
+    {
+      "command": [
+        "/scratch/dsegura/git/osi_hackathon_AGMAT/.venv-langgraph-guided-v4/bin/python",
+        "/scratch/dsegura/git/OSI-MatAgent/benchmark/evaluation/workflow/final_audit.py",
+        "--study",
+        "/scratch/dsegura/git/OSI-MatAgent/results/workflow-teacher-forced-v11-20261022-e",
+        "--evidence-root",
+        "/scratch/dsegura/git/OSI-MatAgent/results",
+        "--main",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-results.json",
+        "--status",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-status.json",
+        "--failure-audit",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-failures.json",
+        "--output",
+        "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/workflow/workflow-final-audit.json",
+        "--require-complete"
+      ],
+      "ended_utc": "2026-10-22T20:23:52.859788+00:00",
+      "label": "07-workflow-final-audit",
+      "log": "/scratch/dsegura/git/OSI-MatAgent/results/cleanup-export-replay-4647979/07-workflow-final-audit.log",
+      "log_sha256": "4b03ef8fe57046c18fcebadf0e79d931b3cdc3ebc1ed69819b6733634ff77cb7",
+      "returncode": 0,
+      "started_utc": "2026-10-22T20:23:19.232205+00:00"
+    }
+  ]
+}

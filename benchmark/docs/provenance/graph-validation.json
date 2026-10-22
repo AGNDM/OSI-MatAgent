@@ -1,0 +1,29 @@
+{
+  "baseline_core_and_portability_validation": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-local-environment-20261022/package-4635918/receipt.json",
+  "baseline_tests_passed": 82,
+  "canonical_instrument_changed": false,
+  "compute_node": "kh062",
+  "declared_worker_dispatch_test_passed": true,
+  "expensive_model_inference_repeated": false,
+  "fresh_isolated_environment_validation": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-local-environment-20261022/package-4635918/environment.json",
+  "hosted_inference_calls": 0,
+  "matrix_reporter_sha256": "673999624748da641434ed688f32da346f377750dd90fcee7b64c786ee5a456a",
+  "mixed_protocol_pooling_rejected": true,
+  "package": "/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-package-staging-20261022",
+  "package_manifest_sha256": "da8f2fdad5ac42cd0f600e7f1c7dd18509e4cd32dd0a65ff535aab73f5f4a617",
+  "portable_report_entrypoint_and_real_html_pdf_svg_png_render_passed": true,
+  "reachability_sha256": "4e17ff879714e577e71fa6653c79453a6f3fa2a1b2062343cac2bb8b97710da3",
+  "regeneration_tool_sha256": "4d92914c836cef1d6e2282abc1530ef27534321b62dd498e9ed94e40cfbe7a9e",
+  "slurm_job_id": "4635954",
+  "status": "validated",
+  "target_repository_written": false,
+  "tests_passed_this_job": 55,
+  "unchanged_v2_core": {
+    "__init__.py": true,
+    "backends.py": true,
+    "policy.py": true,
+    "process_backend.py": true,
+    "profile.py": true,
+    "run.py": true
+  }
+}

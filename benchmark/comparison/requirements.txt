@@ -1,0 +1,2 @@
+# Native simulator / HTTP-only Ollama adapter; Python 3.12.
+-r ../instrument/sequential_120/runtime/requirements.txt

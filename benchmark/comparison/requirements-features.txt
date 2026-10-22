@@ -1,0 +1,17 @@
+# Frozen neural features and report rendering; Python 3.12 / CUDA 12.6.
+-r requirements-hf.txt
+joblib==1.6.0
+scikit-learn==1.7.2
+scipy==1.16.2
+sentence-transformers==5.1.1
+sentencepiece==0.2.1
+threadpoolctl==3.7.0
+matplotlib==3.10.7
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.67.0
+kiwisolver==1.5.1
+pillow==13.0.0
+pyparsing==3.3.3
+python-dateutil==2.9.0.post0
+six==1.17.0

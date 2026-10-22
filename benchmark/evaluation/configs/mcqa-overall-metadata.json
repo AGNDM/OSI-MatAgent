@@ -1,0 +1,60 @@
+{
+  "document": {
+    "all_applicable_mcqa_attempts_present": true,
+    "benchmark": "Instrument operation MCQA",
+    "dataset": {
+      "accuracy_unit": "fraction_0_to_1",
+      "primary_score": "heldout_accuracy",
+      "questions_total": 388,
+      "rates_unit": "fraction_0_to_1",
+      "restricted_reference_exception": {
+        "experiment": "reference-t1-rules",
+        "heldout_questions_in_scope": 64,
+        "questions_in_scope": 208
+      },
+      "split_counts": {
+        "heldout": 114,
+        "train": 232,
+        "validation": 42
+      }
+    },
+    "interpretation": [
+      "Descriptive snapshot; no significance tests or new uncertainty claims.",
+      "Heldout accuracy counts absent/invalid answers as incorrect. ECE uses available selected-answer confidences only; Brier requires full distributions. Confidence and probability coverage are explicit.",
+      "T1 reference uses its restricted cohort, not all388 or all114. Old shortlist adapters are separate from actual LangGraph studies.",
+      "Attempt coverage includes unsupported/model-error outcomes and does not imply valid responses or success."
+    ],
+    "pretrained_models": [
+      {
+        "checkpoint_finetuned_for_benchmark": false,
+        "model_id": "Qwen/Qwen2.5-3B-Instruct"
+      },
+      {
+        "checkpoint_finetuned_for_benchmark": false,
+        "model_id": "Qwen/Qwen3-4B-Instruct-2507"
+      },
+      {
+        "checkpoint_finetuned_for_benchmark": false,
+        "model_id": "alanhuangya/OpenJev-8B"
+      },
+      {
+        "checkpoint_finetuned_for_benchmark": false,
+        "model_id": "apus-ailab/APUS-Reflex",
+        "subfolder": "4B-5949"
+      },
+      {
+        "checkpoint_finetuned_for_benchmark": false,
+        "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "role": "embedding_encoder"
+      }
+    ],
+    "schema_version": "1.0",
+    "status": "all_applicable_mcqa_cohorts_attempted",
+    "track": "static_mcqa",
+    "training_notes": [
+      "Pretrained model weights remained frozen during this benchmark.",
+      "Linear classifier baselines were fitted using benchmark training examples; kNN used labeled training examples."
+    ]
+  },
+  "expected_snapshot_sha256": "5981a192d81984a09bd6976f5d038931fb340930dd1d8bed3cda38beba841c83"
+}

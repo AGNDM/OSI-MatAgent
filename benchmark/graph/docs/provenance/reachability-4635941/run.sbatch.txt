@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=graph-reachability
+#SBATCH --account=liac
+#SBATCH --partition=mig12gb
+#SBATCH --qos=normal
+#SBATCH --gres=gpu:1
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=10G
+#SBATCH --time=00:45:00
+#SBATCH --output=/scratch/dsegura/git/osi_hackathon_AGMAT/results/langgraph-reachability-20261022/reachability-%j.log
+set -euo pipefail
+[[ -n "${SLURMD_NODENAME:-}" && -n "${SLURM_JOB_ID:-}" ]] || exit 2
+root=/scratch/dsegura/git/osi_hackathon_AGMAT
+source="$root/results/langgraph-reachability-20261022"
+export PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+export OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2
+unset PYTHONPATH PYTHONHOME
+if [[ "${1:-}" == '--validate' ]]; then
+  output="$root/results/langgraph-reachability-validation-$SLURM_JOB_ID"
+  mkdir -p "$output"
+  srun "$root/.venv-models/bin/python" -m pytest -q "$source/test_reachability.py" --junitxml="$output/tests.xml"
+  srun "$root/.venv-models/bin/python" - "$source" "$output" <<'PY'
+import hashlib,json,os,pathlib,shutil,sys,xml.etree.ElementTree as ET
+source,output=map(pathlib.Path,sys.argv[1:])
+suites=list(ET.parse(output/'tests.xml').getroot().iter('testsuite'))
+assert suites and not any(int(s.get('failures',0)) or int(s.get('errors',0)) for s in suites)
+hashes={name:hashlib.sha256((source/name).read_bytes()).hexdigest() for name in ('reachability.py','test_reachability.py','run.sbatch')}
+(output/'snapshot').mkdir()
+for name in hashes:shutil.copy2(source/name,output/'snapshot'/name)
+receipt={'status':'validated','slurm_job_id':os.environ['SLURM_JOB_ID'],'compute_node':os.environ['SLURMD_NODENAME'],
+    'tests_passed':sum(int(s.get('tests',0))-int(s.get('skipped',0)) for s in suites),'source_sha256':hashes}
+(output/'receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+print(json.dumps(receipt,sort_keys=True))
+PY
+else
+  [[ $# -eq 2 ]] || { echo 'Usage: run.sbatch MATRIX_JSON FRESH_OUTPUT, or --validate' >&2; exit 2; }
+  srun "$root/.venv-models/bin/python" "$source/reachability.py" --matrix "$1" --output "$2"
+fi
