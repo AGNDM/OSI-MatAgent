@@ -15,6 +15,13 @@ __pycache__/
 /results/*
 !/results/.gitkeep
 
+# Keep the three published MCQA summary exports available to Git.
+!/results/388/
+/results/388/*
+!/results/388/mcqa-results.json
+!/results/388/mcqa-results-by-category.json
+!/results/388/mcqa-results-by-option-count.json
+
 # Local Chinese notes and historical review documents
 *.zh.md
 /reviews/
