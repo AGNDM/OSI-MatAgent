@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-21T16:01:59.766806+00:00",
+  "source": {
+    "source_repository": "https://github.com/mbzuai-nlp/ChemLab-Assets.git",
+    "source_revision": "123cf78593469871e41b8dbd63a11dfb7c5ca251",
+    "dataset_repository": "MBZUAI/ChemLab-Assets",
+    "dataset_revision": "4ca4a42dab2ca0a884e449d202e9ad96625d5648",
+    "release": "1.3.0",
+    "python": "3.12",
+    "download_profile": "all-instruments-data-only",
+    "actual_source_revision": "123cf78593469871e41b8dbd63a11dfb7c5ca251"
+  },
+  "config": {
+    "seeds_per_family": 8,
+    "seed": 42,
+    "variants_per_case": 2,
+    "heldout_instruments": [
+      "eppendorf_cellxpertc170i"
+    ],
+    "heldout_fault_families": [
+      "sensor_failure"
+    ],
+    "validation_fraction": 0.15,
+    "test_fraction": 0.2,
+    "template_test_fraction": 0.15
+  },
+  "generator_sha256": {
+    "instrument_bench/adapters.py": "c6f29a6fce66f77e1b9b15fdbce9503487148626bfc5c0c163a285e6aedf57e3",
+    "instrument_bench/generator.py": "5a28c16f3544144915150a5ce1d0d0ab85a472244f02bfa2d5caecfaf6c58ba9",
+    "instrument_bench/scenarios.py": "ffc3a2d374570710fa0c52e1241a5a38b8be4e2dbda758a531b56acad614127f",
+    "instrument_bench/schema.py": "f800be8278349029c6a6eb7e768dad065e6669b2403b531fcbec0c7d778706cf"
+  },
+  "task_count": 388,
+  "healthy_control_count": 146,
+  "audit": {
+    "task_count": 388,
+    "base_case_count": 194,
+    "equivalence_group_count": 112,
+    "distinct_public_queries": 194,
+    "cross_split_groups": 0,
+    "duplicate_public_queries_across_base_cases": 0,
+    "heldout_template_overlap": 0
+  },
+  "deduplicated_variant_count": 732,
+  "unique_correct_count": 388,
+  "counts": {
+    "instrument": {
+      "esco_efa5uduvw": 70,
+      "binder_fd056": 76,
+      "nabertherm_l9": 96,
+      "ika_plate_rctdigital": 56,
+      "newera_ne1000": 54,
+      "vaisala_dmt152": 14,
+      "peak_precisionhydrogen": 12,
+      "eppendorf_cellxpertc170i": 10
+    },
+    "domain": {
+      "Lab Environment & Utilities": 192,
+      "Basic Metrology & Sample Handling": 132,
+      "Automation & Gas/Liquid Supply": 54,
+      "Biochemical & Wet-Chemistry Assays": 10
+    },
+    "task_type": {
+      "diagnose": 48,
+      "recover": 66,
+      "predict": 228,
+      "measure": 16,
+      "adapt": 30
+    },
+    "decision_kind": {
+      "alarm_diagnosis": 48,
+      "action_selection": 64,
+      "precondition": 148,
+      "reading_trust": 48,
+      "error_prediction": 16,
+      "protocol_step": 32,
+      "argument_validity": 32
+    },
+    "difficulty": {
+      "L2": 50,
+      "L3": 88,
+      "L1": 158,
+      "L4": 62,
+      "L5": 30
+    },
+    "format": {
+      "multiple_choice": 24,
+      "sequential": 96,
+      "binary_abstain": 70,
+      "variable_choice": 16,
+      "binary": 182
+    },
+    "split": {
+      "train": 232,
+      "test": 60,
+      "test_template": 36,
+      "validation": 42,
+      "test_fault": 8,
+      "test_instrument": 10
+    },
+    "label_class": {
+      "healthy": 22,
+      "switch_off": 2,
+      "lamp_failure": 2,
+      "mains_outage": 2,
+      "operational_goal": 80,
+      "escalate": 16,
+      "insufficient_information": 16,
+      "information_request": 16,
+      "succeeded": 72,
+      "rejected": 70,
+      "STANDBY": 8,
+      "NO_ERROR": 8,
+      "sensor_rupture": 2,
+      "motor_blocked": 6,
+      "motor_failure": 6,
+      "insufficient_supply": 2,
+      "sensor_damage": 2,
+      "power_loss": 2,
+      "goal_met": 28,
+      "goal_not_met": 26
+    }
+  },
+  "families": [
+    {
+      "family_id": "hood_lighting_diagnosis",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "diagnose",
+      "difficulty": "L2",
+      "decision_kind": "alarm_diagnosis",
+      "tier": "T1",
+      "fault_family": "lighting"
+    },
+    {
+      "family_id": "hood_switch_recovery",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "recover",
+      "difficulty": "L2",
+      "decision_kind": "action_selection",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "hood_lamp_service",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "recover",
+      "difficulty": "L3",
+      "decision_kind": "action_selection",
+      "tier": "T2",
+      "fault_family": "lighting"
+    },
+    {
+      "family_id": "hood_hidden_lamp_prediction",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "predict",
+      "difficulty": "L3",
+      "decision_kind": "precondition",
+      "tier": "T2",
+      "fault_family": "lighting"
+    },
+    {
+      "family_id": "hood_informative_light_test",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "measure",
+      "difficulty": "L3",
+      "decision_kind": "reading_trust",
+      "tier": "T2",
+      "fault_family": "lighting"
+    },
+    {
+      "family_id": "hood_independent_airflow_uncertainty",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "predict",
+      "difficulty": "L3",
+      "decision_kind": "reading_trust",
+      "tier": "T2",
+      "fault_family": "sensor_bias"
+    },
+    {
+      "family_id": "hood_independent_airflow_measurement",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "measure",
+      "difficulty": "L3",
+      "decision_kind": "reading_trust",
+      "tier": "T2",
+      "fault_family": "sensor_bias"
+    },
+    {
+      "family_id": "hood_sash_lock_interlock",
+      "instrument_id": "esco_efa5uduvw",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "oven_power_precondition",
+      "instrument_id": "binder_fd056",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "oven_recording_media",
+      "instrument_id": "binder_fd056",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "oven_declared_error_prediction",
+      "instrument_id": "binder_fd056",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "error_prediction",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "oven_recording_recovery",
+      "instrument_id": "binder_fd056",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "oven_sensor_diagnosis",
+      "instrument_id": "binder_fd056",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "diagnose",
+      "difficulty": "L2",
+      "decision_kind": "alarm_diagnosis",
+      "tier": "T1",
+      "fault_family": "sensor_failure"
+    },
+    {
+      "family_id": "oven_timer_completion",
+      "instrument_id": "binder_fd056",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "oven_midrun_standby_adaptation",
+      "instrument_id": "binder_fd056",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "adapt",
+      "difficulty": "L5",
+      "decision_kind": "protocol_step",
+      "tier": "T3",
+      "fault_family": "operator_interruption"
+    },
+    {
+      "family_id": "furnace_door_interlock",
+      "instrument_id": "nabertherm_l9",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "furnace_program_argument_schema",
+      "instrument_id": "nabertherm_l9",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "argument_validity",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "furnace_program_recovery",
+      "instrument_id": "nabertherm_l9",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "furnace_midrun_door_adaptation",
+      "instrument_id": "nabertherm_l9",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "adapt",
+      "difficulty": "L5",
+      "decision_kind": "protocol_step",
+      "tier": "T3",
+      "fault_family": "interlock"
+    },
+    {
+      "family_id": "hotplate_lock_precondition",
+      "instrument_id": "ika_plate_rctdigital",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "hotplate_unlock_recovery",
+      "instrument_id": "ika_plate_rctdigital",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "hotplate_motor_diagnosis",
+      "instrument_id": "ika_plate_rctdigital",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "diagnose",
+      "difficulty": "L2",
+      "decision_kind": "alarm_diagnosis",
+      "tier": "T1",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "hotplate_idle_motor_uncertainty",
+      "instrument_id": "ika_plate_rctdigital",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "predict",
+      "difficulty": "L3",
+      "decision_kind": "precondition",
+      "tier": "T2",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "hotplate_idle_motor_measurement",
+      "instrument_id": "ika_plate_rctdigital",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "measure",
+      "difficulty": "L3",
+      "decision_kind": "reading_trust",
+      "tier": "T2",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "hotplate_safety_margin",
+      "instrument_id": "ika_plate_rctdigital",
+      "domain": "Basic Metrology & Sample Handling",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "pump_geometry_precondition",
+      "instrument_id": "newera_ne1000",
+      "domain": "Automation & Gas/Liquid Supply",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "pump_geometry_recovery",
+      "instrument_id": "newera_ne1000",
+      "domain": "Automation & Gas/Liquid Supply",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "pump_stall_diagnosis",
+      "instrument_id": "newera_ne1000",
+      "domain": "Automation & Gas/Liquid Supply",
+      "task_type": "diagnose",
+      "difficulty": "L2",
+      "decision_kind": "alarm_diagnosis",
+      "tier": "T1",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "pump_idle_motor_uncertainty",
+      "instrument_id": "newera_ne1000",
+      "domain": "Automation & Gas/Liquid Supply",
+      "task_type": "predict",
+      "difficulty": "L3",
+      "decision_kind": "precondition",
+      "tier": "T2",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "pump_idle_motor_measurement",
+      "instrument_id": "newera_ne1000",
+      "domain": "Automation & Gas/Liquid Supply",
+      "task_type": "measure",
+      "difficulty": "L3",
+      "decision_kind": "reading_trust",
+      "tier": "T2",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "pump_motor_service",
+      "instrument_id": "newera_ne1000",
+      "domain": "Automation & Gas/Liquid Supply",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T2",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "pump_midrun_motor_adaptation",
+      "instrument_id": "newera_ne1000",
+      "domain": "Automation & Gas/Liquid Supply",
+      "task_type": "adapt",
+      "difficulty": "L5",
+      "decision_kind": "protocol_step",
+      "tier": "T3",
+      "fault_family": "motor_failure"
+    },
+    {
+      "family_id": "dewpoint_service_power",
+      "instrument_id": "vaisala_dmt152",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "dewpoint_output_supply",
+      "instrument_id": "vaisala_dmt152",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "diagnose",
+      "difficulty": "L2",
+      "decision_kind": "alarm_diagnosis",
+      "tier": "T1",
+      "fault_family": "supply"
+    },
+    {
+      "family_id": "dewpoint_sensor_damage",
+      "instrument_id": "vaisala_dmt152",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "diagnose",
+      "difficulty": "L2",
+      "decision_kind": "alarm_diagnosis",
+      "tier": "T1",
+      "fault_family": "sensor_failure"
+    },
+    {
+      "family_id": "dewpoint_service_recovery",
+      "instrument_id": "vaisala_dmt152",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "hydrogen_startup_precondition",
+      "instrument_id": "peak_precisionhydrogen",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "hydrogen_startup_recovery",
+      "instrument_id": "peak_precisionhydrogen",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "hydrogen_cell_service",
+      "instrument_id": "peak_precisionhydrogen",
+      "domain": "Lab Environment & Utilities",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "action_selection",
+      "tier": "T2",
+      "fault_family": "cell_failure"
+    },
+    {
+      "family_id": "incubator_latch_interlock",
+      "instrument_id": "eppendorf_cellxpertc170i",
+      "domain": "Biochemical & Wet-Chemistry Assays",
+      "task_type": "predict",
+      "difficulty": "L1",
+      "decision_kind": "precondition",
+      "tier": "T1",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "incubator_ordered_access",
+      "instrument_id": "eppendorf_cellxpertc170i",
+      "domain": "Biochemical & Wet-Chemistry Assays",
+      "task_type": "recover",
+      "difficulty": "L4",
+      "decision_kind": "protocol_step",
+      "tier": "T3",
+      "fault_family": "precondition"
+    },
+    {
+      "family_id": "incubator_mains_diagnosis",
+      "instrument_id": "eppendorf_cellxpertc170i",
+      "domain": "Biochemical & Wet-Chemistry Assays",
+      "task_type": "diagnose",
+      "difficulty": "L2",
+      "decision_kind": "alarm_diagnosis",
+      "tier": "T1",
+      "fault_family": "supply"
+    }
+  ],
+  "files": {
+    "tasks": "tasks.jsonl.gz",
+    "split_ids": "splits/*.txt",
+    "evaluator_oracles": "regenerate locally; deliberately excluded from public package"
+  },
+  "sha256": {
+    "tasks.jsonl": "b720504d739c5f32a5677d4964bf60591ed48a645d3627bc85ede61af5398c04",
+    "oracles.jsonl": "9f2e10cdbafcac7d38e6fd66060bb058cfcd0bdc292ad4b5ea9c1abedb7a0f68"
+  },
+  "limitations": [
+    "Synthetic instrument-operation behavior, not real-equipment reliability or chemical outcomes.",
+    "Door movement uses a Python scene callback; no robot-contact validation is claimed.",
+    "Information-request labels test discrimination between the explicitly paired lamp hypotheses, not global diagnostic optimality.",
+    "Question templates are LLM-authored and not independently human-validated; held-out template IDs occur only in test_template groups.",
+    "Diagnosis labels use explicit observable rules within the stated candidate hypotheses; these are not general causal-identifiability proofs.",
+    "Difficulty levels are construction strata; empirical ordering must be measured."
+  ],
+  "public_archive_sha256": "b0f0403b1c0b9f8fc77f3038146f244d7d75db1876d4feb494715603e11b5538",
+  "independent_scenario_groups": 112,
+  "input_protocol": "public-menu-union-v2; instrument_bench.io.solver_view/task_text; lossless shared error definitions",
+  "license": "CC BY-NC 4.0 for derived ChemLab tasks/assets; project code MIT-compatible upstream portions",
+  "expert_review_completed": false,
+  "experimental_status": "Native replay validated; full model comparison and independent expert audit pending.",
+  "project_source_sha256": {
+    "instrument_bench/__init__.py": "3fdbb422be8691e983671805a5b7c061b96a7f429f8572d42af696f443a462a6",
+    "instrument_bench/__main__.py": "631dd4aca53e35ae3f5aeb96d11efb6711972f9a832edf644e7b683387dd915d",
+    "instrument_bench/adapters.py": "c6f29a6fce66f77e1b9b15fdbce9503487148626bfc5c0c163a285e6aedf57e3",
+    "instrument_bench/api_model.py": "7b90d03dcb7f30190c0d810cef48e926ff5f2f276c79f35357dde2b11c96e624",
+    "instrument_bench/baselines.py": "b38a4ab9b301583cbc9801da1ac11a15e3dc6918c62118afd6e1581d1c84acc7",
+    "instrument_bench/decision_models.py": "0731e40a8e978c6e296657976ae606f10d6cf859596016f912282163b135502a",
+    "instrument_bench/episode_metrics.py": "6b3a09fe9bd24cc7f33f8b987f38e71828682ab5b63d048fe067994174461849",
+    "instrument_bench/episodes.py": "4bd93dc80980603501eff4455a89c45c84ba9a2f798f24b7953147f533dd6865",
+    "instrument_bench/experiments.py": "6fc6da237ab7b58224581164903294f9c715fbb07206459707ce23afbe4ec31b",
+    "instrument_bench/feature_models.py": "2714fa13d02d26fb77113ca1df7ccd1b4f9c538e6f8401ebfadbed9326fd9df9",
+    "instrument_bench/feedback.py": "692f4c667e22a8f911064d282bc764b9f10ba97e1e7b3c4494922a2f01a0247d",
+    "instrument_bench/generative_sampling.py": "511ba3f6265d2558bebc98da3c6e4dd8cf5fae37a5a5564c11cc34a6ef4c7138",
+    "instrument_bench/generator.py": "5a28c16f3544144915150a5ce1d0d0ab85a472244f02bfa2d5caecfaf6c58ba9",
+    "instrument_bench/hosted_methods.py": "b6927cb5c04e0830243c594183765a523a98ce96bc57dae14769b7bcbed9b922",
+    "instrument_bench/io.py": "52088d4c605b542ebecf0cc76d5953f41c00aebd93d657054fd6b07cd1911150",
+    "instrument_bench/local_llm.py": "a099041922c00882ca69aaa2549e4bafe42aa859ce4fa11c01228c2a5e8eacc1",
+    "instrument_bench/metrics.py": "d6243c73dddd6d054ad432cf27d45b2e5753ff3396c53598f62d811be7cc0e7a",
+    "instrument_bench/runner.py": "02f57c6d443058d4c030181da8a1cfe350651f38464d1db3982ceb26c663a68d",
+    "instrument_bench/scenarios.py": "ffc3a2d374570710fa0c52e1241a5a38b8be4e2dbda758a531b56acad614127f",
+    "instrument_bench/schema.py": "f800be8278349029c6a6eb7e768dad065e6669b2403b531fcbec0c7d778706cf",
+    "instrument_bench/t1_rules.py": "21334d4e97cb1f1544e27ea5147b0a94679ca477851a7e2cbdf9347e894b8e04",
+    "instrument_bench/tool_decisions.py": "447494d23be134b3421d6861959b07cea42c7a1859b93c6ec14f61247825f0a5"
+  },
+  "public_task_schema": "../task.schema.json",
+  "prediction_schema": "../prediction.schema.json"
+}

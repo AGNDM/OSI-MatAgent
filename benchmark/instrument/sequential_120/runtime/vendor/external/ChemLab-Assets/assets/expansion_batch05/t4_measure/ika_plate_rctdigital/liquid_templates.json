@@ -1,0 +1,4239 @@
+{
+ "schema_version": "1.0.0",
+ "catalog_id": "CHEM-008",
+ "asset_type_id": "instrument.ika_plate_rctdigital",
+ "built_at": "2026-10-03T20:40:59+00:00",
+ "built_by": "outputs/expansion_batch05/t4_measure/ika_plate_rctdigital/build_hotplate_libraries.py",
+ "counts": {
+  "total": 51,
+  "with_cp": 51,
+  "with_hvap": 51
+ },
+ "rules_zh": [
+  "液体模板用于加热板上容器内液体的热容、密度、黏度（搅拌子脱耦与黏度趋势）、蒸气压（敞口蒸发）、沸点与汽化热（沸腾限温与蒸发失重）。",
+  "比热取NIST液相Cp在290–305 K的中位数（水用NIST液态Shomate方程在298.15 K），汽化热取最接近正常沸点的NIST值（水用PubChem），沸点为NIST平均值。",
+  "密度、黏度与Antoine系数引用CHEM-200溶剂库与共享DMA密度库（各记录保留原始来源）；物性不随温度变化（除蒸气压）。"
+ ],
+ "substances": {
+  "water": {
+   "substance_id": "water",
+   "name_zh": "水",
+   "cas": "7732-18-5",
+   "formula": "H2O",
+   "pubchem_cid": 962,
+   "molar_mass_kg_mol": 0.018015,
+   "melting_point_k": 273.15,
+   "heat_capacity": {
+    "value": 4184.009363901665,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 75.37492869068849,
+    "temperature_k": 298.15,
+    "method": "shomate",
+    "n_values": 1,
+    "reference": "Chase, 1998",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/7732-18-5_m2.html",
+    "sha256": "5de2941923f025dd9e7ed2e9404e28770071513e9f06a11a94e5c0c59133db22"
+   },
+   "boiling_point": {
+    "value": 373.17,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/7732-18-5_m4.html",
+    "sha256": "2679d1484841063cd415f49715337bc36ef0582f47dceb51d205ead25cb9cadc"
+   },
+   "enthalpy_vaporization": {
+    "value": 2256782.0149875106,
+    "unit": "J/kg",
+    "molar_j_mol": 40655.928,
+    "temperature_k": 373.17,
+    "raw": "9.717 kcal/mole",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/962/JSON?heading=Heat+of+Vaporization",
+    "evidence": "measured_literature",
+    "file": "source_cache/pubchem_water_hvap.json",
+    "sha256": "07f220ec89b07ccc620e48780999d5a1f4ec47ac373b1849967b4dbb1e4b9ad8"
+   },
+   "melting_point": {
+    "value": 273.15,
+    "unit": "K",
+    "raw": "0 °C",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/962/JSON?heading=Melting+Point",
+    "file": "source_cache/pubchem_water_melting.json",
+    "sha256": "8dfbac967ba6e8263ed843ffc3496c3ca360bba8e1ac9bd7140a67abbb052f53"
+   },
+   "viscosity": {
+    "value": 0.0008949,
+    "unit": "Pa s",
+    "temperature_k": 298.15,
+    "raw": "Dynamic viscosity: 0.8949 cP at 25 °C; Kinematic viscosity: 0.8976 cP at 25 °C",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/962/JSON?heading=Viscosity",
+    "evidence": "measured_literature",
+    "file": "source_cache/pubchem_water_viscosity.json",
+    "sha256": "21cfca8d89b0ebbdba3440aa67c1523fd88fba50b5d206015a51ff8aa3e6b778"
+   },
+   "density": {
+    "value": 995.0,
+    "unit": "kg/m3",
+    "temperature_k": 298.15,
+    "raw": "0.9950 g/cu cm at 25 °C",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/962/JSON?heading=Density",
+    "evidence": "measured_literature",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.40221,
+    "B_k": 1838.675,
+    "C_k": -31.737,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     273.0,
+     303.0
+    ],
+    "reference": "Bridgeman and Aldrich, 1964",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Units=SI&Mask=4"
+   }
+  },
+  "acetic_acid": {
+   "substance_id": "acetic_acid",
+   "name_zh": "乙酸",
+   "cas": "64-19-7",
+   "formula": "C2H4O2",
+   "pubchem_cid": 176,
+   "molar_mass_kg_mol": 0.06005,
+   "melting_point_k": 289.6,
+   "heat_capacity": {
+    "value": 2052.456286427977,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 123.25,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 6,
+    "reference": "Martin and Andon, 1982; Neumann, 1932; Parks and Kelley, 1925; Parks, Kelley, et al., 1929; Radulescu and Jula, 1934; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64197&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/64-19-7_m2.html",
+    "sha256": "e055a834b0c86c24b17919fff86c56606abe47fd2e92f687da54e62779cb1130"
+   },
+   "boiling_point": {
+    "value": 391.2,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64197&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/64-19-7_m4.html",
+    "sha256": "57991f519aee0148e886d2944eab34b9582216c57e516a0113159395442975a6"
+   },
+   "enthalpy_vaporization": {
+    "value": 394671.10741049127,
+    "unit": "J/kg",
+    "molar_j_mol": 23700.0,
+    "temperature_k": 391.1,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64197&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/64-19-7_m4.html",
+    "sha256": "57991f519aee0148e886d2944eab34b9582216c57e516a0113159395442975a6"
+   },
+   "viscosity": {
+    "value": 0.001056,
+    "temperature_k": 298.15,
+    "raw": "1.056 mPa-s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/176/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/acetic_acid.json",
+    "sha256": "6fd32d4655526d6de1cef06e900ee333483100f51fab8554c096a92744c24491",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1044.6,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/176/JSON?heading=Density",
+    "raw": "1.0446 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.68206,
+    "B_k": 1642.54,
+    "C_k": -39.764,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     290.26,
+     391.01
+    ],
+    "reference": "McDonald, Shrader, et al., 1959",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 2114.1540881775327
+   }
+  },
+  "acetic_anhydride": {
+   "substance_id": "acetic_anhydride",
+   "name_zh": "乙酸酐",
+   "cas": "108-24-7",
+   "formula": "C4H6O3",
+   "pubchem_cid": 7918,
+   "molar_mass_kg_mol": 0.10209,
+   "melting_point_k": 200.0,
+   "heat_capacity": {
+    "value": 1647.5658732490938,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 168.2,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 1,
+    "reference": "Phillip, 1939",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108247&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-24-7_m2.html",
+    "sha256": "f6146b3062e0b23aff38654e825cabfc64b6673c517cbf05a2cae9e004eb465c"
+   },
+   "boiling_point": {
+    "value": 412.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108247&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/108-24-7_m4.html",
+    "sha256": "c0c75a8bf8f059e583991c4a4b96bf0d57b024ca9d8dea666720334218d1fb36"
+   },
+   "enthalpy_vaporization": {
+    "value": 481757.8559984873,
+    "unit": "J/kg",
+    "molar_j_mol": 49182.65951888557,
+    "temperature_k": 412.0,
+    "reference": "Stephenson and Malanowski, 1987",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108247&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/108-24-7_m4.html",
+    "sha256": "c0c75a8bf8f059e583991c4a4b96bf0d57b024ca9d8dea666720334218d1fb36",
+    "measured": {
+     "molar_j_mol": 47600.0,
+     "temperature_k": 428.0
+    },
+    "critical_temperature_k": 606.0,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; NIST Tc median"
+   },
+   "viscosity": {
+    "value": 0.000843,
+    "temperature_k": 298.15,
+    "raw": "0.843 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7918/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/acetic_anhydride.json",
+    "sha256": "51c93d009ed83b60973271edf8b8eb3fbc7a5504e88f55a3626aed94b27f5ea9",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1082.0,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7918/JSON?heading=Density",
+    "raw": "1.082 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 1000.0,
+    "t_ref_k": 304.15,
+    "dh_vap_j_mol": 44615.35291972287,
+    "raw": "VP: 1 Pa at -44 °C (ext); 10 Pa at -25 °C (ext): 100 Pa at -1 °C (ext); 1 kPa at 31 °C; 10 kPa at 75.1 °C; 100 kPa at 203 °C (ext)",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/acetic_anhydride.json",
+    "sha256": "445fd65c92cc7cb7866a492c7a19660b7b5e9dcc0f5945252b47d1354e58345b",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 701.1445492590724
+   }
+  },
+  "acetone": {
+   "substance_id": "acetone",
+   "name_zh": "丙酮",
+   "cas": "67-64-1",
+   "formula": "C3H6O",
+   "pubchem_cid": 180,
+   "molar_mass_kg_mol": 0.05808,
+   "melting_point_k": 178.7,
+   "heat_capacity": {
+    "value": 2164.7727272727275,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 125.73,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 18,
+    "reference": "Al'per, Peshekhodov, et al., 1986; Costas and Patterson, 1985; Costas, Yao, et al., 1989; Deshpande and Bhatagadde, 1971; Kelley, 1929; Low and Moelwyn-Hughes, 1962; Malhotra and Woolf, 1991; Parks and Kelley, 1928; Petrov, Peshekhodov, et al., 1989; Phillip, 1939; Rastorguev and Ganiev, 1967; Saluj",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67641&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-64-1_m2.html",
+    "sha256": "ec026263d2563b7e777c06ad0244f90b92fc82c28a931013fd9ea3b1903ebef7"
+   },
+   "boiling_point": {
+    "value": 329.3,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67641&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/67-64-1_m4.html",
+    "sha256": "fec253a8426980a407360c375ce248f571b8ffff983f36c920e40db3de9cc147"
+   },
+   "enthalpy_vaporization": {
+    "value": 501033.0578512397,
+    "unit": "J/kg",
+    "molar_j_mol": 29100.0,
+    "temperature_k": 329.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67641&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-64-1_m4.html",
+    "sha256": "fec253a8426980a407360c375ce248f571b8ffff983f36c920e40db3de9cc147"
+   },
+   "viscosity": {
+    "value": 0.00032,
+    "temperature_k": 293.15,
+    "raw": "0.32 cP at 20 °C; 0.27 cP at 40 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/180/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/acetone.json",
+    "sha256": "7be375d143d845522fe665af96425943adc28905bcb776bdbbfdf997b77925f0",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 784.5,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/180/JSON?heading=Density",
+    "raw": "0.7845 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.42448,
+    "B_k": 1312.253,
+    "C_k": -32.445,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     507.6
+    ],
+    "reference": "Ambrose, Sprake, et al., 1974",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 30599.959368591455
+   }
+  },
+  "acetonitrile": {
+   "substance_id": "acetonitrile",
+   "name_zh": "乙腈",
+   "cas": "75-05-8",
+   "formula": "C2H3N",
+   "pubchem_cid": 6342,
+   "molar_mass_kg_mol": 0.041049999999999996,
+   "melting_point_k": 228.0,
+   "heat_capacity": {
+    "value": 2230.8160779537147,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 91.57499999999999,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 8,
+    "reference": "De Visser, Heuvelsland, et al., 1978; Guseinov and Mirzaliev, 1984; Hall and Baldt, 1971; Kolker, Kulikov, et al., 1992; Mirzaliev, Shakhuradov, et al., 1987; Putnam, McEachern, et al., 1965; de Visser and Somsen, 1979",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C75058&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/75-05-8_m2.html",
+    "sha256": "d72727610645a2c2e592e64fdeda80032e7c53d1334c1f4f1a0a7c6098898050"
+   },
+   "boiling_point": {
+    "value": 354.8,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C75058&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/75-05-8_m4.html",
+    "sha256": "14bcdf3043b6806131540f71e7eeaed55c5850912a23f64a73b43244d8e31c1f"
+   },
+   "enthalpy_vaporization": {
+    "value": 724725.9439707674,
+    "unit": "J/kg",
+    "molar_j_mol": 29750.0,
+    "temperature_k": 354.7,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C75058&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/75-05-8_m4.html",
+    "sha256": "14bcdf3043b6806131540f71e7eeaed55c5850912a23f64a73b43244d8e31c1f"
+   },
+   "viscosity": {
+    "value": 0.00035,
+    "temperature_k": 293.15,
+    "raw": "0.35 cP at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6342/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/acetonitrile.json",
+    "sha256": "2e5db7a02136af36ebbd538139b26d5caeb9111e2e5eb0f2f5b931fe175ea978",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 786.0,
+    "temperature_k": 293.15,
+    "raw": "0.786 @ 20°C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/acetonitrile.json",
+    "sha256": "a678f5eccc593db18834724d035e7f4f78ffc026ccdac1d09133e98735997ee3",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6342/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.93296,
+    "B_k": 2345.829,
+    "C_k": 43.815,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     300.53
+    ],
+    "reference": "Putnam, McEachern, et al., 1965, 2",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 11833.38094274274
+   }
+  },
+  "aniline": {
+   "substance_id": "aniline",
+   "name_zh": "苯胺",
+   "cas": "62-53-3",
+   "formula": "C6H7N",
+   "pubchem_cid": 6115,
+   "molar_mass_kg_mol": 0.09312999999999999,
+   "melting_point_k": 267.0,
+   "heat_capacity": {
+    "value": 2062.1711585955118,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 192.05,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 9,
+    "reference": "Crtzen, Jost, et al., 1957; Deshpande and Bhatagadde, 1971; Ferguson and Miller, 1933; Hatton, Hildenbrand, et al., 1962; Lang, 1928; Lesbats and Lichanot, 1987; Nichols and Wads, 1975; Parks, Huffman, et al., 1933; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C62533&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/62-53-3_m2.html",
+    "sha256": "8e5608c28ef4f442448ff8d9f87e5dd96064ac3fc7635d7887d020d6969366d6"
+   },
+   "boiling_point": {
+    "value": 457.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C62533&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/62-53-3_m4.html",
+    "sha256": "fd1430f6f0077b13b9a6905d691425e16522f2454b74e0b1093e2a5ce51b0289"
+   },
+   "enthalpy_vaporization": {
+    "value": 455707.0761301407,
+    "unit": "J/kg",
+    "molar_j_mol": 42440.0,
+    "temperature_k": 457.2,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C62533&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/62-53-3_m4.html",
+    "sha256": "fd1430f6f0077b13b9a6905d691425e16522f2454b74e0b1093e2a5ce51b0289"
+   },
+   "viscosity": {
+    "value": 0.00435,
+    "temperature_k": 293.15,
+    "raw": "4.35 cP at 20 °C; 1.62 cP at 60 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6115/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/aniline.json",
+    "sha256": "1a98c6564c86c65d1e252fa2116b143d9a1ed726aca2bed7da070001b6925b7f",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1021.7,
+    "temperature_k": 293.15,
+    "raw": "1.0217 at 20 °C/20 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/aniline.json",
+    "sha256": "08cc089c9c82dcb392d438762442ddecb9f4c4f8038b365737b7e8871137a717",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6115/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.34541,
+    "B_k": 1661.858,
+    "C_k": -74.048,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     304.0,
+     457.0
+    ],
+    "reference": "Hatton, Hildenbrand, et al., 1962, 2",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 85.07027417494513
+   }
+  },
+  "benzaldehyde": {
+   "substance_id": "benzaldehyde",
+   "name_zh": "苯甲醛",
+   "cas": "100-52-7",
+   "formula": "C7H6O",
+   "pubchem_cid": 240,
+   "molar_mass_kg_mol": 0.10612,
+   "melting_point_k": 247.0,
+   "heat_capacity": {
+    "value": 1612.325669053901,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 171.1,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 3,
+    "reference": "Ambrose, Connett, et al., 1975; Kolosovskii and Udovenko, 1934; de Kolossowsky and Udowenko, 1934",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100527&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/100-52-7_m2.html",
+    "sha256": "c4ffd744966eeb196e514c37197117e0dc7fdb38c4a1e0716699b4c24f2a3e88"
+   },
+   "boiling_point": {
+    "value": 452.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100527&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/100-52-7_m4.html",
+    "sha256": "81c21f8fc19f4f6047595fa44b0bb579c28bc33f630ecccc9058650420e22723"
+   },
+   "enthalpy_vaporization": {
+    "value": 400490.0113079532,
+    "unit": "J/kg",
+    "molar_j_mol": 42500.0,
+    "temperature_k": 452.0,
+    "reference": "Ambrose, Connett, et al., 1975",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100527&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/100-52-7_m4.html",
+    "sha256": "81c21f8fc19f4f6047595fa44b0bb579c28bc33f630ecccc9058650420e22723"
+   },
+   "viscosity": {
+    "value": 0.001321,
+    "temperature_k": 298.15,
+    "raw": "1.321 cp at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/240/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/benzaldehyde.json",
+    "sha256": "0741173af2365019f0266d877236210c396f6b756470d4aa321c5b116f218ded",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1041.0,
+    "temperature_k": 298.15,
+    "raw": "1.041 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/benzaldehyde.json",
+    "sha256": "27efdac3fd6c817788b9a54645b17bf97f6d185f5f91c56ae5b2770922c43147",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/240/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.21496,
+    "B_k": 2337.539,
+    "C_k": -5.103,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     322.06
+    ],
+    "reference": "De Maré, Lehman, et al., 1973",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 173.09747329332853
+   }
+  },
+  "benzene": {
+   "substance_id": "benzene",
+   "name_zh": "苯",
+   "cas": "71-43-2",
+   "formula": "C6H6",
+   "pubchem_cid": 241,
+   "molar_mass_kg_mol": 0.07811,
+   "melting_point_k": 278.64,
+   "heat_capacity": {
+    "value": 1736.2693637178338,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 135.62,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 45,
+    "reference": "Andrews, Lynn, et al., 1926; Atalla, El-Sharkawy, et al., 1981; Burlew, 1940; Czarnota, 1991; Dejardin, 1919; Deshpande and Bhatagadde, 1971; Duff and Everett, 1956; Ferguson and Miller, 1933; Findenegg, Gruber, et al., 1965; Fortier and Benson, 1976; Fortier, Benson, et al., 1976; Gorbunova, Grigor",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71432&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/71-43-2_m2.html",
+    "sha256": "f33b233a3c13db3292425a184e130153a2e4ae79007cc272f929a9be97a1080e"
+   },
+   "boiling_point": {
+    "value": 353.3,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71432&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/71-43-2_m4.html",
+    "sha256": "9cbbd793312a3e302b794022f5e01df8f73f5cf90b48f63770de3b5d4351d56e"
+   },
+   "enthalpy_vaporization": {
+    "value": 393291.5119702983,
+    "unit": "J/kg",
+    "molar_j_mol": 30720.0,
+    "temperature_k": 353.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71432&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/71-43-2_m4.html",
+    "sha256": "9cbbd793312a3e302b794022f5e01df8f73f5cf90b48f63770de3b5d4351d56e"
+   },
+   "viscosity": {
+    "value": 0.000604,
+    "temperature_k": 298.15,
+    "raw": "0.604 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/241/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/benzene.json",
+    "sha256": "47a8f3506f804815564b45a7ce56e555eb4a1632f360625b2b74b4ee267347e6",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 875.6,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/241/JSON?heading=Density",
+    "raw": "0.8756 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.01814,
+    "B_k": 1203.835,
+    "C_k": -53.226,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     354.07
+    ],
+    "reference": "Williamham, Taylor, et al., 1945",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 12676.607963703334
+   }
+  },
+  "benzyl_alcohol": {
+   "substance_id": "benzyl_alcohol",
+   "name_zh": "苯甲醇",
+   "cas": "100-51-6",
+   "formula": "C7H8O",
+   "pubchem_cid": 244,
+   "molar_mass_kg_mol": 0.10814,
+   "melting_point_k": 257.0,
+   "heat_capacity": {
+    "value": 2005.7333086739413,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 216.9,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 4,
+    "reference": "Nichols and Wads, 1975; Parks, Todd, et al., 1936; Smith and Andrews, 1931; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100516&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/100-51-6_m2.html",
+    "sha256": "7eff99fa9caaceb19edd3ebb4595ccdef379b6803a86e209a5175886d25b7de5"
+   },
+   "boiling_point": {
+    "value": 478.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100516&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/100-51-6_m4.html",
+    "sha256": "e735423d5ad1d77b2888a03c2177bb1374c8e31a5b2f3bdd7bdbd4da1d6182a6"
+   },
+   "enthalpy_vaporization": {
+    "value": 453518.4505169619,
+    "unit": "J/kg",
+    "molar_j_mol": 49043.485238904264,
+    "temperature_k": 478.0,
+    "reference": "Stephenson and Malanowski, 1987",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100516&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/100-51-6_m4.html",
+    "sha256": "e735423d5ad1d77b2888a03c2177bb1374c8e31a5b2f3bdd7bdbd4da1d6182a6",
+    "measured": {
+     "molar_j_mol": 54600.0,
+     "temperature_k": 400.0
+    },
+    "critical_temperature_k": 717.0,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc)"
+   },
+   "viscosity": {
+    "value": 0.005474000000000001,
+    "temperature_k": 298.15,
+    "raw": "5.474 cP at 25 °C; 2.760 cP at 50 °C; 1.618 cP at 75 °C; 1.055 cP at 100 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/244/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/benzyl_alcohol.json",
+    "sha256": "5a08aef3ba03cc562576e92ff411a37fc26edfea815a2aa4bb682441669eb134",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1041.9,
+    "temperature_k": 297.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/244/JSON?heading=Density",
+    "raw": "1.0419 g/cu cm at 24 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 12.532302592,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 59281.85324969378,
+    "raw": "0.094 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/benzyl_alcohol.json",
+    "sha256": "465e896cf3add641d8726519ce6cc99dc00bf785ca9c0bc2c8fb00695cddeb99",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 12.532302592
+   }
+  },
+  "butan_1_ol": {
+   "substance_id": "butan_1_ol",
+   "name_zh": "正丁醇",
+   "cas": "71-36-3",
+   "formula": "C4H10O",
+   "pubchem_cid": 263,
+   "molar_mass_kg_mol": 0.07412,
+   "melting_point_k": 188.0,
+   "heat_capacity": {
+    "value": 2388.761467889908,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 177.055,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 16,
+    "reference": "Andreoli-Ball, Patterson, et al., 1988; Arutyunyan, Bagdasaryan, et al., 1981; Counsell, Hales, et al., 1965; Gates, Wood, et al., 1986; Griigo'ev, Yanin, et al., 1979; Korolev, Kukharenko, et al., 1986; Ogawa and Murakami, 1986; Parks, 1925; Paz Andrade, Paz, et al., 1970; Phillip, 1939; Roux-Dexgr",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71363&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/71-36-3_m2.html",
+    "sha256": "7cd35402a0f49f6987125bfecb9b0aafe91a95923d1a6b68c501b7d79c1ab103"
+   },
+   "boiling_point": {
+    "value": 390.6,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71363&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/71-36-3_m4.html",
+    "sha256": "f039a7b9dcb5bf3be4ed8ce6b76e423a3254425dc15bcfbab9000bc3487c8aa8"
+   },
+   "enthalpy_vaporization": {
+    "value": 584052.8872099298,
+    "unit": "J/kg",
+    "molar_j_mol": 43290.0,
+    "temperature_k": 390.9,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71363&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/71-36-3_m4.html",
+    "sha256": "f039a7b9dcb5bf3be4ed8ce6b76e423a3254425dc15bcfbab9000bc3487c8aa8"
+   },
+   "viscosity": {
+    "value": 0.0025440000000000003,
+    "temperature_k": 298.15,
+    "raw": "36.1 cP at -50.9 °C; 5.186 cP at 0 °C; 2.544 cP at 25 °C; 0.533 cP at 100 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/263/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/butan_1_ol.json",
+    "sha256": "1de741c8372ec1160d571a821905533801b6b1ae6fd16011556eddf8d6c06957",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 809.5,
+    "temperature_k": 293.15,
+    "raw": "0.8095 @ 20°C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/butan_1_ol.json",
+    "sha256": "3e422cad89d816818f0d0358b66983e72533cd18f149365202c5c23876a5f1aa",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/263/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.54607,
+    "B_k": 1351.555,
+    "C_k": -93.34,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     295.8,
+     391.0
+    ],
+    "reference": "Kemme and Kreps, 1969",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 885.1208510115608
+   }
+  },
+  "butanoic_acid": {
+   "substance_id": "butanoic_acid",
+   "name_zh": "丁酸",
+   "cas": "107-92-6",
+   "formula": "C4H8O2",
+   "pubchem_cid": 264,
+   "molar_mass_kg_mol": 0.08811,
+   "melting_point_k": 267.6,
+   "heat_capacity": {
+    "value": 1998.6380660537964,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 176.1,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 3,
+    "reference": "Martin and Andon, 1982; Parks and Anderson, 1926; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107926&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/107-92-6_m2.html",
+    "sha256": "8ae3f12e542e1a56c19c5e714d478aa24b4f74496a9d5fa354df1787452ceeae"
+   },
+   "boiling_point": {
+    "value": 436.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107926&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/107-92-6_m4.html",
+    "sha256": "f8b360b5be3e9119adaae7ed7ded25241b123ba061cfff22455f1e8f1db27c55"
+   },
+   "enthalpy_vaporization": {
+    "value": 559578.0225272106,
+    "unit": "J/kg",
+    "molar_j_mol": 49304.41956487252,
+    "temperature_k": 436.0,
+    "reference": "Stephenson and Malanowski, 1987",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107926&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/107-92-6_m4.html",
+    "sha256": "f8b360b5be3e9119adaae7ed7ded25241b123ba061cfff22455f1e8f1db27c55",
+    "measured": {
+     "molar_j_mol": 47700.0,
+     "temperature_k": 452.0
+    },
+    "critical_temperature_k": 627.9,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; NIST Tc median"
+   },
+   "viscosity": {
+    "value": 0.001426,
+    "temperature_k": 298.15,
+    "raw": "1.426 mPa-s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/264/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/butanoic_acid.json",
+    "sha256": "484022e6ba506df29bff453e251e71500017e5eb92cff2799e5e618be50c3360",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 959.0,
+    "temperature_k": 298.15,
+    "raw": "0.959 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/butanoic_acid.json",
+    "sha256": "a938983bd3d6c7656c6fd0aad6555bffe7c184c616de90f2c8ff50d78b9bac1b",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/264/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 6.10954,
+    "B_k": 2634.471,
+    "C_k": -3.471,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     293.0,
+     423.0
+    ],
+    "reference": "Jasper and Miller, 1955",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 147.707227997288
+   }
+  },
+  "butanone": {
+   "substance_id": "butanone",
+   "name_zh": "丁酮",
+   "cas": "78-93-3",
+   "formula": "C4H8O",
+   "pubchem_cid": 6569,
+   "molar_mass_kg_mol": 0.07211,
+   "melting_point_k": 186.4,
+   "heat_capacity": {
+    "value": 2198.7935099154074,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 158.555,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 12,
+    "reference": "Andon, Counsell, et al., 1968; Costas and Patterson, 1985; Grolier and Benson, 1984; Grolier, Benson, et al., 1975; Kolosovskii and Udovenko, 1934; Parks, Kennedy, et al., 1956; Rastorguev and Ganiev, 1967; Reddy, 1986; Roux, Perron, et al., 1978; Sinke and Oetting, 1964; de Kolossowsky and Udowenko",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C78933&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/78-93-3_m2.html",
+    "sha256": "00a4dff5047612a908c4c54cd4580c2944d597687c5c991809b55ad45cb2aead"
+   },
+   "boiling_point": {
+    "value": 353.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C78933&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/78-93-3_m4.html",
+    "sha256": "e02561d0e5721522573ea5f2fd13a86491b9fdc1b0f672b85a1d4a3ac1f238ef"
+   },
+   "enthalpy_vaporization": {
+    "value": 434059.07641103875,
+    "unit": "J/kg",
+    "molar_j_mol": 31300.0,
+    "temperature_k": 352.8,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C78933&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/78-93-3_m4.html",
+    "sha256": "e02561d0e5721522573ea5f2fd13a86491b9fdc1b0f672b85a1d4a3ac1f238ef"
+   },
+   "viscosity": {
+    "value": 0.0004,
+    "temperature_k": 298.15,
+    "raw": "0.40 cP at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6569/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/butanone.json",
+    "sha256": "d139d8f330e6c497fa61d25b238f29473985ea66a40546da6478a3b42629f79c",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 799.6999999999999,
+    "temperature_k": 298.15,
+    "raw": "0.805 at 20 °C/4 °C; 0.7997 at 25 °C/4 °C; 0.8255 at 0 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/butanone.json",
+    "sha256": "4cf1b7fbc9636899e8d30cbd6d4bffb016b5547816b3705d5c6d6e3511f04ad4",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6569/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 12079.006540800001,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 33931.79528116601,
+    "raw": "90.6 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/butanone.json",
+    "sha256": "402c14d067c8059b561164e4c1565a5eb7537ebcec059c06d0b56e55c9b8ad99",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 12079.006540800001
+   }
+  },
+  "butyl_acetate": {
+   "substance_id": "butyl_acetate",
+   "name_zh": "乙酸丁酯",
+   "cas": "123-86-4",
+   "formula": "C6H12O2",
+   "pubchem_cid": 31272,
+   "molar_mass_kg_mol": 0.11616,
+   "melting_point_k": 196.35,
+   "heat_capacity": {
+    "value": 1966.253443526171,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 228.4,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 5,
+    "reference": "Fuchs, 1979; Jimenez, Romani, et al., 1986; Kolosovskii and Udovenko, 1934; Zabransky, Hynek, et al., 1987; de Kolossowsky and Udowenko, 1933",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C123864&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/123-86-4_m2.html",
+    "sha256": "7be2a781d1a77f563fd0dad9ef282a587711a5b57a0b979bfaddf0b946472813"
+   },
+   "boiling_point": {
+    "value": 399.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C123864&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/123-86-4_m4.html",
+    "sha256": "ab8640bf0704d5d5fe535613c125bb970b2a0ee81cf153c049622adde3deaac2"
+   },
+   "enthalpy_vaporization": {
+    "value": 312327.8236914601,
+    "unit": "J/kg",
+    "molar_j_mol": 36280.0,
+    "temperature_k": 399.2,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C123864&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/123-86-4_m4.html",
+    "sha256": "ab8640bf0704d5d5fe535613c125bb970b2a0ee81cf153c049622adde3deaac2"
+   },
+   "viscosity": {
+    "value": 0.0006850000000000001,
+    "temperature_k": 298.15,
+    "raw": "1.002 mPa.s at 0 °C; 0.685 mPa s at 25 °C; 0.500 mPa.s at 50 °C; 0.383 mPa.s at 75 °C; 0.305 mPa.s at 100 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/31272/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/butyl_acetate.json",
+    "sha256": "60e85606c6aae1f53093de1cbaa11b434a17af0e3d2911637128c07bd287d218",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 882.5,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/31272/JSON?heading=Density",
+    "raw": "0.8825 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 1533.2072320000002,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 41103.678414728856,
+    "raw": "11.5 mm Hg at 25 °C /ext/",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/butyl_acetate.json",
+    "sha256": "0ab1a4db67f54a0886863fad38edd4822663194df7e0ace3b8f049f070935de9",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 1533.2072320000002
+   }
+  },
+  "carbon_tetrachloride": {
+   "substance_id": "carbon_tetrachloride",
+   "name_zh": "四氯化碳",
+   "cas": "56-23-5",
+   "formula": "CCl4",
+   "pubchem_cid": 5943,
+   "molar_mass_kg_mol": 0.15380000000000002,
+   "melting_point_k": 250.3,
+   "heat_capacity": {
+    "value": 854.684655396619,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 131.4505,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 32,
+    "reference": "Atalla, El-Sharkawy, et al., 1981; Deshpande and Bhatagadde, 1971; Fortier and Benson, 1976; Fortier, Benson, et al., 1976; Grolier, Benson, et al., 1975; Grolier, Hamedi, et al., 1979; Grolier, Wilhelm, et al., 1978; Harrison and Moelwyn-Hughes, 1957; Hicks, Hooley, et al., 1944; Kurbatov, 1948; La",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C56235&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/56-23-5_m2.html",
+    "sha256": "6b5cd58607cda15d346334f30ab35348e474427821c83dce3609fa2679334ab7"
+   },
+   "boiling_point": {
+    "value": 349.8,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C56235&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/56-23-5_m4.html",
+    "sha256": "b1ac4731eec342b55744f324550fba850716337fcf4e8d846a4cf636e5f78f8f"
+   },
+   "enthalpy_vaporization": {
+    "value": 193888.16644993494,
+    "unit": "J/kg",
+    "molar_j_mol": 29820.0,
+    "temperature_k": 349.9,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C56235&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/56-23-5_m4.html",
+    "sha256": "b1ac4731eec342b55744f324550fba850716337fcf4e8d846a4cf636e5f78f8f"
+   },
+   "viscosity": {
+    "value": 0.0020299999999999997,
+    "temperature_k": 250.14999999999998,
+    "raw": "2.03 mPa*s at -23 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/5943/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/carbon_tetrachloride.json",
+    "sha256": "caea7eb87066e74f23237f0c42d80d9853468b5694178092274e9b2ab4c74df1",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1594.0,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/5943/JSON?heading=Density",
+    "raw": "1.5940 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.02291,
+    "B_k": 1221.781,
+    "C_k": -45.739,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     293.03,
+     350.86
+    ],
+    "reference": "Hildenbrand and McDonald, 1959, 2",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 15221.842713032116
+   }
+  },
+  "chlorobenzene": {
+   "substance_id": "chlorobenzene",
+   "name_zh": "氯苯",
+   "cas": "108-90-7",
+   "formula": "C6H5Cl",
+   "pubchem_cid": 7964,
+   "molar_mass_kg_mol": 0.11255,
+   "melting_point_k": 228.0,
+   "heat_capacity": {
+    "value": 1335.7618836072857,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 150.34,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 8,
+    "reference": "Deshpande and Bhatagadde, 1971; Fortier and Benson, 1977; Perez-Casas, Aicart, et al., 1988; Reddy, 1986; Shehatta, 1993; Stull, 1937; Williams and Daniels, 1925; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108907&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-90-7_m2.html",
+    "sha256": "795eea09b4123b20a14dd1e33179213829792602759562066f19cf469402f715"
+   },
+   "boiling_point": {
+    "value": 404.9,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108907&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/108-90-7_m4.html",
+    "sha256": "b937c20f9e0bf7cbea3431b413e9c038f3f524cdac1f9ab68afcb3381eb0631d"
+   },
+   "enthalpy_vaporization": {
+    "value": 312661.03953798313,
+    "unit": "J/kg",
+    "molar_j_mol": 35190.0,
+    "temperature_k": 404.9,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108907&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-90-7_m4.html",
+    "sha256": "b937c20f9e0bf7cbea3431b413e9c038f3f524cdac1f9ab68afcb3381eb0631d"
+   },
+   "viscosity": {
+    "value": 0.0008060000000000001,
+    "temperature_k": 293.15,
+    "raw": "0.806 mPa.s at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7964/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/chlorobenzene.json",
+    "sha256": "5cd809b0a8676f62b91ca21af28a01b5c3849511827c1e133f1ebf43d33a193c",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1105.8,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7964/JSON?heading=Density",
+    "raw": "1.1058 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 1599.8684160000003,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 39005.94026556763,
+    "raw": "12.0 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/chlorobenzene.json",
+    "sha256": "01fb8e3790c1e5b186be1c81fb5d4e039ddd5a204d299327d1e6a7e796611e59",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 1599.8684160000003
+   }
+  },
+  "chloroform": {
+   "substance_id": "chloroform",
+   "name_zh": "氯仿",
+   "cas": "67-66-3",
+   "formula": "CHCl3",
+   "pubchem_cid": 6212,
+   "molar_mass_kg_mol": 0.11937,
+   "melting_point_k": 210.0,
+   "heat_capacity": {
+    "value": 957.4432436960709,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 114.28999999999999,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 18,
+    "reference": "Al'per, Peshekhodov, et al., 1986; Barta, Kooner, et al., 1989; Grolier, Roux-Desgranges, et al., 1987; Grolier, Roux-Desgranges, et al., 1993; Harrison and Moelwyn-Hughes, 1957; Hepler, Kooner, et al., 1985; Inglese, Castagnolo, et al., 1981; Kurbatov, 1948; Petrov, Peshekhodov, et al., 1989; Phill",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67663&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-66-3_m2.html",
+    "sha256": "87727e4b3ea4039d4f53723b31d0020f995929a517b4423e3c975777caadcea9"
+   },
+   "boiling_point": {
+    "value": 334.3,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67663&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/67-66-3_m4.html",
+    "sha256": "d25596682dbce774e2465c530fa3b794cff493d0ee2e0b88c6e718525b717858"
+   },
+   "enthalpy_vaporization": {
+    "value": 244952.66817458323,
+    "unit": "J/kg",
+    "molar_j_mol": 29240.0,
+    "temperature_k": 334.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67663&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-66-3_m4.html",
+    "sha256": "d25596682dbce774e2465c530fa3b794cff493d0ee2e0b88c6e718525b717858"
+   },
+   "viscosity": {
+    "value": 0.00051,
+    "temperature_k": 303.15,
+    "raw": "5.63 millipoises at 20 °C; 5.10 millipoises at 30 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6212/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/chloroform.json",
+    "sha256": "dc490b86b2e05f4bd62a9a6b282df3b35cb6bc15b87f84ba1739de4196da7b03",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1480.0,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6212/JSON?heading=Density",
+    "raw": "Density  (at 20 °C): 1.48 g/ml",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.20772,
+    "B_k": 1233.129,
+    "C_k": -40.953,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     334.4
+    ],
+    "reference": "Stull, 1947",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 25895.71103955107
+   }
+  },
+  "cyclohexane": {
+   "substance_id": "cyclohexane",
+   "name_zh": "环己烷",
+   "cas": "110-82-7",
+   "formula": "C6H12",
+   "pubchem_cid": 8078,
+   "molar_mass_kg_mol": 0.08416,
+   "melting_point_k": 279.6,
+   "heat_capacity": {
+    "value": 1853.6121673003802,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 156.0,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 33,
+    "reference": "Aston, Szasa, et al., 1943; Auerbach, Sage, et al., 1950; Dejardin, 1919; Fortier and Benson, 1976; Fortier, Benson, et al., 1976; Fortier, D'Arcy, et al., 1979; Grolier, Inglese, et al., 1982; Grolier, Wilhelm, et al., 1978; Jimenez, Romani, et al., 1986; Jolicoeur, Boileau, et al., 1975; Kalali, K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C110827&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/110-82-7_m2.html",
+    "sha256": "0afa70daf24eff0ee859d72c581dfa59107d295a58bac85bb3c7881d3051a613"
+   },
+   "boiling_point": {
+    "value": 353.9,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C110827&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/110-82-7_m4.html",
+    "sha256": "06c7a0e3bb04866cb297e88c34228b0cacaab1e449504ff54c1919d07142a34b"
+   },
+   "enthalpy_vaporization": {
+    "value": 356107.4144486692,
+    "unit": "J/kg",
+    "molar_j_mol": 29970.0,
+    "temperature_k": 353.9,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C110827&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/110-82-7_m4.html",
+    "sha256": "06c7a0e3bb04866cb297e88c34228b0cacaab1e449504ff54c1919d07142a34b"
+   },
+   "viscosity": {
+    "value": 0.000977,
+    "temperature_k": 293.15,
+    "raw": "0.977 mPa.s at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8078/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/cyclohexane.json",
+    "sha256": "0dfbd7e75dfc2d96c13195dfb1f6145a4eecbacb6aa92dea93bdf6489b0d2fc4",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 773.9,
+    "temperature_k": 298.15,
+    "raw": "0.7739 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/cyclohexane.json",
+    "sha256": "504f0910d71f64a7d894bf508c39af04a029fa1e2265acf696c748bd5039a49f",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8078/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 3.96988,
+    "B_k": 1203.526,
+    "C_k": -50.287,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     293.06,
+     354.73
+    ],
+    "reference": "Williamham, Taylor, et al., 1945",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 13009.788845710238
+   }
+  },
+  "cyclohexanone": {
+   "substance_id": "cyclohexanone",
+   "name_zh": "环己酮",
+   "cas": "108-94-1",
+   "formula": "C6H10O",
+   "pubchem_cid": 7967,
+   "molar_mass_kg_mol": 0.09814,
+   "melting_point_k": 243.0,
+   "heat_capacity": {
+    "value": 1811.69757489301,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 177.8,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 3,
+    "reference": "Herz and Bloch, 1924; Nakamura, Suga, et al., 1980; Phillip, 1939",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108941&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-94-1_m2.html",
+    "sha256": "41679dedb4c4b0cee789062759bcd9ae4400d17b42fc31c1f23d314700442fae"
+   },
+   "boiling_point": {
+    "value": 428.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108941&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/108-94-1_m4.html",
+    "sha256": "0aa8d419337491e4cad29289fe67c154f4a9839525d98aee86ff3afca1f416da"
+   },
+   "enthalpy_vaporization": {
+    "value": 459853.2708375789,
+    "unit": "J/kg",
+    "molar_j_mol": 45130.0,
+    "temperature_k": 428.8,
+    "reference": "Svoboda, Kubes, et al., 1992",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108941&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-94-1_m4.html",
+    "sha256": "0aa8d419337491e4cad29289fe67c154f4a9839525d98aee86ff3afca1f416da"
+   },
+   "viscosity": {
+    "value": 0.0022,
+    "temperature_k": 298.15,
+    "raw": "2.2 mPa.s (=cP) @ 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7967/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/cyclohexanone.json",
+    "sha256": "5c077c26804f1eb6fdc89b4aba3694ae2501a65b73cd37c11c614b1b59896602",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 942.1,
+    "temperature_k": 298.15,
+    "raw": "0.9421 @ 25 °C/4 °C; 0.9478 @ 20 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/cyclohexanone.json",
+    "sha256": "74543c6489bdf38f5a5909a5b9428a36d7f6dc87ecc668ca1f38dbdb707182b5",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7967/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 666.61184,
+    "t_ref_k": 299.54999999999995,
+    "dh_vap_j_mol": 41691.97532102984,
+    "raw": "5 mm Hg at 26.4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/cyclohexanone.json",
+    "sha256": "b589e4de1cd2fde2bc3aad385ee2109fec97350452f36fff4590e08e2bc60287",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 616.2202036320158
+   }
+  },
+  "decane": {
+   "substance_id": "decane",
+   "name_zh": "正癸烷",
+   "cas": "124-18-5",
+   "formula": "C10H22",
+   "pubchem_cid": 15600,
+   "molar_mass_kg_mol": 0.14228,
+   "melting_point_k": 243.3,
+   "heat_capacity": {
+    "value": 2203.120607253303,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 313.46,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 27,
+    "reference": "Andreoli-Ball, Patterson, et al., 1988; Baluja, Bravo, et al., 1985; Costas and Patterson, 1985; Costas, Huu, et al., 1988; Czarnota, 1993; Finke, Gross, et al., 1954; Gates, Wood, et al., 1986; Grigor'ev, Rastorguev, et al., 1975; Grolier, Hamedi, et al., 1979; Grolier, Inglese, et al., 1984; Huffm",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C124185&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/124-18-5_m2.html",
+    "sha256": "26030b1c2193b9ae3d08da97605f5d4cc1224a034ebff57dee7716939e732597"
+   },
+   "boiling_point": {
+    "value": 447.2,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C124185&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/124-18-5_m4.html",
+    "sha256": "449dc42b88927e052860d8a14ff2e73d7aaa7637b0082637e1e3ea9ca4a6b22d"
+   },
+   "enthalpy_vaporization": {
+    "value": 272350.29519257805,
+    "unit": "J/kg",
+    "molar_j_mol": 38750.0,
+    "temperature_k": 447.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C124185&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/124-18-5_m4.html",
+    "sha256": "449dc42b88927e052860d8a14ff2e73d7aaa7637b0082637e1e3ea9ca4a6b22d"
+   },
+   "viscosity": {
+    "value": 0.000838,
+    "temperature_k": 298.15,
+    "raw": "2.188 mPa s at -25 °C; 1.277 mPa s at 0 °C; 0.838 mPa s at 25 °C; 0.598 mPa s at 50 °C; 0.453 mPa s at 75 °C; 0.359 mPa s at 100 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/15600/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/decane.json",
+    "sha256": "a355ffcf6eda6f43af8eeb178d8d826ecdb84473430dfa8e05109a772ce91d6c",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 725.5,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/15600/JSON?heading=Density",
+    "raw": "0.7255 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 0.21021,
+    "B_k": 440.616,
+    "C_k": -156.896,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     310.59
+    ],
+    "reference": "Carruth and Kobayashi, 1973",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 123.28011331665455,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 447.2,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 49919.1035013271,
+     "method": "two-point line through the fit at 298.15 K (123.3 Pa) and (Tb, 1 atm)",
+     "reason": "Antoine fit gives 4925 Pa at the NIST boiling point 447.2 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "dichloroethane_1_2": {
+   "substance_id": "dichloroethane_1_2",
+   "name_zh": "1,2-二氯乙烷",
+   "cas": "107-06-2",
+   "formula": "C2H4Cl2",
+   "pubchem_cid": 11,
+   "molar_mass_kg_mol": 0.09895999999999999,
+   "melting_point_k": 230.0,
+   "heat_capacity": {
+    "value": 1303.4559417946648,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 128.99,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 14,
+    "reference": "Hallen, 1993; Kurbatov, 1948; Lainez, Roux-Desgranges, et al., 1985; Pitzer, 1940; Railing, 1939; Rastorguev and Ganiev, 1967; Ruiter, 1955; Sieg, Crtzen, et al., 1951; Staveley, Tupman, et al., 1955; Wilhelm, Faradjzadeh, et al., 1979; Wilhelm, Grolier, et al., 1977; Wilhelm, Grolier, et al., 1979;",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107062&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/107-06-2_m2.html",
+    "sha256": "7fc76181e3a3858240b94b070eef2392cee44c66dc43f2813c414d991dec06c2"
+   },
+   "boiling_point": {
+    "value": 356.7,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107062&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/107-06-2_m4.html",
+    "sha256": "75854cb7dbf8956d79bd008005c2ac579e456bddd080ff5ccf0963a17dc1458d"
+   },
+   "enthalpy_vaporization": {
+    "value": 323160.87308003235,
+    "unit": "J/kg",
+    "molar_j_mol": 31980.0,
+    "temperature_k": 356.6,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107062&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/107-06-2_m4.html",
+    "sha256": "75854cb7dbf8956d79bd008005c2ac579e456bddd080ff5ccf0963a17dc1458d"
+   },
+   "viscosity": {
+    "value": 0.00084,
+    "temperature_k": 293.15,
+    "raw": "0.84 cP at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/11/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/dichloroethane_1_2.json",
+    "sha256": "5209b508c43a281eec440e9a4e05c1c39ab87c4d644494b8f91adb00e2a67f64",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1245.4,
+    "temperature_k": 298.15,
+    "raw": "1.2454 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/dichloroethane_1_2.json",
+    "sha256": "6d919e8090a1716ae4da19b90d4c2895d2c5feab1579d70a6d41c46e31c0c60d",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/11/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.58518,
+    "B_k": 1521.789,
+    "C_k": -24.67,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     372.6
+    ],
+    "reference": "Pearce and Peters, 1929",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 10486.851454050844
+   }
+  },
+  "dichloromethane": {
+   "substance_id": "dichloromethane",
+   "name_zh": "二氯甲烷",
+   "cas": "75-09-2",
+   "formula": "CH2Cl2",
+   "pubchem_cid": 6344,
+   "molar_mass_kg_mol": 0.08493,
+   "melting_point_k": 198.06,
+   "heat_capacity": {
+    "value": 1186.8597668668315,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 100.8,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 7,
+    "reference": "Harrison and Moelwyn-Hughes, 1957; Kurbatov, 1948; Moseeva, Rabinovich, et al., 1978; Perlick, 1937; Riedel, 1940; Riedel, 1941",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C75092&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/75-09-2_m2.html",
+    "sha256": "d2301f91a812b19e9e92b0b62a4dbb9c1a2bd00a89a43a55dd58eed8b92336df"
+   },
+   "boiling_point": {
+    "value": 313.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C75092&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/75-09-2_m4.html",
+    "sha256": "df8644f285f774eab44dd5a3ac58061776f60773c7b85c78537fec46cb901e54"
+   },
+   "enthalpy_vaporization": {
+    "value": 330389.73272106436,
+    "unit": "J/kg",
+    "molar_j_mol": 28060.0,
+    "temperature_k": 313.0,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C75092&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/75-09-2_m4.html",
+    "sha256": "df8644f285f774eab44dd5a3ac58061776f60773c7b85c78537fec46cb901e54"
+   },
+   "viscosity": {
+    "value": 0.000437,
+    "temperature_k": 293.15,
+    "raw": "0.437 mPa.s at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6344/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/dichloromethane.json",
+    "sha256": "919edf8ece61c4e427c865c086b17f60b23bf3d22ab7ac51f74f546e9016f11f",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1325.5,
+    "temperature_k": 293.15,
+    "raw": "1.3255 20 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/dichloromethane.json",
+    "sha256": "ce4a32da8daa74d55e4d6bfafd82dab7c6188bca261624896d9a615b88c1e450",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6344/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.53691,
+    "B_k": 1327.016,
+    "C_k": -20.474,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     313.0
+    ],
+    "reference": "Ganeff and Jungers, 1948",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 57266.596313770024
+   }
+  },
+  "diethyl_ether": {
+   "substance_id": "diethyl_ether",
+   "name_zh": "乙醚",
+   "cas": "60-29-7",
+   "formula": "C4H10O",
+   "pubchem_cid": 3283,
+   "molar_mass_kg_mol": 0.07412,
+   "melting_point_k": 154.0,
+   "heat_capacity": {
+    "value": 2318.942255801403,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 171.88,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 5,
+    "reference": "Counsell, Lee, et al., 1971; Kurnakov and Voskresenskaya, 1936; Mazur, 1939; Parks and Huffman, 1926",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C60297&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/60-29-7_m2.html",
+    "sha256": "930a5a3c319e164812caab4c22174299d71cba93bcf69614ced17aed6a29f122"
+   },
+   "boiling_point": {
+    "value": 307.7,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C60297&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/60-29-7_m4.html",
+    "sha256": "2f4447bb59e1d4f890bcea9987c6d473770488c0d7b055547c28d02a885e27ca"
+   },
+   "enthalpy_vaporization": {
+    "value": 357798.16513761465,
+    "unit": "J/kg",
+    "molar_j_mol": 26520.0,
+    "temperature_k": 307.6,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C60297&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/60-29-7_m4.html",
+    "sha256": "2f4447bb59e1d4f890bcea9987c6d473770488c0d7b055547c28d02a885e27ca"
+   },
+   "viscosity": {
+    "value": 0.0002448,
+    "temperature_k": 293.15,
+    "raw": "0.2448 centipoise at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/3283/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/diethyl_ether.json",
+    "sha256": "80473c4bb52442d8efef8c6500ec89e31ce9d911f4231371da9e72034d3a1851",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 713.4,
+    "unit": "kg/m3",
+    "temperature_k": 293.15,
+    "raw": "0.7134 at 20 °C/4 °C",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/3283/JSON?heading=Density",
+    "file": "source_cache/pubchem_ether_density.json",
+    "sha256": "3c7fdaa2a78171f11bc55693a2872106db31a38d175f5daebd140e6a7102d5e8",
+    "note": "relative density 20 C/4 C times 999.97 kg/m3 (water at 4 C)"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.022,
+    "B_k": 1062.64,
+    "C_k": -44.93,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     328.57
+    ],
+    "reference": "Ambrose, Sprake, et al., 1972",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 66910.00086027385
+   }
+  },
+  "dmf": {
+   "substance_id": "dmf",
+   "name_zh": "N,N-二甲基甲酰胺",
+   "cas": "68-12-2",
+   "formula": "C3H7NO",
+   "pubchem_cid": 6228,
+   "molar_mass_kg_mol": 0.07309,
+   "melting_point_k": 212.7,
+   "heat_capacity": {
+    "value": 2055.684772198659,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 150.25,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 10,
+    "reference": "De Visser, Perron, et al., 1977; Geller, 1961; Grolier, Roux-Desgranges, et al., 1993; Kolker, Kulikov, et al., 1992; Marchidan and Ciopec, 1978; Petrov, Peshekhodov, et al., 1989; Vorob'ev and Yakovlev, 1982; Zegers and Somsen, 1984; de Visser and Somsen, 1974; de Visser and Somsen, 1979",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C68122&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/68-12-2_m2.html",
+    "sha256": "d69749f4c4e146ad78381c507436a850889f6b6545e499cf2b514fc4f149f593"
+   },
+   "boiling_point": {
+    "value": 426.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C68122&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/68-12-2_m4.html",
+    "sha256": "8aea5d8ade7efcfc5604d2a5e505a0ac9549c2e475eebdd8376c286e28804af1"
+   },
+   "enthalpy_vaporization": {
+    "value": 541948.6980415168,
+    "unit": "J/kg",
+    "molar_j_mol": 39611.030339854464,
+    "temperature_k": 426.0,
+    "reference": "Blanco, Beltrán, et al., 1997",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C68122&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/68-12-2_m4.html",
+    "sha256": "8aea5d8ade7efcfc5604d2a5e505a0ac9549c2e475eebdd8376c286e28804af1",
+    "measured": {
+     "molar_j_mol": 41800.0,
+     "temperature_k": 392.0
+    },
+    "critical_temperature_k": 649.6,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; NIST Tc median"
+   },
+   "viscosity": {
+    "value": 0.0008020000000000001,
+    "temperature_k": 298.15,
+    "raw": "0.802 cP at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6228/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/dmf.json",
+    "sha256": "e18ab38cce7e52c6f030d66613c64c1a09dc86ee8f46dd89e1e93c190121e176",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 944.5,
+    "temperature_k": 298.15,
+    "raw": "0.9445 at 25 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/dmf.json",
+    "sha256": "94aeb500daad64b75384e7f195f1336422cf7613e373cec5bedf96596e1510a2",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6228/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 3.93068,
+    "B_k": 1337.716,
+    "C_k": -82.648,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     303.0,
+     363.0
+    ],
+    "reference": "Gopal and Rizvi, 1968, 2",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 528.7358643451213
+   }
+  },
+  "dmso": {
+   "substance_id": "dmso",
+   "name_zh": "二甲亚砜",
+   "cas": "67-68-5",
+   "formula": "C2H6OS",
+   "pubchem_cid": 679,
+   "molar_mass_kg_mol": 0.07814,
+   "melting_point_k": 291.65,
+   "heat_capacity": {
+    "value": 1960.4555925262348,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 153.19,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 8,
+    "reference": "Barta, Kooner, et al., 1989; Clever and Westrum, 1970; De Visser, Heuvelsland, et al., 1978; Grolier, Roux-Desgranges, et al., 1993; Kenttmaa and Lindberg, 1960; Lankford and Criss, 1987; Rodante and Marrosu, 1988; de Visser and Somsen, 1979",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67685&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-68-5_m2.html",
+    "sha256": "6795faa6bb96f61064e38c1ef3ff63188761970a3c2ecc8bb21343df831269ae"
+   },
+   "boiling_point": {
+    "value": 463.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67685&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/67-68-5_m4.html",
+    "sha256": "afdec5e232b18ad135e421cced76a6eb571f37fca36882c482bb2971e15287f0"
+   },
+   "enthalpy_vaporization": {
+    "value": 561845.0986716619,
+    "unit": "J/kg",
+    "molar_j_mol": 43902.576010203666,
+    "temperature_k": 463.0,
+    "reference": "Dykyj, Svoboda, et al., 1999",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67685&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/67-68-5_m4.html",
+    "sha256": "afdec5e232b18ad135e421cced76a6eb571f37fca36882c482bb2971e15287f0",
+    "measured": {
+     "molar_j_mol": 48600.0,
+     "temperature_k": 392.0
+    },
+    "critical_temperature_k": 694.5,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc)"
+   },
+   "viscosity": {
+    "value": 0.0024700000000000004,
+    "temperature_k": 293.15,
+    "raw": "2.47cP at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/dmso.json",
+    "sha256": "6cfa966e106434a088dad4a3441198342b5f6c761ecc8f78c171426280cf6152",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1101.0,
+    "temperature_k": 298.15,
+    "raw": "1.101 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/dmso.json",
+    "sha256": "ff34ce0bae9fdbfc598c6aa61042d37e803a0028bd7da295af4be28e8d72dee2",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/679/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.23039,
+    "B_k": 2239.161,
+    "C_k": -29.215,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     293.0,
+     323.0
+    ],
+    "reference": "Douglas, 1948, 3",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 80.23420366543188,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 463.0,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 49719.69975077567,
+     "method": "two-point line through the fit at 298.15 K (80.2 Pa) and (Tb, 1 atm)",
+     "reason": "Antoine fit gives 117078 Pa at the NIST boiling point 463.0 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "ethanol": {
+   "substance_id": "ethanol",
+   "name_zh": "乙醇",
+   "cas": "64-17-5",
+   "formula": "C2H6O",
+   "pubchem_cid": 702,
+   "molar_mass_kg_mol": 0.04607,
+   "melting_point_k": 159.0,
+   "heat_capacity": {
+    "value": 2437.594964184936,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 112.3,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 26,
+    "reference": "Andreoli-Ball, Patterson, et al., 1988; Brown and Ziegler, 1979; Bykov, 1939; Ernst, Watkins, et al., 1936; Fortier and Benson, 1976; Fortier, Benson, et al., 1976; Green J.H.S., 1961; Haida, Suga, et al., 1977; Hwa and Ziegler, 1966; Kelley, 1929; Mazur, 1940; Ogawa and Murakami, 1985; Ogawa and Mu",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64175&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/64-17-5_m2.html",
+    "sha256": "6413786a7d016ef97b8e4d13b364e2dd0683b03c1527add5f51f5c65c0305b43"
+   },
+   "boiling_point": {
+    "value": 351.5,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64175&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/64-17-5_m4.html",
+    "sha256": "6b81de7f22881cb464399df2a6fde36458c024e884149b3d7bf91c22e72f5ced"
+   },
+   "enthalpy_vaporization": {
+    "value": 836987.1934013458,
+    "unit": "J/kg",
+    "molar_j_mol": 38560.0,
+    "temperature_k": 351.5,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64175&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/64-17-5_m4.html",
+    "sha256": "6b81de7f22881cb464399df2a6fde36458c024e884149b3d7bf91c22e72f5ced"
+   },
+   "viscosity": {
+    "value": 0.001074,
+    "temperature_k": 298.15,
+    "raw": "1.074 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/702/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/ethanol.json",
+    "sha256": "af7f6cd5e38b762b37a8a483735ecc44ae70d7acfb3b1351146f710196d99e5e",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 789.3,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/702/JSON?heading=Density",
+    "raw": "0.7893 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.37229,
+    "B_k": 1670.409,
+    "C_k": -40.191,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     351.7
+    ],
+    "reference": "Kretschmer and Wiebe, 1949",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 7885.104658693994
+   }
+  },
+  "ethyl_acetate": {
+   "substance_id": "ethyl_acetate",
+   "name_zh": "乙酸乙酯",
+   "cas": "141-78-6",
+   "formula": "C4H8O2",
+   "pubchem_cid": 8857,
+   "molar_mass_kg_mol": 0.08811,
+   "melting_point_k": 190.0,
+   "heat_capacity": {
+    "value": 1920.3268641470888,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 169.2,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 11,
+    "reference": "Baluja, Bravo, et al., 1985; Costas and Patterson, 1985; Fuchs, 1979; Jimenez, Romani, et al., 1986; Kurnakov and Voskresenskaya, 1936; Parks, Huffman, et al., 1933; Pintos, Bravo, et al., 1988; Roux, Perron, et al., 1978; Zabransky, Hynek, et al., 1987; Zhdanov, 1945",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C141786&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/141-78-6_m2.html",
+    "sha256": "bcc913027a3c245b9f72333c641c32527e0380e40602faea0f084563fd9725d4"
+   },
+   "boiling_point": {
+    "value": 350.2,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C141786&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/141-78-6_m4.html",
+    "sha256": "9839ba284a4bb2ec77d5d5a63caef946b73cc410d974a816374fa0c408bb649c"
+   },
+   "enthalpy_vaporization": {
+    "value": 362501.418681194,
+    "unit": "J/kg",
+    "molar_j_mol": 31940.0,
+    "temperature_k": 350.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C141786&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/141-78-6_m4.html",
+    "sha256": "9839ba284a4bb2ec77d5d5a63caef946b73cc410d974a816374fa0c408bb649c"
+   },
+   "viscosity": {
+    "value": 0.000423,
+    "temperature_k": 298.15,
+    "raw": "0.423 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8857/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/ethyl_acetate.json",
+    "sha256": "7036b2ec05f6a27f2ce25d65310b82762f897bbeadbc34a66ea852b3fc0a4729",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 900.3,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8857/JSON?heading=Density",
+    "raw": "0.9003 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.22809,
+    "B_k": 1245.702,
+    "C_k": -55.189,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.73,
+     348.98
+    ],
+    "reference": "Polák and Mertl, 1965",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 12615.993079340795
+   }
+  },
+  "ethyl_butanoate": {
+   "substance_id": "ethyl_butanoate",
+   "name_zh": "丁酸乙酯",
+   "cas": "105-54-4",
+   "formula": "C6H12O2",
+   "pubchem_cid": 7762,
+   "molar_mass_kg_mol": 0.11616,
+   "melting_point_k": 175.3,
+   "heat_capacity": {
+    "value": 1928.805096418733,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 224.05,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 4,
+    "reference": "Fuchs, 1979; Kolosovskii and Udovenko, 1934; Kurnakov and Voskresenskaya, 1936; de Kolossowsky and Udowenko, 1933",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C105544&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/105-54-4_m2.html",
+    "sha256": "837b2a63d6208d66393c1db41576033c52be28c7350f745660a62df1026be27c"
+   },
+   "boiling_point": {
+    "value": 394.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C105544&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/105-54-4_m4.html",
+    "sha256": "63801b3c2a19f826219428282f237e08239c7a7ddac8b8788261138ea8755b40"
+   },
+   "enthalpy_vaporization": {
+    "value": 305354.6831955923,
+    "unit": "J/kg",
+    "molar_j_mol": 35470.0,
+    "temperature_k": 394.6,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C105544&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/105-54-4_m4.html",
+    "sha256": "63801b3c2a19f826219428282f237e08239c7a7ddac8b8788261138ea8755b40"
+   },
+   "viscosity": {
+    "value": 0.000639,
+    "temperature_k": 298.15,
+    "raw": "0.639 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7762/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/ethyl_butanoate.json",
+    "sha256": "4c190df859569aac3b61b002626086afebb4d3f09380a40566dd3687708745a0",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 873.5,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7762/JSON?heading=Density",
+    "raw": "0.8735 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.33187,
+    "B_k": 1509.443,
+    "C_k": -45.284,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     394.0
+    ],
+    "reference": "Stull, 1947",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 2304.2548376389673
+   }
+  },
+  "ethylbenzene": {
+   "substance_id": "ethylbenzene",
+   "name_zh": "乙苯",
+   "cas": "100-41-4",
+   "formula": "C8H10",
+   "pubchem_cid": 7500,
+   "molar_mass_kg_mol": 0.10615999999999999,
+   "melting_point_k": 179.0,
+   "heat_capacity": {
+    "value": 1744.3434438583274,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 185.17950000000002,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 14,
+    "reference": "Andolenko and Grigor'ev, 1979; Blacet, Leighton, et al., 1931; Fortier and Benson, 1977; Fortier and Benson, 1979; Fortier, Benson, et al., 1976; Guthrie, Spitzer, et al., 1944; Huffman, Parks, et al., 1930; Kolosovskii and Udovenko, 1934; Kurbatov, 1947; Scott and Brickwedde, 1945; Smith and Andrew",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100414&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/100-41-4_m2.html",
+    "sha256": "b5c3dbc9511fd06513ee7a85a63c9f71a466ae434126c9bd30ab6f354f959b99"
+   },
+   "boiling_point": {
+    "value": 409.3,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100414&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/100-41-4_m4.html",
+    "sha256": "085b6c871bc06ece7031c5633b5c0747c9ec5c2ebd1862b1dfe43e5edb0588d3"
+   },
+   "enthalpy_vaporization": {
+    "value": 335060.28636021103,
+    "unit": "J/kg",
+    "molar_j_mol": 35570.0,
+    "temperature_k": 409.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100414&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/100-41-4_m4.html",
+    "sha256": "085b6c871bc06ece7031c5633b5c0747c9ec5c2ebd1862b1dfe43e5edb0588d3"
+   },
+   "viscosity": {
+    "value": 0.00064,
+    "temperature_k": 298.15,
+    "raw": "0.64 cP at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7500/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/ethylbenzene.json",
+    "sha256": "ebf95bb8fb1cb6d6fdfd611c489cbf519dd623443f6996406abca7838d89f8d3",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 862.6,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7500/JSON?heading=Density",
+    "raw": "0.8626 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 1279.8947328000002,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 39905.91348559927,
+    "raw": "9.6 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/ethylbenzene.json",
+    "sha256": "e27d1b79cbb25c2116b5b9aa855d3e5922440e9223b3cb46bee020ac560c3b83",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 1279.8947328000002
+   }
+  },
+  "ethylene_glycol": {
+   "substance_id": "ethylene_glycol",
+   "name_zh": "乙二醇",
+   "cas": "107-21-1",
+   "formula": "C2H6O2",
+   "pubchem_cid": 174,
+   "molar_mass_kg_mol": 0.06207,
+   "melting_point_k": 261.0,
+   "heat_capacity": {
+    "value": 2406.1543418720803,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 149.35000000000002,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 10,
+    "reference": "Kawaizumi, Otake, et al., 1972; Murthy and Subrahmanyam, 1977; Neiman and Kurlyankin, 1932; Nikolaev and Rabinovich, 1967; Parks and Kelley, 1925; Paz Andrade, Paz, et al., 1970; Rabinovich and Nikolaev, 1962; Stephens and Tamplin, 1979; Tungusov and Mishchenko, 1965; Zaripov, 1982",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107211&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/107-21-1_m2.html",
+    "sha256": "92ea0252a5c3febe61a227f32e4b80dd511611b99d5bf946077627bd692055fd"
+   },
+   "boiling_point": {
+    "value": 470.5,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107211&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/107-21-1_m4.html",
+    "sha256": "8c4acf4289c515be9fad4947b03d4024fe405612725304455206aeb3d570e9b5"
+   },
+   "enthalpy_vaporization": {
+    "value": 878817.5401779475,
+    "unit": "J/kg",
+    "molar_j_mol": 54548.2047188452,
+    "temperature_k": 470.5,
+    "reference": "Schierholtz and Staples, 1935",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107211&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/107-21-1_m4.html",
+    "sha256": "8c4acf4289c515be9fad4947b03d4024fe405612725304455206aeb3d570e9b5",
+    "measured": {
+     "molar_j_mol": 57300.0,
+     "temperature_k": 436.0
+    },
+    "critical_temperature_k": 720.0,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; NIST Tc median"
+   },
+   "viscosity": {
+    "value": 0.016100000000000003,
+    "temperature_k": 298.15,
+    "raw": "16.1 mPa-sec at 25 °C; 6.554 mPa-sec at 50 °C; 3.340 mPa-sec at 75 °C; 1.975 mPa-sec at 100 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/174/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/ethylene_glycol.json",
+    "sha256": "5e56bcb91250f577047bd67913052a69dc871019ebc412b87f84f724737c270b",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1113.5,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/174/JSON?heading=Density",
+    "raw": "1.1135 g/cu cm AT 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 12.265657856,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 61036.47664031736,
+    "raw": "0.092 mm Hg at 25 °C /Extrapolated/",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/ethylene_glycol.json",
+    "sha256": "d7cf4435e151e33b3c46f8b263838befe8abcabcdfbdc2333c1a41aa049c89e5",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 12.265657856
+   }
+  },
+  "formic_acid": {
+   "substance_id": "formic_acid",
+   "name_zh": "甲酸",
+   "cas": "64-18-6",
+   "formula": "CH2O2",
+   "pubchem_cid": 284,
+   "molar_mass_kg_mol": 0.046024999999999996,
+   "melting_point_k": 281.5,
+   "heat_capacity": {
+    "value": 2135.7957631721893,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 98.3,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 5,
+    "reference": "Gibson, Latimer, et al., 1920; Glagoleva and Chervov, 1936; Radulescu and Jula, 1934; Stout and Fisher, 1941; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64186&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/64-18-6_m2.html",
+    "sha256": "eb7b2e1ac9254ab97e65ad0a1129c7dfa9ab25794194b9e6f3c25d0baafdaf6c"
+   },
+   "boiling_point": {
+    "value": 373.9,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64186&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/64-18-6_m4.html",
+    "sha256": "15a6e8fe8815626fb353bfbb98a0fc28fe0dc129c13b820add7d83ee5eb05cdd"
+   },
+   "enthalpy_vaporization": {
+    "value": 492992.9386203151,
+    "unit": "J/kg",
+    "molar_j_mol": 22690.0,
+    "temperature_k": 373.8,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64186&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/64-18-6_m4.html",
+    "sha256": "15a6e8fe8815626fb353bfbb98a0fc28fe0dc129c13b820add7d83ee5eb05cdd"
+   },
+   "viscosity": {
+    "value": 0.001607,
+    "temperature_k": 298.15,
+    "raw": "1.607 mPas at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/284/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/formic_acid.json",
+    "sha256": "9277161592b916d9de4e534d23faab9fe22bd20155c5203fc30352c1f96ac0ba",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1220.0,
+    "temperature_k": 293.15,
+    "raw": "1.220 @ 20°C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/formic_acid.json",
+    "sha256": "0a2ca8fa70234196986912c9ff279a4d2b051f1053a38af4fa14f03d80d8701c",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/284/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 2.00121,
+    "B_k": 515.0,
+    "C_k": -139.408,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     307.4
+    ],
+    "reference": "Kahlbaum, 1894, 2",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 5714.155064883787,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 373.9,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 35183.423105431604,
+     "method": "two-point line through the fit at 298.15 K (5714.2 Pa) and (Tb, 1 atm)",
+     "reason": "Antoine fit gives 63822 Pa at the NIST boiling point 373.9 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "hexan_1_ol": {
+   "substance_id": "hexan_1_ol",
+   "name_zh": "正己醇",
+   "cas": "111-27-3",
+   "formula": "C6H14O",
+   "pubchem_cid": 8103,
+   "molar_mass_kg_mol": 0.10217,
+   "melting_point_k": 225.0,
+   "heat_capacity": {
+    "value": 2355.3880786923755,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 240.65,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 15,
+    "reference": "Andreoli-Ball, Patterson, et al., 1988; Arutyunyan, 1981; Atrashenok, Nesterov, et al., 1991; Benson, D'Arcy, et al., 1983; Bravo, Pintos, et al., 1984; Costas and Patterson, 1985; Griigo'ev, Yanin, et al., 1979; Hutchinson and Bailey, 1959; Kalinowska and Woycicki, 1984; Kelley, 1929; Ortega, 1986;",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111273&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/111-27-3_m2.html",
+    "sha256": "4ea79c107b801d18b000a685d2f67075b7d3b2fd22a79ee16823f251cd60574c"
+   },
+   "boiling_point": {
+    "value": 430.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111273&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/111-27-3_m4.html",
+    "sha256": "396c3f176ba0afb6afe74df2c5399211d96aad47b1fac54c4fc6607fb71f174d"
+   },
+   "enthalpy_vaporization": {
+    "value": 435548.5954781247,
+    "unit": "J/kg",
+    "molar_j_mol": 44500.0,
+    "temperature_k": 430.5,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111273&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/111-27-3_m4.html",
+    "sha256": "396c3f176ba0afb6afe74df2c5399211d96aad47b1fac54c4fc6607fb71f174d"
+   },
+   "viscosity": {
+    "value": 0.000592,
+    "temperature_k": 298.15,
+    "raw": "0.592 cP at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8103/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/hexan_1_ol.json",
+    "sha256": "95f777f9a2f932c08c6ce5b54ff41d2dc624a7428da8f9aa463fc82eac83b8cd",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 815.3000000000001,
+    "temperature_k": 298.15,
+    "raw": "0.8153 at 25 °C/4 °C; 0.8082 at 35 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/hexan_1_ol.json",
+    "sha256": "9fcbe411947f212c5705d6406db6f46893277b1c673676291b91401722508827",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8103/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 123.72315750400001,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 54231.68423047147,
+    "raw": "0.928 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/hexan_1_ol.json",
+    "sha256": "d0aa5b3078240f23ae984ef66af8af857c01cb77469a70a15795f85959ef9271",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 123.72315750400001
+   }
+  },
+  "hexane": {
+   "substance_id": "hexane",
+   "name_zh": "正己烷",
+   "cas": "110-54-3",
+   "formula": "C6H14",
+   "pubchem_cid": 8058,
+   "molar_mass_kg_mol": 0.08618,
+   "melting_point_k": 178.0,
+   "heat_capacity": {
+    "value": 2270.1322812717563,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 195.64,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 27,
+    "reference": "Aicart, Kumaran, et al., 1983; Andreoli-Ball, Patterson, et al., 1988; Benson and D'Arcy, 1986; Benson, D'Arcy, et al., 1983; Benson, D'Arcy, et al., 1984; Bravo, Pintos, et al., 1984; Connolly, Sage, et al., 1951; Costas and Patterson, 1985; Czarnota, 1979; Diaz pena and Renuncio, 1974; Douslin and",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C110543&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/110-54-3_m2.html",
+    "sha256": "5cc40a8a322a96e127670ad1416f3b4a5ed29ec45def282679a5de0c090c1662"
+   },
+   "boiling_point": {
+    "value": 341.9,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C110543&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/110-54-3_m4.html",
+    "sha256": "f9798fba9d97285eaa941ba5409251bd85726987146b1a8d66bd6d630f8b5b62"
+   },
+   "enthalpy_vaporization": {
+    "value": 334764.44650731026,
+    "unit": "J/kg",
+    "molar_j_mol": 28850.0,
+    "temperature_k": 341.9,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C110543&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/110-54-3_m4.html",
+    "sha256": "f9798fba9d97285eaa941ba5409251bd85726987146b1a8d66bd6d630f8b5b62"
+   },
+   "viscosity": {
+    "value": 0.000377,
+    "temperature_k": 288.15,
+    "raw": "0.377 cP at 15 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8058/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/hexane.json",
+    "sha256": "e5711b5db80563caa9840f1dc36b4ad4f9f9c7f564fa6f9f9d37598fca0eaf00",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 660.5999999999999,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8058/JSON?heading=Density",
+    "raw": "0.6606 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.00266,
+    "B_k": 1171.53,
+    "C_k": -48.784,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     342.69
+    ],
+    "reference": "Williamham, Taylor, et al., 1945",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 20166.279644633796
+   }
+  },
+  "isobutanol": {
+   "substance_id": "isobutanol",
+   "name_zh": "异丁醇",
+   "cas": "78-83-1",
+   "formula": "C4H10O",
+   "pubchem_cid": 6560,
+   "molar_mass_kg_mol": 0.07412,
+   "melting_point_k": 165.15,
+   "heat_capacity": {
+    "value": 2483.810037776578,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 184.1,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 7,
+    "reference": "Counsell, Lees, et al., 1968; Okano, Ogawa, et al., 1988; Paz Andrade, Paz, et al., 1970; Piekarski and Somsen, 1988; Rybalkin, Emel'yanov, et al., 1978; Willams and Daniels, 1924; Zhdanov, 1941",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C78831&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/78-83-1_m2.html",
+    "sha256": "ee063c0be414d4005ea4d222cce941edecb68f9745148712a8c60fcb1ce33a87"
+   },
+   "boiling_point": {
+    "value": 380.8,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C78831&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/78-83-1_m4.html",
+    "sha256": "ec19ca3293611647b6e7be9bf15a17dc15c68d546b96f529be74307c8aa1bbd1"
+   },
+   "enthalpy_vaporization": {
+    "value": 564220.1834862385,
+    "unit": "J/kg",
+    "molar_j_mol": 41820.0,
+    "temperature_k": 381.1,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C78831&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/78-83-1_m4.html",
+    "sha256": "ec19ca3293611647b6e7be9bf15a17dc15c68d546b96f529be74307c8aa1bbd1"
+   },
+   "viscosity": {
+    "value": 0.004,
+    "temperature_k": 293.15,
+    "raw": "4.0 mPa.s at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6560/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/isobutanol.json",
+    "sha256": "a5c83b52058642a2d805a3daca0acfa6f4b613d2aee39d7d65aa4a296028b7ba",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 801.8,
+    "temperature_k": 297.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6560/JSON?heading=Density",
+    "raw": "0.8018 g/cu cm at 24 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 1386.5526272000002,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 49015.50433384988,
+    "raw": "10.4 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/isobutanol.json",
+    "sha256": "7beed1dc41fa15ae99aee7fea322d766adc494c774b57844d8e76a5ef91bbb13",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 1386.5526272000002
+   }
+  },
+  "m_xylene": {
+   "substance_id": "m_xylene",
+   "name_zh": "间二甲苯",
+   "cas": "108-38-3",
+   "formula": "C8H10",
+   "pubchem_cid": 7929,
+   "molar_mass_kg_mol": 0.10615999999999999,
+   "melting_point_k": 225.0,
+   "heat_capacity": {
+    "value": 1717.8315749811607,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 182.365,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 6,
+    "reference": "Fortier and Benson, 1977; Fortier and Benson, 1979; Grolier, Roux-Desgranges, et al., 1993; Kurbatov, 1947; Pitzer and Scott, 1943; Willams and Daniels, 1924",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108383&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-38-3_m2.html",
+    "sha256": "ea7563364200dccf5baffb2e0187fbe05b36650a031b5b1acdb36efdedc2d7ab"
+   },
+   "boiling_point": {
+    "value": 412.3,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108383&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/108-38-3_m4.html",
+    "sha256": "d85ccaa0666c60c6c49513d1f9daef6ec89f8e4223b50e6e05228efcb3abc336"
+   },
+   "enthalpy_vaporization": {
+    "value": 335908.0633006783,
+    "unit": "J/kg",
+    "molar_j_mol": 35660.0,
+    "temperature_k": 412.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108383&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-38-3_m4.html",
+    "sha256": "d85ccaa0666c60c6c49513d1f9daef6ec89f8e4223b50e6e05228efcb3abc336"
+   },
+   "viscosity": {
+    "value": 0.00058,
+    "temperature_k": 298.15,
+    "raw": "0.58 mPa*s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7929/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/m_xylene.json",
+    "sha256": "8cebf70426aa6653c1d7a68f4564b238faa72b80076492e3f3bdae727feee5f2",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 869.8000000000001,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7929/JSON?heading=Density",
+    "raw": "0.8698 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.09199,
+    "B_k": 1996.545,
+    "C_k": -14.772,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     333.0
+    ],
+    "reference": "Pitzer and Scott, 1943",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 1112.938826145546,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 412.3,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 40393.44780672446,
+     "method": "two-point line through the fit at 298.15 K (1112.9 Pa) and (Tb, 1 atm)",
+     "reason": "Antoine fit gives 117379 Pa at the NIST boiling point 412.3 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "methanol": {
+   "substance_id": "methanol",
+   "name_zh": "甲醇",
+   "cas": "67-56-1",
+   "formula": "CH4O",
+   "pubchem_cid": 887,
+   "molar_mass_kg_mol": 0.032042,
+   "melting_point_k": 176.0,
+   "heat_capacity": {
+    "value": 2531.3650833281317,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 81.11,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 19,
+    "reference": "Andreoli-Ball, Patterson, et al., 1988; Atalla, El-Sharkawy, et al., 1981; Carlson and Westrum, 1971; Costas and Patterson, 1985; Deshpande and Bhatagadde, 1971; Filatov and Afanas'ev, 1992; Katayama, 1962; Kelley, 1929; Khasanshin and Zykova, 1989; Korolev, Kukharenko, et al., 1986; Lankford and Cr",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67561&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-56-1_m2.html",
+    "sha256": "a79d33a01439c80a1b21c0321e493c2def5d78b6d2a7b715a421333a583b5827"
+   },
+   "boiling_point": {
+    "value": 337.8,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67561&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/67-56-1_m4.html",
+    "sha256": "649443209efb3058095f7683609714a74485b91199e746be82c0461e9ab13ac7"
+   },
+   "enthalpy_vaporization": {
+    "value": 1098870.2328194245,
+    "unit": "J/kg",
+    "molar_j_mol": 35210.0,
+    "temperature_k": 337.7,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67561&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-56-1_m4.html",
+    "sha256": "649443209efb3058095f7683609714a74485b91199e746be82c0461e9ab13ac7"
+   },
+   "viscosity": {
+    "value": 0.0005440000000000001,
+    "temperature_k": 298.15,
+    "raw": "0.544 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/887/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/methanol.json",
+    "sha256": "77fa8ef32ea97aae3c34fd91bf42d70cef3a34f3c5a22db69e7f511630535f57",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 786.5999999999999,
+    "temperature_k": 298.15,
+    "raw": "0.8100 at 0 °C/4 °C; 0.7866 at 25 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/methanol.json",
+    "sha256": "a5868943710abffbc6830d13cb55e31b60a00ad957604b751b616f3f1a25556f",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/887/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.20409,
+    "B_k": 1581.341,
+    "C_k": -33.5,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     356.83
+    ],
+    "reference": "Ambrose and Sprake, 1970",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 16938.450392599163
+   }
+  },
+  "methyl_acetate": {
+   "substance_id": "methyl_acetate",
+   "name_zh": "乙酸甲酯",
+   "cas": "79-20-9",
+   "formula": "C3H6O2",
+   "pubchem_cid": 6584,
+   "molar_mass_kg_mol": 0.07408,
+   "melting_point_k": 175.15,
+   "heat_capacity": {
+    "value": 1897.6781857451404,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 140.57999999999998,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 4,
+    "reference": "Costas and Patterson, 1985; Hall and Baldt, 1971; Pintos, Bravo, et al., 1988",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C79209&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/79-20-9_m2.html",
+    "sha256": "96cadd64bd809b54e84c43732b6e8de0b63f841984381d9d640845f2e40dae1c"
+   },
+   "boiling_point": {
+    "value": 330.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C79209&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/79-20-9_m4.html",
+    "sha256": "61ce0e53559681906c69639ebf1f55fb9a776a85cfc87af8388b1e8d4bf670b8"
+   },
+   "enthalpy_vaporization": {
+    "value": 407667.3866090713,
+    "unit": "J/kg",
+    "molar_j_mol": 30200.0,
+    "temperature_k": 330.0,
+    "reference": "Connett, Counsell, et al., 1976",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C79209&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/79-20-9_m4.html",
+    "sha256": "61ce0e53559681906c69639ebf1f55fb9a776a85cfc87af8388b1e8d4bf670b8"
+   },
+   "viscosity": {
+    "value": 0.000364,
+    "temperature_k": 298.15,
+    "raw": "0.364 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6584/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/methyl_acetate.json",
+    "sha256": "27d35538ed04db530cba6e0462099998c6ef188fc915546454d7d8bee913ec06",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 934.2,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/6584/JSON?heading=Density",
+    "raw": "0.9342 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.20364,
+    "B_k": 1164.426,
+    "C_k": -52.69,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     328.99
+    ],
+    "reference": "Polák and Mertl, 1965",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 28826.216305903064
+   }
+  },
+  "methyl_formate": {
+   "substance_id": "methyl_formate",
+   "name_zh": "甲酸甲酯",
+   "cas": "107-31-3",
+   "formula": "C2H4O2",
+   "pubchem_cid": 7865,
+   "molar_mass_kg_mol": 0.06005,
+   "melting_point_k": 173.2,
+   "heat_capacity": {
+    "value": 1993.338884263114,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 119.7,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 3,
+    "reference": "Fuchs, 1979; Hall and Baldt, 1971; Zabransky, Hynek, et al., 1987",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107313&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/107-31-3_m2.html",
+    "sha256": "61d9258ef7a4b5d3ea461b28587b4bfba15d7eb9446bdf535ef25967c6ca08aa"
+   },
+   "boiling_point": {
+    "value": 305.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107313&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/107-31-3_m4.html",
+    "sha256": "5f41c84fd24aae4e731e862086200bd7887ce9bfd043b9ceb25d5bd2b7caca9a"
+   },
+   "enthalpy_vaporization": {
+    "value": 464945.8784346378,
+    "unit": "J/kg",
+    "molar_j_mol": 27920.0,
+    "temperature_k": 304.7,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C107313&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/107-31-3_m4.html",
+    "sha256": "5f41c84fd24aae4e731e862086200bd7887ce9bfd043b9ceb25d5bd2b7caca9a"
+   },
+   "viscosity": {
+    "value": 0.00032500000000000004,
+    "temperature_k": 298.15,
+    "raw": "0.325 mPa-s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7865/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/methyl_formate.json",
+    "sha256": "ec86fbf322f4a046a72d8b2294ed3e23a78c1ce5b51c54d3baa370096888cefd",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 975.0,
+    "temperature_k": 293.15,
+    "raw": "0.975 @ 20°C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/methyl_formate.json",
+    "sha256": "66a70a81753e15ac67fe80496e5c16b17c70423aa0b2219f9f481ec0f4905088",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7865/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 0.25097,
+    "B_k": 6.524,
+    "C_k": -278.54,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     294.0,
+     304.9
+    ],
+    "reference": "Nelson, 1928",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 82848.10813681807
+   }
+  },
+  "nitrobenzene": {
+   "substance_id": "nitrobenzene",
+   "name_zh": "硝基苯",
+   "cas": "98-95-3",
+   "formula": "C6H5NO2",
+   "pubchem_cid": 7416,
+   "molar_mass_kg_mol": 0.12311,
+   "melting_point_k": 278.9,
+   "heat_capacity": {
+    "value": 1461.70091787832,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 179.95,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 9,
+    "reference": "Lainez, Rodrigo, et al., 1985; Mazur, 1939; Parks and Todd, 1934; Parks, Todd, et al., 1936; Rastorguev and Ganiev, 1967; Reddy, 1986; Willams and Daniels, 1924; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C98953&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/98-95-3_m2.html",
+    "sha256": "cc8c53009ba7d33ae5cd0209b33743b5bfaf9549f1fe58072f6e45a7c97a3df3"
+   },
+   "boiling_point": {
+    "value": 484.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C98953&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/98-95-3_m4.html",
+    "sha256": "7e72f6006a26442afea2c5e2f6704dcc4017c1ad4f4c2ff6c6b4ffd418d15707"
+   },
+   "enthalpy_vaporization": {
+    "value": 365603.2928125842,
+    "unit": "J/kg",
+    "molar_j_mol": 45009.42137815724,
+    "temperature_k": 484.0,
+    "reference": "Toral and Moles, 1933",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C98953&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/98-95-3_m4.html",
+    "sha256": "7e72f6006a26442afea2c5e2f6704dcc4017c1ad4f4c2ff6c6b4ffd418d15707",
+    "measured": {
+     "molar_j_mol": 48900.0,
+     "temperature_k": 425.0
+    },
+    "critical_temperature_k": 726.0,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc)"
+   },
+   "viscosity": {
+    "value": 0.001863,
+    "temperature_k": 298.15,
+    "raw": "1.863 mPa-s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7416/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/nitrobenzene.json",
+    "sha256": "cac5471253f047298d561b31aad863989391c9e23f83c90bc8fe2c4ee9b2c538",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 1203.7,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7416/JSON?heading=Density",
+    "raw": "1.2037 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 133.322368,
+    "t_ref_k": 317.54999999999995,
+    "dh_vap_j_mol": 50925.899734609,
+    "raw": "Vapor pressure: 1 mm Hg at 44.4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/nitrobenzene.json",
+    "sha256": "ea84eb4afc88e1bde7723b38c6419ec491a46c3731f6e929e6da6dc0ed25eea6",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 38.005273912709086
+   }
+  },
+  "nonane": {
+   "substance_id": "nonane",
+   "name_zh": "正壬烷",
+   "cas": "111-84-2",
+   "formula": "C9H20",
+   "pubchem_cid": 8141,
+   "molar_mass_kg_mol": 0.12825,
+   "melting_point_k": 219.5,
+   "heat_capacity": {
+    "value": 2214.4639376218324,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 284.005,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 8,
+    "reference": "Andreoli-Ball, Patterson, et al., 1988; Finke, Gross, et al., 1954; Grolier, Hamedi, et al., 1979; Huffman, Parks, et al., 1931; Osborne and Ginnings, 1947; Parks, Huffman, et al., 1930; Trejo, Costas, et al., 1991; Wilhelm, Inglese, et al., 1982",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111842&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/111-84-2_m2.html",
+    "sha256": "6f018767461df7bda885520233a59f957b4b3fe00b7ca72d29fe87d55ed788ee"
+   },
+   "boiling_point": {
+    "value": 423.8,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111842&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/111-84-2_m4.html",
+    "sha256": "16938b4d827f8152d37180bf1b315fbe164adf514862f6e94873bbeaf1a469b8"
+   },
+   "enthalpy_vaporization": {
+    "value": 287797.2709551657,
+    "unit": "J/kg",
+    "molar_j_mol": 36910.0,
+    "temperature_k": 424.0,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111842&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/111-84-2_m4.html",
+    "sha256": "16938b4d827f8152d37180bf1b315fbe164adf514862f6e94873bbeaf1a469b8"
+   },
+   "viscosity": {
+    "value": 0.0006696,
+    "temperature_k": 298.15,
+    "raw": "0.6696 cP at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8141/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/nonane.json",
+    "sha256": "92c4eb200178adc71fa64fcd0aa7ee9448f18cac357aae0b9695913b22972465",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 717.6,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8141/JSON?heading=Density",
+    "raw": "0.7176 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 3.82489,
+    "B_k": 1492.928,
+    "C_k": -55.895,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     307.73
+    ],
+    "reference": "Carruth and Kobayashi, 1973",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 459.4727013281259,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 423.8,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 45116.98993669323,
+     "method": "two-point line through the fit at 298.15 K (459.5 Pa) and (Tb, 1 atm)",
+     "reason": "Antoine fit gives 58475 Pa at the NIST boiling point 423.8 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "o_xylene": {
+   "substance_id": "o_xylene",
+   "name_zh": "邻二甲苯",
+   "cas": "95-47-6",
+   "formula": "C8H10",
+   "pubchem_cid": 7237,
+   "molar_mass_kg_mol": 0.10615999999999999,
+   "melting_point_k": 248.0,
+   "heat_capacity": {
+    "value": 1764.2426525998494,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 187.292,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 6,
+    "reference": "Fortier and Benson, 1977; Fortier and Benson, 1979; Huffman, Parks, et al., 1930; Kurbatov, 1947; Pitzer and Scott, 1943; Willams and Daniels, 1924",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C95476&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/95-47-6_m2.html",
+    "sha256": "ccd01ea13a4783fcb7f853efb0f4af82fe6dde2f9b2d12c5942e57b0d798bdf7"
+   },
+   "boiling_point": {
+    "value": 417.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C95476&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/95-47-6_m4.html",
+    "sha256": "8235b66f575b2b2a590e299424edeb855b4be59deaab04906ac33097f8cb9985"
+   },
+   "enthalpy_vaporization": {
+    "value": 341371.5146948003,
+    "unit": "J/kg",
+    "molar_j_mol": 36240.0,
+    "temperature_k": 417.6,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C95476&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/95-47-6_m4.html",
+    "sha256": "8235b66f575b2b2a590e299424edeb855b4be59deaab04906ac33097f8cb9985"
+   },
+   "viscosity": {
+    "value": 0.00076,
+    "temperature_k": 298.15,
+    "raw": "0.760 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7237/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/o_xylene.json",
+    "sha256": "a16084c2ee35da5922c1df0b3964ed84ef2162058eeb1ee35232d4db7875a3e7",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 880.1,
+    "temperature_k": 293.15,
+    "raw": "0.8801 at 20 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/o_xylene.json",
+    "sha256": "66454c07c3cfbcd594c20e66bd3d170dc4fdbaf8557e201e4ab996c8edd764a4",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7237/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.93755,
+    "B_k": 1901.373,
+    "C_k": -26.268,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     323.0
+    ],
+    "reference": "Pitzer and Scott, 1943",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 879.3751670150004,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 417.0,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 41287.04788355313,
+     "method": "two-point line through the fit at 298.15 K (879.4 Pa) and (Tb, 1 atm)",
+     "reason": "Antoine fit gives 117860 Pa at the NIST boiling point 417.0 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "octan_1_ol": {
+   "substance_id": "octan_1_ol",
+   "name_zh": "正辛醇",
+   "cas": "111-87-5",
+   "formula": "C8H18O",
+   "pubchem_cid": 957,
+   "molar_mass_kg_mol": 0.13022999999999998,
+   "melting_point_k": 257.0,
+   "heat_capacity": {
+    "value": 2396.529217538202,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 312.1,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 5,
+    "reference": "Hutchinson and Bailey, 1959; Naziev, Bashirov, et al., 1986; Vesely, Barcal, et al., 1989; Zegers and Somsen, 1984; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111875&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/111-87-5_m2.html",
+    "sha256": "54b2ca96fcceee2f0f154798a6ba258a30bbe9c91fb8f4e7bcc09e9a9646b78a"
+   },
+   "boiling_point": {
+    "value": 468.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111875&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/111-87-5_m4.html",
+    "sha256": "40bb1ad7e098e012b030cec3d32718d080970d79d8dc8ce9f92b509fc4838862"
+   },
+   "enthalpy_vaporization": {
+    "value": 384922.03020209656,
+    "unit": "J/kg",
+    "molar_j_mol": 50128.39599321903,
+    "temperature_k": 468.0,
+    "reference": "Stephenson and Malanowski, 1987",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111875&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/111-87-5_m4.html",
+    "sha256": "40bb1ad7e098e012b030cec3d32718d080970d79d8dc8ce9f92b509fc4838862",
+    "measured": {
+     "molar_j_mol": 47800.0,
+     "temperature_k": 490.0
+    },
+    "critical_temperature_k": 655.0,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; NIST Tc median"
+   },
+   "viscosity": {
+    "value": 0.007288,
+    "temperature_k": 298.15,
+    "raw": "7.288 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/957/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/octan_1_ol.json",
+    "sha256": "84296ee07d0adb7be76ec6cda71facf611f9ae08ce2ed35038b49078fcd1156a",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 826.2,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/957/JSON?heading=Density",
+    "raw": "0.8262 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 6.47682,
+    "B_k": 2603.359,
+    "C_k": -48.799,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     293.0,
+     353.0
+    ],
+    "reference": "Geiseler, Fruwert, et al., 1966",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 10.871271928272476,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 468.0,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 62430.06989296929,
+     "method": "two-point line through the fit at 298.15 K (10.9 Pa) and (Tb, 1 atm)",
+     "reason": "Antoine fit gives 184728 Pa at the NIST boiling point 468.0 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "octane": {
+   "substance_id": "octane",
+   "name_zh": "正辛烷",
+   "cas": "111-65-9",
+   "formula": "C8H18",
+   "pubchem_cid": 356,
+   "molar_mass_kg_mol": 0.11423,
+   "melting_point_k": 216.3,
+   "heat_capacity": {
+    "value": 2223.7590825527445,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 254.02,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 19,
+    "reference": "Andreoli-Ball, Patterson, et al., 1988; Benson and D'Arcy, 1986; Connolly, Sage, et al., 1951; Czarnota, 1993; Finke, Gross, et al., 1954; Grigor'ev and Andolenko, 1984; Grigor'ev, Rastorguev, et al., 1975; Grolier, Inglese, et al., 1981; Huffman, Parks, et al., 1931; Lainez, Grolier, et al., 1985; ",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111659&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/111-65-9_m2.html",
+    "sha256": "59bf784d8d228837a6739177615e5a243ef66a1000039774088c6c9f0f4a860c"
+   },
+   "boiling_point": {
+    "value": 398.7,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111659&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/111-65-9_m4.html",
+    "sha256": "67e6e5a832f9fe9e3ada77d81daffba564f6483947ddf8bf9ad1777b0426ce97"
+   },
+   "enthalpy_vaporization": {
+    "value": 301234.35174647643,
+    "unit": "J/kg",
+    "molar_j_mol": 34410.0,
+    "temperature_k": 398.8,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C111659&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/111-65-9_m4.html",
+    "sha256": "67e6e5a832f9fe9e3ada77d81daffba564f6483947ddf8bf9ad1777b0426ce97"
+   },
+   "viscosity": {
+    "value": 0.0005151,
+    "temperature_k": 298.15,
+    "raw": "0.5151 cP at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/356/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/octane.json",
+    "sha256": "5b0d2b464ed94d9b1ca30feba6a9218b16057f6cc49e54e8a52f3dd95c9cf6d3",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 698.6,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/356/JSON?heading=Density",
+    "raw": "0.6986 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.2012,
+    "B_k": 1936.281,
+    "C_k": -20.143,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     297.1
+    ],
+    "reference": "Carruth and Kobayashi, 1973",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 1723.200476054643,
+    "runtime_model": {
+     "kind": "clausius_clapeyron_at_boiling_point",
+     "t_ref_k": 398.7,
+     "p_ref_pa": 101325.0,
+     "dh_vap_j_mol": 34410.0,
+     "method": "through (Tb, 1 atm) with the enthalpy of vaporisation (25 C outside the fit range)",
+     "reason": "Antoine fit gives 121983 Pa at the NIST boiling point 398.7 K (outside +-15 % of 1 atm)"
+    }
+   }
+  },
+  "p_xylene": {
+   "substance_id": "p_xylene",
+   "name_zh": "对二甲苯",
+   "cas": "106-42-3",
+   "formula": "C8H10",
+   "pubchem_cid": 7809,
+   "molar_mass_kg_mol": 0.10615999999999999,
+   "melting_point_k": 286.3,
+   "heat_capacity": {
+    "value": 1712.9521477015828,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 181.847,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 12,
+    "reference": "Corruccini and Ginnings, 1947; Fortier and Benson, 1977; Fortier and Benson, 1979; Huffman, Parks, et al., 1930; Hyder Khan and Subrahmanyam, 1971; Kurbatov, 1947; Messerly, Finke, et al., 1988; Ott, Goates, et al., 1979; Pitzer and Scott, 1943; Tardajos, Aicart, et al., 1986; Wilhelm, Grolier, et a",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C106423&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/106-42-3_m2.html",
+    "sha256": "2286853b3080b701e2655d196ddf4d9ffd8e99ed070cc106bb30a993b40a8fe9"
+   },
+   "boiling_point": {
+    "value": 411.4,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C106423&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/106-42-3_m4.html",
+    "sha256": "7b06be51fd62e836523cd0b33acc1d7c3f277492b7259bbba32edde3c7d62e91"
+   },
+   "enthalpy_vaporization": {
+    "value": 336002.26073850796,
+    "unit": "J/kg",
+    "molar_j_mol": 35670.0,
+    "temperature_k": 411.5,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C106423&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/106-42-3_m4.html",
+    "sha256": "7b06be51fd62e836523cd0b33acc1d7c3f277492b7259bbba32edde3c7d62e91"
+   },
+   "viscosity": {
+    "value": 0.000603,
+    "temperature_k": 298.15,
+    "raw": "0.603 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7809/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/p_xylene.json",
+    "sha256": "d7c71e47642e40e5a525a157f0d2bb192d0c400f7ca9b569ecc25bf5bc9588d0",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 861.0400000000001,
+    "temperature_k": 293.15,
+    "raw": "0.86104 at 20 °C/4 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/p_xylene.json",
+    "sha256": "c9fa1c118da9cefb5236d5e4e1fd8b133707892090f3dcb4750ba4b6133bc38d",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7809/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.44889,
+    "B_k": 1644.214,
+    "C_k": -40.229,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     298.0,
+     333.0
+    ],
+    "reference": "Pitzer and Scott, 1943",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 1185.8111317034575
+   }
+  },
+  "pentane": {
+   "substance_id": "pentane",
+   "name_zh": "正戊烷",
+   "cas": "109-66-0",
+   "formula": "C5H12",
+   "pubchem_cid": 8003,
+   "molar_mass_kg_mol": 0.07215,
+   "melting_point_k": 143.4,
+   "heat_capacity": {
+    "value": 2322.7997227997225,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 167.59,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 4,
+    "reference": "Grigor'ev, Rastorguev, et al., 1975; Messerly and Kennedy, 1940; Messerly, Guthrie, et al., 1967; Parks and Huffman, 1930",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109660&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/109-66-0_m2.html",
+    "sha256": "ae6e854088e57e9d75a1728103097adbda51cc13795defc6b60103b6560df669"
+   },
+   "boiling_point": {
+    "value": 309.2,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109660&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/109-66-0_m4.html",
+    "sha256": "d9fc5796f1b653f5f58314246135d46d30b7d7a701b0f8d87362e3377d92ed8d"
+   },
+   "enthalpy_vaporization": {
+    "value": 357449.7574497574,
+    "unit": "J/kg",
+    "molar_j_mol": 25790.0,
+    "temperature_k": 309.2,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109660&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/109-66-0_m4.html",
+    "sha256": "d9fc5796f1b653f5f58314246135d46d30b7d7a701b0f8d87362e3377d92ed8d"
+   },
+   "viscosity": {
+    "value": 0.00022239999999999998,
+    "temperature_k": 298.15,
+    "raw": "0.2224 mPa.sec at 25 °C (liquid)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8003/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/pentane.json",
+    "sha256": "21f43fff1ce94b2465a732a07e7014372a273e14e8fb43d8a06099f846423dbc",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 626.1999999999999,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8003/JSON?heading=Density",
+    "raw": "0.6262 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 3.9892,
+    "B_k": 1070.617,
+    "C_k": -40.454,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     341.37
+    ],
+    "reference": "Osborn and Douslin, 1974",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 68332.35585353902
+   }
+  },
+  "propan_1_ol": {
+   "substance_id": "propan_1_ol",
+   "name_zh": "正丙醇",
+   "cas": "71-23-8",
+   "formula": "C3H8O",
+   "pubchem_cid": 1031,
+   "molar_mass_kg_mol": 0.0601,
+   "melting_point_k": 146.7,
+   "heat_capacity": {
+    "value": 2405.990016638935,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 144.6,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 19,
+    "reference": "Arutyunyan, Bagdasaryan, et al., 1981; Counsell, Lees, et al., 1968; Eucken and Eigen, 1951; Fortier and Benson, 1976; Fortier, Benson, et al., 1976; Griigo'ev, Yanin, et al., 1979; Kalinowska, Jedlinska, et al., 1980; Korolev, Kukharenko, et al., 1986; Murthy and Subrahmanyam, 1977; Parks, Kelley, ",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71238&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/71-23-8_m2.html",
+    "sha256": "1a6580f5f30428df6e704a9d502294fe665eb4f259cfc22401146c7fa5d924fd"
+   },
+   "boiling_point": {
+    "value": 370.3,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71238&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/71-23-8_m4.html",
+    "sha256": "37799d92a557c30d6ef464d33c660f2501ec98fdb13073791799ab0bebf8e08e"
+   },
+   "enthalpy_vaporization": {
+    "value": 689517.4708818635,
+    "unit": "J/kg",
+    "molar_j_mol": 41440.0,
+    "temperature_k": 370.3,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71238&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/71-23-8_m4.html",
+    "sha256": "37799d92a557c30d6ef464d33c660f2501ec98fdb13073791799ab0bebf8e08e"
+   },
+   "viscosity": {
+    "value": 0.0022559999999999998,
+    "temperature_k": 293.15,
+    "raw": "2.256 cP @ 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/1031/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/propan_1_ol.json",
+    "sha256": "01593a82616b67668759ef7d40d15b3eb04b375b655f8d3fc2725fce142875d7",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 804.4,
+    "temperature_k": 298.15,
+    "raw": "0.8044 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/propan_1_ol.json",
+    "sha256": "f5374c53dc7a322296303d5328b71e3fbf3c42491aed8fe88602d8724e4440f0",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/1031/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 5.31384,
+    "B_k": 1690.864,
+    "C_k": -51.804,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     292.4,
+     370.5
+    ],
+    "reference": "Kemme and Kreps, 1969",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 2818.7920365720893
+   }
+  },
+  "propan_2_ol": {
+   "substance_id": "propan_2_ol",
+   "name_zh": "异丙醇",
+   "cas": "67-63-0",
+   "formula": "C3H8O",
+   "pubchem_cid": 3776,
+   "molar_mass_kg_mol": 0.0601,
+   "melting_point_k": 185.75,
+   "heat_capacity": {
+    "value": 2662.063227953411,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 159.99,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 13,
+    "reference": "Andon, Counsell, et al., 1963; Brown and Ziegler, 1979; Ginnings and Corruccini, 1948; Katayama, 1962; Kelley, 1929; Parks and Kelley, 1925; Parks and Kelley, 1928; Parks, Kelley, et al., 1929; Phillip, 1939; Roux, Roberts, et al., 1980; Trew and Watkins, 1933; Willams and Daniels, 1924; Zhdanov, 19",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67630&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-63-0_m2.html",
+    "sha256": "04f747e5d6661bf3afdf17862b98238d2656f54e2f18fcf57718dd782a589d27"
+   },
+   "boiling_point": {
+    "value": 355.5,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67630&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/67-63-0_m4.html",
+    "sha256": "958ab2c114f1b765f2a1de3c20ad04ba897dc7ef39ceb7089c801a70837e5dd4"
+   },
+   "enthalpy_vaporization": {
+    "value": 663061.5640599001,
+    "unit": "J/kg",
+    "molar_j_mol": 39850.0,
+    "temperature_k": 355.4,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C67630&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/67-63-0_m4.html",
+    "sha256": "958ab2c114f1b765f2a1de3c20ad04ba897dc7ef39ceb7089c801a70837e5dd4"
+   },
+   "viscosity": {
+    "value": 0.002038,
+    "temperature_k": 298.15,
+    "raw": "2.038 mPa s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/3776/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/propan_2_ol.json",
+    "sha256": "d2e7565ec7ac0646f49878b30cefda5fb1f2fd62c6c966c64391d422c6d9be50",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 780.9000000000001,
+    "temperature_k": 298.15,
+    "raw": "0.7809 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/propan_2_ol.json",
+    "sha256": "2bde33eb3b7e51222ab3fcd8bca70c71ed395b03e925e29980651c87ea8b5f8f",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/3776/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 6052.8355072,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 43299.84305262955,
+    "raw": "45.4 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/propan_2_ol.json",
+    "sha256": "8cf917283eb2d8168232452fa1813f374167f2a68f8b3b6eb5f2401ed99bc571",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 6052.8355072
+   }
+  },
+  "propyl_acetate": {
+   "substance_id": "propyl_acetate",
+   "name_zh": "乙酸丙酯",
+   "cas": "109-60-4",
+   "formula": "C5H10O2",
+   "pubchem_cid": 7997,
+   "molar_mass_kg_mol": 0.10213,
+   "melting_point_k": 178.15,
+   "heat_capacity": {
+    "value": 1910.1635170860666,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 195.08499999999998,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 2,
+    "reference": "Jimenez, Romani, et al., 1986; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109604&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/109-60-4_m2.html",
+    "sha256": "0e8f833ca8bb9b323030701b54b2cfce503f72ad5556098b73ff423973914e67"
+   },
+   "boiling_point": {
+    "value": 374.7,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109604&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/109-60-4_m4.html",
+    "sha256": "0484f172e84b6d366fa9e81fcd875b7f48b7e0f5c82b52ff4e0b0b4b3dcc2b87"
+   },
+   "enthalpy_vaporization": {
+    "value": 332125.7221188681,
+    "unit": "J/kg",
+    "molar_j_mol": 33920.0,
+    "temperature_k": 374.7,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109604&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/109-60-4_m4.html",
+    "sha256": "0484f172e84b6d366fa9e81fcd875b7f48b7e0f5c82b52ff4e0b0b4b3dcc2b87"
+   },
+   "viscosity": {
+    "value": 0.0005440000000000001,
+    "temperature_k": 298.15,
+    "raw": "0.768 mPa s at 0 °C; 0.544 mPa s at 25 °C; 0.406 mPa s at 50 °C; 0.316 mPa s at 75 °C; 0.255 mPa s at 100 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7997/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/propyl_acetate.json",
+    "sha256": "9d5776d21891379e9e69e59c6d73e344465ce49b5d5205363b65408ec26da14c",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 882.0,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7997/JSON?heading=Density",
+    "raw": "0.8820 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 4786.2730112,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 37040.31860052564,
+    "raw": "35.9 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/propyl_acetate.json",
+    "sha256": "7325c57c54f2dda5c77a747bb1f7310667ac3c168cfedb3ff4ee433e31d09604",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 4786.2730112
+   }
+  },
+  "styrene": {
+   "substance_id": "styrene",
+   "name_zh": "苯乙烯",
+   "cas": "100-42-5",
+   "formula": "C8H8",
+   "pubchem_cid": 7501,
+   "molar_mass_kg_mol": 0.10415,
+   "melting_point_k": 240.0,
+   "heat_capacity": {
+    "value": 1755.544887181949,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 182.84,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 5,
+    "reference": "Kurbatov, 1950; Lebedev, Lebedev, et al., 1985; Pitzer, Guttman, et al., 1946; Smith and Andrews, 1931; Warfield and Petree, 1961",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100425&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/100-42-5_m2.html",
+    "sha256": "6ad5cd45b429a4c502c9aab7481bf8fa90954dfd187e8c005371228fdb6acfd6"
+   },
+   "boiling_point": {
+    "value": 419.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100425&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/100-42-5_m4.html",
+    "sha256": "51b5d9dd9f4c0eab479805f1ab95b879d6b2da27f2244241212e49ac945e907e"
+   },
+   "enthalpy_vaporization": {
+    "value": 357119.5816450186,
+    "unit": "J/kg",
+    "molar_j_mol": 37194.00442832869,
+    "temperature_k": 419.0,
+    "reference": "Stephenson and Malanowski, 1987",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C100425&Units=SI&Mask=4",
+    "evidence": "derived_from_measured_literature",
+    "file": "source_cache/nist/100-42-5_m4.html",
+    "sha256": "51b5d9dd9f4c0eab479805f1ab95b879d6b2da27f2244241212e49ac945e907e",
+    "measured": {
+     "molar_j_mol": 41500.0,
+     "temperature_k": 349.0
+    },
+    "critical_temperature_k": 628.5,
+    "method": "Watson: dH(Tb) = dH(T) ((1 - Tb/Tc) / (1 - T/Tc))^0.38; Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc)"
+   },
+   "viscosity": {
+    "value": 0.000696,
+    "temperature_k": 298.15,
+    "raw": "0.696 cP at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7501/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/styrene.json",
+    "sha256": "f1a4c65e0de4b8824ddae5ee4d7883dfd39ca50724e4f1c3c6d8ce468117f8e9",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 901.5999999999999,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/7501/JSON?heading=Density",
+    "raw": "0.9016 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.0593,
+    "B_k": 1459.909,
+    "C_k": -59.551,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     305.6,
+     355.34
+    ],
+    "reference": "Chaiyavech and Van Winkle, 1959",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 872.2241075368413
+   }
+  },
+  "tetrahydrofuran": {
+   "substance_id": "tetrahydrofuran",
+   "name_zh": "四氢呋喃",
+   "cas": "109-99-9",
+   "formula": "C4H8O",
+   "pubchem_cid": 8028,
+   "molar_mass_kg_mol": 0.07211,
+   "melting_point_k": 165.1,
+   "heat_capacity": {
+    "value": 1718.208292885869,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 123.9,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 7,
+    "reference": "Conti, Gianni, et al., 1976; Costas and Patterson, 1985; Inglese, Castagnolo, et al., 1981; Kiyohara, D'Arcy, et al., 1979; Lebedev and Lityagov, 1977; Lebedev, Rabinovich, et al., 1978",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109999&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/109-99-9_m2.html",
+    "sha256": "376b30e04c99f4b3621c55a5220df3da2ee5eac0d8e80bb7c7557ca3e3dbfcf8"
+   },
+   "boiling_point": {
+    "value": 339.0,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109999&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/109-99-9_m4.html",
+    "sha256": "778af0815cbb758901bcc59e11621335d4ca000590bc40c86a6f812cd8a2bcfa"
+   },
+   "enthalpy_vaporization": {
+    "value": 413396.2002496187,
+    "unit": "J/kg",
+    "molar_j_mol": 29810.0,
+    "temperature_k": 339.1,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C109999&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/109-99-9_m4.html",
+    "sha256": "778af0815cbb758901bcc59e11621335d4ca000590bc40c86a6f812cd8a2bcfa"
+   },
+   "viscosity": {
+    "value": 0.0005,
+    "temperature_k": 293.15,
+    "raw": "0.5 mPa*s at 20 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8028/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/tetrahydrofuran.json",
+    "sha256": "4c8894b3ff29d47634f0423a6ffa744111ca3b7849a64e38f5ca2f493fe0db30",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 883.3,
+    "temperature_k": 298.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8028/JSON?heading=Density",
+    "raw": "0.8833 g/cu cm at 25 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.12118,
+    "B_k": 1202.942,
+    "C_k": -46.818,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     296.29,
+     372.8
+    ],
+    "reference": "Scott D.W., 1970",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 21622.864626590082
+   }
+  },
+  "toluene": {
+   "substance_id": "toluene",
+   "name_zh": "甲苯",
+   "cas": "108-88-3",
+   "formula": "C7H8",
+   "pubchem_cid": 1140,
+   "molar_mass_kg_mol": 0.09214,
+   "melting_point_k": 178.1,
+   "heat_capacity": {
+    "value": 1704.6179726503144,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 157.06349999999998,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 30,
+    "reference": "Andolenko and Grigor'ev, 1979; Atalla, El-Sharkawy, et al., 1981; Burlew, 1940; Deshpande and Bhatagadde, 1971; Fortier and Benson, 1976; Fortier and Benson, 1977; Fortier and Benson, 1979; Grolier, Inglese, et al., 1982; Grolier, Roux-Desgranges, et al., 1993; Holzhauer and Ziegler, 1975; Hwa and Z",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108883&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-88-3_m2.html",
+    "sha256": "859c2f8081b36c7a16a9fad6be9e65d5f9a58f43a1165ea066c7462ebfa7bfa6"
+   },
+   "boiling_point": {
+    "value": 383.8,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108883&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/108-88-3_m4.html",
+    "sha256": "6768ee0d6d8193185814f7370da5c39dabe515be57bc50b4dcfa98920ef6ec94"
+   },
+   "enthalpy_vaporization": {
+    "value": 360104.1892771869,
+    "unit": "J/kg",
+    "molar_j_mol": 33180.0,
+    "temperature_k": 383.8,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C108883&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/108-88-3_m4.html",
+    "sha256": "6768ee0d6d8193185814f7370da5c39dabe515be57bc50b4dcfa98920ef6ec94"
+   },
+   "viscosity": {
+    "value": 0.0005600000000000001,
+    "temperature_k": 298.15,
+    "raw": "1.165 mPa-s at -25 °C; 0.778 mPa-s at 0 °C; 0.560 mPa-s at 25 °C; 0.424 mPa-s at 50 °C; 0.333 mPa-s at 75 °C; 0.270 mPa-s at 100 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/1140/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/toluene.json",
+    "sha256": "9c0e38a8a63c182fd57e9dda31f0e72f7debf26398340d1801aa40120a0dde4b",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 862.3,
+    "temperature_k": 293.15,
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/1140/JSON?heading=Density",
+    "raw": "0.8623 g/cu cm at 20 °C",
+    "library_file": "assets/reactions/antonpaar_dma5002_density_library/templates.json",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "antoine",
+    "A": 4.14157,
+    "B_k": 1377.578,
+    "C_k": -50.507,
+    "pressure_unit": "bar",
+    "equation": "log10(p/bar) = A - B/(T + C)",
+    "temperature_range_k": [
+     288.15,
+     323.0
+    ],
+    "reference": "Pitzer and Scott, 1943",
+    "evidence": "NIST_literature_derived_fit_not_raw_curve",
+    "library_file": "assets/reactions/antonpaar_monowave400_thermophysical_library/templates.json",
+    "p_298_pa": 3791.51100254244
+   }
+  },
+  "triethylamine": {
+   "substance_id": "triethylamine",
+   "name_zh": "三乙胺",
+   "cas": "121-44-8",
+   "formula": "C6H15N",
+   "pubchem_cid": 8471,
+   "molar_mass_kg_mol": 0.10119299999999999,
+   "melting_point_k": 158.45,
+   "molar_mass_note": "computed from the formula with IUPAC conventional atomic weights (missing in the CHEM-200 library)",
+   "heat_capacity": {
+    "value": 2138.7843032620835,
+    "unit": "J/(kg K)",
+    "molar_j_mol_k": 216.43,
+    "temperature_k": 298.15,
+    "method": "median_of_table",
+    "n_values": 3,
+    "reference": "Grolier, Roux-Desgranges, et al., 1993; Hepler, Kooner, et al., 1985; von Reis, 1881",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C121448&Units=SI&Mask=2",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/121-44-8_m2.html",
+    "sha256": "6954ee253d7b135d7c6fdd5180fc1844cc1617faf5b64631e03555a6ca102c93"
+   },
+   "boiling_point": {
+    "value": 362.2,
+    "unit": "K",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C121448&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "note": "NIST average Tboil (1 atm)",
+    "file": "source_cache/nist/121-44-8_m4.html",
+    "sha256": "4e6e8c9a8d256a2178082aee6b20d0242e97140717e5a991348eec44b8631b5d"
+   },
+   "enthalpy_vaporization": {
+    "value": 306444.1216289665,
+    "unit": "J/kg",
+    "molar_j_mol": 31010.0,
+    "temperature_k": 362.1,
+    "reference": "Majer and Svoboda, 1985",
+    "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C121448&Units=SI&Mask=4",
+    "evidence": "measured_literature",
+    "file": "source_cache/nist/121-44-8_m4.html",
+    "sha256": "4e6e8c9a8d256a2178082aee6b20d0242e97140717e5a991348eec44b8631b5d"
+   },
+   "viscosity": {
+    "value": 0.000347,
+    "temperature_k": 298.15,
+    "raw": "0.347 mPa.s at 25 °C",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8471/JSON?heading=Viscosity",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_viscosity/triethylamine.json",
+    "sha256": "9f0f61c678db4560f5928770955eff2e7418991ad36df4509260770e60cc6435",
+    "evidence": "measured_literature",
+    "source": "PubChem PUG-View Viscosity (HSDB and other contributors)",
+    "unit": "Pa s",
+    "library_file": "assets/expansion_batch04/t2_vacuum/inert_puresolvmd/solvent_templates.json"
+   },
+   "density": {
+    "value": 725.5,
+    "temperature_k": 298.15,
+    "raw": "0.7255 @25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_density/triethylamine.json",
+    "sha256": "5272ac9f4e4ce67c695d5798b2480356abb889e45f6ec54505488fca049a058a",
+    "evidence": "measured_literature",
+    "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/8471/JSON?heading=Density",
+    "unit": "kg/m3"
+   },
+   "vapour_pressure": {
+    "kind": "two_point_clausius_clapeyron",
+    "p_ref_pa": 7608.707541760001,
+    "t_ref_k": 298.15,
+    "dh_vap_j_mol": 36317.52546085257,
+    "raw": "57.07 mm Hg at 25 °C",
+    "file": "outputs/expansion_batch04/t2_vacuum/inert_puresolvmd/source_cache/pubchem_vapor_pressure/triethylamine.json",
+    "sha256": "8e202125fb174319563b489195090398040d0d4d885bcca7550832731dc881f8",
+    "evidence": "measured_point_and_boiling_point",
+    "note_zh": "PubChem实测蒸气压点与PubChem沸点（1 atm）两点按Clausius–Clapeyron连线（derived）",
+    "p_298_pa": 7608.707541760001
+   }
+  }
+ },
+ "conflicts": [
+  {
+   "substance_id": "water",
+   "quantity": "density",
+   "value": 995.0,
+   "note": "HSDB/PubChem 0.9950 g/cm3 at 25 C (shared DMA library); the IAPWS value is 997.05 kg/m3 - kept as cited, 0.2 % effect on the heat capacity of the charge"
+  },
+  {
+   "substance_id": "acetic_anhydride",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 47.6 kJ/mol at 428.0 K (+16 K from Tboil 412.0 K) Watson-corrected to 49.2 kJ/mol at Tboil (NIST Tc median)"
+  },
+  {
+   "substance_id": "benzyl_alcohol",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 54.6 kJ/mol at 400.0 K (-78 K from Tboil 478.0 K) Watson-corrected to 49.0 kJ/mol at Tboil (Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc))"
+  },
+  {
+   "substance_id": "butanoic_acid",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 47.7 kJ/mol at 452.0 K (+16 K from Tboil 436.0 K) Watson-corrected to 49.3 kJ/mol at Tboil (NIST Tc median)"
+  },
+  {
+   "substance_id": "decane",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 4925 Pa at the NIST boiling point 447.2 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron two-point line through the fit at 298.15 K (123.3 Pa) and (Tb, 1 atm)"
+  },
+  {
+   "substance_id": "diethyl_ether",
+   "quantity": "density",
+   "value": 713.378598,
+   "note": "shared library 700.0 kg/m3 from the 1-decimal string \"0.7 g/cm3\"; the 4-decimal PubChem value \"0.7134 at 20 °C/4 °C\" (713.4 kg/m3) is used"
+  },
+  {
+   "substance_id": "dmf",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 41.8 kJ/mol at 392.0 K (-34 K from Tboil 426.0 K) Watson-corrected to 39.6 kJ/mol at Tboil (NIST Tc median)"
+  },
+  {
+   "substance_id": "dmso",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 48.6 kJ/mol at 392.0 K (-71 K from Tboil 463.0 K) Watson-corrected to 43.9 kJ/mol at Tboil (Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc))"
+  },
+  {
+   "substance_id": "dmso",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 117078 Pa at the NIST boiling point 463.0 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron two-point line through the fit at 298.15 K (80.2 Pa) and (Tb, 1 atm)"
+  },
+  {
+   "substance_id": "ethylene_glycol",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 57.3 kJ/mol at 436.0 K (-34 K from Tboil 470.5 K) Watson-corrected to 54.5 kJ/mol at Tboil (NIST Tc median)"
+  },
+  {
+   "substance_id": "formic_acid",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 63822 Pa at the NIST boiling point 373.9 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron two-point line through the fit at 298.15 K (5714.2 Pa) and (Tb, 1 atm)"
+  },
+  {
+   "substance_id": "m_xylene",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 117379 Pa at the NIST boiling point 412.3 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron two-point line through the fit at 298.15 K (1112.9 Pa) and (Tb, 1 atm)"
+  },
+  {
+   "substance_id": "nitrobenzene",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 48.9 kJ/mol at 425.0 K (-59 K from Tboil 484.0 K) Watson-corrected to 45.0 kJ/mol at Tboil (Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc))"
+  },
+  {
+   "substance_id": "nonane",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 58475 Pa at the NIST boiling point 423.8 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron two-point line through the fit at 298.15 K (459.5 Pa) and (Tb, 1 atm)"
+  },
+  {
+   "substance_id": "o_xylene",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 117860 Pa at the NIST boiling point 417.0 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron two-point line through the fit at 298.15 K (879.4 Pa) and (Tb, 1 atm)"
+  },
+  {
+   "substance_id": "octan_1_ol",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 47.8 kJ/mol at 490.0 K (+22 K from Tboil 468.0 K) Watson-corrected to 50.1 kJ/mol at Tboil (NIST Tc median)"
+  },
+  {
+   "substance_id": "octan_1_ol",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 184728 Pa at the NIST boiling point 468.0 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron two-point line through the fit at 298.15 K (10.9 Pa) and (Tb, 1 atm)"
+  },
+  {
+   "substance_id": "octane",
+   "quantity": "vapour_pressure",
+   "note": "Antoine fit gives 121983 Pa at the NIST boiling point 398.7 K (outside +-15 % of 1 atm); the runtime uses a Clausius-Clapeyron through (Tb, 1 atm) with the enthalpy of vaporisation (25 C outside the fit range)"
+  },
+  {
+   "substance_id": "styrene",
+   "quantity": "enthalpy_vaporization",
+   "note": "nearest NIST value 41.5 kJ/mol at 349.0 K (-70 K from Tboil 419.0 K) Watson-corrected to 37.2 kJ/mol at Tboil (Tc estimated by the Guldberg rule Tc = 1.5 Tb (NIST lists no Tc))"
+  }
+ ]
+}

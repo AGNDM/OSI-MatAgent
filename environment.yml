@@ -1,0 +1,9 @@
+name: osi-hack
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements.lock.txt

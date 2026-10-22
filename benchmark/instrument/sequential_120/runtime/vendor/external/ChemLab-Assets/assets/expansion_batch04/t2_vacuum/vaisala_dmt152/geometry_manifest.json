@@ -1,0 +1,1102 @@
+{
+  "asset_type_id": "instrument.vaisala_dmt152",
+  "catalog_id": "CHEM-195",
+  "name_zh": "微量水露点变送器Vaisala DMT152（ISO G1/2\"）",
+  "created_at": "2026-10-02T20:28:10Z",
+  "builder": "outputs/expansion_batch04/t2_vacuum/vaisala_dmt152/build_geometry.py",
+  "builder_backend": "trimesh detailed DMT152 (lathed brushed stainless body with a wrapped product label, AW30 hex with chamfered corners, sealing ring, G 1/2\" thread with ridges, sintered filter with a polished end cap, black M8 connector, hidden sensor chip and electronics; textures in GLB and OBJ/MTL, primitive collisions); Blender pass adds model.blend and previews",
+  "coordinate_system": {
+    "unit": "m",
+    "angle_unit": "rad",
+    "up_axis": "+Z",
+    "back_axis": "+Y",
+    "root_origin_zh": "变送器平放时占地中心在台面的投影（z=0为台面；轴线沿X、过滤器朝+X、M8接头朝−X；六角对边着地，轴线高15 mm）",
+    "handedness": "right",
+    "glb_coordinate_conversion_zh": "GLB 按本项目 +Z 向上约定导出，无 Y-up 转换；节点层级与 URDF link 一一对应。"
+  },
+  "overall_dimensions_m": [
+    0.12759999835491181,
+    0.032999999821186066,
+    0.03004964627325535
+  ],
+  "total_mass_kg": 0.19,
+  "mass_evidence": "manufacturer_datasheet",
+  "component_mass_evidence": "documented_total_split",
+  "sources": [
+    {
+      "source_id": "user_workbook",
+      "type": "publication",
+      "reference": "大学化学仪器资产调研_200种.xlsx",
+      "locator": "仪器总表第200行；参数与来源第200行；设置与输入输出第200行 CHEM-195",
+      "notes_zh": "用户清单；型号（Vaisala DMT152，ISO G1/2配置）与规格为硬要求",
+      "sha256": null
+    },
+    {
+      "source_id": "manufacturer_user_guide_portal",
+      "type": "web",
+      "reference": "DMT152 User Guide Specifications (docs.vaisala.com portal, M210865EN-K)",
+      "locator": "source_cache/user_guide_specifications.html（门户页由JavaScript渲染；数值取自同版本PDF用户手册）",
+      "url": "https://docs.vaisala.com/r/M210865EN-K/en-US/GUID-478CFD43-AA0B-461E-AD48-2A182BA3D05E",
+      "accessed": "2026-10-02",
+      "notes_zh": "调研表主来源网址（访问记录）",
+      "sha256": "2c75aca249386eff176401c4a84f5d2e9bc1fa5338ae7ef80c7431e6829f5049"
+    },
+    {
+      "source_id": "manufacturer_datasheet",
+      "type": "web",
+      "reference": "Vaisala DMT152 Dew Point Transmitter datasheet B210750EN-N (2024)",
+      "locator": "source_cache/dmt152_datasheet.pdf（Measurement performance、Operating environment、Inputs and outputs、Mechanical specifications、尺寸图）",
+      "url": "https://docs.vaisala.com/api/khub/documents/3cSoxoktUjktHlolM28t9Q/content",
+      "accessed": "2026-10-02",
+      "notes_zh": "调研表补充链接：标定范围、准确度、响应时间（T63/T90）、长期稳定性、ppm范围与准确度、霜点、工作环境、适用气体、尺寸与质量、输出与供电",
+      "sha256": "921c382a1d7ae71d28ec593c412e8454a94c8a5aae994057d40dd5c4cb32de9e"
+    },
+    {
+      "source_id": "manufacturer_user_guide",
+      "type": "web",
+      "reference": "Vaisala DMT152 User Guide M210865EN-K (2020), PDF",
+      "locator": "source_cache/dmt152_user_guide.pdf（3.1自动校准与传感器吹扫、4.5取样、5.3报警、5.5 PRES/XPRES/MOL/XPUR、7.4错误代码）",
+      "url": "https://www.iag.co.at/fileadmin/user_upload/DMT152-User-Guide_M210865EN.pdf",
+      "accessed": "2026-10-02",
+      "notes_zh": "自动校准每45 min、吹扫每周与上电、压力对露点的影响、取样管材料与流量、ppm换算的压力与摩尔质量设定、报警输出、错误代码",
+      "sha256": "d2424cc68a339420fbf2258d69773476e8efca4cabedf9a119d5b91caaad438c"
+    },
+    {
+      "source_id": "manufacturer_photo",
+      "type": "web",
+      "reference": "DMT152 product photograph (embedded in the datasheet, page 1)",
+      "locator": "source_cache/photo_dmt152.png",
+      "url": "https://docs.vaisala.com/api/khub/documents/3cSoxoktUjktHlolM28t9Q/content",
+      "accessed": "2026-10-02",
+      "notes_zh": "外观：不锈钢圆柱本体、六角、G1/2螺纹、烧结网过滤器、M8接头与标签",
+      "sha256": "71d8d866758fd4c104d0dfdd5015ab94bbf9a675fb952a2c5df969ec1a679a68"
+    },
+    {
+      "source_id": "hardy_its90_1998",
+      "type": "publication",
+      "reference": "B. Hardy, ITS-90 Formulations for Vapor Pressure, Frostpoint Temperature, Dewpoint Temperature, and Enhancement Factors in the Range -100 to +100 C (1998)",
+      "locator": "source_cache/hardy_its90_1998.pdf（式2–9与系数表）",
+      "url": "https://www.label.pl/po/its90form.pdf",
+      "accessed": "2026-10-02",
+      "notes_zh": "水/冰饱和蒸气压、露点/霜点反算、增强因子（ITS-90系数）",
+      "sha256": "6cfd26fa697147ee455c40a15251b79619b22598c6b15eab617ace6f6275c9d4"
+    },
+    {
+      "source_id": "cmc_film_wvtr",
+      "type": "web",
+      "reference": "CMC Klebetechnik: Water vapor permeability of various plastic films (2021)",
+      "locator": "source_cache/cmc_film_wvtr.html（表：材料、膜厚、WDD）",
+      "url": "https://www.cmc.de/en/blog/know-how-5/water-vapor-permeability-of-various-plastic-films-181",
+      "accessed": "2026-10-02",
+      "notes_zh": "PVDF、PFA、FEP、PTFE、PA6、PET等薄膜的透湿率（厂家数据表值）",
+      "sha256": "e04a593f506327a65665ad7c2e1f5ecbe45100bd83fcb5a3d57d1d94c1b00625"
+    },
+    {
+      "source_id": "nist_webbook",
+      "type": "database",
+      "reference": "NIST Chemistry WebBook (molar masses of the permanent gases, via the CHEM-183 / CHEM-194 gas libraries)",
+      "locator": "assets/expansion_batch04/t2_vacuum/inficon_ul1000fab/gas_conversion_library.json",
+      "url": "https://webbook.nist.gov/chemistry/",
+      "accessed": "2026-10-02",
+      "notes_zh": "空气、氮、氧、氩、氦、氢、CO₂的摩尔质量",
+      "sha256": null
+    },
+    {
+      "source_id": "pubchem",
+      "type": "database",
+      "reference": "PubChem molar masses via assets/reactions/spectral_library/compounds.json",
+      "locator": "compounds.json",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/",
+      "accessed": "2026-10-02",
+      "notes_zh": "其余气体/蒸气的摩尔质量（MOL设定与ppmw换算）",
+      "sha256": null
+    }
+  ],
+  "components": [
+    {
+      "id": "transmitter_body",
+      "name_zh": "本体",
+      "function_zh": "变送器本体：AISI316L外壳，内有电路板与传感器引线（运行层state、reading）",
+      "physical_meaning_zh": "承载结构与根构件：本体（外形为厂家尺寸）；装配原点 (0, 0, 0) m 相对 root，碰撞代理为半径 0.0147 m、高 0.0655 m 圆柱；尺寸为厂家尺寸图数据，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：拉丝不锈钢圆柱本体。",
+      "parent": "root",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "尺寸为厂家尺寸图数据。",
+      "objects": [
+        "vaisala_dmt152__transmitter_body"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.01475,
+            0.0655
+          ],
+          "origin_m": [
+            -0.025000000000000005,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.11320000000000001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        -0.0246,
+        0.0,
+        0.015
+      ],
+      "simulation_inertia_kg_m2": [
+        1.6418716666666666e-05,
+        4.9675367333333335e-05,
+        4.9675367333333335e-05
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.65
+        ],
+        "metallic": 0.95,
+        "roughness": 0.28,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/steel.png"
+      },
+      "appearance_zh": "拉丝不锈钢圆柱本体"
+    },
+    {
+      "id": "label_decal",
+      "name_zh": "标签",
+      "function_zh": "本体上的产品标签（型号、制造商、序号、CE；通用字体重绘）",
+      "physical_meaning_zh": "外观贴图：产品标签；装配原点 (0, 0, 0) m 相对 transmitter_body，碰撞代理为0.059×0.016×0.00309 m 长方体；尺寸按产品照片与尺寸图比例估计，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：银色产品标签。",
+      "parent": "transmitter_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片与尺寸图比例估计，尺寸在厂家外形之内。",
+      "objects": [
+        "vaisala_dmt152__label_decal"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.059,
+            0.01604922044550792,
+            0.003087285660543511
+          ],
+          "origin_m": [
+            -0.02525,
+            -0.0011079933731287998,
+            0.02850600261254169
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0003,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        -0.02525,
+        -0.0011079899999999997,
+        0.028506005
+      ],
+      "simulation_inertia_kg_m2": [
+        6.677720553812499e-09,
+        8.726328398860249e-08,
+        9.346443656520999e-08
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.3,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/label.png"
+      },
+      "appearance_zh": "银色产品标签"
+    },
+    {
+      "id": "hex_nut",
+      "name_zh": "六角",
+      "function_zh": "六角扳手位（AW30），安装时用扳手拧紧",
+      "physical_meaning_zh": "结构件：六角；装配原点 (0, 0, 0) m 相对 transmitter_body，碰撞代理为0.0105×0.033×0.03 m 长方体；尺寸为厂家尺寸图数据，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：不锈钢六角（倒角）。",
+      "parent": "transmitter_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "AW30与对角Ø33为尺寸图数据；六角长度按尺寸图比例估计。",
+      "objects": [
+        "vaisala_dmt152__hex_nut"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0105,
+            0.033,
+            0.03
+          ],
+          "origin_m": [
+            0.012999999999999994,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.03,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        0.013,
+        0.0,
+        0.015
+      ],
+      "simulation_inertia_kg_m2": [
+        4.972500000000001e-06,
+        2.5256249999999996e-06,
+        2.998125e-06
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.65
+        ],
+        "metallic": 0.95,
+        "roughness": 0.28,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/steel.png"
+      },
+      "appearance_zh": "不锈钢六角（倒角）"
+    },
+    {
+      "id": "sealing_ring",
+      "name_zh": "密封圈",
+      "function_zh": "G1/2\"端面密封圈（ISO 228-1平行螺纹靠端面密封）",
+      "physical_meaning_zh": "密封件：密封圈；装配原点 (0, 0, 0) m 相对 hex_nut，碰撞代理为0.0015×0.027×0.027 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：黑色密封圈。",
+      "parent": "hex_nut",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "vaisala_dmt152__sealing_ring"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.0015000000000000013,
+            0.027,
+            0.026999999999999996
+          ],
+          "origin_m": [
+            0.018999999999999996,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.001,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        0.019,
+        0.0,
+        0.015000000000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        1.215e-07,
+        6.093749999999999e-08,
+        6.093749999999999e-08
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.8,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色密封圈"
+    },
+    {
+      "id": "process_thread",
+      "name_zh": "工艺螺纹",
+      "function_zh": "G1/2\" ISO 228-1工艺螺纹（拧入工艺管道或取样池；接口process_connection）",
+      "physical_meaning_zh": "接口件：工艺螺纹（接口process_connection）；装配原点 (0, 0, 0) m 相对 hex_nut，碰撞代理为半径 0.0105 m、高 0.012 m 圆柱；尺寸为厂家尺寸图数据，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：不锈钢螺纹。",
+      "parent": "hex_nut",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "G1/2\"大径20.955 mm为标准值；螺纹与退刀槽长度按尺寸图比例估计。",
+      "objects": [
+        "vaisala_dmt152__process_thread"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0104775,
+            0.012000000000000004
+          ],
+          "origin_m": [
+            0.024249999999999997,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.012,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        0.02425,
+        0.0,
+        0.015
+      ],
+      "simulation_inertia_kg_m2": [
+        8.782240500000002e-07,
+        5.831120250000001e-07,
+        5.831120250000001e-07
+      ],
+      "material": {
+        "base_color": [
+          0.62,
+          0.63,
+          0.65
+        ],
+        "metallic": 0.95,
+        "roughness": 0.28,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/steel.png"
+      },
+      "appearance_zh": "不锈钢螺纹"
+    },
+    {
+      "id": "sensor_filter",
+      "name_zh": "过滤器",
+      "function_zh": "不锈钢网过滤器（滤体AISI303、网AISI316L、18 µm），保护传感器",
+      "physical_meaning_zh": "过滤件：过滤器（运行层filter_clogged故障）；装配原点 (0, 0, 0) m 相对 process_thread，碰撞代理为半径 0.006 m、高 0.0325 m 圆柱；尺寸为厂家尺寸图数据，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：烧结不锈钢网过滤器。",
+      "parent": "process_thread",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "Ø12×32.5 mm为尺寸图数据。",
+      "objects": [
+        "vaisala_dmt152__sensor_filter"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.006,
+            0.0325
+          ],
+          "origin_m": [
+            0.0465,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        0.04425,
+        0.0,
+        0.015
+      ],
+      "simulation_inertia_kg_m2": [
+        2.400000000000001e-07,
+        7.733333333333336e-07,
+        7.733333333333336e-07
+      ],
+      "material": {
+        "base_color": [
+          0.45,
+          0.46,
+          0.48
+        ],
+        "metallic": 0.8,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/filter.png"
+      },
+      "appearance_zh": "烧结不锈钢网过滤器"
+    },
+    {
+      "id": "filter_cap",
+      "name_zh": "端帽",
+      "function_zh": "过滤器抛光端帽",
+      "physical_meaning_zh": "外观件：端帽；装配原点 (0, 0, 0) m 相对 sensor_filter，碰撞代理为0.0045×0.0124×0.0124 m 长方体；尺寸按产品照片与尺寸图比例估计，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：抛光不锈钢端帽。",
+      "parent": "sensor_filter",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片与尺寸图比例估计，尺寸在厂家外形之内。",
+      "objects": [
+        "vaisala_dmt152__filter_cap"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.004499999999999997,
+            0.0124,
+            0.012400000000000001
+          ],
+          "origin_m": [
+            0.0605,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.002,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        0.0605,
+        0.0,
+        0.015
+      ],
+      "simulation_inertia_kg_m2": [
+        5.125333333333333e-08,
+        2.900166666666666e-08,
+        2.900166666666666e-08
+      ],
+      "material": {
+        "base_color": [
+          0.75,
+          0.76,
+          0.78
+        ],
+        "metallic": 1.0,
+        "roughness": 0.12,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "抛光不锈钢端帽"
+    },
+    {
+      "id": "transport_cap",
+      "name_zh": "运输保护帽",
+      "function_zh": "黄色运输保护帽（出厂时套在过滤器上保持传感器干燥，安装前取下；运行层cap.fitted / cap.offset_m）",
+      "physical_meaning_zh": "附件：运输保护帽（关节镜像运行层cap.offset_m）；关节：沿 +X 平移 0–0.05 m，状态 cap.offset_m，行程为工程估计；装配原点 (0.04275, 0, 0.015) m 相对 sensor_filter，碰撞代理为半径 0.0085 m、高 0.042 m 圆柱；尺寸为厂家尺寸图数据，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：黄色塑料保护帽。",
+      "parent": "sensor_filter",
+      "origin_m": [
+        0.042749999999999996,
+        0.0,
+        0.015
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          1,
+          0,
+          0
+        ],
+        "limits": [
+          0.0,
+          0.05
+        ],
+        "state_id": "cap.offset_m",
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "保护帽为用户手册所述；尺寸按过滤器估计（工程值）。",
+      "objects": [
+        "vaisala_dmt152__transport_cap"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0085,
+            0.042
+          ],
+          "origin_m": [
+            0.0010000000000000009,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.003,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        0.0009999999999999992,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        1.6562e-07,
+        5.2381e-07,
+        5.2381e-07
+      ],
+      "material": {
+        "base_color": [
+          0.95,
+          0.7,
+          0.02
+        ],
+        "metallic": 0.0,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黄色塑料保护帽"
+    },
+    {
+      "id": "m8_connector",
+      "name_zh": "M8接头",
+      "function_zh": "M8四针接头：供电、两路模拟输出与RS-485（接口m8_connector）",
+      "physical_meaning_zh": "连接件：M8接头（接口m8_connector）；装配原点 (0, 0, 0) m 相对 transmitter_body，碰撞代理为半径 0.0055 m、高 0.005 m 圆柱；尺寸按产品照片与尺寸图比例估计，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：黑色M8接头。",
+      "parent": "transmitter_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片与尺寸图比例估计，尺寸在厂家外形之内。",
+      "objects": [
+        "vaisala_dmt152__m8_connector"
+      ],
+      "collisions": [
+        {
+          "shape": "cylinder",
+          "size_m": [
+            0.0055,
+            0.0049999999999999975
+          ],
+          "origin_m": [
+            -0.06025,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            1.5707963267948966,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.006,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        -0.059800000000000006,
+        0.0,
+        0.015
+      ],
+      "simulation_inertia_kg_m2": [
+        1.21e-07,
+        7.910500000000002e-08,
+        7.910499999999999e-08
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.02,
+          0.022
+        ],
+        "metallic": 0.0,
+        "roughness": 0.55,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色M8接头"
+    },
+    {
+      "id": "drycap_sensor",
+      "name_zh": "传感器芯片",
+      "function_zh": "DRYCAP 180U薄膜电容聚合物传感器（在过滤器内；运行层truth.sensor）",
+      "physical_meaning_zh": "检测件：传感器芯片（不可见）；装配原点 (0, 0, 0) m 相对 sensor_filter，碰撞代理为0.006×0.004×0.001 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：传感器芯片（不可见）。",
+      "parent": "sensor_filter",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "vaisala_dmt152__drycap_sensor"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.006000000000000005,
+            0.004,
+            0.001
+          ],
+          "origin_m": [
+            0.05075,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        0.05075,
+        0.0,
+        0.015
+      ],
+      "simulation_inertia_kg_m2": [
+        6.933333333333333e-10,
+        1.5266666666666657e-09,
+        2.166666666666666e-09
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.35,
+          0.2
+        ],
+        "metallic": 0.1,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "传感器芯片（不可见）"
+    },
+    {
+      "id": "electronics",
+      "name_zh": "电路板",
+      "function_zh": "测量与输出电路（自动校准、吹扫、模拟输出、RS-485）",
+      "physical_meaning_zh": "电子件：电路板（不可见）；装配原点 (0, 0, 0) m 相对 transmitter_body，碰撞代理为0.05×0.018×0.0016 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机190 g中各构件取工程估计、本体取余量）。外观：电路板（不可见）。",
+      "parent": "transmitter_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "vaisala_dmt152__electronics"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.05,
+            0.018,
+            0.001599999999999999
+          ],
+          "origin_m": [
+            -0.02275,
+            0.0,
+            0.015
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.012,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机190 g（厂家数据）中各构件取工程估计质量、本体取余量",
+      "simulation_center_of_mass_m": [
+        -0.02275,
+        0.0,
+        0.015000000000000001
+      ],
+      "simulation_inertia_kg_m2": [
+        3.2655999999999993e-07,
+        2.5025600000000006e-06,
+        2.8240000000000004e-06
+      ],
+      "material": {
+        "base_color": [
+          0.2,
+          0.35,
+          0.2
+        ],
+        "metallic": 0.1,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "电路板（不可见）"
+    }
+  ],
+  "root_object": "vaisala_dmt152__root",
+  "joint_definitions": {
+    "transport_cap": {
+      "type": "prismatic",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits_m": [
+        0.0,
+        0.05
+      ],
+      "accessor": "joint[transport_cap_joint]",
+      "state_id": "cap.offset_m",
+      "range_evidence": "engineering_assumption"
+    }
+  },
+  "artifacts": {
+    "model_glb": "model.glb",
+    "model_urdf": "model.urdf",
+    "meshes_dir": "meshes",
+    "model_blend": "model.blend"
+  },
+  "limitations_zh": [
+    "长度120.5 mm（本体端面到过滤器端）、本体Ø29.5、六角AW30（对角Ø33）、过滤器Ø12×32.5 mm、G1/2\" ISO 228-1、190 g为厂家样本尺寸图与技术数据。",
+    "外观（拉丝不锈钢本体与银色标签、六角、螺纹、烧结网过滤器与抛光端帽、黑色M8接头）按产品照片估计；标签字样为通用字体重绘，不复制厂家标志。",
+    "工程构件：六角长度、退刀槽与螺纹长度、M8接头（约5 mm，不计入120.5 mm）、G1/2密封圈、不可见的传感器芯片与电路板。",
+    "参考姿态：变送器平放在台面上，六角对边着地，过滤器朝+X；工艺气体、取样池与电缆由运行层表示，没有几何。",
+    "质量：整机190 g为厂家数据；各构件取工程估计质量，本体取余量；单件质量与惯量未知。"
+  ],
+  "manufacturer_dimensions_m": {
+    "length_end_face_to_filter": 0.1205,
+    "body_diameter": 0.0295,
+    "hex_across_corners": 0.033,
+    "hex_across_flats": 0.03,
+    "filter_diameter": 0.012
+  },
+  "manufacturer_dimensions_scope_zh": "120.5 mm（本体端面到过滤器端，不含M8接头）、本体Ø29.5、六角AW30（对角Ø33）、过滤器Ø12×32.5 mm（样本尺寸图）",
+  "mass_scope_zh": "整机190 g（ISO G1/2\"型，样本）；各构件取工程估计质量，本体取余量",
+  "simulation_mass_budget": {
+    "total_mass_kg": 0.19,
+    "documented_total_kg": 0.19,
+    "evidence": "documented total mass split over the parts"
+  },
+  "reference_pose_zh": "参考姿态：变送器平放在台面上，六角对边着地，过滤器朝+X；工艺气体、取样池与电缆由运行层表示，没有几何。",
+  "selected_configuration": {
+    "model": "Vaisala DMT152, ISO G1/2\" process connection, stainless steel mesh filter, two analog outputs + RS-485",
+    "not_included": [
+      "DM70 hand-held meter (field check)",
+      "sampling cells DMT242SC / DSC74 (sampling line is an abstraction)",
+      "Nokeval loop displays",
+      "LED cable",
+      "NW40 flange"
+    ],
+    "note_zh": "直接安装（拧入工艺管道）或经取样管安装；工艺气体与取样管由宿主/机器人代理声明"
+  },
+  "readouts": [],
+  "lamps": [],
+  "readout_note_zh": "DMT152没有显示屏与指示灯：露/霜点与ppm经模拟输出与RS-485读取（运行层reading.*、output.analog）；场景中变送器为被动资产。",
+  "panel_keys": [],
+  "knobs": [],
+  "textures": {
+    "steel": "textures/steel.png",
+    "label": "textures/label.png",
+    "filter": "textures/filter.png"
+  },
+  "geometry_evidence_by_component": {
+    "transmitter_body": "manufacturer_datasheet",
+    "label_decal": "photo_estimate",
+    "hex_nut": "manufacturer_datasheet",
+    "sealing_ring": "engineering_assumption",
+    "process_thread": "manufacturer_datasheet",
+    "sensor_filter": "manufacturer_datasheet",
+    "filter_cap": "photo_estimate",
+    "transport_cap": "manufacturer_datasheet",
+    "m8_connector": "photo_estimate",
+    "drycap_sensor": "engineering_assumption",
+    "electronics": "engineering_assumption"
+  },
+  "world_origins_m": {
+    "transmitter_body": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "label_decal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "hex_nut": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sealing_ring": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "process_thread": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sensor_filter": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "filter_cap": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "transport_cap": [
+      0.042749999999999996,
+      0.0,
+      0.015
+    ],
+    "m8_connector": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "drycap_sensor": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "electronics": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

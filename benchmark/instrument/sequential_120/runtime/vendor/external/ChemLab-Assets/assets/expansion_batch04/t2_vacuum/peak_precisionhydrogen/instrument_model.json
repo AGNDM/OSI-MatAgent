@@ -1,0 +1,384 @@
+{
+ "schema_version": "1.0.0",
+ "catalog_id": "CHEM-196",
+ "asset_type_id": "instrument.peak_precisionhydrogen",
+ "built_at": "2026-10-02T22:03:56.429324+00:00",
+ "built_by": "outputs/expansion_batch04/t2_vacuum/peak_precisionhydrogen/build_h2_libraries.py",
+ "documented": {
+  "max_flow_mol_s": {
+   "value": 0.00037059942215935125,
+   "unit": "mol/s",
+   "note_zh": "最大产氢500 sccm（273.15 K、1.01 bar基准）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Max Gas Flow: 500 *cc/min"
+  },
+  "flow_reference": {
+   "value": {
+    "temperature_k": 273.15,
+    "pressure_pa": 101000.0
+   },
+   "unit": "1",
+   "note_zh": "sccm基准：273.15 K、1.01 bar",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "All flow rates are stated in sccm at 273.15K and 1.01bar"
+  },
+  "max_pressure_pa": {
+   "value": 689475.7,
+   "unit": "Pa",
+   "note_zh": "最高输出压力100 psi（6.9 bar，表压）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Max Output Pressure: 100psi/6.9bar"
+  },
+  "purity": {
+   "value": 0.9999999,
+   "unit": "1",
+   "note_zh": "纯度99.99999 %（2023存档样本）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Max Purity: 99.99999% *"
+  },
+  "purity_basis": {
+   "value": "O2 content",
+   "unit": "1",
+   "note_zh": "纯度依据氧含量（NPL独立验证），不代表所有杂质逐项同比例",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "based on O2 content independently verified by National Physical Laboratory"
+  },
+  "purity_2019": {
+   "value": 0.999999,
+   "unit": "1",
+   "note_zh": "2019版Trace样本纯度99.9999 %（与2023版不同，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2019",
+   "quote": "Purity 99.9999%"
+  },
+  "dew_point_k": {
+   "value": 198.14999999999998,
+   "unit": "K",
+   "note_zh": "输出氢气露点−75 °C（2019版Trace样本）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2019",
+   "quote": "Dew Point -75 °C / -103 °F"
+  },
+  "outlet": {
+   "value": "1/8\" Swagelok",
+   "unit": "1",
+   "note_zh": "出口1个1/8\"卡套接头",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Gas Outlets Fitting: 1 x 1/8” Swagelok compression fitting"
+  },
+  "water_conductivity_max_s_m": {
+   "value": 0.0001,
+   "unit": "S/m",
+   "note_zh": "进水ASTM II型，电导率<1 µS/cm（=1e-4 S/m）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Water Purity Requirements: ASTM Type II (<1 µS/cm / >1 MΩ­cm)"
+  },
+  "water_consumption_l_day": {
+   "value": [
+    0.4,
+    1.2
+   ],
+   "unit": "L/d",
+   "note_zh": "耗水0.4–1.2 L/天（待机到最大产氢）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Water Consumption: 0.4­1.2 L/Day"
+  },
+  "power_w": {
+   "value": 787.0,
+   "unit": "W",
+   "note_zh": "功耗787 W",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Power Consumption: 787 Watts"
+  },
+  "current_max_a": {
+   "value": 10.0,
+   "unit": "A",
+   "note_zh": "最大电流10 A",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Current: 10 Amps Max"
+  },
+  "heat_output_btu_h": {
+   "value": 1000.0,
+   "unit": "BTU/h",
+   "note_zh": "散热1000（BTU/h，单位按2019版“up to 1000 BTU/ hr”）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Heat output: 1000"
+  },
+  "max_ambient_k": {
+   "value": 308.15,
+   "unit": "K",
+   "note_zh": "最高工作环境温度35 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Max Operating Temp: 35°C / 95°F"
+  },
+  "operating_ambient_k": {
+   "value": [
+    283.15,
+    308.15
+   ],
+   "unit": "K",
+   "note_zh": "工作环境温度10–35 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2019",
+   "quote": "Operating Temperature 10°C - 35°C / 50°F - 95°F"
+  },
+  "dimensions_m": {
+   "value": {
+    "h": 0.406,
+    "w": 0.38,
+    "d": 0.54
+   },
+   "unit": "m",
+   "note_zh": "外形406 H×380 W×540 D mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Size (HxWxD) mm 406 x 380 x 540 mm"
+  },
+  "mass_kg": {
+   "value": 31.5,
+   "unit": "kg",
+   "note_zh": "质量31.5 kg（2023版）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2023",
+   "quote": "Generator Weight 31.5kg / 69.3lbs"
+  },
+  "mass_2019_kg": {
+   "value": 29.0,
+   "unit": "kg",
+   "note_zh": "2019版写29 kg（250/500 cc），见冲突",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet_2019",
+   "quote": "Generator Weight 29 Kg (64 lbs)"
+  },
+  "run_in_s": {
+   "value": 86400.0,
+   "unit": "s",
+   "note_zh": "建议首次运行24 h（Trace）后再使用（干燥器与气路干燥）",
+   "evidence": "documented",
+   "source_id": "manufacturer_installation_guide",
+   "quote": "It is recommended that the unit is left to run for 12 hours (Hydrogen) or 24 hours"
+  },
+  "leak_test_s": {
+   "value": 360.0,
+   "unit": "s",
+   "note_zh": "上电诊断与泄漏测试约6 min（同系列SL手册）",
+   "evidence": "documented",
+   "source_id": "same_series_sl_user_manual",
+   "quote": "this should take approximately six minutes"
+  },
+  "stored_h2": {
+   "value": {
+    "volume_m3": 0.000175,
+    "pressure_pa": 760000.0
+   },
+   "unit": "1",
+   "note_zh": "同系列SL：机内最大储氢175 mL（7.6 bar）——Trace 500的内部容积未公开",
+   "evidence": "documented",
+   "source_id": "same_series_sl_user_manual",
+   "quote": "maximum quantity of hydrogen stored in the generator at any one time is 175ml"
+  },
+  "safety_features": {
+   "value": [
+    "overpressure switch",
+    "pressure control",
+    "internal leak detection",
+    "cell shut down in critical alarm",
+    "critical water level detection"
+   ],
+   "unit": "1",
+   "note_zh": "安全功能：超压开关、压力控制、内部泄漏检测、严重报警时电解池停机、临界水位检测（同系列SL手册）",
+   "evidence": "documented",
+   "source_id": "same_series_sl_user_manual",
+   "quote": "Overpressure switch"
+  },
+  "deioniser_interval_s": {
+   "value": 31557600.0,
+   "unit": "s",
+   "note_zh": "去离子柱每12个月更换（同系列SL保修条件）；Trace 500样本：维护仅更换去离子柱",
+   "evidence": "documented",
+   "source_id": "same_series_sl_user_manual",
+   "quote": "replacement of the de-ionizer cartridge every 12 months"
+  }
+ },
+ "engineering": {
+  "internal_gas_volume_m3": {
+   "value": 0.0004,
+   "unit": "m3",
+   "evidence": "assumption",
+   "engineering_note_zh": "Trace 500内部气路（电解池阴极、PSA干燥塔与缓冲）储气容积（同系列SL为175 mL；Trace有双塔PSA，取0.4 L，工程值）"
+  },
+  "pressure_controller_gain_mol_s_per_pa": {
+   "value": 2e-08,
+   "unit": "mol/(s Pa)",
+   "evidence": "assumption",
+   "engineering_note_zh": "按设定压力生产：比例积分控制的比例增益（产氢速率=增益×偏差＋积分，限于最大产氢；工程值）"
+  },
+  "psa_purge_fraction": {
+   "value": 0.38269263171871915,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "PSA干燥塔再生吹扫损失的氢占产品流量的比例（由calibrate_h2.py按耗水0.4–1.2 L/天标定）",
+   "calibrated_by": "calibrate_h2.py"
+  },
+  "water_loss_base_l_day": {
+   "value": 0.4,
+   "unit": "L/d",
+   "evidence": "assumption",
+   "engineering_note_zh": "与产氢无关的耗水（氧气排气带走的水汽与液滴、蒸发；按待机耗水0.4 L/天标定）",
+   "calibrated_by": "calibrate_h2.py"
+  },
+  "idle_power_w": {
+   "value": 110.0,
+   "unit": "W",
+   "evidence": "assumption",
+   "engineering_note_zh": "待机电功率（电子学、触摸屏、风扇、加水泵、PSA阀；工程值）"
+  },
+  "cell_power_per_mol_s": {
+   "value": 1321168.718635908,
+   "unit": "W/(mol/s)",
+   "evidence": "assumption",
+   "engineering_note_zh": "电解池（含整流效率）单位产氢摩尔速率的电功率（由calibrate_h2.py按最大产氢时787 W标定）",
+   "calibrated_by": "calibrate_h2.py"
+  },
+  "tank_volume_m3": {
+   "value": 0.001,
+   "unit": "m3",
+   "evidence": "assumption",
+   "engineering_note_zh": "机内水箱容积（工程值；样本只写自动加水泵与外接水瓶）"
+  },
+  "tank_low_fraction": {
+   "value": 0.3,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "水箱低水位传感器位置（低于此值启动加水泵；工程值）"
+  },
+  "tank_high_fraction": {
+   "value": 0.9,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "水箱高水位传感器位置（加到此值停泵；工程值）"
+  },
+  "tank_critical_fraction": {
+   "value": 0.1,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "临界低水位：停止产氢并报警（安全功能“临界水位检测”；工程值）"
+  },
+  "loading_pump_m3_s": {
+   "value": 5e-06,
+   "unit": "m3/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "自动加水泵流量（0.3 L/min；工程值）"
+  },
+  "deioniser_capacity_eq": {
+   "value": 0.002029166666666667,
+   "unit": "eq",
+   "evidence": "assumption",
+   "engineering_note_zh": "去离子柱交换容量（当量；按进水1 µS/cm、平均耗水0.8 L/天下约12个月到穿透末端标定，工程值）",
+   "calibrated_by": "calibrate_h2.py"
+  },
+  "equivalent_conductance_s_m2_eq": {
+   "value": 0.012,
+   "unit": "S m2/eq",
+   "evidence": "assumption",
+   "engineering_note_zh": "把进水电导率换算为离子当量浓度的当量电导（≈120 S·cm²/eq，NaCl/HCO₃⁻混合的量级；工程值）"
+  },
+  "cell_water_conductivity_alarm_s_m": {
+   "value": 0.0001,
+   "unit": "S/m",
+   "evidence": "assumption",
+   "engineering_note_zh": "电解池进水电导率报警阈值（等于ASTM II要求1 µS/cm；去离子柱耗尽后报警）"
+  },
+  "leak_test_decay_limit_pa": {
+   "value": 5000.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "上电泄漏测试期间允许的压力下降（6 min内；超过即判泄漏并停机；工程值）"
+  },
+  "leak_test_pressure_pa": {
+   "value": 400000.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "泄漏测试的保压压力（表压4 bar；工程值）"
+  },
+  "standby_leak_check_rate_pa_s": {
+   "value": 20.0,
+   "unit": "Pa/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "待机保压时（输出阀关）压降速率超过此值判内部泄漏（工程值）"
+  },
+  "max_flow_duration_s": {
+   "value": 600.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "连续以最大产氢运行仍达不到设定压力的时间：报“产氢不足/检查外部泄漏”（工程值）"
+  },
+  "low_pressure_recovery_s": {
+   "value": 1800.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "满负荷低压计时只在按当前压升速率30 min内回不到设定压力附近时累计（仍能恢复不算故障；工程值）"
+  },
+  "pressure_controller_integral_s": {
+   "value": 60.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "压力控制积分时间（比例积分控制消除带载静差；积分限于0到最大产氢，工程值）"
+  },
+  "deioniser_recirculation_m3_s": {
+   "value": 5e-06,
+   "unit": "m3/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "水箱经去离子柱的循环流量（0.3 L/min；换新柱后水箱水几分钟内重新变纯，工程值）"
+  },
+  "dew_point_initial_k": {
+   "value": 253.14999999999998,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "新机或长期停用后输出露点（干燥器含水；工程值）"
+  },
+  "dryer_tau_s": {
+   "value": 21600.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "PSA干燥器干燥的时间常数（24 h约4倍时间常数接近−75 °C；与安装指南“Trace先运行24 h”对应，工程值）"
+  },
+  "o2_nominal_mol_frac": {
+   "value": 5e-08,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "正常输出氢中的氧（0.05 ppm，满足99.99999 %按氧计；工程值）"
+  },
+  "o2_crossover_fault_mol_frac": {
+   "value": 5e-06,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "膜损坏（氧透过）故障时的氧含量（5 ppm；工程值）"
+  },
+  "overpressure_switch_pa": {
+   "value": 760000.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "超压开关动作表压（同系列SL机内储氢压力7.6 bar=110 psi，高于最高输出6.9 bar；工程值）"
+  },
+  "pressure_noise_pa": {
+   "value": 300.0,
+   "unit": "Pa",
+   "evidence": "assumption",
+   "engineering_note_zh": "输出压力读数噪声（工程值）"
+  }
+ },
+ "output_templates_note_zh": "输出恒为氢气（流量、压力、纯度/露点），没有随物质变化的读数：≥50种物质的输出模板规则不适用"
+}

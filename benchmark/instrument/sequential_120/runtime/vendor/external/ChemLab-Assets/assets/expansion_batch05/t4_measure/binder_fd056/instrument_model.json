@@ -1,0 +1,1169 @@
+{
+ "schema_version": "1.0.0",
+ "catalog_id": "CHEM-011",
+ "asset_type_id": "instrument.binder_fd056",
+ "built_at": "2026-10-03T21:45:05+00:00",
+ "built_by": "outputs/expansion_batch05/t4_measure/binder_fd056/build_oven_libraries.py",
+ "documented": {
+  "temperature_range_above_ambient_k": {
+   "value": 10.0,
+   "unit": "K",
+   "note_zh": "温度范围：室温+10 °C至300 °C（下限）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Temperature range: +10 °C above ambient temperature to +300 °C",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "temperature_max_c": {
+   "value": 300.0,
+   "unit": "degC",
+   "note_zh": "最高温度300 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Temperature range +10 °C above ambient temperature to [°C] 300 300",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "temperature_variation_150_k": {
+   "value": 1.7,
+   "unit": "K",
+   "note_zh": "150 °C空间温差±1.7 K",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Temperature variation at 150 °C [± K] 1.7 1.7",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "temperature_fluctuation_150_k": {
+   "value": 0.3,
+   "unit": "K",
+   "note_zh": "150 °C时间波动±0.3 K",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Temperature fluctuation at 150 °C [± K] 0.3 0.3",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "heating_up_150_s": {
+   "value": 900.0,
+   "unit": "s",
+   "note_zh": "升温到150 °C需15 min（空载，室温22 °C）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Heating-up time to 150 °C [min] 15 15",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "recovery_150_s": {
+   "value": 240.0,
+   "unit": "s",
+   "note_zh": "150 °C开门30 s后恢复时间4 min",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "30 seconds door open at 150 °C [min] 4 4",
+   "evidence_file": "source_cache/datasheet.txt",
+   "label_quote": "Recovery time a"
+  },
+  "air_change_100_per_h": {
+   "value": 80.0,
+   "unit": "1/h",
+   "note_zh": "100 °C时换气约80次/h",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Air change (approx.) at 100 °C [x/h] 80 80",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "rated_voltage_v": {
+   "value": 230.0,
+   "unit": "V",
+   "note_zh": "额定电压230 V（FD056-230V）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Rated Voltage [V] 230 120",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "nominal_power_w": {
+   "value": 1100.0,
+   "unit": "W",
+   "note_zh": "额定功率1.1 kW（230 V版本）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Nominal power [kW] 1.1 1.2",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "unit_fuse_a": {
+   "value": 6.3,
+   "unit": "A",
+   "note_zh": "机器保险丝6.3 A",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Unit fuse [A] 6.3 12.5",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "interior_volume_m3": {
+   "value": 0.05946528,
+   "unit": "m3",
+   "note_zh": "内容积2.1 cu ft（59.5 L）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Measures Interior volume [cu.",
+   "evidence_file": "source_cache/datasheet.txt",
+   "label_quote": "2.1 2.1 Net weight"
+  },
+  "net_weight_kg": {
+   "value": 40.8233133,
+   "unit": "kg",
+   "note_zh": "净重90 lb（40.8 kg；手册技术数据39 kg，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Net weight of the unit (empty) [lbs] 90 90",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "permitted_load_kg": {
+   "value": 69.85322498000001,
+   "unit": "kg",
+   "note_zh": "允许总负载154 lb（69.9 kg）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Permitted load [lbs] 154 154",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "load_per_rack_kg": {
+   "value": 29.937096420000003,
+   "unit": "kg",
+   "note_zh": "每层搁架负载66 lb（29.9 kg）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Load per rack [lbs] 66 66",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "wall_clearance_back_m": {
+   "value": 0.16002,
+   "unit": "m",
+   "note_zh": "后部离墙6.3 in（160 mm）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Wall clearance back [in] 6.3 6.3",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "wall_clearance_side_m": {
+   "value": 0.100076,
+   "unit": "m",
+   "note_zh": "侧面离墙3.94 in（100 mm）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Wall clearance sidewise [in] 3.94 3.94",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "internal_dimensions_m": {
+   "value": {
+    "w": 0.400304,
+    "h": 0.440436,
+    "d": 0.345186
+   },
+   "unit": "m",
+   "note_zh": "内腔宽15.76×高17.34×深13.59 in（400×440×345 mm）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Width [in] 15.76 15.76 Height [in] 17.34 17.34 Depth [in] 13.59 13.59",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "housing_dimensions_m": {
+   "value": {
+    "w": 0.5603239999999999,
+    "h": 0.625602,
+    "d": 0.565404
+   },
+   "unit": "m",
+   "note_zh": "外壳宽22.06×高24.63×深22.26 in（不含配件与接口）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Width net [in] 22.06 22.06 Height net [in] 24.63 24.63 Depth net [in] 22.26 22.26",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "energy_150_w": {
+   "value": 290.0,
+   "unit": "W",
+   "note_zh": "150 °C能耗290 Wh/h（手册技术数据300 Wh/h，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Energy consumption at 150 °C [Wh/h] 290 290",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "noise_dba": {
+   "value": 43.0,
+   "unit": "dB(A)",
+   "note_zh": "噪声43 dB(A)",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Sound-pressure level [dB(A)] 43 43",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "shelves_std_max": {
+   "value": [
+    2,
+    4
+   ],
+   "unit": "1",
+   "note_zh": "搁架标准2层、最多4层",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Number of shelves (std./max.) 2/4 2/4",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "doors": {
+   "value": 1,
+   "unit": "1",
+   "note_zh": "1扇门",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Unit doors 1 1",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "test_conditions": {
+   "value": {
+    "ambient_c": 22.0,
+    "ambient_tol_k": 3.0,
+    "fan_percent": 100.0
+   },
+   "unit": "1",
+   "note_zh": "技术数据：空载、标准配置、室温22±3 °C、风机100 %、按DIN 12880（离墙10 %内腔尺寸）",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "All technical data is speci",
+   "evidence_file": "source_cache/datasheet.txt",
+   "label_quote": "Technical data refers to 100 % fan speed."
+  },
+  "features": {
+   "value": [
+    "forced convection",
+    "controller with LCD display",
+    "electromechanical exhaust air flap",
+    "2 chrome-plated racks",
+    "class 2 safety device",
+    "USB port for recording data"
+   ],
+   "unit": "1",
+   "note_zh": "强制对流、LCD控制器、电动排气风门、2层镀铬搁架、2级安全装置、USB记录",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Electromechanical control of the exhaust air flap",
+   "evidence_file": "source_cache/datasheet.txt",
+   "label_quote": "• 2 chrome-plated racks"
+  },
+  "safety_device": {
+   "value": "class 2 (DIN 12880) with visual temperature alarm",
+   "unit": "1",
+   "note_zh": "独立2级温度安全装置（DIN 12880），视觉报警",
+   "evidence": "documented",
+   "source_id": "manufacturer_datasheet",
+   "quote": "Class 2 independent temperature safety device (DIN 12880) with visual",
+   "evidence_file": "source_cache/datasheet.txt"
+  },
+  "width_net_m": {
+   "value": 0.56,
+   "unit": "m",
+   "note_zh": "宽560 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Width, net mm / inch 560 / 22.01",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "height_gross_m": {
+   "value": 0.625,
+   "unit": "m",
+   "note_zh": "高625 mm（含脚）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Height, gross (incl. feet) mm / inch 625 / 24.60",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "depth_net_m": {
+   "value": 0.565,
+   "unit": "m",
+   "note_zh": "深565 mm（净）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Depth, net mm / inch 565 / 22.24",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "depth_gross_m": {
+   "value": 0.64,
+   "unit": "m",
+   "note_zh": "深640 mm（含门把手与排气管）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "mm / inch 640 / 25.20",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)",
+   "label_quote": "Depth, gross (incl. door handle and"
+  },
+  "exhaust_duct_od_m": {
+   "value": 0.052,
+   "unit": "m",
+   "note_zh": "排气管外径52 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Exhaust duct, outer diameter mm / inch 52 / 2.05",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "interior_m": {
+   "value": {
+    "w": 0.4,
+    "h": 0.44,
+    "d": 0.345
+   },
+   "unit": "m",
+   "note_zh": "内腔宽400×高440×深345 mm",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Width mm / inch 400 / 15.75 550 / 21.65 650 / 25.59 1000 / 39.37 Height mm / inch 440 / 17.32",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)",
+   "label_quote": "Depth mm / inch 345 / 13.58"
+  },
+  "interior_volume_l": {
+   "value": 0.06,
+   "unit": "m3",
+   "note_zh": "内容积60 L",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Interior volume l / cu.ft. 60 / 2.12",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "steam_space_m3": {
+   "value": 0.067,
+   "unit": "m3",
+   "note_zh": "蒸汽空间67 L（腔内空气体积）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Steam space volume l / cu.ft. 67 / 2.37",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "racks_regular_max": {
+   "value": [
+    2,
+    4
+   ],
+   "unit": "1",
+   "note_zh": "标准2层、最多4层搁架",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Quantity of racks (max.) 4 5 8 16",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)",
+   "label_quote": "Quantity of racks (regular) 2 2 2 2"
+  },
+  "rack_load_kg": {
+   "value": 30.0,
+   "unit": "kg",
+   "note_zh": "标准搁架每层最大30 kg",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Max. load per rack (standard rack) Kg / lbs 30 / 66",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "total_load_kg": {
+   "value": 70.0,
+   "unit": "kg",
+   "note_zh": "允许总负载70 kg",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Permitted total load Kg / lbs 70 / 154",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "weight_manual_kg": {
+   "value": 39.0,
+   "unit": "kg",
+   "note_zh": "手册：空机39 kg（数据表90 lb=40.8 kg，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Weight (empty) Kg / lbs 39 / 86",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "fluctuation_manual_k": {
+   "value": 0.3,
+   "unit": "K",
+   "note_zh": "手册：150 °C波动±0.3 K",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Temperature fluctuation at 150 °C / ±K 0.3",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "uniformity_manual_k": {
+   "value": 1.7,
+   "unit": "K",
+   "note_zh": "手册：150 °C均匀性±1.7 K",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "±K 1.7 1.7 1.9 2.5",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)",
+   "label_quote": "Temperature uniformity (variation)"
+  },
+  "heating_up_manual_s": {
+   "value": 900.0,
+   "unit": "s",
+   "note_zh": "手册：升温到150 °C 15 min",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Heating up time to 150 °C / 302 °F minutes 15 19",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "recovery_manual_s": {
+   "value": 240.0,
+   "unit": "s",
+   "note_zh": "手册：开门30 s后恢复4 min",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "minutes 4 5 6 6",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)",
+   "label_quote": "Recovery time after door was opened for 30 sec at 150 °C"
+  },
+  "air_change_manual_per_h": {
+   "value": 80.0,
+   "unit": "1/h",
+   "note_zh": "手册：100 °C换气80次/h",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "x/h Air change 80 32 9",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "nominal_power_manual_w": {
+   "value": 1100.0,
+   "unit": "W",
+   "note_zh": "手册：额定功率1.10 kW",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Nominal power kW 1.10 1.30 2.30 4.50",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "fuse_manual_a": {
+   "value": 6.3,
+   "unit": "A",
+   "note_zh": "手册：外部保险丝6.3 A（5×20 mm，慢熔）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "A 6.3 6.3 12.5 ---",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)",
+   "label_quote": "Chamber fuse (external)"
+  },
+  "overtemp_class1_c": {
+   "value": 330.0,
+   "unit": "degC",
+   "note_zh": "1级过温保护330 °C（FD 56）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Overtemperature protective device °C 330 350 330 330",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "energy_manual_w": {
+   "value": 300.0,
+   "unit": "W",
+   "note_zh": "手册：150 °C能耗300 Wh/h（数据表290，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Energy consumption at 150 °C / Wh/h 300 340 420 800",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "noise_manual_dba": {
+   "value": 43.0,
+   "unit": "dB(A)",
+   "note_zh": "手册：噪声43 dB(A)",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Noise level (mean value) dB (A) 43 43 43 43",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)"
+  },
+  "ip_class": {
+   "value": "IP 20",
+   "unit": "1",
+   "note_zh": "防护等级IP 20",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "IP 20 20 20 20",
+   "evidence_file": "source_cache/manual.txt (16.7 FD technical data)",
+   "label_quote": "System of protection acc. to EN"
+  },
+  "door_stops_heating_and_fan": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "开门时加热与风机停止，直到关门",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "BF, FD, FED: When opening the door, heating and fan turn off as long as the door remains open.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "standby_hold_s": {
+   "value": 3.0,
+   "unit": "s",
+   "note_zh": "按住待机键约3 s进入/退出待机",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "If the Standby button is pressed down for approx. 3 seconds, the display changes to standby mode.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "fixed_fan_fd": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "FD为固定风速（正常显示为实际温度与Setp）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Normal display with chambers without fan (BD, ED) or with fixed fan speed (FD)",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "setpoint_resolution_k": {
+   "value": 1.0,
+   "unit": "K",
+   "note_zh": "温度设定分辨1 °C（ED、FD、FED）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "or of one degree (ED, FD, FED)",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "flap_steps_deg": {
+   "value": 15.0,
+   "unit": "deg",
+   "note_zh": "排气风门开度按15°步进（显示CLOS、1、2、3、OPEn）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "The setting can be done in steps of 15°.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "flap_open_uniformity": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "风门全开时空间均匀性变差",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "If the air flap is completely open, the spatial temperature accuracy can be negatively influenced.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "flap_fresh_air": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "有风机的箱体风机运行增加新风进入",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "For chambers with fan, fan operation will increase fresh air entry.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "overtemp_class1_text": {
+   "value": {
+    "cut_off_c": 330.0,
+    "reset_c": 230.0
+   },
+   "unit": "degC",
+   "note_zh": "1级过温保护：FD 56切断330 °C，复位230 °C；须断电≥10 s、冷却、重启",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "ED 56, ED 115, FD 56, FED 56: 330 °C",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "ED 56, ED 115, FD 56, FED 56: 230 °C"
+  },
+  "overtemp_class1_reset": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "1级过温：断电至少10 s",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Disconnect the chamber from the power supply for at least 10 seconds (pull the power plug).",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "safety_class2_behaviour": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "2级安全控制器（温度限制器）：超过设定后完全关闭加热，直到手动复位",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "In the event of a fault (if this maximum temperature is exceeded) the safety controller com- pletely turns off the heating until manual reset.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "safety_range_c": {
+   "value": [
+    10.0,
+    300.0
+   ],
+   "unit": "degC",
+   "note_zh": "安全控制器设定10–300 °C，1 °C分辨",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "10 °C up to 300 °C (with an accuracy of one degree) with ED, FD, FED",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "safety_recommended_margin_k": {
+   "value": [
+    2.0,
+    5.0
+   ],
+   "unit": "K",
+   "note_zh": "安全控制器宜比温度设定高约2–5 °C",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Set the safety controller set-point by approx. 2 °C to 5 °C above the desired temperature set- point.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "safety_reset_rule": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "腔温降到安全设定以下后报警图标常亮，可在安全控制器菜单按OK复位，恢复控温",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "As soon as the inner chamber temperature has cooled down below the safety controller set-point, the alarm icon is lit permanently.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "timer_fd_delayed_off_only": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "FD只有“延时关闭”定时功能",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "The chambers BD, ED and FD offer the timer function “Delayed Off”",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "timer_days_hours_minutes": {
+   "value": {
+    "days": [
+     0,
+     9
+    ],
+    "hours": [
+     0,
+     23
+    ],
+    "minutes": [
+     0,
+     59
+    ]
+   },
+   "unit": "1",
+   "note_zh": "定时：天0–9、时0–23、分0–59",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Enter the days of the timer run-time (0 up to 9)",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "Enter the minutes of the timer run-time (0 up to 59)"
+  },
+  "timer_fd_fan_after": {
+   "value": [
+    "on",
+    "off"
+   ],
+   "unit": "1",
+   "note_zh": "FD定时结束后风机开（100 %）或关（0 %）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Select fan operation: On (100 %) or Off (0 %)",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "timer_expiry_heating_off": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "定时结束加热关闭，箱体冷却到室温",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "When the timer has expired, the heating is off. The chamber cools down to ambient temperature.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "timer_restart_rule": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "定时结束后按OK关闭定时功能（才能重新加热）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "After the timer expired you can turn off the timer function by pressing the OK button.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "ramp_gradient_menu": {
+   "value": [
+    0,
+    9
+   ],
+   "unit": "K/min",
+   "note_zh": "斜坡梯度菜单输入0–9（°C/min，0为关闭；一般说明写1–10，见冲突）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Enter the gradient (0 up to 9)",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "ramp_gradient_general": {
+   "value": [
+    1,
+    10
+   ],
+   "unit": "K/min",
+   "note_zh": "斜坡梯度一般说明：1–10 °C/min（按机型）",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "or from „1“ up to „10“ according to the chamber type.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "ramp_realistic_max": {
+   "value": 0.06666666666666667,
+   "unit": "K/s",
+   "note_zh": "ED/FD/FED实际最大升温约4 °C/min",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "4 °C/min for the heating and drying ovens ED, FD and FED can be regarded as a realistic maximum.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "ramp_above_actual": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "斜坡只在目标高于实际温度时按梯度升温",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "The chamber heats up with the entered gradient, if the set ramp target value lies above the actual temperature value.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "usb_recorded": {
+   "value": [
+    "timer",
+    "actual temperature",
+    "set-point",
+    "fan",
+    "air flap position",
+    "safety controller",
+    "heating ratio"
+   ],
+   "unit": "1",
+   "note_zh": "USB记录：定时、实际温度、设定、风机、风门位置、安全控制器、加热比例",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Following data is recorded: Timer, actual temperature value, temperature set-point,",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "usb_continues_standby": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "USB记录在待机时继续，断电中断、来电继续",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Data recording continues also during stand-by mode of the chamber.",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "sensor_rupture_1999": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "传感器断线显示1999",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Message „1999” in the controller",
+   "evidence_file": "source_cache/manual.txt"
+  },
+  "usable_volume_rule": {
+   "value": {
+    "clearance_fraction": 0.1,
+    "max_load_fraction": 0.5
+   },
+   "unit": "1",
+   "note_zh": "可用容积：各方向留10 %内腔尺寸；装载不超过一半",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "Do NOT load this volume by more than half to enable sufficient airflow inside the chamber.",
+   "evidence_file": "source_cache/manual.txt",
+   "label_quote": "a = 0.1 x A"
+  },
+  "sterilisation_190": {
+   "value": true,
+   "unit": "1",
+   "note_zh": "ED/FD/FED可在190 °C热空气灭菌",
+   "evidence": "documented",
+   "source_id": "manufacturer_manual_2017",
+   "quote": "The drying and heating ovens ED, FD and FED can be hot air sterilized at 190 °C",
+   "evidence_file": "source_cache/manual.txt"
+  }
+ },
+ "engineering": {
+  "heater_power_w": {
+   "value": 1060.0,
+   "unit": "W",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热器功率：额定1.1 kW减去风机与控制器约40 W（工程值）"
+  },
+  "fan_power_w": {
+   "value": 30.0,
+   "unit": "W",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机电机功率（进入腔内的热；工程值）"
+  },
+  "controller_power_w": {
+   "value": 8.0,
+   "unit": "W",
+   "evidence": "assumption",
+   "engineering_note_zh": "控制器与显示功率（待机时也有；工程值）"
+  },
+  "air_heat_capacity_j_k": {
+   "value": 80.0,
+   "unit": "J/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "腔内空气与风道热容（67 L空气约0.08 kg；工程值）"
+  },
+  "heater_heat_capacity_j_k": {
+   "value": 650.0,
+   "unit": "J/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热元件（管式加热器与支架）热容（工程值）"
+  },
+  "liner_heat_capacity_j_k": {
+   "value": 5193.359375,
+   "unit": "J/K",
+   "evidence": "calibrated",
+   "engineering_note_zh": "内胆、风道、2层搁架与风扇轮的有效热容（不锈钢，工程值；标定到15 min升温）（已标定，见calibration_report.json）"
+  },
+  "shell_heat_capacity_j_k": {
+   "value": 9000.0,
+   "unit": "J/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "隔热层与外壳的有效热容（工程值）"
+  },
+  "heater_air_w_k": {
+   "value": 22.0,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机运行时加热器到空气的传热（工程值）"
+  },
+  "heater_air_nofan_w_k": {
+   "value": 1.5,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机停止时加热器到腔内空气的传热（加热器在侧面预热风道里，只靠自然对流；工程值）"
+  },
+  "heater_liner_w_k": {
+   "value": 6.0,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "加热器到预热风道内胆壁的辐射与导热（工程值）"
+  },
+  "liner_air_w_k": {
+   "value": 45.0,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机运行时内胆与搁架到空气的传热（工程值）"
+  },
+  "liner_air_nofan_w_k": {
+   "value": 8.0,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机停止时内胆到空气的传热（工程值）"
+  },
+  "liner_shell_w_k": {
+   "value": 3.518359375,
+   "unit": "W/K",
+   "evidence": "calibrated",
+   "engineering_note_zh": "内胆经隔热层到外壳的导热（工程值；标定到150 °C能耗）（已标定，见calibration_report.json）"
+  },
+  "shell_ambient_w_k": {
+   "value": 6.0,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "外壳对室内空气的对流与辐射（外表约1.9 m²，工程值）"
+  },
+  "leak_air_change_per_h": {
+   "value": 4.0,
+   "unit": "1/h",
+   "evidence": "assumption",
+   "engineering_note_zh": "风门关闭时的漏风换气（门封与风道；工程值）"
+  },
+  "flap_air_change_per_h": {
+   "value": [
+    4.0,
+    18.0,
+    40.0,
+    62.0,
+    80.0
+   ],
+   "unit": "1/h",
+   "evidence": "documented_derived",
+   "engineering_note_zh": "风门位置CLOS、1、2、3、OPEn在100 °C、风机运行时的换气次数（OPEn=数据表80次/h，中间位置工程插值）"
+  },
+  "flap_nofan_factor": {
+   "value": 0.35,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机停止时风门换气相对风机运行的比例（只靠热浮力；工程值）"
+  },
+  "door_open_air_change_per_s": {
+   "value": 0.1,
+   "unit": "1/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "开门时腔内空气与室内空气交换速率（30 s内约95 %换掉；工程值）"
+  },
+  "door_open_liner_loss_w_k": {
+   "value": 42.5322265625,
+   "unit": "W/K",
+   "evidence": "calibrated",
+   "engineering_note_zh": "开门时内胆、搁架与门内面对室内的有效散热（对流+辐射，含门内面冷却；标定到开门30 s后4 min恢复）（已标定，见calibration_report.json）"
+  },
+  "door_switch_rad": {
+   "value": 0.05,
+   "unit": "rad",
+   "evidence": "assumption",
+   "engineering_note_zh": "门开角大于该值即视为开门（门开关；工程值）"
+  },
+  "door_max_rad": {
+   "value": 1.806415775814131,
+   "unit": "rad",
+   "evidence": "drawing",
+   "engineering_note_zh": "门最大开角103.5°（手册56号尺寸图）"
+  },
+  "pid_kp_w_k": {
+   "value": 120.0,
+   "unit": "W/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "控制器比例增益（工程值）"
+  },
+  "pid_ki_w_ks": {
+   "value": 0.9,
+   "unit": "W/(K s)",
+   "evidence": "assumption",
+   "engineering_note_zh": "控制器积分增益（工程值）"
+  },
+  "pid_kd_ws_k": {
+   "value": 600.0,
+   "unit": "W s/K",
+   "evidence": "assumption",
+   "engineering_note_zh": "控制器微分增益（工程值）"
+  },
+  "pid_d_filter_s": {
+   "value": 8.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "微分滤波时间（工程值）"
+  },
+  "pid_i_band_k": {
+   "value": 6.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "只在误差小于该值时积分（防积分饱和；工程值）"
+  },
+  "ssr_period_s": {
+   "value": 2.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "固态继电器的周期（加热占空比按该周期输出；工程值）"
+  },
+  "sensor_tau_s": {
+   "value": 4.0,
+   "unit": "s",
+   "evidence": "assumption",
+   "engineering_note_zh": "Pt100腔温传感器时间常数（工程值）"
+  },
+  "sensor_noise_k": {
+   "value": 0.04,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "Pt100读数噪声（1σ，工程值）"
+  },
+  "safety_sensor_offset_k": {
+   "value": 0.0,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "安全控制器传感器相对腔内空气的偏差（没有资料：取0；工程值）"
+  },
+  "uniformity_shape": {
+   "value": [
+    [
+     -0.9,
+     0.6,
+     -0.3,
+     1.0
+    ],
+    [
+     0.5,
+     -1.0,
+     0.8,
+     -0.4
+    ],
+    [
+     -0.2,
+     0.9,
+     -0.7,
+     0.4
+    ],
+    [
+     1.0,
+     -0.5,
+     0.2,
+     -0.8
+    ]
+   ],
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "搁架层1–4、左前/右前/左后/右后位置的空间温差形状（乘以±1.7 K×(T−室温)/(150−22) K；工程值，量级为数据表）"
+  },
+  "flap_open_uniformity_factor": {
+   "value": 1.6,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "风门全开时空间温差放大倍数（手册：全开时均匀性变差；工程值）"
+  },
+  "nofan_uniformity_factor": {
+   "value": 4.0,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机停止时空间温差放大倍数（工程值）"
+  },
+  "sample_h_fan_w_m2k": {
+   "value": 22.0,
+   "unit": "W/(m2 K)",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机运行时样品与器皿表面的对流+辐射换热系数（工程值）"
+  },
+  "sample_h_nofan_w_m2k": {
+   "value": 8.0,
+   "unit": "W/(m2 K)",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机停止时样品表面换热系数（工程值）"
+  },
+  "evap_mass_transfer_fan_m_s": {
+   "value": 0.012,
+   "unit": "m/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机运行时湿表面蒸发传质系数（工程值，Lewis类比约h/(ρcp)）"
+  },
+  "evap_mass_transfer_nofan_m_s": {
+   "value": 0.004,
+   "unit": "m/s",
+   "evidence": "assumption",
+   "engineering_note_zh": "风机停止时湿表面传质系数（工程值）"
+  },
+  "critical_moisture_fraction": {
+   "value": 0.15,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "降速干燥开始的临界含湿量（溶剂/干固体质量；工程值，物料相关）"
+  },
+  "ambient_rh_default": {
+   "value": 0.5,
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "室内相对湿度默认值（新风带入的水蒸气；工程值）"
+  },
+  "ambient_snap_k": {
+   "value": 0.001,
+   "unit": "K",
+   "evidence": "assumption",
+   "engineering_note_zh": "无加热、无风机、无湿样品时温差小于该值即回到室温（之后静止区间整段跳过；差值计入守恒账）"
+  },
+  "ware_catalogue": {
+   "value": {
+    "weighing_bottle_50x30": {
+     "material": "borosilicate_33",
+     "mass_kg": 0.03,
+     "area_m2": 0.0085,
+     "open_area_m2": 0.0016,
+     "capacity_m3": 4e-05,
+     "footprint_m": 0.05,
+     "height_m": 0.04
+    },
+    "petri_dish_100": {
+     "material": "borosilicate_33",
+     "mass_kg": 0.08,
+     "area_m2": 0.02,
+     "open_area_m2": 0.0075,
+     "capacity_m3": 0.0001,
+     "footprint_m": 0.1,
+     "height_m": 0.02
+    },
+    "beaker_250ml": {
+     "material": "borosilicate_33",
+     "mass_kg": 0.09,
+     "area_m2": 0.031,
+     "open_area_m2": 0.0033,
+     "capacity_m3": 0.00025,
+     "footprint_m": 0.07,
+     "height_m": 0.095
+    },
+    "evaporating_dish_porcelain_100": {
+     "material": "porcelain",
+     "mass_kg": 0.12,
+     "area_m2": 0.022,
+     "open_area_m2": 0.007,
+     "capacity_m3": 0.00011,
+     "footprint_m": 0.1,
+     "height_m": 0.04
+    },
+    "crucible_porcelain_30ml": {
+     "material": "porcelain",
+     "mass_kg": 0.035,
+     "area_m2": 0.007,
+     "open_area_m2": 0.0013,
+     "capacity_m3": 3e-05,
+     "footprint_m": 0.042,
+     "height_m": 0.04
+    },
+    "crucible_alumina_50ml": {
+     "material": "alumina_ad998",
+     "mass_kg": 0.045,
+     "area_m2": 0.0085,
+     "open_area_m2": 0.0015,
+     "capacity_m3": 5e-05,
+     "footprint_m": 0.043,
+     "height_m": 0.053
+    },
+    "crucible_nickel_50ml": {
+     "material": "nickel",
+     "mass_kg": 0.06,
+     "area_m2": 0.0085,
+     "open_area_m2": 0.0015,
+     "capacity_m3": 5e-05,
+     "footprint_m": 0.045,
+     "height_m": 0.045
+    },
+    "aluminium_dish_70": {
+     "material": "aluminium",
+     "mass_kg": 0.006,
+     "area_m2": 0.009,
+     "open_area_m2": 0.0038,
+     "capacity_m3": 6e-05,
+     "footprint_m": 0.07,
+     "height_m": 0.02
+    },
+    "steel_tray_300x200": {
+     "material": "stainless_304",
+     "mass_kg": 0.7,
+     "area_m2": 0.135,
+     "open_area_m2": 0.055,
+     "capacity_m3": 0.0015,
+     "footprint_m": 0.3,
+     "height_m": 0.03
+    },
+    "ptfe_dish_100": {
+     "material": "ptfe",
+     "mass_kg": 0.06,
+     "area_m2": 0.02,
+     "open_area_m2": 0.0075,
+     "capacity_m3": 0.0001,
+     "footprint_m": 0.1,
+     "height_m": 0.025
+    },
+    "quartz_dish_60": {
+     "material": "quartz",
+     "mass_kg": 0.03,
+     "area_m2": 0.007,
+     "open_area_m2": 0.0025,
+     "capacity_m3": 3e-05,
+     "footprint_m": 0.06,
+     "height_m": 0.02
+    },
+    "copper_dish_80": {
+     "material": "copper",
+     "mass_kg": 0.09,
+     "area_m2": 0.012,
+     "open_area_m2": 0.0045,
+     "capacity_m3": 6e-05,
+     "footprint_m": 0.08,
+     "height_m": 0.02
+    }
+   },
+   "unit": "1",
+   "evidence": "assumption",
+   "engineering_note_zh": "器皿目录：称量瓶、培养皿、烧杯、蒸发皿、坩埚、铝盘、不锈钢托盘、PTFE与石英皿、铜皿的材料、质量、换热面积、敞口面积、容量与外形（按常用规格估计；工程值）"
+  }
+ },
+ "derived": {
+  "air_mass_flow_open_100c_kg_s": {
+   "value": 0.0014084284954211143,
+   "unit": "kg/s",
+   "note_zh": "风门全开、100 °C时换气质量流量：80次/h×67 L×ρ空气(100 °C)"
+  },
+  "usable_volume_m3": {
+   "value": 0.031088640000000004,
+   "unit": "m3",
+   "note_zh": "可用容积=(A−2a)(B−2b)(C−2c)，a=0.1A（手册16.2）"
+  }
+ }
+}

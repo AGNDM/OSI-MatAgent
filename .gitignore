@@ -1,0 +1,21 @@
+# Local credentials and environments
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.log
+.agents/
+.codex/
+.aws/
+*.zh.md
+# Runs, model artifacts and working notes remain local.
+/results/
+/benchmark/docs/provenance/
+/benchmark/graph/docs/provenance/
+/output/*
+!/output/pdf/
+/output/pdf/*
+!/output/pdf/instrument-evaluation-report.pdf

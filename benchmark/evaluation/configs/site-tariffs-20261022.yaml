@@ -1,0 +1,24 @@
+---
+pricing:
+  header: Rates valid starting November 2024
+  prices:
+    h100:
+      value: 5174
+      unit: "/gpu/hour"
+      multiplier: 0.0001
+      prefix: CHF
+    l40s:
+      value: 2141
+      unit: "/gpu/hour"
+      multiplier: 0.0001
+      prefix: CHF
+    mig12gb:
+      value: 740
+      unit: "/gpu/hour"
+      multiplier: 0.0001
+      prefix: CHF
+    mig24gb:
+      value: 1725
+      unit: "/gpu/hour"
+      multiplier: 0.0001
+      prefix: CHF

@@ -1,0 +1,190 @@
+{
+  "bundle_version": "1.0.0",
+  "created_at_utc": "2026-10-21T22:06:25.059688+00:00",
+  "datasets": {
+    "mcqa_388": {
+      "answers_file": "mcqa_388/answers.jsonl",
+      "base_cases": 194,
+      "groups": 112,
+      "questions": 388,
+      "questions_file": "mcqa_388/questions.jsonl.gz",
+      "split_dir": "mcqa_388/splits"
+    },
+    "sequential_120": {
+      "data_included": false,
+      "status": "placeholder",
+      "teacher_forcing_evaluator_included": false
+    }
+  },
+  "files": {
+    ".gitignore": {
+      "bytes": 31,
+      "sha256": "6e8af9288e2d825f1d2e9d1507149635e77bfdc759b75aa094cd856cc662e6ba"
+    },
+    "CITATION.cff": {
+      "bytes": 1319,
+      "sha256": "a13d89173f2d10525f9ac2029e84294eb76df70c35d4038120a9ea71c525f2cf"
+    },
+    "LICENSE": {
+      "bytes": 1434,
+      "sha256": "23ecf781435fe5c904d813b0e30856cef805792819329c7336be07d32d13002a"
+    },
+    "LICENSE-ASSETS.md": {
+      "bytes": 1157,
+      "sha256": "b9c2481ed61d7d2694d52978d7477db2362a33b6485248bcffdbe1993d5c9fa5"
+    },
+    "NOTICE.md": {
+      "bytes": 116541,
+      "sha256": "f06d533d667f9a802d110e5027146ac8c8d0010b413b2b9ea0ec7f27cadda89b"
+    },
+    "README.md": {
+      "bytes": 7186,
+      "sha256": "dc23e7144984e4ba186986b5dc67653d2c5a4e314fa8178b08d66061db1dd9c5"
+    },
+    "eval/__init__.py": {
+      "bytes": 77,
+      "sha256": "0229233c4549386a9823dc03fe93251eb458276a219d54296ed8d654218c5e22"
+    },
+    "eval/common.py": {
+      "bytes": 5812,
+      "sha256": "d5f83622ee8d08d7ff8a6185e61e5b9344ac97f21bc061e10e9b93ef22023d97"
+    },
+    "eval/mcqa.py": {
+      "bytes": 7998,
+      "sha256": "579603fd941c13d958c007a148eae9541de937e289b7d605727ab3645b0cc305"
+    },
+    "eval/prompts.py": {
+      "bytes": 8461,
+      "sha256": "0940ee3f6b8806aac794924ae543d276ac0c17fe2260f18a99b045187fc3e056"
+    },
+    "eval/schemas/answer.schema.json": {
+      "bytes": 595,
+      "sha256": "42f73826e4ab1027963bfab04193c36054e0bfa567bb0f6c2e56211b53b5882d"
+    },
+    "eval/schemas/prediction.schema.json": {
+      "bytes": 850,
+      "sha256": "8bfe53fc2da215fc122e5b229a1a357903e6ccc4ffca83437f64c16442091fb2"
+    },
+    "eval/schemas/task.schema.json": {
+      "bytes": 3373,
+      "sha256": "0bc647367dacc1c2bf81e83fb5d69a5bdcce0648f2511cf012285a0826e26d2b"
+    },
+    "eval/validate.py": {
+      "bytes": 11292,
+      "sha256": "6ff0224d6338be36b79024278338aec6bc7fc2545810431e5b7dd6df82ab8bd2"
+    },
+    "examples/README.md": {
+      "bytes": 607,
+      "sha256": "fe6d6be803cf4076ad45691edd3de2abbb0f8929de298ab4c4414f4a3ec7ee21"
+    },
+    "examples/prediction.jsonl": {
+      "bytes": 67,
+      "sha256": "ec65cb044c1f387f33aee20a9d042b03b26a27b091b67456b237022f6d453533"
+    },
+    "examples/public-prompt.jsonl": {
+      "bytes": 7478,
+      "sha256": "e1ee451e150f7b8b012303a6b0907c154ab5de59be92582447caa62cba60c303"
+    },
+    "examples/qwen-baseline-protocol.json": {
+      "bytes": 4362,
+      "sha256": "25e9db783db65ed57dc9cfead7c05d200478ae4b5bb0682c827f84dc2f491f05"
+    },
+    "mcqa_388/README.md": {
+      "bytes": 1223,
+      "sha256": "b87757cdd66bef4f32b1d272486af25765728e92cee99e3d7eba43fe43a6c5f5"
+    },
+    "mcqa_388/answers.jsonl": {
+      "bytes": 26772,
+      "sha256": "3e8d1744e05fd3c1c39ab206a07ef6d3f2556b4815507e60660d823c211a65b1"
+    },
+    "mcqa_388/manifest.json": {
+      "bytes": 2048,
+      "sha256": "5ca7a31727fc11275d20473b7c885802b79e92c4b0923cf1cadf9cbec00af0d0"
+    },
+    "mcqa_388/questions.jsonl.gz": {
+      "bytes": 3109132,
+      "sha256": "b0f0403b1c0b9f8fc77f3038146f244d7d75db1876d4feb494715603e11b5538"
+    },
+    "mcqa_388/source-release-manifest.json": {
+      "bytes": 20471,
+      "sha256": "16b2313df81cf35a1e36c0148c8035a9c3bf3dbc658018409de568d7aa22b95d"
+    },
+    "mcqa_388/splits/test.txt": {
+      "bytes": 1500,
+      "sha256": "85c1a2a3bb858d8bfc7ba2142b0c0b583a153a5e5abd64d43eb0a086b381b9c6"
+    },
+    "mcqa_388/splits/test_fault.txt": {
+      "bytes": 200,
+      "sha256": "00b6f39db7c3c93a56e20db415e14a87cc6e91671515da975f2bec64f7b721a4"
+    },
+    "mcqa_388/splits/test_instrument.txt": {
+      "bytes": 250,
+      "sha256": "62a97ab27593a0d2a48cae023bfe3b1e65787ed7633a27f30c7c9499abeda937"
+    },
+    "mcqa_388/splits/test_template.txt": {
+      "bytes": 900,
+      "sha256": "0d7411a57467f1362f1729122d672596c9dc92147f1e5aad91444d0c04b5201f"
+    },
+    "mcqa_388/splits/train.txt": {
+      "bytes": 5800,
+      "sha256": "8c5ecfd680f67ca0693d0ad41d26bda0c39954d1f30c59168f1bced2fcc262b2"
+    },
+    "mcqa_388/splits/validation.txt": {
+      "bytes": 1050,
+      "sha256": "a300c46350ac5fb49fb7a1ce8cd33d7a94545b872bed56721ee3fb735b8c1b28"
+    },
+    "pyproject.toml": {
+      "bytes": 322,
+      "sha256": "fec7fb51a04beac7356fb0d94f256fe1e1deea40d778d1a3eb79b685f23e5282"
+    },
+    "sequential_120/README.md": {
+      "bytes": 776,
+      "sha256": "d17a59e614f1de58af4bb32da0f83140aa97829b7c572df6570b404b36cea52c"
+    },
+    "slurm/check.sbatch": {
+      "bytes": 769,
+      "sha256": "ad2fec873fb5d28c7a4d7b7ce4bac50723621789c144d6fe7910c93fd1f10d85"
+    },
+    "tests/test_mcqa.py": {
+      "bytes": 13592,
+      "sha256": "4889f81d8c4db2fcc31725f11e541149a72420d37bc08b54a4d73e48a2800ae9"
+    },
+    "tests/test_prompts.py": {
+      "bytes": 8043,
+      "sha256": "7dc6cdb7d29f9527ec2022ed6d790749dba613651d6f3ed4c47b4e718dc039e6"
+    },
+    "tests/test_validation.py": {
+      "bytes": 8040,
+      "sha256": "7e70e774e9d71193a4874c31ad782bc3ec5c767c010f56ddb0aafca1c596c961"
+    }
+  },
+  "original_source_package_sha256": {
+    "instrument_bench/__init__.py": "3fdbb422be8691e983671805a5b7c061b96a7f429f8572d42af696f443a462a6",
+    "instrument_bench/__main__.py": "631dd4aca53e35ae3f5aeb96d11efb6711972f9a832edf644e7b683387dd915d",
+    "instrument_bench/adapters.py": "c6f29a6fce66f77e1b9b15fdbce9503487148626bfc5c0c163a285e6aedf57e3",
+    "instrument_bench/api_model.py": "7b90d03dcb7f30190c0d810cef48e926ff5f2f276c79f35357dde2b11c96e624",
+    "instrument_bench/baselines.py": "b38a4ab9b301583cbc9801da1ac11a15e3dc6918c62118afd6e1581d1c84acc7",
+    "instrument_bench/decision_models.py": "0731e40a8e978c6e296657976ae606f10d6cf859596016f912282163b135502a",
+    "instrument_bench/episode_metrics.py": "6b3a09fe9bd24cc7f33f8b987f38e71828682ab5b63d048fe067994174461849",
+    "instrument_bench/episodes.py": "4bd93dc80980603501eff4455a89c45c84ba9a2f798f24b7953147f533dd6865",
+    "instrument_bench/experiments.py": "6fc6da237ab7b58224581164903294f9c715fbb07206459707ce23afbe4ec31b",
+    "instrument_bench/feature_models.py": "2714fa13d02d26fb77113ca1df7ccd1b4f9c538e6f8401ebfadbed9326fd9df9",
+    "instrument_bench/feedback.py": "692f4c667e22a8f911064d282bc764b9f10ba97e1e7b3c4494922a2f01a0247d",
+    "instrument_bench/generative_sampling.py": "511ba3f6265d2558bebc98da3c6e4dd8cf5fae37a5a5564c11cc34a6ef4c7138",
+    "instrument_bench/generator.py": "5a28c16f3544144915150a5ce1d0d0ab85a472244f02bfa2d5caecfaf6c58ba9",
+    "instrument_bench/hosted_methods.py": "b6927cb5c04e0830243c594183765a523a98ce96bc57dae14769b7bcbed9b922",
+    "instrument_bench/io.py": "52088d4c605b542ebecf0cc76d5953f41c00aebd93d657054fd6b07cd1911150",
+    "instrument_bench/local_llm.py": "a099041922c00882ca69aaa2549e4bafe42aa859ce4fa11c01228c2a5e8eacc1",
+    "instrument_bench/metrics.py": "d6243c73dddd6d054ad432cf27d45b2e5753ff3396c53598f62d811be7cc0e7a",
+    "instrument_bench/runner.py": "02f57c6d443058d4c030181da8a1cfe350651f38464d1db3982ceb26c663a68d",
+    "instrument_bench/scenarios.py": "ffc3a2d374570710fa0c52e1241a5a38b8be4e2dbda758a531b56acad614127f",
+    "instrument_bench/schema.py": "f800be8278349029c6a6eb7e768dad065e6669b2403b531fcbec0c7d778706cf",
+    "instrument_bench/t1_rules.py": "21334d4e97cb1f1544e27ea5147b0a94679ca477851a7e2cbdf9347e894b8e04",
+    "instrument_bench/tool_decisions.py": "447494d23be134b3421d6861959b07cea42c7a1859b93c6ec14f61247825f0a5"
+  },
+  "requirements": {
+    "python": ">=3.10",
+    "simulator_for_static_scoring": false,
+    "third_party_dependencies": []
+  }
+}

@@ -1,0 +1,1027 @@
+{
+  "action_presets_file": "action-presets.json",
+  "cases": 120,
+  "cases_file": "cases.jsonl",
+  "condition_counts": {
+    "both_open": 2,
+    "cell_failure": 3,
+    "door_interruption": 3,
+    "healthy": 75,
+    "lamp_failure": 6,
+    "motor_blocked": 3,
+    "operator_standby": 3,
+    "outer_open": 2,
+    "secured": 2,
+    "sensor_damage": 3,
+    "timed_motor_failure": 6,
+    "visible_keylock": 6,
+    "visible_service_prerequisites": 6
+  },
+  "dataset_version": "1.0.0",
+  "empirical_difficulty_order_established": false,
+  "evaluator_cases_file": "evaluator/case-specs.jsonl",
+  "expert_review_completed": false,
+  "files": {
+    "README.md": {
+      "bytes": 8546,
+      "sha256": "4ad81528ddf4528d0882d686d216799c1052af5c97689776d08e8dad70296b13"
+    },
+    "action-presets.json": {
+      "bytes": 285305,
+      "sha256": "a26269ed4106789d52092935c7f885f39b286e61add14fd33cea27aeba084dc7"
+    },
+    "cases.jsonl": {
+      "bytes": 390940,
+      "sha256": "67e11921fa653835d7b66798b8f5cd81343c2fa1958181e59e53719354570fc7"
+    },
+    "evaluator/case-specs.jsonl": {
+      "bytes": 671509,
+      "sha256": "7fdb3cd865cb03de08914caffc4b41e8cefc6f24842117775b903a9891cca592"
+    },
+    "provenance/context-preflight.json": {
+      "bytes": 19437,
+      "sha256": "633a423d6ad60e5532eceb191db296af195a374ee79ca681a792fa9de693647e"
+    },
+    "provenance/cross-machine-preflight.json": {
+      "bytes": 31647,
+      "sha256": "ee12fbb5a68a53cdad0490b5b7fb2b9f3d51f0120d76532d8132687021e6eeaf"
+    },
+    "provenance/native-evidence.json": {
+      "bytes": 4679,
+      "sha256": "5bc1e0b46980d81b06315575a461c6a3d7fcdead0812c99d0232d186dce61a06"
+    },
+    "provenance/native-validation.json": {
+      "bytes": 408,
+      "sha256": "cd1645e19aff1c7b98039726308052d29daa562d47c94218b3b3bafd393820bb"
+    },
+    "provenance/public-contracts-receipt.json": {
+      "bytes": 274,
+      "sha256": "1bd35e8913d84ed5d1689eaf52f0679350cdc60542792c1f966c3f2f075aa642"
+    },
+    "provenance/source-configuration.json": {
+      "bytes": 290593,
+      "sha256": "ec03964430520d9c629920391a18217f5f055e4cdc546770916264f362d7c44f"
+    },
+    "provenance/source-manifest.json": {
+      "bytes": 7540,
+      "sha256": "6bf3ad1720b4e8b26b7c76170a8fc77bbbc83aee22c35aee986a0b5f2467993b"
+    },
+    "public-contracts.json": {
+      "bytes": 452849,
+      "sha256": "164c817bd81b0969f6fc3d4179f7b8a6ac0d3c8a1a30dc5eb9e299fe544ee940"
+    },
+    "runtime/README.md": {
+      "bytes": 2627,
+      "sha256": "b9ea517913ada5b619289f186836ad8a9df449a7c3205f935155f86b69ca4ef9"
+    },
+    "runtime/__init__.py": {
+      "bytes": 81,
+      "sha256": "8de763162dc4eb8fb0287950170c794370da3c70ca861da0e20cb7ee58e319ca"
+    },
+    "runtime/bootstrap.py": {
+      "bytes": 1054,
+      "sha256": "eb8edbb720311aba47430614ce97ab186dc0129982c8b85a6aabdf0fdb76b07e"
+    },
+    "runtime/provenance.json": {
+      "bytes": 29373,
+      "sha256": "770aae72c2f3de2bff21b80ada9f88e74323e29397acee7778a551cab87e2da3"
+    },
+    "runtime/requirements-model.txt": {
+      "bytes": 1215,
+      "sha256": "30ea97c794f393bddc3119c7ccad573d91c9f0d12739dad296be0e3589c04dab"
+    },
+    "runtime/requirements.txt": {
+      "bytes": 272,
+      "sha256": "666e32245a662fb25c513edc2b1ca944df492734d1a7ec766061450e41a770db"
+    },
+    "runtime/vendor/environment/chemlab-source.json": {
+      "bytes": 351,
+      "sha256": "c373b3a4c52e562763eec983342d69b47592f5a5e84d679b286442cf1dfcd0c2"
+    },
+    "runtime/vendor/external/ChemLab-Assets/CITATION.cff": {
+      "bytes": 1319,
+      "sha256": "a13d89173f2d10525f9ac2029e84294eb76df70c35d4038120a9ea71c525f2cf"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSE": {
+      "bytes": 1370,
+      "sha256": "f9db67b0ff46c0230cda5a1a8ab6238cf3efb3bfbae9c5d1de81def2b123f89b"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSE-ASSETS.md": {
+      "bytes": 1157,
+      "sha256": "b9c2481ed61d7d2694d52978d7477db2362a33b6485248bcffdbe1993d5c9fa5"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/Biopython.rst": {
+      "bytes": 3267,
+      "sha256": "d4bbb0c4e5345e6f2508c3b93fb247fcb2db95783fb8a584c23cd88e3c03df6c"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/COGNI-CC0-1.0.txt": {
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/CoolProp-MIT.txt": {
+      "bytes": 1103,
+      "sha256": "9bf835333ef602af4cb19338b9f9d43671e174fa029b00280e9bdba6ea4719b2"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/KiMoPack-GPL-3.0.txt": {
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/OPERA-MIT.txt": {
+      "bytes": 1066,
+      "sha256": "c37f7781c055ba891fadbfedc6fd8b71f74cbeb21e747ceed21c5a41407511fd"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/XrayDB.txt": {
+      "bytes": 1128,
+      "sha256": "b8bbda80483f200cd1d530a3a23e9c51481026904cc8f10453e78bc99d30728c"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/chemicals-MIT.txt": {
+      "bytes": 1127,
+      "sha256": "dc8d90b7aed69e19ad9ca2528ee00c02be22e1d063b2b00db7c35e0b99854edb"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/openpoly-MIT.txt": {
+      "bytes": 1069,
+      "sha256": "29594199ad4920fcd9d41f0d5ca2def6fcc302d3363cca6767f973f52666a670"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/srsinst-rga-MIT.txt": {
+      "bytes": 1092,
+      "sha256": "9a4c619f204c6d509206eab7eaa61ba6fa2c3a83b3fee5c2cb23927992d8a1bc"
+    },
+    "runtime/vendor/external/ChemLab-Assets/LICENSES/teMatDb-MIT.txt": {
+      "bytes": 1033,
+      "sha256": "c48b8629b48a8e6001a66da53cbb4229ef5ccdb03b3a5b82ccd9803a09851eb3"
+    },
+    "runtime/vendor/external/ChemLab-Assets/NOTICE.md": {
+      "bytes": 116541,
+      "sha256": "f06d533d667f9a802d110e5027146ac8c8d0010b413b2b9ea0ec7f27cadda89b"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/asset.contract.json": {
+      "bytes": 413224,
+      "sha256": "8c3f320402cbc11513a00ff1244758e0557fba4a5e8338a32821a1c0958975d0"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/collision_proxies.json": {
+      "bytes": 11915,
+      "sha256": "055cf7cd3b946f11bc720eb8207acf08caac93559c81c2919ad9b7f0fb649fc4"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/geometry_manifest.json": {
+      "bytes": 62087,
+      "sha256": "bfd5cf27ab1b24b938c51017153a24a8803796e56c844246f03bd98ef3751b8c"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/instrument_model.json": {
+      "bytes": 13312,
+      "sha256": "8e7af1da0fa71f41b3e5ae2144887e67699e48b88541aa15a0b2ba44fc1da555"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/asset.contract.json": {
+      "bytes": 363972,
+      "sha256": "23cfffce336ddbb0be1a0ce41b078a255d8b85c5063be0bb6226a04d189963cc"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/collision_proxies.json": {
+      "bytes": 5954,
+      "sha256": "83d8987dc7d1646f253dbcc634a64bb099607ea4635753c3f5f19126f94bb2ea"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/gas_library.json": {
+      "bytes": 55779,
+      "sha256": "cf3b411c29b9c2cc1048441716baf83e14bf202792efe59e858f426c5461e0b9"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/geometry_manifest.json": {
+      "bytes": 34726,
+      "sha256": "62f7a118679c379b82890fa682f5edf0770ac6d0a6175c5ae685648b7dd51fca"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/humidity_formulation.json": {
+      "bytes": 15941,
+      "sha256": "73080b88bfb19e817326e9cb18f11f6c69855476c08e6180260003f41572a0e1"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/instrument_model.json": {
+      "bytes": 20222,
+      "sha256": "24f3c4ae87654107e2a48bb487487d9dab10481ab1ec4e6ef6e6b3967c71aec3"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/tubing_library.json": {
+      "bytes": 8186,
+      "sha256": "82acc753c18093ec91bbdc2830f62ddade7b50588b2496c3a1f66f092df01237"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/asset.contract.json": {
+      "bytes": 865790,
+      "sha256": "29a383d7c1c228ad791b4e1ff3c5619f56c1b166030cad0f92f5c6d07eaa2f07"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/cell_line_library.json": {
+      "bytes": 148110,
+      "sha256": "541e18bbdbcff494206d20570f750e9721ab8c5e86516358cb42a2e10d7bad76"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/collision_proxies.json": {
+      "bytes": 28250,
+      "sha256": "84902cfb2d97b696a05ad89385cf0beebb886670fa101c3f59eaec5a036905ad"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/equilibrium_model.json": {
+      "bytes": 3501,
+      "sha256": "b74b4b3cb8249073dab354ab975608090249d013ae8655a95c3c57835c9d019e"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/geometry_manifest.json": {
+      "bytes": 109517,
+      "sha256": "8d0bc4a22f993f93c85e1459f2384db39f3294eaae146396896f1ca7ca593819"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/incubator_model.json": {
+      "bytes": 6929,
+      "sha256": "8cb622309eacf3623389cb1b46dd4e3837c2485d37e8e70841297d11705cdb5d"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/media_library.json": {
+      "bytes": 140064,
+      "sha256": "20b306d23281250f5c3bdd224f12b7f644707cd5ea207f311d269295489e3bd5"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/vessel_library.json": {
+      "bytes": 14776,
+      "sha256": "ab5a475fd28db8c756cb685c6a26e87b25f80b8bbba9efe70274ae57993cc3c2"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/asset.contract.json": {
+      "bytes": 612109,
+      "sha256": "f78f257e1f0bacd39081d40c93bdc325968455135c2fbbb759a001379c741159"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/collision_proxies.json": {
+      "bytes": 25232,
+      "sha256": "93cf6b9380c84f6f3effcfd1c563829c027702ec0b92959ceee8e5928c456097"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/geometry_manifest.json": {
+      "bytes": 115206,
+      "sha256": "f1c12b9e1eea9ee988b5bd25862ae4a35652040625f6405e4925914866f6a2dc"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/instrument_model.json": {
+      "bytes": 24237,
+      "sha256": "e3524b9ca08671d26c501536cf12cc30ac8592bebd7bb1e9a88952d9de5c704f"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/vapour_templates.json": {
+      "bytes": 197061,
+      "sha256": "92b558b1cbbd7d44ea58fd74afbe5d109749b80b05aff03ee95d3533ae01bcfd"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/asset.contract.json": {
+      "bytes": 575589,
+      "sha256": "8e2085f9b372a37035feefc4e1a6ef2cec9e9fab170c19c46e98dd82e33aa40d"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/collision_proxies.json": {
+      "bytes": 22165,
+      "sha256": "3235120dace84628c745f07d1be95555a86238fa998085bf93ba3b4be30d7c4e"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/geometry_manifest.json": {
+      "bytes": 96302,
+      "sha256": "044af7bb322b10cfcc5cd3dcc9e6375a308e52e29e33b7c3390e001b6edf858f"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/instrument_model.json": {
+      "bytes": 37882,
+      "sha256": "0da893ba70c36c4c91f3279968be1198c0bfafa39774495458f68428410fc403"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/load_templates.json": {
+      "bytes": 191578,
+      "sha256": "4173fce5f312e784cc8cc86176bd863f8bd529c3cb2a1838b69bbad31cee1904"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/asset.contract.json": {
+      "bytes": 654597,
+      "sha256": "53f934eecc09aee8b06d02350b17b2836d17da86af7a155577b33220bfe3ab4b"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/collision_proxies.json": {
+      "bytes": 17024,
+      "sha256": "5704f2097dd0521667ba9367c80c05d611285029eff5f7871a221c320a8f507f"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/geometry_manifest.json": {
+      "bytes": 89172,
+      "sha256": "8f808d277058d2454345468a22ba9ba8fb6fa3d1dcb307b130735c450119145b"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/instrument_model.json": {
+      "bytes": 28789,
+      "sha256": "2e694fe6ace3f1f14a0392857f6d489913d75062c6e067972a49259fee8c7160"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json": {
+      "bytes": 178812,
+      "sha256": "5d6206255f699229e2ec2f5d43133f9978b4c0dbb99c22bf937a6cdee0014c3f"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/asset.contract.json": {
+      "bytes": 722130,
+      "sha256": "46f327d3077699d5c5797e788216ea4e76a0450a69934be61333ff0a37ad1303"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/collision_proxies.json": {
+      "bytes": 31382,
+      "sha256": "ac324a7100999c343694c32502e3a90d4af683cbb057f9905b2affa6eca9321e"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/geometry_manifest.json": {
+      "bytes": 136633,
+      "sha256": "4523e67985fa00e0f3dac2280c6bbc53fefe21d875a1b2fa0dd543ed7d10e00e"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/instrument_model.json": {
+      "bytes": 17107,
+      "sha256": "205f4d1a37aadbdc29c28fbf18799d520221d44bef80ab8c1704125ef4d3b8eb"
+    },
+    "runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/syringe_templates.json": {
+      "bytes": 210558,
+      "sha256": "5d9b375029fec571b1d7afa3a98b7f39072252b0815c554e34129ae74957b8fa"
+    },
+    "runtime/vendor/external/ChemLab-Assets/catalog/catalog.csv": {
+      "bytes": 98434,
+      "sha256": "84c0993110ac18cb6b070197de3344802f26e9f9ad142bda2f6c5382df0f9b99"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/__init__.py": {
+      "bytes": 102,
+      "sha256": "0143ca66bfe451484cebd1fbdabf12de8b7499bf747257f5ae18f5672548d462"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/_annotations.py": {
+      "bytes": 56564,
+      "sha256": "0c88b91ac1914c6da176a202ae5cbd993fd86b51a4374369d1f7d6d22150ff4e"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/binder_fd056.py": {
+      "bytes": 90614,
+      "sha256": "0901bccc2f8fd62f6d536f4622054f01d4abc4ac374bfa7a2d68c2ad8e8bacf8"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/eppendorf_cellxpertc170i.py": {
+      "bytes": 169449,
+      "sha256": "d07dde318aab82d440156a957efbd70eaef095e5ad75b69195c4b3b8c492802f"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/esco_efa5uduvw.py": {
+      "bytes": 86906,
+      "sha256": "08cfda8c90fb0045e7542137adbb83cb378473ed4a2a67356db7ea1cbdffc622"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/ika_plate_rctdigital.py": {
+      "bytes": 104679,
+      "sha256": "7c38cf36e50d1e78db2d14a6810b66db4c77120df6b2e3ba7a1fb29c9da938f0"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/newera_ne1000.py": {
+      "bytes": 126314,
+      "sha256": "bd7589c84ca61fad32ee560c330dd3a00ae17c5e21510349d98af913767a94ff"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/peak_precisionhydrogen.py": {
+      "bytes": 71682,
+      "sha256": "dd0e22f988f7ce925c558ba5348bf83bf9302fda20e8f834c0d4172958078ac2"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/vaisala_dmt152.py": {
+      "bytes": 92717,
+      "sha256": "a96545ef62dea72bdeb3d79e3959247ed5af5ee11cb3d0a7c82cf6883d28b943"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/basic40_runtime.py": {
+      "bytes": 54856,
+      "sha256": "91c29abe3be38dd01a76d3d09da07ffb8d95ec34ec5a0c80c7ddc322e10322b5"
+    },
+    "runtime/vendor/external/ChemLab-Assets/scripts/basic40_runtime_thermal.py": {
+      "bytes": 313460,
+      "sha256": "b7ab66f25f2b98d37518dfaa79d75e8049a953c22e4332a5ecec4a7824f62192"
+    },
+    "runtime/vendor/instrument_bench/__init__.py": {
+      "bytes": 101,
+      "sha256": "3fdbb422be8691e983671805a5b7c061b96a7f429f8572d42af696f443a462a6"
+    },
+    "runtime/vendor/instrument_bench/adapters.py": {
+      "bytes": 8803,
+      "sha256": "c6f29a6fce66f77e1b9b15fdbce9503487148626bfc5c0c163a285e6aedf57e3"
+    },
+    "runtime/vendor/instrument_bench/generator.py": {
+      "bytes": 29164,
+      "sha256": "5a28c16f3544144915150a5ce1d0d0ab85a472244f02bfa2d5caecfaf6c58ba9"
+    },
+    "runtime/vendor/instrument_bench/io.py": {
+      "bytes": 7162,
+      "sha256": "52088d4c605b542ebecf0cc76d5953f41c00aebd93d657054fd6b07cd1911150"
+    },
+    "runtime/vendor/instrument_bench/local_llm.py": {
+      "bytes": 12094,
+      "sha256": "a099041922c00882ca69aaa2549e4bafe42aa859ce4fa11c01228c2a5e8eacc1"
+    },
+    "runtime/vendor/instrument_bench/scenarios.py": {
+      "bytes": 40050,
+      "sha256": "ffc3a2d374570710fa0c52e1241a5a38b8be4e2dbda758a531b56acad614127f"
+    },
+    "runtime/vendor/instrument_bench/schema.py": {
+      "bytes": 2666,
+      "sha256": "f800be8278349029c6a6eb7e768dad065e6669b2403b531fcbec0c7d778706cf"
+    },
+    "runtime/vendor/stepwise_bench/__init__.py": {
+      "bytes": 104,
+      "sha256": "d4cdb893592aa391d136e6ecadda64ed7c274b450f179984fe6181ca09d5979d"
+    },
+    "runtime/vendor/stepwise_bench/__main__.py": {
+      "bytes": 19373,
+      "sha256": "89262ecf13733c6eea7449450056e91cfbff257df991f35b289bda1d173eed04"
+    },
+    "runtime/vendor/stepwise_bench/engine.py": {
+      "bytes": 23808,
+      "sha256": "e9e3e5f5ef172f98dc720f4edee7ae08da3b63e32d6289ade0d847b2b7bb57e3"
+    },
+    "runtime/vendor/stepwise_bench/policies.py": {
+      "bytes": 10174,
+      "sha256": "987cc987b059e19c8cde00d34bb31c1e9d77dd228894d0b1de2e879c9870fd20"
+    },
+    "runtime/vendor/stepwise_bench/tasks.py": {
+      "bytes": 18792,
+      "sha256": "49f794b6073a5ee1b9ebc26d546eefd0fe3e891b16b7d71eb98e6974a3884f97"
+    },
+    "runtime/vendor/stepwise_choice/__init__.py": {
+      "bytes": 96,
+      "sha256": "02c0c2a51e1066d935eb160e5269661862600e8e990c3507bd17f9df900587d0"
+    },
+    "runtime/vendor/stepwise_choice/durable.py": {
+      "bytes": 813,
+      "sha256": "c2d1b3da47ef606f2979886b109c3ce3f168f8998cc4caab6a8102680b896865"
+    },
+    "runtime/vendor/stepwise_choice/engine.py": {
+      "bytes": 7013,
+      "sha256": "aa128db21df960ed72a857133f54e299ffb534d796c6be387974c23cfc8864ea"
+    },
+    "runtime/vendor/stepwise_choice/menus.py": {
+      "bytes": 17389,
+      "sha256": "d85a412004d37e4a144742463e3f5f5387eaa31b7741732181e4bae1293c9fb6"
+    },
+    "runtime/vendor/stepwise_choice/policies.py": {
+      "bytes": 41356,
+      "sha256": "b438e0df62fca2f0e5e5c3aea9be46b2fee56cd1bf4ad24507c9e6fffd1d0051"
+    },
+    "runtime/vendor/stepwise_expanded/__init__.py": {
+      "bytes": 106,
+      "sha256": "5373f460a1621a80b5869f05665e0b08fc1d22c2c13a281f038a13d713f09da9"
+    },
+    "runtime/vendor/stepwise_expanded/engine.py": {
+      "bytes": 10217,
+      "sha256": "6dd9d68a5261a4c518a618afd130dbaf3d10fb17bf994469641f7cb1d99f584e"
+    },
+    "runtime/vendor/stepwise_expanded/new_workflows.py": {
+      "bytes": 29322,
+      "sha256": "7483e5be522e0906db039a4c7a44fd53821cfc7fc3856eae0cdd7ea3ddefce54"
+    },
+    "runtime/vendor/stepwise_expanded/tasks.py": {
+      "bytes": 2938,
+      "sha256": "ac720bfd5ec587620938e067184b9fd8ad599f55e26cc10cac1d092df5897620"
+    },
+    "runtime/vendor/stepwise_expanded/variants.py": {
+      "bytes": 28182,
+      "sha256": "2151e5f69a5a228e490e1dbec44f08bf6805fbaca8a4b9e523949ae5f6e84554"
+    }
+  },
+  "future_split_policy": "Keep all parameter variants and matched conditions of each workflow template together using expansion.split_group.",
+  "instrument_counts": {
+    "binder_fd056": 18,
+    "eppendorf_cellxpertc170i": 6,
+    "esco_efa5uduvw": 18,
+    "ika_plate_rctdigital": 18,
+    "nabertherm_l9": 18,
+    "newera_ne1000": 24,
+    "peak_precisionhydrogen": 6,
+    "vaisala_dmt152": 12
+  },
+  "instruments": 8,
+  "matched_pairs": 27,
+  "original_native_validation_job": "4632390",
+  "protocol": "instrument-sequential-public-choices-v1",
+  "provenance": "Authored synthetic workflows and parameter variations using ChemLab public instrument contracts and executable native runtimes. These are not pre-existing ChemLab benchmark questions or recorded laboratory incidents.",
+  "public_commands": 146,
+  "public_contracts_file": "public-contracts.json",
+  "runtime_provenance": "runtime/provenance.json",
+  "runtime_sources": {
+    "sequential_120/runtime/vendor/environment/chemlab-source.json": {
+      "bytes": 351,
+      "modified": false,
+      "sha256": "c373b3a4c52e562763eec983342d69b47592f5a5e84d679b286442cf1dfcd0c2",
+      "source_path": "environment/chemlab-source.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/CITATION.cff": {
+      "bytes": 1319,
+      "modified": false,
+      "sha256": "a13d89173f2d10525f9ac2029e84294eb76df70c35d4038120a9ea71c525f2cf",
+      "source_path": "external/ChemLab-Assets/CITATION.cff"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSE": {
+      "bytes": 1370,
+      "modified": false,
+      "sha256": "f9db67b0ff46c0230cda5a1a8ab6238cf3efb3bfbae9c5d1de81def2b123f89b",
+      "source_path": "external/ChemLab-Assets/LICENSE"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSE-ASSETS.md": {
+      "bytes": 1157,
+      "modified": false,
+      "sha256": "b9c2481ed61d7d2694d52978d7477db2362a33b6485248bcffdbe1993d5c9fa5",
+      "source_path": "external/ChemLab-Assets/LICENSE-ASSETS.md"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/Biopython.rst": {
+      "bytes": 3267,
+      "modified": false,
+      "sha256": "d4bbb0c4e5345e6f2508c3b93fb247fcb2db95783fb8a584c23cd88e3c03df6c",
+      "source_path": "external/ChemLab-Assets/LICENSES/Biopython.rst"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/COGNI-CC0-1.0.txt": {
+      "bytes": 7048,
+      "modified": false,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "source_path": "external/ChemLab-Assets/LICENSES/COGNI-CC0-1.0.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/CoolProp-MIT.txt": {
+      "bytes": 1103,
+      "modified": false,
+      "sha256": "9bf835333ef602af4cb19338b9f9d43671e174fa029b00280e9bdba6ea4719b2",
+      "source_path": "external/ChemLab-Assets/LICENSES/CoolProp-MIT.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/KiMoPack-GPL-3.0.txt": {
+      "bytes": 35149,
+      "modified": false,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "source_path": "external/ChemLab-Assets/LICENSES/KiMoPack-GPL-3.0.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/OPERA-MIT.txt": {
+      "bytes": 1066,
+      "modified": false,
+      "sha256": "c37f7781c055ba891fadbfedc6fd8b71f74cbeb21e747ceed21c5a41407511fd",
+      "source_path": "external/ChemLab-Assets/LICENSES/OPERA-MIT.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/XrayDB.txt": {
+      "bytes": 1128,
+      "modified": false,
+      "sha256": "b8bbda80483f200cd1d530a3a23e9c51481026904cc8f10453e78bc99d30728c",
+      "source_path": "external/ChemLab-Assets/LICENSES/XrayDB.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/chemicals-MIT.txt": {
+      "bytes": 1127,
+      "modified": false,
+      "sha256": "dc8d90b7aed69e19ad9ca2528ee00c02be22e1d063b2b00db7c35e0b99854edb",
+      "source_path": "external/ChemLab-Assets/LICENSES/chemicals-MIT.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/openpoly-MIT.txt": {
+      "bytes": 1069,
+      "modified": false,
+      "sha256": "29594199ad4920fcd9d41f0d5ca2def6fcc302d3363cca6767f973f52666a670",
+      "source_path": "external/ChemLab-Assets/LICENSES/openpoly-MIT.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/srsinst-rga-MIT.txt": {
+      "bytes": 1092,
+      "modified": false,
+      "sha256": "9a4c619f204c6d509206eab7eaa61ba6fa2c3a83b3fee5c2cb23927992d8a1bc",
+      "source_path": "external/ChemLab-Assets/LICENSES/srsinst-rga-MIT.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/LICENSES/teMatDb-MIT.txt": {
+      "bytes": 1033,
+      "modified": false,
+      "sha256": "c48b8629b48a8e6001a66da53cbb4229ef5ccdb03b3a5b82ccd9803a09851eb3",
+      "source_path": "external/ChemLab-Assets/LICENSES/teMatDb-MIT.txt"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/NOTICE.md": {
+      "bytes": 116541,
+      "modified": false,
+      "sha256": "f06d533d667f9a802d110e5027146ac8c8d0010b413b2b9ea0ec7f27cadda89b",
+      "source_path": "external/ChemLab-Assets/NOTICE.md"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/asset.contract.json": {
+      "bytes": 413224,
+      "modified": false,
+      "sha256": "8c3f320402cbc11513a00ff1244758e0557fba4a5e8338a32821a1c0958975d0",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/asset.contract.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/collision_proxies.json": {
+      "bytes": 11915,
+      "modified": false,
+      "sha256": "055cf7cd3b946f11bc720eb8207acf08caac93559c81c2919ad9b7f0fb649fc4",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/collision_proxies.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/geometry_manifest.json": {
+      "bytes": 62087,
+      "modified": false,
+      "sha256": "bfd5cf27ab1b24b938c51017153a24a8803796e56c844246f03bd98ef3751b8c",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/geometry_manifest.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/instrument_model.json": {
+      "bytes": 13312,
+      "modified": false,
+      "sha256": "8e7af1da0fa71f41b3e5ae2144887e67699e48b88541aa15a0b2ba44fc1da555",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/peak_precisionhydrogen/instrument_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/asset.contract.json": {
+      "bytes": 363972,
+      "modified": false,
+      "sha256": "23cfffce336ddbb0be1a0ce41b078a255d8b85c5063be0bb6226a04d189963cc",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/asset.contract.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/collision_proxies.json": {
+      "bytes": 5954,
+      "modified": false,
+      "sha256": "83d8987dc7d1646f253dbcc634a64bb099607ea4635753c3f5f19126f94bb2ea",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/collision_proxies.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/gas_library.json": {
+      "bytes": 55779,
+      "modified": false,
+      "sha256": "cf3b411c29b9c2cc1048441716baf83e14bf202792efe59e858f426c5461e0b9",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/gas_library.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/geometry_manifest.json": {
+      "bytes": 34726,
+      "modified": false,
+      "sha256": "62f7a118679c379b82890fa682f5edf0770ac6d0a6175c5ae685648b7dd51fca",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/geometry_manifest.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/humidity_formulation.json": {
+      "bytes": 15941,
+      "modified": false,
+      "sha256": "73080b88bfb19e817326e9cb18f11f6c69855476c08e6180260003f41572a0e1",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/humidity_formulation.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/instrument_model.json": {
+      "bytes": 20222,
+      "modified": false,
+      "sha256": "24f3c4ae87654107e2a48bb487487d9dab10481ab1ec4e6ef6e6b3967c71aec3",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/instrument_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/tubing_library.json": {
+      "bytes": 8186,
+      "modified": false,
+      "sha256": "82acc753c18093ec91bbdc2830f62ddade7b50588b2496c3a1f66f092df01237",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t2_vacuum/vaisala_dmt152/tubing_library.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/asset.contract.json": {
+      "bytes": 865790,
+      "modified": false,
+      "sha256": "29a383d7c1c228ad791b4e1ff3c5619f56c1b166030cad0f92f5c6d07eaa2f07",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/asset.contract.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/cell_line_library.json": {
+      "bytes": 148110,
+      "modified": false,
+      "sha256": "541e18bbdbcff494206d20570f750e9721ab8c5e86516358cb42a2e10d7bad76",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/cell_line_library.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/collision_proxies.json": {
+      "bytes": 28250,
+      "modified": false,
+      "sha256": "84902cfb2d97b696a05ad89385cf0beebb886670fa101c3f59eaec5a036905ad",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/collision_proxies.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/equilibrium_model.json": {
+      "bytes": 3501,
+      "modified": false,
+      "sha256": "b74b4b3cb8249073dab354ab975608090249d013ae8655a95c3c57835c9d019e",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/equilibrium_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/geometry_manifest.json": {
+      "bytes": 109517,
+      "modified": false,
+      "sha256": "8d0bc4a22f993f93c85e1459f2384db39f3294eaae146396896f1ca7ca593819",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/geometry_manifest.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/incubator_model.json": {
+      "bytes": 6929,
+      "modified": false,
+      "sha256": "8cb622309eacf3623389cb1b46dd4e3837c2485d37e8e70841297d11705cdb5d",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/incubator_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/media_library.json": {
+      "bytes": 140064,
+      "modified": false,
+      "sha256": "20b306d23281250f5c3bdd224f12b7f644707cd5ea207f311d269295489e3bd5",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/media_library.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/vessel_library.json": {
+      "bytes": 14776,
+      "modified": false,
+      "sha256": "ab5a475fd28db8c756cb685c6a26e87b25f80b8bbba9efe70274ae57993cc3c2",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch04/t4_measure/eppendorf_cellxpertc170i/vessel_library.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/asset.contract.json": {
+      "bytes": 612109,
+      "modified": false,
+      "sha256": "f78f257e1f0bacd39081d40c93bdc325968455135c2fbbb759a001379c741159",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/asset.contract.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/collision_proxies.json": {
+      "bytes": 25232,
+      "modified": false,
+      "sha256": "93cf6b9380c84f6f3effcfd1c563829c027702ec0b92959ceee8e5928c456097",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/collision_proxies.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/geometry_manifest.json": {
+      "bytes": 115206,
+      "modified": false,
+      "sha256": "f1c12b9e1eea9ee988b5bd25862ae4a35652040625f6405e4925914866f6a2dc",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/geometry_manifest.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/instrument_model.json": {
+      "bytes": 24237,
+      "modified": false,
+      "sha256": "e3524b9ca08671d26c501536cf12cc30ac8592bebd7bb1e9a88952d9de5c704f",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/instrument_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/vapour_templates.json": {
+      "bytes": 197061,
+      "modified": false,
+      "sha256": "92b558b1cbbd7d44ea58fd74afbe5d109749b80b05aff03ee95d3533ae01bcfd",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t2_vacuum/esco_efa5uduvw/vapour_templates.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/asset.contract.json": {
+      "bytes": 575589,
+      "modified": false,
+      "sha256": "8e2085f9b372a37035feefc4e1a6ef2cec9e9fab170c19c46e98dd82e33aa40d",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/asset.contract.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/collision_proxies.json": {
+      "bytes": 22165,
+      "modified": false,
+      "sha256": "3235120dace84628c745f07d1be95555a86238fa998085bf93ba3b4be30d7c4e",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/collision_proxies.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/geometry_manifest.json": {
+      "bytes": 96302,
+      "modified": false,
+      "sha256": "044af7bb322b10cfcc5cd3dcc9e6375a308e52e29e33b7c3390e001b6edf858f",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/geometry_manifest.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/instrument_model.json": {
+      "bytes": 37882,
+      "modified": false,
+      "sha256": "0da893ba70c36c4c91f3279968be1198c0bfafa39774495458f68428410fc403",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/instrument_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/load_templates.json": {
+      "bytes": 191578,
+      "modified": false,
+      "sha256": "4173fce5f312e784cc8cc86176bd863f8bd529c3cb2a1838b69bbad31cee1904",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/binder_fd056/load_templates.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/asset.contract.json": {
+      "bytes": 654597,
+      "modified": false,
+      "sha256": "53f934eecc09aee8b06d02350b17b2836d17da86af7a155577b33220bfe3ab4b",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/asset.contract.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/collision_proxies.json": {
+      "bytes": 17024,
+      "modified": false,
+      "sha256": "5704f2097dd0521667ba9367c80c05d611285029eff5f7871a221c320a8f507f",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/collision_proxies.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/geometry_manifest.json": {
+      "bytes": 89172,
+      "modified": false,
+      "sha256": "8f808d277058d2454345468a22ba9ba8fb6fa3d1dcb307b130735c450119145b",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/geometry_manifest.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/instrument_model.json": {
+      "bytes": 28789,
+      "modified": false,
+      "sha256": "2e694fe6ace3f1f14a0392857f6d489913d75062c6e067972a49259fee8c7160",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/instrument_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json": {
+      "bytes": 178812,
+      "modified": false,
+      "sha256": "5d6206255f699229e2ec2f5d43133f9978b4c0dbb99c22bf937a6cdee0014c3f",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t4_measure/ika_plate_rctdigital/liquid_templates.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/asset.contract.json": {
+      "bytes": 722130,
+      "modified": false,
+      "sha256": "46f327d3077699d5c5797e788216ea4e76a0450a69934be61333ff0a37ad1303",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/asset.contract.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/collision_proxies.json": {
+      "bytes": 31382,
+      "modified": false,
+      "sha256": "ac324a7100999c343694c32502e3a90d4af683cbb057f9905b2affa6eca9321e",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/collision_proxies.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/geometry_manifest.json": {
+      "bytes": 136633,
+      "modified": false,
+      "sha256": "4523e67985fa00e0f3dac2280c6bbc53fefe21d875a1b2fa0dd543ed7d10e00e",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/geometry_manifest.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/instrument_model.json": {
+      "bytes": 17107,
+      "modified": false,
+      "sha256": "205f4d1a37aadbdc29c28fbf18799d520221d44bef80ab8c1704125ef4d3b8eb",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/instrument_model.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/syringe_templates.json": {
+      "bytes": 210558,
+      "modified": false,
+      "sha256": "5d9b375029fec571b1d7afa3a98b7f39072252b0815c554e34129ae74957b8fa",
+      "source_path": "external/ChemLab-Assets/assets/expansion_batch05/t5_automation/newera_ne1000/syringe_templates.json"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/catalog/catalog.csv": {
+      "bytes": 98434,
+      "modified": false,
+      "sha256": "84c0993110ac18cb6b070197de3344802f26e9f9ad142bda2f6c5382df0f9b99",
+      "source_path": "external/ChemLab-Assets/catalog/catalog.csv"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/__init__.py": {
+      "bytes": 102,
+      "modified": false,
+      "sha256": "0143ca66bfe451484cebd1fbdabf12de8b7499bf747257f5ae18f5672548d462",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/__init__.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/_annotations.py": {
+      "bytes": 56564,
+      "modified": false,
+      "sha256": "0c88b91ac1914c6da176a202ae5cbd993fd86b51a4374369d1f7d6d22150ff4e",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/_annotations.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/binder_fd056.py": {
+      "bytes": 90614,
+      "modified": false,
+      "sha256": "0901bccc2f8fd62f6d536f4622054f01d4abc4ac374bfa7a2d68c2ad8e8bacf8",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/binder_fd056.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/eppendorf_cellxpertc170i.py": {
+      "bytes": 169449,
+      "modified": false,
+      "sha256": "d07dde318aab82d440156a957efbd70eaef095e5ad75b69195c4b3b8c492802f",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/eppendorf_cellxpertc170i.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/esco_efa5uduvw.py": {
+      "bytes": 86906,
+      "modified": false,
+      "sha256": "08cfda8c90fb0045e7542137adbb83cb378473ed4a2a67356db7ea1cbdffc622",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/esco_efa5uduvw.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/ika_plate_rctdigital.py": {
+      "bytes": 104679,
+      "modified": false,
+      "sha256": "7c38cf36e50d1e78db2d14a6810b66db4c77120df6b2e3ba7a1fb29c9da938f0",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/ika_plate_rctdigital.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/newera_ne1000.py": {
+      "bytes": 126314,
+      "modified": false,
+      "sha256": "bd7589c84ca61fad32ee560c330dd3a00ae17c5e21510349d98af913767a94ff",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/newera_ne1000.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/peak_precisionhydrogen.py": {
+      "bytes": 71682,
+      "modified": false,
+      "sha256": "dd0e22f988f7ce925c558ba5348bf83bf9302fda20e8f834c0d4172958078ac2",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/peak_precisionhydrogen.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/asset_runtime/vaisala_dmt152.py": {
+      "bytes": 92717,
+      "modified": false,
+      "sha256": "a96545ef62dea72bdeb3d79e3959247ed5af5ee11cb3d0a7c82cf6883d28b943",
+      "source_path": "external/ChemLab-Assets/scripts/asset_runtime/vaisala_dmt152.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/basic40_runtime.py": {
+      "bytes": 54856,
+      "modified": false,
+      "sha256": "91c29abe3be38dd01a76d3d09da07ffb8d95ec34ec5a0c80c7ddc322e10322b5",
+      "source_path": "external/ChemLab-Assets/scripts/basic40_runtime.py"
+    },
+    "sequential_120/runtime/vendor/external/ChemLab-Assets/scripts/basic40_runtime_thermal.py": {
+      "bytes": 313460,
+      "modified": false,
+      "sha256": "b7ab66f25f2b98d37518dfaa79d75e8049a953c22e4332a5ecec4a7824f62192",
+      "source_path": "external/ChemLab-Assets/scripts/basic40_runtime_thermal.py"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/__init__.py": {
+      "bytes": 101,
+      "modified": false,
+      "sha256": "3fdbb422be8691e983671805a5b7c061b96a7f429f8572d42af696f443a462a6",
+      "source_path": "instrument_bench/__init__.py"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/adapters.py": {
+      "bytes": 8803,
+      "modified": false,
+      "sha256": "c6f29a6fce66f77e1b9b15fdbce9503487148626bfc5c0c163a285e6aedf57e3",
+      "source_path": "instrument_bench/adapters.py"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/generator.py": {
+      "bytes": 29164,
+      "modified": false,
+      "sha256": "5a28c16f3544144915150a5ce1d0d0ab85a472244f02bfa2d5caecfaf6c58ba9",
+      "source_path": "instrument_bench/generator.py"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/io.py": {
+      "bytes": 7162,
+      "modified": false,
+      "sha256": "52088d4c605b542ebecf0cc76d5953f41c00aebd93d657054fd6b07cd1911150",
+      "source_path": "instrument_bench/io.py"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/local_llm.py": {
+      "bytes": 12094,
+      "modified": false,
+      "sha256": "a099041922c00882ca69aaa2549e4bafe42aa859ce4fa11c01228c2a5e8eacc1",
+      "source_path": "instrument_bench/local_llm.py"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/scenarios.py": {
+      "bytes": 40050,
+      "modified": false,
+      "sha256": "ffc3a2d374570710fa0c52e1241a5a38b8be4e2dbda758a531b56acad614127f",
+      "source_path": "instrument_bench/scenarios.py"
+    },
+    "sequential_120/runtime/vendor/instrument_bench/schema.py": {
+      "bytes": 2666,
+      "modified": false,
+      "sha256": "f800be8278349029c6a6eb7e768dad065e6669b2403b531fcbec0c7d778706cf",
+      "source_path": "instrument_bench/schema.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/__init__.py": {
+      "bytes": 104,
+      "modified": false,
+      "sha256": "d4cdb893592aa391d136e6ecadda64ed7c274b450f179984fe6181ca09d5979d",
+      "source_path": "stepwise_bench/__init__.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/__main__.py": {
+      "bytes": 19373,
+      "modified": false,
+      "sha256": "89262ecf13733c6eea7449450056e91cfbff257df991f35b289bda1d173eed04",
+      "source_path": "stepwise_bench/__main__.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/engine.py": {
+      "bytes": 23808,
+      "modified": false,
+      "sha256": "e9e3e5f5ef172f98dc720f4edee7ae08da3b63e32d6289ade0d847b2b7bb57e3",
+      "source_path": "stepwise_bench/engine.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/policies.py": {
+      "bytes": 10174,
+      "modified": false,
+      "sha256": "987cc987b059e19c8cde00d34bb31c1e9d77dd228894d0b1de2e879c9870fd20",
+      "source_path": "stepwise_bench/policies.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_bench/tasks.py": {
+      "bytes": 18792,
+      "modified": false,
+      "sha256": "49f794b6073a5ee1b9ebc26d546eefd0fe3e891b16b7d71eb98e6974a3884f97",
+      "source_path": "stepwise_bench/tasks.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/__init__.py": {
+      "bytes": 96,
+      "modified": false,
+      "sha256": "02c0c2a51e1066d935eb160e5269661862600e8e990c3507bd17f9df900587d0",
+      "source_path": "stepwise_choice/__init__.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/durable.py": {
+      "bytes": 813,
+      "modified": false,
+      "sha256": "c2d1b3da47ef606f2979886b109c3ce3f168f8998cc4caab6a8102680b896865",
+      "source_path": "stepwise_choice/durable.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/engine.py": {
+      "bytes": 7013,
+      "modified": false,
+      "sha256": "aa128db21df960ed72a857133f54e299ffb534d796c6be387974c23cfc8864ea",
+      "source_path": "stepwise_choice/engine.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/menus.py": {
+      "bytes": 17389,
+      "modified": false,
+      "sha256": "d85a412004d37e4a144742463e3f5f5387eaa31b7741732181e4bae1293c9fb6",
+      "source_path": "stepwise_choice/menus.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_choice/policies.py": {
+      "bytes": 41356,
+      "modified": false,
+      "sha256": "b438e0df62fca2f0e5e5c3aea9be46b2fee56cd1bf4ad24507c9e6fffd1d0051",
+      "source_path": "stepwise_choice/policies.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/__init__.py": {
+      "bytes": 106,
+      "modified": false,
+      "sha256": "5373f460a1621a80b5869f05665e0b08fc1d22c2c13a281f038a13d713f09da9",
+      "source_path": "stepwise_expanded/__init__.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/engine.py": {
+      "bytes": 10217,
+      "modified": false,
+      "sha256": "6dd9d68a5261a4c518a618afd130dbaf3d10fb17bf994469641f7cb1d99f584e",
+      "source_path": "stepwise_expanded/engine.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/new_workflows.py": {
+      "bytes": 29322,
+      "modified": false,
+      "sha256": "7483e5be522e0906db039a4c7a44fd53821cfc7fc3856eae0cdd7ea3ddefce54",
+      "source_path": "stepwise_expanded/new_workflows.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/tasks.py": {
+      "bytes": 2938,
+      "modified": false,
+      "sha256": "ac720bfd5ec587620938e067184b9fd8ad599f55e26cc10cac1d092df5897620",
+      "source_path": "stepwise_expanded/tasks.py"
+    },
+    "sequential_120/runtime/vendor/stepwise_expanded/variants.py": {
+      "bytes": 28182,
+      "modified": false,
+      "sha256": "2151e5f69a5a228e490e1dbec44f08bf6805fbaca8a4b9e523949ae5f6e84554",
+      "source_path": "stepwise_expanded/variants.py"
+    }
+  },
+  "schema_validated_argument_presets": 1954,
+  "source_validation": {
+    "context_limit_tokens": 30000,
+    "max_tested_context_tokens": 26621,
+    "native_diagnostic_episodes_rerun": 0,
+    "native_diagnostic_episodes_reused": 480,
+    "reference_trajectories": 120,
+    "tests_passed": 60
+  },
+  "source_validation_job": "4632791",
+  "train_test_split_assigned": false,
+  "workflow_counts": {
+    "dewpoint_offline_calibration": 6,
+    "dewpoint_startup_measurement_diagnosis": 6,
+    "furnace_door_pause_recovery": 6,
+    "furnace_program": 12,
+    "hood_illumination": 12,
+    "hood_sash_access_resecure": 6,
+    "hotplate_motor_diagnostic": 6,
+    "hotplate_unlock_stirring": 12,
+    "hydrogen_startup_diagnosis": 6,
+    "incubator_sensor_cover_access": 6,
+    "oven_standby_restoration": 6,
+    "oven_usb_recording": 12,
+    "pump_delivery": 12,
+    "pump_timed_monitoring": 12
+  },
+  "workflow_templates": 14
+}

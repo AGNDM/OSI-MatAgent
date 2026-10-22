@@ -1,0 +1,2179 @@
+{
+  "asset_type_id": "instrument.peak_precisionhydrogen",
+  "catalog_id": "CHEM-196",
+  "name_zh": "实验室氢气发生器PEAK Precision Hydrogen Trace 500（PEM电解，存档型号）",
+  "created_at": "2026-10-02T22:05:57Z",
+  "builder": "outputs/expansion_batch04/t2_vacuum/peak_precisionhydrogen/build_geometry.py",
+  "builder_backend": "trimesh detailed Precision Hydrogen Trace 500 (lofted white cabinet with rounded front edges and seams, green illuminated honeycomb lattice slots with the two solid hexagons, the tank window, alarm frame and status icons, touch screen with UI artwork, readout area and the START / STOP key, rear ports, mains inlet and switch, fan grille, hidden PEM cell / PSA dryers / tank / pump / de-ionizer; textures in GLB and OBJ/MTL, primitive collisions); Blender pass adds model.blend and previews",
+  "coordinate_system": {
+    "unit": "m",
+    "angle_unit": "rad",
+    "up_axis": "+Z",
+    "back_axis": "+Y",
+    "root_origin_zh": "发生器占地380×540 mm中心在台面的投影（z=0为台面；+X向右、+Y朝后；操作者面对−Y前面板）",
+    "handedness": "right",
+    "glb_coordinate_conversion_zh": "GLB 按本项目 +Z 向上约定导出，无 Y-up 转换；节点层级与 URDF link 一一对应。"
+  },
+  "overall_dimensions_m": [
+    0.3813999891281128,
+    0.5655999997758308,
+    0.4066999852657318
+  ],
+  "total_mass_kg": 31.5,
+  "mass_evidence": "manufacturer_datasheet",
+  "component_mass_evidence": "documented_total_split",
+  "sources": [
+    {
+      "source_id": "user_workbook",
+      "type": "publication",
+      "reference": "大学化学仪器资产调研_200种.xlsx",
+      "locator": "仪器总表第201行；参数与来源第201行；设置与输入输出第201行 CHEM-196",
+      "notes_zh": "用户清单；型号（PEAK Precision Hydrogen Trace 500，存档型号）与规格为硬要求",
+      "sha256": null
+    },
+    {
+      "source_id": "manufacturer_datasheet_2023",
+      "type": "web",
+      "reference": "PEAK Scientific Precision Hydrogen Trace 500 datasheet (18/05/2023, archived; part 64-0500)",
+      "locator": "source_cache/trace500_datasheet_2023.pdf（Technical Specifications、Key Features）",
+      "url": "https://www.peakscientific.com/media/oxrn11vh/precision-hydrogen-trace-500-hydrogen-generator-20231805-1737-en-gb.pdf",
+      "accessed": "2026-10-02",
+      "notes_zh": "调研表主来源：500 sccm（273.15 K、1.01 bar）、6.9 bar、99.99999 %（按氧，NPL验证）、0.4–1.2 L/天、787 W、ASTM II进水、406×380×540 mm、31.5 kg、PEM与再生PSA、自动加水泵、内部泄漏检测",
+      "sha256": "2db3535518941fead32b981ac0e7399d01a58978394f3060d0305e5b23b0a603"
+    },
+    {
+      "source_id": "manufacturer_datasheet_2019",
+      "type": "web",
+      "reference": "PEAK Scientific Precision Hydrogen Trace data sheet RSID 383 Rev 14 (12/11/2019)",
+      "locator": "source_cache/trace_datasheet_2019.pdf（Technical Specifications、外形图）",
+      "url": "https://gcms.labrulez.com/labrulez-bucket-strapi-h3hsga3/application::paper.paper/RS383_Precision-Hydrogen-Trace-Data-Sheet-RSID-383-Rev-14-EN-LR.pdf",
+      "accessed": "2026-10-02",
+      "notes_zh": "Trace 250/500/1200：露点−75 °C、工作温度10–35 °C、外形图（深540、宽380、高405 mm）、29 kg",
+      "sha256": "9f2879374e269488f20e71ca9cd894e210b895a9812dc289af9fc1731ff86c0d"
+    },
+    {
+      "source_id": "manufacturer_installation_guide",
+      "type": "web",
+      "reference": "PEAK Scientific Precision Hydrogen (all B&W screen models) Installation Guide Rev 5 (28/03/18)",
+      "locator": "source_cache/installation_guide.pdf（背面接口、水瓶、触摸屏START/STOP、MENU、设定压力、自检与泄漏测试、24 h运行）",
+      "url": "https://icpms.labrulez.com/labrulez-bucket-strapi-h3hsga3/application::paper.paper/RS1077_Precision-Hydrogen-Installation-Guide-Rev-5-PN-IG-PREC-H2.pdf",
+      "accessed": "2026-10-02",
+      "notes_zh": "操作界面与安装",
+      "sha256": "d4dc94e161201ef7f8152699f8ebea21acae3dbec2783a18ba3446faad76f10e"
+    },
+    {
+      "source_id": "same_series_sl_user_manual",
+      "type": "web",
+      "reference": "PEAK Scientific Precision Hydrogen SL User Manual Rev 1 (same series, smaller model)",
+      "locator": "source_cache/sl_user_manual.pdf（工作原理、安全功能、自动加水、开机顺序与泄漏测试、故障排除）",
+      "url": "https://icpms.cz/labrulez-bucket-strapi-h3hsga3/application::paper.paper/RS3516_Precision-Hydrogen-SL-User-Manual-Rev-1-RSID-3516-EN.pdf",
+      "accessed": "2026-10-02",
+      "notes_zh": "同系列较小型号：PEM反应、按需产氢、储氢175 mL/7.6 bar、安全功能、水位传感器与加水、约6 min泄漏测试、去压（排空储氢）、去离子柱12个月",
+      "sha256": "3a7b2d7e23ed96d682c98e1139acf0aba65f6400adeea3dd1b39f5e2d972da01"
+    },
+    {
+      "source_id": "manufacturer_photo",
+      "type": "web",
+      "reference": "Precision Hydrogen Trace 500 product photograph (embedded in the 2023 datasheet)",
+      "locator": "source_cache/photo_trace500.png",
+      "url": "https://www.peakscientific.com/media/oxrn11vh/precision-hydrogen-trace-500-hydrogen-generator-20231805-1737-en-gb.pdf",
+      "accessed": "2026-10-02",
+      "notes_zh": "外观：白色立方机箱、前面绿色发光六边形图案与水箱视窗、右上触摸屏、右下标志",
+      "sha256": "bb1519de85bdfcb6afa911022e8165940035f6a57c9fb107658c0e4020b38c86"
+    }
+  ],
+  "components": [
+    {
+      "id": "generator_body",
+      "name_zh": "机箱",
+      "function_zh": "机箱：白色粉末涂层外壳，内装PEM电解池、PSA干燥塔、水箱、加水泵、去离子柱与电子学（运行层state、truth.*）",
+      "physical_meaning_zh": "承载结构与根构件：机箱（外形为厂家尺寸）；装配原点 (0, 0, 0) m 相对 root，碰撞代理为0.37×0.53×0.406 m 长方体；外形为厂家数据，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：白色粉末涂层机箱。",
+      "parent": "root",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "manufacturer_datasheet",
+      "geometry_note_zh": "外形尺寸为厂家数据。",
+      "objects": [
+        "peak_precisionhydrogen__generator_body"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.37,
+            0.53,
+            0.406
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.203
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 19.269,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.203
+      ],
+      "simulation_inertia_kg_m2": [
+        0.732922107,
+        0.49655570699999996,
+        0.700107
+      ],
+      "material": {
+        "base_color": [
+          0.84,
+          0.85,
+          0.83
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/powder.png"
+      },
+      "appearance_zh": "白色粉末涂层机箱"
+    },
+    {
+      "id": "front_decal",
+      "name_zh": "前面标识",
+      "function_zh": "前面板标识（厂家名称与“HYDROGEN”字样，通用字体重绘）",
+      "physical_meaning_zh": "外观贴图：前面标识；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.322×0.001×0.39 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：前面标识贴图。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__front_decal"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.322,
+            0.001,
+            0.39
+          ],
+          "origin_m": [
+            0.0,
+            -0.2706,
+            0.197
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.2706,
+        0.197
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00012675000833333334,
+        0.00021315333333333334,
+        8.640334166666667e-05
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/front.png"
+      },
+      "appearance_zh": "前面标识贴图"
+    },
+    {
+      "id": "panel_seam",
+      "name_zh": "面板接缝",
+      "function_zh": "前面板与侧板/顶板之间的接缝（照片）",
+      "physical_meaning_zh": "外观件：接缝；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.381×0.0016×0.395 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：深灰接缝。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__panel_seam"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.3814,
+            0.0015999999999999903,
+            0.39470000000000005
+          ],
+          "origin_m": [
+            0.0,
+            -0.21000000000000002,
+            0.20935000000000004
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.21,
+        0.20935
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00012982554166666668,
+        0.0002510450416666667,
+        0.00012122376666666669
+      ],
+      "material": {
+        "base_color": [
+          0.35,
+          0.36,
+          0.36
+        ],
+        "metallic": 0.0,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深灰接缝"
+    },
+    {
+      "id": "hex_ring",
+      "name_zh": "六边形灯带",
+      "function_zh": "前面板的绿色发光六边形灯带：沿蜂窝格线的LED导光槽（顶点处断开）与两个实心导光六边形（运行层indicator.ok：待机或供氢正常时点亮）",
+      "physical_meaning_zh": "指示件：六边形灯带与实心六边形；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.145×0.0032×0.262 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：绿色导光灯带与实心六边形。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__hex_ring"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.14486117892254016,
+            0.0031999999999999806,
+            0.2618000000000001
+          ],
+          "origin_m": [
+            -0.04191554445662277,
+            -0.2696,
+            0.25860000000000005
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.11,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        -0.04191554,
+        -0.2696,
+        0.2586
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0006283702333333334,
+        0.0008206366801507639,
+        0.00019245418015076366
+      ],
+      "material": {
+        "base_color": [
+          0.55,
+          0.62,
+          0.56
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "绿色导光灯带与实心六边形"
+    },
+    {
+      "id": "tank_window",
+      "name_zh": "水箱视窗",
+      "function_zh": "中央深色六边形水箱视窗（可见水箱；通电时透出深绿光，运行层power.on）",
+      "physical_meaning_zh": "视窗件：水箱视窗；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.0417×0.0052×0.0482 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：深绿透明视窗。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__tank_window"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.041707783446258556,
+            0.005199999999999982,
+            0.04815999999999998
+          ],
+          "origin_m": [
+            -0.06424871130596428,
+            -0.2686,
+            0.211
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.05,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        -0.06424871,
+        -0.2686,
+        0.21100000000000002
+      ],
+      "simulation_inertia_kg_m2": [
+        9.776773333333337e-06,
+        1.6912185468868338e-05,
+        7.360745468868332e-06
+      ],
+      "material": {
+        "base_color": [
+          0.02,
+          0.1,
+          0.04
+        ],
+        "metallic": 0.0,
+        "roughness": 0.08,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.85,
+        "texture": null
+      },
+      "appearance_zh": "深绿透明视窗"
+    },
+    {
+      "id": "touch_screen",
+      "name_zh": "触摸屏",
+      "function_zh": "彩色触摸屏（DELIVERY PRESSURE、SYSTEM STAND-BY/RUNNING、% FLOW、START/STOP、MENU；运行层state、pressure、flow）",
+      "physical_meaning_zh": "显示与输入件：触摸屏；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.116×0.004×0.078 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：灰色边框触摸屏。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__touch_screen"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.11600000000000002,
+            0.0040000000000000036,
+            0.07799999999999996
+          ],
+          "origin_m": [
+            0.106,
+            -0.26880000000000004,
+            0.335
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.35,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.10600000000000001,
+        -0.2688,
+        0.33499999999999996
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00017791666666666672,
+        0.0005699166666666667,
+        0.0003929333333333333
+      ],
+      "material": {
+        "base_color": [
+          0.45,
+          0.42,
+          0.4
+        ],
+        "metallic": 0.1,
+        "roughness": 0.4,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "灰色边框触摸屏"
+    },
+    {
+      "id": "screen_ui",
+      "name_zh": "触摸屏画面",
+      "function_zh": "触摸屏主页画面（通用字体重绘）",
+      "physical_meaning_zh": "外观贴图：触摸屏画面；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.1×0.001×0.06 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：触摸屏画面贴图。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__screen_ui"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1,
+            0.001,
+            0.05999999999999994
+          ],
+          "origin_m": [
+            0.106,
+            -0.271,
+            0.335
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.106,
+        -0.271,
+        0.33499999999999996
+      ],
+      "simulation_inertia_kg_m2": [
+        3.0000083333333334e-06,
+        1.1333333333333336e-05,
+        8.333341666666669e-06
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/screen.png"
+      },
+      "appearance_zh": "触摸屏画面贴图"
+    },
+    {
+      "id": "display_digits",
+      "name_zh": "屏幕读数",
+      "function_zh": "屏幕上的输出压力与% FLOW数字（Matterix按运行层display.pressure / display.flow_percent点亮）",
+      "physical_meaning_zh": "读数件：屏幕读数（读数pressure、flow_percent）；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.05×0.001×0.02 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：屏幕读数区。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__display_digits"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.001,
+            0.020000000000000018
+          ],
+          "origin_m": [
+            0.126,
+            -0.27130000000000004,
+            0.34500000000000003
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.01,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.126,
+        -0.2713,
+        0.345
+      ],
+      "simulation_inertia_kg_m2": [
+        3.3346666666666544e-07,
+        2.4166666666666646e-06,
+        2.083466666666666e-06
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.04,
+          0.05
+        ],
+        "metallic": 0.0,
+        "roughness": 0.08,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "屏幕读数区"
+    },
+    {
+      "id": "fault_frame",
+      "name_zh": "故障边框",
+      "function_zh": "触摸屏四周的报警边框（故障或诊断失败时红色，运行层indicator.fault；安装指南：红色故障画面）",
+      "physical_meaning_zh": "指示件：故障边框；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.112×0.001×0.074 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：屏幕报警边框。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "红色故障画面来自安装指南；以边框表示为工程简化。",
+      "objects": [
+        "peak_precisionhydrogen__fault_frame"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.11200000000000002,
+            0.001,
+            0.07399999999999995
+          ],
+          "origin_m": [
+            0.106,
+            -0.271,
+            0.335
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.10600000000000001,
+        -0.271,
+        0.33499999999999996
+      ],
+      "simulation_inertia_kg_m2": [
+        2.2816833333333343e-06,
+        7.508333333333334e-06,
+        5.2266833333333344e-06
+      ],
+      "material": {
+        "base_color": [
+          0.45,
+          0.42,
+          0.4
+        ],
+        "metallic": 0.1,
+        "roughness": 0.4,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "屏幕报警边框"
+    },
+    {
+      "id": "water_icon",
+      "name_zh": "缺水图标",
+      "function_zh": "触摸屏上的缺水图标（琥珀色，运行层indicator.water）",
+      "physical_meaning_zh": "指示件：缺水图标；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.0052×0.001×0.0072 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：屏幕图标。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__water_icon"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.00520000000000001,
+            0.001,
+            0.007199999999999984
+          ],
+          "origin_m": [
+            0.112,
+            -0.2712,
+            0.3284
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.11199999999999999,
+        -0.2712,
+        0.3284
+      ],
+      "simulation_inertia_kg_m2": [
+        2.1616666666666903e-09,
+        3.286666666666689e-09,
+        1.1283333333333314e-09
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.04,
+          0.05
+        ],
+        "metallic": 0.0,
+        "roughness": 0.08,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "屏幕图标"
+    },
+    {
+      "id": "vent_icon",
+      "name_zh": "去压图标",
+      "function_zh": "触摸屏上的去压图标（蓝色，运行层indicator.depressurised）",
+      "physical_meaning_zh": "指示件：去压图标；装配原点 (0, 0, 0) m 相对 touch_screen，碰撞代理为0.006×0.001×0.007 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：屏幕图标。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__vent_icon"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.006000000000000005,
+            0.001,
+            0.007000000000000006
+          ],
+          "origin_m": [
+            0.126,
+            -0.2712,
+            0.328
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.0005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.126,
+        -0.2712,
+        0.328
+      ],
+      "simulation_inertia_kg_m2": [
+        2.0433333333333364e-09,
+        3.5416666666666723e-09,
+        1.5016666666666688e-09
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.04,
+          0.05
+        ],
+        "metallic": 0.0,
+        "roughness": 0.08,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "屏幕图标"
+    },
+    {
+      "id": "start_stop_key",
+      "name_zh": "START/STOP键",
+      "function_zh": "触摸屏START/STOP键（按一下切换供氢与待机）",
+      "physical_meaning_zh": "输入器件：触摸屏START/STOP（弹簧键，行程0.5 mm），按下调用cycle.toggle；关节：沿 +Y 平移 0–0.0005 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (0.076, -0.2713, 0.315) m 相对 touch_screen，碰撞代理为0.036×0.0012×0.011 m 长方体；尺寸按产品照片估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：触摸屏START/STOP按钮。",
+      "parent": "touch_screen",
+      "origin_m": [
+        0.076,
+        -0.27130000000000004,
+        0.315
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          1,
+          0
+        ],
+        "limits": [
+          0.0,
+          0.0005
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "photo_estimate",
+      "geometry_note_zh": "按产品照片估计，尺寸在厂家外形之内。",
+      "objects": [
+        "peak_precisionhydrogen__start_stop_key"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.036000000000000004,
+            0.0012000000000000344,
+            0.01100000000000001
+          ],
+          "origin_m": [
+            0.0,
+            5.551115123125783e-17,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.005,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        -0.0003,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        5.042083333333333e-08,
+        5.904166666666667e-07,
+        5.400041666666666e-07
+      ],
+      "material": {
+        "base_color": [
+          0.1,
+          0.45,
+          0.2
+        ],
+        "metallic": 0.0,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/key.png"
+      },
+      "appearance_zh": "触摸屏START/STOP按钮"
+    },
+    {
+      "id": "rear_panel",
+      "name_zh": "背板",
+      "function_zh": "背板接口：氢气输出（1/8\"卡套）、氢气排气、氧气排气、加水口、电源插座（接口h2_outlet、h2_exhaust、o2_vent、water_fill、mains）",
+      "physical_meaning_zh": "连接件：背板（接口h2_outlet、h2_exhaust、o2_vent、water_fill、mains）；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.36×0.013×0.27 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：背板标识。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "接口种类与位置按安装指南；排布为工程估计。",
+      "objects": [
+        "peak_precisionhydrogen__rear_panel"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.36,
+            0.013000000000000012,
+            0.27
+          ],
+          "origin_m": [
+            0.0,
+            0.2755,
+            0.16499999999999998
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.05,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.2706,
+        0.197
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0006337500416666667,
+        0.00117375,
+        0.0005400000416666667
+      ],
+      "material": {
+        "base_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallic": 0.0,
+        "roughness": 0.45,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": "textures/rear.png"
+      },
+      "appearance_zh": "背板标识"
+    },
+    {
+      "id": "rear_fittings",
+      "name_zh": "背面接头",
+      "function_zh": "背面卡套与倒钩接头",
+      "physical_meaning_zh": "连接件：背面接头；装配原点 (0, 0, 0) m 相对 rear_panel，碰撞代理为0.07×0.024×0.159 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：黄铜/不锈钢接头。",
+      "parent": "rear_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__rear_fittings"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.07,
+            0.02400000000000002,
+            0.15889711431703
+          ],
+          "origin_m": [
+            -0.09,
+            0.28200000000000003,
+            0.17444855715851498
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.15,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        -0.09,
+        0.28200000000000003,
+        0.174448555
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0003228036445794011,
+        0.00037685364457940116,
+        6.844999999999998e-05
+      ],
+      "material": {
+        "base_color": [
+          0.72,
+          0.55,
+          0.25
+        ],
+        "metallic": 0.9,
+        "roughness": 0.3,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黄铜/不锈钢接头"
+    },
+    {
+      "id": "mains_inlet",
+      "name_zh": "电源插座",
+      "function_zh": "IEC C14电源插座",
+      "physical_meaning_zh": "连接件：电源插座（接口mains）；装配原点 (0, 0, 0) m 相对 rear_panel，碰撞代理为0.03×0.012×0.024 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：黑色电源插座。",
+      "parent": "rear_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__mains_inlet"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.030000000000000013,
+            0.01200000000000001,
+            0.023999999999999994
+          ],
+          "origin_m": [
+            0.12,
+            0.276,
+            0.08
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.05,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.12,
+        0.276,
+        0.08
+      ],
+      "simulation_inertia_kg_m2": [
+        2.999999999999994e-06,
+        6.150000000000001e-06,
+        4.349999999999998e-06
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色电源插座"
+    },
+    {
+      "id": "mains_switch",
+      "name_zh": "电源开关",
+      "function_zh": "背面电源开关（按一下切换通断）",
+      "physical_meaning_zh": "输入器件：电源开关（弹簧键），按下调用power.toggle；关节：沿 −Y 平移 0–0.003 m，瞬时按键（不镜像状态），行程为工程估计；装配原点 (0.12, 0.275, 0.13) m 相对 rear_panel，碰撞代理为0.014×0.01×0.022 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：黑色翘板开关。",
+      "parent": "rear_panel",
+      "origin_m": [
+        0.12,
+        0.275,
+        0.13
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "joint": {
+        "type": "prismatic",
+        "axis": [
+          0,
+          -1,
+          0
+        ],
+        "limits": [
+          0.0,
+          0.003
+        ],
+        "state_id": null,
+        "evidence": "engineering_assumption"
+      },
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__mains_switch"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.014000000000000012,
+            0.010000000000000009,
+            0.022000000000000006
+          ],
+          "origin_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.02,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "simulation_inertia_kg_m2": [
+        9.733333333333335e-07,
+        1.1333333333333332e-06,
+        4.933333333333334e-07
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "黑色翘板开关"
+    },
+    {
+      "id": "fan_grille",
+      "name_zh": "风扇格栅",
+      "function_zh": "冷却风扇格栅（散热）",
+      "physical_meaning_zh": "散热件：风扇格栅；装配原点 (0, 0, 0) m 相对 rear_panel，碰撞代理为0.09×0.0035×0.09 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：深灰格栅。",
+      "parent": "rear_panel",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__fan_grille"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.09,
+            0.003500000000000003,
+            0.08999999999999997
+          ],
+          "origin_m": [
+            0.06,
+            0.27175000000000005,
+            0.26
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.2,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.06,
+        0.27175000000000005,
+        0.26
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00013520416666666665,
+        0.00027,
+        0.00013520416666666665
+      ],
+      "material": {
+        "base_color": [
+          0.03,
+          0.03,
+          0.035
+        ],
+        "metallic": 0.0,
+        "roughness": 0.6,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "深灰格栅"
+    },
+    {
+      "id": "pem_cell",
+      "name_zh": "PEM电解池",
+      "function_zh": "PEM电解池（阳极出氧、阴极出氢；运行层truth.cell）",
+      "physical_meaning_zh": "产氢件：PEM电解池（机内不可见）；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.14×0.16×0.14 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：电解池（不可见）。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__pem_cell"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.14,
+            0.16,
+            0.14
+          ],
+          "origin_m": [
+            0.05,
+            0.05,
+            0.12
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 6.0,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.049999999999999996,
+        0.05,
+        0.12
+      ],
+      "simulation_inertia_kg_m2": [
+        0.022600000000000002,
+        0.0196,
+        0.0226
+      ],
+      "material": {
+        "base_color": [
+          0.3,
+          0.3,
+          0.32
+        ],
+        "metallic": 0.3,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "电解池（不可见）"
+    },
+    {
+      "id": "psa_dryers",
+      "name_zh": "PSA干燥塔",
+      "function_zh": "再生式PSA干燥塔（两塔交替；吹扫损失与露点）",
+      "physical_meaning_zh": "净化件：PSA干燥塔（机内不可见）；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.05×0.11×0.25 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：干燥塔（不可见）。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__psa_dryers"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.10999999999999999,
+            0.25
+          ],
+          "origin_m": [
+            0.12,
+            0.18,
+            0.2
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 3.0,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        0.12,
+        0.18,
+        0.2
+      ],
+      "simulation_inertia_kg_m2": [
+        0.01865,
+        0.01625,
+        0.003649999999999999
+      ],
+      "material": {
+        "base_color": [
+          0.65,
+          0.66,
+          0.68
+        ],
+        "metallic": 0.9,
+        "roughness": 0.25,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "干燥塔（不可见）"
+    },
+    {
+      "id": "water_tank",
+      "name_zh": "水箱",
+      "function_zh": "机内水箱（低/高水位传感器；运行层truth.water）",
+      "physical_meaning_zh": "储水件：水箱（机内不可见，经视窗可见）；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.1×0.08×0.14 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：水箱（不可见）。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__water_tank"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.1,
+            0.07999999999999999,
+            0.14
+          ],
+          "origin_m": [
+            -0.06424871130596428,
+            -0.21000000000000002,
+            0.191
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 1.2,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        -0.06424871,
+        -0.21000000000000002,
+        0.191
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0026,
+        0.0029600000000000004,
+        0.0016399999999999997
+      ],
+      "material": {
+        "base_color": [
+          0.3,
+          0.3,
+          0.32
+        ],
+        "metallic": 0.3,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "水箱（不可见）"
+    },
+    {
+      "id": "loading_pump",
+      "name_zh": "加水泵",
+      "function_zh": "自动加水泵（从外接水瓶补水）",
+      "physical_meaning_zh": "供水件：加水泵（机内不可见）；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.05×0.04×0.04 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：加水泵（不可见）。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__loading_pump"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.03999999999999998,
+            0.04000000000000001
+          ],
+          "origin_m": [
+            -0.1,
+            0.18,
+            0.05
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.4,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        -0.1,
+        0.18,
+        0.05
+      ],
+      "simulation_inertia_kg_m2": [
+        0.00010666666666666671,
+        0.00013666666666666672,
+        0.00013666666666666672
+      ],
+      "material": {
+        "base_color": [
+          0.3,
+          0.3,
+          0.32
+        ],
+        "metallic": 0.3,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "加水泵（不可见）"
+    },
+    {
+      "id": "deioniser_column",
+      "name_zh": "去离子柱",
+      "function_zh": "去离子柱（维护时更换；运行层deioniser.age_s）",
+      "physical_meaning_zh": "净化件：去离子柱（机内不可见）；装配原点 (0, 0, 0) m 相对 generator_body，碰撞代理为0.05×0.05×0.18 m 长方体；尺寸为工程估计，单件质量/惯量/摩擦未知（URDF质量：整机31.5 kg中各构件取工程估计、机箱取余量）。外观：去离子柱（不可见）。",
+      "parent": "generator_body",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": null,
+      "joint": null,
+      "mass_kg": null,
+      "mass_evidence": "unknown",
+      "geometry_evidence": "engineering_assumption",
+      "geometry_note_zh": "工程估计（无公开图纸）。",
+      "objects": [
+        "peak_precisionhydrogen__deioniser_column"
+      ],
+      "collisions": [
+        {
+          "shape": "box",
+          "size_m": [
+            0.04999999999999999,
+            0.05000000000000001,
+            0.18
+          ],
+          "origin_m": [
+            -0.13,
+            0.05,
+            0.14
+          ],
+          "rpy_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "simulation_mass_kg": 0.6,
+      "simulation_mass_evidence": "documented_total_split",
+      "simulation_mass_note": "整机31.5 kg（厂家数据）中各构件取工程估计质量、机箱取余量",
+      "simulation_center_of_mass_m": [
+        -0.13,
+        0.05,
+        0.14
+      ],
+      "simulation_inertia_kg_m2": [
+        0.0017449999999999998,
+        0.0017449999999999998,
+        0.00025
+      ],
+      "material": {
+        "base_color": [
+          0.3,
+          0.3,
+          0.32
+        ],
+        "metallic": 0.3,
+        "roughness": 0.5,
+        "emissive": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1.0,
+        "texture": null
+      },
+      "appearance_zh": "去离子柱（不可见）"
+    }
+  ],
+  "root_object": "peak_precisionhydrogen__root",
+  "joint_definitions": {
+    "start_stop_key": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits_m": [
+        0.0,
+        0.0005
+      ],
+      "accessor": "joint[start_stop_key_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    },
+    "mains_switch": {
+      "type": "prismatic",
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "limits_m": [
+        0.0,
+        0.003
+      ],
+      "accessor": "joint[mains_switch_joint]",
+      "state_id": null,
+      "range_evidence": "engineering_assumption"
+    }
+  },
+  "artifacts": {
+    "model_glb": "model.glb",
+    "model_urdf": "model.urdf",
+    "meshes_dir": "meshes",
+    "model_blend": "model.blend"
+  },
+  "limitations_zh": [
+    "外形406 H×380 W×540 D mm、31.5 kg为2023存档样本数据（2019版外形图同为380×540、高405 mm）。",
+    "外观（白色粉末涂层机箱与圆角前立边、侧板接缝、前面绿色发光六边形灯带与两个实心六边形、中央深色水箱视窗、右上彩色触摸屏、右下厂家名、左下“HYDROGEN”字样）按产品照片估计；字样为通用字体重绘，不复制厂家标志。",
+    "工程构件：六边形位置与大小（按照片比例）、触摸屏与背面接口布局（按安装指南）、不可见的PEM电解池、PSA干燥塔、水箱、加水泵与去离子柱简化块。",
+    "参考姿态：按键未按下；应用管路、水瓶与气体由运行层表示，没有几何。",
+    "质量：整机31.5 kg为厂家数据；各构件取工程估计质量，机箱取余量；单件质量与惯量未知。"
+  ],
+  "manufacturer_dimensions_m": {
+    "W_D_H": [
+      0.38,
+      0.54,
+      0.406
+    ]
+  },
+  "manufacturer_dimensions_scope_zh": "406 H×380 W×540 D mm（2023存档样本；不含背面接头）",
+  "mass_scope_zh": "整机31.5 kg（2023存档样本）；各构件取工程估计质量，机箱取余量",
+  "simulation_mass_budget": {
+    "total_mass_kg": 31.5,
+    "documented_total_kg": 31.5,
+    "evidence": "documented total mass split over the parts"
+  },
+  "reference_pose_zh": "参考姿态：按键未按下；应用管路、水瓶与气体由运行层表示，没有几何。",
+  "selected_configuration": {
+    "model": "PEAK Scientific Precision Hydrogen Trace 500 (64-0500), 230 V 50/60 Hz, automatic loading pump with a 4 l DI water bottle",
+    "not_included": [
+      "GC in-oven hydrogen leak detector (optional)",
+      "integrated compressor (not available)",
+      "multi-unit stack control",
+      "pressurised water feed option"
+    ],
+    "note_zh": "应用（GC载气/燃气、ICP-MS碰撞气）由宿主consumer.set声明需求流量与最低压力"
+  },
+  "readouts": [
+    {
+      "name": "pressure",
+      "part": "display_digits",
+      "face": "-Y",
+      "digits": 3,
+      "decimals": 1,
+      "unit": "bar or psi",
+      "on": [
+        0.95,
+        0.97,
+        1.0
+      ],
+      "off": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "region": [
+        0.08,
+        0.92,
+        0.55,
+        0.92
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.pressure"
+        ],
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "flow_percent",
+      "part": "display_digits",
+      "face": "-Y",
+      "digits": 3,
+      "decimals": 0,
+      "unit": "%",
+      "on": [
+        0.95,
+        0.97,
+        1.0
+      ],
+      "off": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "region": [
+        0.4,
+        0.92,
+        0.1,
+        0.45
+      ],
+      "hide": [],
+      "source": {
+        "bridge": [
+          "display.flow_percent"
+        ],
+        "scale": 1.0
+      }
+    }
+  ],
+  "lamps": [
+    {
+      "name": "hex_ring",
+      "part": "hex_ring",
+      "face": "-Y",
+      "color": [
+        0.08,
+        1.0,
+        0.12
+      ],
+      "off": [
+        0.55,
+        0.62,
+        0.56
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.ok"
+        }
+      }
+    },
+    {
+      "name": "tank_window",
+      "part": "tank_window",
+      "face": "-Y",
+      "color": [
+        0.02,
+        0.45,
+        0.06
+      ],
+      "off": [
+        0.02,
+        0.1,
+        0.04
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "power.on"
+        }
+      }
+    },
+    {
+      "name": "fault_frame",
+      "part": "fault_frame",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.06,
+        0.04
+      ],
+      "off": [
+        0.45,
+        0.42,
+        0.4
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.fault"
+        }
+      }
+    },
+    {
+      "name": "water_icon",
+      "part": "water_icon",
+      "face": "-Y",
+      "color": [
+        1.0,
+        0.62,
+        0.05
+      ],
+      "off": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.water"
+        }
+      }
+    },
+    {
+      "name": "vent_icon",
+      "part": "vent_icon",
+      "face": "-Y",
+      "color": [
+        0.15,
+        0.45,
+        1.0
+      ],
+      "off": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "source": {
+        "lamp": {
+          "bridge": "indicator.depressurised"
+        }
+      }
+    }
+  ],
+  "readout_note_zh": "触摸屏在场景中按运行层display.pressure（按设定单位bar或psi）与display.flow_percent显示输出压力与% FLOW；六边形灯带与两个实心六边形按indicator.ok点亮绿色（产品照片的正常运行外观，绿色=正常为对照片的解读）、水箱视窗通电即透出深绿（power.on；同系列手册：上电时水箱会亮）；故障时触摸屏四周的红色边框按indicator.fault点亮（安装指南：诊断失败时报警并显示红色故障画面）；缺水图标（琥珀色）与去压图标（蓝色）按indicator.water / indicator.depressurised点亮——这两个图标的形状、颜色与位置为工程表示，厂家资料未给出；菜单画面与报警文字不建模（运行层alarms.active）。",
+  "panel_keys": [
+    "start_stop_key",
+    "mains_switch"
+  ],
+  "knobs": [],
+  "textures": {
+    "powder": "textures/powder.png",
+    "front": "textures/front.png",
+    "screen": "textures/screen.png",
+    "key": "textures/key.png",
+    "rear": "textures/rear.png"
+  },
+  "geometry_evidence_by_component": {
+    "generator_body": "manufacturer_datasheet",
+    "front_decal": "photo_estimate",
+    "panel_seam": "photo_estimate",
+    "hex_ring": "photo_estimate",
+    "tank_window": "photo_estimate",
+    "touch_screen": "photo_estimate",
+    "screen_ui": "photo_estimate",
+    "display_digits": "photo_estimate",
+    "fault_frame": "engineering_assumption",
+    "water_icon": "engineering_assumption",
+    "vent_icon": "engineering_assumption",
+    "start_stop_key": "photo_estimate",
+    "rear_panel": "engineering_assumption",
+    "rear_fittings": "engineering_assumption",
+    "mains_inlet": "engineering_assumption",
+    "mains_switch": "engineering_assumption",
+    "fan_grille": "engineering_assumption",
+    "pem_cell": "engineering_assumption",
+    "psa_dryers": "engineering_assumption",
+    "water_tank": "engineering_assumption",
+    "loading_pump": "engineering_assumption",
+    "deioniser_column": "engineering_assumption"
+  },
+  "world_origins_m": {
+    "generator_body": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "front_decal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "panel_seam": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "hex_ring": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "tank_window": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "touch_screen": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screen_ui": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "display_digits": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "fault_frame": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "water_icon": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "vent_icon": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "start_stop_key": [
+      0.076,
+      -0.27130000000000004,
+      0.315
+    ],
+    "rear_panel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rear_fittings": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mains_inlet": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mains_switch": [
+      0.12,
+      0.275,
+      0.13
+    ],
+    "fan_grille": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pem_cell": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "psa_dryers": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "water_tank": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "loading_pump": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "deioniser_column": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}
